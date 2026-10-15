@@ -289,8 +289,10 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	holder.custom_minimum_size = CARD_SIZE + Vector2(GLOW_PAD, GLOW_PAD) * 2.0
 	holder.mouse_filter = Control.MOUSE_FILTER_STOP
 	holder.pivot_offset = holder.custom_minimum_size * 0.5
+	if rarity>=1 and not ComicMotion.reduced():holder.add_child(_build_glow(color))
 
 	var card := PanelContainer.new()
+	card.set_meta("glass_exempt",true)
 	card.position = Vector2(GLOW_PAD, GLOW_PAD)
 	card.custom_minimum_size = CARD_SIZE
 	card.size = CARD_SIZE
@@ -299,8 +301,6 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	for side in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]: frame.set_content_margin(side, 24)
 	card.add_theme_stylebox_override("panel", frame)
 	holder.add_child(card)
-	InteractionSkin.surface(card,"reward")
-	(card.get_node("GlassEdgeGlow") as Node2D).modulate=color
 
 	var column := UiFactory.vbox(8)
 	column.mouse_filter = Control.MOUSE_FILTER_IGNORE

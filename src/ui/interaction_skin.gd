@@ -70,7 +70,11 @@ static func apply_button(button:Button,_kind:String,_allow_option:=false)->void:
 		button.add_theme_stylebox_override(state,box)
 	for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]:button.add_theme_color_override(state,Color("edf4fa"))
 	button.add_theme_color_override("font_disabled_color",Color(.68,.74,.80,.68));button.add_theme_constant_override("outline_size",0)
-	button.add_theme_font_size_override("font_size",int(button.get_meta("art_layout_font_size",clampi(button.get_theme_font_size("font_size"),14,24))));button.clip_text=true;button.alignment=HORIZONTAL_ALIGNMENT_CENTER
+	button.add_theme_font_size_override("font_size",int(button.get_meta("art_layout_font_size",clampi(button.get_theme_font_size("font_size"),14,24))))
+	# Intrinsic-width tabs must measure their caption. Clipping a zero-width
+	# compact button reduces its minimum width to the style margins alone.
+	button.clip_text=button.custom_minimum_size.x>0 or bool(button.size_flags_horizontal & Control.SIZE_EXPAND)
+	button.alignment=HORIZONTAL_ALIGNMENT_CENTER
 	if bool(button.get_meta("glass_danger",false)):
 		for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]:button.add_theme_color_override(state,Color("ffb8b5"))
 	button.mouse_default_cursor_shape=Control.CURSOR_POINTING_HAND

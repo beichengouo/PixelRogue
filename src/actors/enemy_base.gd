@@ -200,6 +200,7 @@ func attack_damage() -> float:
 
 
 func _ready() -> void:
+	UnitBalance.apply_enemy(self)
 	max_hp = base_hp * _hp_scale
 	hp = max_hp
 	damage = base_damage * _damage_scale

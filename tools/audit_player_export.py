@@ -17,6 +17,7 @@ DEVELOPMENT = [
     "src/room_editor/editor.gd", "src/room_editor/canvas.gd",
     "src/room_editor/preview.gd", "src/room_editor/playtest*",
     "src/room_editor/invincible_player.gd", "assets/map_editor/*",
+	"src/room_editor/developer_tools.gd", "src/room_editor/developer_save_tool.gd",
     "src/world/level_backup*.tscn",
     "src/world/level.tscn", "assets/environment/terrain_v2.tres",
     "addons/dialogue_manager/example_balloon/ExampleBalloon.tscn",

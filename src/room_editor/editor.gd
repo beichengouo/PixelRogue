@@ -43,6 +43,7 @@ func _build_ui() -> void:
 	add_child(margin)
 	var root := VBoxContainer.new();margin.add_child(root)
 	var toolbar := HFlowContainer.new();root.add_child(toolbar)
+	_button(toolbar,"控制台 / 单位数值",func():var tools:=DeveloperTools.new();add_child(tools);tools.popup_centered())
 	_button(toolbar,"图层抠图 / 界面布局",func():var art:=LayerArtEditor.new();add_child(art);art.popup_centered())
 	_button(toolbar,"打开 JSON",func():_open_dialog(false))
 	_button(toolbar,"保存 JSON",func():_open_dialog(true))

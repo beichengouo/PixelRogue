@@ -490,7 +490,7 @@ func use_preset(index:int)->Dictionary:
 	return {"loadout":cart,"carried":money,"danger":RunDifficulty.multiplier(selected)-1,"difficulty":selected,"missing":missing}
 func preview_loadout(loadout:Array)->StatBlock:
 	var result=StatBlock.new()
-	for stat in GameState.BASE_STATS:result.set_base(stat,float(GameState.BASE_STATS[stat]))
+	for stat in GameState.BASE_STATS:result.set_base(stat,UnitBalance.player_base(stat,float(GameState.BASE_STATS[stat])))
 	var bag=loadout.map(func(id:Variant)->Dictionary:return ExpeditionData.resolve(str(id)))
 	for item in bag:
 		if not ItemDB.is_equippable(item) or not ItemDB.can_equip(item):continue

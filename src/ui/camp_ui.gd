@@ -35,6 +35,9 @@ var _feedback=""
 var _shop_timer=0.0
 var _shop_clock:Label
 var _page_cache:Node
+var _prepare_step:=0
+var _show_presets:=false
+var _page_heading:Label
 var _preset_index=0
 var _preset_name="方案1"
 var _contract_timers:Dictionary={}
@@ -86,6 +89,9 @@ func _ready() -> void:
 	panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	row.add_child(panel)
 	panel.add_child(right)
+	var page_header:=UiFactory.hbox(12);right.add_child(page_header)
+	_page_heading=PixelUi.title("",26);_page_heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL;page_header.add_child(_page_heading)
+	var page_back:=PixelUi.compact_button("返回营地" if world_mode else "关闭",18);page_header.add_child(page_back);page_back.pressed.connect(close)
 	var tabs=UiFactory.hbox(8)
 	right.add_child(tabs)
 	tabs.visible=not world_mode
@@ -205,7 +211,8 @@ func _refresh() -> void:
 	var token=str(focus.get_meta("focus_token","")) if focus!=null and _body.is_ancestor_of(focus) else ""
 	var scroll=_scroll.scroll_vertical
 	if _page!="relations": _portrait.texture=load(Characters.portrait_path())
-	_left.visible=_page!="warehouse"
+	_left.visible=_page not in ["warehouse","prepare"]
+	_page_heading.text={"prepare":"出发准备","warehouse":"回廊仓库","shop":"姜糖的星灯商铺","contracts":"冒险者工会","relations":"灯下相谈","result":"旅途记事"}.get(_page,"星辉回廊")
 	for child in _body.get_children():
 		if child==_warehouse and _page=="warehouse":continue
 		_body.remove_child(child)
@@ -239,95 +246,74 @@ func _prepare() -> void:
 			resume_requested.emit(saved))
 		_button("放弃本局并准备新出征",func()->void:_confirm.popup_centered())
 		return
-	_text("从仓库取用装备与药剂 · 取用不再次收费\n死亡会丢失带入物品；空装也可出发。",18)
 	combat_mode="rooms"
-	_text("房间探索 · 俯视八方向战斗",18,PixelUi.GOLD)
-	_text("出发角色 · %s / %s" % [Characters.current_name(),Characters.current_job()],18,PixelUi.GOLD)
-	_text("出征目的地",18,PixelUi.GOLD)
+	var steps:=UiFactory.hbox(12);_body.add_child(steps)
+	for index in 3:
+		var button:=PixelUi.button(["1  角色与目的地","2  携带物资","3  确认出发"][index],19,0,46)
+		button.set_meta("interaction_selected",_prepare_step==index);steps.add_child(button)
+		button.pressed.connect(func()->void:_prepare_step=index;_refresh())
+	_text("%s · 金库 %d 金 · Lv.%d · %s"%[Characters.current_name(),Outpost.gold(),initial_level,RunDifficulty.title(difficulty)],18,PixelUi.GOLD)
+	if not _feedback.is_empty():_text(_feedback,17,PixelUi.GOLD)
+	if _prepare_step==0:_prepare_character()
+	elif _prepare_step==1:_prepare_supplies()
+	else:_prepare_confirmation()
+
+func _prepare_character()->void:
+	_text("目的地",19,PixelUi.GOLD)
 	var destination:=OptionButton.new();destination.name="ChapterDestination";_compact_option(destination)
 	var chapter_ids:Array=[ChapterCatalog.FIRST,ChapterCatalog.NEXT]
-	for index in chapter_ids.size():
-		var id:StringName=chapter_ids[index];var available:=ChapterCatalog.unlocked(id)
-		destination.add_item(ChapterCatalog.title(id)+("· 通关苏醒林地后开放" if not available else ""));destination.set_item_disabled(index,not available)
-	destination.select(maxi(0,chapter_ids.find(chapter_id)))
-	destination.item_selected.connect(func(index:int)->void:chapter_id=chapter_ids[index])
-	_body.add_child(destination)
-	_passive_options()
-	_text("战斗难度",18,PixelUi.GOLD)
+	for id in chapter_ids:
+		var available:=ChapterCatalog.unlocked(id)
+		destination.add_item(ChapterCatalog.title(id)+(" · 通关苏醒林地后开放" if not available else ""));destination.set_item_disabled(destination.item_count-1,not available)
+	destination.select(maxi(0,chapter_ids.find(chapter_id)));destination.item_selected.connect(func(index:int)->void:chapter_id=chapter_ids[index]);_body.add_child(destination)
+	_text("难度",19,PixelUi.GOLD)
 	var challenge:=OptionButton.new();challenge.name="RunDifficulty";_compact_option(challenge)
 	for option in RunDifficulty.OPTIONS:challenge.add_item(RunDifficulty.description(int(option.id)),int(option.id))
-	challenge.select(clampi(difficulty,1,4)-1)
-	challenge.tooltip_text="普通／危险／绝境／浴血；浴血沿用绝境刷怪与属性，金币奖励×5，受到真实伤害且无法回血。
-普通／危险／绝境：刷怪数量×1／×1.5／×2；不足一只向上取整。\n普通怪物与Boss的生命、攻击均×1／×2／×3；难度不增加移速或攻速。\n高难度更常出现精英词条，仍沿用章节解锁与词条数量上限；物资价值×1／×1.20／×1.40。\n每笔掉落金币与清房金币奖励×1／×2／×3；携带资金、装备出售和退款按原金额结算。"
-	challenge.item_selected.connect(func(index:int)->void:difficulty=challenge.get_item_id(index);_status.text="金库 %d 金 · %s"%[Outpost.gold(),RunDifficulty.title(difficulty)])
-	_body.add_child(challenge)
-	if Outpost.overfull():
-		_text("仓库超量 %d 格，清理或扩容后才能出发。" % (Outpost.warehouse_slots()-Outpost.warehouse_capacity()),19,Palette.UI_DANGER)
-		_button("前往仓库清理",_switch.bind("warehouse"))
-	_text("本局初始等级 · 最高10级 · 每级依次花费50、100、150金；新出征重置",17,PixelUi.MUTED)
-	initial_level=clampi(initial_level,1,DepartureLevels.MAXIMUM)
-	var starting:=SpinBox.new();starting.name="InitialLevel";starting.min_value=1;starting.max_value=DepartureLevels.MAXIMUM;starting.allow_greater=false;starting.allow_lesser=false;starting.step=1;starting.prefix="初始等级 ";starting.value=initial_level
-	var tuition:=Label.new();tuition.text="等级费用 %d 金"%DepartureLevels.cost(initial_level)
-	starting.value_changed.connect(func(value:float)->void:initial_level=clampi(int(value),1,DepartureLevels.MAXIMUM);starting.set_value_no_signal(initial_level);tuition.text="等级费用 %d 金"%DepartureLevels.cost(initial_level))
-	_body.add_child(starting);MobileControls.decorate_number(starting);_body.add_child(tuition)
-	var money=SpinBox.new()
-	money.min_value=0
-	money.max_value=Outpost.gold()
-	money.step=1
-	money.prefix="随身金币 "
-	money.value=carried
-	money.value_changed.connect(func(value:float)->void:carried=int(value))
-	_body.add_child(money)
-	MobileControls.decorate_number(money)
-	_text("已选 %d 件 · 随身金币 %d 金" % [cart.size(),carried],18,PixelUi.GOLD)
-	_button("确认准备 · 开启四座大门" if world_mode else "出发 · 进入初始房间",_depart,Outpost.overfull())
-	_presets()
-	_prepare_preview()
-	if not cart.is_empty():_button("清空携带清单",func()->void:cart.clear();_refresh())
-	_text("仓库装备 · 每槽1件 · 药剂最多15瓶",16,PixelUi.MUTED)
-	# Basic filtering is available independently of relationships.
-	if not Outpost.data.inventory.is_empty():
-		var filter=OptionButton.new()
-		_compact_option(filter)
-		filter.add_item("全部品质")
-		for i in 4:
-			filter.add_icon_item(RarityWordmark.compact_texture(i),"")
-			filter.set_item_tooltip(i+1,ItemDB.rarity_name(i))
-		filter.select(_rarity_filter+1)
-		filter.item_selected.connect(func(i:int)->void:_rarity_filter=i-1;_refresh())
-		_body.add_child(filter)
-	if maxi(int(Outpost.data.bonds.sylphiette),int(Outpost.data.bonds.iris))>=200:
-		var farewell=CheckButton.new()
-		farewell.text="出发前听一段专属送行"
-		farewell.button_pressed=_farewell
-		farewell.toggled.connect(func(value:bool)->void:_farewell=value)
-		_body.add_child(farewell)
+	challenge.select(clampi(difficulty,1,4)-1);challenge.item_selected.connect(func(index:int)->void:difficulty=challenge.get_item_id(index));_body.add_child(challenge)
+	_passive_options()
+	var row:=UiFactory.hbox(24);_body.add_child(row)
+	var starting:=SpinBox.new();starting.name="InitialLevel";starting.min_value=1;starting.max_value=DepartureLevels.MAXIMUM;starting.allow_greater=false;starting.allow_lesser=false;starting.step=1;starting.prefix="初始等级 ";initial_level=clampi(initial_level,1,DepartureLevels.MAXIMUM);starting.value=initial_level;row.add_child(starting);MobileControls.decorate_number(starting)
+	var tuition:=PixelUi.label("费用 %d 金"%DepartureLevels.cost(initial_level),18);row.add_child(tuition)
+	starting.value_changed.connect(func(value:float)->void:initial_level=clampi(int(value),1,DepartureLevels.MAXIMUM);starting.set_value_no_signal(initial_level);tuition.text="费用 %d 金"%DepartureLevels.cost(initial_level))
+	_text("最高10级；每级依次50、100、150金。仅本局有效，越过大门时才扣费。",16,PixelUi.MUTED)
+	_button("下一步 · 选择携带物资",func()->void:_prepare_step=1;_refresh())
+
+func _prepare_supplies()->void:
+	_text("装备每槽1件 · 药剂最多15瓶 · 取用仓库物资不再次收费",18,PixelUi.GOLD)
+	var money:=SpinBox.new();money.name="CarriedGold";money.min_value=0;money.max_value=Outpost.gold();money.step=1;money.prefix="随身金币 ";money.value=carried;money.value_changed.connect(func(value:float)->void:carried=int(value));_body.add_child(money);MobileControls.decorate_number(money)
+	var selected:=UiFactory.hbox(12);_body.add_child(selected)
+	var summary:=PixelUi.label("携带清单 · %d件"%cart.size(),20,PixelUi.GOLD);summary.size_flags_horizontal=Control.SIZE_EXPAND_FILL;selected.add_child(summary)
+	var clear:=PixelUi.compact_button("清空清单",17);clear.disabled=cart.is_empty();selected.add_child(clear);clear.pressed.connect(func()->void:cart.clear();_refresh())
+	for id in cart.duplicate():
+		var row:=UiFactory.hbox(12);_body.add_child(row);var item:=ExpeditionData.resolve(str(id));row.add_child(UiFactory.item_icon(item,32))
+		var label:=PixelUi.label(str(item.name),18);label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
+		var remove:=PixelUi.compact_button("移出",17);row.add_child(remove);remove.pressed.connect(func()->void:cart.erase(id);_refresh())
+	_button("配装方案 ▾" if not _show_presets else "收起配装方案 ▴",func()->void:_show_presets=not _show_presets;_refresh())
+	if _show_presets:_presets()
+	var filter:=OptionButton.new();_compact_option(filter);filter.add_item("全部品质")
+	for i in 4:filter.add_item(ItemDB.rarity_name(i))
+	filter.select(_rarity_filter+1);filter.item_selected.connect(func(i:int)->void:_rarity_filter=i-1;_refresh());_body.add_child(filter)
 	for id in Outpost.data.inventory:
-		var owned=int(Outpost.data.inventory[id])
-		var item=ExpeditionData.resolve(str(id))
-		if owned<=0 or not (ItemDB.is_equippable(item) or ItemDB.is_usable(item)):continue
-		if not ItemDB.available_in_mode(item,combat_mode):continue
-		if _rarity_filter>=0 and int(item.rarity)!=_rarity_filter: continue
-		var row=UiFactory.hbox(10)
-		row.add_child(UiFactory.item_icon(item,34))
-		var caption=PixelUi.label("%s · 库存%d" % [item.name,owned],17,ItemDB.rarity_color(int(item.rarity)))
-		caption.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-		if ItemDB.is_equippable(item):caption.text+="\n"+_camp_comparison(str(item.id))
-		caption.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-		row.add_child(caption)
-		row.add_child(RarityWordmark.make(int(item.rarity),30))
-		var b=PixelUi.compact_button("选择",16)
-		b.set_meta("focus_token","camp_item:"+str(item.id))
-		b.custom_minimum_size.x=86
-		b.disabled=cart.count(str(item.id))>=owned or not ItemDB.can_equip(item)
-		if not ItemDB.can_equip(item):b.text="职业不符"
-		b.tooltip_text=str(item.desc)
-		if ItemDB.is_equippable(item):b.tooltip_text+="\n"+_camp_comparison(str(item.id))
-		b.pressed.connect(_add_cart.bind(str(item.id)))
-		row.add_child(b)
-		_body.add_child(row)
-		var selected=cart.count(str(item.id))
-		if selected>0:caption.text+="\n已准备 ×%d" % selected
+		var owned:=int(Outpost.data.inventory[id]);var item:=ExpeditionData.resolve(str(id))
+		if owned<=0 or not (ItemDB.is_equippable(item) or ItemDB.is_usable(item)) or not ItemDB.available_in_mode(item,combat_mode):continue
+		if _rarity_filter>=0 and int(item.rarity)!=_rarity_filter:continue
+		var row:=UiFactory.hbox(12);_body.add_child(row);row.add_child(UiFactory.item_icon(item,36))
+		var label:=PixelUi.label("%s · 库存%d · 已选%d"%[str(item.name),owned,cart.count(str(id))],18,ItemDB.rarity_color(int(item.rarity)));label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
+		var button:=PixelUi.compact_button("选择" if ItemDB.can_equip(item) else "职业不符",17);button.custom_minimum_size.x=100;button.set_meta("focus_token","camp_item:"+str(id));button.disabled=cart.count(str(id))>=owned or not ItemDB.can_equip(item);button.tooltip_text=str(item.desc);button.pressed.connect(_add_cart.bind(str(id)));row.add_child(button)
+	_button("下一步 · 核对出发清单",func()->void:_prepare_step=2;_refresh())
+
+func _prepare_confirmation()->void:
+	_text("目的地 · %s\n难度 · %s\n出发等级 · Lv.%d\n同行被动 · %s"%[ChapterCatalog.title(chapter_id),RunDifficulty.title(difficulty),initial_level,str(PassiveDefinitions.for_character(Characters.current_id()).filter(func(p:Dictionary)->bool:return StringName(p.id)==PassiveDefinitions.selected(Characters.current_id()))[0].name)],21)
+	_text("携带物资 · %d件 · 随身金币 %d金\n等级费用 %d金 · 确认不扣费，出门后结余 %d金"%[cart.size(),carried,DepartureLevels.cost(initial_level),Outpost.gold()-carried-DepartureLevels.cost(initial_level)],19,PixelUi.GOLD)
+	for id in cart:
+		var item:=ExpeditionData.resolve(str(id));_text("• "+str(item.name),18,ItemDB.rarity_color(int(item.rarity)))
+	if cart.is_empty():_text("空装出发",18,PixelUi.MUTED)
+	_prepare_preview()
+	_text("出发后重置训练配置。成功撤离可带回绑定装备，死亡仍会损失带入物品。",17,PixelUi.MUTED)
+	if Outpost.overfull():_text("仓库超量，请先清理或扩容。",18,Palette.UI_DANGER)
+	if maxi(int(Outpost.data.bonds.sylphiette),int(Outpost.data.bonds.iris))>=200:
+		var farewell:=CheckButton.new();farewell.text="出发前听一段专属送行";farewell.button_pressed=_farewell;farewell.toggled.connect(func(value:bool)->void:_farewell=value);_body.add_child(farewell)
+	_button("确认准备 · 开启四座大门" if world_mode else "出发 · 进入初始房间",_depart,Outpost.overfull())
 
 func _add_cart(id: String) -> void:
 	var item=ExpeditionData.resolve(id)
@@ -532,12 +518,13 @@ func _presets()->void:
 	clear.pressed.connect(func()->void:_feedback="方案已删除" if Outpost.delete_preset(_preset_index) else "保存失败，方案保留";_refresh())
 func _prepare_preview()->void:
 	var stats=Outpost.preview_loadout(cart)
+	stats.add_flat(&"max_hp",GameState.HP_PER_LEVEL*maxi(0,initial_level-1));stats.add_flat(&"attack",GameState.ATK_PER_LEVEL*maxi(0,initial_level-1))
 	var parts:PackedStringArray=[]
 	for entry in [[&"max_hp","生命"],[&"attack","攻击"],[&"move_speed","移速"],[&"crit_chance","暴击"],[&"crit_mult","暴伤"],[&"dash_cooldown","冲刺冷却"],[&"lifesteal","命中回血"]]:
 		parts.append("%s %s" % [entry[1],ItemInsight.stat_text(entry[0],stats.get_value(entry[0]))])
 	for entry in [[&"thorns","反伤"],[&"coin_gain","金币收益"],[&"attack_speed","攻速"]]:
 		if not is_equal_approx(stats.get_value(entry[0]),float(GameState.BASE_STATS[entry[0]])):parts.append("%s %s" % [entry[1],ItemInsight.stat_text(entry[0],stats.get_value(entry[0]))])
-	_text("出发属性（Lv.1，无局内遗物/天赋）\n"+" · ".join(parts),16,PixelUi.GOLD)
+	_text("出发属性（Lv.%d，无局内遗物/天赋）\n"%initial_level+" · ".join(parts),16,PixelUi.GOLD)
 func _camp_comparison(id:String)->String:
 	var item=ExpeditionData.resolve(id)
 	var candidate=cart.duplicate()
@@ -589,6 +576,7 @@ func _buy_basic(id:String)->void:
 	_refresh()
 
 func _compact_option(option: OptionButton) -> void:
+	option.size_flags_horizontal=Control.SIZE_EXPAND_FILL;option.fit_to_longest_item=false
 	option.custom_minimum_size.y=60 if MobileControls.enabled() else 40
 	for state in ["normal","hover","pressed","disabled"]:
 		option.add_theme_stylebox_override(state,PixelUi.style(PixelUi.NIGHT,PixelUi.GOLD if state=="hover" else PixelUi.LINE,0,8))

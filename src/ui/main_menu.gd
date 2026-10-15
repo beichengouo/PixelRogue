@@ -48,6 +48,7 @@ var _binding_status:Label
 var _binding_buttons:Dictionary={}
 var _abandon_confirm:GlassConfirmUI
 var _release_notes:ReleaseNotesUI
+var _background_art:TextureRect
 
 func open_release_notes()->void:
 	if is_instance_valid(_release_notes):return
@@ -128,6 +129,7 @@ func _build() -> void:
 	_root.theme = PixelUi.theme()
 	add_child(_root)
 	var art := TextureRect.new()
+	_background_art=art
 	art.texture = load("res://assets/backgrounds/main_menu.png")
 	art.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
@@ -330,7 +332,9 @@ func _place_content() -> void:
 	_selection_art.visible = false
 	_character_art.visible = false
 	if _video != null:
-		_video.visible = _view != View.CHARACTER
+		_video.visible = _view != View.CHARACTER and not _settings_only
+	_background_art.visible=not _settings_only
+	_shade.visible=not _settings_only
 	_backdrop.visible = _view not in [View.MAIN, View.CHARACTER, View.SETTINGS, View.ITEMS, View.MONSTERS]
 	_shade.modulate.a = 1.0 if _view == View.MAIN else 0.3
 	match _view:

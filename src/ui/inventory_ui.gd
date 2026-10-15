@@ -1059,6 +1059,7 @@ func _detail_skill() -> void:
 		_detail_box.add_child(button)
 
 func _detail_talent() -> void:
+	if not GameState.TALENT_BRANCHES.has(_selected_talent):_selected_talent=&""
 	if _selected_talent == &"":
 		_detail_box.add_child(PixelUi.label("天赋", 22, PixelUi.MUTED))
 		_detail_box.add_child(_parchment_rule())
@@ -1074,6 +1075,7 @@ func _detail_talent() -> void:
 	_detail_box.add_child(head)
 	head.add_child(UiFactory.texture_icon(str(info.get("icon", "")), 48.0))
 	var head_text := UiFactory.vbox(0)
+	head_text.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	head.add_child(head_text)
 	head_text.add_child(PixelUi.label(str(info["name"]), 21, PixelUi.INK))
 	head_text.add_child(PixelUi.label("%d / %d 级" % [rank, max_rank], 14, PixelUi.MUTED))

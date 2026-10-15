@@ -103,7 +103,8 @@ static func random_hire(rng: RandomNumberGenerator) -> Dictionary:
 static func base_stats_of(enemy_kind: StringName, is_merc: bool, merc_index := 0) -> Dictionary:
 	## 雇佣单位的基础属性：怪物直接照搬那种怪的基础值；佣兵用一套固定偏高的值
 	if is_merc:
-		return {"hp": 95.0, "attack": 15.0, "speed": 118.0,
+		var id:="merc:"+str(merc_index)
+		return {"hp": UnitBalance.value(id,"hp",95), "attack": UnitBalance.value(id,"attack",15), "speed": UnitBalance.value(id,"speed",118),
 			"color": Color("e0b64a"), "gravity": true}
 	var probe := WaveDirector.create_enemy(enemy_kind)
 	var out := {"hp": 50.0, "attack": 10.0, "speed": 90.0,
@@ -115,6 +116,8 @@ static func base_stats_of(enemy_kind: StringName, is_merc: bool, merc_index := 0
 		out["color"] = probe.body_color
 		out["gravity"] = probe.uses_gravity
 		probe.free()
+	var id:="ally:"+str(enemy_kind)
+	for stat in ["hp","attack","speed"]:out[stat]=UnitBalance.value(id,stat,float(out[stat]))
 	return out
 
 
@@ -122,7 +125,7 @@ static func final_stats(offer: Dictionary, wave: int, bonus: Dictionary) -> Dict
 	## 最终属性 = 怪物基础值 × **当前波次的敌人倍率** × 这次雇佣的品质倍率 × 召唤师装备加成。
 	## 也就是：越晚雇佣的帮手越强，同一波里再按品质上下浮动。
 	var is_merc := str(offer.get("kind", &"monster")) == "merc"
-	var base := base_stats_of(StringName(offer.get("enemy_kind", &"walker")), is_merc)
+	var base := base_stats_of(StringName(offer.get("enemy_kind", &"walker")), is_merc,int(offer.get("merc_index",0)))
 	var plan := WaveTable.build(maxi(1, wave))
 	var hp := float(base["hp"]) * float(plan["hp_scale"]) \
 		* float(offer.get("hp_mul", 1.0)) * float(bonus.get("hp", 1.0))

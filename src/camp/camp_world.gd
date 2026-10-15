@@ -14,6 +14,7 @@ var camp_hud:CampHud
 var training_ui:CampTrainingUI
 var _pause:CanvasLayer
 var _pause_root:Control
+var camp_map:CampMapUI
 var _draft_signature:=""
 var _departing:=false
 var _camp_enter_clock:=0.0
@@ -91,22 +92,23 @@ func _build_camp_ui()->void:
 	dialogue=DialogueUI.new();add_child(dialogue)
 	resident_panel=CampResidentPanel.new();resident_panel.world=self;add_child(resident_panel)
 	camp_hud=CampHud.new();camp_hud.world=self;add_child(camp_hud)
+	camp_map=CampMapUI.new();camp_map.world=self;add_child(camp_map)
 	menu=MainMenu.new();add_child(menu)
 	_pause=CanvasLayer.new();_pause.layer=32;_pause.process_mode=Node.PROCESS_MODE_ALWAYS;_pause.set_meta("blocking_screen",true);add_child(_pause)
-	_pause_root=UiFactory.full_rect();_pause.add_child(_pause_root);_pause_root.add_child(UiFactory.dim_layer(.45));var frame:=StarUi.frame(_pause_root,Vector2(480,350));var column:=UiFactory.vbox(14);column.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);frame.add_child(column)
+	_pause_root=UiFactory.full_rect();_pause.add_child(_pause_root);_pause_root.add_child(UiFactory.dim_layer(.45))
+	var frame:=StarUi.frame(_pause_root,Vector2(480,390))
+	var panel:=PixelUi.inset_panel(24);frame.add_child(panel);panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var column:=UiFactory.vbox(14);panel.add_child(column)
+	column.minimum_size_changed.connect(func()->void:frame.custom_minimum_size.y=maxf(390,column.get_combined_minimum_size().y+48))
 	column.add_child(PixelUi.title("星辉回廊",28))
 	for option in [["继续营地",_close_pause],["设置",func()->void:_close_pause();menu.open_settings()],["返回主菜单",func()->void:_close_pause();_leave_camp();back_requested.emit()]]:
-		var button:=PixelUi.button(str(option[0]),20);button.pressed.connect(option[1]);column.add_child(button)
+		var button:=PixelUi.button(str(option[0]),20,0);button.pressed.connect(option[1]);column.add_child(button)
 	_pause_root.hide();_copy_trial_inventory();_draft_signature=preparation.signature()
-	InteractionSkin.mount(_pause_root,"camp_pause",frame)
+	InteractionSkin.mount(_pause_root,"camp_pause",panel)
 
 func _close_pause()->void:_pause_root.hide();UIFlow.pop_screen(_pause)
 func _copy_trial_inventory()->void:
 	GameState.items.clear()
-	for id in Outpost.data.inventory:
-		var item:=ExpeditionData.resolve(str(id));var count:=int(Outpost.data.inventory[id])
-		if count<=0 or not (ItemDB.is_equippable(item) or ItemDB.is_usable(item)) or not ItemDB.can_equip(item):continue
-		for index in mini(count,15):GameState.items.append(item.duplicate(true))
 	for slot:StringName in ItemDB.SLOTS:
 		var item:Dictionary=GameState.equipment.get(slot,{})
 		if not item.is_empty() and int(Outpost.data.inventory.get(str(item.id),0))<=0:GameState.equipment[slot]={}
@@ -168,6 +170,7 @@ func _unhandled_input(event:InputEvent)->void:
 	if UIFlow.has_screen() or _departing:return
 	if event.is_action_pressed("inventory"):inventory_ui.open()
 	elif event.is_action_pressed("talents"):talent_ui.open()
+	elif event.is_action_pressed("room_map"):camp_map.open()
 	elif event.is_action_pressed("pause_menu") or event.is_action_pressed("ui_cancel"):
 		_pause_root.show();UIFlow.push_screen(_pause);PixelUi.focus_button(_pause_root)
 	elif event.is_action_pressed("interact"):

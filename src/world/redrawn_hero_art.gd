@@ -74,6 +74,11 @@ static func _add(result:SpriteFrames,name:StringName,texture:Texture2D,row:int,f
 static func align(sprite:AnimatedSprite2D,height:=32.0,floor_y:=14.0)->void:
 	var utility:=str(sprite.animation) in ["prayer","hurt","death","jump","land","interact","victory","double_jump","brake","block"]
 	var source_height:=float(sprite.sprite_frames.get_meta("utility_height" if utility else "core_height",ART_HEIGHT))
+	if bool(sprite.sprite_frames.get_meta("separate_actions",false)) and str(sprite.animation).begins_with("idle_"):
+		# Idle rows were individually cropped to 54..62 pixels, while walking
+		# uses a 64-pixel standing silhouette. Preserve the common foot anchor.
+		var row:=DIRECTIONS.find(str(sprite.animation).trim_prefix("idle_"))
+		if row>=0:source_height*=float([54,55,57,59,62,59,57,55][row])/64.0
 	var factor:=height/source_height
 	sprite.scale=Vector2.ONE*factor
 	sprite.position=Vector2(0,floor_y-(FOOT.y-CELL*.5)*factor)

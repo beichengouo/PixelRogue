@@ -140,7 +140,10 @@ func _ring(at:Vector2,count:int,speed_value:float,ratio:float,gap:Vector2,openin
 		var direction:=Vector2.from_angle(index*TAU/count)
 		if absf(direction.angle_to(gap))>=opening*.5:_bullet(at,direction,speed_value,ratio,{})
 func _bullet(at:Vector2,direction:Vector2,speed_value:float,ratio:float,data:Dictionary)->void:
-	_owned_bullets=_owned_bullets.filter(func(bullet:Projectile)->bool:return is_instance_valid(bullet) and not bullet.is_queued_for_deletion())
+	# Freed Objects cannot enter a typed lambda; remove in place so the typed
+	# ownership array also keeps its Array[Projectile] identity.
+	for index in range(_owned_bullets.size()-1,-1,-1):
+		if not is_instance_valid(_owned_bullets[index]) or _owned_bullets[index].is_queued_for_deletion():_owned_bullets.remove_at(index)
 	if _owned_bullets.size()>=96:return
 	var bullet:=BossPatternProjectile.new();bullet.room=room;bullet.is_friendly=false;bullet.damage_owner=&"enemy";bullet.hostile_fx=str(boss_id);bullet.hostile_width=32;bullet.range_limit=1400
 	bullet.cruel_damage=has_affix(EnemyAffixes.CRUEL)

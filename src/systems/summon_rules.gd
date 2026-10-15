@@ -20,10 +20,13 @@ static func refresh(unit:HiredAlly,full:=false)->void:
 	var bonus:Dictionary=GameState.ally_bonus()
 	var base_hp:float=unit.monster_base_hp if unit.monster_base_hp>0 else unit.player.max_hp*unit.hp_ratio_base
 	var base_attack:float=unit.monster_base_attack if unit.monster_base_attack>0 else unit.player.stats.get_value(&"attack")*unit.attack_ratio
+	var balance_id:="summon:"+("tree" if unit.guardian and unit.enemy_kind==&"treant" else "procession" if str(unit.art_variant)=="parade_guardian" else "guardian" if str(unit.art_variant)=="gate_guardian" or unit.guardian else "lantern" if not unit.attack_is_melee() else "skeleton")
+	base_hp*=UnitBalance.value(balance_id,"hp_multiplier",1);base_attack*=UnitBalance.value(balance_id,"attack_multiplier",1)
 	unit.max_hp=base_hp*float(bonus.hp)*(1+GameState.talent_effect(&"contract_vitality","契约物生命加成%")/100)
 	unit.hp=unit.max_hp*ratio
 	unit.attack=base_attack*float(bonus.attack)*(1+GameState.talent_effect(&"contract_might","契约物攻击加成%")/100)*(1+unit.rally_attack if unit.rally_time>0 else 1)
 	unit.move_speed=unit.speed_base*float(bonus.speed)*(1+unit.rally_haste if unit.rally_time>0 else 1)
+	unit.move_speed*=UnitBalance.value(balance_id,"speed_multiplier",1)
 	unit.queue_redraw()
 
 static func hero_snapshot(actor:Player,effect:Dictionary)->Dictionary:

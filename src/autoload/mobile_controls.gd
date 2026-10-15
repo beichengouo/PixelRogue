@@ -117,7 +117,7 @@ func _layout() -> void:
 	if aim_finger<0:aim_center=boxes.aim.get_center()
 	for key in boxes:
 		if key in ["move","aim"]:continue
-		if CampSession.active and key in ["room_map","call_goddess"]:continue
+		if CampSession.active and key=="call_goddess":continue
 		_buttons[key]=boxes[key]
 
 func _input(event:InputEvent) -> void:

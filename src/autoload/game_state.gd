@@ -415,7 +415,7 @@ func preview_talent(branch: StringName) -> Dictionary:
 	ranks[branch] = next
 	var projected := StatBlock.new()
 	projected.status_owner = stats.status_owner
-	for stat: StringName in BASE_STATS: projected.set_base(stat, float(BASE_STATS[stat]))
+	for stat: StringName in BASE_STATS: projected.set_base(stat, UnitBalance.player_base(stat,float(BASE_STATS[stat])))
 	for item in items:
 		if not ItemDB.is_equippable(item): _apply_to(projected, item)
 	for slot: StringName in ItemDB.SLOTS:
@@ -815,7 +815,7 @@ func _after_equipment_change() -> void:
 func _reset_stats() -> void:
 	stats.clear()
 	for key: StringName in BASE_STATS:
-		stats.set_base(key, BASE_STATS[key])
+		stats.set_base(key, UnitBalance.player_base(key,float(BASE_STATS[key])))
 	# 被动遗物
 	for item in items:
 		if not ItemDB.is_equippable(item):
@@ -956,7 +956,7 @@ func preview_with(item: Dictionary) -> StatBlock:
 	var preview := StatBlock.new()
 	preview.status_owner = stats.status_owner
 	for key: StringName in BASE_STATS:
-		preview.set_base(key, BASE_STATS[key])
+		preview.set_base(key, UnitBalance.player_base(key,float(BASE_STATS[key])))
 	for owned in items:
 		if not ItemDB.is_equippable(owned):
 			_apply_to(preview, owned)
