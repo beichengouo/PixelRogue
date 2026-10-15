@@ -18,7 +18,7 @@ func _ready()->void:
 	_canvas=LayoutCanvas.new();_canvas.editor=self;_canvas.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);_canvas.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(_canvas)
 	_toolbar=PanelContainer.new();_toolbar.theme=StarUi.theme();_toolbar.add_theme_stylebox_override("panel",StarUi.style(Color(.04,.08,.12,.95)));add_child(_toolbar)
 	var body:=UiFactory.vbox(6);_toolbar.add_child(body)
-	var row:=UiFactory.hbox(10);body.add_child(row)
+	var row:=GridContainer.new();row.columns=5 if area.size.x>=760 else 2;row.add_theme_constant_override("h_separation",10);row.add_theme_constant_override("v_separation",6);body.add_child(row)
 	_choice=OptionButton.new();_choice.custom_minimum_size=Vector2(130,52);row.add_child(_choice)
 	for key in draft:_choice.add_item(_label(str(key)));_choice.set_item_metadata(_choice.item_count-1,key)
 	_choice.item_selected.connect(func(index:int)->void:selected=str(_choice.get_item_metadata(index));_size.set_value_no_signal(100);_base[selected]=draft[selected];_canvas.queue_redraw())
@@ -27,8 +27,10 @@ func _ready()->void:
 	for entry in [["保存布局",_save],["恢复默认",_reset],["取消",close]]:
 		var button:=StarUi.button(str(entry[0]),17);button.pressed.connect(entry[1]);row.add_child(button)
 	_feedback=StarUi.label("拖动调整位置；滑条调整大小。重叠或越界时无法保存。",15,Color.WHITE);_feedback.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.add_child(_feedback)
-	_toolbar.position=Vector2(area.get_center().x-370,area.position.y+4);_toolbar.size=Vector2(740,116)
+	_toolbar.position=Vector2(area.get_center().x-minf(740,area.size.x-16)*.5,area.position.y+4);_toolbar.size=Vector2(minf(740,area.size.x-16),116)
 	UIFlow.push_screen(self);MobileControls.reset()
+	InteractionSkin.mount(_toolbar,"touch_layout",_toolbar)
+
 func _label(key:String)->String:return "移动轮盘" if key=="move" else "攻击轮盘" if key=="aim" else str(MobileControls.LABELS.get(key,key))
 func _resize_control(value:float)->void:
 	var old:Rect2=draft[selected];var base:Rect2=_base[selected];var size:=base.size*value/100

@@ -12,7 +12,7 @@ func _ready() -> void:
 	_root=UiFactory.full_rect()
 	_root.theme=PixelUi.theme()
 	add_child(_root)
-	_root.add_child(UiFactory.dim_layer(0.65))
+	_root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(_root,Vector2(760,570))
 	var panel:=PixelUi.panel()
 	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -36,6 +36,7 @@ func _ready() -> void:
 	box.add_child(close_button)
 	InteractionSkin.apply_tree(_root,"shop")
 	_root.visible=false
+	InteractionSkin.mount(_root,"trade",panel)
 
 func open() -> void:
 	_guard=Time.get_ticks_msec()+150

@@ -138,7 +138,7 @@ func refresh()->void:
 			var record=_records[index];var item=ExpeditionData.resolve(record.id)
 			b.icon=_texture(item);(b.get_meta("count_label") as Label).text="×%d" % int(record.count);b.tooltip_text=str(item.get("name",record.id))+"\n"+str(item.get("desc",""));b.disabled=false
 			(b.get_meta("mark_label") as Label).text=("绑 " if ItemDB.is_equippable(item) else "")+("锁" if Outpost.is_locked(record.id) else ("委" if task_needs.has(record.id) else ("配" if int(reserves.get(record.id,0))>0 else "")))
-			b.add_theme_stylebox_override("normal",PixelUi.style(PixelUi.NIGHT,PixelUi.GOLD if _selected==record.id else (Palette.UI_DANGER if int(record.index)>=capacity else ItemDB.rarity_color(int(item.get("rarity",0)))),2,4,2))
+			b.set_meta("quality_slot",Palette.UI_DANGER if int(record.index)>=capacity else ItemDB.rarity_color(int(item.get("rarity",0))));b.set_meta("interaction_selected",_selected==record.id);InteractionSkin.apply_button(b,"warehouse")
 		else:
 			(b.get_meta("count_label") as Label).text=""
 			(b.get_meta("mark_label") as Label).text=""
@@ -151,6 +151,8 @@ func refresh()->void:
 	if int(Outpost.data.inventory.get(_selected,0))<=0:
 		_selected=str(_records[mini(_records.size()-1,_page*PAGE_SIZE)].id) if not _records.is_empty() else ""
 	_refresh_detail()
+	InteractionSkin.apply_tree(self,"warehouse")
+
 func _select(index:int)->void:
 	var actual=_page*PAGE_SIZE+index
 	if actual>=_records.size():return

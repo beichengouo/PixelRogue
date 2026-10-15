@@ -98,6 +98,8 @@ func _build_camp_ui()->void:
 	for option in [["继续营地",_close_pause],["设置",func()->void:_close_pause();menu.open_settings()],["返回主菜单",func()->void:_close_pause();_leave_camp();back_requested.emit()]]:
 		var button:=PixelUi.button(str(option[0]),20);button.pressed.connect(option[1]);column.add_child(button)
 	_pause_root.hide();_copy_trial_inventory();_draft_signature=preparation.signature()
+	InteractionSkin.mount(_pause_root,"camp_pause",frame)
+
 func _close_pause()->void:_pause_root.hide();UIFlow.pop_screen(_pause)
 func _copy_trial_inventory()->void:
 	GameState.items.clear()

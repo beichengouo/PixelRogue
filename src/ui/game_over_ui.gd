@@ -60,7 +60,7 @@ func _build() -> void:
 	_root.theme = PixelUi.theme()
 	add_child(_root)
 	_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	_root.add_child(UiFactory.dim_layer(0.82))
+	_root.add_child(UiFactory.dim_layer(0.42))
 
 	_canvas = StarUi.frame(_root, Vector2(920, 620))
 	var panel := PixelUi.panel()
@@ -125,6 +125,7 @@ func _build() -> void:
 		hide_ui()
 		menu_requested.emit())
 	footer.add_child(quit)
+	InteractionSkin.mount(_root,"result",panel)
 
 func _start_presentation() -> void:
 	_presentation_epoch += 1

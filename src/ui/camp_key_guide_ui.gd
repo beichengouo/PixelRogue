@@ -5,7 +5,7 @@ var _status:Label
 var _rows:GridContainer
 func _ready()->void:
 	layer=45;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
-	var root:=UiFactory.full_rect();add_child(root);root.add_child(UiFactory.dim_layer(.68))
+	var root:=UiFactory.full_rect();add_child(root);root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(root,Vector2(740,640))
 	var panel:=PanelContainer.new();panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);panel.add_theme_stylebox_override("panel",InteractionSkin.style("guide"));frame.add_child(panel);InteractionSkin.attach_glass(panel)
 	var body:=UiFactory.vbox(14);panel.add_child(body)
@@ -20,6 +20,8 @@ func _ready()->void:
 	_status=PixelUi.label("",16,PixelUi.GOLD);body.add_child(_status)
 	var button:=PixelUi.button("开始营地引导",20);body.add_child(button);InteractionSkin.apply_button(button,"guide");button.pressed.connect(close)
 	UIFlow.push_screen(self);button.grab_focus.call_deferred()
+	InteractionSkin.mount(root,"guide",panel)
+
 func close()->void:
 	var previous:bool=bool(SaveService.data.get("input_guide_seen",false))
 	SaveService.data.input_guide_seen=true

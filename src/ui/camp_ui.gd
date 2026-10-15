@@ -28,7 +28,7 @@ var _line = 0
 var _rarity_filter = -1
 var _farewell = false
 var _scroll: ScrollContainer
-var _confirm: ConfirmationDialog
+var _confirm: GlassConfirmUI
 var _left: Control
 var _warehouse: WarehouseView
 var _feedback=""
@@ -54,7 +54,7 @@ func _ready() -> void:
 	art.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
 	art.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	_root.add_child(art)
-	_root.add_child(UiFactory.dim_layer(0.65))
+	_root.add_child(UiFactory.dim_layer(0.42))
 	_canvas=StarUi.frame(_root,Vector2(1160,654))
 	var row=UiFactory.hbox(24)
 	row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -105,7 +105,7 @@ func _ready() -> void:
 	_body=UiFactory.vbox(10)
 	_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(_body)
-	_confirm=ConfirmationDialog.new()
+	_confirm=GlassConfirmUI.new()
 	_confirm.title="放弃挂起的出征"
 	_confirm.dialog_text="本局带入装备、金币与未撤物资将全部损失。是否放弃并准备新出征？"
 	_confirm.confirmed.connect(func()->void:
@@ -114,6 +114,7 @@ func _ready() -> void:
 	add_child(_confirm)
 	_root.visible=false
 	Outpost.changed.connect(_on_outpost_changed)
+	InteractionSkin.mount(_root,"camp",_canvas)
 
 func _on_outpost_changed() -> void:
 	if is_open(): _refresh.call_deferred()
@@ -160,7 +161,7 @@ func open(result = false) -> void:
 func is_open() -> bool:return _root.visible
 func close() -> void:
 	var was_open:=is_open()
-	if is_instance_valid(_confirm): _confirm.hide()
+	if is_instance_valid(_confirm): _confirm.close()
 	if is_instance_valid(_warehouse):_warehouse.cancel_dialog()
 	ComicMotion.cancel(_canvas)
 	_root.visible=false
@@ -210,7 +211,8 @@ func _refresh() -> void:
 		_body.remove_child(child)
 		if child==_warehouse:_page_cache.add_child(child);child.hide()
 		else:child.queue_free()
-	for button in _tabs: PixelUi.apply_tab_style(button,str(button.get_meta("camp_page"))==_page)
+	for button in _tabs:
+		button.set_meta("interaction_selected",str(button.get_meta("camp_page"))==_page);InteractionSkin.apply_button(button,"camp")
 	_status.text="金库 %d 金 · %s\n%s" % [Outpost.gold(),RunDifficulty.title(difficulty),_feedback if not _feedback.is_empty() else "死亡不追回装备与随身金币"]
 	match _page:
 		"prepare":_prepare()
@@ -220,6 +222,7 @@ func _refresh() -> void:
 		"relations":_relations()
 		"result":_result()
 	_restore_page_focus.call_deferred(token,scroll)
+	InteractionSkin.apply_tree(_body,"camp")
 
 func _prepare() -> void:
 	if str(Outpost.data.get("active",{}).get("status",""))=="dead":

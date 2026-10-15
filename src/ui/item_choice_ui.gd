@@ -279,6 +279,7 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	# 外层 holder：不放容器里排版，方便挂"比卡片大一圈"的流光
 	var holder := Button.new()
 	holder.name = "RewardCard%d" % index
+	holder.set_meta("glass_skip_style",true)
 	holder.button_mask = 0 # Keyboard/gamepad use Button; pointer taps are guarded above.
 	holder.focus_mode = Control.FOCUS_ALL
 	holder.set_meta("focus_token", "reward:" + str(index))
@@ -289,9 +290,6 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	holder.mouse_filter = Control.MOUSE_FILTER_STOP
 	holder.pivot_offset = holder.custom_minimum_size * 0.5
 
-	if rarity >= 1 and not ComicMotion.reduced():
-		holder.add_child(_build_glow(color))
-
 	var card := PanelContainer.new()
 	card.position = Vector2(GLOW_PAD, GLOW_PAD)
 	card.custom_minimum_size = CARD_SIZE
@@ -301,6 +299,8 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	for side in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]: frame.set_content_margin(side, 24)
 	card.add_theme_stylebox_override("panel", frame)
 	holder.add_child(card)
+	InteractionSkin.surface(card,"reward")
+	(card.get_node("GlassEdgeGlow") as Node2D).modulate=color
 
 	var column := UiFactory.vbox(8)
 	column.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -421,7 +421,7 @@ func _build() -> void:
 	_root.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	add_child(_root)
 	_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	_root.add_child(UiFactory.dim_layer(0.78))
+	_root.add_child(UiFactory.dim_layer(0.42))
 
 	_canvas = StarUi.frame(_root, Vector2(1060, 656))
 	_column = UiFactory.vbox(18)
@@ -446,4 +446,5 @@ func _build() -> void:
 	tip.custom_minimum_size = Vector2(0.0, 38.0)
 	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	column.add_child(tip)
+	InteractionSkin.mount(_root,"reward")
 

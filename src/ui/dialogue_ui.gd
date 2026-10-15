@@ -415,7 +415,7 @@ func _build() -> void:
 	_root.theme = PixelUi.theme()
 	add_child(_root)
 	var shade := ColorRect.new()
-	shade.color = Color(0.025, 0.055, 0.08, 0.79)
+	shade.color = Color(0.025, 0.055, 0.08, 0.48)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_root.add_child(shade)
@@ -436,10 +436,10 @@ func _build() -> void:
 	_root.add_child(_skip_button)
 	_bubble = PixelUi.panel()
 	var bubble_style := PixelUi.plate(4)
-	bubble_style.content_margin_left = 76
-	bubble_style.content_margin_right = 64
-	bubble_style.content_margin_top = 72
-	bubble_style.content_margin_bottom = 42
+	bubble_style.content_margin_left = 28
+	bubble_style.content_margin_right = 28
+	bubble_style.content_margin_top = 22
+	bubble_style.content_margin_bottom = 22
 	_bubble.add_theme_stylebox_override("panel", bubble_style)
 	_root.add_child(_bubble)
 	var column := UiFactory.vbox(10)
@@ -487,6 +487,7 @@ func _build() -> void:
 	_choice_scroll.add_child(_choice_box)
 	_root.resized.connect(_layout)
 	_layout.call_deferred()
+	InteractionSkin.mount(_root,"dialogue",_bubble);InteractionSkin.surface(_side,"dialogue",false)
 
 func _layout() -> void:
 	if _bubble == null: return

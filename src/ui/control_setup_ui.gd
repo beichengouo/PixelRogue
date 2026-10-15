@@ -6,7 +6,7 @@ var _status:Label
 var _aim_guide:CheckButton
 func _ready()->void:
 	layer=45;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
-	_root=UiFactory.full_rect();add_child(_root);_root.add_child(UiFactory.dim_layer(.7))
+	_root=UiFactory.full_rect();add_child(_root);_root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(_root,Vector2(680,510));var body:=UiFactory.vbox(20);body.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);frame.add_child(body)
 	body.add_child(PixelUi.title("选择你的攻击方式",28))
 	var description:=PixelUi.label("左侧摇杆移动，右侧摇杆瞄准连射；技能、闪避和交互使用独立触屏按钮。攻击方式只能在营地或安全房间更改。" if MobileControls.enabled() else "移动、技能和闪避使用同一套按键。攻击方式可在营地或安全房间的设置里更改。",18);description.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.add_child(description)
@@ -17,6 +17,8 @@ func _ready()->void:
 	for option in options:
 		var mode:String=option[0];var button:=PixelUi.button(str(option[1]),19);body.add_child(button);button.pressed.connect(select_mode.bind(mode))
 	_status=PixelUi.label("",16,PixelUi.GOLD);body.add_child(_status);UIFlow.push_screen(self);PixelUi.focus_button(_root)
+	InteractionSkin.mount(_root,"controls",frame)
+
 func select_mode(mode:String)->bool:
 	if mode not in RoomInput.ATTACK_MODES:return false
 	if bool(SaveService.data.get("control_setup_done",false)) and not RoomInput.can_change_attack_mode():_status.text="只能在营地或安全房间更换攻击方式。";return false

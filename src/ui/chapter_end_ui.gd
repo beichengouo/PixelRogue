@@ -22,7 +22,7 @@ func _ready() -> void:
 	_root = UiFactory.full_rect()
 	_root.theme = PixelUi.theme()
 	add_child(_root)
-	_root.add_child(UiFactory.dim_layer(0.8))
+	_root.add_child(UiFactory.dim_layer(0.42))
 	var canvas := StarUi.frame(_root, Vector2(980, 640))
 	_canvas = canvas
 	var panel := PixelUi.panel()
@@ -82,6 +82,7 @@ func _ready() -> void:
 		close(); restart_requested.emit())
 	row.add_child(retry)
 	_root.visible = false
+	InteractionSkin.mount(_root,"result",panel)
 
 func open(snapshot: Dictionary) -> void:
 	_root.visible = true

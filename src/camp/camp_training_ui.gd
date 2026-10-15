@@ -6,13 +6,15 @@ var _body:VBoxContainer
 var _message:Label
 func _ready()->void:
 	layer=31;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
-	_root=UiFactory.full_rect();_root.theme=PixelUi.theme();add_child(_root);_root.add_child(UiFactory.dim_layer(.45))
+	_root=UiFactory.full_rect();_root.theme=PixelUi.theme();add_child(_root);_root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(_root,Vector2(1000,650));var panel:=PixelUi.inset_panel(20);panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);frame.add_child(panel)
 	var outer:=UiFactory.vbox(10);panel.add_child(outer);outer.add_child(PixelUi.title("回廊训练场",28))
 	_message=PixelUi.label("训练配置不会带入正式冒险 · 试穿不扣库存",16,PixelUi.GOLD);outer.add_child(_message)
 	var scroll:=ScrollContainer.new();scroll.custom_minimum_size.y=470;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.follow_focus=true;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;outer.add_child(scroll)
 	_body=UiFactory.vbox(10);_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(_body)
 	var close_button:=PixelUi.button("返回营地",18);close_button.pressed.connect(close);outer.add_child(close_button);_root.hide()
+	InteractionSkin.mount(_root,"training",panel)
+
 func is_open()->bool:return _root.visible
 func open()->void:
 	if not UIFlow.can_open(self):return

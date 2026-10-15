@@ -46,7 +46,7 @@ var _binding_capture:=""
 var _binding_button:Button
 var _binding_status:Label
 var _binding_buttons:Dictionary={}
-var _abandon_confirm:ConfirmationDialog
+var _abandon_confirm:GlassConfirmUI
 var _release_notes:ReleaseNotesUI
 
 func open_release_notes()->void:
@@ -60,7 +60,7 @@ func _ready() -> void:
 	layer = 30
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	_build()
-	_abandon_confirm=ConfirmationDialog.new();_abandon_confirm.title="放弃当前出征？"
+	_abandon_confirm=GlassConfirmUI.new();_abandon_confirm.title="放弃当前出征？"
 	_abandon_confirm.dialog_text="本局带出的装备、药剂、随身金币及尚未撤回的收获将遗失。营地金库、剩余仓库、关系与委托保留。是否放弃原存档并选择新角色？"
 	_abandon_confirm.get_ok_button().text="放弃并选择角色";_abandon_confirm.get_cancel_button().text="取消"
 	_abandon_confirm.about_to_popup.connect(func()->void:_abandon_confirm.get_cancel_button().grab_focus.call_deferred())
@@ -99,6 +99,7 @@ func open_settings() -> void:
 	_show_view(View.SETTINGS, true)
 
 func close(immediate := true) -> void:
+	if is_instance_valid(_abandon_confirm):_abandon_confirm.close()
 	_binding_capture=""
 	if not immediate and is_open():
 		if _menu_closing: return
@@ -237,6 +238,8 @@ func _restore_scroll(view: View) -> void:
 		scrolls[i].scroll_vertical = saved[i].y
 
 func _render_view(view: View) -> void:
+	InteractionSkin.unmount(_content);InteractionSkin.clear_surface(_backdrop)
+	_backdrop.add_theme_stylebox_override("panel",PixelUi.plate(4))
 	_view = view
 	if not _settings_only and is_open(): AudioManager.play_menu(view != View.MAIN)
 	if _artbook != null:
@@ -254,6 +257,8 @@ func _render_view(view: View) -> void:
 		View.RECORD: _build_record()
 		View.ITEMS: _build_items()
 		View.MONSTERS: _build_monsters()
+	if view not in [View.MAIN,View.CHARACTER]:
+		InteractionSkin.mount(_content,"menu");_backdrop.visible=true;InteractionSkin.surface(_backdrop,"menu")
 	_restore_scroll.call_deferred(view)
 
 func _input(event: InputEvent) -> void:

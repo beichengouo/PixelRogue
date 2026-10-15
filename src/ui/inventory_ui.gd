@@ -251,11 +251,11 @@ func _place_layout(node:Control,rect:Rect2)->void:
 	UiArtLayout.register("inventory",node,rect,str(node.get_meta("art_layout_id","")))
 
 func _build() -> void:
-	_root=UiFactory.full_rect();_root.theme=PixelUi.theme();add_child(_root);_root.add_child(UiFactory.dim_layer(.6))
+	_root=UiFactory.full_rect();_root.theme=PixelUi.theme();add_child(_root);_root.add_child(UiFactory.dim_layer(0.42))
 	_shell=preload("res://src/ui/inventory_shell.tscn").instantiate();_root.add_child(_shell)
 	_panel=_shell.get_node("Panel");_panel.set_meta("ui_layout_canvas",true);_panel.add_theme_stylebox_override("panel",InteractionSkin.style("inventory"))
 	var content:=_shell.get_node("Panel/Content") as Control
-	var items_glass:=Panel.new();items_glass.mouse_filter=Control.MOUSE_FILTER_IGNORE;content.add_child(items_glass);_place_layout(items_glass,Rect2(47,235,894,636));content.move_child(items_glass,0);InteractionSkin.attach_glass(items_glass)
+	var items_glass:=Panel.new();items_glass.mouse_filter=Control.MOUSE_FILTER_IGNORE;content.add_child(items_glass);_place_layout(items_glass,Rect2(47,235,894,636));content.move_child(items_glass,0);items_glass.add_theme_stylebox_override("panel",InteractionSkin.style("inventory"))
 	_portrait_node=_shell.get_node("Portrait");(_portrait_node as TextureRect).texture=load(Characters.portrait_path());_portrait_node.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 	_portrait_node.mouse_filter=Control.MOUSE_FILTER_STOP
 	_portrait_node.gui_input.connect(func(event:InputEvent)->void:
@@ -292,6 +292,7 @@ func _build() -> void:
 		var ok:=GameState.bind_inventory_equipment(_selected);_rebuild();ComicMotion.feedback(_shell,"装备已绑定" if ok else "无法绑定，未扣费"))
 	close_button.pressed.connect(close)
 	get_viewport().size_changed.connect(_layout_shell);_layout_shell()
+	InteractionSkin.mount(_root,"inventory",_panel)
 
 func _layout_shell() -> void:
 	if _shell==null:return

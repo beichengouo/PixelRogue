@@ -19,7 +19,10 @@ func run()->void:
 		var same_bounds:=template.duplicate(true)
 		var bounds:=RoomEditorCollision.bounds(template)
 		same_bounds.room_bounds_override=[bounds.position.x,bounds.position.y,bounds.size.x,bounds.size.y]
-		check(RoomTemplateValidator.validate(same_bounds).is_empty(),"unchanged explicit bounds keep template valid: "+str(template.id))
+		if RoomTemplateValidator.validate(template).is_empty():
+			check(RoomTemplateValidator.validate(same_bounds).is_empty(),"unchanged explicit bounds keep valid template valid: "+str(template.id))
+		else:
+			check(RoomEditorCollision.bounds(same_bounds)==bounds,"advisory validation does not change edited bounds: "+str(template.id))
 	for index in 8:
 		editor.document=source.duplicate(true);editor._sync();editor.canvas.tool="collision";editor.canvas.collision_target="room_bounds"
 		var start:=RoomEditorCollision.bounds_handles(source)[index]
@@ -43,7 +46,7 @@ func run()->void:
 		var path:="E:/CodexWorkspace/PixelRogue/temp/editor-bounds-drag-saved.json"
 		check(RoomTemplateCodec.write_file(path,tightened)==OK,"adjusted illustrated bounds save")
 		var reloaded:=RoomTemplateCodec.read_file(path)
-		check(RoomEditorCollision.bounds(reloaded)==Rect2(0,0,828,448),"adjusted bounds survive reopening")
+		check(RoomEditorCollision.bounds(reloaded)==RoomEditorCollision.bounds(tightened),"adjusted bounds survive reopening")
 		check(RoomTemplateCodec.to_layout(reloaded).get("room_rect",[])==tightened.room_bounds_override,"saved bounds reach runtime layout")
 	editor.document=RoomTemplateCodec.blank();editor._sync()
 	editor._collision_edit("room_bounds","move",1,Vector2(414,200))

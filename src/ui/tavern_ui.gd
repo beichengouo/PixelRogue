@@ -310,6 +310,7 @@ func _build() -> void:
 	_place(leave, Rect2(995,639,240,61))
 	UiArtLayout.refresh(_canvas)
 	InteractionSkin.apply_tree(_canvas,"tavern")
+	InteractionSkin.mount(_root,"tavern");InteractionSkin.surface(offers_panel,"tavern");InteractionSkin.surface(hired_panel,"tavern")
 
 func expedition_snapshot() -> Dictionary:
 	var bought: Array = []

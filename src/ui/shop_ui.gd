@@ -496,6 +496,7 @@ func _plate(parent: Control, rect: Rect2, opacity := 0.94) -> Panel:
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	panel.add_theme_stylebox_override("panel", _drawn_style(true, Color(1, 1, 1, opacity)))
 	_place(parent, panel, rect)
+	InteractionSkin.surface(panel,"shop")
 	return panel
 
 func _drawn_style(_panel:bool,tint:=Color.WHITE)->StyleBoxFlat:
@@ -607,7 +608,7 @@ func _build() -> void:
 	_place(_canvas, _close_button, Rect2(995,639,240,61))
 	UiArtLayout.refresh(_canvas)
 	InteractionSkin.apply_tree(_canvas,"shop")
-
+	InteractionSkin.mount(_root,"shop")
 
 class ShopSky extends Control:
 	func _ready() -> void:

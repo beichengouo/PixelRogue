@@ -11,7 +11,7 @@ var _closing:=false
 var _prize_icons:HBoxContainer
 func _ready()->void:
 	process_mode=Node.PROCESS_MODE_ALWAYS;layer=44;set_meta("blocking_screen",true)
-	var root:=UiFactory.full_rect();add_child(root);root.add_child(UiFactory.dim_layer(.62))
+	var root:=UiFactory.full_rect();add_child(root);root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(root,Vector2(760,620));var column:=UiFactory.vbox(10);frame.add_child(column);column.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	column.add_child(PixelUi.title(str(controller.TITLES[machine]),28))
 	var rules:=PixelUi.label("每间房每台装置只能游玩一次。",18);rules.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(rules)
@@ -30,6 +30,8 @@ func _ready()->void:
 	if _play.disabled:_result.text="这台装置已使用过，下一间游戏房可以再次游玩。"
 	var close_button:=PixelUi.button("返回房间",20);column.add_child(close_button);close_button.pressed.connect(close)
 	UIFlow.push_screen(self);(_digits if _digits!=null else close_button).grab_focus.call_deferred()
+	InteractionSkin.mount(root,"machine",frame)
+
 func _run()->void:
 	if _play.disabled:return
 	var result:=controller.play(machine,int(_stake.value) if _stake!=null else 500,_digits.text if _digits!=null else "")

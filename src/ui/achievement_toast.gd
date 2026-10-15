@@ -15,6 +15,8 @@ func _ready()->void:
 		var label:=PixelUi.label(str(entry[0]),int(entry[1]),entry[2]);label.mouse_filter=Control.MOUSE_FILTER_IGNORE;label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;text.add_child(label)
 	get_viewport().size_changed.connect(_fit);_fit()
 	AudioManager.play(&"achievement_unlock",-5,0)
+	InteractionSkin.surface(_panel,"achievement")
+
 func _fit()->void:
 	var view:=get_viewport().get_visible_rect()
 	var factor:=minf(DISPLAY_SCALE,(view.size.x-32)/400.0)

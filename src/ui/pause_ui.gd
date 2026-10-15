@@ -66,7 +66,7 @@ func _input(event: InputEvent) -> void:
 func _build() -> void:
 	_root = UiFactory.full_rect()
 	add_child(_root)
-	_root.add_child(UiFactory.dim_layer(0.55))
+	_root.add_child(UiFactory.dim_layer(0.42))
 	_root.theme = PixelUi.theme()
 	var canvas := StarUi.frame(_root, Vector2(860, 500))
 	_panel = PixelUi.panel()
@@ -117,6 +117,7 @@ func _build() -> void:
 	_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_status.custom_minimum_size.y = 44
 	right.add_child(_status)
+	InteractionSkin.mount(_root,"pause",_panel)
 
 func _on_menu_pressed() -> void:
 	close()

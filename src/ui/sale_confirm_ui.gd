@@ -10,7 +10,7 @@ var _cancel:Button
 func _ready()->void:
 	layer=45;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
 	_root=UiFactory.full_rect();_root.theme=PixelUi.theme();add_child(_root)
-	_root.add_child(UiFactory.dim_layer(0.75))
+	_root.add_child(UiFactory.dim_layer(0.42))
 	_panel=StarUi.frame(_root,Vector2(700,490))
 	var plate=PixelUi.inset_panel(20);plate.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);_panel.add_child(plate)
 	var box=UiFactory.vbox(14);plate.add_child(box)
@@ -25,6 +25,8 @@ func _ready()->void:
 	accept.set_meta("focus_token","warehouse_batch")
 	accept.pressed.connect(func()->void:if _open:close();confirmed.emit())
 	_root.hide()
+	InteractionSkin.mount(_root,"confirm",plate)
+
 func open(text:String)->void:
 	_text.text=text;_open=true;_root.show();UIFlow.push_screen(self);_cancel.grab_focus();ComicMotion.reveal(_panel)
 func is_open()->bool:return _open

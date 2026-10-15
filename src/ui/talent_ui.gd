@@ -211,7 +211,7 @@ func _set_zoom(value: float) -> void:
 func _build() -> void:
 	_root = UiFactory.full_rect()
 	add_child(_root)
-	_root.add_child(UiFactory.dim_layer(0.58))
+	_root.add_child(UiFactory.dim_layer(0.42))
 	_canvas = StarUi.frame(_root, Vector2(1200, 640))
 	var panel := PixelUi.panel()
 	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -287,6 +287,7 @@ func _build() -> void:
 	_detail_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	detail_scroll.add_child(_detail_box)
 	_set_zoom(_zoom)
+	InteractionSkin.mount(_root,"talents",panel)
 
 func _fit_tree() -> void:
 	await get_tree().process_frame

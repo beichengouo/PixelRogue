@@ -1,5 +1,7 @@
 class_name LayerArtCatalog
 extends RefCounted
+static func _asset_path(root:String,path:String)->String:
+	return path if path.begins_with("res://") else root+"/"+path
 static func _pngs(root:String)->Array[String]:
 	var result:Array[String]=[];var dir:=DirAccess.open(root)
 	if dir==null:return result
@@ -15,11 +17,11 @@ static func documents()->Array[Dictionary]:
 		var root:=RoomSceneArtCatalog.ROOT+id;var layers:Array=[];var used:Dictionary={}
 		var canvas:Array=data.get("canvas",[1536,1024])
 		for plane in data.get("planes",[]):
-			var path:=root+"/"+str(plane.get("path",""));var label:=str(plane.get("layer","background" if layers.is_empty() else path.get_file()));used[path]=true;layers.append({"name":label,"path":path,"rect":[0,0,canvas[0],canvas[1]],"locked":label=="background","visible":true})
+			var path:=_asset_path(root,str(plane.get("path","")));var label:=str(plane.get("layer","background" if layers.is_empty() else path.get_file()));used[path]=true;layers.append({"name":label,"path":path,"rect":[0,0,canvas[0],canvas[1]],"locked":label=="background","visible":true})
 		for direction in data.get("gates",{}):
-			var gate:Dictionary=data.gates[direction];var path:=root+"/"+str(gate.path);used[path]=true;layers.append({"name":"门 · "+direction,"path":path,"rect":gate.get("rect_px",[0,0,100,100]),"locked":false,"visible":true})
+			var gate:Dictionary=data.gates[direction];var path:=_asset_path(root,str(gate.path));used[path]=true;layers.append({"name":"门 · "+direction,"path":path,"rect":gate.get("rect_px",[0,0,100,100]),"locked":false,"visible":true})
 		for object in data.get("objects",[]):
-			var path:=root+"/"+str(object.get("texture",""))
+			var path:=_asset_path(root,str(object.get("texture","")))
 			if not path.ends_with(".png"):continue
 			used[path]=true;layers.append({"name":str(object.get("id","物件")),"path":path,"rect":object.get("source_rect_px",[0,0,100,100]),"locked":false,"visible":true})
 		for path in _pngs(root):

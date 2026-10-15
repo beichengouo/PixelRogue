@@ -7,10 +7,12 @@ var _body:VBoxContainer
 var _status:Label
 func _ready()->void:
 	layer=32;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
-	_root=UiFactory.full_rect();add_child(_root);_root.add_child(UiFactory.dim_layer(.55))
+	_root=UiFactory.full_rect();add_child(_root);_root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(_root,Vector2(720,500))
 	var scroll:=ScrollContainer.new();scroll.follow_focus=true;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;frame.add_child(scroll);scroll.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_body=UiFactory.vbox(14);_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(_body);_root.hide()
+	InteractionSkin.mount(_root,"resident",frame)
+
 func is_open()->bool:return _root.visible
 func open_for(npc:CampResident)->void:
 	if UIFlow.has_screen() or not is_instance_valid(npc):return

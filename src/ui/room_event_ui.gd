@@ -7,7 +7,7 @@ var buttons:VBoxContainer
 var _closing:=false
 func _ready()->void:
 	layer=44;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
-	var root:=UiFactory.full_rect();add_child(root);root.add_child(UiFactory.dim_layer(.62))
+	var root:=UiFactory.full_rect();add_child(root);root.add_child(UiFactory.dim_layer(0.42))
 	var frame:=StarUi.frame(root,Vector2(920,620));var row:=UiFactory.hbox(20);frame.add_child(row);row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var portrait:=TextureRect.new();portrait.texture=load(Characters.portrait_path());portrait.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;portrait.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;portrait.custom_minimum_size=Vector2(245,380);row.add_child(portrait)
 	column=UiFactory.vbox(12);column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(column)
@@ -16,6 +16,8 @@ func _ready()->void:
 	buttons=UiFactory.vbox(10);column.add_child(buttons);_refresh()
 	var close_button:=PixelUi.button("暂时合上 · 靠近遗留物可继续",17);column.add_child(close_button);close_button.pressed.connect(close)
 	UIFlow.push_screen(self)
+	InteractionSkin.mount(root,"event",frame)
+
 func _refresh()->void:
 	for child in buttons.get_children():buttons.remove_child(child);child.queue_free()
 	var stage:=int(controller.state.dialogue);var id:=str(controller.state.event_id)
