@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3]
-[ext_resource type="Texture2D" path="res://assets/backgrounds/forest_4.png" id="1"]
-[node name="BgForest4" type="Sprite2D"]
-z_index = -30
-texture_filter = 2
-scale = Vector2(1, 1)
-texture = ExtResource("1")

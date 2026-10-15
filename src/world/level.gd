@@ -1,6 +1,6 @@
 class_name Level
 extends Node2D
-## Shared spatial interface. RoomLevel implements gameplay; level.tscn remains an editor asset palette.
+## Shared spatial interface used by current RoomLevel gameplay and editor validation.
 const TILE:=36
 @export var playable_cells:=Rect2i()
 @export var map_version:=0

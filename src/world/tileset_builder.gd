@@ -1,6 +1,6 @@
 class_name TileSetBuilder
 extends RefCounted
-## 用代码构建 Kenney 素材的 TileSet（只负责画面）。
+## Retained atlas-coordinate helper for legacy item icons and old-save compatibility.
 ##
 ## 为什么碰撞不写进 TileSet：
 ##   悬空平台需要「单向碰撞」，而这是由格子在地图里的上下文决定的

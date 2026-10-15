@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bvisionshots1"]
-
-[ext_resource type="Script" path="res://tools/vision_shots.gd" id="1_shots"]
-
-[node name="VisionShots" type="Node"]
-script = ExtResource("1_shots")

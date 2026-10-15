@@ -1,6 +1,0 @@
-[gd_scene format=3]
-
-[ext_resource type="Script" path="res://src/environment/water_area.gd" id="1_mdar4"]
-
-[node name="ShallowWater" type="Node2D" unique_id=724791948]
-script = ExtResource("1_mdar4")

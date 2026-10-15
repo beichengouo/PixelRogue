@@ -1,51 +1,17 @@
 extends SceneTree
-## 自检脚本：确认输入映射、自动加载单例、关卡数据都正常。
-## 用法：--headless --path . --script res://tools/verify_project.gd
-
-const EXPECTED_ACTIONS := [
-	"move_left", "move_right", "jump", "attack", "dash",
-	"interact", "start_wave", "restart", "pause_menu",
-]
-
-
-func _initialize() -> void:
-	call_deferred("_verify")
-
-func _verify() -> void:
-	var failed := 0
-
-	for action: String in EXPECTED_ACTIONS:
-		if not InputMap.has_action(action):
-			printerr("缺少输入动作：%s" % action)
-			failed += 1
-		else:
-			var events := InputMap.action_get_events(action)
-			if events.is_empty():
-				printerr("输入动作没有绑定按键：%s" % action)
-				failed += 1
-
-	var rows: Array = LevelData.ROWS
-	var width: int = String(rows[0]).length()
-	for i in rows.size():
-		if String(rows[i]).length() != width:
-			printerr("关卡第 %d 行长度不一致" % i)
-			failed += 1
-
-	var rng := RandomNumberGenerator.new()
-	rng.seed = 12345
-	# ItemDB uses autoloads; resolve it after SceneTree has initialized them.
-	var database: GDScript = load("res://src/data/item_db.gd")
-	var offers: Array = database.roll_offers(3, rng)
-	if offers.size() != 3:
-		printerr("道具抽取异常，只抽到 %d 件" % offers.size())
-		failed += 1
-
-	var wave5 := WaveTable.build(5)
-	if int(wave5["total"]) <= 0:
-		printerr("第 5 波没有敌人")
-		failed += 1
-
-	if failed == 0:
-		print("[verify_project] 全部检查通过：%d 个输入动作 / 关卡 %d 行 x %d 列 / 第 5 波 %d 只怪"
-			% [EXPECTED_ACTIONS.size(), rows.size(), width, int(wave5["total"])])
-	quit(0 if failed == 0 else 1)
+## Read-only entrypoint/input/catalogue smoke check; use an isolated user-data directory.
+const EXPECTED_ACTIONS:=["dash","interact","inventory","talents","pause_menu","skill_1","skill_2","skill_3","ultimate","call_goddess"]
+func _initialize()->void:call_deferred("_verify")
+func _verify()->void:
+	var failed:=0
+	for action in EXPECTED_ACTIONS:
+		if not InputMap.has_action(action):printerr("缺少输入动作：",action);failed+=1
+	for path in ["res://src/main/game_shell.tscn","res://src/room_mode/room_main.tscn","res://tools/room_editor/room_editor.tscn","res://assets/room_templates/camp_starlight_corridor.json","res://data/items.json"]:
+		if not ResourceLoader.exists(path) and not FileAccess.file_exists(path):printerr("缺少当前工程入口或数据：",path);failed+=1
+	var camp:Variant=JSON.parse_string(FileAccess.get_file_as_string("res://assets/room_templates/camp_starlight_corridor.json"))
+	if not camp is Dictionary or str(camp.get("id",""))!="camp_starlight_corridor":printerr("营地模板格式错误");failed+=1
+	var items:Variant=JSON.parse_string(FileAccess.get_file_as_string("res://data/items.json"))
+	if items is Dictionary:items=items.get("items",[])
+	if not items is Array or items.is_empty():printerr("物品目录为空或格式错误");failed+=1
+	if failed==0:print("[verify_project] 当前俯视工程入口、输入动作、营地模板与物品目录检查通过")
+	quit(1 if failed else 0)
