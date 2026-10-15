@@ -17,7 +17,7 @@ static func _append(rows: Array[Dictionary], id: String, remaining: float, detai
 	rows.append({"id": key if not key.is_empty() else id, "icon_id": id,
 		"name": str(info.name), "description": detail if not detail.is_empty() else str(info.description),
 		"remaining": remaining, "permanent":permanent,"stacks": stacks, "debuff": harmful or bool(info.get("debuff", false)),
-		"icon": "res://assets/player_status_v01/" + id + ".png"})
+		"icon": str(info.get("icon","res://assets/player_status_v01/" + id + ".png"))})
 
 static func snapshot(actor: Player) -> Array[Dictionary]:
 	var rows: Array[Dictionary] = []
@@ -68,6 +68,10 @@ static func snapshot(actor: Player) -> Array[Dictionary]:
 		var player := actor as RoomPlayer
 		var gear := player.equipment_mechanics
 		if is_instance_valid(gear):
+			if gear.has(&"amber_pendulum"):_append(rows,"amber_pendulum",gear.wayfarer.pendulum_until-gear.clock,"下一次小技能伤害增加%.0f%%，施放后消耗。"%(16*gear.scale(&"amber_pendulum")))
+			var single:=gear.legendary
+			for entry in [["circlet_memory","eternal_circlet",single.circlet_until,single.circlet_hits],["covenant_beats","covenant_bells",single.covenant_until,single.covenant_hits],["lakeleaf_stacks","lakeleaf_guard",single.lakeleaf_until,single.lakeleaf_hits],["moonwind_echo","moonwind_chime",single.chime_until,single.chime_echoes]]:
+				if gear.has(StringName(entry[1])) and int(entry[3])>0:_append(rows,str(entry[0]),float(entry[2])-gear.clock,"",int(entry[3]))
 			var cadence:=gear.cadence
 			for entry in [["storm_conductor",cadence.storm_until,cadence.storm_hits],["mana_reservoir",cadence.reservoir_until,cadence.reservoir_charges],["orbit_guard",cadence.ally_until,cadence.ally_hits],["cadence_prism",cadence.cadence_until,cadence.cadence_stacks],["copper_metre",cadence.metre_until,cadence.metre_hits],["wayfarer_score",cadence.score_until,cadence.score_hits]]:
 				if gear.has(StringName(entry[0])) and (int(entry[2])>0 or (str(entry[0])=="cadence_prism" and cadence.cadence_kind>0)):_append(rows,str(entry[0]),float(entry[1])-gear.clock,"",int(entry[2]))

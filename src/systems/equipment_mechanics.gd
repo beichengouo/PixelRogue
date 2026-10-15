@@ -23,12 +23,14 @@ var current_room_id:=""
 var legendary:=LegendaryMechanics.new()
 var expansion:=ExpansionEquipment.new()
 var cadence:=CadenceEquipment.new()
+var wayfarer:=WayfarerRelics.new()
 
 func _ready() -> void:
 	if actor == null: actor = get_parent() as RoomPlayer
 	legendary.owner=self
 	expansion.owner=self
 	cadence.owner=self
+	wayfarer.owner=self
 	EventBus.equipment_changed.connect(refresh)
 	EventBus.player_stats_changed.connect(refresh)
 	refresh()
@@ -37,6 +39,7 @@ func _process(delta: float) -> void:
 	clock += delta
 	legendary.tick()
 	cadence.tick()
+	wayfarer.tick(delta)
 	for key in cooldowns.keys():
 		if float(cooldowns[key]) <= clock: cooldowns.erase(key)
 	for key in ember_burst.keys():
@@ -78,6 +81,8 @@ func refresh() -> void:
 		if not item.is_empty(): _count_item(item)
 	if not has(&"patrol_bell"): patrol_until = 0.0
 	cadence.refresh()
+	legendary.refresh()
+	wayfarer.refresh()
 
 func _count_item(item: Dictionary) -> void:
 	for effect in item.get("mechanics", []):
@@ -103,6 +108,7 @@ func on_room_enter(room_id: String, uncleared_normal: bool) -> void:
 		if soul_mark!=null:_remove_marker(soul_mark.get_ref(),"soul")
 		star_marks.clear();dusk_marks.clear();ember_hits.clear();soul_mark=null
 		wind_until=0;tide_until=0;patrol_until=0;refract_charges=0;refract_ready=false
+		wayfarer.room_changed()
 	current_room_id=room_id
 	if not has(&"afterglow_note") or not uncleared_normal or not is_instance_valid(actor.room): return
 	var room_record: Dictionary = actor.room.record
@@ -139,6 +145,7 @@ func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: Roo
 	legendary.basic_hit(enemy,receipt)
 	expansion.basic(enemy,receipt)
 	cadence.basic(enemy,receipt)
+	wayfarer.basic(enemy,receipt)
 	if has(&"tide_pearl") and tide_until > clock and receipt != null and receipt.claim_effect(&"tide_pearl") and ready(&"tide_pearl"):
 		GameState.add_mp(3.0 * scale(&"tide_pearl")); tide_until = 0.0; start(&"tide_pearl", 3.0)
 	if has(&"refraction") and receipt != null and receipt.critical and receipt.claim_effect(&"refract_charge"):
@@ -220,7 +227,7 @@ func on_basic_fired(direction: Vector2, receipt: BasicAttackReceipt) -> void:
 	bullet.explosion_ratio = 0.0
 
 func on_skill_cast(shield_cast: bool = false,id:StringName=&"") -> float:
-	var bonus := legendary.skill_cast(id)
+	var bonus := legendary.skill_cast(id)+wayfarer.skill(id)
 	expansion.skill(id)
 	cadence.skill(id)
 	if patrol_until > clock:
@@ -247,6 +254,7 @@ func on_skill_hit(enemy: EnemyBase, direct: bool = true) -> void:
 	if direct and is_instance_valid(enemy):expansion.skill_hit(enemy)
 	if not direct or not is_instance_valid(enemy): return
 	cadence.skill_hit(enemy)
+	wayfarer.skill_hit(enemy)
 	if is_instance_valid(actor.holy_runtime):actor.holy_runtime.on_direct_hit(enemy,1)
 	if has(&"scorch_bloom") and _live_enemy(enemy) and enemy._burn_time > 0.0 and ready(StringName("flower_%d" % enemy.get_instance_id())):
 		extra_damage(enemy, attack() * 0.25 * scale(&"scorch_bloom"), actor.global_position)
@@ -274,6 +282,7 @@ func on_enemy_damaged(_enemy: EnemyBase, _amount: float, _source: Node, _damage_
 	pass
 
 func on_enemy_died(enemy: EnemyBase, _source: Node, damage_type: StringName = &"") -> void:
+	wayfarer.enemy_died(enemy)
 	var burn_source: Node = enemy._burn_source.get_ref() if enemy._burn_source != null else null
 	var propagated:bool = burn_source is DamageContext and burn_source.owner_kind==&"spread_burn"
 	if has(&"ember_seed") and enemy._burn_time>0 and not propagated and damage_type!=&"equipment":
@@ -303,6 +312,7 @@ func on_contract_killed(unit: SummonedAlly, source: Node) -> void:
 func on_shield_broken() -> void:
 	expansion.shield_broken()
 	cadence.shield_broken()
+	wayfarer.shield_broken()
 	if not has(&"thorn_moon") or not ready(&"thorn_moon"): return
 	start(&"thorn_moon", 4.0)
 	area_damage(actor.global_position, 108.0, attack() * 0.9 * scale(&"thorn_moon"))
@@ -405,11 +415,12 @@ func snapshot() -> Dictionary:
 	var soul_id := str(soul_mark.get_ref().get_instance_id()) if soul_mark != null and is_instance_valid(soul_mark.get_ref()) else ""
 	var death_left: Array = []
 	for death_time in dusk_deaths: death_left.append(maxf(0.0, float(death_time) + 1.0 - clock))
-	return {"cadence":cadence.snapshot(),"expansion":expansion.snapshot(),"legendary":legendary.snapshot(),"ember_hits":saved_hits,"cooldowns": saved_cooldowns, "ember_burst": saved_ember, "star_marks": saved_star, "dusk_marks": saved_dusk, "soul_id": soul_id, "soul_left": maxf(0.0, soul_mark_until - clock), "dusk_deaths": death_left, "wind_left": maxf(0.0, wind_until - clock), "wind_dash_serial": wind_dash_serial, "wind_refunded_serial": wind_refunded_serial, "refract_charges": refract_charges, "refract_ready": refract_ready, "tide_left": maxf(0.0, tide_until - clock), "patrol_left": maxf(0.0, patrol_until - clock)}
+	return {"wayfarer":wayfarer.snapshot(),"cadence":cadence.snapshot(),"expansion":expansion.snapshot(),"legendary":legendary.snapshot(),"ember_hits":saved_hits,"cooldowns": saved_cooldowns, "ember_burst": saved_ember, "star_marks": saved_star, "dusk_marks": saved_dusk, "soul_id": soul_id, "soul_left": maxf(0.0, soul_mark_until - clock), "dusk_deaths": death_left, "wind_left": maxf(0.0, wind_until - clock), "wind_dash_serial": wind_dash_serial, "wind_refunded_serial": wind_refunded_serial, "refract_charges": refract_charges, "refract_ready": refract_ready, "tide_left": maxf(0.0, tide_until - clock), "patrol_left": maxf(0.0, patrol_until - clock)}
 
 func restore(data: Dictionary, restored_ids: Dictionary = {}) -> void:
 	expansion.restore(data.get("expansion",{}))
 	cadence.restore(data.get("cadence",{}))
+	wayfarer.restore(data.get("wayfarer",{}),restored_ids)
 	legendary.restore(data.get("legendary",{}))
 	current_room_id=str(data.get("current_room_id",actor.room.record.get("id","") if is_instance_valid(actor.room) else ""))
 	cooldowns.clear()

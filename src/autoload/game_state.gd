@@ -138,6 +138,8 @@ var runtime_node: Node
 var item_sequence := 0
 
 var run_epoch := 0
+var gm_pilot_used:=false
+var gm_pilot_active:=false
 var passive_id: StringName = &""
 var passive_rng := RandomNumberGenerator.new()
 
@@ -145,6 +147,7 @@ func new_run(seed_value: int = 0) -> void:
 	stats.status_owner = null
 	combat_mode = "rooms"
 	run_epoch += 1
+	gm_pilot_used=false;gm_pilot_active=false
 	passive_id = PassiveDefinitions.selected(Characters.current_id())
 	sortie_id = ""
 	difficulty = 1
@@ -1020,6 +1023,7 @@ func snapshot() -> Dictionary:
 		"temp_buffs": temp_buffs.duplicate(true),
 		"altar_blessings":altar_blessings.duplicate(true),
 		"legendary_looks":legendary_looks.duplicate(true),
+		"gm_pilot_used":gm_pilot_used,"gm_pilot_active":gm_pilot_active,
 		"achievement_run":achievement_run.duplicate(true),
 		"wave_exp_multiplier":wave_exp_multiplier,
 		"hotbar": potion_hotbar.map(func(item: Dictionary) -> String: return str(item.get("id", ""))),
@@ -1050,6 +1054,7 @@ func max_hp_value() -> float:
 func restore(snapshot_data: Dictionary) -> void:
 	achievement_run=snapshot_data.get("achievement_run",{}).duplicate(true)
 	legendary_looks=snapshot_data.get("legendary_looks",{}).duplicate(true)
+	gm_pilot_used=bool(snapshot_data.get("gm_pilot_used",false));gm_pilot_active=gm_pilot_used and bool(snapshot_data.get("gm_pilot_active",false))
 	altar_blessings=AltarBlessings.normalized(snapshot_data.get("altar_blessings",{}))
 	wave_exp_multiplier=clampf(float(snapshot_data.get("wave_exp_multiplier",1)),.6,1)
 	Characters.set_current(StringName(snapshot_data.get("character", String(Characters.DEFAULT_ID))))

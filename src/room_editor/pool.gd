@@ -81,8 +81,10 @@ func reload() -> void:
 func ensure_loaded_async(tree:SceneTree, keep_loading:Callable=Callable())->bool:
 	var paths:=_template_paths()
 	var signature:Dictionary={}
+	var frame_start:=Time.get_ticks_usec()
 	for path in paths:
-		await tree.process_frame
+		if Time.get_ticks_usec()-frame_start>=3000:
+			await tree.process_frame;frame_start=Time.get_ticks_usec()
 		if not keep_loading.is_null() and (not keep_loading.is_valid() or not bool(keep_loading.call())):return false
 		signature[path]=_file_signature(path)
 	if _use_cache(signature):return true
@@ -90,14 +92,15 @@ func ensure_loaded_async(tree:SceneTree, keep_loading:Callable=Callable())->bool
 	for path in paths:
 		# Validation can be expensive. Give the covering animation a frame
 		# between templates, and keep all Resource/SceneTree work on this thread.
-		await tree.process_frame
+		if Time.get_ticks_usec()-frame_start>=3000:
+			await tree.process_frame;frame_start=Time.get_ticks_usec()
 		if not keep_loading.is_null() and (not keep_loading.is_valid() or not bool(keep_loading.call())):return false
 		_accept_file(path)
 	_store_cache(signature)
 	return true
 
-func select(seed_value: int, kind:String,theme:String,chapter:StringName=ChapterCatalog.FIRST)->Dictionary:
-	var signature:=_signature(_template_paths())
+func select(seed_value: int, kind:String,theme:String,chapter:StringName=ChapterCatalog.FIRST,verify_changes:=true)->Dictionary:
+	var signature:=_signature(_template_paths()) if verify_changes else _loaded_signature
 	if not _cache_matches(signature):reload()
 	elif templates.is_empty() or _loaded_signature!=signature:_use_cache(signature)
 	var candidates: Array[Dictionary] = []

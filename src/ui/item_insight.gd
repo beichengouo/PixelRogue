@@ -1,7 +1,7 @@
 class_name ItemInsight
 extends RefCounted
 ## The same comparison is used by reward and shop descriptions.
-static func describe(item: Dictionary, include_activation := true) -> String:
+static func describe(item: Dictionary, include_activation := true, include_rules:=true) -> String:
 	if item.get("hire_token", false): return "选择后同行者立即加入队伍"
 	var count := 0
 	for owned in GameState.items:
@@ -9,7 +9,7 @@ static func describe(item: Dictionary, include_activation := true) -> String:
 	var lines: PackedStringArray = ["当前持有 %d 件" % count]
 	if not item.get("mechanics", []).is_empty():
 		for line in ItemDB.stat_lines(item): lines.append(line)
-		lines.append(str(item.get("desc", "")))
+		if include_rules:lines.append(str(item.get("desc", "")))
 		if str(item.get("requires_character", "")) == "xixifu": lines.append("仅希希芙可使用")
 		if ItemDB.is_relic(item):
 			lines.append("同名遗物效果：1件为100%，2件合计150%，3件合计175%；目标数、触发条件与冷却不增加")
@@ -27,6 +27,8 @@ static func describe(item: Dictionary, include_activation := true) -> String:
 		if not current.is_empty(): lines.append("替换：" + str(current.get("name", "")))
 	else:
 		if include_activation: lines.append("遗物：获得后立即生效")
+	var flavor:=ItemDB.flavor_text(item)
+	if not flavor.is_empty():lines.append("\n"+flavor+"\n")
 	var preview := GameState.preview_with(item)
 	for entry in [[&"attack", "攻击", 1.0, ""], [&"attack_speed", "攻击速度", 1.0, ""], [&"max_hp", "生命上限", 1.0, ""], [&"move_speed", "移速", 1.0, ""], [&"crit_chance", "暴击", 100.0, "%"], [&"lifesteal", "普攻命中回复", 1.0, "点生命"], [&"crit_mult", "暴击伤害", 100.0, "%"], [&"dash_cooldown", "冲刺冷却", 1.0, ""], [&"thorns", "反伤", 1.0, ""], [&"mp_regen", "魔法回复速度", 1.0, "/秒"], [&"coin_gain", "金币收益倍率", 1.0, ""]]:
 		var before := GameState.stats.get_value(entry[0]) * float(entry[2])

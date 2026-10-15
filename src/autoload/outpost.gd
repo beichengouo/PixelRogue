@@ -26,6 +26,10 @@ func gold() -> int: return int(data.get("gold",0))
 func max_rarity() -> int: return mini(2,int(data.get("danger",0)))
 func active_id() -> String: return str(data.get("active",{}).get("id",""))
 
+func stored_item(id: String) -> Dictionary:
+	# Warehouse equipment is implicitly bound; keep the existing ID/count save format.
+	return BoundEquipment.from_camp(ExpeditionData.resolve(id))
+
 func warehouse_capacity() -> int: return maxi(30,int(data.get("capacity",30)))
 func warehouse_slots(candidate: Dictionary = {}) -> int:
 	var inventory: Dictionary = data.get("inventory",{}).duplicate()

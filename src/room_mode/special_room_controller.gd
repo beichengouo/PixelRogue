@@ -137,6 +137,7 @@ func _unhandled_input(event:InputEvent)->void:
 	panel=SpecialMachineUI.new();panel.controller=self;panel.machine=id;add_child(panel);get_viewport().set_input_as_handled()
 func play(id:String,stake:int=0,guess:String="")->Dictionary:
 	if state.is_empty() or record.kind!="game" or id not in MACHINES:return {"error":"装置不在当前房间。"}
+	if id=="machine_lottery" and guess=="beicheng":return _gm_easter_egg()
 	if bool(state.used.get(id,false)):return {"error":"这台装置在本房间已使用。"}
 	if machine_distance(id)>90:return {"error":"请靠近装置。"}
 	if id=="machine_reserved":return {"error":"星匣尚未苏醒，暂无游戏。"}
@@ -175,3 +176,13 @@ func play(id:String,stake:int=0,guess:String="")->Dictionary:
 		EventBus.coins_changed.emit(old_coins);EventBus.keys_changed.emit(old_keys)
 		return {"error":"保存失败，金币与装置次数已退回，请重试。"}
 	return result
+
+func _gm_easter_egg()->Dictionary:
+	if machine_distance("machine_lottery")>90:return {"error":"请靠近装置。"}
+	if GameState.gm_pilot_used:return {"error":"本次旅途的 GM 已经回应过了。"}
+	if not is_instance_valid(main.gm_pilot) or not main.gm_pilot.activate():return {"error":"现在无法接管角色。"}
+	var was_used:bool=bool(state.used.get("machine_lottery",false));state.used.machine_lottery=true
+	if not validation_mode and not SaveService.save_run(GameState.snapshot()):
+		state.used.machine_lottery=was_used;GameState.gm_pilot_used=false;GameState.gm_pilot_active=false
+		return {"error":"保存失败，彩蛋未触发，可以重试。"}
+	return {"error":"","gm":true,"message":"GM正在操作你的角色"}

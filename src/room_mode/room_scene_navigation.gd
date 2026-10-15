@@ -1,6 +1,30 @@
 extends RefCounted
 ## Polygon navigation validates graph edges as well as node centers.
 var graphs:Dictionary={}
+const SHARED_GRAPH_LIMIT:=30
+static var _shared:Dictionary={}
+static var _lru:Array[String]=[]
+static var shared_hits:=0
+static var shared_builds:=0
+func _geometry_key(room:Node,radius:float,flying:bool)->String:
+	var doors:Array=[]
+	for direction in room.door_directions:doors.append([direction,room.door_point(direction,90.0)])
+	return var_to_bytes([radius,flying,room.room_rect,room.obstacles.keys(),room.deep_water.keys(),room.service_footprints,room.scene_polygons.values(),room.scene_water_polygons,room.scene_water_collision_override,doors]).hex_encode().sha256_text()
+func _cached(room:Node,radius:float,flying:bool)->Dictionary:
+	var key:=_geometry_key(room,radius,flying)
+	if not _shared.has(key):return {}
+	shared_hits+=1;_lru.erase(key);_lru.append(key)
+	var result:Dictionary=_shared[key].duplicate(false)
+	# Immutable graph topology is shared; potentially large route histories are
+	# room-local and are never kept alive by this bounded cache.
+	result.routes={};return result
+func _remember(room:Node,radius:float,flying:bool,data:Dictionary)->Dictionary:
+	var key:=_geometry_key(room,radius,flying)
+	if not _shared.has(key):shared_builds+=1
+	_lru.erase(key);_lru.append(key)
+	var saved:=data.duplicate(false);saved.routes={};_shared[key]=saved
+	while _lru.size()>SHARED_GRAPH_LIMIT:_shared.erase(_lru.pop_front())
+	return data
 func clear()->void:graphs.clear()
 func spawn_reachable(room:Node,point:Vector2,radius:float,flying:bool)->bool:
 	if not room.body_clear(point,radius,flying):return false
@@ -72,6 +96,10 @@ func direction(room:Node,from:Vector2,to:Vector2,radius:float,flying:bool)->Vect
 	var route:=PackedVector2Array()
 	for start_id in starts:
 		if components[start_id]!=components[goal_id]:continue
+		# Euclidean distance is a lower bound on every valid graph route.
+		# Pruning cannot discard a shorter route, and avoids redundant A* work.
+		var start:Vector2=graph.get_point_position(start_id)
+		if from.distance_to(start)+start.distance_to(graph.get_point_position(goal_id))>=best:continue
 		var route_key:=Vector2i(start_id,goal_id)
 		if not routes.has(route_key):
 			if routes.size()>=2048:routes.clear()
@@ -90,6 +118,8 @@ func direction(room:Node,from:Vector2,to:Vector2,radius:float,flying:bool)->Vect
 		if room.segment_clear(from,route[index],radius,flying):return (route[index]-from).normalized()
 	return Vector2.ZERO
 func _build(room:Node,radius:float,flying:bool)->Dictionary:
+	var cached:=_cached(room,radius,flying)
+	if not cached.is_empty():return cached
 	var graph:=AStar2D.new()
 	var cells:Dictionary={}
 	var rect:Rect2=room.room_rect
@@ -146,12 +176,14 @@ func _build(room:Node,radius:float,flying:bool)->Dictionary:
 		var count:int=votes.get(id,0)
 		if count>most_votes or (count==most_votes and component_sizes[id]>largest):
 			main_component=id;most_votes=count;largest=component_sizes[id]
-	return {"graph":graph,"cells":cells,"routes":{},"components":components,"main_component":main_component}
+	return _remember(room,radius,flying,{"graph":graph,"cells":cells,"routes":{},"components":components,"main_component":main_component})
 
 func prepare(room:Node,radius:float,flying:bool,valid:Callable)->bool:
 	var key:="%s:%s"%[radius,flying]
 	if graphs.has(key):return true
 	if flying and room.deep_water.is_empty() and room.scene_water_polygons.is_empty() and graphs.has("%s:false"%radius):graphs[key]=graphs["%s:false"%radius];return true
+	var cached:=_cached(room,radius,flying)
+	if not cached.is_empty():graphs[key]=cached;return true
 	var data:Dictionary=await _build_async(room,radius,flying,valid)
 	if data.is_empty():return false
 	graphs[key]=data;return true
@@ -225,4 +257,4 @@ func _build_async(room:Node,radius:float,flying:bool,valid:Callable)->Dictionary
 		var count:int=votes.get(id,0)
 		if count>most_votes or (count==most_votes and component_sizes[id]>largest):
 			main_component=id;most_votes=count;largest=component_sizes[id]
-	return {"graph":graph,"cells":cells,"routes":{},"components":components,"main_component":main_component}
+	return _remember(room,radius,flying,{"graph":graph,"cells":cells,"routes":{},"components":components,"main_component":main_component})

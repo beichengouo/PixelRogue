@@ -7,6 +7,12 @@ const ART_HEIGHT:=64.0
 const FOOT:=Vector2(48,80)
 const DIRECTIONS:=["s","sw","w","nw","n","ne","e","se"]
 const SOURCE_ROWS:=[0,1,2,3,4,3,2,1]
+## Standing body heights, excluding the staff tip. One scale per action/row
+## avoids breathing/jitter between frames and preserves the shared foot anchor.
+const HOLY_BODY_HEIGHTS:={
+	"idle":[54,55,57,59,62],"walk":[64,62,62,64,66],
+	"attack":[53,54,54,55,51],"move_attack":[54,56,58,56,60],
+	"back_attack":[54,55,58,56,56]}
 static var _cache:Dictionary={}
 static var _material:ShaderMaterial
 
@@ -74,11 +80,14 @@ static func _add(result:SpriteFrames,name:StringName,texture:Texture2D,row:int,f
 static func align(sprite:AnimatedSprite2D,height:=32.0,floor_y:=14.0)->void:
 	var utility:=str(sprite.animation) in ["prayer","hurt","death","jump","land","interact","victory","double_jump","brake","block"]
 	var source_height:=float(sprite.sprite_frames.get_meta("utility_height" if utility else "core_height",ART_HEIGHT))
-	if bool(sprite.sprite_frames.get_meta("separate_actions",false)) and str(sprite.animation).begins_with("idle_"):
-		# Idle rows were individually cropped to 54..62 pixels, while walking
-		# uses a 64-pixel standing silhouette. Preserve the common foot anchor.
-		var row:=DIRECTIONS.find(str(sprite.animation).trim_prefix("idle_"))
-		if row>=0:source_height*=float([54,55,57,59,62,59,57,55][row])/64.0
+	if bool(sprite.sprite_frames.get_meta("separate_actions",false)) and not utility:
+		var animation:=str(sprite.animation)
+		# Aliases use west-facing source frames, just like frames().
+		var direction:=DIRECTIONS.find(animation.get_slice("_",animation.get_slice_count("_")-1))
+		var action:=animation.left(animation.rfind("_")) if direction>=0 else str({"run":"walk","cast":"attack","move_cast":"move_attack","dash":"walk","fall":"idle","heal":"attack","shield":"attack","blink_in":"attack","blink_out":"attack","air_attack":"attack","air_cast":"attack"}.get(animation,animation))
+		if HOLY_BODY_HEIGHTS.has(action):
+			var row:int=SOURCE_ROWS[direction if direction>=0 else 2]
+			source_height*=float(HOLY_BODY_HEIGHTS[action][row])/64.0
 	var factor:=height/source_height
 	sprite.scale=Vector2.ONE*factor
 	sprite.position=Vector2(0,floor_y-(FOOT.y-CELL*.5)*factor)

@@ -20,7 +20,7 @@ func _ready()->void:
 		_wheel=TextureRect.new();_wheel.texture=SpecialRoomArt.room_icon("game");_wheel.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;_wheel.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;_wheel.custom_minimum_size=Vector2(120,110);column.add_child(_wheel)
 	elif machine=="machine_lottery":
 		rules.text+="\n输入八位数字，按相同位置对号；每猜中一位，获得投入额的50%。最低投入50金币，最高八位全部命中为四倍。"
-		_digits=LineEdit.new();_digits.max_length=8;_digits.placeholder_text="八位数字，例如00123456";_digits.virtual_keyboard_type=LineEdit.KEYBOARD_TYPE_NUMBER;_digits.custom_minimum_size.y=58;column.add_child(_digits)
+		_digits=LineEdit.new();_digits.max_length=8;_digits.placeholder_text="八位数字，例如00123456";_digits.virtual_keyboard_type=LineEdit.KEYBOARD_TYPE_DEFAULT;_digits.custom_minimum_size.y=58;column.add_child(_digits)
 		_stake=SpinBox.new();_stake.min_value=50;_stake.max_value=maxi(50,GameState.coins);_stake.allow_greater=false;_stake.allow_lesser=false;_stake.step=1;_stake.value=50;_stake.prefix="投入金币 ";column.add_child(_stake)
 	else:rules.text="这台古老星匣尚未苏醒，暂时没有可游玩的功能，也不会扣除金币。"
 	_prize_icons=UiFactory.hbox(8);_prize_icons.alignment=BoxContainer.ALIGNMENT_CENTER;column.add_child(_prize_icons)
@@ -45,6 +45,7 @@ func _run()->void:
 	else:_show_result(result)
 func _show_result(result:Dictionary)->void:
 	_result.text=str(result.message)
+	if bool(result.get("gm",false)):close.call_deferred();return
 	if str(controller.record.get("terrain_layout",{}).get("scene_art",""))!="game_moonboat_v01":return
 	var outcome:=int(result.get("outcome",1));var count:=3 if outcome==2 else (5 if outcome==3 else 1)
 	for index in count:

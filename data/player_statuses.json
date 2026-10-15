@@ -378,6 +378,41 @@
       "description": "角色144像素内友军的有效直击累计4拍后回复2MP，冷却2秒；相邻拍间隔不超过4秒，同一时刻的范围攻击与齐射每0.2秒至多计一拍。 同名遗物持有1/2/3件时，数值效果为100%/150%/175%；次数、层数、范围与冷却不变。",
       "runtime_source": "EquipmentMechanics.cadence",
       "debuff": false
+    },
+    "amber_pendulum": {
+      "name": "琥珀蓄辉",
+      "description": "下一次小技能伤害增加16%，施放后消耗。",
+      "runtime_source": "EquipmentMechanics",
+      "debuff": false,
+      "icon": "res://assets/content_v07/icons/relic_amber_pendulum.png"
+    },
+    "circlet_memory": {
+      "name": "圣环忆光",
+      "description": "护盾实际承伤累计三次后释放圣辉并回复魔力。",
+      "runtime_source": "EquipmentMechanics",
+      "debuff": false,
+      "icon": "res://assets/legendary_sets_v01/icons/accessory_eternal_ring.png"
+    },
+    "covenant_beats": {
+      "name": "同行和鸣",
+      "description": "友军有效直击累计三拍后触发幽灯共鸣。",
+      "runtime_source": "EquipmentMechanics",
+      "debuff": false,
+      "icon": "res://assets/legendary_sets_v01/icons/accessory_companion_bells.png"
+    },
+    "lakeleaf_stacks": {
+      "name": "湖叶回环",
+      "description": "持盾普攻累计四次后释放风环并回复魔力。",
+      "runtime_source": "EquipmentMechanics",
+      "debuff": false,
+      "icon": "res://assets/legendary_sets_v01/icons/armor_lakeleaf_hunt.png"
+    },
+    "moonwind_echo": {
+      "name": "月风余响",
+      "description": "接下来的主普攻追加月风伤害并缩短闪避冷却。",
+      "runtime_source": "EquipmentMechanics",
+      "debuff": false,
+      "icon": "res://assets/legendary_sets_v01/icons/accessory_moonwind_chime.png"
     }
   },
   "shield_sources": [

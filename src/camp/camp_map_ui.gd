@@ -8,16 +8,39 @@ class MapCanvas extends Control:
 	var world:CampWorld
 	func point(value:Vector2,bounds:Rect2,area:Rect2)->Vector2:
 		return area.position+(value-bounds.position)*area.size/bounds.size
+	func building_sprites()->Array[Sprite2D]:
+		var result:Array[Sprite2D]=[]
+		for root in [world.level.decor_root,world.level.props_root]:
+			_collect_sprites(root,result)
+		result.sort_custom(func(a:Sprite2D,b:Sprite2D)->bool:
+			if a.z_index!=b.z_index:return a.z_index<b.z_index
+			return a.get_parent().global_position.y<b.get_parent().global_position.y)
+		return result
+	func _collect_sprites(node:Node,result:Array[Sprite2D])->void:
+		if not is_instance_valid(node):return
+		if node is Sprite2D and node.texture!=null and node.is_visible_in_tree():result.append(node)
+		for child in node.get_children():_collect_sprites(child,result)
+	func _paint_sprite(sprite:Sprite2D,map_transform:Transform2D)->void:
+		var rect:=sprite.get_rect()
+		var source:=sprite.region_rect if sprite.region_enabled else Rect2(Vector2(sprite.frame_coords)*sprite.texture.get_size()/Vector2(sprite.hframes,sprite.vframes),sprite.texture.get_size()/Vector2(sprite.hframes,sprite.vframes))
+		if sprite.flip_h:rect.position.x+=rect.size.x;rect.size.x=-rect.size.x
+		if sprite.flip_v:rect.position.y+=rect.size.y;rect.size.y=-rect.size.y
+		draw_set_transform_matrix(map_transform*world.level.global_transform.affine_inverse()*sprite.global_transform)
+		# Map buildings remain readable while their world sprites fade for actors.
+		draw_texture_rect_region(sprite.texture,rect,source,Color.WHITE)
 	func _draw()->void:
 		if not is_instance_valid(world) or world.level.illustration==null:return
 		var illustration:RoomSceneArtwork=world.level.illustration
 		var bounds:=illustration.frame_rect()
 		var factor:=minf((size.x-36)/bounds.size.x,(size.y-36)/bounds.size.y)
 		var area:=Rect2((size-bounds.size*factor)*.5,bounds.size*factor)
-		for child in illustration.get_children():
-			if not child is Sprite2D or child.texture==null or not child.visible:continue
-			var rect:=Rect2(point(child.position,bounds,area),child.texture.get_size()*child.scale*factor)
-			draw_texture_rect(child.texture,rect,false,child.modulate)
+		var map_transform:=Transform2D(Vector2(factor,0),Vector2(0,factor),area.position-bounds.position*factor)
+		var planes:Array[Sprite2D]=[]
+		_collect_sprites(illustration,planes)
+		for sprite in planes:
+			if sprite.modulate.a>0:_paint_sprite(sprite,map_transform)
+		for sprite in building_sprites():_paint_sprite(sprite,map_transform)
+		draw_set_transform_matrix(Transform2D.IDENTITY)
 		for role in world.facilities:
 			var at:=point(world.facility_guide_center(role),bounds,area)
 			var name:=str(world.FACILITY_NAMES[role])+str({"shop":" · 姜糖","relations":" · 温阮","iris":" · 伊莉丝"}.get(role,""))

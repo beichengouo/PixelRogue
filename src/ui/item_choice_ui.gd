@@ -177,7 +177,7 @@ func _resume_after_shortcut(epoch: int) -> void:
 
 func _input(event: InputEvent) -> void:
 	if not UIFlow.is_top(self): return
-	if is_open() and not MobileControls.enabled() and _handle_pointer(event): return
+	if is_open() and _handle_pointer(event): return
 	if not is_open() or not event is InputEventKey: return
 	# Confirm cannot inherit the key edge that opened this reward screen.
 	if event.is_action_pressed("ui_accept") and Time.get_ticks_msec() < _input_ready_at:
@@ -349,7 +349,7 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	column.add_child(scroll)
 	_scrolls.append(scroll)
-	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false), 17, PixelUi.INK)
+	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false, false), 17, PixelUi.INK)
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc.custom_minimum_size.x = 220
 	desc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -358,10 +358,6 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	# Presentation descendants pass through; the scroll remains an interactive child.
 	for node in card.find_children("*", "Control", true, false):
 		if node != scroll and not scroll.is_ancestor_of(node): node.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	if MobileControls.enabled():
-		var claim:=StarUi.button("领取这件奖励",19);claim.name="ClaimReward%d"%index;claim.custom_minimum_size.y=64
-		claim.pressed.connect(func()->void:_choose_from_input(index,_selection_epoch,true))
-		column.add_child(claim)
 	desc.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	scroll.get_v_scroll_bar().focus_mode = Control.FOCUS_NONE
 	var update := func() -> void:
@@ -442,7 +438,7 @@ func _build() -> void:
 	column.add_child(_cards_box)
 
 	var tip := UiFactory.outlined_label("点击卡片领取 · 1 / 2 / 3 选择 · 方向键切换 · %s / A 确认"%KeyBindings.label("ui_accept"), 18, PixelUi.MUTED, 5)
-	if MobileControls.enabled():tip.text="查看奖励说明后，点击对应领取按钮"
+	if MobileControls.enabled():tip.text="轻点卡片领取 · 滑动说明查看详情"
 	tip.custom_minimum_size = Vector2(0.0, 38.0)
 	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	column.add_child(tip)

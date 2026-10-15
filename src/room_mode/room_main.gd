@@ -18,6 +18,7 @@ var environment_visual:RoomEnvironmentVisual
 var _reward_pending:Dictionary={}
 var special_rooms:SpecialRoomController
 var expansion:RoomExpansionController
+var gm_pilot:GMPilot
 
 func _build_world()->void:
 	RoomInput.install()
@@ -48,6 +49,7 @@ func _build_ui()->void:
 	var room_hud:=RoomHud.new();room_hud.graph=graph;room_hud.weather=room_weather;room_hud.director=director;hud=room_hud;add_child(hud);UIFlow.bind_hud(hud)
 	map_screen=RoomMapScreen.new();map_screen.graph=graph;add_child(map_screen)
 	var clock_ui:=WorldClockUI.new();clock_ui.world_clock=world_clock;clock_ui.position=Vector2(12,6);clock_ui.scale=Vector2.ONE*.9;hud.add_child(clock_ui)
+	gm_pilot=GMPilot.new();gm_pilot.main=self;add_child(gm_pilot)
 
 func _begin_run(data:Dictionary)->void:
 	if _room_transfer:
@@ -74,7 +76,7 @@ func _begin_run(data:Dictionary)->void:
 		GameState.difficulty=RunDifficulty.from_record(departure)
 		GameState.chapter_id=ChapterCatalog.normalize(departure.get("chapter_id",ChapterCatalog.FIRST))
 		for id in departure.get("loadout",[]):
-			var item:=BoundEquipment.from_camp(ExpeditionData.resolve(str(id)));GameState.add_item(item)
+			var item:=Outpost.stored_item(str(id));GameState.add_item(item)
 			if ItemDB.is_equippable(item):GameState.equip(GameState.items.back())
 		graph.begin(Rng.run_seed,GameState.chapter_id)
 	else:

@@ -281,7 +281,16 @@ func _input(event: InputEvent) -> void:
 					_binding_capture="";_binding_button.text=KeyBindings.label(action)
 					_binding_status.text="已取消修改" if code==KEY_ESCAPE else "已保存键位 · "+str(KeyBindings.ACTIONS[action])
 				else:_binding_status.text=error+" · Esc 取消"
-		elif event is InputEventMouseButton or event is InputEventJoypadButton:get_viewport().set_input_as_handled()
+		elif event is InputEventMouseButton:
+			get_viewport().set_input_as_handled()
+			if event.pressed:
+				var action:=_binding_capture
+				var error:=KeyBindings.bind_mouse(action,event.button_index)
+				if error.is_empty():
+					_binding_capture="";_binding_button.text=KeyBindings.label(action)
+					_binding_status.text="已保存键位 · "+str(KeyBindings.ACTIONS[action])
+				else:_binding_status.text=error+" · Esc 取消"
+		elif event is InputEventJoypadButton:get_viewport().set_input_as_handled()
 		return
 	if _menu_closing:
 		get_viewport().set_input_as_handled()
@@ -632,7 +641,7 @@ func _settings_keys(body:VBoxContainer)->void:
 		body.add_child(hint)
 	body.add_child(_rule())
 	body.add_child(PixelUi.label("键盘按键设置",18,PixelUi.GOLD))
-	_binding_status=PixelUi.label("选择操作后按新键 · Esc 取消 · 手柄键位保持原样",15,PixelUi.MUTED)
+	_binding_status=PixelUi.label("选择操作后按键盘键或鼠标按键（支持侧键）· Esc 取消 · 手柄键位保持原样",15,PixelUi.MUTED)
 	_binding_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.add_child(_binding_status)
 	_binding_buttons.clear()
 	var keys:=GridContainer.new();keys.columns=2;keys.add_theme_constant_override("h_separation",16);body.add_child(keys)
@@ -641,7 +650,7 @@ func _settings_keys(body:VBoxContainer)->void:
 		var caption:=PixelUi.label(str(KeyBindings.ACTIONS[action]),16,PixelUi.INK);caption.custom_minimum_size.x=150;caption.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(caption)
 		var button:=PixelUi.compact_button(KeyBindings.label(action),16);button.custom_minimum_size.x=120;button.set_meta("binding_action",action);row.add_child(button);_binding_buttons[action]=button
 		button.pressed.connect(func()->void:
-			_binding_capture=action;_binding_button=button;button.text="等待按键…";_binding_status.text="修改「%s」· 按新键 · Esc 取消"%str(KeyBindings.ACTIONS[action]))
+			_binding_capture=action;_binding_button=button;button.text="等待按键…";_binding_status.text="修改「%s」· 按键盘键或鼠标侧键 · Esc 取消"%str(KeyBindings.ACTIONS[action]))
 	var reset:=PixelUi.compact_button("恢复默认键位",16);body.add_child(reset)
 	reset.pressed.connect(func()->void:
 		_binding_capture=""

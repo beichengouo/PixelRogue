@@ -65,7 +65,8 @@ func _physics_process(dt: float) -> void:
 	_holy_pose_left=maxf(0,_holy_pose_left-dt)
 	_sync_spell_shield()
 	if extraction_controls_locked(): velocity=Vector2.ZERO; _update_visual(dt); return
-	var movement := movement_override if movement_override!=Vector2.ZERO else RoomInput.movement()
+	var pilot:=GameState.gm_pilot_active and not CampSession.active
+	var movement := movement_override if pilot or movement_override!=Vector2.ZERO else RoomInput.movement()
 	if extraction_pose==&"prayer":
 		if movement!=Vector2.ZERO: extraction_interrupted.emit()
 		else: velocity=Vector2.ZERO; _update_visual(dt); return
@@ -77,6 +78,7 @@ func _physics_process(dt: float) -> void:
 	firing=(held and not _mouse_attack_blocked) if mouse_mode else aim!=Vector2.ZERO
 	firing=firing or aim_override!=Vector2.ZERO
 	if aim_override!=Vector2.ZERO: aim=RoomInput.quantize(aim_override)
+	if pilot:aim=aim_override;firing=not aim.is_zero_approx()
 	if aim!=Vector2.ZERO: aim_direction=aim
 	elif movement!=Vector2.ZERO and not mouse_mode:aim_direction=RoomInput.quantize(movement)
 	if absf(aim_direction.x)>0.1: facing=1 if aim_direction.x>0 else -1
@@ -85,7 +87,7 @@ func _physics_process(dt: float) -> void:
 	elif _dash_timer>0: velocity=_dash_vector*stats.get_value(&"move_speed")*2.7*movement_slow_multiplier()
 	else:
 		velocity=velocity.move_toward(movement*stats.get_value(&"move_speed")*movement_slow_multiplier(),2100*dt)
-		if Input.is_action_just_pressed("dash") and _dash_cd<=0 and movement!=Vector2.ZERO:
+		if not pilot and Input.is_action_just_pressed("dash") and _dash_cd<=0 and movement!=Vector2.ZERO:
 			request_dash_direction(movement)
 	if _dash_timer>0:
 		if _dash_collision_mask<0:_dash_collision_mask=collision_mask
@@ -102,10 +104,10 @@ func _physics_process(dt: float) -> void:
 	if _normal_dash_phase:
 		var bounds:=room.bounds().grow(-12)
 		position=Vector2(clampf(position.x,bounds.position.x,bounds.end.x),clampf(position.y,bounds.position.y,bounds.end.y))
-	if auto_mode and aim_override.is_zero_approx():
+	if not pilot and auto_mode and aim_override.is_zero_approx():
 		var automatic:=RoomInput.auto_aim(self);firing=automatic!=Vector2.ZERO
 		if firing:aim_direction=automatic
-	if mouse_mode and aim_override.is_zero_approx():
+	if not pilot and mouse_mode and aim_override.is_zero_approx():
 		var pointer := RoomInput.pointer_aim(self)
 		if not pointer.is_zero_approx():aim_direction=pointer
 	if absf(aim_direction.x)>0.1:facing=1 if aim_direction.x>0 else -1
@@ -122,8 +124,8 @@ func _physics_process(dt: float) -> void:
 		_swing_timer=0.18
 		if is_instance_valid(holy_runtime):_animation_request+=1
 	for slot in 4:
-		if Input.is_action_just_pressed(["skill_1","skill_2","skill_3","ultimate"][slot]): caster.cast(slot)
-	_try_potions()
+		if not pilot and Input.is_action_just_pressed(["skill_1","skill_2","skill_3","ultimate"][slot]): caster.cast(slot)
+	if not pilot:_try_potions()
 	if forest_stepping and ilyua_runtime.step_left<=0:velocity=movement*stats.get_value(&"move_speed")*movement_slow_multiplier()
 	if _dash_spell_active and _dash_timer<=0:_dash_spell_fx();_dash_spell_active=false;equipment_mechanics.on_dash_end()
 	_move_input_active=movement!=Vector2.ZERO
@@ -169,6 +171,7 @@ func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
 	var before_shield:=shield_hp
 	if is_instance_valid(holy_runtime) and _invuln<=0:amount=holy_runtime.protect(amount,source)
 	super.take_damage(amount,from,source)
+	if shield_hp<before_shield and is_instance_valid(equipment_mechanics):equipment_mechanics.legendary.shield_absorbed()
 	if is_instance_valid(holy_runtime):
 		if shield_hp<before_shield:holy_runtime.on_shield_absorbed(before_shield-shield_hp)
 		if hp<before_hp:holy_runtime.on_hurt()

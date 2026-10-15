@@ -312,7 +312,7 @@ func _refresh_detail() -> void:
 	_detail_tag.text = str(data.tag)
 	_detail_quality.set_quality(int(data.rarity))
 	_detail_tag.add_theme_color_override("font_color", tint)
-	_detail_description.text = str(data.desc) + ("\n\n" + ItemInsight.describe(data.item) if _selected_index >= 0 else "")
+	_detail_description.text = str(data.desc) + ("\n\n" + ItemInsight.describe(data.item,true,false) if _selected_index >= 0 else "")
 	for child in _detail_icon.get_children():
 		_detail_icon.remove_child(child)
 		child.queue_free()

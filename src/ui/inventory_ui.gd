@@ -862,7 +862,7 @@ func _populate_detail() -> void:
 	# 简介：单独一行风味文本，和下面的数值说明区分开
 	var flavor := ItemDB.flavor_text(item)
 	if not flavor.is_empty():
-		var flavor_label := PixelUi.label(flavor, 15, PixelUi.MUTED)
+		var flavor_label := PixelUi.label(flavor, 17, PixelUi.MUTED)
 		flavor_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		flavor_label.custom_minimum_size = Vector2(0.0, 34.0)
 		flavor_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP

@@ -359,7 +359,6 @@ func shield(ratio:float,seconds:float)->bool:
 	actor.equipment_mechanics.grant_player_shield(value,seconds);return true
 func on_shield_absorbed(amount:float)->void:
 	if amount<=0:return
-	actor.equipment_mechanics.legendary.shield_absorbed()
 	if ready("shield_prayer"):start("shield_prayer",.35);add_prayer(12)
 	if _cloud_open and ready("cloud_counter"):
 		start("cloud_counter",.35)

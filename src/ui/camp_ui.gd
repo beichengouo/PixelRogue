@@ -37,6 +37,7 @@ var _shop_clock:Label
 var _page_cache:Node
 var _prepare_step:=0
 var _show_presets:=false
+var _loadout_selected:=""
 var _page_heading:Label
 var _preset_index=0
 var _preset_name="方案1"
@@ -284,22 +285,16 @@ func _prepare_supplies()->void:
 	var selected:=UiFactory.hbox(12);_body.add_child(selected)
 	var summary:=PixelUi.label("携带清单 · %d件"%cart.size(),20,PixelUi.GOLD);summary.size_flags_horizontal=Control.SIZE_EXPAND_FILL;selected.add_child(summary)
 	var clear:=PixelUi.compact_button("清空清单",17);clear.disabled=cart.is_empty();selected.add_child(clear);clear.pressed.connect(func()->void:cart.clear();_refresh())
-	for id in cart.duplicate():
-		var row:=UiFactory.hbox(12);_body.add_child(row);var item:=ExpeditionData.resolve(str(id));row.add_child(UiFactory.item_icon(item,32))
-		var label:=PixelUi.label(str(item.name),18);label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
-		var remove:=PixelUi.compact_button("移出",17);row.add_child(remove);remove.pressed.connect(func()->void:cart.erase(id);_refresh())
 	_button("配装方案 ▾" if not _show_presets else "收起配装方案 ▴",func()->void:_show_presets=not _show_presets;_refresh())
 	if _show_presets:_presets()
 	var filter:=OptionButton.new();_compact_option(filter);filter.add_item("全部品质")
 	for i in 4:filter.add_item(ItemDB.rarity_name(i))
 	filter.select(_rarity_filter+1);filter.item_selected.connect(func(i:int)->void:_rarity_filter=i-1;_refresh());_body.add_child(filter)
-	for id in Outpost.data.inventory:
-		var owned:=int(Outpost.data.inventory[id]);var item:=ExpeditionData.resolve(str(id))
-		if owned<=0 or not (ItemDB.is_equippable(item) or ItemDB.is_usable(item)) or not ItemDB.available_in_mode(item,combat_mode):continue
-		if _rarity_filter>=0 and int(item.rarity)!=_rarity_filter:continue
-		var row:=UiFactory.hbox(12);_body.add_child(row);row.add_child(UiFactory.item_icon(item,36))
-		var label:=PixelUi.label("%s · 库存%d · 已选%d"%[str(item.name),owned,cart.count(str(id))],18,ItemDB.rarity_color(int(item.rarity)));label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
-		var button:=PixelUi.compact_button("选择" if ItemDB.can_equip(item) else "职业不符",17);button.custom_minimum_size.x=100;button.set_meta("focus_token","camp_item:"+str(id));button.disabled=cart.count(str(id))>=owned or not ItemDB.can_equip(item);button.tooltip_text=str(item.desc);button.pressed.connect(_add_cart.bind(str(id)));row.add_child(button)
+	var loadout:=CampLoadoutView.new();loadout.name="DepartureLoadout";loadout.loadout=cart;loadout.selected_id=_loadout_selected;loadout.combat_mode=combat_mode;loadout.quality=_rarity_filter
+	loadout.selection_changed.connect(func(id:String)->void:_loadout_selected=id)
+	loadout.equip_requested.connect(_add_cart)
+	loadout.remove_requested.connect(func(id:String)->void:cart.erase(id);_refresh())
+	_body.add_child(loadout)
 	_button("下一步 · 核对出发清单",func()->void:_prepare_step=2;_refresh())
 
 func _prepare_confirmation()->void:
@@ -551,11 +546,13 @@ func _shop()->void:
 	var state:Dictionary=Outpost.data.get("shop",{})
 	var offers:Array=state.get("offers",[])
 	for i in offers.size():
-		var item=ExpeditionData.resolve(str(offers[i].id));var card=PixelUi.inset_panel(10);card.custom_minimum_size.x=530;grid.add_child(card)
+		var item=Outpost.stored_item(str(offers[i].id));var card=PixelUi.inset_panel(10);card.custom_minimum_size.x=530;grid.add_child(card)
 		var content=UiFactory.vbox(6);card.add_child(content)
-		var title=UiFactory.hbox(10);content.add_child(title);title.add_child(UiFactory.item_icon(item,44))
+		var title=UiFactory.hbox(10);content.add_child(title);var icon=UiFactory.item_icon(item,44);title.add_child(icon);BoundEquipment.badge(icon,item)
 		var name_label=PixelUi.label(str(item.name),18,ItemDB.rarity_color(int(item.rarity)));name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;title.add_child(name_label);title.add_child(RarityWordmark.make(int(item.rarity),32))
 		var desc=PixelUi.label(str(item.desc),16);desc.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;desc.custom_minimum_size.x=480;content.add_child(desc)
+		if BoundEquipment.is_bound(item):
+			var binding=PixelUi.label(BoundEquipment.description(),14,Color("a9f5d4"));binding.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;content.add_child(binding)
 		var button=PixelUi.compact_button("已售罄" if bool(offers[i].sold) else "入库 · "+CampStock.price_text(item),17);content.add_child(button)
 		var price=CampStock.price(item);var affordable=int(price.gold)<=Outpost.gold()
 		for id in price.materials:affordable=affordable and int(Outpost.data.inventory.get(id,0))>=int(price.materials[id])
@@ -566,13 +563,15 @@ func _shop()->void:
 		button.set_meta("focus_token","stock:"+str(item.id));button.pressed.connect(_buy_stock.bind(i,int(state.batch),int(state.nonce)))
 	_text("基础补给 · 普通装备与基础治疗药剂",20,PixelUi.GOLD)
 	for item in ExpeditionData.catalog(0):
-		_button("%s · %d金 · 购买入库" % [str(item.name),CampStock.basic_price(item)],_buy_basic.bind(str(item.id)),CampStock.basic_price(item)>Outpost.gold() or Outpost.warehouse_slots({str(item.id):1})>Outpost.warehouse_capacity())
+		_button("%s%s · %d金 · 购买入库" % [str(item.name)," · 绑定" if ItemDB.is_equippable(item) else "",CampStock.basic_price(item)],_buy_basic.bind(str(item.id)),CampStock.basic_price(item)>Outpost.gold() or Outpost.warehouse_slots({str(item.id):1})>Outpost.warehouse_capacity())
 	_button("返回出发准备",_switch.bind("prepare"))
 func _buy_stock(index:int,batch:int,nonce:int)->void:
-	_feedback="购买成功 · 已存入仓库" if Outpost.buy_offer(index,-1,batch,nonce) else "商品已更新、库存空间不足、材料不足或保存失败。"
+	var offers:Array=Outpost.data.get("shop",{}).get("offers",[])
+	var bound:=index>=0 and index<offers.size() and BoundEquipment.is_bound(Outpost.stored_item(str(offers[index].id)))
+	_feedback=("购买成功 · 装备已绑定并存入仓库" if bound else "购买成功 · 已存入仓库") if Outpost.buy_offer(index,-1,batch,nonce) else "商品已更新、库存空间不足、材料不足或保存失败。"
 	_refresh()
 func _buy_basic(id:String)->void:
-	_feedback="购买成功 · 已存入仓库" if Outpost.buy_basic(id) else "金币、仓位不足或保存失败。"
+	_feedback=("购买成功 · 装备已绑定并存入仓库" if ItemDB.is_equippable(Outpost.stored_item(id)) else "购买成功 · 已存入仓库") if Outpost.buy_basic(id) else "金币、仓位不足或保存失败。"
 	_refresh()
 
 func _compact_option(option: OptionButton) -> void:

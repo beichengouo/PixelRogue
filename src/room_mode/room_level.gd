@@ -217,11 +217,11 @@ func _select_room_template(data:Dictionary,pool:RoomTemplatePool)->void:
 	var selection_kind:="boss:"+str(data.get("boss","king")) if kind=="boss" else ("boss:"+str(ChapterCatalog.bosses(chapter)[0]) if kind=="boss_rush" else ("normal" if kind in ["spawn","elite"] else kind))
 	var seed_value:=int(data.get("seed",0))
 	var theme:=str(data.get("biome","forest"))
-	var template:=pool.select(seed_value,selection_kind,theme,chapter)
+	var template:=pool.select(seed_value,selection_kind,theme,chapter,false)
 	if kind=="elite":
 		var selection_rng:=RandomNumberGenerator.new();selection_rng.seed=seed_value^0x6813c
 		if selection_rng.randf()<.5:
-			var dedicated:=pool.select(seed_value,"elite",theme)
+			var dedicated:=pool.select(seed_value,"elite",theme,chapter,false)
 			if not dedicated.is_empty():template=dedicated
 	var previous:Dictionary=data.get("terrain_layout",{})
 	var preferred_id:=RoomTemplatePool.replacement_id(previous)
@@ -231,7 +231,7 @@ func _select_room_template(data:Dictionary,pool:RoomTemplatePool)->void:
 	if not preferred_id.is_empty():
 		for item in pool.templates:
 			if str(item.id)==preferred_id:template=item.duplicate(true);break
-	if template.is_empty():template=pool.select(seed_value,"normal",theme,chapter)
+	if template.is_empty():template=pool.select(seed_value,"normal",theme,chapter,false)
 	var decoded:=RoomTemplateCodec.to_layout(template) if not template.is_empty() else {}
 	if decoded.is_empty() and selection_kind!="normal":
 		template=pool.select(seed_value,"normal",theme,chapter)
