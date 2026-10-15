@@ -1,0 +1,19 @@
+[gd_resource type="Theme" load_steps=3 format=3]
+[ext_resource type="FontFile" path="res://assets/fonts/AllSeto.ttf" id="1"]
+[sub_resource type="StyleBoxFlat" id="TooltipGlass"]
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+bg_color = Color(0.055, 0.09, 0.14, 0.88)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+corner_radius_bottom_right = 5
+[resource]
+default_font = ExtResource("1")
+default_font_size = 20
+
+TooltipPanel/styles/panel = SubResource("TooltipGlass")
+TooltipLabel/colors/font_color = Color(0.94, 0.96, 1, 1)
+TooltipLabel/font_sizes/font_size = 17

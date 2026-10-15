@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "id": "tavern_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    792
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        145
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        837,
+        255,
+        171
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        392,
+        92,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1441,
+        392,
+        95,
+        177
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:tavern_v01:building",
+      "name": "星灯水庭酒馆 · building",
+      "layer": "decor",
+      "category": "整图房间元素",
+      "model": "building_tavern",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_v01/building.png",
+      "collision": "service",
+      "kind": "stone",
+      "width_px": 204,
+      "depth_px": 76,
+      "render_width_px": 204
+    },
+    {
+      "id": "scene:tavern_v01:lamp",
+      "name": "星灯水庭酒馆 · lamp",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_v01/lamp.png",
+      "collision": "light",
+      "kind": "stone",
+      "width_px": 24,
+      "depth_px": 12,
+      "render_width_px": 24
+    },
+    {
+      "id": "scene:tavern_v01:flowerbed",
+      "name": "星灯水庭酒馆 · flowerbed",
+      "layer": "decor",
+      "category": "整图房间元素",
+      "model": "planter",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_v01/flowerbed.png",
+      "collision": "none",
+      "kind": "stone",
+      "width_px": 136,
+      "depth_px": 10,
+      "render_width_px": 136
+    },
+    {
+      "id": "scene:tavern_v01:barrel",
+      "name": "星灯水庭酒馆 · barrel",
+      "layer": "decor",
+      "category": "整图房间元素",
+      "model": "barrels",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_v01/barrel.png",
+      "collision": "service",
+      "kind": "stone",
+      "width_px": 24,
+      "depth_px": 12,
+      "render_width_px": 24
+    },
+    {
+      "id": "scene:tavern_v01:notice",
+      "name": "星灯水庭酒馆 · notice",
+      "layer": "decor",
+      "category": "整图房间元素",
+      "model": "notice",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_v01/notice.png",
+      "collision": "service",
+      "kind": "stone",
+      "width_px": 32,
+      "depth_px": 12,
+      "render_width_px": 32
+    }
+  ]
+}

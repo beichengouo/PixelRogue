@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "id": "city_observatory_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        722.178,
+        170.375
+      ],
+      "source_rect_px": [
+        977,
+        32,
+        511,
+        385
+      ],
+      "source_foot_px": [
+        1232.5,
+        417
+      ],
+      "render_width_px": 339.029,
+      "collision_polygon_px": [
+        [
+          -122.05044,
+          -38
+        ],
+        [
+          122.05044,
+          -38
+        ],
+        [
+          122.05044,
+          0
+        ],
+        [
+          -122.05044,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        122.077,
+        177.444
+      ],
+      "source_rect_px": [
+        44,
+        59,
+        568,
+        368
+      ],
+      "source_foot_px": [
+        328.0,
+        427
+      ],
+      "render_width_px": 376.846,
+      "collision_polygon_px": [
+        [
+          -135.66456,
+          -38
+        ],
+        [
+          135.66456,
+          -38
+        ],
+        [
+          135.66456,
+          0
+        ],
+        [
+          -135.66456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        127.716,
+        569.094
+      ],
+      "source_rect_px": [
+        23,
+        537,
+        627,
+        444
+      ],
+      "source_foot_px": [
+        336.5,
+        981
+      ],
+      "render_width_px": 415.99,
+      "collision_polygon_px": [
+        [
+          -149.75639999999999,
+          -38
+        ],
+        [
+          149.75639999999999,
+          -38
+        ],
+        [
+          149.75639999999999,
+          0
+        ],
+        [
+          -149.75639999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        714.548,
+        570.508
+      ],
+      "source_rect_px": [
+        927,
+        551,
+        588,
+        432
+      ],
+      "source_foot_px": [
+        1221.0,
+        983
+      ],
+      "render_width_px": 390.115,
+      "collision_polygon_px": [
+        [
+          -140.4414,
+          -38
+        ],
+        [
+          140.4414,
+          -38
+        ],
+        [
+          140.4414,
+          0
+        ],
+        [
+          -140.4414,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_observatory_v01:prop_01",
+      "name": "陨星观测台 · prop_01",
+      "path": "res://assets/room_illustrated/city_observatory_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        9,
+        1
+      ],
+      "render_width_px": 339.029,
+      "collision_polygon_px": [
+        [
+          -122.05044,
+          -38
+        ],
+        [
+          122.05044,
+          -38
+        ],
+        [
+          122.05044,
+          0
+        ],
+        [
+          -122.05044,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_observatory_v01:prop_02",
+      "name": "陨星观测台 · prop_02",
+      "path": "res://assets/room_illustrated/city_observatory_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        10,
+        1
+      ],
+      "render_width_px": 376.846,
+      "collision_polygon_px": [
+        [
+          -135.66456,
+          -38
+        ],
+        [
+          135.66456,
+          -38
+        ],
+        [
+          135.66456,
+          0
+        ],
+        [
+          -135.66456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_observatory_v01:prop_03",
+      "name": "陨星观测台 · prop_03",
+      "path": "res://assets/room_illustrated/city_observatory_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        12,
+        1
+      ],
+      "render_width_px": 415.99,
+      "collision_polygon_px": [
+        [
+          -149.75639999999999,
+          -38
+        ],
+        [
+          149.75639999999999,
+          -38
+        ],
+        [
+          149.75639999999999,
+          0
+        ],
+        [
+          -149.75639999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_observatory_v01:prop_04",
+      "name": "陨星观测台 · prop_04",
+      "path": "res://assets/room_illustrated/city_observatory_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        11,
+        1
+      ],
+      "render_width_px": 390.115,
+      "collision_polygon_px": [
+        [
+          -140.4414,
+          -38
+        ],
+        [
+          140.4414,
+          -38
+        ],
+        [
+          140.4414,
+          0
+        ],
+        [
+          -140.4414,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

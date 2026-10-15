@@ -1,0 +1,473 @@
+{
+  "version": 1,
+  "id": "elite_boneflags_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "weapon_rack",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "weapon_rack.png",
+      "position_px": [
+        256.096,
+        59.384
+      ],
+      "source_foot_px": [
+        530,
+        260
+      ],
+      "source_rect_px": [
+        486,
+        161,
+        88,
+        99
+      ],
+      "render_width_px": 58.385,
+      "collision_polygon_px": [
+        [
+          -25.106,
+          -13.298
+        ],
+        [
+          25.106,
+          -13.298
+        ],
+        [
+          25.106,
+          0
+        ],
+        [
+          -25.106,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        60.375,
+        91.196
+      ],
+      "source_foot_px": [
+        235,
+        305
+      ],
+      "source_rect_px": [
+        200,
+        178,
+        71,
+        127
+      ],
+      "render_width_px": 47.106,
+      "collision_polygon_px": [
+        [
+          -20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          0
+        ],
+        [
+          -20.256,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ff6b42",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        763.644,
+        91.196
+      ],
+      "source_foot_px": [
+        1295,
+        305
+      ],
+      "source_rect_px": [
+        1260,
+        177,
+        71,
+        128
+      ],
+      "render_width_px": 47.106,
+      "collision_polygon_px": [
+        [
+          -20.256,
+          -17.193
+        ],
+        [
+          20.256,
+          -17.193
+        ],
+        [
+          20.256,
+          0
+        ],
+        [
+          -20.256,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ff6b42",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        60.375,
+        434.066
+      ],
+      "source_foot_px": [
+        235,
+        790
+      ],
+      "source_rect_px": [
+        200,
+        663,
+        71,
+        127
+      ],
+      "render_width_px": 47.106,
+      "collision_polygon_px": [
+        [
+          -20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          0
+        ],
+        [
+          -20.256,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ff6b42",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        763.644,
+        434.066
+      ],
+      "source_foot_px": [
+        1295,
+        790
+      ],
+      "source_rect_px": [
+        1259,
+        663,
+        72,
+        127
+      ],
+      "render_width_px": 47.769,
+      "collision_polygon_px": [
+        [
+          -20.541,
+          -17.059
+        ],
+        [
+          20.541,
+          -17.059
+        ],
+        [
+          20.541,
+          0
+        ],
+        [
+          -20.541,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ff6b42",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": true
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:elite_boneflags_v01:weapon_rack",
+      "name": "骸旗演武场 · weapon_rack",
+      "path": "res://assets/room_illustrated/elite_boneflags_v01/weapon_rack.png",
+      "layer": "buildings",
+      "model": "weapon_rack",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 58.385,
+      "collision_polygon_px": [
+        [
+          -25.106,
+          -13.298
+        ],
+        [
+          25.106,
+          -13.298
+        ],
+        [
+          25.106,
+          0
+        ],
+        [
+          -25.106,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_boneflags_v01:lamp_nw",
+      "name": "骸旗演武场 · lamp_nw",
+      "path": "res://assets/room_illustrated/elite_boneflags_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 47.106,
+      "collision_polygon_px": [
+        [
+          -20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          0
+        ],
+        [
+          -20.256,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_boneflags_v01:lamp_ne",
+      "name": "骸旗演武场 · lamp_ne",
+      "path": "res://assets/room_illustrated/elite_boneflags_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 47.106,
+      "collision_polygon_px": [
+        [
+          -20.256,
+          -17.193
+        ],
+        [
+          20.256,
+          -17.193
+        ],
+        [
+          20.256,
+          0
+        ],
+        [
+          -20.256,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_boneflags_v01:lamp_sw",
+      "name": "骸旗演武场 · lamp_sw",
+      "path": "res://assets/room_illustrated/elite_boneflags_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 47.106,
+      "collision_polygon_px": [
+        [
+          -20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          -17.059
+        ],
+        [
+          20.256,
+          0
+        ],
+        [
+          -20.256,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_boneflags_v01:lamp_se",
+      "name": "骸旗演武场 · lamp_se",
+      "path": "res://assets/room_illustrated/elite_boneflags_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 47.769,
+      "collision_polygon_px": [
+        [
+          -20.541,
+          -17.059
+        ],
+        [
+          20.541,
+          -17.059
+        ],
+        [
+          20.541,
+          0
+        ],
+        [
+          -20.541,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {
+    "bone_anchors": [
+      [
+        165.865,
+        229.051
+      ],
+      [
+        662.135,
+        229.051
+      ]
+    ],
+    "bone_direction": [
+      0,
+      1
+    ]
+  },
+  "surface_water_polygons_px": []
+}

@@ -1,0 +1,606 @@
+{
+  "version": 1,
+  "id": "boss_king_court_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        680,
+        0,
+        177,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1421,
+        359,
+        115,
+        241
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        680,
+        824,
+        177,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        359,
+        115,
+        241
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "broken_throne",
+      "kind": "stone",
+      "texture": "broken_throne.png",
+      "position_px": [
+        182.8892,
+        187.0057
+      ],
+      "source_rect_px": [
+        116,
+        110,
+        634,
+        446
+      ],
+      "source_foot_px": [
+        375.0,
+        446
+      ],
+      "render_width_px": 304.6193,
+      "collision_polygon_px": [
+        [
+          -91.1506,
+          -62.9233
+        ],
+        [
+          -55.8665,
+          -36.4602
+        ],
+        [
+          38.2244,
+          -17.054
+        ],
+        [
+          103.5,
+          -32.3438
+        ],
+        [
+          137.608,
+          -68.804
+        ],
+        [
+          119.9659,
+          -95.267
+        ],
+        [
+          63.5114,
+          -81.1534
+        ],
+        [
+          -5.2926,
+          -95.8551
+        ],
+        [
+          -68.804,
+          -85.2699
+        ]
+      ]
+    },
+    {
+      "id": "candle_west",
+      "kind": "light",
+      "texture": "candle_west.png",
+      "position_px": [
+        68.804,
+        269.9233
+      ],
+      "source_rect_px": [
+        133,
+        393,
+        229,
+        587
+      ],
+      "source_foot_px": [
+        181.0,
+        587
+      ],
+      "render_width_px": 56.4545,
+      "collision_polygon_px": [
+        [
+          -5.8807,
+          -18.2301
+        ],
+        [
+          8.233,
+          -22.9347
+        ],
+        [
+          16.4659,
+          -12.9375
+        ],
+        [
+          9.4091,
+          -4.7045
+        ],
+        [
+          -8.233,
+          -4.7045
+        ],
+        [
+          -15.2898,
+          -12.9375
+        ]
+      ],
+      "light": {
+        "kind": "fire",
+        "radius": 150,
+        "color": "ffd38a"
+      }
+    },
+    {
+      "id": "candle_east",
+      "kind": "light",
+      "texture": "candle_east.png",
+      "position_px": [
+        672.456,
+        348.1364
+      ],
+      "source_rect_px": [
+        1160,
+        519,
+        1255,
+        720
+      ],
+      "source_foot_px": [
+        1207.5,
+        720
+      ],
+      "render_width_px": 55.8665,
+      "collision_polygon_px": [
+        [
+          -8.527,
+          -23.5227
+        ],
+        [
+          7.9389,
+          -24.6989
+        ],
+        [
+          15.5838,
+          -12.3494
+        ],
+        [
+          4.4105,
+          -5.2926
+        ],
+        [
+          -14.4077,
+          -7.0568
+        ]
+      ],
+      "light": {
+        "kind": "fire",
+        "radius": 150,
+        "color": "ffd38a"
+      }
+    },
+    {
+      "id": "fallen_column",
+      "kind": "stone",
+      "texture": "fallen_column.png",
+      "position_px": [
+        349.6065,
+        77.625
+      ],
+      "source_rect_px": [
+        572,
+        169,
+        745,
+        260
+      ],
+      "source_foot_px": [
+        658.5,
+        260
+      ],
+      "render_width_px": 101.7358,
+      "collision_polygon_px": [
+        [
+          -33.2259,
+          -29.4034
+        ],
+        [
+          -17.348,
+          -29.9915
+        ],
+        [
+          34.9901,
+          -13.5256
+        ],
+        [
+          26.169,
+          -4.7045
+        ],
+        [
+          -22.6406,
+          -17.054
+        ]
+      ]
+    },
+    {
+      "id": "heraldic_plinth",
+      "kind": "stone",
+      "texture": "heraldic_plinth.png",
+      "position_px": [
+        610.1207,
+        408.7074
+      ],
+      "source_rect_px": [
+        1000,
+        648,
+        1203,
+        823
+      ],
+      "source_foot_px": [
+        1101.5,
+        823
+      ],
+      "render_width_px": 119.3778,
+      "collision_polygon_px": [
+        [
+          -13.8196,
+          -40.5767
+        ],
+        [
+          10.8793,
+          -45.2812
+        ],
+        [
+          28.5213,
+          -35.8722
+        ],
+        [
+          27.3452,
+          -18.8182
+        ],
+        [
+          -4.9986,
+          -13.5256
+        ],
+        [
+          -23.2287,
+          -23.5227
+        ]
+      ]
+    },
+    {
+      "id": "east_plinth",
+      "kind": "stone",
+      "texture": "east_plinth.png",
+      "position_px": [
+        671.8679,
+        135.8438
+      ],
+      "source_rect_px": [
+        1158,
+        243,
+        1255,
+        359
+      ],
+      "source_foot_px": [
+        1206.5,
+        359
+      ],
+      "render_width_px": 57.0426,
+      "collision_polygon_px": [
+        [
+          -14.9957,
+          -27.6392
+        ],
+        [
+          3.8224,
+          -28.2273
+        ],
+        [
+          17.348,
+          -18.8182
+        ],
+        [
+          5.5866,
+          -9.9972
+        ],
+        [
+          -13.8196,
+          -15.2898
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:boss_king_court_v03:broken_throne",
+      "name": "王庭回响 · broken_throne",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_king_court_v03/broken_throne.png",
+      "collision": "stone",
+      "render_width_px": 304.6193,
+      "collision_polygon_px": [
+        [
+          -91.1506,
+          -62.9233
+        ],
+        [
+          -55.8665,
+          -36.4602
+        ],
+        [
+          38.2244,
+          -17.054
+        ],
+        [
+          103.5,
+          -32.3438
+        ],
+        [
+          137.608,
+          -68.804
+        ],
+        [
+          119.9659,
+          -95.267
+        ],
+        [
+          63.5114,
+          -81.1534
+        ],
+        [
+          -5.2926,
+          -95.8551
+        ],
+        [
+          -68.804,
+          -85.2699
+        ]
+      ]
+    },
+    {
+      "id": "scene:boss_king_court_v03:candle_west",
+      "name": "王庭回响 · candle_west",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "fire",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_king_court_v03/candle_west.png",
+      "collision": "light",
+      "render_width_px": 56.4545,
+      "collision_polygon_px": [
+        [
+          -5.8807,
+          -18.2301
+        ],
+        [
+          8.233,
+          -22.9347
+        ],
+        [
+          16.4659,
+          -12.9375
+        ],
+        [
+          9.4091,
+          -4.7045
+        ],
+        [
+          -8.233,
+          -4.7045
+        ],
+        [
+          -15.2898,
+          -12.9375
+        ]
+      ],
+      "light": {
+        "kind": "fire",
+        "radius": 150,
+        "color": "ffd38a"
+      }
+    },
+    {
+      "id": "scene:boss_king_court_v03:candle_east",
+      "name": "王庭回响 · candle_east",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "fire",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_king_court_v03/candle_east.png",
+      "collision": "light",
+      "render_width_px": 55.8665,
+      "collision_polygon_px": [
+        [
+          -8.527,
+          -23.5227
+        ],
+        [
+          7.9389,
+          -24.6989
+        ],
+        [
+          15.5838,
+          -12.3494
+        ],
+        [
+          4.4105,
+          -5.2926
+        ],
+        [
+          -14.4077,
+          -7.0568
+        ]
+      ],
+      "light": {
+        "kind": "fire",
+        "radius": 150,
+        "color": "ffd38a"
+      }
+    },
+    {
+      "id": "scene:boss_king_court_v03:fallen_column",
+      "name": "王庭回响 · fallen_column",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_king_court_v03/fallen_column.png",
+      "collision": "stone",
+      "render_width_px": 101.7358,
+      "collision_polygon_px": [
+        [
+          -33.2259,
+          -29.4034
+        ],
+        [
+          -17.348,
+          -29.9915
+        ],
+        [
+          34.9901,
+          -13.5256
+        ],
+        [
+          26.169,
+          -4.7045
+        ],
+        [
+          -22.6406,
+          -17.054
+        ]
+      ]
+    },
+    {
+      "id": "scene:boss_king_court_v03:heraldic_plinth",
+      "name": "王庭回响 · heraldic_plinth",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_king_court_v03/heraldic_plinth.png",
+      "collision": "stone",
+      "render_width_px": 119.3778,
+      "collision_polygon_px": [
+        [
+          -13.8196,
+          -40.5767
+        ],
+        [
+          10.8793,
+          -45.2812
+        ],
+        [
+          28.5213,
+          -35.8722
+        ],
+        [
+          27.3452,
+          -18.8182
+        ],
+        [
+          -4.9986,
+          -13.5256
+        ],
+        [
+          -23.2287,
+          -23.5227
+        ]
+      ]
+    },
+    {
+      "id": "scene:boss_king_court_v03:east_plinth",
+      "name": "王庭回响 · east_plinth",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_king_court_v03/east_plinth.png",
+      "collision": "stone",
+      "render_width_px": 57.0426,
+      "collision_polygon_px": [
+        [
+          -14.9957,
+          -27.6392
+        ],
+        [
+          3.8224,
+          -28.2273
+        ],
+        [
+          17.348,
+          -18.8182
+        ],
+        [
+          5.5866,
+          -9.9972
+        ],
+        [
+          -13.8196,
+          -15.2898
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "bridge_paths_px": [],
+  "source_title": "王庭回响"
+}

@@ -1,0 +1,169 @@
+{
+	"base_ground": "floor:wood",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "tavern_veranda",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "木香酒馆",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				6.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				6.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 8,
+	"room_bounds_override": [
+		18.0,
+		0.0,
+		793.0,
+		441.0
+	],
+	"room_kinds": [
+		"tavern"
+	],
+	"scene_art": "tavern_veranda_v03",
+	"scene_collision_overrides": {
+		"objects": {
+			"garden_boulder": [
+				[
+					2.0,
+					-63.2
+				],
+				[
+					25.5,
+					-44.8
+				],
+				[
+					9.2,
+					-35.6
+				],
+				[
+					-15.8,
+					-44.3
+				]
+			],
+			"tavern_lamp_e": [
+				[
+					-7.6449,
+					-22.9347
+				],
+				[
+					5.2926,
+					-24.1108
+				],
+				[
+					8.821,
+					-10.5852
+				],
+				[
+					-11.1733,
+					-10.5852
+				]
+			],
+			"tavern_lamp_w": [
+				[
+					-6.7628,
+					-21.1705
+				],
+				[
+					4.4105,
+					-22.3466
+				],
+				[
+					7.9389,
+					-8.821
+				],
+				[
+					-10.2912,
+					-9.4091
+				]
+			],
+			"veranda_lamp_ne": [
+				[
+					-25.9,
+					-15.2
+				],
+				[
+					-14.2,
+					-13.7
+				],
+				[
+					-14.7,
+					0.1
+				],
+				[
+					-25.4,
+					0.1
+				]
+			],
+			"veranda_lamp_nw": [
+				[
+					-13.9,
+					-31.1
+				],
+				[
+					2.5,
+					-33.1
+				],
+				[
+					4.0,
+					-13.2
+				],
+				[
+					-14.9,
+					-13.7
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"service_layout": true,
+	"tags": [],
+	"theme": "forest"
+}

@@ -1,0 +1,1415 @@
+{
+  "version": 1,
+  "id": "city_boss_verena_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        -2.322,
+        144.218
+      ],
+      "source_rect_px": [
+        50,
+        50,
+        181,
+        330
+      ],
+      "source_foot_px": [
+        140.5,
+        380
+      ],
+      "render_width_px": 120.087,
+      "collision_polygon_px": [
+        [
+          -43.23132,
+          -37.32688821752266
+        ],
+        [
+          43.23132,
+          -37.32688821752266
+        ],
+        [
+          43.23132,
+          0
+        ],
+        [
+          -43.23132,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        257.423,
+        14.846
+      ],
+      "source_rect_px": [
+        484,
+        50,
+        96,
+        147
+      ],
+      "source_foot_px": [
+        532.0,
+        197
+      ],
+      "render_width_px": 63.692,
+      "collision_polygon_px": [
+        [
+          -22.929119999999998,
+          -16.627432024169185
+        ],
+        [
+          22.929119999999998,
+          -16.627432024169185
+        ],
+        [
+          22.929119999999998,
+          0
+        ],
+        [
+          -22.929119999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        567.591,
+        14.846
+      ],
+      "source_rect_px": [
+        952,
+        50,
+        95,
+        147
+      ],
+      "source_foot_px": [
+        999.5,
+        197
+      ],
+      "render_width_px": 63.029,
+      "collision_polygon_px": [
+        [
+          -22.69044,
+          -16.627432024169185
+        ],
+        [
+          22.69044,
+          -16.627432024169185
+        ],
+        [
+          22.69044,
+          0
+        ],
+        [
+          -22.69044,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        152.264,
+        69.281
+      ],
+      "source_rect_px": [
+        308,
+        51,
+        131,
+        223
+      ],
+      "source_foot_px": [
+        373.5,
+        274
+      ],
+      "render_width_px": 86.913,
+      "collision_polygon_px": [
+        [
+          -31.28868,
+          -25.223927492447128
+        ],
+        [
+          31.28868,
+          -25.223927492447128
+        ],
+        [
+          31.28868,
+          0
+        ],
+        [
+          -31.28868,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        676.067,
+        69.281
+      ],
+      "source_rect_px": [
+        1098,
+        51,
+        130,
+        223
+      ],
+      "source_foot_px": [
+        1163.0,
+        274
+      ],
+      "render_width_px": 86.25,
+      "collision_polygon_px": [
+        [
+          -31.049999999999997,
+          -25.223927492447128
+        ],
+        [
+          31.049999999999997,
+          -25.223927492447128
+        ],
+        [
+          31.049999999999997,
+          0
+        ],
+        [
+          -31.049999999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        829.659,
+        143.511
+      ],
+      "source_rect_px": [
+        1303,
+        51,
+        183,
+        328
+      ],
+      "source_foot_px": [
+        1394.5,
+        379
+      ],
+      "render_width_px": 121.413,
+      "collision_polygon_px": [
+        [
+          -43.708679999999994,
+          -37.10066465256798
+        ],
+        [
+          43.708679999999994,
+          -37.10066465256798
+        ],
+        [
+          43.708679999999994,
+          0
+        ],
+        [
+          -43.708679999999994,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        87.245,
+        91.903
+      ],
+      "source_rect_px": [
+        235,
+        83,
+        81,
+        223
+      ],
+      "source_foot_px": [
+        275.5,
+        306
+      ],
+      "render_width_px": 53.74,
+      "collision_polygon_px": [
+        [
+          -19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          0
+        ],
+        [
+          -19.3464,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_08.png",
+      "position_px": [
+        742.082,
+        91.903
+      ],
+      "source_rect_px": [
+        1222,
+        83,
+        81,
+        223
+      ],
+      "source_foot_px": [
+        1262.5,
+        306
+      ],
+      "render_width_px": 53.74,
+      "collision_polygon_px": [
+        [
+          -19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          0
+        ],
+        [
+          -19.3464,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_09",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_09.png",
+      "position_px": [
+        322.111,
+        33.227
+      ],
+      "source_rect_px": [
+        611,
+        111,
+        37,
+        112
+      ],
+      "source_foot_px": [
+        629.5,
+        223
+      ],
+      "render_width_px": 24.548,
+      "collision_polygon_px": [
+        [
+          -8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          0
+        ],
+        [
+          -8.83728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_10",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_10.png",
+      "position_px": [
+        505.226,
+        33.227
+      ],
+      "source_rect_px": [
+        887,
+        111,
+        37,
+        112
+      ],
+      "source_foot_px": [
+        905.5,
+        223
+      ],
+      "render_width_px": 24.548,
+      "collision_polygon_px": [
+        [
+          -8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          0
+        ],
+        [
+          -8.83728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_11",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_11.png",
+      "position_px": [
+        208.659,
+        56.556
+      ],
+      "source_rect_px": [
+        442,
+        167,
+        33,
+        89
+      ],
+      "source_foot_px": [
+        458.5,
+        256
+      ],
+      "render_width_px": 21.894,
+      "collision_polygon_px": [
+        [
+          -7.8818399999999995,
+          -10.066948640483384
+        ],
+        [
+          7.8818399999999995,
+          -10.066948640483384
+        ],
+        [
+          7.8818399999999995,
+          0
+        ],
+        [
+          -7.8818399999999995,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_12",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_12.png",
+      "position_px": [
+        617.683,
+        56.556
+      ],
+      "source_rect_px": [
+        1059,
+        167,
+        32,
+        89
+      ],
+      "source_foot_px": [
+        1075.0,
+        256
+      ],
+      "render_width_px": 21.231,
+      "collision_polygon_px": [
+        [
+          -7.64316,
+          -10.066948640483384
+        ],
+        [
+          7.64316,
+          -10.066948640483384
+        ],
+        [
+          7.64316,
+          0
+        ],
+        [
+          -7.64316,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_13",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_13.png",
+      "position_px": [
+        39.808,
+        381.045
+      ],
+      "source_rect_px": [
+        178,
+        617,
+        52,
+        98
+      ],
+      "source_foot_px": [
+        204.0,
+        715
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -12.42,
+          -11.084954682779456
+        ],
+        [
+          12.42,
+          -11.084954682779456
+        ],
+        [
+          12.42,
+          0
+        ],
+        [
+          -12.42,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_14",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_14.png",
+      "position_px": [
+        788.856,
+        381.045
+      ],
+      "source_rect_px": [
+        1307,
+        618,
+        52,
+        97
+      ],
+      "source_foot_px": [
+        1333.0,
+        715
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -12.42,
+          -10.971842900302114
+        ],
+        [
+          12.42,
+          -10.971842900302114
+        ],
+        [
+          12.42,
+          0
+        ],
+        [
+          -12.42,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_15",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_15.png",
+      "position_px": [
+        53.409,
+        528.091
+      ],
+      "source_rect_px": [
+        40,
+        625,
+        369,
+        298
+      ],
+      "source_foot_px": [
+        224.5,
+        923
+      ],
+      "render_width_px": 244.817,
+      "collision_polygon_px": [
+        [
+          -88.13412,
+          -33.707311178247735
+        ],
+        [
+          88.13412,
+          -33.707311178247735
+        ],
+        [
+          88.13412,
+          0
+        ],
+        [
+          -88.13412,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_16",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_16.png",
+      "position_px": [
+        778.572,
+        528.091
+      ],
+      "source_rect_px": [
+        1138,
+        628,
+        359,
+        295
+      ],
+      "source_foot_px": [
+        1317.5,
+        923
+      ],
+      "render_width_px": 238.183,
+      "collision_polygon_px": [
+        [
+          -85.74588,
+          -33.36797583081571
+        ],
+        [
+          85.74588,
+          -33.36797583081571
+        ],
+        [
+          85.74588,
+          0
+        ],
+        [
+          -85.74588,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_17",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_17.png",
+      "position_px": [
+        -54.404,
+        523.849
+      ],
+      "source_rect_px": [
+        41,
+        809,
+        42,
+        108
+      ],
+      "source_foot_px": [
+        62.0,
+        917
+      ],
+      "render_width_px": 27.865,
+      "collision_polygon_px": [
+        [
+          -10.0314,
+          -12.216072507552871
+        ],
+        [
+          10.0314,
+          -12.216072507552871
+        ],
+        [
+          10.0314,
+          0
+        ],
+        [
+          -10.0314,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_18",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_18.png",
+      "position_px": [
+        883.067,
+        523.849
+      ],
+      "source_rect_px": [
+        1454,
+        810,
+        42,
+        107
+      ],
+      "source_foot_px": [
+        1475.0,
+        917
+      ],
+      "render_width_px": 27.865,
+      "collision_polygon_px": [
+        [
+          -10.0314,
+          -12.10296072507553
+        ],
+        [
+          10.0314,
+          -12.10296072507553
+        ],
+        [
+          10.0314,
+          0
+        ],
+        [
+          -10.0314,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_boss_verena_v01:prop_01",
+      "name": "静默藏名馆 · prop_01",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 120.087,
+      "collision_polygon_px": [
+        [
+          -43.23132,
+          -37.32688821752266
+        ],
+        [
+          43.23132,
+          -37.32688821752266
+        ],
+        [
+          43.23132,
+          0
+        ],
+        [
+          -43.23132,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_02",
+      "name": "静默藏名馆 · prop_02",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 63.692,
+      "collision_polygon_px": [
+        [
+          -22.929119999999998,
+          -16.627432024169185
+        ],
+        [
+          22.929119999999998,
+          -16.627432024169185
+        ],
+        [
+          22.929119999999998,
+          0
+        ],
+        [
+          -22.929119999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_03",
+      "name": "静默藏名馆 · prop_03",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 63.029,
+      "collision_polygon_px": [
+        [
+          -22.69044,
+          -16.627432024169185
+        ],
+        [
+          22.69044,
+          -16.627432024169185
+        ],
+        [
+          22.69044,
+          0
+        ],
+        [
+          -22.69044,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_04",
+      "name": "静默藏名馆 · prop_04",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 86.913,
+      "collision_polygon_px": [
+        [
+          -31.28868,
+          -25.223927492447128
+        ],
+        [
+          31.28868,
+          -25.223927492447128
+        ],
+        [
+          31.28868,
+          0
+        ],
+        [
+          -31.28868,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_05",
+      "name": "静默藏名馆 · prop_05",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 86.25,
+      "collision_polygon_px": [
+        [
+          -31.049999999999997,
+          -25.223927492447128
+        ],
+        [
+          31.049999999999997,
+          -25.223927492447128
+        ],
+        [
+          31.049999999999997,
+          0
+        ],
+        [
+          -31.049999999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_06",
+      "name": "静默藏名馆 · prop_06",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 121.413,
+      "collision_polygon_px": [
+        [
+          -43.708679999999994,
+          -37.10066465256798
+        ],
+        [
+          43.708679999999994,
+          -37.10066465256798
+        ],
+        [
+          43.708679999999994,
+          0
+        ],
+        [
+          -43.708679999999994,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_07",
+      "name": "静默藏名馆 · prop_07",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.74,
+      "collision_polygon_px": [
+        [
+          -19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          0
+        ],
+        [
+          -19.3464,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_08",
+      "name": "静默藏名馆 · prop_08",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_08.png",
+      "layer": "objects",
+      "model": "prop_08",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.74,
+      "collision_polygon_px": [
+        [
+          -19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          -25.223927492447128
+        ],
+        [
+          19.3464,
+          0
+        ],
+        [
+          -19.3464,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_09",
+      "name": "静默藏名馆 · prop_09",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_09.png",
+      "layer": "objects",
+      "model": "prop_09",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 24.548,
+      "collision_polygon_px": [
+        [
+          -8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          0
+        ],
+        [
+          -8.83728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_10",
+      "name": "静默藏名馆 · prop_10",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_10.png",
+      "layer": "objects",
+      "model": "prop_10",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 24.548,
+      "collision_polygon_px": [
+        [
+          -8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          -12.668519637462238
+        ],
+        [
+          8.83728,
+          0
+        ],
+        [
+          -8.83728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_11",
+      "name": "静默藏名馆 · prop_11",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_11.png",
+      "layer": "objects",
+      "model": "prop_11",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 21.894,
+      "collision_polygon_px": [
+        [
+          -7.8818399999999995,
+          -10.066948640483384
+        ],
+        [
+          7.8818399999999995,
+          -10.066948640483384
+        ],
+        [
+          7.8818399999999995,
+          0
+        ],
+        [
+          -7.8818399999999995,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_12",
+      "name": "静默藏名馆 · prop_12",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_12.png",
+      "layer": "objects",
+      "model": "prop_12",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 21.231,
+      "collision_polygon_px": [
+        [
+          -7.64316,
+          -10.066948640483384
+        ],
+        [
+          7.64316,
+          -10.066948640483384
+        ],
+        [
+          7.64316,
+          0
+        ],
+        [
+          -7.64316,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_13",
+      "name": "静默藏名馆 · prop_13",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_13.png",
+      "layer": "objects",
+      "model": "prop_13",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -12.42,
+          -11.084954682779456
+        ],
+        [
+          12.42,
+          -11.084954682779456
+        ],
+        [
+          12.42,
+          0
+        ],
+        [
+          -12.42,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_14",
+      "name": "静默藏名馆 · prop_14",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_14.png",
+      "layer": "objects",
+      "model": "prop_14",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -12.42,
+          -10.971842900302114
+        ],
+        [
+          12.42,
+          -10.971842900302114
+        ],
+        [
+          12.42,
+          0
+        ],
+        [
+          -12.42,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_15",
+      "name": "静默藏名馆 · prop_15",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_15.png",
+      "layer": "objects",
+      "model": "prop_15",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 244.817,
+      "collision_polygon_px": [
+        [
+          -88.13412,
+          -33.707311178247735
+        ],
+        [
+          88.13412,
+          -33.707311178247735
+        ],
+        [
+          88.13412,
+          0
+        ],
+        [
+          -88.13412,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_16",
+      "name": "静默藏名馆 · prop_16",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_16.png",
+      "layer": "objects",
+      "model": "prop_16",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 238.183,
+      "collision_polygon_px": [
+        [
+          -85.74588,
+          -33.36797583081571
+        ],
+        [
+          85.74588,
+          -33.36797583081571
+        ],
+        [
+          85.74588,
+          0
+        ],
+        [
+          -85.74588,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_17",
+      "name": "静默藏名馆 · prop_17",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_17.png",
+      "layer": "objects",
+      "model": "prop_17",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 27.865,
+      "collision_polygon_px": [
+        [
+          -10.0314,
+          -12.216072507552871
+        ],
+        [
+          10.0314,
+          -12.216072507552871
+        ],
+        [
+          10.0314,
+          0
+        ],
+        [
+          -10.0314,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_verena_v01:prop_18",
+      "name": "静默藏名馆 · prop_18",
+      "path": "res://assets/room_illustrated/city_boss_verena_v01/prop_18.png",
+      "layer": "objects",
+      "model": "prop_18",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 27.865,
+      "collision_polygon_px": [
+        [
+          -10.0314,
+          -12.10296072507553
+        ],
+        [
+          10.0314,
+          -12.10296072507553
+        ],
+        [
+          10.0314,
+          0
+        ],
+        [
+          -10.0314,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

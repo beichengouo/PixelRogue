@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%"
+     style="image-rendering: pixelated; image-rendering: crisp-edges;">
+  <!-- 主按钮底（chunky pixel）：32x32，四边 10px 可拉伸。
+       上边一条亮高光、下边两条暗色 —— 像素风里这就是"凸起" -->
+
+  <rect x="0" y="0" width="32" height="32" fill="#7a5a12"/>
+  <rect x="1" y="1" width="30" height="30" fill="#c8951a"/>
+  <rect x="2" y="2" width="28" height="28" fill="#f0d08a"/>
+  <rect x="3" y="3" width="26" height="26" fill="#ffd980"/>
+  <rect x="4" y="4" width="24" height="24" fill="#e8b93c"/>
+  <!-- 顶部高光 / 底部阴影 -->
+  <rect x="3" y="3" width="26" height="2" fill="#fff3cc"/>
+  <rect x="3" y="27" width="26" height="2" fill="#b5871f"/>
+  <rect x="3" y="25" width="26" height="2" fill="#cf9a24"/>
+  <!-- 左右两侧的暗边，让按钮有厚度 -->
+  <rect x="1" y="3" width="2" height="26" fill="#a8791a"/>
+  <rect x="29" y="3" width="2" height="26" fill="#a8791a"/>
+  <!-- 四角切角（像素风的圆角做法） -->
+  <rect x="2" y="1" width="2" height="1" fill="#f0d08a"/>
+  <rect x="28" y="1" width="2" height="1" fill="#f0d08a"/>
+  <rect x="2" y="30" width="2" height="1" fill="#f0d08a"/>
+  <rect x="28" y="30" width="2" height="1" fill="#f0d08a"/>
+</svg>

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="SpriteFrames" path="res://assets/environment/animated/water_azure.tres" id="1"]
+[node name="AzureWaterAnimation" type="AnimatedSprite2D"]
+texture_filter = 2
+z_index = -1
+scale = Vector2(0.6,0.25)
+sprite_frames = ExtResource("1")
+animation = &"flow"
+autoplay = "flow"
+centered = false

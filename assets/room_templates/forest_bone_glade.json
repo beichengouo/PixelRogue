@@ -1,0 +1,175 @@
+{
+	"base_ground": "floor:grass",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "forest_bone_glade",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [
+			{
+				"asset_id": "spawn",
+				"at": [
+					19,
+					10
+				],
+				"id": "spawn_702668588"
+			},
+			{
+				"asset_id": "spawn",
+				"at": [
+					21,
+					1
+				],
+				"id": "spawn_712473675"
+			},
+			{
+				"asset_id": "spawn",
+				"at": [
+					13,
+					6
+				],
+				"id": "spawn_715737516"
+			},
+			{
+				"asset_id": "spawn",
+				"at": [
+					6,
+					8
+				],
+				"id": "spawn_717536065"
+			}
+		],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "遗骨草甸",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				5.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				5.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 5,
+	"room_kinds": [
+		"normal"
+	],
+	"scene_art": "bone_glade_v02",
+	"scene_collision_overrides": {
+		"objects": {
+			"relic_ribs": [
+				[
+					-145.2528,
+					-118.2017
+				],
+				[
+					-142.2,
+					-155.8
+				],
+				[
+					-78.5,
+					-201.2
+				],
+				[
+					-2.5,
+					-205.3
+				],
+				[
+					59.3,
+					-187.4
+				],
+				[
+					104.2,
+					-144.0
+				],
+				[
+					163.3,
+					-120.1
+				],
+				[
+					176.1,
+					-74.1
+				],
+				[
+					144.0767,
+					-37.6364
+				],
+				[
+					94.0,
+					-25.2
+				],
+				[
+					46.5,
+					-46.1
+				],
+				[
+					19.9943,
+					-9.4091
+				],
+				[
+					-7.0568,
+					-23.5227
+				],
+				[
+					-48.8097,
+					-42.3409
+				],
+				[
+					-78.8011,
+					-49.9858
+				],
+				[
+					-104.0881,
+					-68.804
+				],
+				[
+					-128.7869,
+					-85.2699
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"tags": [],
+	"theme": "forest"
+}

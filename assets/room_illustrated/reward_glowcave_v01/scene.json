@@ -1,0 +1,667 @@
+{
+  "version": 1,
+  "id": "reward_glowcave_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "mushroom_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "mushroom_nw.png",
+      "position_px": [
+        96.865,
+        133.613
+      ],
+      "source_foot_px": [
+        290,
+        365
+      ],
+      "source_rect_px": [
+        194,
+        144,
+        193,
+        221
+      ],
+      "render_width_px": 128.048,
+      "collision_polygon_px": [
+        [
+          -55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          0
+        ],
+        [
+          -55.061,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "42eddf",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "mushroom_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "mushroom_ne.png",
+      "position_px": [
+        730.471,
+        133.613
+      ],
+      "source_foot_px": [
+        1245,
+        365
+      ],
+      "source_rect_px": [
+        1148,
+        142,
+        193,
+        223
+      ],
+      "render_width_px": 128.048,
+      "collision_polygon_px": [
+        [
+          -55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          0
+        ],
+        [
+          -55.061,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "42eddf",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "mushroom_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "mushroom_sw.png",
+      "position_px": [
+        93.548,
+        448.205
+      ],
+      "source_foot_px": [
+        285,
+        810
+      ],
+      "source_rect_px": [
+        184,
+        611,
+        201,
+        199
+      ],
+      "render_width_px": 133.356,
+      "collision_polygon_px": [
+        [
+          -57.343,
+          -29.692
+        ],
+        [
+          57.343,
+          -29.692
+        ],
+        [
+          57.343,
+          0
+        ],
+        [
+          -57.343,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "42eddf",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "mushroom_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "mushroom_se.png",
+      "position_px": [
+        730.471,
+        448.205
+      ],
+      "source_foot_px": [
+        1245,
+        810
+      ],
+      "source_rect_px": [
+        1143,
+        609,
+        204,
+        201
+      ],
+      "render_width_px": 135.346,
+      "collision_polygon_px": [
+        [
+          -58.199,
+          -29.692
+        ],
+        [
+          58.199,
+          -29.692
+        ],
+        [
+          58.199,
+          0
+        ],
+        [
+          -58.199,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "42eddf",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "pearl_w",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "pearl_w.png",
+      "position_px": [
+        199.702,
+        66.453
+      ],
+      "source_foot_px": [
+        445,
+        270
+      ],
+      "source_rect_px": [
+        377,
+        145,
+        136,
+        125
+      ],
+      "render_width_px": 90.231,
+      "collision_polygon_px": [
+        [
+          -38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          0
+        ],
+        [
+          -38.799,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8fdfeb",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "pearl_e",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "pearl_e.png",
+      "position_px": [
+        627.635,
+        66.453
+      ],
+      "source_foot_px": [
+        1090,
+        270
+      ],
+      "source_rect_px": [
+        1022,
+        145,
+        136,
+        125
+      ],
+      "render_width_px": 90.231,
+      "collision_polygon_px": [
+        [
+          -38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          0
+        ],
+        [
+          -38.799,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8fdfeb",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "pearl_altar",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "pearl_altar.png",
+      "position_px": [
+        276.0,
+        144.218
+      ],
+      "source_foot_px": [
+        560,
+        380
+      ],
+      "source_rect_px": [
+        496,
+        269,
+        127,
+        111
+      ],
+      "render_width_px": 84.26,
+      "collision_polygon_px": [
+        [
+          -36.232,
+          -14.91
+        ],
+        [
+          36.232,
+          -14.91
+        ],
+        [
+          36.232,
+          0
+        ],
+        [
+          -36.232,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8fdfeb",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:reward_glowcave_v01:mushroom_nw",
+      "name": "萤菌藏珍窟 · mushroom_nw",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/mushroom_nw.png",
+      "layer": "lights",
+      "model": "mushroom_nw",
+      "collision": "light",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 128.048,
+      "collision_polygon_px": [
+        [
+          -55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          0
+        ],
+        [
+          -55.061,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_glowcave_v01:mushroom_ne",
+      "name": "萤菌藏珍窟 · mushroom_ne",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/mushroom_ne.png",
+      "layer": "lights",
+      "model": "mushroom_ne",
+      "collision": "light",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 128.048,
+      "collision_polygon_px": [
+        [
+          -55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          -29.692
+        ],
+        [
+          55.061,
+          0
+        ],
+        [
+          -55.061,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_glowcave_v01:mushroom_sw",
+      "name": "萤菌藏珍窟 · mushroom_sw",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/mushroom_sw.png",
+      "layer": "lights",
+      "model": "mushroom_sw",
+      "collision": "light",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 133.356,
+      "collision_polygon_px": [
+        [
+          -57.343,
+          -29.692
+        ],
+        [
+          57.343,
+          -29.692
+        ],
+        [
+          57.343,
+          0
+        ],
+        [
+          -57.343,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_glowcave_v01:mushroom_se",
+      "name": "萤菌藏珍窟 · mushroom_se",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/mushroom_se.png",
+      "layer": "lights",
+      "model": "mushroom_se",
+      "collision": "light",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 135.346,
+      "collision_polygon_px": [
+        [
+          -58.199,
+          -29.692
+        ],
+        [
+          58.199,
+          -29.692
+        ],
+        [
+          58.199,
+          0
+        ],
+        [
+          -58.199,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_glowcave_v01:pearl_w",
+      "name": "萤菌藏珍窟 · pearl_w",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/pearl_w.png",
+      "layer": "lights",
+      "model": "pearl_w",
+      "collision": "light",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 90.231,
+      "collision_polygon_px": [
+        [
+          -38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          0
+        ],
+        [
+          -38.799,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_glowcave_v01:pearl_e",
+      "name": "萤菌藏珍窟 · pearl_e",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/pearl_e.png",
+      "layer": "lights",
+      "model": "pearl_e",
+      "collision": "light",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 90.231,
+      "collision_polygon_px": [
+        [
+          -38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          -16.79
+        ],
+        [
+          38.799,
+          0
+        ],
+        [
+          -38.799,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_glowcave_v01:pearl_altar",
+      "name": "萤菌藏珍窟 · pearl_altar",
+      "path": "res://assets/room_illustrated/reward_glowcave_v01/pearl_altar.png",
+      "layer": "lights",
+      "model": "pearl_altar",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 84.26,
+      "collision_polygon_px": [
+        [
+          -36.232,
+          -14.91
+        ],
+        [
+          36.232,
+          -14.91
+        ],
+        [
+          36.232,
+          0
+        ],
+        [
+          -36.232,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {
+    "lane_left": [
+      [
+        183.115,
+        126.544
+      ],
+      [
+        183.115,
+        204.308
+      ],
+      [
+        183.115,
+        282.073
+      ],
+      [
+        183.115,
+        359.837
+      ],
+      [
+        183.115,
+        430.532
+      ]
+    ],
+    "lane_right": [
+      [
+        634.269,
+        126.544
+      ],
+      [
+        634.269,
+        204.308
+      ],
+      [
+        634.269,
+        282.073
+      ],
+      [
+        634.269,
+        359.837
+      ],
+      [
+        634.269,
+        430.532
+      ]
+    ]
+  },
+  "surface_water_polygons_px": []
+}

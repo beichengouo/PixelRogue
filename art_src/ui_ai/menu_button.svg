@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 152" width="100%" height="100%">
+  <!-- 菜单按钮的"形状底稿"：给 AI 当 img2img + ControlNet Tile 的输入。
+       它只负责**轮廓和明暗分区**（外描边 / 装饰带 / 内衬），
+       材质、笔触、厚涂质感全部交给模型重绘。
+       最终显示尺寸约 380x56，这里按 1024x152 生成（约 2.7 倍）再缩小。 -->
+  <rect x="0" y="0" width="1024" height="152" rx="26" fill="#20160e"/>
+  <rect x="10" y="10" width="1004" height="132" rx="20" fill="#c8951a"/>
+  <rect x="22" y="22" width="980" height="108" rx="14" fill="#8a6414"/>
+  <rect x="30" y="30" width="964" height="92" rx="10" fill="#f0d08a"/>
+  <rect x="40" y="40" width="944" height="72" rx="8" fill="#e8c46a"/>
+  <!-- 两侧的"端点装饰"位置提示 -->
+  <rect x="46" y="52" width="26" height="48" rx="6" fill="#fff3cc"/>
+  <rect x="952" y="52" width="26" height="48" rx="6" fill="#fff3cc"/>
+</svg>

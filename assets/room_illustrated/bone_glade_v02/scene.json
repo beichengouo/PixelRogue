@@ -1,0 +1,836 @@
+{
+  "version": 1,
+  "id": "bone_glade_v02",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        145
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        837,
+        255,
+        187
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        392,
+        92,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1441,
+        392,
+        95,
+        177
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:bone_glade_v02:relic_ribs",
+      "name": "遗骨草甸 · relic_ribs",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/relic_ribs.png",
+      "collision": "stone",
+      "render_width_px": 377.5398,
+      "collision_polygon_px": [
+        [
+          -145.2528,
+          -118.2017
+        ],
+        [
+          -108.7926,
+          -127.6108
+        ],
+        [
+          -77.625,
+          -125.2585
+        ],
+        [
+          -44.6932,
+          -119.9659
+        ],
+        [
+          -5.8807,
+          -111.733
+        ],
+        [
+          34.108,
+          -108.7926
+        ],
+        [
+          75.2727,
+          -101.7358
+        ],
+        [
+          115.8494,
+          -95.8551
+        ],
+        [
+          142.9006,
+          -83.5057
+        ],
+        [
+          166.4233,
+          -54.1023
+        ],
+        [
+          144.0767,
+          -37.6364
+        ],
+        [
+          102.3239,
+          -31.7557
+        ],
+        [
+          65.8636,
+          -19.9943
+        ],
+        [
+          19.9943,
+          -9.4091
+        ],
+        [
+          -7.0568,
+          -23.5227
+        ],
+        [
+          -48.8097,
+          -42.3409
+        ],
+        [
+          -78.8011,
+          -49.9858
+        ],
+        [
+          -104.0881,
+          -68.804
+        ],
+        [
+          -128.7869,
+          -85.2699
+        ]
+      ]
+    },
+    {
+      "id": "scene:bone_glade_v02:old_stump",
+      "name": "遗骨草甸 · old_stump",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/old_stump.png",
+      "collision": "stone",
+      "render_width_px": 224.054,
+      "collision_polygon_px": [
+        [
+          -57.3366,
+          -83.5057
+        ],
+        [
+          -31.4616,
+          -89.9744
+        ],
+        [
+          -8.527,
+          -88.2102
+        ],
+        [
+          24.4048,
+          -81.1534
+        ],
+        [
+          52.6321,
+          -68.804
+        ],
+        [
+          73.8026,
+          -53.5142
+        ],
+        [
+          58.5128,
+          -37.6364
+        ],
+        [
+          15.5838,
+          -27.0511
+        ],
+        [
+          -20.8764,
+          -39.4006
+        ],
+        [
+          -37.3423,
+          -54.6903
+        ],
+        [
+          -64.3935,
+          -64.0994
+        ]
+      ]
+    },
+    {
+      "id": "scene:bone_glade_v02:moss_boulder",
+      "name": "遗骨草甸 · moss_boulder",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/moss_boulder.png",
+      "collision": "stone",
+      "render_width_px": 143.4886,
+      "collision_polygon_px": [
+        [
+          -47.6335,
+          -68.2159
+        ],
+        [
+          -27.6392,
+          -72.9205
+        ],
+        [
+          -4.7045,
+          -68.2159
+        ],
+        [
+          17.054,
+          -49.9858
+        ],
+        [
+          33.5199,
+          -36.4602
+        ],
+        [
+          22.3466,
+          -20.5824
+        ],
+        [
+          -5.8807,
+          -8.821
+        ],
+        [
+          -23.5227,
+          -16.4659
+        ],
+        [
+          -44.1051,
+          -28.2273
+        ],
+        [
+          -58.8068,
+          -45.8693
+        ]
+      ]
+    },
+    {
+      "id": "scene:bone_glade_v02:crate_a",
+      "name": "遗骨草甸 · crate_a",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/crate_a.png",
+      "collision": "crate",
+      "render_width_px": 36.4602,
+      "collision_polygon_px": [
+        [
+          -16.4659,
+          -18.8182
+        ],
+        [
+          14.7017,
+          -18.8182
+        ],
+        [
+          16.4659,
+          -6.4687
+        ],
+        [
+          10.5852,
+          -1.7642
+        ],
+        [
+          -14.7017,
+          -4.1165
+        ]
+      ]
+    },
+    {
+      "id": "scene:bone_glade_v02:crate_b",
+      "name": "遗骨草甸 · crate_b",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/crate_b.png",
+      "collision": "crate",
+      "render_width_px": 37.0483,
+      "collision_polygon_px": [
+        [
+          -15.5838,
+          -17.642
+        ],
+        [
+          15.5838,
+          -17.642
+        ],
+        [
+          17.348,
+          -4.1165
+        ],
+        [
+          12.0554,
+          -0.5881
+        ],
+        [
+          -15.5838,
+          -2.9403
+        ]
+      ]
+    },
+    {
+      "id": "scene:bone_glade_v02:lamp_west",
+      "name": "遗骨草甸 · lamp_west",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/lamp_west.png",
+      "collision": "light",
+      "render_width_px": 28.2273,
+      "collision_polygon_px": [
+        [
+          -8.233,
+          -10.5852
+        ],
+        [
+          0.0,
+          -12.3494
+        ],
+        [
+          8.233,
+          -8.821
+        ],
+        [
+          7.0568,
+          -2.3523
+        ],
+        [
+          -3.5284,
+          0.0
+        ],
+        [
+          -10.5852,
+          -4.1165
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 130,
+        "color": "ffd88a"
+      }
+    },
+    {
+      "id": "scene:bone_glade_v02:lamp_east",
+      "name": "遗骨草甸 · lamp_east",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/bone_glade_v02/lamp_east.png",
+      "collision": "light",
+      "render_width_px": 29.4034,
+      "collision_polygon_px": [
+        [
+          -2.9403,
+          -5.8807
+        ],
+        [
+          2.9403,
+          -5.8807
+        ],
+        [
+          2.9403,
+          -1.1761
+        ],
+        [
+          -2.9403,
+          -1.1761
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 130,
+        "color": "ffd88a"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "relic_ribs",
+      "kind": "stone",
+      "texture": "relic_ribs.png",
+      "position_px": [
+        289.9176,
+        255.8097
+      ],
+      "source_rect_px": [
+        236,
+        164,
+        878,
+        563
+      ],
+      "source_foot_px": [
+        557.0,
+        563
+      ],
+      "render_width_px": 377.5398,
+      "collision_polygon_px": [
+        [
+          -145.2528,
+          -118.2017
+        ],
+        [
+          -108.7926,
+          -127.6108
+        ],
+        [
+          -77.625,
+          -125.2585
+        ],
+        [
+          -44.6932,
+          -119.9659
+        ],
+        [
+          -5.8807,
+          -111.733
+        ],
+        [
+          34.108,
+          -108.7926
+        ],
+        [
+          75.2727,
+          -101.7358
+        ],
+        [
+          115.8494,
+          -95.8551
+        ],
+        [
+          142.9006,
+          -83.5057
+        ],
+        [
+          166.4233,
+          -54.1023
+        ],
+        [
+          144.0767,
+          -37.6364
+        ],
+        [
+          102.3239,
+          -31.7557
+        ],
+        [
+          65.8636,
+          -19.9943
+        ],
+        [
+          19.9943,
+          -9.4091
+        ],
+        [
+          -7.0568,
+          -23.5227
+        ],
+        [
+          -48.8097,
+          -42.3409
+        ],
+        [
+          -78.8011,
+          -49.9858
+        ],
+        [
+          -104.0881,
+          -68.804
+        ],
+        [
+          -128.7869,
+          -85.2699
+        ]
+      ]
+    },
+    {
+      "id": "old_stump",
+      "kind": "stone",
+      "texture": "old_stump.png",
+      "position_px": [
+        685.3935,
+        171.1278
+      ],
+      "source_rect_px": [
+        1039,
+        82,
+        1420,
+        419
+      ],
+      "source_foot_px": [
+        1229.5,
+        419
+      ],
+      "render_width_px": 224.054,
+      "collision_polygon_px": [
+        [
+          -57.3366,
+          -83.5057
+        ],
+        [
+          -31.4616,
+          -89.9744
+        ],
+        [
+          -8.527,
+          -88.2102
+        ],
+        [
+          24.4048,
+          -81.1534
+        ],
+        [
+          52.6321,
+          -68.804
+        ],
+        [
+          73.8026,
+          -53.5142
+        ],
+        [
+          58.5128,
+          -37.6364
+        ],
+        [
+          15.5838,
+          -27.0511
+        ],
+        [
+          -20.8764,
+          -39.4006
+        ],
+        [
+          -37.3423,
+          -54.6903
+        ],
+        [
+          -64.3935,
+          -64.0994
+        ]
+      ]
+    },
+    {
+      "id": "moss_boulder",
+      "kind": "stone",
+      "texture": "moss_boulder.png",
+      "position_px": [
+        112.321,
+        395.7699
+      ],
+      "source_rect_px": [
+        133,
+        600,
+        377,
+        801
+      ],
+      "source_foot_px": [
+        255.0,
+        801
+      ],
+      "render_width_px": 143.4886,
+      "collision_polygon_px": [
+        [
+          -47.6335,
+          -68.2159
+        ],
+        [
+          -27.6392,
+          -72.9205
+        ],
+        [
+          -4.7045,
+          -68.2159
+        ],
+        [
+          17.054,
+          -49.9858
+        ],
+        [
+          33.5199,
+          -36.4602
+        ],
+        [
+          22.3466,
+          -20.5824
+        ],
+        [
+          -5.8807,
+          -8.821
+        ],
+        [
+          -23.5227,
+          -16.4659
+        ],
+        [
+          -44.1051,
+          -28.2273
+        ],
+        [
+          -58.8068,
+          -45.8693
+        ]
+      ]
+    },
+    {
+      "id": "crate_a",
+      "kind": "crate",
+      "texture": "crate_a.png",
+      "position_px": [
+        743.3182,
+        315.7926
+      ],
+      "source_rect_px": [
+        1297,
+        579,
+        1359,
+        665
+      ],
+      "source_foot_px": [
+        1328.0,
+        665
+      ],
+      "render_width_px": 36.4602,
+      "collision_polygon_px": [
+        [
+          -16.4659,
+          -18.8182
+        ],
+        [
+          14.7017,
+          -18.8182
+        ],
+        [
+          16.4659,
+          -6.4687
+        ],
+        [
+          10.5852,
+          -1.7642
+        ],
+        [
+          -14.7017,
+          -4.1165
+        ]
+      ]
+    },
+    {
+      "id": "crate_b",
+      "kind": "crate",
+      "texture": "crate_b.png",
+      "position_px": [
+        779.4844,
+        344.0199
+      ],
+      "source_rect_px": [
+        1358,
+        628,
+        1421,
+        713
+      ],
+      "source_foot_px": [
+        1389.5,
+        713
+      ],
+      "render_width_px": 37.0483,
+      "collision_polygon_px": [
+        [
+          -15.5838,
+          -17.642
+        ],
+        [
+          15.5838,
+          -17.642
+        ],
+        [
+          17.348,
+          -4.1165
+        ],
+        [
+          12.0554,
+          -0.5881
+        ],
+        [
+          -15.5838,
+          -2.9403
+        ]
+      ]
+    },
+    {
+      "id": "lamp_west",
+      "kind": "light",
+      "texture": "lamp_west.png",
+      "position_px": [
+        31.1676,
+        82.9176
+      ],
+      "source_rect_px": [
+        93,
+        118,
+        141,
+        269
+      ],
+      "source_foot_px": [
+        117.0,
+        269
+      ],
+      "render_width_px": 28.2273,
+      "collision_polygon_px": [
+        [
+          -8.233,
+          -10.5852
+        ],
+        [
+          0.0,
+          -12.3494
+        ],
+        [
+          8.233,
+          -8.821
+        ],
+        [
+          7.0568,
+          -2.3523
+        ],
+        [
+          -3.5284,
+          0.0
+        ],
+        [
+          -10.5852,
+          -4.1165
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 130,
+        "color": "ffd88a"
+      }
+    },
+    {
+      "id": "lamp_east",
+      "kind": "light",
+      "texture": "lamp_east.png",
+      "position_px": [
+        797.4205,
+        435.7585
+      ],
+      "source_rect_px": [
+        1395,
+        705,
+        1445,
+        869
+      ],
+      "source_foot_px": [
+        1420.0,
+        869
+      ],
+      "render_width_px": 29.4034,
+      "collision_polygon_px": [
+        [
+          -2.9403,
+          -5.8807
+        ],
+        [
+          2.9403,
+          -5.8807
+        ],
+        [
+          2.9403,
+          -1.1761
+        ],
+        [
+          -2.9403,
+          -1.1761
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 130,
+        "color": "ffd88a"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "source_title": "遗骨草甸"
+}

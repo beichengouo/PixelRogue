@@ -1,0 +1,310 @@
+{
+  "version": 1,
+  "id": "altar_moonwell_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "moon_altar",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "moon_altar.png",
+      "position_px": [
+        249.462,
+        165.426
+      ],
+      "source_foot_px": [
+        520,
+        410
+      ],
+      "source_rect_px": [
+        328,
+        135,
+        384,
+        275
+      ],
+      "render_width_px": 254.769,
+      "collision_polygon_px": [
+        [
+          -109.551,
+          -41.003
+        ],
+        [
+          109.551,
+          -41.003
+        ],
+        [
+          109.551,
+          0
+        ],
+        [
+          -109.551,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "b7eaff",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_w",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_w.png",
+      "position_px": [
+        47.106,
+        342.163
+      ],
+      "source_foot_px": [
+        215,
+        660
+      ],
+      "source_rect_px": [
+        154,
+        540,
+        122,
+        120
+      ],
+      "render_width_px": 80.942,
+      "collision_polygon_px": [
+        [
+          -34.805,
+          -16.118
+        ],
+        [
+          34.805,
+          -16.118
+        ],
+        [
+          34.805,
+          0
+        ],
+        [
+          -34.805,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "b7eaff",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_e",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_e.png",
+      "position_px": [
+        780.231,
+        342.163
+      ],
+      "source_foot_px": [
+        1320,
+        660
+      ],
+      "source_rect_px": [
+        1256,
+        534,
+        127,
+        126
+      ],
+      "render_width_px": 84.26,
+      "collision_polygon_px": [
+        [
+          -36.232,
+          -16.924
+        ],
+        [
+          36.232,
+          -16.924
+        ],
+        [
+          36.232,
+          0
+        ],
+        [
+          -36.232,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "b7eaff",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:altar_moonwell_v01:moon_altar",
+      "name": "月泉誓约庭 · moon_altar",
+      "path": "res://assets/room_illustrated/altar_moonwell_v01/moon_altar.png",
+      "layer": "lights",
+      "model": "moon_altar",
+      "collision": "light",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 254.769,
+      "collision_polygon_px": [
+        [
+          -109.551,
+          -41.003
+        ],
+        [
+          109.551,
+          -41.003
+        ],
+        [
+          109.551,
+          0
+        ],
+        [
+          -109.551,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:altar_moonwell_v01:lamp_w",
+      "name": "月泉誓约庭 · lamp_w",
+      "path": "res://assets/room_illustrated/altar_moonwell_v01/lamp_w.png",
+      "layer": "lights",
+      "model": "lamp_w",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 80.942,
+      "collision_polygon_px": [
+        [
+          -34.805,
+          -16.118
+        ],
+        [
+          34.805,
+          -16.118
+        ],
+        [
+          34.805,
+          0
+        ],
+        [
+          -34.805,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:altar_moonwell_v01:lamp_e",
+      "name": "月泉誓约庭 · lamp_e",
+      "path": "res://assets/room_illustrated/altar_moonwell_v01/lamp_e.png",
+      "layer": "lights",
+      "model": "lamp_e",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 84.26,
+      "collision_polygon_px": [
+        [
+          -36.232,
+          -16.924
+        ],
+        [
+          36.232,
+          -16.924
+        ],
+        [
+          36.232,
+          0
+        ],
+        [
+          -36.232,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {},
+  "surface_water_polygons_px": []
+}

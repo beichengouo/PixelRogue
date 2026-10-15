@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/map_editor/camp/bridge.tscn" id="1_oefcl"]
+[ext_resource type="Script" path="res://src/world/camp_feature.gd" id="2_uueev"]
+
+[node name="树根木桥" type="Node2D" unique_id=1378076460]
+
+[node name="Bridge" type="Node2D" parent="." unique_id=1856027668 instance=ExtResource("1_oefcl")]
+position = Vector2(-18, 18)
+script = ExtResource("2_uueev")
+size = Vector2(504, 166)
+deck_offset = 55.0

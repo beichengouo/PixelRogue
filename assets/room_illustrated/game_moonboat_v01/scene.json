@@ -1,0 +1,738 @@
+{
+  "version": 1,
+  "id": "game_moonboat_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "machine_wheel",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "machine_wheel.png",
+      "position_px": [
+        159.894,
+        172.495
+      ],
+      "source_foot_px": [
+        385,
+        420
+      ],
+      "source_rect_px": [
+        296,
+        219,
+        178,
+        201
+      ],
+      "render_width_px": 118.096,
+      "collision_polygon_px": [
+        [
+          -50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          0
+        ],
+        [
+          -50.781,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "machine_lottery",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "machine_lottery.png",
+      "position_px": [
+        414.0,
+        172.495
+      ],
+      "source_foot_px": [
+        768,
+        420
+      ],
+      "source_rect_px": [
+        678,
+        248,
+        180,
+        172
+      ],
+      "render_width_px": 119.423,
+      "collision_polygon_px": [
+        [
+          -51.352,
+          -33.934
+        ],
+        [
+          51.352,
+          -33.934
+        ],
+        [
+          51.352,
+          0
+        ],
+        [
+          -51.352,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "machine_reserved",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "machine_reserved.png",
+      "position_px": [
+        667.442,
+        172.495
+      ],
+      "source_foot_px": [
+        1150,
+        420
+      ],
+      "source_rect_px": [
+        1061,
+        236,
+        178,
+        184
+      ],
+      "render_width_px": 118.096,
+      "collision_polygon_px": [
+        [
+          -50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          0
+        ],
+        [
+          -50.781,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        40.471,
+        69.988
+      ],
+      "source_foot_px": [
+        205,
+        275
+      ],
+      "source_rect_px": [
+        180,
+        168,
+        51,
+        107
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        786.865,
+        69.988
+      ],
+      "source_foot_px": [
+        1330,
+        275
+      ],
+      "source_rect_px": [
+        1304,
+        168,
+        51,
+        107
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        40.471,
+        444.671
+      ],
+      "source_foot_px": [
+        205,
+        805
+      ],
+      "source_rect_px": [
+        179,
+        703,
+        52,
+        102
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -14.835,
+          -13.701
+        ],
+        [
+          14.835,
+          -13.701
+        ],
+        [
+          14.835,
+          0
+        ],
+        [
+          -14.835,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        786.865,
+        444.671
+      ],
+      "source_foot_px": [
+        1330,
+        805
+      ],
+      "source_rect_px": [
+        1304,
+        703,
+        53,
+        102
+      ],
+      "render_width_px": 35.163,
+      "collision_polygon_px": [
+        [
+          -15.12,
+          -13.701
+        ],
+        [
+          15.12,
+          -13.701
+        ],
+        [
+          15.12,
+          0
+        ],
+        [
+          -15.12,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "bench_sw",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "bench_sw.png",
+      "position_px": [
+        183.115,
+        448.205
+      ],
+      "source_foot_px": [
+        420,
+        810
+      ],
+      "source_rect_px": [
+        302,
+        735,
+        235,
+        75
+      ],
+      "render_width_px": 155.913,
+      "collision_polygon_px": [
+        [
+          -67.043,
+          -10.074
+        ],
+        [
+          67.043,
+          -10.074
+        ],
+        [
+          67.043,
+          0
+        ],
+        [
+          -67.043,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "bench_se",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "bench_se.png",
+      "position_px": [
+        634.269,
+        448.205
+      ],
+      "source_foot_px": [
+        1100,
+        810
+      ],
+      "source_rect_px": [
+        983,
+        735,
+        234,
+        75
+      ],
+      "render_width_px": 155.25,
+      "collision_polygon_px": [
+        [
+          -66.757,
+          -10.074
+        ],
+        [
+          66.757,
+          -10.074
+        ],
+        [
+          66.757,
+          0
+        ],
+        [
+          -66.757,
+          0
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:game_moonboat_v01:machine_wheel",
+      "name": "月湾筹运舫 · machine_wheel",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/machine_wheel.png",
+      "layer": "buildings",
+      "model": "machine_wheel",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 118.096,
+      "collision_polygon_px": [
+        [
+          -50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          0
+        ],
+        [
+          -50.781,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:machine_lottery",
+      "name": "月湾筹运舫 · machine_lottery",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/machine_lottery.png",
+      "layer": "buildings",
+      "model": "machine_lottery",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 119.423,
+      "collision_polygon_px": [
+        [
+          -51.352,
+          -33.934
+        ],
+        [
+          51.352,
+          -33.934
+        ],
+        [
+          51.352,
+          0
+        ],
+        [
+          -51.352,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:machine_reserved",
+      "name": "月湾筹运舫 · machine_reserved",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/machine_reserved.png",
+      "layer": "buildings",
+      "model": "machine_reserved",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 118.096,
+      "collision_polygon_px": [
+        [
+          -50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          -33.934
+        ],
+        [
+          50.781,
+          0
+        ],
+        [
+          -50.781,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:lamp_nw",
+      "name": "月湾筹运舫 · lamp_nw",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:lamp_ne",
+      "name": "月湾筹运舫 · lamp_ne",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          -14.372
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:lamp_sw",
+      "name": "月湾筹运舫 · lamp_sw",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -14.835,
+          -13.701
+        ],
+        [
+          14.835,
+          -13.701
+        ],
+        [
+          14.835,
+          0
+        ],
+        [
+          -14.835,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:lamp_se",
+      "name": "月湾筹运舫 · lamp_se",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 35.163,
+      "collision_polygon_px": [
+        [
+          -15.12,
+          -13.701
+        ],
+        [
+          15.12,
+          -13.701
+        ],
+        [
+          15.12,
+          0
+        ],
+        [
+          -15.12,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:bench_sw",
+      "name": "月湾筹运舫 · bench_sw",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/bench_sw.png",
+      "layer": "buildings",
+      "model": "bench_sw",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 155.913,
+      "collision_polygon_px": [
+        [
+          -67.043,
+          -10.074
+        ],
+        [
+          67.043,
+          -10.074
+        ],
+        [
+          67.043,
+          0
+        ],
+        [
+          -67.043,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_moonboat_v01:bench_se",
+      "name": "月湾筹运舫 · bench_se",
+      "path": "res://assets/room_illustrated/game_moonboat_v01/bench_se.png",
+      "layer": "buildings",
+      "model": "bench_se",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 155.25,
+      "collision_polygon_px": [
+        [
+          -66.757,
+          -10.074
+        ],
+        [
+          66.757,
+          -10.074
+        ],
+        [
+          66.757,
+          0
+        ],
+        [
+          -66.757,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {},
+  "surface_water_polygons_px": []
+}

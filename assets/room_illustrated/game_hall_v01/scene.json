@@ -1,0 +1,737 @@
+{
+  "version": 1,
+  "id": "game_hall_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    5
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        405,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        405,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "machine_wheel",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "machine_wheel.png",
+      "position_px": [
+        159.231,
+        197.239
+      ],
+      "source_foot_px": [
+        384,
+        455
+      ],
+      "source_rect_px": [
+        272,
+        168,
+        223,
+        287
+      ],
+      "render_width_px": 147.952,
+      "collision_polygon_px": [
+        [
+          -63.619,
+          -33.173
+        ],
+        [
+          63.619,
+          -33.173
+        ],
+        [
+          63.619,
+          0
+        ],
+        [
+          -63.619,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "machine_lottery",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "machine_lottery.png",
+      "position_px": [
+        414.0,
+        204.308
+      ],
+      "source_foot_px": [
+        768,
+        465
+      ],
+      "source_rect_px": [
+        660,
+        179,
+        217,
+        286
+      ],
+      "render_width_px": 143.971,
+      "collision_polygon_px": [
+        [
+          -61.908,
+          -33.173
+        ],
+        [
+          61.908,
+          -33.173
+        ],
+        [
+          61.908,
+          0
+        ],
+        [
+          -61.908,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "machine_reserved",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "machine_reserved.png",
+      "position_px": [
+        658.154,
+        204.308
+      ],
+      "source_foot_px": [
+        1136,
+        465
+      ],
+      "source_rect_px": [
+        1026,
+        153,
+        221,
+        312
+      ],
+      "render_width_px": 146.625,
+      "collision_polygon_px": [
+        [
+          -63.049,
+          -33.173
+        ],
+        [
+          63.049,
+          -33.173
+        ],
+        [
+          63.049,
+          0
+        ],
+        [
+          -63.049,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        31.183,
+        29.692
+      ],
+      "source_foot_px": [
+        191,
+        218
+      ],
+      "source_rect_px": [
+        158,
+        86,
+        67,
+        132
+      ],
+      "render_width_px": 44.452,
+      "collision_polygon_px": [
+        [
+          -19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          0
+        ],
+        [
+          -19.114,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd17c",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        796.817,
+        29.692
+      ],
+      "source_foot_px": [
+        1345,
+        218
+      ],
+      "source_rect_px": [
+        1312,
+        86,
+        67,
+        132
+      ],
+      "render_width_px": 44.452,
+      "collision_polygon_px": [
+        [
+          -19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          0
+        ],
+        [
+          -19.114,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd17c",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        27.202,
+        458.103
+      ],
+      "source_foot_px": [
+        185,
+        824
+      ],
+      "source_rect_px": [
+        150,
+        696,
+        69,
+        128
+      ],
+      "render_width_px": 45.779,
+      "collision_polygon_px": [
+        [
+          -19.685,
+          -16.135
+        ],
+        [
+          19.685,
+          -16.135
+        ],
+        [
+          19.685,
+          0
+        ],
+        [
+          -19.685,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd17c",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        796.817,
+        458.103
+      ],
+      "source_foot_px": [
+        1345,
+        824
+      ],
+      "source_rect_px": [
+        1311,
+        695,
+        68,
+        129
+      ],
+      "render_width_px": 45.115,
+      "collision_polygon_px": [
+        [
+          -19.399,
+          -16.261
+        ],
+        [
+          19.399,
+          -16.261
+        ],
+        [
+          19.399,
+          0
+        ],
+        [
+          -19.399,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd17c",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "bench_sw",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "bench_sw.png",
+      "position_px": [
+        156.577,
+        451.74
+      ],
+      "source_foot_px": [
+        380,
+        815
+      ],
+      "source_rect_px": [
+        284,
+        735,
+        191,
+        80
+      ],
+      "render_width_px": 126.721,
+      "collision_polygon_px": [
+        [
+          -54.49,
+          -10.085
+        ],
+        [
+          54.49,
+          -10.085
+        ],
+        [
+          54.49,
+          0
+        ],
+        [
+          -54.49,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "bench_se",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "bench_se.png",
+      "position_px": [
+        674.077,
+        451.74
+      ],
+      "source_foot_px": [
+        1160,
+        815
+      ],
+      "source_rect_px": [
+        1064,
+        735,
+        193,
+        80
+      ],
+      "render_width_px": 128.048,
+      "collision_polygon_px": [
+        [
+          -55.061,
+          -10.085
+        ],
+        [
+          55.061,
+          -10.085
+        ],
+        [
+          55.061,
+          0
+        ],
+        [
+          -55.061,
+          0
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:game_hall_v01:machine_wheel",
+      "name": "星运转盘",
+      "path": "res://assets/room_illustrated/game_hall_v01/machine_wheel.png",
+      "layer": "buildings",
+      "model": "machine_wheel",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 147.952,
+      "collision_polygon_px": [
+        [
+          -63.619,
+          -33.173
+        ],
+        [
+          63.619,
+          -33.173
+        ],
+        [
+          63.619,
+          0
+        ],
+        [
+          -63.619,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:machine_lottery",
+      "name": "八星彩机",
+      "path": "res://assets/room_illustrated/game_hall_v01/machine_lottery.png",
+      "layer": "buildings",
+      "model": "machine_lottery",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 143.971,
+      "collision_polygon_px": [
+        [
+          -61.908,
+          -33.173
+        ],
+        [
+          61.908,
+          -33.173
+        ],
+        [
+          61.908,
+          0
+        ],
+        [
+          -61.908,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:machine_reserved",
+      "name": "沉睡星匣",
+      "path": "res://assets/room_illustrated/game_hall_v01/machine_reserved.png",
+      "layer": "buildings",
+      "model": "machine_reserved",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 146.625,
+      "collision_polygon_px": [
+        [
+          -63.049,
+          -33.173
+        ],
+        [
+          63.049,
+          -33.173
+        ],
+        [
+          63.049,
+          0
+        ],
+        [
+          -63.049,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:lamp_nw",
+      "name": "西北油灯",
+      "path": "res://assets/room_illustrated/game_hall_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 44.452,
+      "collision_polygon_px": [
+        [
+          -19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          0
+        ],
+        [
+          -19.114,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:lamp_ne",
+      "name": "东北油灯",
+      "path": "res://assets/room_illustrated/game_hall_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 44.452,
+      "collision_polygon_px": [
+        [
+          -19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          -16.64
+        ],
+        [
+          19.114,
+          0
+        ],
+        [
+          -19.114,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:lamp_sw",
+      "name": "西南油灯",
+      "path": "res://assets/room_illustrated/game_hall_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 45.779,
+      "collision_polygon_px": [
+        [
+          -19.685,
+          -16.135
+        ],
+        [
+          19.685,
+          -16.135
+        ],
+        [
+          19.685,
+          0
+        ],
+        [
+          -19.685,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:lamp_se",
+      "name": "东南油灯",
+      "path": "res://assets/room_illustrated/game_hall_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 45.115,
+      "collision_polygon_px": [
+        [
+          -19.399,
+          -16.261
+        ],
+        [
+          19.399,
+          -16.261
+        ],
+        [
+          19.399,
+          0
+        ],
+        [
+          -19.399,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:bench_sw",
+      "name": "西南休憩椅",
+      "path": "res://assets/room_illustrated/game_hall_v01/bench_sw.png",
+      "layer": "buildings",
+      "model": "bench_sw",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 126.721,
+      "collision_polygon_px": [
+        [
+          -54.49,
+          -10.085
+        ],
+        [
+          54.49,
+          -10.085
+        ],
+        [
+          54.49,
+          0
+        ],
+        [
+          -54.49,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:game_hall_v01:bench_se",
+      "name": "东南休憩椅",
+      "path": "res://assets/room_illustrated/game_hall_v01/bench_se.png",
+      "layer": "buildings",
+      "model": "bench_se",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 128.048,
+      "collision_polygon_px": [
+        [
+          -55.061,
+          -10.085
+        ],
+        [
+          55.061,
+          -10.085
+        ],
+        [
+          55.061,
+          0
+        ],
+        [
+          -55.061,
+          0
+        ]
+      ]
+    }
+  ],
+  "water_polygons_px": []
+}

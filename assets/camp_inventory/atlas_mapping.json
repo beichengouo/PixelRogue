@@ -1,0 +1,36 @@
+{
+  "relics_v1.png": [
+    "relic_moon_compass",
+    "relic_leaf_brooch",
+    "relic_rose_hourglass",
+    "relic_star_lantern",
+    "relic_swallow_quill",
+    "relic_arcane_stone",
+    "relic_guardian_feather",
+    "relic_dawn_bell"
+  ],
+  "potions_v1.png": [
+    "potion_vital",
+    "potion_moon",
+    "potion_focus",
+    "potion_wind",
+    "potion_spring",
+    "potion_starlight"
+  ],
+  "materials_v1.png": [
+    "forest_resin",
+    "river_pearl",
+    "moss_cloth",
+    "ruin_ore",
+    "storm_crystal",
+    "ancient_seal"
+  ],
+  "equipment_v1.png": [
+    "camp_mooncoat",
+    "camp_thornplate",
+    "camp_stararmor",
+    "camp_windring",
+    "camp_sunpendant",
+    "camp_queenbrooch"
+  ]
+}

@@ -1,0 +1,520 @@
+{
+  "version": 1,
+  "id": "tavern_waterfront_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        160
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        824,
+        255,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        390,
+        112,
+        184
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1424,
+        390,
+        112,
+        184
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:tavern_waterfront_v03:bank_stone",
+      "name": "水岸酒馆 · bank_stone",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_waterfront_v03/bank_stone.png",
+      "collision": "stone",
+      "render_width_px": 48.8097,
+      "collision_polygon_px": [
+        [
+          -17.9361,
+          -24.6989
+        ],
+        [
+          -4.4105,
+          -32.9318
+        ],
+        [
+          10.8793,
+          -28.8153
+        ],
+        [
+          20.2884,
+          -16.4659
+        ],
+        [
+          12.6435,
+          -4.1165
+        ],
+        [
+          -7.9389,
+          -5.2926
+        ],
+        [
+          -18.5241,
+          -15.2898
+        ]
+      ]
+    },
+    {
+      "id": "scene:tavern_waterfront_v03:harbor_lamp_west",
+      "name": "水岸酒馆 · harbor_lamp_west",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_waterfront_v03/harbor_lamp_west.png",
+      "collision": "light",
+      "render_width_px": 32.3438,
+      "collision_polygon_px": [
+        [
+          -13.2315,
+          -17.054
+        ],
+        [
+          -10.2912,
+          -18.8182
+        ],
+        [
+          -2.0582,
+          -18.2301
+        ],
+        [
+          -0.294,
+          -4.1165
+        ],
+        [
+          -5.5866,
+          -1.7642
+        ],
+        [
+          -12.0554,
+          -2.9403
+        ],
+        [
+          -13.8196,
+          -8.233
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd37a"
+      }
+    },
+    {
+      "id": "scene:tavern_waterfront_v03:harbor_lamp_tavern",
+      "name": "水岸酒馆 · harbor_lamp_tavern",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_waterfront_v03/harbor_lamp_tavern.png",
+      "collision": "light",
+      "render_width_px": 43.517,
+      "collision_polygon_px": [
+        [
+          -14.7017,
+          -17.054
+        ],
+        [
+          -5.2926,
+          -21.7585
+        ],
+        [
+          11.7614,
+          -17.054
+        ],
+        [
+          14.7017,
+          -5.8807
+        ],
+        [
+          5.8807,
+          -0.5881
+        ],
+        [
+          -9.4091,
+          -2.3523
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd37a"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "bank_stone",
+      "kind": "stone",
+      "texture": "bank_stone.png",
+      "position_px": [
+        208.4702,
+        149.9574
+      ],
+      "source_rect_px": [
+        377,
+        293,
+        460,
+        383
+      ],
+      "source_foot_px": [
+        418.5,
+        383
+      ],
+      "render_width_px": 48.8097,
+      "collision_polygon_px": [
+        [
+          -17.9361,
+          -24.6989
+        ],
+        [
+          -4.4105,
+          -32.9318
+        ],
+        [
+          10.8793,
+          -28.8153
+        ],
+        [
+          20.2884,
+          -16.4659
+        ],
+        [
+          12.6435,
+          -4.1165
+        ],
+        [
+          -7.9389,
+          -5.2926
+        ],
+        [
+          -18.5241,
+          -15.2898
+        ]
+      ]
+    },
+    {
+      "id": "harbor_lamp_west",
+      "kind": "light",
+      "texture": "harbor_lamp_west.png",
+      "position_px": [
+        324.9077,
+        208.1761
+      ],
+      "source_rect_px": [
+        589,
+        387,
+        644,
+        482
+      ],
+      "source_foot_px": [
+        616.5,
+        482
+      ],
+      "render_width_px": 32.3438,
+      "collision_polygon_px": [
+        [
+          -13.2315,
+          -17.054
+        ],
+        [
+          -10.2912,
+          -18.8182
+        ],
+        [
+          -2.0582,
+          -18.2301
+        ],
+        [
+          -0.294,
+          -4.1165
+        ],
+        [
+          -5.5866,
+          -1.7642
+        ],
+        [
+          -12.0554,
+          -2.9403
+        ],
+        [
+          -13.8196,
+          -8.233
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd37a"
+      }
+    },
+    {
+      "id": "harbor_lamp_tavern",
+      "kind": "light",
+      "texture": "harbor_lamp_tavern.png",
+      "position_px": [
+        605.1222,
+        160.5426
+      ],
+      "source_rect_px": [
+        1056,
+        281,
+        1130,
+        401
+      ],
+      "source_foot_px": [
+        1093.0,
+        401
+      ],
+      "render_width_px": 43.517,
+      "collision_polygon_px": [
+        [
+          -14.7017,
+          -17.054
+        ],
+        [
+          -5.2926,
+          -21.7585
+        ],
+        [
+          11.7614,
+          -17.054
+        ],
+        [
+          14.7017,
+          -5.8807
+        ],
+        [
+          5.8807,
+          -0.5881
+        ],
+        [
+          -9.4091,
+          -2.3523
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd37a"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [
+    [
+      [
+        52.3381,
+        111.733
+      ],
+      [
+        91.7386,
+        94.0909
+      ],
+      [
+        142.3125,
+        100.5597
+      ],
+      [
+        187.5937,
+        116.4375
+      ],
+      [
+        205.8239,
+        141.7244
+      ],
+      [
+        205.8239,
+        159.9545
+      ],
+      [
+        179.9489,
+        168.7756
+      ],
+      [
+        127.0227,
+        164.071
+      ],
+      [
+        67.0398,
+        159.9545
+      ],
+      [
+        47.6335,
+        150.5455
+      ]
+    ],
+    [
+      [
+        42.3409,
+        264.6307
+      ],
+      [
+        104.0881,
+        264.6307
+      ],
+      [
+        228.1705,
+        268.1591
+      ],
+      [
+        264.6307,
+        284.0369
+      ],
+      [
+        298.1506,
+        316.3807
+      ],
+      [
+        308.1477,
+        348.1364
+      ],
+      [
+        286.9773,
+        379.304
+      ],
+      [
+        228.1705,
+        401.0625
+      ],
+      [
+        158.1903,
+        402.2386
+      ],
+      [
+        92.9148,
+        384.5966
+      ],
+      [
+        51.1619,
+        355.1932
+      ],
+      [
+        42.3409,
+        309.9119
+      ]
+    ]
+  ],
+  "source_title": "水岸酒馆",
+  "service_building": {
+    "id": "tavern",
+    "texture": "building_tavern.png",
+    "position_px": [
+      630.9972,
+      159.9545
+    ],
+    "width_px": 279.9205,
+    "depth_px": 50.5739,
+    "asset": "building_tavern",
+    "collision_polygon_px": [
+      [
+        -98.2074,
+        -63.5114
+      ],
+      [
+        108.7926,
+        -64.0994
+      ],
+      [
+        108.7926,
+        -18.2301
+      ],
+      [
+        100.5597,
+        -15.2898
+      ],
+      [
+        -98.2074,
+        -15.2898
+      ]
+    ],
+    "source_rect_px": [
+      899,
+      34,
+      1375,
+      400
+    ],
+    "source_foot_px": [
+      1137.0,
+      400
+    ]
+  },
+  "bridge_paths_px": [
+    {
+      "start": [
+        123.4943,
+        233.4631
+      ],
+      "end": [
+        194.0625,
+        233.4631
+      ],
+      "width_px": 58.8068,
+      "radii": [
+        12,
+        14,
+        26
+      ]
+    }
+  ]
+}

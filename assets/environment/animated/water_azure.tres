@@ -1,0 +1,107 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bcwmwg7lmwv8v"]
+
+[ext_resource type="Texture2D" uid="uid://chebwmmtdigbn" path="res://assets/environment/animated/water_azure_side_v2.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="frame0"]
+atlas = ExtResource("1")
+region = Rect2(1, 72, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame1"]
+atlas = ExtResource("1")
+region = Rect2(513, 72, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame2"]
+atlas = ExtResource("1")
+region = Rect2(1025, 72, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame3"]
+atlas = ExtResource("1")
+region = Rect2(1, 328, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame4"]
+atlas = ExtResource("1")
+region = Rect2(513, 328, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame5"]
+atlas = ExtResource("1")
+region = Rect2(1025, 328, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame6"]
+atlas = ExtResource("1")
+region = Rect2(1, 584, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame7"]
+atlas = ExtResource("1")
+region = Rect2(513, 584, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame8"]
+atlas = ExtResource("1")
+region = Rect2(1025, 584, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame9"]
+atlas = ExtResource("1")
+region = Rect2(1, 840, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame10"]
+atlas = ExtResource("1")
+region = Rect2(513, 840, 510, 180)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame11"]
+atlas = ExtResource("1")
+region = Rect2(1025, 840, 510, 180)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("frame0")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame1")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame2")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame3")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame4")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame5")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame6")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame7")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame8")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame9")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame10")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame11")
+}],
+"loop": 1,
+"name": &"flow",
+"speed": 8.0
+}]

@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://src/environment/foliage_weather.gdshader" id="1_namee"]
+[ext_resource type="Texture2D" path="res://assets/environment/crown.png" id="2_nit0h"]
+[ext_resource type="Script" path="res://src/environment/environment_prop.gd" id="3_mdw3w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlce0"]
+shader = ExtResource("1_namee")
+shader_parameter/wetness = null
+shader_parameter/snow_amount = null
+
+[node name="Crown" type="Sprite2D" unique_id=796020023]
+z_index = -5
+texture_filter = 1
+material = SubResource("ShaderMaterial_tlce0")
+texture = ExtResource("2_nit0h")
+offset = Vector2(0, -74)
+script = ExtResource("3_mdw3w")
+wind_response = true
+weather_response = true

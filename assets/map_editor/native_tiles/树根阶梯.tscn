@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/map_editor/camp/stair.tscn" id="1_w75xe"]
+[ext_resource type="Script" path="res://src/world/camp_feature.gd" id="2_km4ng"]
+
+[node name="树根阶梯" type="Node2D" unique_id=901260111]
+
+[node name="Stair" type="Node2D" parent="." unique_id=117624653 instance=ExtResource("1_w75xe")]
+position = Vector2(-18, 18)
+script = ExtResource("2_km4ng")
+art = "stair"
+size = Vector2(430, 324)
+deck_offset = 0.0

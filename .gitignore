@@ -1,0 +1,28 @@
+# Godot 4 导入缓存：可重建，体积大，绝不提交
+.godot/
+
+# 导出产物
+/android/
+/build/
+/export/
+*.apk
+*.aab
+*.pck
+
+# 系统文件
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Local export credentials and signing keys
+.env
+.env.*
+!.env.example
+export_credentials.cfg
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+

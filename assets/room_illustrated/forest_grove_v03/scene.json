@@ -1,0 +1,771 @@
+{
+  "version": 1,
+  "id": "forest_grove_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        160
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        824,
+        255,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        390,
+        112,
+        184
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1424,
+        390,
+        112,
+        184
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:forest_grove_v03:grove_west",
+      "name": "疏林双簇 · grove_west",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_grove_v03/grove_west.png",
+      "collision": "stone",
+      "render_width_px": 281.6847,
+      "collision_polygon_px": [
+        [
+          -112.6151,
+          -75.2727
+        ],
+        [
+          -90.8565,
+          -92.9148
+        ],
+        [
+          -70.8622,
+          -83.5057
+        ],
+        [
+          -43.223,
+          -69.9801
+        ],
+        [
+          -19.7003,
+          -74.6847
+        ],
+        [
+          7.9389,
+          -62.9233
+        ],
+        [
+          31.4616,
+          -46.4574
+        ],
+        [
+          46.1634,
+          -28.8153
+        ],
+        [
+          26.169,
+          -18.8182
+        ],
+        [
+          -16.1719,
+          -28.2273
+        ],
+        [
+          -58.5128,
+          -34.696
+        ],
+        [
+          -95.5611,
+          -48.2216
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_grove_v03:grove_east",
+      "name": "疏林双簇 · grove_east",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_grove_v03/grove_east.png",
+      "collision": "stone",
+      "render_width_px": 260.5142,
+      "collision_polygon_px": [
+        [
+          -97.3253,
+          -69.9801
+        ],
+        [
+          -78.5071,
+          -82.9176
+        ],
+        [
+          -53.8082,
+          -71.7443
+        ],
+        [
+          -26.169,
+          -48.8097
+        ],
+        [
+          -6.7628,
+          -25.875
+        ],
+        [
+          14.9957,
+          -13.5256
+        ],
+        [
+          44.9872,
+          -18.8182
+        ],
+        [
+          69.6861,
+          -32.3438
+        ],
+        [
+          96.7372,
+          -47.6335
+        ],
+        [
+          110.2628,
+          -68.2159
+        ],
+        [
+          114.3793,
+          -37.6364
+        ],
+        [
+          96.1491,
+          -15.2898
+        ],
+        [
+          61.4531,
+          -5.2926
+        ],
+        [
+          16.1719,
+          -2.9403
+        ],
+        [
+          -37.3423,
+          -12.9375
+        ],
+        [
+          -70.2741,
+          -25.875
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_grove_v03:fallen_log",
+      "name": "疏林双簇 · fallen_log",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_grove_v03/fallen_log.png",
+      "collision": "stone",
+      "render_width_px": 104.6761,
+      "collision_polygon_px": [
+        [
+          -40.5767,
+          -24.6989
+        ],
+        [
+          -8.233,
+          -38.8125
+        ],
+        [
+          17.642,
+          -41.7528
+        ],
+        [
+          37.6364,
+          -37.0483
+        ],
+        [
+          32.3438,
+          -19.4062
+        ],
+        [
+          12.3494,
+          -12.9375
+        ],
+        [
+          -23.5227,
+          -6.4687
+        ],
+        [
+          -38.2244,
+          -12.3494
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_grove_v03:boulder_southwest",
+      "name": "疏林双簇 · boulder_southwest",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_grove_v03/boulder_southwest.png",
+      "collision": "stone",
+      "render_width_px": 77.0369,
+      "collision_polygon_px": [
+        [
+          -27.9332,
+          -31.7557
+        ],
+        [
+          -12.6435,
+          -41.1648
+        ],
+        [
+          6.7628,
+          -39.9886
+        ],
+        [
+          27.3452,
+          -25.2869
+        ],
+        [
+          29.1094,
+          -12.9375
+        ],
+        [
+          13.2315,
+          -2.9403
+        ],
+        [
+          -10.8793,
+          -4.1165
+        ],
+        [
+          -29.6974,
+          -15.8778
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_grove_v03:tree_lamp_west",
+      "name": "疏林双簇 · tree_lamp_west",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_grove_v03/tree_lamp_west.png",
+      "collision": "light",
+      "render_width_px": 52.3381,
+      "collision_polygon_px": [
+        [
+          -12.6435,
+          -16.4659
+        ],
+        [
+          -1.4702,
+          -19.9943
+        ],
+        [
+          12.0554,
+          -16.4659
+        ],
+        [
+          14.4077,
+          -5.8807
+        ],
+        [
+          5.5866,
+          -1.1761
+        ],
+        [
+          -9.7031,
+          -3.5284
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 135,
+        "color": "ffd77c"
+      }
+    },
+    {
+      "id": "scene:forest_grove_v03:tree_lamp_east",
+      "name": "疏林双簇 · tree_lamp_east",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_grove_v03/tree_lamp_east.png",
+      "collision": "light",
+      "render_width_px": 61.1591,
+      "collision_polygon_px": [
+        [
+          -17.054,
+          -19.9943
+        ],
+        [
+          -4.7045,
+          -24.1108
+        ],
+        [
+          13.5256,
+          -19.4062
+        ],
+        [
+          21.7585,
+          -7.0568
+        ],
+        [
+          9.4091,
+          -0.5881
+        ],
+        [
+          -9.4091,
+          -2.3523
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 135,
+        "color": "ffd77c"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "grove_west",
+      "kind": "stone",
+      "texture": "grove_west.png",
+      "position_px": [
+        210.2344,
+        211.1165
+      ],
+      "source_rect_px": [
+        182,
+        105,
+        661,
+        487
+      ],
+      "source_foot_px": [
+        421.5,
+        487
+      ],
+      "render_width_px": 281.6847,
+      "collision_polygon_px": [
+        [
+          -112.6151,
+          -75.2727
+        ],
+        [
+          -90.8565,
+          -92.9148
+        ],
+        [
+          -70.8622,
+          -83.5057
+        ],
+        [
+          -43.223,
+          -69.9801
+        ],
+        [
+          -19.7003,
+          -74.6847
+        ],
+        [
+          7.9389,
+          -62.9233
+        ],
+        [
+          31.4616,
+          -46.4574
+        ],
+        [
+          46.1634,
+          -28.8153
+        ],
+        [
+          26.169,
+          -18.8182
+        ],
+        [
+          -16.1719,
+          -28.2273
+        ],
+        [
+          -58.5128,
+          -34.696
+        ],
+        [
+          -95.5611,
+          -48.2216
+        ]
+      ]
+    },
+    {
+      "id": "grove_east",
+      "kind": "stone",
+      "texture": "grove_east.png",
+      "position_px": [
+        601.8878,
+        408.7074
+      ],
+      "source_rect_px": [
+        866,
+        404,
+        1309,
+        823
+      ],
+      "source_foot_px": [
+        1087.5,
+        823
+      ],
+      "render_width_px": 260.5142,
+      "collision_polygon_px": [
+        [
+          -97.3253,
+          -69.9801
+        ],
+        [
+          -78.5071,
+          -82.9176
+        ],
+        [
+          -53.8082,
+          -71.7443
+        ],
+        [
+          -26.169,
+          -48.8097
+        ],
+        [
+          -6.7628,
+          -25.875
+        ],
+        [
+          14.9957,
+          -13.5256
+        ],
+        [
+          44.9872,
+          -18.8182
+        ],
+        [
+          69.6861,
+          -32.3438
+        ],
+        [
+          96.7372,
+          -47.6335
+        ],
+        [
+          110.2628,
+          -68.2159
+        ],
+        [
+          114.3793,
+          -37.6364
+        ],
+        [
+          96.1491,
+          -15.2898
+        ],
+        [
+          61.4531,
+          -5.2926
+        ],
+        [
+          16.1719,
+          -2.9403
+        ],
+        [
+          -37.3423,
+          -12.9375
+        ],
+        [
+          -70.2741,
+          -25.875
+        ]
+      ]
+    },
+    {
+      "id": "fallen_log",
+      "kind": "stone",
+      "texture": "fallen_log.png",
+      "position_px": [
+        632.7614,
+        113.4972
+      ],
+      "source_rect_px": [
+        1051,
+        209,
+        1229,
+        321
+      ],
+      "source_foot_px": [
+        1140.0,
+        321
+      ],
+      "render_width_px": 104.6761,
+      "collision_polygon_px": [
+        [
+          -40.5767,
+          -24.6989
+        ],
+        [
+          -8.233,
+          -38.8125
+        ],
+        [
+          17.642,
+          -41.7528
+        ],
+        [
+          37.6364,
+          -37.0483
+        ],
+        [
+          32.3438,
+          -19.4062
+        ],
+        [
+          12.3494,
+          -12.9375
+        ],
+        [
+          -23.5227,
+          -6.4687
+        ],
+        [
+          -38.2244,
+          -12.3494
+        ]
+      ]
+    },
+    {
+      "id": "boulder_southwest",
+      "kind": "stone",
+      "texture": "boulder_southwest.png",
+      "position_px": [
+        199.0611,
+        379.304
+      ],
+      "source_rect_px": [
+        337,
+        670,
+        468,
+        773
+      ],
+      "source_foot_px": [
+        402.5,
+        773
+      ],
+      "render_width_px": 77.0369,
+      "collision_polygon_px": [
+        [
+          -27.9332,
+          -31.7557
+        ],
+        [
+          -12.6435,
+          -41.1648
+        ],
+        [
+          6.7628,
+          -39.9886
+        ],
+        [
+          27.3452,
+          -25.2869
+        ],
+        [
+          29.1094,
+          -12.9375
+        ],
+        [
+          13.2315,
+          -2.9403
+        ],
+        [
+          -10.8793,
+          -4.1165
+        ],
+        [
+          -29.6974,
+          -15.8778
+        ]
+      ]
+    },
+    {
+      "id": "tree_lamp_west",
+      "kind": "light",
+      "texture": "tree_lamp_west.png",
+      "position_px": [
+        257.8679,
+        202.8835
+      ],
+      "source_rect_px": [
+        458,
+        355,
+        547,
+        473
+      ],
+      "source_foot_px": [
+        502.5,
+        473
+      ],
+      "render_width_px": 52.3381,
+      "collision_polygon_px": [
+        [
+          -12.6435,
+          -16.4659
+        ],
+        [
+          -1.4702,
+          -19.9943
+        ],
+        [
+          12.0554,
+          -16.4659
+        ],
+        [
+          14.4077,
+          -5.8807
+        ],
+        [
+          5.5866,
+          -1.1761
+        ],
+        [
+          -9.7031,
+          -3.5284
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 135,
+        "color": "ffd77c"
+      }
+    },
+    {
+      "id": "tree_lamp_east",
+      "kind": "light",
+      "texture": "tree_lamp_east.png",
+      "position_px": [
+        546.3153,
+        285.2131
+      ],
+      "source_rect_px": [
+        941,
+        471,
+        1045,
+        613
+      ],
+      "source_foot_px": [
+        993.0,
+        613
+      ],
+      "render_width_px": 61.1591,
+      "collision_polygon_px": [
+        [
+          -17.054,
+          -19.9943
+        ],
+        [
+          -4.7045,
+          -24.1108
+        ],
+        [
+          13.5256,
+          -19.4062
+        ],
+        [
+          21.7585,
+          -7.0568
+        ],
+        [
+          9.4091,
+          -0.5881
+        ],
+        [
+          -9.4091,
+          -2.3523
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 135,
+        "color": "ffd77c"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "source_title": "疏林双簇"
+}

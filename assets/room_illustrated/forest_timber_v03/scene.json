@@ -1,0 +1,771 @@
+{
+  "version": 1,
+  "id": "forest_timber_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        160
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        824,
+        255,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        390,
+        112,
+        184
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1424,
+        390,
+        112,
+        184
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:forest_timber_v03:fallen_trunk_north",
+      "name": "倒木庭径 · fallen_trunk_north",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_timber_v03/fallen_trunk_north.png",
+      "collision": "stone",
+      "render_width_px": 318.733,
+      "collision_polygon_px": [
+        [
+          -129.375,
+          -51.1619
+        ],
+        [
+          -100.5597,
+          -67.0398
+        ],
+        [
+          -63.5114,
+          -70.5682
+        ],
+        [
+          -24.1108,
+          -69.392
+        ],
+        [
+          13.5256,
+          -73.5085
+        ],
+        [
+          53.5142,
+          -78.8011
+        ],
+        [
+          96.4432,
+          -78.8011
+        ],
+        [
+          128.1989,
+          -72.3324
+        ],
+        [
+          137.0199,
+          -47.6335
+        ],
+        [
+          105.2642,
+          -32.3438
+        ],
+        [
+          60.571,
+          -28.2273
+        ],
+        [
+          17.054,
+          -19.4062
+        ],
+        [
+          -28.8153,
+          -12.9375
+        ],
+        [
+          -77.625,
+          -15.2898
+        ],
+        [
+          -115.2614,
+          -25.2869
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_timber_v03:fallen_trunk_south",
+      "name": "倒木庭径 · fallen_trunk_south",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_timber_v03/fallen_trunk_south.png",
+      "collision": "stone",
+      "render_width_px": 282.2727,
+      "collision_polygon_px": [
+        [
+          -111.733,
+          -91.1506
+        ],
+        [
+          -91.1506,
+          -109.9687
+        ],
+        [
+          -63.5114,
+          -109.3807
+        ],
+        [
+          -32.9318,
+          -96.4432
+        ],
+        [
+          0.5881,
+          -81.7415
+        ],
+        [
+          39.9886,
+          -67.6278
+        ],
+        [
+          82.3295,
+          -56.4545
+        ],
+        [
+          113.4972,
+          -42.929
+        ],
+        [
+          121.142,
+          -24.1108
+        ],
+        [
+          101.1477,
+          -11.7614
+        ],
+        [
+          66.4517,
+          -18.2301
+        ],
+        [
+          29.9915,
+          -32.9318
+        ],
+        [
+          -7.6449,
+          -45.2812
+        ],
+        [
+          -51.1619,
+          -54.6903
+        ],
+        [
+          -89.3864,
+          -59.3949
+        ],
+        [
+          -123.4943,
+          -72.3324
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_timber_v03:crate_northwest",
+      "name": "倒木庭径 · crate_northwest",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_timber_v03/crate_northwest.png",
+      "collision": "crate",
+      "render_width_px": 36.4602,
+      "collision_polygon_px": [
+        [
+          -15.8778,
+          -15.8778
+        ],
+        [
+          14.1136,
+          -17.054
+        ],
+        [
+          15.8778,
+          -5.2926
+        ],
+        [
+          8.233,
+          -2.3523
+        ],
+        [
+          -15.2898,
+          -4.1165
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_timber_v03:crate_southeast",
+      "name": "倒木庭径 · crate_southeast",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_timber_v03/crate_southeast.png",
+      "collision": "crate",
+      "render_width_px": 34.696,
+      "collision_polygon_px": [
+        [
+          -14.4077,
+          -12.3494
+        ],
+        [
+          14.9957,
+          -14.7017
+        ],
+        [
+          15.5838,
+          -4.7045
+        ],
+        [
+          9.1151,
+          -1.1761
+        ],
+        [
+          -14.9957,
+          -2.9403
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_timber_v03:campfire_southwest",
+      "name": "倒木庭径 · campfire_southwest",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "fire",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_timber_v03/campfire_southwest.png",
+      "collision": "light",
+      "render_width_px": 82.9176,
+      "collision_polygon_px": [
+        [
+          -32.6378,
+          -42.3409
+        ],
+        [
+          -13.2315,
+          -52.3381
+        ],
+        [
+          9.7031,
+          -49.3977
+        ],
+        [
+          27.9332,
+          -37.0483
+        ],
+        [
+          26.7571,
+          -18.2301
+        ],
+        [
+          7.3509,
+          -5.8807
+        ],
+        [
+          -19.1122,
+          -6.4687
+        ],
+        [
+          -35.5781,
+          -19.9943
+        ]
+      ],
+      "light": {
+        "kind": "fire",
+        "radius": 165,
+        "color": "ffae58"
+      }
+    },
+    {
+      "id": "scene:forest_timber_v03:torch_northeast",
+      "name": "倒木庭径 · torch_northeast",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "torch",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_timber_v03/torch_northeast.png",
+      "collision": "light",
+      "render_width_px": 78.2131,
+      "collision_polygon_px": [
+        [
+          -26.169,
+          -35.2841
+        ],
+        [
+          -7.3509,
+          -42.3409
+        ],
+        [
+          14.4077,
+          -34.696
+        ],
+        [
+          22.0526,
+          -15.8778
+        ],
+        [
+          12.0554,
+          -4.7045
+        ],
+        [
+          -8.527,
+          -3.5284
+        ],
+        [
+          -25.581,
+          -15.2898
+        ]
+      ],
+      "light": {
+        "kind": "torch",
+        "radius": 150,
+        "color": "ffba5f"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "fallen_trunk_north",
+      "kind": "stone",
+      "texture": "fallen_trunk_north.png",
+      "position_px": [
+        295.2102,
+        201.1193
+      ],
+      "source_rect_px": [
+        295,
+        246,
+        837,
+        470
+      ],
+      "source_foot_px": [
+        566.0,
+        470
+      ],
+      "render_width_px": 318.733,
+      "collision_polygon_px": [
+        [
+          -129.375,
+          -51.1619
+        ],
+        [
+          -100.5597,
+          -67.0398
+        ],
+        [
+          -63.5114,
+          -70.5682
+        ],
+        [
+          -24.1108,
+          -69.392
+        ],
+        [
+          13.5256,
+          -73.5085
+        ],
+        [
+          53.5142,
+          -78.8011
+        ],
+        [
+          96.4432,
+          -78.8011
+        ],
+        [
+          128.1989,
+          -72.3324
+        ],
+        [
+          137.0199,
+          -47.6335
+        ],
+        [
+          105.2642,
+          -32.3438
+        ],
+        [
+          60.571,
+          -28.2273
+        ],
+        [
+          17.054,
+          -19.4062
+        ],
+        [
+          -28.8153,
+          -12.9375
+        ],
+        [
+          -77.625,
+          -15.2898
+        ],
+        [
+          -115.2614,
+          -25.2869
+        ]
+      ]
+    },
+    {
+      "id": "fallen_trunk_south",
+      "kind": "stone",
+      "texture": "fallen_trunk_south.png",
+      "position_px": [
+        566.3097,
+        358.7216
+      ],
+      "source_rect_px": [
+        787,
+        474,
+        1267,
+        738
+      ],
+      "source_foot_px": [
+        1027.0,
+        738
+      ],
+      "render_width_px": 282.2727,
+      "collision_polygon_px": [
+        [
+          -111.733,
+          -91.1506
+        ],
+        [
+          -91.1506,
+          -109.9687
+        ],
+        [
+          -63.5114,
+          -109.3807
+        ],
+        [
+          -32.9318,
+          -96.4432
+        ],
+        [
+          0.5881,
+          -81.7415
+        ],
+        [
+          39.9886,
+          -67.6278
+        ],
+        [
+          82.3295,
+          -56.4545
+        ],
+        [
+          113.4972,
+          -42.929
+        ],
+        [
+          121.142,
+          -24.1108
+        ],
+        [
+          101.1477,
+          -11.7614
+        ],
+        [
+          66.4517,
+          -18.2301
+        ],
+        [
+          29.9915,
+          -32.9318
+        ],
+        [
+          -7.6449,
+          -45.2812
+        ],
+        [
+          -51.1619,
+          -54.6903
+        ],
+        [
+          -89.3864,
+          -59.3949
+        ],
+        [
+          -123.4943,
+          -72.3324
+        ]
+      ]
+    },
+    {
+      "id": "crate_northwest",
+      "kind": "crate",
+      "texture": "crate_northwest.png",
+      "position_px": [
+        108.7926,
+        108.7926
+      ],
+      "source_rect_px": [
+        218,
+        238,
+        280,
+        313
+      ],
+      "source_foot_px": [
+        249.0,
+        313
+      ],
+      "render_width_px": 36.4602,
+      "collision_polygon_px": [
+        [
+          -15.8778,
+          -15.8778
+        ],
+        [
+          14.1136,
+          -17.054
+        ],
+        [
+          15.8778,
+          -5.2926
+        ],
+        [
+          8.233,
+          -2.3523
+        ],
+        [
+          -15.2898,
+          -4.1165
+        ]
+      ]
+    },
+    {
+      "id": "crate_southeast",
+      "kind": "crate",
+      "texture": "crate_southeast.png",
+      "position_px": [
+        727.7344,
+        386.3608
+      ],
+      "source_rect_px": [
+        1272,
+        717,
+        1331,
+        785
+      ],
+      "source_foot_px": [
+        1301.5,
+        785
+      ],
+      "render_width_px": 34.696,
+      "collision_polygon_px": [
+        [
+          -14.4077,
+          -12.3494
+        ],
+        [
+          14.9957,
+          -14.7017
+        ],
+        [
+          15.5838,
+          -4.7045
+        ],
+        [
+          9.1151,
+          -1.1761
+        ],
+        [
+          -14.9957,
+          -2.9403
+        ]
+      ]
+    },
+    {
+      "id": "campfire_southwest",
+      "kind": "light",
+      "texture": "campfire_southwest.png",
+      "position_px": [
+        115.5554,
+        365.7784
+      ],
+      "source_rect_px": [
+        190,
+        587,
+        331,
+        750
+      ],
+      "source_foot_px": [
+        260.5,
+        750
+      ],
+      "render_width_px": 82.9176,
+      "collision_polygon_px": [
+        [
+          -32.6378,
+          -42.3409
+        ],
+        [
+          -13.2315,
+          -52.3381
+        ],
+        [
+          9.7031,
+          -49.3977
+        ],
+        [
+          27.9332,
+          -37.0483
+        ],
+        [
+          26.7571,
+          -18.2301
+        ],
+        [
+          7.3509,
+          -5.8807
+        ],
+        [
+          -19.1122,
+          -6.4687
+        ],
+        [
+          -35.5781,
+          -19.9943
+        ]
+      ],
+      "light": {
+        "kind": "fire",
+        "radius": 165,
+        "color": "ffae58"
+      }
+    },
+    {
+      "id": "torch_northeast",
+      "kind": "light",
+      "texture": "torch_northeast.png",
+      "position_px": [
+        736.5554,
+        120.554
+      ],
+      "source_rect_px": [
+        1250,
+        173,
+        1383,
+        333
+      ],
+      "source_foot_px": [
+        1316.5,
+        333
+      ],
+      "render_width_px": 78.2131,
+      "collision_polygon_px": [
+        [
+          -26.169,
+          -35.2841
+        ],
+        [
+          -7.3509,
+          -42.3409
+        ],
+        [
+          14.4077,
+          -34.696
+        ],
+        [
+          22.0526,
+          -15.8778
+        ],
+        [
+          12.0554,
+          -4.7045
+        ],
+        [
+          -8.527,
+          -3.5284
+        ],
+        [
+          -25.581,
+          -15.2898
+        ]
+      ],
+      "light": {
+        "kind": "torch",
+        "radius": 150,
+        "color": "ffba5f"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "source_title": "倒木庭径"
+}

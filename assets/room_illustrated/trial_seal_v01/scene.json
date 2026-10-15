@@ -1,0 +1,621 @@
+{
+  "version": 1,
+  "id": "trial_seal_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "seal_w",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "seal_w.png",
+      "position_px": [
+        146.625,
+        69.988
+      ],
+      "source_foot_px": [
+        365,
+        275
+      ],
+      "source_rect_px": [
+        286,
+        125,
+        158,
+        150
+      ],
+      "render_width_px": 104.827,
+      "collision_polygon_px": [
+        [
+          -45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          0
+        ],
+        [
+          -45.076,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "seal_e",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "seal_e.png",
+      "position_px": [
+        680.712,
+        69.988
+      ],
+      "source_foot_px": [
+        1170,
+        275
+      ],
+      "source_rect_px": [
+        1091,
+        125,
+        158,
+        150
+      ],
+      "render_width_px": 104.827,
+      "collision_polygon_px": [
+        [
+          -45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          0
+        ],
+        [
+          -45.076,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "seal_crystal",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "seal_crystal.png",
+      "position_px": [
+        269.365,
+        59.384
+      ],
+      "source_foot_px": [
+        550,
+        260
+      ],
+      "source_rect_px": [
+        512,
+        136,
+        75,
+        124
+      ],
+      "render_width_px": 49.76,
+      "collision_polygon_px": [
+        [
+          -21.397,
+          -16.656
+        ],
+        [
+          21.397,
+          -16.656
+        ],
+        [
+          21.397,
+          0
+        ],
+        [
+          -21.397,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "e655ce",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        50.423,
+        59.384
+      ],
+      "source_foot_px": [
+        220,
+        260
+      ],
+      "source_rect_px": [
+        196,
+        121,
+        48,
+        139
+      ],
+      "render_width_px": 31.846,
+      "collision_polygon_px": [
+        [
+          -13.694,
+          -18.671
+        ],
+        [
+          13.694,
+          -18.671
+        ],
+        [
+          13.694,
+          0
+        ],
+        [
+          -13.694,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "e655ce",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        776.913,
+        59.384
+      ],
+      "source_foot_px": [
+        1315,
+        260
+      ],
+      "source_rect_px": [
+        1290,
+        121,
+        49,
+        139
+      ],
+      "render_width_px": 32.51,
+      "collision_polygon_px": [
+        [
+          -13.979,
+          -18.671
+        ],
+        [
+          13.979,
+          -18.671
+        ],
+        [
+          13.979,
+          0
+        ],
+        [
+          -13.979,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "e655ce",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        50.423,
+        448.205
+      ],
+      "source_foot_px": [
+        220,
+        810
+      ],
+      "source_rect_px": [
+        195,
+        669,
+        50,
+        141
+      ],
+      "render_width_px": 33.173,
+      "collision_polygon_px": [
+        [
+          -14.264,
+          -18.939
+        ],
+        [
+          14.264,
+          -18.939
+        ],
+        [
+          14.264,
+          0
+        ],
+        [
+          -14.264,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "e655ce",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        776.913,
+        448.205
+      ],
+      "source_foot_px": [
+        1315,
+        810
+      ],
+      "source_rect_px": [
+        1290,
+        669,
+        49,
+        141
+      ],
+      "render_width_px": 32.51,
+      "collision_polygon_px": [
+        [
+          -13.979,
+          -18.939
+        ],
+        [
+          13.979,
+          -18.939
+        ],
+        [
+          13.979,
+          0
+        ],
+        [
+          -13.979,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "e655ce",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:trial_seal_v01:seal_w",
+      "name": "碎星封印殿 · seal_w",
+      "path": "res://assets/room_illustrated/trial_seal_v01/seal_w.png",
+      "layer": "buildings",
+      "model": "seal_w",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 104.827,
+      "collision_polygon_px": [
+        [
+          -45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          0
+        ],
+        [
+          -45.076,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:trial_seal_v01:seal_e",
+      "name": "碎星封印殿 · seal_e",
+      "path": "res://assets/room_illustrated/trial_seal_v01/seal_e.png",
+      "layer": "buildings",
+      "model": "seal_e",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 104.827,
+      "collision_polygon_px": [
+        [
+          -45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          -20.148
+        ],
+        [
+          45.076,
+          0
+        ],
+        [
+          -45.076,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:trial_seal_v01:seal_crystal",
+      "name": "碎星封印殿 · seal_crystal",
+      "path": "res://assets/room_illustrated/trial_seal_v01/seal_crystal.png",
+      "layer": "lights",
+      "model": "seal_crystal",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 49.76,
+      "collision_polygon_px": [
+        [
+          -21.397,
+          -16.656
+        ],
+        [
+          21.397,
+          -16.656
+        ],
+        [
+          21.397,
+          0
+        ],
+        [
+          -21.397,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:trial_seal_v01:lamp_nw",
+      "name": "碎星封印殿 · lamp_nw",
+      "path": "res://assets/room_illustrated/trial_seal_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 31.846,
+      "collision_polygon_px": [
+        [
+          -13.694,
+          -18.671
+        ],
+        [
+          13.694,
+          -18.671
+        ],
+        [
+          13.694,
+          0
+        ],
+        [
+          -13.694,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:trial_seal_v01:lamp_ne",
+      "name": "碎星封印殿 · lamp_ne",
+      "path": "res://assets/room_illustrated/trial_seal_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 32.51,
+      "collision_polygon_px": [
+        [
+          -13.979,
+          -18.671
+        ],
+        [
+          13.979,
+          -18.671
+        ],
+        [
+          13.979,
+          0
+        ],
+        [
+          -13.979,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:trial_seal_v01:lamp_sw",
+      "name": "碎星封印殿 · lamp_sw",
+      "path": "res://assets/room_illustrated/trial_seal_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.173,
+      "collision_polygon_px": [
+        [
+          -14.264,
+          -18.939
+        ],
+        [
+          14.264,
+          -18.939
+        ],
+        [
+          14.264,
+          0
+        ],
+        [
+          -14.264,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:trial_seal_v01:lamp_se",
+      "name": "碎星封印殿 · lamp_se",
+      "path": "res://assets/room_illustrated/trial_seal_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 32.51,
+      "collision_polygon_px": [
+        [
+          -13.979,
+          -18.939
+        ],
+        [
+          13.979,
+          -18.939
+        ],
+        [
+          13.979,
+          0
+        ],
+        [
+          -13.979,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {
+    "rune_anchors": [
+      [
+        186.433,
+        229.051
+      ],
+      [
+        634.269,
+        229.051
+      ]
+    ],
+    "rune_direction": [
+      0,
+      1
+    ]
+  },
+  "surface_water_polygons_px": []
+}

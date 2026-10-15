@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "id": "city_name_archive_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        739.428,
+        186.634
+      ],
+      "source_rect_px": [
+        1029,
+        22,
+        459,
+        418
+      ],
+      "source_foot_px": [
+        1258.5,
+        440
+      ],
+      "render_width_px": 304.529,
+      "collision_polygon_px": [
+        [
+          -109.63044,
+          -38
+        ],
+        [
+          109.63044,
+          -38
+        ],
+        [
+          109.63044,
+          0
+        ],
+        [
+          -109.63044,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        71.322,
+        181.686
+      ],
+      "source_rect_px": [
+        49,
+        25,
+        405,
+        408
+      ],
+      "source_foot_px": [
+        251.5,
+        433
+      ],
+      "render_width_px": 268.702,
+      "collision_polygon_px": [
+        [
+          -96.73272,
+          -38
+        ],
+        [
+          96.73272,
+          -38
+        ],
+        [
+          96.73272,
+          0
+        ],
+        [
+          -96.73272,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        221.264,
+        4.949
+      ],
+      "source_rect_px": [
+        454,
+        104,
+        47,
+        79
+      ],
+      "source_foot_px": [
+        477.5,
+        183
+      ],
+      "render_width_px": 31.183,
+      "collision_polygon_px": [
+        [
+          -11.22588,
+          -8.93583081570997
+        ],
+        [
+          11.22588,
+          -8.93583081570997
+        ],
+        [
+          11.22588,
+          0
+        ],
+        [
+          -11.22588,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        713.221,
+        553.541
+      ],
+      "source_rect_px": [
+        951,
+        547,
+        536,
+        412
+      ],
+      "source_foot_px": [
+        1219.0,
+        959
+      ],
+      "render_width_px": 355.615,
+      "collision_polygon_px": [
+        [
+          -128.0214,
+          -38
+        ],
+        [
+          128.0214,
+          -38
+        ],
+        [
+          128.0214,
+          0
+        ],
+        [
+          -128.0214,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        119.423,
+        542.937
+      ],
+      "source_rect_px": [
+        65,
+        575,
+        518,
+        369
+      ],
+      "source_foot_px": [
+        324.0,
+        944
+      ],
+      "render_width_px": 343.673,
+      "collision_polygon_px": [
+        [
+          -123.72228,
+          -38
+        ],
+        [
+          123.72228,
+          -38
+        ],
+        [
+          123.72228,
+          0
+        ],
+        [
+          -123.72228,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_name_archive_v01:prop_01",
+      "name": "藏名回廊 · prop_01",
+      "path": "res://assets/room_illustrated/city_name_archive_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        8,
+        1
+      ],
+      "render_width_px": 304.529,
+      "collision_polygon_px": [
+        [
+          -109.63044,
+          -38
+        ],
+        [
+          109.63044,
+          -38
+        ],
+        [
+          109.63044,
+          0
+        ],
+        [
+          -109.63044,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_name_archive_v01:prop_02",
+      "name": "藏名回廊 · prop_02",
+      "path": "res://assets/room_illustrated/city_name_archive_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 268.702,
+      "collision_polygon_px": [
+        [
+          -96.73272,
+          -38
+        ],
+        [
+          96.73272,
+          -38
+        ],
+        [
+          96.73272,
+          0
+        ],
+        [
+          -96.73272,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_name_archive_v01:prop_03",
+      "name": "藏名回廊 · prop_03",
+      "path": "res://assets/room_illustrated/city_name_archive_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 31.183,
+      "collision_polygon_px": [
+        [
+          -11.22588,
+          -8.93583081570997
+        ],
+        [
+          11.22588,
+          -8.93583081570997
+        ],
+        [
+          11.22588,
+          0
+        ],
+        [
+          -11.22588,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_name_archive_v01:prop_04",
+      "name": "藏名回廊 · prop_04",
+      "path": "res://assets/room_illustrated/city_name_archive_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        10,
+        1
+      ],
+      "render_width_px": 355.615,
+      "collision_polygon_px": [
+        [
+          -128.0214,
+          -38
+        ],
+        [
+          128.0214,
+          -38
+        ],
+        [
+          128.0214,
+          0
+        ],
+        [
+          -128.0214,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_name_archive_v01:prop_05",
+      "name": "藏名回廊 · prop_05",
+      "path": "res://assets/room_illustrated/city_name_archive_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        10,
+        1
+      ],
+      "render_width_px": 343.673,
+      "collision_polygon_px": [
+        [
+          -123.72228,
+          -38
+        ],
+        [
+          123.72228,
+          -38
+        ],
+        [
+          123.72228,
+          0
+        ],
+        [
+          -123.72228,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

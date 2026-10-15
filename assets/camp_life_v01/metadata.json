@@ -1,0 +1,78 @@
+{
+  "surveyor": {
+    "extents": [
+      77,
+      100
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "gender": "female"
+  },
+  "carpenter": {
+    "extents": [
+      76,
+      100
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "gender": "female"
+  },
+  "herbalist": {
+    "extents": [
+      87,
+      100
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "gender": "female"
+  },
+  "minstrel": {
+    "extents": [
+      76,
+      83
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "gender": "female"
+  }
+}

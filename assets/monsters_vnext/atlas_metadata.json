@@ -1,0 +1,182 @@
+{
+  "moss_badger": {
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "extents": [
+      112,
+      99
+    ],
+    "actions": [
+      "idle",
+      "walk",
+      "windup",
+      "attack",
+      "hurt",
+      "death"
+    ],
+    "world_max": [
+      38,
+      32
+    ]
+  },
+  "bog_crab": {
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "extents": [
+      108,
+      106
+    ],
+    "actions": [
+      "idle",
+      "walk",
+      "windup",
+      "attack",
+      "hurt",
+      "death"
+    ],
+    "world_max": [
+      38,
+      32
+    ]
+  },
+  "ruin_sentinel": {
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "extents": [
+      106,
+      106
+    ],
+    "actions": [
+      "idle",
+      "walk",
+      "windup",
+      "attack",
+      "hurt",
+      "death"
+    ],
+    "world_max": [
+      38,
+      32
+    ]
+  },
+  "thorn_mantis": {
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "extents": [
+      60,
+      54
+    ],
+    "actions": [
+      "idle",
+      "walk",
+      "windup",
+      "attack",
+      "hurt",
+      "death"
+    ],
+    "world_max": [
+      38,
+      32
+    ]
+  },
+  "lantern_toad": {
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "extents": [
+      82,
+      62
+    ],
+    "actions": [
+      "idle",
+      "walk",
+      "windup",
+      "attack",
+      "hurt",
+      "death"
+    ],
+    "world_max": [
+      38,
+      32
+    ]
+  },
+  "dusk_acolyte": {
+    "cell": [
+      128,
+      128
+    ],
+    "grid": [
+      4,
+      6
+    ],
+    "foot_anchor": [
+      64,
+      116
+    ],
+    "extents": [
+      69,
+      59
+    ],
+    "actions": [
+      "idle",
+      "walk",
+      "windup",
+      "attack",
+      "hurt",
+      "death"
+    ],
+    "world_max": [
+      38,
+      32
+    ]
+  }
+}

@@ -1,0 +1,715 @@
+{
+  "version": 1,
+  "id": "city_silent_gate_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        26.538,
+        47.366
+      ],
+      "source_rect_px": [
+        144,
+        71,
+        80,
+        172
+      ],
+      "source_foot_px": [
+        184.0,
+        243
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -19.107719999999997,
+          -19.455226586102718
+        ],
+        [
+          19.107719999999997,
+          -19.455226586102718
+        ],
+        [
+          19.107719999999997,
+          0
+        ],
+        [
+          -19.107719999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        799.139,
+        47.366
+      ],
+      "source_rect_px": [
+        1305,
+        71,
+        87,
+        172
+      ],
+      "source_foot_px": [
+        1348.5,
+        243
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -19.455226586102718
+        ],
+        [
+          20.779559999999996,
+          -19.455226586102718
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        157.24,
+        172.495
+      ],
+      "source_rect_px": [
+        266,
+        159,
+        230,
+        261
+      ],
+      "source_foot_px": [
+        381.0,
+        420
+      ],
+      "render_width_px": 152.596,
+      "collision_polygon_px": [
+        [
+          -54.93456,
+          -29.5221752265861
+        ],
+        [
+          54.93456,
+          -29.5221752265861
+        ],
+        [
+          54.93456,
+          0
+        ],
+        [
+          -54.93456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        663.13,
+        172.495
+      ],
+      "source_rect_px": [
+        1077,
+        185,
+        133,
+        235
+      ],
+      "source_foot_px": [
+        1143.5,
+        420
+      ],
+      "render_width_px": 88.24,
+      "collision_polygon_px": [
+        [
+          -31.766399999999997,
+          -26.581268882175227
+        ],
+        [
+          31.766399999999997,
+          -26.581268882175227
+        ],
+        [
+          31.766399999999997,
+          0
+        ],
+        [
+          -31.766399999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        160.889,
+        460.224
+      ],
+      "source_rect_px": [
+        240,
+        591,
+        293,
+        236
+      ],
+      "source_foot_px": [
+        386.5,
+        827
+      ],
+      "render_width_px": 194.394,
+      "collision_polygon_px": [
+        [
+          -69.98184,
+          -26.694380664652567
+        ],
+        [
+          69.98184,
+          -26.694380664652567
+        ],
+        [
+          69.98184,
+          0
+        ],
+        [
+          -69.98184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        668.769,
+        462.344
+      ],
+      "source_rect_px": [
+        1023,
+        642,
+        258,
+        188
+      ],
+      "source_foot_px": [
+        1152.0,
+        830
+      ],
+      "render_width_px": 171.173,
+      "collision_polygon_px": [
+        [
+          -61.622279999999996,
+          -21.265015105740183
+        ],
+        [
+          61.622279999999996,
+          -21.265015105740183
+        ],
+        [
+          61.622279999999996,
+          0
+        ],
+        [
+          -61.622279999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        18.245,
+        518.193
+      ],
+      "source_rect_px": [
+        128,
+        719,
+        87,
+        190
+      ],
+      "source_foot_px": [
+        171.5,
+        909
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_08.png",
+      "position_px": [
+        807.764,
+        518.9
+      ],
+      "source_rect_px": [
+        1318,
+        720,
+        87,
+        190
+      ],
+      "source_foot_px": [
+        1361.5,
+        910
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_silent_gate_v01:prop_01",
+      "name": "寂灯外城 · prop_01",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -19.107719999999997,
+          -19.455226586102718
+        ],
+        [
+          19.107719999999997,
+          -19.455226586102718
+        ],
+        [
+          19.107719999999997,
+          0
+        ],
+        [
+          -19.107719999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_02",
+      "name": "寂灯外城 · prop_02",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -19.455226586102718
+        ],
+        [
+          20.779559999999996,
+          -19.455226586102718
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_03",
+      "name": "寂灯外城 · prop_03",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 152.596,
+      "collision_polygon_px": [
+        [
+          -54.93456,
+          -29.5221752265861
+        ],
+        [
+          54.93456,
+          -29.5221752265861
+        ],
+        [
+          54.93456,
+          0
+        ],
+        [
+          -54.93456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_04",
+      "name": "寂灯外城 · prop_04",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 88.24,
+      "collision_polygon_px": [
+        [
+          -31.766399999999997,
+          -26.581268882175227
+        ],
+        [
+          31.766399999999997,
+          -26.581268882175227
+        ],
+        [
+          31.766399999999997,
+          0
+        ],
+        [
+          -31.766399999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_05",
+      "name": "寂灯外城 · prop_05",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 194.394,
+      "collision_polygon_px": [
+        [
+          -69.98184,
+          -26.694380664652567
+        ],
+        [
+          69.98184,
+          -26.694380664652567
+        ],
+        [
+          69.98184,
+          0
+        ],
+        [
+          -69.98184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_06",
+      "name": "寂灯外城 · prop_06",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 171.173,
+      "collision_polygon_px": [
+        [
+          -61.622279999999996,
+          -21.265015105740183
+        ],
+        [
+          61.622279999999996,
+          -21.265015105740183
+        ],
+        [
+          61.622279999999996,
+          0
+        ],
+        [
+          -61.622279999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_07",
+      "name": "寂灯外城 · prop_07",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_silent_gate_v01:prop_08",
+      "name": "寂灯外城 · prop_08",
+      "path": "res://assets/room_illustrated/city_silent_gate_v01/prop_08.png",
+      "layer": "objects",
+      "model": "prop_08",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          -21.491238670694866
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

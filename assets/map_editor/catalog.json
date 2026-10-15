@@ -1,0 +1,401 @@
+[
+  {
+    "name": "森林悬崖",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/cliff.tscn",
+    "preview": "res://assets/environment/cliff.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "侧面遗迹城门",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/gate.tscn",
+    "preview": "res://assets/environment/gate.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "分层橡树",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/oak_tree.tscn",
+    "preview": "res://assets/art_phase4/oak_cutout_v2.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "橡树树干",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/trunk.tscn",
+    "preview": "res://assets/environment/trunk.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "橡树树冠",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/crown.tscn",
+    "preview": "res://assets/environment/crown.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "松树",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/pine.tscn",
+    "preview": "res://assets/environment/pine.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "灌木",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/bush.tscn",
+    "preview": "res://assets/environment/bush.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "芦苇装饰",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/reeds.tscn",
+    "preview": "res://assets/environment/reeds.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "岩石",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/rocks.tscn",
+    "preview": "res://assets/environment/rocks.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "倒木",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/log.tscn",
+    "preview": "res://assets/environment/log.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "残墙遗迹",
+    "category": "战斗地图 · 景观",
+    "path": "res://assets/environment/props/ruins.tscn",
+    "preview": "res://assets/environment/ruins.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "交互草丛",
+    "category": "战斗地图 · 动态环境",
+    "path": "res://assets/environment/props/grass_patch.tscn",
+    "preview": "res://assets/environment/animated/grass_sprites.png",
+    "note": "由 Level 的环境系统驱动；营地请使用营地动态草丛／浅水。"
+  },
+  {
+    "name": "交互芦苇",
+    "category": "战斗地图 · 动态环境",
+    "path": "res://assets/environment/props/reed_patch.tscn",
+    "preview": "res://assets/environment/animated/grass_sprites.png",
+    "note": "由 Level 的环境系统驱动；营地请使用营地动态草丛／浅水。"
+  },
+  {
+    "name": "蔚蓝侧面浅水 · 战斗",
+    "category": "战斗地图 · 动态环境",
+    "path": "res://assets/environment/props/shallow_water.tscn",
+    "preview": "res://assets/environment/animated/water_azure_side_v2.png",
+    "note": "由 Level 的环境系统驱动；营地请使用营地动态草丛／浅水。"
+  },
+  {
+    "name": "星灯商铺外观",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/scenery/camp_shop.tscn",
+    "preview": "res://assets/camp_refine/shop.png",
+    "note": "仅建筑外观；已有服务入口请移动 Shop／Tavern／Archive／Portal 父节点。"
+  },
+  {
+    "name": "灯叶酒馆外观",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/scenery/camp_tavern.tscn",
+    "preview": "res://assets/camp_refine/tavern.png",
+    "note": "仅建筑外观；已有服务入口请移动 Shop／Tavern／Archive／Portal 父节点。"
+  },
+  {
+    "name": "庭院记事台外观",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/scenery/camp_archive.tscn",
+    "preview": "res://assets/camp_refine/archive.png",
+    "note": "仅建筑外观；已有服务入口请移动 Shop／Tavern／Archive／Portal 父节点。"
+  },
+  {
+    "name": "星辉传送阵外观",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/scenery/camp_portal.tscn",
+    "preview": "res://assets/camp_refine/portal.png",
+    "note": "仅建筑外观；已有服务入口请移动 Shop／Tavern／Archive／Portal 父节点。"
+  },
+  {
+    "name": "树根木桥",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/camp/bridge.tscn",
+    "preview": "res://assets/camp_refine/bridge.png",
+    "note": "装饰，无碰撞；可搭配营地单向平台，分别调整外观和碰撞。"
+  },
+  {
+    "name": "树根露台",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/camp/terrace.tscn",
+    "preview": "res://assets/camp_refine/terrace.png",
+    "note": "装饰，无碰撞；可搭配营地单向平台，分别调整外观和碰撞。"
+  },
+  {
+    "name": "树根阶梯",
+    "category": "营地 · 建筑外观",
+    "path": "res://assets/map_editor/camp/stair.tscn",
+    "preview": "res://assets/camp_refine/stair.png",
+    "note": "装饰，无碰撞；可搭配营地单向平台，分别调整外观和碰撞。"
+  },
+  {
+    "name": "可编辑草坡地形",
+    "category": "营地 · 地形与环境",
+    "path": "res://assets/map_editor/camp/terrain.tscn",
+    "preview": "res://assets/camp_refine/soil.png",
+    "note": "仅营地碰撞层；选中后拖动轮廓点，Ctrl+左键加点，右键删点，Shift 暂停36px吸附。"
+  },
+  {
+    "name": "单向木平台",
+    "category": "营地 · 地形与环境",
+    "path": "res://assets/map_editor/camp/platform.tscn",
+    "preview": "res://assets/environment/wood_terrain.png",
+    "note": "仅营地碰撞层；Extent 调整尺寸，角色可从下面跳上去。"
+  },
+  {
+    "name": "石质地台",
+    "category": "营地 · 地形与环境",
+    "path": "res://assets/map_editor/camp/stone_ground.tscn",
+    "preview": "res://assets/environment/stone_terrain.png",
+    "note": "仅营地碰撞层；Extent 调整尺寸。"
+  },
+  {
+    "name": "动态野草",
+    "category": "营地 · 地形与环境",
+    "path": "res://assets/map_editor/camp/garden.tscn",
+    "preview": "res://assets/environment/animated/grass_sprites.png",
+    "note": "仅营地；动态环境会自动绑定营地角色。"
+  },
+  {
+    "name": "动态芦苇",
+    "category": "营地 · 地形与环境",
+    "path": "res://assets/map_editor/camp/reeds.tscn",
+    "preview": "res://assets/environment/animated/reeds_map.png",
+    "note": "仅营地；动态环境会自动绑定营地角色。"
+  },
+  {
+    "name": "蔚蓝侧面浅水 · 营地",
+    "category": "营地 · 地形与环境",
+    "path": "res://assets/map_editor/camp/stream.tscn",
+    "preview": "res://assets/environment/animated/water_azure_side_v2.png",
+    "note": "仅营地；Size 调整水域，自动绑定角色的踩水波动；不新增碰撞。"
+  },
+  {
+    "name": "精绘橡树完整版",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/painted_oak.tscn",
+    "preview": "res://assets/art_phase4/oak_cutout_v2.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "古树",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/old_tree.tscn",
+    "preview": "res://assets/art_phase4/forest_cutouts_v1.png",
+    "note": "原始精绘图集分区，无碰撞；底部锚点含图集留白，请按可见底缘贴地。"
+  },
+  {
+    "name": "细树",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/slim_tree.tscn",
+    "preview": "res://assets/art_phase4/forest_cutouts_v1.png",
+    "note": "原始精绘图集分区，无碰撞；底部锚点含图集留白，请按可见底缘贴地。"
+  },
+  {
+    "name": "苔藓拱门",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/arch.tscn",
+    "preview": "res://assets/art_phase4/forest_cutouts_v1.png",
+    "note": "原始精绘图集分区，无碰撞；底部锚点含图集留白，请按可见底缘贴地。"
+  },
+  {
+    "name": "蕨叶灌木",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/ferns.tscn",
+    "preview": "res://assets/art_phase4/forest_cutouts_v1.png",
+    "note": "原始精绘图集分区，无碰撞；底部锚点含图集留白，请按可见底缘贴地。"
+  },
+  {
+    "name": "苔藓岩块",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/moss_rocks.tscn",
+    "preview": "res://assets/art_phase4/forest_cutouts_v1.png",
+    "note": "原始精绘图集分区，无碰撞；底部锚点含图集留白，请按可见底缘贴地。"
+  },
+  {
+    "name": "悬垂藤蔓",
+    "category": "景观 · 原始精绘",
+    "path": "res://assets/map_editor/scenery/hanging_vines.tscn",
+    "preview": "res://assets/art_phase4/forest_cutouts_v1.png",
+    "note": "原始精绘图集分区，无碰撞；底部锚点含图集留白，请按可见底缘贴地。"
+  },
+  {
+    "name": "星辉营地远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_background.tscn",
+    "preview": "res://assets/camp_refine/background.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "森林精绘远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_forest_backdrop_v1.tscn",
+    "preview": "res://assets/art_phase4/forest_backdrop_v1.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "觉醒森林全景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_awakening_panorama_v1.tscn",
+    "preview": "res://assets/art_phase4/awakening_panorama_v1.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "林地分区远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_forest_background.tscn",
+    "preview": "res://assets/environment/forest_background.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "聚落分区远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_settlement_background.tscn",
+    "preview": "res://assets/environment/settlement_background.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "湿地分区远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_wetland_background.tscn",
+    "preview": "res://assets/environment/wetland_background.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "遗迹分区远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_ruins_background.tscn",
+    "preview": "res://assets/environment/ruins_background.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期森林远景 1",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_forest_1.tscn",
+    "preview": "res://assets/backgrounds/forest_1.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期森林远景 2",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_forest_2.tscn",
+    "preview": "res://assets/backgrounds/forest_2.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期森林远景 3",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_forest_3.tscn",
+    "preview": "res://assets/backgrounds/forest_3.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期森林远景 4",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_forest_4.tscn",
+    "preview": "res://assets/backgrounds/forest_4.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期异林远景 1",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_wyrdwood_1.tscn",
+    "preview": "res://assets/backgrounds/wyrdwood_1.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期异林远景 2",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_wyrdwood_2.tscn",
+    "preview": "res://assets/backgrounds/wyrdwood_2.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期异林远景 3",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_wyrdwood_3.tscn",
+    "preview": "res://assets/backgrounds/wyrdwood_3.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期异林远景 4",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_wyrdwood_4.tscn",
+    "preview": "res://assets/backgrounds/wyrdwood_4.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "早期关卡远景",
+    "category": "背景 · 远景",
+    "path": "res://assets/map_editor/backgrounds/bg_level_bg.tscn",
+    "preview": "res://assets/backgrounds/level_bg.png",
+    "note": "无碰撞背景；中心锚点，Z=-30；按地图范围缩放。"
+  },
+  {
+    "name": "野外商铺外观",
+    "category": "战斗地图 · 建筑外观",
+    "path": "res://assets/map_editor/scenery/field_shop.tscn",
+    "preview": "res://assets/round5/buildings/shop.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "野外酒馆外观",
+    "category": "战斗地图 · 建筑外观",
+    "path": "res://assets/map_editor/scenery/field_tavern.tscn",
+    "preview": "res://assets/round5/buildings/tavern.png",
+    "note": "装饰，无阻路碰撞；原点在底部中央。"
+  },
+  {
+    "name": "地形自动连接瓦片集",
+    "category": "地形 · 瓦片资源",
+    "path": "res://assets/environment/terrain_v2.tres",
+    "preview": "res://assets/environment/grass_terrain.png",
+    "note": "TileSet 资源；拖到 TileMapLayer 的 Tile Set 属性，然后使用地形连接绘制。"
+  },
+  {
+    "name": "地表材质原始图集",
+    "category": "地形 · 瓦片资源",
+    "path": "res://assets/art_phase4/terrain_materials_v1.png",
+    "preview": "res://assets/art_phase4/terrain_materials_v1.png",
+    "note": "原始纹理；四种材质供贴图选用，营地草坡已自动使用精绘土壤。"
+  },
+  {
+    "name": "水花动画帧",
+    "category": "战斗地图 · 动态环境",
+    "path": "res://assets/environment/animated/water_splash.tres",
+    "preview": "res://assets/environment/animated/splash_frames.png",
+    "note": "SpriteFrames 资源，拖到 AnimatedSprite2D 的 Sprite Frames 属性。"
+  },
+  {
+    "name": "蔚蓝侧面水体循环帧",
+    "category": "水体 · 动画资源",
+    "path": "res://assets/environment/animated/water_azure.tres",
+    "preview": "res://assets/environment/animated/water_azure_side_v2.png",
+    "note": "12帧、8fps侧面水层；供 AnimatedSprite2D 使用，浅水节点自动复用。"
+  },
+  {
+    "name": "蔚蓝水体动画装饰",
+    "category": "水体 · 动画资源",
+    "path": "res://assets/map_editor/scenery/azure_water_animation.tscn",
+    "preview": "res://assets/environment/animated/water_azure_side_v2.png",
+    "note": "无碰撞循环精灵；编辑器点播放预览。带踩水响应请用营地／战斗浅水。"
+  }
+]

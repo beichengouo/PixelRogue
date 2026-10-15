@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "id": "forest_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    792
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        145
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        837,
+        255,
+        171
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        392,
+        92,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1441,
+        392,
+        95,
+        177
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:forest_v01:stump",
+      "name": "溪桥林间废庭 · stump",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stump",
+      "size": [
+        2,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_v01/stump.png",
+      "collision": "solid",
+      "kind": "stone",
+      "width_px": 80,
+      "depth_px": 12,
+      "render_width_px": 80
+    },
+    {
+      "id": "scene:forest_v01:boulder",
+      "name": "溪桥林间废庭 · boulder",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "boulder",
+      "size": [
+        4,
+        2
+      ],
+      "path": "res://assets/room_illustrated/forest_v01/boulder.png",
+      "collision": "solid",
+      "kind": "stone",
+      "width_px": 216,
+      "depth_px": 12,
+      "render_width_px": 216
+    },
+    {
+      "id": "scene:forest_v01:log",
+      "name": "溪桥林间废庭 · log",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "log",
+      "size": [
+        3,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_v01/log.png",
+      "collision": "solid",
+      "kind": "stone",
+      "width_px": 130,
+      "depth_px": 12,
+      "render_width_px": 130
+    },
+    {
+      "id": "scene:forest_v01:crate_a",
+      "name": "溪桥林间废庭 · crate_a",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate_iron",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_v01/crate_a.png",
+      "collision": "solid",
+      "kind": "crate",
+      "width_px": 42,
+      "depth_px": 12,
+      "render_width_px": 42
+    },
+    {
+      "id": "scene:forest_v01:crate_b",
+      "name": "溪桥林间废庭 · crate_b",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate_iron",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_v01/crate_b.png",
+      "collision": "solid",
+      "kind": "crate",
+      "width_px": 42,
+      "depth_px": 12,
+      "render_width_px": 42
+    },
+    {
+      "id": "scene:forest_v01:crystal",
+      "name": "溪桥林间废庭 · crystal",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "crystal",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_v01/crystal.png",
+      "collision": "light",
+      "kind": "stone",
+      "width_px": 32,
+      "depth_px": 12,
+      "render_width_px": 32
+    }
+  ]
+}

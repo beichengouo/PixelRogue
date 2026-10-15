@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "id": "boss_mage_garden_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        160
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        824,
+        255,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        390,
+        112,
+        184
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1424,
+        390,
+        112,
+        184
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:boss_mage_garden_v03:star_plinth_south",
+      "name": "法师星庭 · star_plinth_south",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_mage_garden_v03/star_plinth_south.png",
+      "collision": "stone",
+      "render_width_px": 88.7983,
+      "collision_polygon_px": [
+        [
+          -30.8736,
+          -26.4631
+        ],
+        [
+          -16.7599,
+          -36.4602
+        ],
+        [
+          9.1151,
+          -34.696
+        ],
+        [
+          30.8736,
+          -25.2869
+        ],
+        [
+          32.0497,
+          -10.5852
+        ],
+        [
+          16.1719,
+          -3.5284
+        ],
+        [
+          -15.5838,
+          -3.5284
+        ],
+        [
+          -31.4616,
+          -12.3494
+        ]
+      ]
+    },
+    {
+      "id": "scene:boss_mage_garden_v03:star_plinth_east",
+      "name": "法师星庭 · star_plinth_east",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_mage_garden_v03/star_plinth_east.png",
+      "collision": "stone",
+      "render_width_px": 89.3864,
+      "collision_polygon_px": [
+        [
+          -34.696,
+          -30.5795
+        ],
+        [
+          -17.054,
+          -41.1648
+        ],
+        [
+          11.7614,
+          -38.8125
+        ],
+        [
+          33.5199,
+          -32.3438
+        ],
+        [
+          35.2841,
+          -16.4659
+        ],
+        [
+          17.054,
+          -4.1165
+        ],
+        [
+          -17.642,
+          -3.5284
+        ],
+        [
+          -34.696,
+          -14.7017
+        ]
+      ]
+    },
+    {
+      "id": "scene:boss_mage_garden_v03:mage_crystal_west",
+      "name": "法师星庭 · mage_crystal_west",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "crystal",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_mage_garden_v03/mage_crystal_west.png",
+      "collision": "light",
+      "render_width_px": 77.625,
+      "collision_polygon_px": [
+        [
+          -5.8807,
+          -24.1108
+        ],
+        [
+          1.1761,
+          -28.8153
+        ],
+        [
+          10.5852,
+          -24.6989
+        ],
+        [
+          12.9375,
+          -14.7017
+        ],
+        [
+          5.2926,
+          -11.1733
+        ],
+        [
+          -5.2926,
+          -14.7017
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 180,
+        "color": "8fbbff"
+      }
+    },
+    {
+      "id": "scene:boss_mage_garden_v03:mage_crystal_southeast",
+      "name": "法师星庭 · mage_crystal_southeast",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "crystal",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/boss_mage_garden_v03/mage_crystal_southeast.png",
+      "collision": "light",
+      "render_width_px": 75.8608,
+      "collision_polygon_px": [
+        [
+          -28.5213,
+          -25.2869
+        ],
+        [
+          -14.9957,
+          -34.696
+        ],
+        [
+          7.9389,
+          -31.7557
+        ],
+        [
+          26.7571,
+          -23.5227
+        ],
+        [
+          20.2884,
+          -8.821
+        ],
+        [
+          4.4105,
+          -2.9403
+        ],
+        [
+          -19.7003,
+          -7.0568
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 180,
+        "color": "8fbbff"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "star_plinth_south",
+      "kind": "stone",
+      "texture": "star_plinth_south.png",
+      "position_px": [
+        543.669,
+        435.1705
+      ],
+      "source_rect_px": [
+        913,
+        754,
+        1064,
+        868
+      ],
+      "source_foot_px": [
+        988.5,
+        868
+      ],
+      "render_width_px": 88.7983,
+      "collision_polygon_px": [
+        [
+          -30.8736,
+          -26.4631
+        ],
+        [
+          -16.7599,
+          -36.4602
+        ],
+        [
+          9.1151,
+          -34.696
+        ],
+        [
+          30.8736,
+          -25.2869
+        ],
+        [
+          32.0497,
+          -10.5852
+        ],
+        [
+          16.1719,
+          -3.5284
+        ],
+        [
+          -15.5838,
+          -3.5284
+        ],
+        [
+          -31.4616,
+          -12.3494
+        ]
+      ]
+    },
+    {
+      "id": "star_plinth_east",
+      "kind": "stone",
+      "texture": "star_plinth_east.png",
+      "position_px": [
+        762.7244,
+        339.3153
+      ],
+      "source_rect_px": [
+        1285,
+        577,
+        1437,
+        705
+      ],
+      "source_foot_px": [
+        1361.0,
+        705
+      ],
+      "render_width_px": 89.3864,
+      "collision_polygon_px": [
+        [
+          -34.696,
+          -30.5795
+        ],
+        [
+          -17.054,
+          -41.1648
+        ],
+        [
+          11.7614,
+          -38.8125
+        ],
+        [
+          33.5199,
+          -32.3438
+        ],
+        [
+          35.2841,
+          -16.4659
+        ],
+        [
+          17.054,
+          -4.1165
+        ],
+        [
+          -17.642,
+          -3.5284
+        ],
+        [
+          -34.696,
+          -14.7017
+        ]
+      ]
+    },
+    {
+      "id": "mage_crystal_west",
+      "kind": "light",
+      "texture": "mage_crystal_west.png",
+      "position_px": [
+        115.2614,
+        242.8722
+      ],
+      "source_rect_px": [
+        194,
+        318,
+        326,
+        541
+      ],
+      "source_foot_px": [
+        260.0,
+        541
+      ],
+      "render_width_px": 77.625,
+      "collision_polygon_px": [
+        [
+          -5.8807,
+          -24.1108
+        ],
+        [
+          1.1761,
+          -28.8153
+        ],
+        [
+          10.5852,
+          -24.6989
+        ],
+        [
+          12.9375,
+          -14.7017
+        ],
+        [
+          5.2926,
+          -11.1733
+        ],
+        [
+          -5.2926,
+          -14.7017
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 180,
+        "color": "8fbbff"
+      }
+    },
+    {
+      "id": "mage_crystal_southeast",
+      "kind": "light",
+      "texture": "mage_crystal_southeast.png",
+      "position_px": [
+        649.5213,
+        397.5341
+      ],
+      "source_rect_px": [
+        1104,
+        609,
+        1233,
+        804
+      ],
+      "source_foot_px": [
+        1168.5,
+        804
+      ],
+      "render_width_px": 75.8608,
+      "collision_polygon_px": [
+        [
+          -28.5213,
+          -25.2869
+        ],
+        [
+          -14.9957,
+          -34.696
+        ],
+        [
+          7.9389,
+          -31.7557
+        ],
+        [
+          26.7571,
+          -23.5227
+        ],
+        [
+          20.2884,
+          -8.821
+        ],
+        [
+          4.4105,
+          -2.9403
+        ],
+        [
+          -19.7003,
+          -7.0568
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 180,
+        "color": "8fbbff"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "source_title": "法师星庭"
+}

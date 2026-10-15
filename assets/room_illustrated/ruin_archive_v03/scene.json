@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "id": "ruin_archive_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "archive_platform-plane.png",
+      "surface": "wood"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        680,
+        0,
+        177,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1421,
+        359,
+        115,
+        241
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        680,
+        824,
+        177,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        359,
+        115,
+        241
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "broken_column_a",
+      "kind": "stone",
+      "texture": "broken_column_a.png",
+      "position_px": [
+        49.3977,
+        140.5483
+      ],
+      "source_rect_px": [
+        99,
+        158,
+        197,
+        367
+      ],
+      "source_foot_px": [
+        148.0,
+        367
+      ],
+      "render_width_px": 57.6307,
+      "collision_polygon_px": [
+        [
+          -21.1705,
+          -29.9915
+        ],
+        [
+          4.1165,
+          -35.2841
+        ],
+        [
+          19.4062,
+          -26.4631
+        ],
+        [
+          17.642,
+          -11.1733
+        ],
+        [
+          -12.9375,
+          -8.821
+        ]
+      ]
+    },
+    {
+      "id": "broken_column_b",
+      "kind": "stone",
+      "texture": "broken_column_b.png",
+      "position_px": [
+        119.0838,
+        137.608
+      ],
+      "source_rect_px": [
+        204,
+        168,
+        329,
+        362
+      ],
+      "source_foot_px": [
+        266.5,
+        362
+      ],
+      "render_width_px": 73.5085,
+      "collision_polygon_px": [
+        [
+          -27.9332,
+          -31.7557
+        ],
+        [
+          1.4702,
+          -36.4602
+        ],
+        [
+          22.6406,
+          -24.6989
+        ],
+        [
+          15.5838,
+          -10.5852
+        ],
+        [
+          -18.5241,
+          -10.5852
+        ]
+      ]
+    },
+    {
+      "id": "fallen_column",
+      "kind": "stone",
+      "texture": "fallen_column.png",
+      "position_px": [
+        162.3068,
+        159.9545
+      ],
+      "source_rect_px": [
+        257,
+        218,
+        423,
+        400
+      ],
+      "source_foot_px": [
+        340.0,
+        400
+      ],
+      "render_width_px": 97.6193,
+      "collision_polygon_px": [
+        [
+          -39.4006,
+          -45.8693
+        ],
+        [
+          -11.1733,
+          -44.6932
+        ],
+        [
+          32.9318,
+          -22.9347
+        ],
+        [
+          23.5227,
+          -9.4091
+        ],
+        [
+          -18.8182,
+          -21.7585
+        ]
+      ]
+    },
+    {
+      "id": "oil_lamp_sw",
+      "kind": "light",
+      "texture": "oil_lamp_sw.png",
+      "position_px": [
+        87.0341,
+        416.9403
+      ],
+      "source_rect_px": [
+        170,
+        623,
+        254,
+        837
+      ],
+      "source_foot_px": [
+        212.0,
+        837
+      ],
+      "render_width_px": 49.3977,
+      "collision_polygon_px": [
+        [
+          -7.6449,
+          -28.8153
+        ],
+        [
+          11.1733,
+          -30.5795
+        ],
+        [
+          16.4659,
+          -14.1136
+        ],
+        [
+          3.5284,
+          -4.7045
+        ],
+        [
+          -12.9375,
+          -12.9375
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffc671",
+        "flicker": true
+      }
+    },
+    {
+      "id": "oil_lamp_ne",
+      "kind": "light",
+      "texture": "oil_lamp_ne.png",
+      "position_px": [
+        774.7798,
+        80.5653
+      ],
+      "source_rect_px": [
+        1332,
+        79,
+        1431,
+        265
+      ],
+      "source_foot_px": [
+        1381.5,
+        265
+      ],
+      "render_width_px": 58.2187,
+      "collision_polygon_px": [
+        [
+          -3.8224,
+          -15.8778
+        ],
+        [
+          10.8793,
+          -16.4659
+        ],
+        [
+          16.1719,
+          -7.0568
+        ],
+        [
+          -0.294,
+          -4.1165
+        ],
+        [
+          -6.7628,
+          -8.233
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffc671",
+        "flicker": true
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:ruin_archive_v03:broken_column_a",
+      "name": "古庭木台 · broken_column_a",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/ruin_archive_v03/broken_column_a.png",
+      "collision": "stone",
+      "render_width_px": 57.6307,
+      "collision_polygon_px": [
+        [
+          -21.1705,
+          -29.9915
+        ],
+        [
+          4.1165,
+          -35.2841
+        ],
+        [
+          19.4062,
+          -26.4631
+        ],
+        [
+          17.642,
+          -11.1733
+        ],
+        [
+          -12.9375,
+          -8.821
+        ]
+      ]
+    },
+    {
+      "id": "scene:ruin_archive_v03:broken_column_b",
+      "name": "古庭木台 · broken_column_b",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/ruin_archive_v03/broken_column_b.png",
+      "collision": "stone",
+      "render_width_px": 73.5085,
+      "collision_polygon_px": [
+        [
+          -27.9332,
+          -31.7557
+        ],
+        [
+          1.4702,
+          -36.4602
+        ],
+        [
+          22.6406,
+          -24.6989
+        ],
+        [
+          15.5838,
+          -10.5852
+        ],
+        [
+          -18.5241,
+          -10.5852
+        ]
+      ]
+    },
+    {
+      "id": "scene:ruin_archive_v03:fallen_column",
+      "name": "古庭木台 · fallen_column",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/ruin_archive_v03/fallen_column.png",
+      "collision": "stone",
+      "render_width_px": 97.6193,
+      "collision_polygon_px": [
+        [
+          -39.4006,
+          -45.8693
+        ],
+        [
+          -11.1733,
+          -44.6932
+        ],
+        [
+          32.9318,
+          -22.9347
+        ],
+        [
+          23.5227,
+          -9.4091
+        ],
+        [
+          -18.8182,
+          -21.7585
+        ]
+      ]
+    },
+    {
+      "id": "scene:ruin_archive_v03:oil_lamp_sw",
+      "name": "古庭木台 · oil_lamp_sw",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/ruin_archive_v03/oil_lamp_sw.png",
+      "collision": "light",
+      "render_width_px": 49.3977,
+      "collision_polygon_px": [
+        [
+          -7.6449,
+          -28.8153
+        ],
+        [
+          11.1733,
+          -30.5795
+        ],
+        [
+          16.4659,
+          -14.1136
+        ],
+        [
+          3.5284,
+          -4.7045
+        ],
+        [
+          -12.9375,
+          -12.9375
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffc671",
+        "flicker": true
+      }
+    },
+    {
+      "id": "scene:ruin_archive_v03:oil_lamp_ne",
+      "name": "古庭木台 · oil_lamp_ne",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/ruin_archive_v03/oil_lamp_ne.png",
+      "collision": "light",
+      "render_width_px": 58.2187,
+      "collision_polygon_px": [
+        [
+          -3.8224,
+          -15.8778
+        ],
+        [
+          10.8793,
+          -16.4659
+        ],
+        [
+          16.1719,
+          -7.0568
+        ],
+        [
+          -0.294,
+          -4.1165
+        ],
+        [
+          -6.7628,
+          -8.233
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffc671",
+        "flicker": true
+      }
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "bridge_paths_px": [],
+  "source_title": "古庭木台"
+}

@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/map_editor/scenery/camp_archive.tscn" id="1_bfqxn"]
+[ext_resource type="Texture2D" path="res://assets/camp_refine/archive.png" id="2_c5tna"]
+
+[sub_resource type="AtlasTexture" id="crop"]
+atlas = ExtResource("2_c5tna")
+region = Rect2(13, 38, 1514, 897)
+
+[node name="庭院记事台" type="Node2D" unique_id=995728404]
+
+[node name="CampArchive" type="Sprite2D" parent="." unique_id=424074804 instance=ExtResource("1_bfqxn")]
+z_index = -5
+texture_filter = 2
+position = Vector2(0, 18)
+scale = Vector2(0.14531043, 0.14531043)
+texture = SubResource("crop")
+offset = Vector2(0, -448.5)

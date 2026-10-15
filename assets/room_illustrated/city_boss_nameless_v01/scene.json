@@ -1,0 +1,995 @@
+{
+  "version": 1,
+  "id": "city_boss_nameless_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        90.231,
+        188.755
+      ],
+      "source_rect_px": [
+        91,
+        55,
+        378,
+        388
+      ],
+      "source_foot_px": [
+        280.0,
+        443
+      ],
+      "render_width_px": 250.788,
+      "collision_polygon_px": [
+        [
+          -90.28368,
+          -38
+        ],
+        [
+          90.28368,
+          -38
+        ],
+        [
+          90.28368,
+          0
+        ],
+        [
+          -90.28368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        743.409,
+        193.704
+      ],
+      "source_rect_px": [
+        1041,
+        82,
+        447,
+        368
+      ],
+      "source_foot_px": [
+        1264.5,
+        450
+      ],
+      "render_width_px": 296.567,
+      "collision_polygon_px": [
+        [
+          -106.76412,
+          -38
+        ],
+        [
+          106.76412,
+          -38
+        ],
+        [
+          106.76412,
+          0
+        ],
+        [
+          -106.76412,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        -41.135,
+        79.885
+      ],
+      "source_rect_px": [
+        50,
+        105,
+        64,
+        184
+      ],
+      "source_foot_px": [
+        82.0,
+        289
+      ],
+      "render_width_px": 42.462,
+      "collision_polygon_px": [
+        [
+          -15.28632,
+          -20.812567975830817
+        ],
+        [
+          15.28632,
+          -20.812567975830817
+        ],
+        [
+          15.28632,
+          0
+        ],
+        [
+          -15.28632,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        172.832,
+        57.97
+      ],
+      "source_rect_px": [
+        373,
+        129,
+        63,
+        129
+      ],
+      "source_foot_px": [
+        404.5,
+        258
+      ],
+      "render_width_px": 41.798,
+      "collision_polygon_px": [
+        [
+          -15.04728,
+          -14.59141993957704
+        ],
+        [
+          15.04728,
+          -14.59141993957704
+        ],
+        [
+          15.04728,
+          0
+        ],
+        [
+          -15.04728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        645.216,
+        57.263
+      ],
+      "source_rect_px": [
+        1085,
+        129,
+        63,
+        128
+      ],
+      "source_foot_px": [
+        1116.5,
+        257
+      ],
+      "render_width_px": 41.798,
+      "collision_polygon_px": [
+        [
+          -15.04728,
+          -14.478308157099699
+        ],
+        [
+          15.04728,
+          -14.478308157099699
+        ],
+        [
+          15.04728,
+          0
+        ],
+        [
+          -15.04728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        52.745,
+        547.885
+      ],
+      "source_rect_px": [
+        58,
+        573,
+        331,
+        378
+      ],
+      "source_foot_px": [
+        223.5,
+        951
+      ],
+      "render_width_px": 219.606,
+      "collision_polygon_px": [
+        [
+          -79.05816,
+          -38
+        ],
+        [
+          79.05816,
+          -38
+        ],
+        [
+          79.05816,
+          0
+        ],
+        [
+          -79.05816,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        842.928,
+        385.287
+      ],
+      "source_rect_px": [
+        1382,
+        573,
+        65,
+        148
+      ],
+      "source_foot_px": [
+        1414.5,
+        721
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -15.524999999999999,
+          -16.740543806646524
+        ],
+        [
+          15.524999999999999,
+          -16.740543806646524
+        ],
+        [
+          15.524999999999999,
+          0
+        ],
+        [
+          -15.524999999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_08.png",
+      "position_px": [
+        745.731,
+        548.592
+      ],
+      "source_rect_px": [
+        1062,
+        619,
+        412,
+        333
+      ],
+      "source_foot_px": [
+        1268.0,
+        952
+      ],
+      "render_width_px": 273.346,
+      "collision_polygon_px": [
+        [
+          -98.40456,
+          -37.666223564954684
+        ],
+        [
+          98.40456,
+          -37.666223564954684
+        ],
+        [
+          98.40456,
+          0
+        ],
+        [
+          -98.40456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_09",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_09.png",
+      "position_px": [
+        50.755,
+        357.009
+      ],
+      "source_rect_px": [
+        196,
+        631,
+        49,
+        50
+      ],
+      "source_foot_px": [
+        220.5,
+        681
+      ],
+      "render_width_px": 32.51,
+      "collision_polygon_px": [
+        [
+          -11.703599999999998,
+          -8
+        ],
+        [
+          11.703599999999998,
+          -8
+        ],
+        [
+          11.703599999999998,
+          0
+        ],
+        [
+          -11.703599999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_10",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_10.png",
+      "position_px": [
+        154.587,
+        404.375
+      ],
+      "source_rect_px": [
+        336,
+        651,
+        82,
+        97
+      ],
+      "source_foot_px": [
+        377.0,
+        748
+      ],
+      "render_width_px": 54.404,
+      "collision_polygon_px": [
+        [
+          -19.585440000000002,
+          -10.971842900302114
+        ],
+        [
+          19.585440000000002,
+          -10.971842900302114
+        ],
+        [
+          19.585440000000002,
+          0
+        ],
+        [
+          -19.585440000000002,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_11",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_11.png",
+      "position_px": [
+        193.731,
+        531.625
+      ],
+      "source_rect_px": [
+        388,
+        713,
+        96,
+        215
+      ],
+      "source_foot_px": [
+        436.0,
+        928
+      ],
+      "render_width_px": 63.692,
+      "collision_polygon_px": [
+        [
+          -22.929119999999998,
+          -24.3190332326284
+        ],
+        [
+          22.929119999999998,
+          -24.3190332326284
+        ],
+        [
+          22.929119999999998,
+          0
+        ],
+        [
+          -22.929119999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_12",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_12.png",
+      "position_px": [
+        14.596,
+        522.435
+      ],
+      "source_rect_px": [
+        154,
+        887,
+        24,
+        28
+      ],
+      "source_foot_px": [
+        166.0,
+        915
+      ],
+      "render_width_px": 15.923,
+      "collision_polygon_px": [
+        [
+          -6,
+          -8
+        ],
+        [
+          6,
+          -8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          -6,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "bde4ff",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_boss_nameless_v01:prop_01",
+      "name": "失名穹顶 · prop_01",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 250.788,
+      "collision_polygon_px": [
+        [
+          -90.28368,
+          -38
+        ],
+        [
+          90.28368,
+          -38
+        ],
+        [
+          90.28368,
+          0
+        ],
+        [
+          -90.28368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_02",
+      "name": "失名穹顶 · prop_02",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        8,
+        1
+      ],
+      "render_width_px": 296.567,
+      "collision_polygon_px": [
+        [
+          -106.76412,
+          -38
+        ],
+        [
+          106.76412,
+          -38
+        ],
+        [
+          106.76412,
+          0
+        ],
+        [
+          -106.76412,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_03",
+      "name": "失名穹顶 · prop_03",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 42.462,
+      "collision_polygon_px": [
+        [
+          -15.28632,
+          -20.812567975830817
+        ],
+        [
+          15.28632,
+          -20.812567975830817
+        ],
+        [
+          15.28632,
+          0
+        ],
+        [
+          -15.28632,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_04",
+      "name": "失名穹顶 · prop_04",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 41.798,
+      "collision_polygon_px": [
+        [
+          -15.04728,
+          -14.59141993957704
+        ],
+        [
+          15.04728,
+          -14.59141993957704
+        ],
+        [
+          15.04728,
+          0
+        ],
+        [
+          -15.04728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_05",
+      "name": "失名穹顶 · prop_05",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 41.798,
+      "collision_polygon_px": [
+        [
+          -15.04728,
+          -14.478308157099699
+        ],
+        [
+          15.04728,
+          -14.478308157099699
+        ],
+        [
+          15.04728,
+          0
+        ],
+        [
+          -15.04728,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_06",
+      "name": "失名穹顶 · prop_06",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 219.606,
+      "collision_polygon_px": [
+        [
+          -79.05816,
+          -38
+        ],
+        [
+          79.05816,
+          -38
+        ],
+        [
+          79.05816,
+          0
+        ],
+        [
+          -79.05816,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_07",
+      "name": "失名穹顶 · prop_07",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -15.524999999999999,
+          -16.740543806646524
+        ],
+        [
+          15.524999999999999,
+          -16.740543806646524
+        ],
+        [
+          15.524999999999999,
+          0
+        ],
+        [
+          -15.524999999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_08",
+      "name": "失名穹顶 · prop_08",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_08.png",
+      "layer": "objects",
+      "model": "prop_08",
+      "collision": "solid",
+      "size": [
+        8,
+        1
+      ],
+      "render_width_px": 273.346,
+      "collision_polygon_px": [
+        [
+          -98.40456,
+          -37.666223564954684
+        ],
+        [
+          98.40456,
+          -37.666223564954684
+        ],
+        [
+          98.40456,
+          0
+        ],
+        [
+          -98.40456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_09",
+      "name": "失名穹顶 · prop_09",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_09.png",
+      "layer": "objects",
+      "model": "prop_09",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 32.51,
+      "collision_polygon_px": [
+        [
+          -11.703599999999998,
+          -8
+        ],
+        [
+          11.703599999999998,
+          -8
+        ],
+        [
+          11.703599999999998,
+          0
+        ],
+        [
+          -11.703599999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_10",
+      "name": "失名穹顶 · prop_10",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_10.png",
+      "layer": "objects",
+      "model": "prop_10",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 54.404,
+      "collision_polygon_px": [
+        [
+          -19.585440000000002,
+          -10.971842900302114
+        ],
+        [
+          19.585440000000002,
+          -10.971842900302114
+        ],
+        [
+          19.585440000000002,
+          0
+        ],
+        [
+          -19.585440000000002,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_11",
+      "name": "失名穹顶 · prop_11",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_11.png",
+      "layer": "objects",
+      "model": "prop_11",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 63.692,
+      "collision_polygon_px": [
+        [
+          -22.929119999999998,
+          -24.3190332326284
+        ],
+        [
+          22.929119999999998,
+          -24.3190332326284
+        ],
+        [
+          22.929119999999998,
+          0
+        ],
+        [
+          -22.929119999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_nameless_v01:prop_12",
+      "name": "失名穹顶 · prop_12",
+      "path": "res://assets/room_illustrated/city_boss_nameless_v01/prop_12.png",
+      "layer": "objects",
+      "model": "prop_12",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 15.923,
+      "collision_polygon_px": [
+        [
+          -6,
+          -8
+        ],
+        [
+          6,
+          -8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          -6,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

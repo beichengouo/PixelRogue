@@ -1,0 +1,1714 @@
+{
+  "version": 1,
+  "id": "city_star_canal_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        339.361,
+        -20.502
+      ],
+      "source_rect_px": [
+        626,
+        0,
+        59,
+        147
+      ],
+      "source_foot_px": [
+        655.5,
+        147
+      ],
+      "render_width_px": 39.144,
+      "collision_polygon_px": [
+        [
+          -14.09184,
+          -16.627432024169185
+        ],
+        [
+          14.09184,
+          -16.627432024169185
+        ],
+        [
+          14.09184,
+          0
+        ],
+        [
+          -14.09184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        488.971,
+        -21.208
+      ],
+      "source_rect_px": [
+        851,
+        0,
+        60,
+        146
+      ],
+      "source_foot_px": [
+        881.0,
+        146
+      ],
+      "render_width_px": 39.808,
+      "collision_polygon_px": [
+        [
+          -14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          0
+        ],
+        [
+          -14.330879999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        242.827,
+        90.489
+      ],
+      "source_rect_px": [
+        381,
+        107,
+        258,
+        197
+      ],
+      "source_foot_px": [
+        510.0,
+        304
+      ],
+      "render_width_px": 171.173,
+      "collision_polygon_px": [
+        [
+          -61.622279999999996,
+          -22.283021148036255
+        ],
+        [
+          61.622279999999996,
+          -22.283021148036255
+        ],
+        [
+          61.622279999999996,
+          0
+        ],
+        [
+          -61.622279999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        767.293,
+        132.199
+      ],
+      "source_rect_px": [
+        1196,
+        108,
+        209,
+        255
+      ],
+      "source_foot_px": [
+        1300.5,
+        363
+      ],
+      "render_width_px": 138.663,
+      "collision_polygon_px": [
+        [
+          -49.91868,
+          -28.843504531722058
+        ],
+        [
+          49.91868,
+          -28.843504531722058
+        ],
+        [
+          49.91868,
+          0
+        ],
+        [
+          -49.91868,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        64.356,
+        81.299
+      ],
+      "source_rect_px": [
+        151,
+        125,
+        180,
+        166
+      ],
+      "source_foot_px": [
+        241.0,
+        291
+      ],
+      "render_width_px": 119.423,
+      "collision_polygon_px": [
+        [
+          -42.99228,
+          -18.776555891238672
+        ],
+        [
+          42.99228,
+          -18.776555891238672
+        ],
+        [
+          42.99228,
+          0
+        ],
+        [
+          -42.99228,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        663.13,
+        67.867
+      ],
+      "source_rect_px": [
+        1103,
+        125,
+        81,
+        147
+      ],
+      "source_foot_px": [
+        1143.5,
+        272
+      ],
+      "render_width_px": 53.74,
+      "collision_polygon_px": [
+        [
+          -19.3464,
+          -16.627432024169185
+        ],
+        [
+          19.3464,
+          -16.627432024169185
+        ],
+        [
+          19.3464,
+          0
+        ],
+        [
+          -19.3464,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        20.899,
+        7.776
+      ],
+      "source_rect_px": [
+        162,
+        163,
+        27,
+        24
+      ],
+      "source_foot_px": [
+        175.5,
+        187
+      ],
+      "render_width_px": 17.913,
+      "collision_polygon_px": [
+        [
+          -6.4486799999999995,
+          -8
+        ],
+        [
+          6.4486799999999995,
+          -8
+        ],
+        [
+          6.4486799999999995,
+          0
+        ],
+        [
+          -6.4486799999999995,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_08.png",
+      "position_px": [
+        -3.649,
+        42.417
+      ],
+      "source_rect_px": [
+        119,
+        185,
+        39,
+        51
+      ],
+      "source_foot_px": [
+        138.5,
+        236
+      ],
+      "render_width_px": 25.875,
+      "collision_polygon_px": [
+        [
+          -9.315,
+          -8
+        ],
+        [
+          9.315,
+          -8
+        ],
+        [
+          9.315,
+          0
+        ],
+        [
+          -9.315,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_09",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_09.png",
+      "position_px": [
+        780.562,
+        206.429
+      ],
+      "source_rect_px": [
+        1170,
+        247,
+        301,
+        221
+      ],
+      "source_foot_px": [
+        1320.5,
+        468
+      ],
+      "render_width_px": 199.702,
+      "collision_polygon_px": [
+        [
+          -71.89272,
+          -24.997703927492445
+        ],
+        [
+          71.89272,
+          -24.997703927492445
+        ],
+        [
+          71.89272,
+          0
+        ],
+        [
+          -71.89272,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_10",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_10.png",
+      "position_px": [
+        3.649,
+        86.248
+      ],
+      "source_rect_px": [
+        132,
+        255,
+        35,
+        43
+      ],
+      "source_foot_px": [
+        149.5,
+        298
+      ],
+      "render_width_px": 23.221,
+      "collision_polygon_px": [
+        [
+          -8.35956,
+          -8
+        ],
+        [
+          8.35956,
+          -8
+        ],
+        [
+          8.35956,
+          0
+        ],
+        [
+          -8.35956,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_11",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_11.png",
+      "position_px": [
+        45.779,
+        206.429
+      ],
+      "source_rect_px": [
+        64,
+        270,
+        298,
+        198
+      ],
+      "source_foot_px": [
+        213.0,
+        468
+      ],
+      "render_width_px": 197.712,
+      "collision_polygon_px": [
+        [
+          -71.17631999999999,
+          -22.396132930513595
+        ],
+        [
+          71.17631999999999,
+          -22.396132930513595
+        ],
+        [
+          71.17631999999999,
+          0
+        ],
+        [
+          -71.17631999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_12",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_12.png",
+      "position_px": [
+        27.202,
+        111.698
+      ],
+      "source_rect_px": [
+        167,
+        294,
+        36,
+        40
+      ],
+      "source_foot_px": [
+        185.0,
+        334
+      ],
+      "render_width_px": 23.885,
+      "collision_polygon_px": [
+        [
+          -8.598600000000001,
+          -8
+        ],
+        [
+          8.598600000000001,
+          -8
+        ],
+        [
+          8.598600000000001,
+          0
+        ],
+        [
+          -8.598600000000001,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_13",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_13.png",
+      "position_px": [
+        762.981,
+        498.399
+      ],
+      "source_rect_px": [
+        1125,
+        500,
+        338,
+        381
+      ],
+      "source_foot_px": [
+        1294.0,
+        881
+      ],
+      "render_width_px": 224.25,
+      "collision_polygon_px": [
+        [
+          -80.73,
+          -38
+        ],
+        [
+          80.73,
+          -38
+        ],
+        [
+          80.73,
+          0
+        ],
+        [
+          -80.73,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_14",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_14.png",
+      "position_px": [
+        130.37,
+        481.432
+      ],
+      "source_rect_px": [
+        74,
+        501,
+        533,
+        356
+      ],
+      "source_foot_px": [
+        340.5,
+        857
+      ],
+      "render_width_px": 353.625,
+      "collision_polygon_px": [
+        [
+          -127.30499999999999,
+          -38
+        ],
+        [
+          127.30499999999999,
+          -38
+        ],
+        [
+          127.30499999999999,
+          0
+        ],
+        [
+          -127.30499999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_15",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_15.png",
+      "position_px": [
+        817.385,
+        330.145
+      ],
+      "source_rect_px": [
+        1356,
+        619,
+        40,
+        24
+      ],
+      "source_foot_px": [
+        1376.0,
+        643
+      ],
+      "render_width_px": 26.538,
+      "collision_polygon_px": [
+        [
+          -9.55368,
+          -8
+        ],
+        [
+          9.55368,
+          -8
+        ],
+        [
+          9.55368,
+          0
+        ],
+        [
+          -9.55368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_16",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_16.png",
+      "position_px": [
+        586.5,
+        488.502
+      ],
+      "source_rect_px": [
+        943,
+        716,
+        170,
+        151
+      ],
+      "source_foot_px": [
+        1028.0,
+        867
+      ],
+      "render_width_px": 112.788,
+      "collision_polygon_px": [
+        [
+          -40.60368,
+          -17.07987915407855
+        ],
+        [
+          40.60368,
+          -17.07987915407855
+        ],
+        [
+          40.60368,
+          0
+        ],
+        [
+          -40.60368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_17",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_17.png",
+      "position_px": [
+        90.231,
+        460.224
+      ],
+      "source_rect_px": [
+        257,
+        799,
+        46,
+        28
+      ],
+      "source_foot_px": [
+        280.0,
+        827
+      ],
+      "render_width_px": 30.519,
+      "collision_polygon_px": [
+        [
+          -10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          0
+        ],
+        [
+          -10.986839999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_18",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_18.png",
+      "position_px": [
+        337.37,
+        545.764
+      ],
+      "source_rect_px": [
+        622,
+        802,
+        61,
+        146
+      ],
+      "source_foot_px": [
+        652.5,
+        948
+      ],
+      "render_width_px": 40.471,
+      "collision_polygon_px": [
+        [
+          -14.569559999999997,
+          -16.51432024169184
+        ],
+        [
+          14.569559999999997,
+          -16.51432024169184
+        ],
+        [
+          14.569559999999997,
+          0
+        ],
+        [
+          -14.569559999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_19",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_19.png",
+      "position_px": [
+        490.962,
+        545.764
+      ],
+      "source_rect_px": [
+        854,
+        802,
+        60,
+        146
+      ],
+      "source_foot_px": [
+        884.0,
+        948
+      ],
+      "render_width_px": 39.808,
+      "collision_polygon_px": [
+        [
+          -14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          0
+        ],
+        [
+          -14.330879999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_20",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_20.png",
+      "position_px": [
+        646.543,
+        473.656
+      ],
+      "source_rect_px": [
+        1104,
+        804,
+        29,
+        42
+      ],
+      "source_foot_px": [
+        1118.5,
+        846
+      ],
+      "render_width_px": 19.24,
+      "collision_polygon_px": [
+        [
+          -6.926399999999999,
+          -8
+        ],
+        [
+          6.926399999999999,
+          -8
+        ],
+        [
+          6.926399999999999,
+          0
+        ],
+        [
+          -6.926399999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_21",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_21.png",
+      "position_px": [
+        247.471,
+        473.656
+      ],
+      "source_rect_px": [
+        494,
+        811,
+        46,
+        35
+      ],
+      "source_foot_px": [
+        517.0,
+        846
+      ],
+      "render_width_px": 30.519,
+      "collision_polygon_px": [
+        [
+          -10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          0
+        ],
+        [
+          -10.986839999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "73d8ef",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "73d8ef",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "73d8ef",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "73d8ef",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_star_canal_v01:prop_01",
+      "name": "断桥星渠 · prop_01",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 39.144,
+      "collision_polygon_px": [
+        [
+          -14.09184,
+          -16.627432024169185
+        ],
+        [
+          14.09184,
+          -16.627432024169185
+        ],
+        [
+          14.09184,
+          0
+        ],
+        [
+          -14.09184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_02",
+      "name": "断桥星渠 · prop_02",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 39.808,
+      "collision_polygon_px": [
+        [
+          -14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          0
+        ],
+        [
+          -14.330879999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_03",
+      "name": "断桥星渠 · prop_03",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 171.173,
+      "collision_polygon_px": [
+        [
+          -61.622279999999996,
+          -22.283021148036255
+        ],
+        [
+          61.622279999999996,
+          -22.283021148036255
+        ],
+        [
+          61.622279999999996,
+          0
+        ],
+        [
+          -61.622279999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_04",
+      "name": "断桥星渠 · prop_04",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 138.663,
+      "collision_polygon_px": [
+        [
+          -49.91868,
+          -28.843504531722058
+        ],
+        [
+          49.91868,
+          -28.843504531722058
+        ],
+        [
+          49.91868,
+          0
+        ],
+        [
+          -49.91868,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_05",
+      "name": "断桥星渠 · prop_05",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 119.423,
+      "collision_polygon_px": [
+        [
+          -42.99228,
+          -18.776555891238672
+        ],
+        [
+          42.99228,
+          -18.776555891238672
+        ],
+        [
+          42.99228,
+          0
+        ],
+        [
+          -42.99228,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_06",
+      "name": "断桥星渠 · prop_06",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.74,
+      "collision_polygon_px": [
+        [
+          -19.3464,
+          -16.627432024169185
+        ],
+        [
+          19.3464,
+          -16.627432024169185
+        ],
+        [
+          19.3464,
+          0
+        ],
+        [
+          -19.3464,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_07",
+      "name": "断桥星渠 · prop_07",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 17.913,
+      "collision_polygon_px": [
+        [
+          -6.4486799999999995,
+          -8
+        ],
+        [
+          6.4486799999999995,
+          -8
+        ],
+        [
+          6.4486799999999995,
+          0
+        ],
+        [
+          -6.4486799999999995,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_08",
+      "name": "断桥星渠 · prop_08",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_08.png",
+      "layer": "objects",
+      "model": "prop_08",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 25.875,
+      "collision_polygon_px": [
+        [
+          -9.315,
+          -8
+        ],
+        [
+          9.315,
+          -8
+        ],
+        [
+          9.315,
+          0
+        ],
+        [
+          -9.315,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_09",
+      "name": "断桥星渠 · prop_09",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_09.png",
+      "layer": "objects",
+      "model": "prop_09",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 199.702,
+      "collision_polygon_px": [
+        [
+          -71.89272,
+          -24.997703927492445
+        ],
+        [
+          71.89272,
+          -24.997703927492445
+        ],
+        [
+          71.89272,
+          0
+        ],
+        [
+          -71.89272,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_10",
+      "name": "断桥星渠 · prop_10",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_10.png",
+      "layer": "objects",
+      "model": "prop_10",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 23.221,
+      "collision_polygon_px": [
+        [
+          -8.35956,
+          -8
+        ],
+        [
+          8.35956,
+          -8
+        ],
+        [
+          8.35956,
+          0
+        ],
+        [
+          -8.35956,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_11",
+      "name": "断桥星渠 · prop_11",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_11.png",
+      "layer": "objects",
+      "model": "prop_11",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 197.712,
+      "collision_polygon_px": [
+        [
+          -71.17631999999999,
+          -22.396132930513595
+        ],
+        [
+          71.17631999999999,
+          -22.396132930513595
+        ],
+        [
+          71.17631999999999,
+          0
+        ],
+        [
+          -71.17631999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_12",
+      "name": "断桥星渠 · prop_12",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_12.png",
+      "layer": "objects",
+      "model": "prop_12",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 23.885,
+      "collision_polygon_px": [
+        [
+          -8.598600000000001,
+          -8
+        ],
+        [
+          8.598600000000001,
+          -8
+        ],
+        [
+          8.598600000000001,
+          0
+        ],
+        [
+          -8.598600000000001,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_13",
+      "name": "断桥星渠 · prop_13",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_13.png",
+      "layer": "objects",
+      "model": "prop_13",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 224.25,
+      "collision_polygon_px": [
+        [
+          -80.73,
+          -38
+        ],
+        [
+          80.73,
+          -38
+        ],
+        [
+          80.73,
+          0
+        ],
+        [
+          -80.73,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_14",
+      "name": "断桥星渠 · prop_14",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_14.png",
+      "layer": "objects",
+      "model": "prop_14",
+      "collision": "solid",
+      "size": [
+        10,
+        1
+      ],
+      "render_width_px": 353.625,
+      "collision_polygon_px": [
+        [
+          -127.30499999999999,
+          -38
+        ],
+        [
+          127.30499999999999,
+          -38
+        ],
+        [
+          127.30499999999999,
+          0
+        ],
+        [
+          -127.30499999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_15",
+      "name": "断桥星渠 · prop_15",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_15.png",
+      "layer": "objects",
+      "model": "prop_15",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 26.538,
+      "collision_polygon_px": [
+        [
+          -9.55368,
+          -8
+        ],
+        [
+          9.55368,
+          -8
+        ],
+        [
+          9.55368,
+          0
+        ],
+        [
+          -9.55368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_16",
+      "name": "断桥星渠 · prop_16",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_16.png",
+      "layer": "objects",
+      "model": "prop_16",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 112.788,
+      "collision_polygon_px": [
+        [
+          -40.60368,
+          -17.07987915407855
+        ],
+        [
+          40.60368,
+          -17.07987915407855
+        ],
+        [
+          40.60368,
+          0
+        ],
+        [
+          -40.60368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_17",
+      "name": "断桥星渠 · prop_17",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_17.png",
+      "layer": "objects",
+      "model": "prop_17",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 30.519,
+      "collision_polygon_px": [
+        [
+          -10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          0
+        ],
+        [
+          -10.986839999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_18",
+      "name": "断桥星渠 · prop_18",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_18.png",
+      "layer": "objects",
+      "model": "prop_18",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 40.471,
+      "collision_polygon_px": [
+        [
+          -14.569559999999997,
+          -16.51432024169184
+        ],
+        [
+          14.569559999999997,
+          -16.51432024169184
+        ],
+        [
+          14.569559999999997,
+          0
+        ],
+        [
+          -14.569559999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_19",
+      "name": "断桥星渠 · prop_19",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_19.png",
+      "layer": "objects",
+      "model": "prop_19",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 39.808,
+      "collision_polygon_px": [
+        [
+          -14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          -16.51432024169184
+        ],
+        [
+          14.330879999999999,
+          0
+        ],
+        [
+          -14.330879999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_20",
+      "name": "断桥星渠 · prop_20",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_20.png",
+      "layer": "objects",
+      "model": "prop_20",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 19.24,
+      "collision_polygon_px": [
+        [
+          -6.926399999999999,
+          -8
+        ],
+        [
+          6.926399999999999,
+          -8
+        ],
+        [
+          6.926399999999999,
+          0
+        ],
+        [
+          -6.926399999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_star_canal_v01:prop_21",
+      "name": "断桥星渠 · prop_21",
+      "path": "res://assets/room_illustrated/city_star_canal_v01/prop_21.png",
+      "layer": "objects",
+      "model": "prop_21",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 30.519,
+      "collision_polygon_px": [
+        [
+          -10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          -8
+        ],
+        [
+          10.986839999999999,
+          0
+        ],
+        [
+          -10.986839999999999,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": [
+    [
+      [
+        0,
+        0
+      ],
+      [
+        220,
+        0
+      ],
+      [
+        220,
+        80
+      ],
+      [
+        90,
+        125
+      ],
+      [
+        0,
+        125
+      ]
+    ],
+    [
+      [
+        610,
+        0
+      ],
+      [
+        828,
+        0
+      ],
+      [
+        828,
+        125
+      ],
+      [
+        738,
+        125
+      ],
+      [
+        610,
+        80
+      ]
+    ],
+    [
+      [
+        0,
+        340
+      ],
+      [
+        90,
+        340
+      ],
+      [
+        220,
+        390
+      ],
+      [
+        220,
+        468
+      ],
+      [
+        0,
+        468
+      ]
+    ],
+    [
+      [
+        610,
+        390
+      ],
+      [
+        738,
+        340
+      ],
+      [
+        828,
+        340
+      ],
+      [
+        828,
+        468
+      ],
+      [
+        610,
+        468
+      ]
+    ]
+  ]
+}

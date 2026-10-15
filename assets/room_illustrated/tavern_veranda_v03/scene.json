@@ -1,0 +1,546 @@
+{
+  "version": 1,
+  "id": "tavern_veranda_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "veranda-plane.png",
+      "surface": "bridge"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        680,
+        0,
+        177,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1421,
+        359,
+        115,
+        241
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        680,
+        824,
+        177,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        359,
+        115,
+        241
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "tavern_lamp_w",
+      "kind": "light",
+      "texture": "tavern_lamp_w.png",
+      "position_px": [
+        181.419,
+        175.8324
+      ],
+      "source_rect_px": [
+        348,
+        320,
+        397,
+        427
+      ],
+      "source_foot_px": [
+        372.5,
+        427
+      ],
+      "render_width_px": 28.8153,
+      "collision_polygon_px": [
+        [
+          -6.7628,
+          -21.1705
+        ],
+        [
+          4.4105,
+          -22.3466
+        ],
+        [
+          7.9389,
+          -8.821
+        ],
+        [
+          -0.8821,
+          -3.5284
+        ],
+        [
+          -10.2912,
+          -9.4091
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcb75"
+      }
+    },
+    {
+      "id": "tavern_lamp_e",
+      "kind": "light",
+      "texture": "tavern_lamp_e.png",
+      "position_px": [
+        274.0398,
+        177.5966
+      ],
+      "source_rect_px": [
+        505,
+        318,
+        555,
+        430
+      ],
+      "source_foot_px": [
+        530.0,
+        430
+      ],
+      "render_width_px": 29.4034,
+      "collision_polygon_px": [
+        [
+          -7.6449,
+          -22.9347
+        ],
+        [
+          5.2926,
+          -24.1108
+        ],
+        [
+          8.821,
+          -10.5852
+        ],
+        [
+          0.0,
+          -3.5284
+        ],
+        [
+          -11.1733,
+          -10.5852
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcb75"
+      }
+    },
+    {
+      "id": "veranda_lamp_nw",
+      "kind": "light",
+      "texture": "veranda_lamp_nw.png",
+      "position_px": [
+        506.9148,
+        119.3778
+      ],
+      "source_rect_px": [
+        901,
+        189,
+        951,
+        331
+      ],
+      "source_foot_px": [
+        926.0,
+        331
+      ],
+      "render_width_px": 29.4034,
+      "collision_polygon_px": [
+        [
+          -7.6449,
+          -26.4631
+        ],
+        [
+          4.7045,
+          -26.4631
+        ],
+        [
+          11.1733,
+          -12.3494
+        ],
+        [
+          -2.9403,
+          -4.1165
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcc70"
+      }
+    },
+    {
+      "id": "veranda_lamp_ne",
+      "kind": "light",
+      "texture": "veranda_lamp_ne.png",
+      "position_px": [
+        759.7841,
+        115.2614
+      ],
+      "source_rect_px": [
+        1324,
+        180,
+        1388,
+        324
+      ],
+      "source_foot_px": [
+        1356.0,
+        324
+      ],
+      "render_width_px": 37.6364,
+      "collision_polygon_px": [
+        [
+          -9.4091,
+          -25.2869
+        ],
+        [
+          3.5284,
+          -26.4631
+        ],
+        [
+          12.9375,
+          -8.821
+        ],
+        [
+          -3.5284,
+          -1.1761
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcc70"
+      }
+    },
+    {
+      "id": "garden_boulder",
+      "kind": "stone",
+      "texture": "garden_boulder.png",
+      "position_px": [
+        113.4972,
+        404.5909
+      ],
+      "source_rect_px": [
+        198,
+        677,
+        316,
+        816
+      ],
+      "source_foot_px": [
+        257.0,
+        816
+      ],
+      "render_width_px": 69.392,
+      "collision_polygon_px": [
+        [
+          -21.1705,
+          -35.8722
+        ],
+        [
+          1.7642,
+          -45.8693
+        ],
+        [
+          22.9347,
+          -32.3438
+        ],
+        [
+          17.054,
+          -11.7614
+        ],
+        [
+          -11.1733,
+          -10.5852
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:tavern_veranda_v03:tavern_lamp_w",
+      "name": "木香酒馆 · tavern_lamp_w",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_veranda_v03/tavern_lamp_w.png",
+      "collision": "light",
+      "render_width_px": 28.8153,
+      "collision_polygon_px": [
+        [
+          -6.7628,
+          -21.1705
+        ],
+        [
+          4.4105,
+          -22.3466
+        ],
+        [
+          7.9389,
+          -8.821
+        ],
+        [
+          -0.8821,
+          -3.5284
+        ],
+        [
+          -10.2912,
+          -9.4091
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcb75"
+      }
+    },
+    {
+      "id": "scene:tavern_veranda_v03:tavern_lamp_e",
+      "name": "木香酒馆 · tavern_lamp_e",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_veranda_v03/tavern_lamp_e.png",
+      "collision": "light",
+      "render_width_px": 29.4034,
+      "collision_polygon_px": [
+        [
+          -7.6449,
+          -22.9347
+        ],
+        [
+          5.2926,
+          -24.1108
+        ],
+        [
+          8.821,
+          -10.5852
+        ],
+        [
+          0.0,
+          -3.5284
+        ],
+        [
+          -11.1733,
+          -10.5852
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcb75"
+      }
+    },
+    {
+      "id": "scene:tavern_veranda_v03:veranda_lamp_nw",
+      "name": "木香酒馆 · veranda_lamp_nw",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_veranda_v03/veranda_lamp_nw.png",
+      "collision": "light",
+      "render_width_px": 29.4034,
+      "collision_polygon_px": [
+        [
+          -7.6449,
+          -26.4631
+        ],
+        [
+          4.7045,
+          -26.4631
+        ],
+        [
+          11.1733,
+          -12.3494
+        ],
+        [
+          -2.9403,
+          -4.1165
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcc70"
+      }
+    },
+    {
+      "id": "scene:tavern_veranda_v03:veranda_lamp_ne",
+      "name": "木香酒馆 · veranda_lamp_ne",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_veranda_v03/veranda_lamp_ne.png",
+      "collision": "light",
+      "render_width_px": 37.6364,
+      "collision_polygon_px": [
+        [
+          -9.4091,
+          -25.2869
+        ],
+        [
+          3.5284,
+          -26.4631
+        ],
+        [
+          12.9375,
+          -8.821
+        ],
+        [
+          -3.5284,
+          -1.1761
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffcc70"
+      }
+    },
+    {
+      "id": "scene:tavern_veranda_v03:garden_boulder",
+      "name": "木香酒馆 · garden_boulder",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/tavern_veranda_v03/garden_boulder.png",
+      "collision": "stone",
+      "render_width_px": 69.392,
+      "collision_polygon_px": [
+        [
+          -21.1705,
+          -35.8722
+        ],
+        [
+          1.7642,
+          -45.8693
+        ],
+        [
+          22.9347,
+          -32.3438
+        ],
+        [
+          17.054,
+          -11.7614
+        ],
+        [
+          -11.1733,
+          -10.5852
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "bridge_paths_px": [],
+  "source_title": "木香酒馆",
+  "service_building": {
+    "id": "service_building",
+    "texture": "service_building.png",
+    "asset": "building_tavern",
+    "position_px": [
+      211.1165,
+      188.7699
+    ],
+    "width_px": 294.0341,
+    "depth_px": 191.1222,
+    "source_rect_px": [
+      173,
+      124,
+      673,
+      449
+    ],
+    "source_foot_px": [
+      423.0,
+      449
+    ],
+    "entrance_px": [
+      227.5824,
+      173.4801
+    ],
+    "collision_polygon_px": [
+      [
+        -87.6222,
+        -79.9773
+      ],
+      [
+        129.375,
+        -79.9773
+      ],
+      [
+        125.8466,
+        -22.9347
+      ],
+      [
+        51.1619,
+        -22.9347
+      ],
+      [
+        51.1619,
+        -37.6364
+      ],
+      [
+        -17.642,
+        -37.6364
+      ],
+      [
+        -17.642,
+        -22.9347
+      ],
+      [
+        -88.2102,
+        -22.9347
+      ]
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/map_editor/backgrounds/bg_background.tscn" id="1_qh50x"]
+[ext_resource type="Texture2D" path="res://assets/camp_refine/background.png" id="2_804mt"]
+
+[node name="营地背景" type="Node2D" unique_id=888387012]
+
+[node name="BgBackground" type="Sprite2D" parent="." unique_id=494678199 instance=ExtResource("1_qh50x")]
+z_index = -10
+texture_filter = 2
+position = Vector2(0, 18)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_804mt")

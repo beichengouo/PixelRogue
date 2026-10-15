@@ -1,0 +1,2295 @@
+{
+  "version": 1,
+  "id": "normal_windbridge_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "water.png",
+      "layer": "water_bridge"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "chime_w",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "chime_w.png",
+      "position_px": [
+        216.288,
+        115.94
+      ],
+      "source_foot_px": [
+        470,
+        340
+      ],
+      "source_rect_px": [
+        404,
+        182,
+        132,
+        158
+      ],
+      "render_width_px": 87.577,
+      "collision_polygon_px": [
+        [
+          -37.658,
+          -21.223
+        ],
+        [
+          37.658,
+          -21.223
+        ],
+        [
+          37.658,
+          0
+        ],
+        [
+          -37.658,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "chime_e",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "chime_e.png",
+      "position_px": [
+        611.048,
+        115.94
+      ],
+      "source_foot_px": [
+        1065,
+        340
+      ],
+      "source_rect_px": [
+        999,
+        181,
+        132,
+        159
+      ],
+      "render_width_px": 87.577,
+      "collision_polygon_px": [
+        [
+          -37.658,
+          -21.357
+        ],
+        [
+          37.658,
+          -21.357
+        ],
+        [
+          37.658,
+          0
+        ],
+        [
+          -37.658,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "wind_stone",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "wind_stone.png",
+      "position_px": [
+        551.337,
+        342.163
+      ],
+      "source_foot_px": [
+        975,
+        660
+      ],
+      "source_rect_px": [
+        914,
+        554,
+        122,
+        106
+      ],
+      "render_width_px": 80.942,
+      "collision_polygon_px": [
+        [
+          -34.805,
+          -18.381
+        ],
+        [
+          34.805,
+          -18.381
+        ],
+        [
+          34.805,
+          0
+        ],
+        [
+          -34.805,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "76dce6",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        70.327,
+        161.891
+      ],
+      "source_foot_px": [
+        250,
+        405
+      ],
+      "source_rect_px": [
+        218,
+        308,
+        65,
+        97
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -18.544,
+          -13.029
+        ],
+        [
+          18.544,
+          -13.029
+        ],
+        [
+          18.544,
+          0
+        ],
+        [
+          -18.544,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "76dce6",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        757.01,
+        161.891
+      ],
+      "source_foot_px": [
+        1285,
+        405
+      ],
+      "source_rect_px": [
+        1252,
+        306,
+        65,
+        99
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          0
+        ],
+        [
+          -18.544,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "76dce6",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        70.327,
+        373.976
+      ],
+      "source_foot_px": [
+        250,
+        705
+      ],
+      "source_rect_px": [
+        218,
+        606,
+        65,
+        99
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          0
+        ],
+        [
+          -18.544,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "76dce6",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        757.01,
+        373.976
+      ],
+      "source_foot_px": [
+        1285,
+        705
+      ],
+      "source_rect_px": [
+        1252,
+        604,
+        66,
+        101
+      ],
+      "render_width_px": 43.788,
+      "collision_polygon_px": [
+        [
+          -18.829,
+          -13.566
+        ],
+        [
+          18.829,
+          -13.566
+        ],
+        [
+          18.829,
+          0
+        ],
+        [
+          -18.829,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "76dce6",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "railing_00",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_00.png",
+      "position_px": [
+        62.365,
+        62.211
+      ],
+      "source_foot_px": [
+        238.0,
+        264
+      ],
+      "source_rect_px": [
+        151,
+        185,
+        174,
+        79
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_01.png",
+      "position_px": [
+        276.332,
+        80.592
+      ],
+      "source_foot_px": [
+        560.5,
+        290
+      ],
+      "source_rect_px": [
+        400,
+        235,
+        321,
+        55
+      ],
+      "render_width_px": 212.971,
+      "collision_polygon_px": [
+        [
+          -91.578,
+          -8.483
+        ],
+        [
+          91.578,
+          -8.483
+        ],
+        [
+          91.578,
+          0
+        ],
+        [
+          -91.578,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_02.png",
+      "position_px": [
+        552.663,
+        80.592
+      ],
+      "source_foot_px": [
+        977.0,
+        290
+      ],
+      "source_rect_px": [
+        815,
+        235,
+        324,
+        55
+      ],
+      "render_width_px": 214.962,
+      "collision_polygon_px": [
+        [
+          -92.434,
+          -8.483
+        ],
+        [
+          92.434,
+          -8.483
+        ],
+        [
+          92.434,
+          0
+        ],
+        [
+          -92.434,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_03.png",
+      "position_px": [
+        765.303,
+        62.211
+      ],
+      "source_foot_px": [
+        1297.5,
+        264
+      ],
+      "source_rect_px": [
+        1210,
+        185,
+        175,
+        79
+      ],
+      "render_width_px": 116.106,
+      "collision_polygon_px": [
+        [
+          -49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          0
+        ],
+        [
+          -49.926,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_04.png",
+      "position_px": [
+        64.024,
+        214.205
+      ],
+      "source_foot_px": [
+        240.5,
+        479
+      ],
+      "source_rect_px": [
+        151,
+        415,
+        179,
+        64
+      ],
+      "render_width_px": 118.76,
+      "collision_polygon_px": [
+        [
+          -51.067,
+          -8.483
+        ],
+        [
+          51.067,
+          -8.483
+        ],
+        [
+          51.067,
+          0
+        ],
+        [
+          -51.067,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_05.png",
+      "position_px": [
+        262.399,
+        214.205
+      ],
+      "source_foot_px": [
+        539.5,
+        479
+      ],
+      "source_rect_px": [
+        400,
+        415,
+        279,
+        64
+      ],
+      "render_width_px": 185.106,
+      "collision_polygon_px": [
+        [
+          -79.596,
+          -8.483
+        ],
+        [
+          79.596,
+          -8.483
+        ],
+        [
+          79.596,
+          0
+        ],
+        [
+          -79.596,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_06.png",
+      "position_px": [
+        567.26,
+        214.205
+      ],
+      "source_foot_px": [
+        999.0,
+        479
+      ],
+      "source_rect_px": [
+        858,
+        415,
+        282,
+        64
+      ],
+      "render_width_px": 187.096,
+      "collision_polygon_px": [
+        [
+          -80.451,
+          -8.483
+        ],
+        [
+          80.451,
+          -8.483
+        ],
+        [
+          80.451,
+          0
+        ],
+        [
+          -80.451,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_07.png",
+      "position_px": [
+        765.303,
+        214.205
+      ],
+      "source_foot_px": [
+        1297.5,
+        479
+      ],
+      "source_rect_px": [
+        1210,
+        415,
+        175,
+        64
+      ],
+      "render_width_px": 116.106,
+      "collision_polygon_px": [
+        [
+          -49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          0
+        ],
+        [
+          -49.926,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_08.png",
+      "position_px": [
+        62.697,
+        284.9
+      ],
+      "source_foot_px": [
+        238.5,
+        579
+      ],
+      "source_rect_px": [
+        151,
+        518,
+        175,
+        61
+      ],
+      "render_width_px": 116.106,
+      "collision_polygon_px": [
+        [
+          -49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          0
+        ],
+        [
+          -49.926,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_09",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_09.png",
+      "position_px": [
+        263.062,
+        284.9
+      ],
+      "source_foot_px": [
+        540.5,
+        579
+      ],
+      "source_rect_px": [
+        402,
+        518,
+        277,
+        61
+      ],
+      "render_width_px": 183.779,
+      "collision_polygon_px": [
+        [
+          -79.025,
+          -8.483
+        ],
+        [
+          79.025,
+          -8.483
+        ],
+        [
+          79.025,
+          0
+        ],
+        [
+          -79.025,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_10",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_10.png",
+      "position_px": [
+        565.269,
+        284.9
+      ],
+      "source_foot_px": [
+        996.0,
+        579
+      ],
+      "source_rect_px": [
+        857,
+        518,
+        278,
+        61
+      ],
+      "render_width_px": 184.442,
+      "collision_polygon_px": [
+        [
+          -79.31,
+          -8.483
+        ],
+        [
+          79.31,
+          -8.483
+        ],
+        [
+          79.31,
+          0
+        ],
+        [
+          -79.31,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_11",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_11.png",
+      "position_px": [
+        765.635,
+        284.9
+      ],
+      "source_foot_px": [
+        1298.0,
+        579
+      ],
+      "source_rect_px": [
+        1211,
+        518,
+        174,
+        61
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_12",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_12.png",
+      "position_px": [
+        62.365,
+        424.169
+      ],
+      "source_foot_px": [
+        238.0,
+        776
+      ],
+      "source_rect_px": [
+        151,
+        713,
+        174,
+        63
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_13",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_13.png",
+      "position_px": [
+        276.995,
+        420.634
+      ],
+      "source_foot_px": [
+        561.5,
+        771
+      ],
+      "source_rect_px": [
+        402,
+        710,
+        319,
+        61
+      ],
+      "render_width_px": 211.644,
+      "collision_polygon_px": [
+        [
+          -91.007,
+          -8.483
+        ],
+        [
+          91.007,
+          -8.483
+        ],
+        [
+          91.007,
+          0
+        ],
+        [
+          -91.007,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_14",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_14.png",
+      "position_px": [
+        551.337,
+        420.634
+      ],
+      "source_foot_px": [
+        975.0,
+        771
+      ],
+      "source_rect_px": [
+        815,
+        710,
+        320,
+        61
+      ],
+      "render_width_px": 212.308,
+      "collision_polygon_px": [
+        [
+          -91.292,
+          -8.483
+        ],
+        [
+          91.292,
+          -8.483
+        ],
+        [
+          91.292,
+          0
+        ],
+        [
+          -91.292,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_15",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_15.png",
+      "position_px": [
+        765.635,
+        424.169
+      ],
+      "source_foot_px": [
+        1298.0,
+        776
+      ],
+      "source_rect_px": [
+        1211,
+        713,
+        174,
+        63
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_16",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_16.png",
+      "position_px": [
+        116.438,
+        176.03
+      ],
+      "source_foot_px": [
+        319.5,
+        425
+      ],
+      "source_rect_px": [
+        305,
+        299,
+        29,
+        126
+      ],
+      "render_width_px": 19.24,
+      "collision_polygon_px": [
+        [
+          -8.273,
+          -86.248
+        ],
+        [
+          8.273,
+          -86.248
+        ],
+        [
+          8.273,
+          0
+        ],
+        [
+          -8.273,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_17",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_17.png",
+      "position_px": [
+        177.144,
+        176.03
+      ],
+      "source_foot_px": [
+        411.0,
+        425
+      ],
+      "source_rect_px": [
+        397,
+        285,
+        28,
+        140
+      ],
+      "render_width_px": 18.577,
+      "collision_polygon_px": [
+        [
+          -7.988,
+          -96.145
+        ],
+        [
+          7.988,
+          -96.145
+        ],
+        [
+          7.988,
+          0
+        ],
+        [
+          -7.988,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_18",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_18.png",
+      "position_px": [
+        652.846,
+        176.03
+      ],
+      "source_foot_px": [
+        1128.0,
+        425
+      ],
+      "source_rect_px": [
+        1115,
+        285,
+        26,
+        140
+      ],
+      "render_width_px": 17.25,
+      "collision_polygon_px": [
+        [
+          -7.417,
+          -96.145
+        ],
+        [
+          7.417,
+          -96.145
+        ],
+        [
+          7.417,
+          0
+        ],
+        [
+          -7.417,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_19",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_19.png",
+      "position_px": [
+        711.562,
+        176.03
+      ],
+      "source_foot_px": [
+        1216.5,
+        425
+      ],
+      "source_rect_px": [
+        1203,
+        299,
+        27,
+        126
+      ],
+      "render_width_px": 17.913,
+      "collision_polygon_px": [
+        [
+          -7.703,
+          -86.248
+        ],
+        [
+          7.703,
+          -86.248
+        ],
+        [
+          7.703,
+          0
+        ],
+        [
+          -7.703,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_20",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_20.png",
+      "position_px": [
+        119.755,
+        374.683
+      ],
+      "source_foot_px": [
+        324.5,
+        706
+      ],
+      "source_rect_px": [
+        316,
+        585,
+        17,
+        121
+      ],
+      "render_width_px": 11.279,
+      "collision_polygon_px": [
+        [
+          -4.85,
+          -82.713
+        ],
+        [
+          4.85,
+          -82.713
+        ],
+        [
+          4.85,
+          0
+        ],
+        [
+          -4.85,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_21",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_21.png",
+      "position_px": [
+        176.149,
+        377.511
+      ],
+      "source_foot_px": [
+        409.5,
+        710
+      ],
+      "source_rect_px": [
+        397,
+        585,
+        25,
+        125
+      ],
+      "render_width_px": 16.587,
+      "collision_polygon_px": [
+        [
+          -7.132,
+          -85.541
+        ],
+        [
+          7.132,
+          -85.541
+        ],
+        [
+          7.132,
+          0
+        ],
+        [
+          -7.132,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_22",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_22.png",
+      "position_px": [
+        652.846,
+        377.511
+      ],
+      "source_foot_px": [
+        1128.0,
+        710
+      ],
+      "source_rect_px": [
+        1115,
+        585,
+        26,
+        125
+      ],
+      "render_width_px": 17.25,
+      "collision_polygon_px": [
+        [
+          -7.417,
+          -85.541
+        ],
+        [
+          7.417,
+          -85.541
+        ],
+        [
+          7.417,
+          0
+        ],
+        [
+          -7.417,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "railing_23",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "railing_23.png",
+      "position_px": [
+        708.577,
+        374.683
+      ],
+      "source_foot_px": [
+        1212.0,
+        706
+      ],
+      "source_rect_px": [
+        1203,
+        585,
+        18,
+        121
+      ],
+      "render_width_px": 11.942,
+      "collision_polygon_px": [
+        [
+          -5.135,
+          -82.713
+        ],
+        [
+          5.135,
+          -82.713
+        ],
+        [
+          5.135,
+          0
+        ],
+        [
+          -5.135,
+          0
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:normal_windbridge_v01:chime_w",
+      "name": "风铃断桥庭 · chime_w",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/chime_w.png",
+      "layer": "buildings",
+      "model": "chime_w",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 87.577,
+      "collision_polygon_px": [
+        [
+          -37.658,
+          -21.223
+        ],
+        [
+          37.658,
+          -21.223
+        ],
+        [
+          37.658,
+          0
+        ],
+        [
+          -37.658,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:chime_e",
+      "name": "风铃断桥庭 · chime_e",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/chime_e.png",
+      "layer": "buildings",
+      "model": "chime_e",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 87.577,
+      "collision_polygon_px": [
+        [
+          -37.658,
+          -21.357
+        ],
+        [
+          37.658,
+          -21.357
+        ],
+        [
+          37.658,
+          0
+        ],
+        [
+          -37.658,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:wind_stone",
+      "name": "风铃断桥庭 · wind_stone",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/wind_stone.png",
+      "layer": "lights",
+      "model": "wind_stone",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 80.942,
+      "collision_polygon_px": [
+        [
+          -34.805,
+          -18.381
+        ],
+        [
+          34.805,
+          -18.381
+        ],
+        [
+          34.805,
+          0
+        ],
+        [
+          -34.805,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:lamp_nw",
+      "name": "风铃断桥庭 · lamp_nw",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -18.544,
+          -13.029
+        ],
+        [
+          18.544,
+          -13.029
+        ],
+        [
+          18.544,
+          0
+        ],
+        [
+          -18.544,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:lamp_ne",
+      "name": "风铃断桥庭 · lamp_ne",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          0
+        ],
+        [
+          -18.544,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:lamp_sw",
+      "name": "风铃断桥庭 · lamp_sw",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 43.125,
+      "collision_polygon_px": [
+        [
+          -18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          -13.298
+        ],
+        [
+          18.544,
+          0
+        ],
+        [
+          -18.544,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:lamp_se",
+      "name": "风铃断桥庭 · lamp_se",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 43.788,
+      "collision_polygon_px": [
+        [
+          -18.829,
+          -13.566
+        ],
+        [
+          18.829,
+          -13.566
+        ],
+        [
+          18.829,
+          0
+        ],
+        [
+          -18.829,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_00",
+      "name": "风铃断桥庭 · 桥栏_00",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_00.png",
+      "layer": "objects",
+      "model": "railing_00",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_01",
+      "name": "风铃断桥庭 · 桥栏_01",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_01.png",
+      "layer": "objects",
+      "model": "railing_01",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 212.971,
+      "collision_polygon_px": [
+        [
+          -91.578,
+          -8.483
+        ],
+        [
+          91.578,
+          -8.483
+        ],
+        [
+          91.578,
+          0
+        ],
+        [
+          -91.578,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_02",
+      "name": "风铃断桥庭 · 桥栏_02",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_02.png",
+      "layer": "objects",
+      "model": "railing_02",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 214.962,
+      "collision_polygon_px": [
+        [
+          -92.434,
+          -8.483
+        ],
+        [
+          92.434,
+          -8.483
+        ],
+        [
+          92.434,
+          0
+        ],
+        [
+          -92.434,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_03",
+      "name": "风铃断桥庭 · 桥栏_03",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_03.png",
+      "layer": "objects",
+      "model": "railing_03",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 116.106,
+      "collision_polygon_px": [
+        [
+          -49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          0
+        ],
+        [
+          -49.926,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_04",
+      "name": "风铃断桥庭 · 桥栏_04",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_04.png",
+      "layer": "objects",
+      "model": "railing_04",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 118.76,
+      "collision_polygon_px": [
+        [
+          -51.067,
+          -8.483
+        ],
+        [
+          51.067,
+          -8.483
+        ],
+        [
+          51.067,
+          0
+        ],
+        [
+          -51.067,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_05",
+      "name": "风铃断桥庭 · 桥栏_05",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_05.png",
+      "layer": "objects",
+      "model": "railing_05",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 185.106,
+      "collision_polygon_px": [
+        [
+          -79.596,
+          -8.483
+        ],
+        [
+          79.596,
+          -8.483
+        ],
+        [
+          79.596,
+          0
+        ],
+        [
+          -79.596,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_06",
+      "name": "风铃断桥庭 · 桥栏_06",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_06.png",
+      "layer": "objects",
+      "model": "railing_06",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 187.096,
+      "collision_polygon_px": [
+        [
+          -80.451,
+          -8.483
+        ],
+        [
+          80.451,
+          -8.483
+        ],
+        [
+          80.451,
+          0
+        ],
+        [
+          -80.451,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_07",
+      "name": "风铃断桥庭 · 桥栏_07",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_07.png",
+      "layer": "objects",
+      "model": "railing_07",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 116.106,
+      "collision_polygon_px": [
+        [
+          -49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          0
+        ],
+        [
+          -49.926,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_08",
+      "name": "风铃断桥庭 · 桥栏_08",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_08.png",
+      "layer": "objects",
+      "model": "railing_08",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 116.106,
+      "collision_polygon_px": [
+        [
+          -49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          -8.483
+        ],
+        [
+          49.926,
+          0
+        ],
+        [
+          -49.926,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_09",
+      "name": "风铃断桥庭 · 桥栏_09",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_09.png",
+      "layer": "objects",
+      "model": "railing_09",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 183.779,
+      "collision_polygon_px": [
+        [
+          -79.025,
+          -8.483
+        ],
+        [
+          79.025,
+          -8.483
+        ],
+        [
+          79.025,
+          0
+        ],
+        [
+          -79.025,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_10",
+      "name": "风铃断桥庭 · 桥栏_10",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_10.png",
+      "layer": "objects",
+      "model": "railing_10",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 184.442,
+      "collision_polygon_px": [
+        [
+          -79.31,
+          -8.483
+        ],
+        [
+          79.31,
+          -8.483
+        ],
+        [
+          79.31,
+          0
+        ],
+        [
+          -79.31,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_11",
+      "name": "风铃断桥庭 · 桥栏_11",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_11.png",
+      "layer": "objects",
+      "model": "railing_11",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_12",
+      "name": "风铃断桥庭 · 桥栏_12",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_12.png",
+      "layer": "objects",
+      "model": "railing_12",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_13",
+      "name": "风铃断桥庭 · 桥栏_13",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_13.png",
+      "layer": "objects",
+      "model": "railing_13",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 211.644,
+      "collision_polygon_px": [
+        [
+          -91.007,
+          -8.483
+        ],
+        [
+          91.007,
+          -8.483
+        ],
+        [
+          91.007,
+          0
+        ],
+        [
+          -91.007,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_14",
+      "name": "风铃断桥庭 · 桥栏_14",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_14.png",
+      "layer": "objects",
+      "model": "railing_14",
+      "collision": "solid",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 212.308,
+      "collision_polygon_px": [
+        [
+          -91.292,
+          -8.483
+        ],
+        [
+          91.292,
+          -8.483
+        ],
+        [
+          91.292,
+          0
+        ],
+        [
+          -91.292,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_15",
+      "name": "风铃断桥庭 · 桥栏_15",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_15.png",
+      "layer": "objects",
+      "model": "railing_15",
+      "collision": "solid",
+      "size": [
+        3,
+        1
+      ],
+      "render_width_px": 115.442,
+      "collision_polygon_px": [
+        [
+          -49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          -8.483
+        ],
+        [
+          49.64,
+          0
+        ],
+        [
+          -49.64,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_16",
+      "name": "风铃断桥庭 · 桥栏_16",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_16.png",
+      "layer": "objects",
+      "model": "railing_16",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 19.24,
+      "collision_polygon_px": [
+        [
+          -8.273,
+          -86.248
+        ],
+        [
+          8.273,
+          -86.248
+        ],
+        [
+          8.273,
+          0
+        ],
+        [
+          -8.273,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_17",
+      "name": "风铃断桥庭 · 桥栏_17",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_17.png",
+      "layer": "objects",
+      "model": "railing_17",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 18.577,
+      "collision_polygon_px": [
+        [
+          -7.988,
+          -96.145
+        ],
+        [
+          7.988,
+          -96.145
+        ],
+        [
+          7.988,
+          0
+        ],
+        [
+          -7.988,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_18",
+      "name": "风铃断桥庭 · 桥栏_18",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_18.png",
+      "layer": "objects",
+      "model": "railing_18",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 17.25,
+      "collision_polygon_px": [
+        [
+          -7.417,
+          -96.145
+        ],
+        [
+          7.417,
+          -96.145
+        ],
+        [
+          7.417,
+          0
+        ],
+        [
+          -7.417,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_19",
+      "name": "风铃断桥庭 · 桥栏_19",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_19.png",
+      "layer": "objects",
+      "model": "railing_19",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 17.913,
+      "collision_polygon_px": [
+        [
+          -7.703,
+          -86.248
+        ],
+        [
+          7.703,
+          -86.248
+        ],
+        [
+          7.703,
+          0
+        ],
+        [
+          -7.703,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_20",
+      "name": "风铃断桥庭 · 桥栏_20",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_20.png",
+      "layer": "objects",
+      "model": "railing_20",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 11.279,
+      "collision_polygon_px": [
+        [
+          -4.85,
+          -82.713
+        ],
+        [
+          4.85,
+          -82.713
+        ],
+        [
+          4.85,
+          0
+        ],
+        [
+          -4.85,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_21",
+      "name": "风铃断桥庭 · 桥栏_21",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_21.png",
+      "layer": "objects",
+      "model": "railing_21",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 16.587,
+      "collision_polygon_px": [
+        [
+          -7.132,
+          -85.541
+        ],
+        [
+          7.132,
+          -85.541
+        ],
+        [
+          7.132,
+          0
+        ],
+        [
+          -7.132,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_22",
+      "name": "风铃断桥庭 · 桥栏_22",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_22.png",
+      "layer": "objects",
+      "model": "railing_22",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 17.25,
+      "collision_polygon_px": [
+        [
+          -7.417,
+          -85.541
+        ],
+        [
+          7.417,
+          -85.541
+        ],
+        [
+          7.417,
+          0
+        ],
+        [
+          -7.417,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:normal_windbridge_v01:railing_23",
+      "name": "风铃断桥庭 · 桥栏_23",
+      "path": "res://assets/room_illustrated/normal_windbridge_v01/railing_23.png",
+      "layer": "objects",
+      "model": "railing_23",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 11.942,
+      "collision_polygon_px": [
+        [
+          -5.135,
+          -82.713
+        ],
+        [
+          5.135,
+          -82.713
+        ],
+        [
+          5.135,
+          0
+        ],
+        [
+          -5.135,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {
+    "wind": [
+      551.337,
+      335.094
+    ]
+  },
+  "surface_water_polygons_px": []
+}

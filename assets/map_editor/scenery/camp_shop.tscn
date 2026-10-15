@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Texture2D" path="res://assets/camp_refine/shop.png" id="1"]
+[sub_resource type="AtlasTexture" id="crop"]
+atlas = ExtResource("1")
+region = Rect2(23,15,1502,982)
+[node name="CampShop" type="Sprite2D"]
+z_index = -5
+texture_filter = 2
+scale = Vector2(0.30958721704394143, 0.30958721704394143)
+texture = SubResource("crop")
+offset = Vector2(0, -491.0)

@@ -1,0 +1,995 @@
+{
+  "version": 1,
+  "id": "city_boss_sephra_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        852.216,
+        31.106
+      ],
+      "source_rect_px": [
+        1389,
+        68,
+        79,
+        152
+      ],
+      "source_foot_px": [
+        1428.5,
+        220
+      ],
+      "render_width_px": 52.413,
+      "collision_polygon_px": [
+        [
+          -18.868679999999998,
+          -17.19299093655589
+        ],
+        [
+          18.868679999999998,
+          -17.19299093655589
+        ],
+        [
+          18.868679999999998,
+          0
+        ],
+        [
+          -18.868679999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        -22.889,
+        31.813
+      ],
+      "source_rect_px": [
+        71,
+        71,
+        77,
+        150
+      ],
+      "source_foot_px": [
+        109.5,
+        221
+      ],
+      "render_width_px": 51.087,
+      "collision_polygon_px": [
+        [
+          -18.39132,
+          -16.966767371601208
+        ],
+        [
+          18.39132,
+          -16.966767371601208
+        ],
+        [
+          18.39132,
+          0
+        ],
+        [
+          -18.39132,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        94.875,
+        103.215
+      ],
+      "source_rect_px": [
+        163,
+        113,
+        248,
+        209
+      ],
+      "source_foot_px": [
+        287.0,
+        322
+      ],
+      "render_width_px": 164.538,
+      "collision_polygon_px": [
+        [
+          -59.23368,
+          -23.64036253776435
+        ],
+        [
+          59.23368,
+          -23.64036253776435
+        ],
+        [
+          59.23368,
+          0
+        ],
+        [
+          -59.23368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        693.317,
+        41.003
+      ],
+      "source_rect_px": [
+        1164,
+        156,
+        50,
+        78
+      ],
+      "source_foot_px": [
+        1189.0,
+        234
+      ],
+      "render_width_px": 33.173,
+      "collision_polygon_px": [
+        [
+          -11.94228,
+          -8.822719033232628
+        ],
+        [
+          11.94228,
+          -8.822719033232628
+        ],
+        [
+          11.94228,
+          0
+        ],
+        [
+          -11.94228,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        758.337,
+        139.269
+      ],
+      "source_rect_px": [
+        1166,
+        157,
+        242,
+        216
+      ],
+      "source_foot_px": [
+        1287.0,
+        373
+      ],
+      "render_width_px": 160.558,
+      "collision_polygon_px": [
+        [
+          -57.80087999999999,
+          -24.432145015105743
+        ],
+        [
+          57.80087999999999,
+          -24.432145015105743
+        ],
+        [
+          57.80087999999999,
+          0
+        ],
+        [
+          -57.80087999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        2.986,
+        146.338
+      ],
+      "source_rect_px": [
+        122,
+        238,
+        53,
+        145
+      ],
+      "source_foot_px": [
+        148.5,
+        383
+      ],
+      "render_width_px": 35.163,
+      "collision_polygon_px": [
+        [
+          -12.658679999999999,
+          -16.4012084592145
+        ],
+        [
+          12.658679999999999,
+          -16.4012084592145
+        ],
+        [
+          12.658679999999999,
+          0
+        ],
+        [
+          -12.658679999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        758.668,
+        494.864
+      ],
+      "source_rect_px": [
+        1163,
+        591,
+        249,
+        285
+      ],
+      "source_foot_px": [
+        1287.5,
+        876
+      ],
+      "render_width_px": 165.202,
+      "collision_polygon_px": [
+        [
+          -59.472719999999995,
+          -32.2368580060423
+        ],
+        [
+          59.472719999999995,
+          -32.2368580060423
+        ],
+        [
+          59.472719999999995,
+          0
+        ],
+        [
+          -59.472719999999995,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_08.png",
+      "position_px": [
+        18.245,
+        368.32
+      ],
+      "source_rect_px": [
+        146,
+        617,
+        51,
+        80
+      ],
+      "source_foot_px": [
+        171.5,
+        697
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -12.181320000000001,
+          -9.048942598187312
+        ],
+        [
+          12.181320000000001,
+          -9.048942598187312
+        ],
+        [
+          12.181320000000001,
+          0
+        ],
+        [
+          -12.181320000000001,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_09",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_09.png",
+      "position_px": [
+        82.933,
+        471.535
+      ],
+      "source_rect_px": [
+        139,
+        651,
+        260,
+        192
+      ],
+      "source_foot_px": [
+        269.0,
+        843
+      ],
+      "render_width_px": 172.5,
+      "collision_polygon_px": [
+        [
+          -62.099999999999994,
+          -21.717462235649545
+        ],
+        [
+          62.099999999999994,
+          -21.717462235649545
+        ],
+        [
+          62.099999999999994,
+          0
+        ],
+        [
+          -62.099999999999994,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_10",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_10.png",
+      "position_px": [
+        666.115,
+        480.725
+      ],
+      "source_rect_px": [
+        1134,
+        722,
+        28,
+        134
+      ],
+      "source_foot_px": [
+        1148.0,
+        856
+      ],
+      "render_width_px": 18.577,
+      "collision_polygon_px": [
+        [
+          -6.6877200000000006,
+          -15.156978851963746
+        ],
+        [
+          6.6877200000000006,
+          -15.156978851963746
+        ],
+        [
+          6.6877200000000006,
+          0
+        ],
+        [
+          -6.6877200000000006,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_11",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_11.png",
+      "position_px": [
+        -29.192,
+        524.556
+      ],
+      "source_rect_px": [
+        61,
+        762,
+        78,
+        156
+      ],
+      "source_foot_px": [
+        100.0,
+        918
+      ],
+      "render_width_px": 51.75,
+      "collision_polygon_px": [
+        [
+          -18.63,
+          -17.645438066465257
+        ],
+        [
+          18.63,
+          -17.645438066465257
+        ],
+        [
+          18.63,
+          0
+        ],
+        [
+          -18.63,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_12",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_12.png",
+      "position_px": [
+        865.154,
+        524.556
+      ],
+      "source_rect_px": [
+        1408,
+        762,
+        80,
+        156
+      ],
+      "source_foot_px": [
+        1448.0,
+        918
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -19.107719999999997,
+          -17.645438066465257
+        ],
+        [
+          19.107719999999997,
+          -17.645438066465257
+        ],
+        [
+          19.107719999999997,
+          0
+        ],
+        [
+          -19.107719999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_boss_sephra_v01:prop_01",
+      "name": "归城关隘 · prop_01",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 52.413,
+      "collision_polygon_px": [
+        [
+          -18.868679999999998,
+          -17.19299093655589
+        ],
+        [
+          18.868679999999998,
+          -17.19299093655589
+        ],
+        [
+          18.868679999999998,
+          0
+        ],
+        [
+          -18.868679999999998,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_02",
+      "name": "归城关隘 · prop_02",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 51.087,
+      "collision_polygon_px": [
+        [
+          -18.39132,
+          -16.966767371601208
+        ],
+        [
+          18.39132,
+          -16.966767371601208
+        ],
+        [
+          18.39132,
+          0
+        ],
+        [
+          -18.39132,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_03",
+      "name": "归城关隘 · prop_03",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 164.538,
+      "collision_polygon_px": [
+        [
+          -59.23368,
+          -23.64036253776435
+        ],
+        [
+          59.23368,
+          -23.64036253776435
+        ],
+        [
+          59.23368,
+          0
+        ],
+        [
+          -59.23368,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_04",
+      "name": "归城关隘 · prop_04",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.173,
+      "collision_polygon_px": [
+        [
+          -11.94228,
+          -8.822719033232628
+        ],
+        [
+          11.94228,
+          -8.822719033232628
+        ],
+        [
+          11.94228,
+          0
+        ],
+        [
+          -11.94228,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_05",
+      "name": "归城关隘 · prop_05",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        4,
+        1
+      ],
+      "render_width_px": 160.558,
+      "collision_polygon_px": [
+        [
+          -57.80087999999999,
+          -24.432145015105743
+        ],
+        [
+          57.80087999999999,
+          -24.432145015105743
+        ],
+        [
+          57.80087999999999,
+          0
+        ],
+        [
+          -57.80087999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_06",
+      "name": "归城关隘 · prop_06",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 35.163,
+      "collision_polygon_px": [
+        [
+          -12.658679999999999,
+          -16.4012084592145
+        ],
+        [
+          12.658679999999999,
+          -16.4012084592145
+        ],
+        [
+          12.658679999999999,
+          0
+        ],
+        [
+          -12.658679999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_07",
+      "name": "归城关隘 · prop_07",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 165.202,
+      "collision_polygon_px": [
+        [
+          -59.472719999999995,
+          -32.2368580060423
+        ],
+        [
+          59.472719999999995,
+          -32.2368580060423
+        ],
+        [
+          59.472719999999995,
+          0
+        ],
+        [
+          -59.472719999999995,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_08",
+      "name": "归城关隘 · prop_08",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_08.png",
+      "layer": "objects",
+      "model": "prop_08",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -12.181320000000001,
+          -9.048942598187312
+        ],
+        [
+          12.181320000000001,
+          -9.048942598187312
+        ],
+        [
+          12.181320000000001,
+          0
+        ],
+        [
+          -12.181320000000001,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_09",
+      "name": "归城关隘 · prop_09",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_09.png",
+      "layer": "objects",
+      "model": "prop_09",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 172.5,
+      "collision_polygon_px": [
+        [
+          -62.099999999999994,
+          -21.717462235649545
+        ],
+        [
+          62.099999999999994,
+          -21.717462235649545
+        ],
+        [
+          62.099999999999994,
+          0
+        ],
+        [
+          -62.099999999999994,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_10",
+      "name": "归城关隘 · prop_10",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_10.png",
+      "layer": "objects",
+      "model": "prop_10",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 18.577,
+      "collision_polygon_px": [
+        [
+          -6.6877200000000006,
+          -15.156978851963746
+        ],
+        [
+          6.6877200000000006,
+          -15.156978851963746
+        ],
+        [
+          6.6877200000000006,
+          0
+        ],
+        [
+          -6.6877200000000006,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_11",
+      "name": "归城关隘 · prop_11",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_11.png",
+      "layer": "objects",
+      "model": "prop_11",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 51.75,
+      "collision_polygon_px": [
+        [
+          -18.63,
+          -17.645438066465257
+        ],
+        [
+          18.63,
+          -17.645438066465257
+        ],
+        [
+          18.63,
+          0
+        ],
+        [
+          -18.63,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_boss_sephra_v01:prop_12",
+      "name": "归城关隘 · prop_12",
+      "path": "res://assets/room_illustrated/city_boss_sephra_v01/prop_12.png",
+      "layer": "objects",
+      "model": "prop_12",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -19.107719999999997,
+          -17.645438066465257
+        ],
+        [
+          19.107719999999997,
+          -17.645438066465257
+        ],
+        [
+          19.107719999999997,
+          0
+        ],
+        [
+          -19.107719999999997,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

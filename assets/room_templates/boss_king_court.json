@@ -1,0 +1,163 @@
+{
+	"base_ground": "floor:grass",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "boss_king_court",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "王庭回响",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				5.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				5.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 11,
+	"room_bounds_override": [
+		11.0,
+		0.0,
+		805.0,
+		426.0
+	],
+	"room_kinds": [
+		"boss"
+	],
+	"scene_art": "boss_king_court_v03",
+	"scene_collision_overrides": {
+		"objects": {
+			"broken_throne": [
+				[
+					-91.1506,
+					-62.9233
+				],
+				[
+					-55.8665,
+					-36.4602
+				],
+				[
+					38.2244,
+					-17.054
+				],
+				[
+					103.5,
+					-32.3438
+				],
+				[
+					137.608,
+					-68.804
+				],
+				[
+					138.8,
+					-114.0
+				],
+				[
+					97.0,
+					-155.4
+				],
+				[
+					-37.7,
+					-157.4
+				],
+				[
+					-112.2,
+					-114.0
+				]
+			],
+			"east_plinth": [
+				[
+					-21.7,
+					-24.1
+				],
+				[
+					-6.4,
+					-32.8
+				],
+				[
+					6.9,
+					-29.7
+				],
+				[
+					9.4,
+					-19.0
+				],
+				[
+					-0.8,
+					-14.4
+				]
+			],
+			"fallen_column": [
+				[
+					-41.7,
+					-37.8
+				],
+				[
+					-31.0,
+					-55.7
+				],
+				[
+					47.0,
+					-28.1
+				],
+				[
+					34.8,
+					-8.2
+				],
+				[
+					-14.2,
+					-25.1
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"service_layout": true,
+	"tags": [
+		"boss:king"
+	],
+	"theme": "ruin"
+}

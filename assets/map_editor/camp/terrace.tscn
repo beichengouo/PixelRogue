@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://src/world/camp_feature.gd" id="1"]
+[node name="Terrace" type="Node2D"]
+script = ExtResource("1")
+art = "terrace"
+size = Vector2(576,342)
+deck_offset = 19.0

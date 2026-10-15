@@ -1,0 +1,683 @@
+{
+  "version": 1,
+  "id": "forest_clearing_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        160
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        824,
+        255,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        390,
+        112,
+        184
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1424,
+        390,
+        112,
+        184
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:forest_clearing_v03:root_island",
+      "name": "晨光林间空地 · root_island",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_clearing_v03/root_island.png",
+      "collision": "stone",
+      "render_width_px": 241.108,
+      "collision_polygon_px": [
+        [
+          -69.9801,
+          -52.9261
+        ],
+        [
+          -52.9261,
+          -64.6875
+        ],
+        [
+          -34.696,
+          -71.7443
+        ],
+        [
+          -12.3494,
+          -69.392
+        ],
+        [
+          9.9972,
+          -62.3352
+        ],
+        [
+          29.4034,
+          -57.0426
+        ],
+        [
+          44.6932,
+          -47.6335
+        ],
+        [
+          64.0994,
+          -34.696
+        ],
+        [
+          52.3381,
+          -21.7585
+        ],
+        [
+          22.3466,
+          -13.5256
+        ],
+        [
+          -9.9972,
+          -16.4659
+        ],
+        [
+          -40.5767,
+          -26.4631
+        ],
+        [
+          -62.9233,
+          -38.2244
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_clearing_v03:moss_boulder",
+      "name": "晨光林间空地 · moss_boulder",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_clearing_v03/moss_boulder.png",
+      "collision": "stone",
+      "render_width_px": 159.9545,
+      "collision_polygon_px": [
+        [
+          -47.6335,
+          -37.0483
+        ],
+        [
+          -33.5199,
+          -45.8693
+        ],
+        [
+          -2.9403,
+          -44.1051
+        ],
+        [
+          17.054,
+          -42.929
+        ],
+        [
+          37.0483,
+          -31.7557
+        ],
+        [
+          46.4574,
+          -18.2301
+        ],
+        [
+          27.0511,
+          -7.6449
+        ],
+        [
+          -4.1165,
+          -11.1733
+        ],
+        [
+          -34.108,
+          -9.4091
+        ],
+        [
+          -52.3381,
+          -19.9943
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_clearing_v03:crate_a",
+      "name": "晨光林间空地 · crate_a",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_clearing_v03/crate_a.png",
+      "collision": "crate",
+      "render_width_px": 37.6364,
+      "collision_polygon_px": [
+        [
+          -14.7017,
+          -12.9375
+        ],
+        [
+          15.8778,
+          -13.5256
+        ],
+        [
+          16.4659,
+          -4.1165
+        ],
+        [
+          9.4091,
+          -1.1761
+        ],
+        [
+          -14.1136,
+          -2.3523
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_clearing_v03:crate_b",
+      "name": "晨光林间空地 · crate_b",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_clearing_v03/crate_b.png",
+      "collision": "crate",
+      "render_width_px": 32.9318,
+      "collision_polygon_px": [
+        [
+          -13.5256,
+          -11.1733
+        ],
+        [
+          14.1136,
+          -11.1733
+        ],
+        [
+          14.7017,
+          -4.1165
+        ],
+        [
+          8.821,
+          -0.5881
+        ],
+        [
+          -13.5256,
+          -2.9403
+        ]
+      ]
+    },
+    {
+      "id": "scene:forest_clearing_v03:firefly_stone_sw",
+      "name": "晨光林间空地 · firefly_stone_sw",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "crystal",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_clearing_v03/firefly_stone_sw.png",
+      "collision": "light",
+      "render_width_px": 74.6847,
+      "collision_polygon_px": [
+        [
+          -16.7599,
+          -22.3466
+        ],
+        [
+          -2.0582,
+          -28.2273
+        ],
+        [
+          15.5838,
+          -24.6989
+        ],
+        [
+          21.4645,
+          -12.3494
+        ],
+        [
+          4.9986,
+          -2.3523
+        ],
+        [
+          -14.9957,
+          -9.4091
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 145,
+        "color": "ffe38a"
+      }
+    },
+    {
+      "id": "scene:forest_clearing_v03:firefly_stone_ne",
+      "name": "晨光林间空地 · firefly_stone_ne",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "crystal",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/forest_clearing_v03/firefly_stone_ne.png",
+      "collision": "light",
+      "render_width_px": 79.3892,
+      "collision_polygon_px": [
+        [
+          -22.0526,
+          -24.1108
+        ],
+        [
+          -4.4105,
+          -28.2273
+        ],
+        [
+          13.2315,
+          -22.3466
+        ],
+        [
+          20.2884,
+          -8.233
+        ],
+        [
+          4.9986,
+          -1.7642
+        ],
+        [
+          -16.7599,
+          -6.4687
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 145,
+        "color": "ffe38a"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "root_island",
+      "kind": "stone",
+      "texture": "root_island.png",
+      "position_px": [
+        247.5767,
+        195.2386
+      ],
+      "source_rect_px": [
+        280,
+        185,
+        690,
+        460
+      ],
+      "source_foot_px": [
+        485.0,
+        460
+      ],
+      "render_width_px": 241.108,
+      "collision_polygon_px": [
+        [
+          -69.9801,
+          -52.9261
+        ],
+        [
+          -52.9261,
+          -64.6875
+        ],
+        [
+          -34.696,
+          -71.7443
+        ],
+        [
+          -12.3494,
+          -69.392
+        ],
+        [
+          9.9972,
+          -62.3352
+        ],
+        [
+          29.4034,
+          -57.0426
+        ],
+        [
+          44.6932,
+          -47.6335
+        ],
+        [
+          64.0994,
+          -34.696
+        ],
+        [
+          52.3381,
+          -21.7585
+        ],
+        [
+          22.3466,
+          -13.5256
+        ],
+        [
+          -9.9972,
+          -16.4659
+        ],
+        [
+          -40.5767,
+          -26.4631
+        ],
+        [
+          -62.9233,
+          -38.2244
+        ]
+      ]
+    },
+    {
+      "id": "moss_boulder",
+      "kind": "stone",
+      "texture": "moss_boulder.png",
+      "position_px": [
+        649.8153,
+        388.7131
+      ],
+      "source_rect_px": [
+        1033,
+        650,
+        1305,
+        789
+      ],
+      "source_foot_px": [
+        1169.0,
+        789
+      ],
+      "render_width_px": 159.9545,
+      "collision_polygon_px": [
+        [
+          -47.6335,
+          -37.0483
+        ],
+        [
+          -33.5199,
+          -45.8693
+        ],
+        [
+          -2.9403,
+          -44.1051
+        ],
+        [
+          17.054,
+          -42.929
+        ],
+        [
+          37.0483,
+          -31.7557
+        ],
+        [
+          46.4574,
+          -18.2301
+        ],
+        [
+          27.0511,
+          -7.6449
+        ],
+        [
+          -4.1165,
+          -11.1733
+        ],
+        [
+          -34.108,
+          -9.4091
+        ],
+        [
+          -52.3381,
+          -19.9943
+        ]
+      ]
+    },
+    {
+      "id": "crate_a",
+      "kind": "crate",
+      "texture": "crate_a.png",
+      "position_px": [
+        604.5341,
+        249.3409
+      ],
+      "source_rect_px": [
+        1060,
+        470,
+        1124,
+        552
+      ],
+      "source_foot_px": [
+        1092.0,
+        552
+      ],
+      "render_width_px": 37.6364,
+      "collision_polygon_px": [
+        [
+          -14.7017,
+          -12.9375
+        ],
+        [
+          15.8778,
+          -13.5256
+        ],
+        [
+          16.4659,
+          -4.1165
+        ],
+        [
+          9.4091,
+          -1.1761
+        ],
+        [
+          -14.1136,
+          -2.3523
+        ]
+      ]
+    },
+    {
+      "id": "crate_b",
+      "kind": "crate",
+      "texture": "crate_b.png",
+      "position_px": [
+        628.6449,
+        263.4545
+      ],
+      "source_rect_px": [
+        1105,
+        516,
+        1161,
+        576
+      ],
+      "source_foot_px": [
+        1133.0,
+        576
+      ],
+      "render_width_px": 32.9318,
+      "collision_polygon_px": [
+        [
+          -13.5256,
+          -11.1733
+        ],
+        [
+          14.1136,
+          -11.1733
+        ],
+        [
+          14.7017,
+          -4.1165
+        ],
+        [
+          8.821,
+          -0.5881
+        ],
+        [
+          -13.5256,
+          -2.9403
+        ]
+      ]
+    },
+    {
+      "id": "firefly_stone_sw",
+      "kind": "light",
+      "texture": "firefly_stone_sw.png",
+      "position_px": [
+        107.3224,
+        374.5994
+      ],
+      "source_rect_px": [
+        183,
+        609,
+        310,
+        765
+      ],
+      "source_foot_px": [
+        246.5,
+        765
+      ],
+      "render_width_px": 74.6847,
+      "collision_polygon_px": [
+        [
+          -16.7599,
+          -22.3466
+        ],
+        [
+          -2.0582,
+          -28.2273
+        ],
+        [
+          15.5838,
+          -24.6989
+        ],
+        [
+          21.4645,
+          -12.3494
+        ],
+        [
+          4.9986,
+          -2.3523
+        ],
+        [
+          -14.9957,
+          -9.4091
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 145,
+        "color": "ffe38a"
+      }
+    },
+    {
+      "id": "firefly_stone_ne",
+      "kind": "light",
+      "texture": "firefly_stone_ne.png",
+      "position_px": [
+        717.7372,
+        123.4943
+      ],
+      "source_rect_px": [
+        1217,
+        186,
+        1352,
+        338
+      ],
+      "source_foot_px": [
+        1284.5,
+        338
+      ],
+      "render_width_px": 79.3892,
+      "collision_polygon_px": [
+        [
+          -22.0526,
+          -24.1108
+        ],
+        [
+          -4.4105,
+          -28.2273
+        ],
+        [
+          13.2315,
+          -22.3466
+        ],
+        [
+          20.2884,
+          -8.233
+        ],
+        [
+          4.9986,
+          -1.7642
+        ],
+        [
+          -16.7599,
+          -6.4687
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "radius": 145,
+        "color": "ffe38a"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "source_title": "晨光林间空地"
+}

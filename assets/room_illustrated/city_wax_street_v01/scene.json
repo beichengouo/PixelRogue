@@ -1,0 +1,645 @@
+{
+  "version": 1,
+  "id": "city_wax_street_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        756.678,
+        160.477
+      ],
+      "source_rect_px": [
+        1089,
+        84,
+        391,
+        319
+      ],
+      "source_foot_px": [
+        1284.5,
+        403
+      ],
+      "render_width_px": 259.413,
+      "collision_polygon_px": [
+        [
+          -93.38868,
+          -36.0826586102719
+        ],
+        [
+          93.38868,
+          -36.0826586102719
+        ],
+        [
+          93.38868,
+          0
+        ],
+        [
+          -93.38868,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        864.822,
+        81.299
+      ],
+      "source_rect_px": [
+        1425,
+        103,
+        45,
+        188
+      ],
+      "source_foot_px": [
+        1447.5,
+        291
+      ],
+      "render_width_px": 29.856,
+      "collision_polygon_px": [
+        [
+          -10.74816,
+          -21.265015105740183
+        ],
+        [
+          10.74816,
+          -21.265015105740183
+        ],
+        [
+          10.74816,
+          0
+        ],
+        [
+          -10.74816,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        64.356,
+        151.287
+      ],
+      "source_rect_px": [
+        62,
+        104,
+        358,
+        286
+      ],
+      "source_foot_px": [
+        241.0,
+        390
+      ],
+      "render_width_px": 237.519,
+      "collision_polygon_px": [
+        [
+          -85.50684,
+          -32.34996978851964
+        ],
+        [
+          85.50684,
+          -32.34996978851964
+        ],
+        [
+          85.50684,
+          0
+        ],
+        [
+          -85.50684,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        73.976,
+        512.538
+      ],
+      "source_rect_px": [
+        44,
+        588,
+        423,
+        313
+      ],
+      "source_foot_px": [
+        255.5,
+        901
+      ],
+      "render_width_px": 280.644,
+      "collision_polygon_px": [
+        [
+          -101.03184,
+          -35.40398791540785
+        ],
+        [
+          101.03184,
+          -35.40398791540785
+        ],
+        [
+          101.03184,
+          0
+        ],
+        [
+          -101.03184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        867.476,
+        508.296
+      ],
+      "source_rect_px": [
+        1408,
+        603,
+        87,
+        292
+      ],
+      "source_foot_px": [
+        1451.5,
+        895
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -33.02864048338368
+        ],
+        [
+          20.779559999999996,
+          -33.02864048338368
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        736.111,
+        525.97
+      ],
+      "source_rect_px": [
+        1068,
+        658,
+        371,
+        262
+      ],
+      "source_foot_px": [
+        1253.5,
+        920
+      ],
+      "render_width_px": 246.144,
+      "collision_polygon_px": [
+        [
+          -88.61184,
+          -29.635287009063447
+        ],
+        [
+          88.61184,
+          -29.635287009063447
+        ],
+        [
+          88.61184,
+          0
+        ],
+        [
+          -88.61184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        79.947,
+        518.193
+      ],
+      "source_rect_px": [
+        218,
+        845,
+        93,
+        64
+      ],
+      "source_foot_px": [
+        264.5,
+        909
+      ],
+      "render_width_px": 61.702,
+      "collision_polygon_px": [
+        [
+          -22.212719999999997,
+          -8
+        ],
+        [
+          22.212719999999997,
+          -8
+        ],
+        [
+          22.212719999999997,
+          0
+        ],
+        [
+          -22.212719999999997,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": true
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "ffc485",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": true
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_wax_street_v01:prop_01",
+      "name": "封蜡长街 · prop_01",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 259.413,
+      "collision_polygon_px": [
+        [
+          -93.38868,
+          -36.0826586102719
+        ],
+        [
+          93.38868,
+          -36.0826586102719
+        ],
+        [
+          93.38868,
+          0
+        ],
+        [
+          -93.38868,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_wax_street_v01:prop_02",
+      "name": "封蜡长街 · prop_02",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 29.856,
+      "collision_polygon_px": [
+        [
+          -10.74816,
+          -21.265015105740183
+        ],
+        [
+          10.74816,
+          -21.265015105740183
+        ],
+        [
+          10.74816,
+          0
+        ],
+        [
+          -10.74816,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_wax_street_v01:prop_03",
+      "name": "封蜡长街 · prop_03",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 237.519,
+      "collision_polygon_px": [
+        [
+          -85.50684,
+          -32.34996978851964
+        ],
+        [
+          85.50684,
+          -32.34996978851964
+        ],
+        [
+          85.50684,
+          0
+        ],
+        [
+          -85.50684,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_wax_street_v01:prop_04",
+      "name": "封蜡长街 · prop_04",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        8,
+        1
+      ],
+      "render_width_px": 280.644,
+      "collision_polygon_px": [
+        [
+          -101.03184,
+          -35.40398791540785
+        ],
+        [
+          101.03184,
+          -35.40398791540785
+        ],
+        [
+          101.03184,
+          0
+        ],
+        [
+          -101.03184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_wax_street_v01:prop_05",
+      "name": "封蜡长街 · prop_05",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -20.779559999999996,
+          -33.02864048338368
+        ],
+        [
+          20.779559999999996,
+          -33.02864048338368
+        ],
+        [
+          20.779559999999996,
+          0
+        ],
+        [
+          -20.779559999999996,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_wax_street_v01:prop_06",
+      "name": "封蜡长街 · prop_06",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 246.144,
+      "collision_polygon_px": [
+        [
+          -88.61184,
+          -29.635287009063447
+        ],
+        [
+          88.61184,
+          -29.635287009063447
+        ],
+        [
+          88.61184,
+          0
+        ],
+        [
+          -88.61184,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_wax_street_v01:prop_07",
+      "name": "封蜡长街 · prop_07",
+      "path": "res://assets/room_illustrated/city_wax_street_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 61.702,
+      "collision_polygon_px": [
+        [
+          -22.212719999999997,
+          -8
+        ],
+        [
+          22.212719999999997,
+          -8
+        ],
+        [
+          22.212719999999997,
+          0
+        ],
+        [
+          -22.212719999999997,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

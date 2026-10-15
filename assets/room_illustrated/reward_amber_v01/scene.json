@@ -1,0 +1,1104 @@
+{
+  "version": 1,
+  "id": "reward_amber_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "amber_w",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "amber_w.png",
+      "position_px": [
+        113.452,
+        69.988
+      ],
+      "source_foot_px": [
+        315,
+        275
+      ],
+      "source_rect_px": [
+        250,
+        133,
+        130,
+        142
+      ],
+      "render_width_px": 86.25,
+      "collision_polygon_px": [
+        [
+          -37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          0
+        ],
+        [
+          -37.087,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "ffbd61",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "amber_e",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "amber_e.png",
+      "position_px": [
+        713.885,
+        69.988
+      ],
+      "source_foot_px": [
+        1220,
+        275
+      ],
+      "source_rect_px": [
+        1155,
+        133,
+        130,
+        142
+      ],
+      "render_width_px": 86.25,
+      "collision_polygon_px": [
+        [
+          -37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          0
+        ],
+        [
+          -37.087,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "ffbd61",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        40.471,
+        101.801
+      ],
+      "source_foot_px": [
+        205,
+        320
+      ],
+      "source_rect_px": [
+        178,
+        242,
+        54,
+        78
+      ],
+      "render_width_px": 35.827,
+      "collision_polygon_px": [
+        [
+          -15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          0
+        ],
+        [
+          -15.406,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "ffbd61",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        786.865,
+        101.801
+      ],
+      "source_foot_px": [
+        1330,
+        320
+      ],
+      "source_rect_px": [
+        1303,
+        242,
+        54,
+        78
+      ],
+      "render_width_px": 35.827,
+      "collision_polygon_px": [
+        [
+          -15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          0
+        ],
+        [
+          -15.406,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "ffbd61",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        40.471,
+        448.205
+      ],
+      "source_foot_px": [
+        205,
+        810
+      ],
+      "source_rect_px": [
+        178,
+        731,
+        55,
+        79
+      ],
+      "render_width_px": 36.49,
+      "collision_polygon_px": [
+        [
+          -15.691,
+          -10.611
+        ],
+        [
+          15.691,
+          -10.611
+        ],
+        [
+          15.691,
+          0
+        ],
+        [
+          -15.691,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "ffbd61",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        786.865,
+        448.205
+      ],
+      "source_foot_px": [
+        1330,
+        810
+      ],
+      "source_rect_px": [
+        1302,
+        732,
+        56,
+        78
+      ],
+      "render_width_px": 37.154,
+      "collision_polygon_px": [
+        [
+          -15.976,
+          -10.477
+        ],
+        [
+          15.976,
+          -10.477
+        ],
+        [
+          15.976,
+          0
+        ],
+        [
+          -15.976,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "ffbd61",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "fern_nw",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_nw.png",
+      "position_px": [
+        229.558,
+        55.849
+      ],
+      "source_foot_px": [
+        490,
+        255
+      ],
+      "source_rect_px": [
+        450,
+        155,
+        80,
+        100
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          0
+        ],
+        [
+          -22.823,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_ne",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_ne.png",
+      "position_px": [
+        607.731,
+        55.849
+      ],
+      "source_foot_px": [
+        1060,
+        255
+      ],
+      "source_rect_px": [
+        1022,
+        156,
+        77,
+        99
+      ],
+      "render_width_px": 51.087,
+      "collision_polygon_px": [
+        [
+          -21.967,
+          -13.298
+        ],
+        [
+          21.967,
+          -13.298
+        ],
+        [
+          21.967,
+          0
+        ],
+        [
+          -21.967,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_w",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_w.png",
+      "position_px": [
+        73.644,
+        172.495
+      ],
+      "source_foot_px": [
+        255,
+        420
+      ],
+      "source_rect_px": [
+        213,
+        319,
+        84,
+        101
+      ],
+      "render_width_px": 55.731,
+      "collision_polygon_px": [
+        [
+          -23.964,
+          -13.566
+        ],
+        [
+          23.964,
+          -13.566
+        ],
+        [
+          23.964,
+          0
+        ],
+        [
+          -23.964,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_e",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_e.png",
+      "position_px": [
+        753.692,
+        172.495
+      ],
+      "source_foot_px": [
+        1280,
+        420
+      ],
+      "source_rect_px": [
+        1240,
+        320,
+        80,
+        100
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          0
+        ],
+        [
+          -22.823,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_sw",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_sw.png",
+      "position_px": [
+        110.135,
+        370.441
+      ],
+      "source_foot_px": [
+        310,
+        700
+      ],
+      "source_rect_px": [
+        269,
+        602,
+        82,
+        98
+      ],
+      "render_width_px": 54.404,
+      "collision_polygon_px": [
+        [
+          -23.394,
+          -13.163
+        ],
+        [
+          23.394,
+          -13.163
+        ],
+        [
+          23.394,
+          0
+        ],
+        [
+          -23.394,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_se",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_se.png",
+      "position_px": [
+        720.519,
+        370.441
+      ],
+      "source_foot_px": [
+        1230,
+        700
+      ],
+      "source_rect_px": [
+        1186,
+        595,
+        87,
+        105
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -24.82,
+          -14.104
+        ],
+        [
+          24.82,
+          -14.104
+        ],
+        [
+          24.82,
+          0
+        ],
+        [
+          -24.82,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_swl",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_swl.png",
+      "position_px": [
+        219.606,
+        448.205
+      ],
+      "source_foot_px": [
+        475,
+        810
+      ],
+      "source_rect_px": [
+        431,
+        710,
+        88,
+        100
+      ],
+      "render_width_px": 58.385,
+      "collision_polygon_px": [
+        [
+          -25.106,
+          -13.432
+        ],
+        [
+          25.106,
+          -13.432
+        ],
+        [
+          25.106,
+          0
+        ],
+        [
+          -25.106,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "fern_sel",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "fern_sel.png",
+      "position_px": [
+        607.731,
+        448.205
+      ],
+      "source_foot_px": [
+        1060,
+        810
+      ],
+      "source_rect_px": [
+        1016,
+        706,
+        88,
+        104
+      ],
+      "render_width_px": 58.385,
+      "collision_polygon_px": [
+        [
+          -25.106,
+          -13.969
+        ],
+        [
+          25.106,
+          -13.969
+        ],
+        [
+          25.106,
+          0
+        ],
+        [
+          -25.106,
+          0
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:reward_amber_v01:amber_w",
+      "name": "琥珀星藏库 · amber_w",
+      "path": "res://assets/room_illustrated/reward_amber_v01/amber_w.png",
+      "layer": "lights",
+      "model": "amber_w",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 86.25,
+      "collision_polygon_px": [
+        [
+          -37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          0
+        ],
+        [
+          -37.087,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:amber_e",
+      "name": "琥珀星藏库 · amber_e",
+      "path": "res://assets/room_illustrated/reward_amber_v01/amber_e.png",
+      "layer": "lights",
+      "model": "amber_e",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 86.25,
+      "collision_polygon_px": [
+        [
+          -37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          -19.073
+        ],
+        [
+          37.087,
+          0
+        ],
+        [
+          -37.087,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:lamp_nw",
+      "name": "琥珀星藏库 · lamp_nw",
+      "path": "res://assets/room_illustrated/reward_amber_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 35.827,
+      "collision_polygon_px": [
+        [
+          -15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          0
+        ],
+        [
+          -15.406,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:lamp_ne",
+      "name": "琥珀星藏库 · lamp_ne",
+      "path": "res://assets/room_illustrated/reward_amber_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 35.827,
+      "collision_polygon_px": [
+        [
+          -15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          -10.477
+        ],
+        [
+          15.406,
+          0
+        ],
+        [
+          -15.406,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:lamp_sw",
+      "name": "琥珀星藏库 · lamp_sw",
+      "path": "res://assets/room_illustrated/reward_amber_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 36.49,
+      "collision_polygon_px": [
+        [
+          -15.691,
+          -10.611
+        ],
+        [
+          15.691,
+          -10.611
+        ],
+        [
+          15.691,
+          0
+        ],
+        [
+          -15.691,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:lamp_se",
+      "name": "琥珀星藏库 · lamp_se",
+      "path": "res://assets/room_illustrated/reward_amber_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 37.154,
+      "collision_polygon_px": [
+        [
+          -15.976,
+          -10.477
+        ],
+        [
+          15.976,
+          -10.477
+        ],
+        [
+          15.976,
+          0
+        ],
+        [
+          -15.976,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_nw",
+      "name": "琥珀星藏库 · fern_nw",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_nw.png",
+      "layer": "buildings",
+      "model": "fern_nw",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          0
+        ],
+        [
+          -22.823,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_ne",
+      "name": "琥珀星藏库 · fern_ne",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_ne.png",
+      "layer": "buildings",
+      "model": "fern_ne",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 51.087,
+      "collision_polygon_px": [
+        [
+          -21.967,
+          -13.298
+        ],
+        [
+          21.967,
+          -13.298
+        ],
+        [
+          21.967,
+          0
+        ],
+        [
+          -21.967,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_w",
+      "name": "琥珀星藏库 · fern_w",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_w.png",
+      "layer": "buildings",
+      "model": "fern_w",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 55.731,
+      "collision_polygon_px": [
+        [
+          -23.964,
+          -13.566
+        ],
+        [
+          23.964,
+          -13.566
+        ],
+        [
+          23.964,
+          0
+        ],
+        [
+          -23.964,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_e",
+      "name": "琥珀星藏库 · fern_e",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_e.png",
+      "layer": "buildings",
+      "model": "fern_e",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 53.077,
+      "collision_polygon_px": [
+        [
+          -22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          -13.432
+        ],
+        [
+          22.823,
+          0
+        ],
+        [
+          -22.823,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_sw",
+      "name": "琥珀星藏库 · fern_sw",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_sw.png",
+      "layer": "buildings",
+      "model": "fern_sw",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 54.404,
+      "collision_polygon_px": [
+        [
+          -23.394,
+          -13.163
+        ],
+        [
+          23.394,
+          -13.163
+        ],
+        [
+          23.394,
+          0
+        ],
+        [
+          -23.394,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_se",
+      "name": "琥珀星藏库 · fern_se",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_se.png",
+      "layer": "buildings",
+      "model": "fern_se",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.721,
+      "collision_polygon_px": [
+        [
+          -24.82,
+          -14.104
+        ],
+        [
+          24.82,
+          -14.104
+        ],
+        [
+          24.82,
+          0
+        ],
+        [
+          -24.82,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_swl",
+      "name": "琥珀星藏库 · fern_swl",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_swl.png",
+      "layer": "buildings",
+      "model": "fern_swl",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 58.385,
+      "collision_polygon_px": [
+        [
+          -25.106,
+          -13.432
+        ],
+        [
+          25.106,
+          -13.432
+        ],
+        [
+          25.106,
+          0
+        ],
+        [
+          -25.106,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_amber_v01:fern_sel",
+      "name": "琥珀星藏库 · fern_sel",
+      "path": "res://assets/room_illustrated/reward_amber_v01/fern_sel.png",
+      "layer": "buildings",
+      "model": "fern_sel",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 58.385,
+      "collision_polygon_px": [
+        [
+          -25.106,
+          -13.969
+        ],
+        [
+          25.106,
+          -13.969
+        ],
+        [
+          25.106,
+          0
+        ],
+        [
+          -25.106,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {},
+  "surface_water_polygons_px": []
+}

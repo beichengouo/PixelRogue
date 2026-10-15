@@ -1,0 +1,20 @@
+KILN FX FREE SAMPLER - LICENSE
+==============================
+
+By downloading this free sampler you may:
+
+  * Use the effects in unlimited personal AND commercial projects
+    (games, game jams, mods, videos, trailers, prototypes, etc.).
+  * Modify, recolour, resize, crop and combine the effects freely.
+  * Ship the effects inside your compiled / packaged game.
+
+You may NOT:
+
+  * Resell, redistribute, sublicense or share the effects on their own,
+    or as part of another asset pack / effects collection, whether edited
+    or not, free or paid.
+  * Claim that you created the original effects.
+
+Credit is not required, but it is always appreciated!
+
+No warranty is given. The pack is provided "as is".

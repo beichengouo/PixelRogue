@@ -1,0 +1,1317 @@
+[
+  {
+    "id": "supplied:dungeon:floor_violet:1x1",
+    "name": "紫灰石地 1×1",
+    "layer": "ground",
+    "category": "地下城 · 地面",
+    "model": "floor_violet",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/floor_violet.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:floor_slate:1x1",
+    "name": "浅灰石地 1×1",
+    "layer": "ground",
+    "category": "地下城 · 地面",
+    "model": "floor_slate",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/floor_slate.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:floor_moss:1x1",
+    "name": "苔绿石地 1×1",
+    "layer": "ground",
+    "category": "地下城 · 地面",
+    "model": "floor_moss",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/floor_moss.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:floor_moss_detail:1x1",
+    "name": "苔纹石地 1×1",
+    "layer": "ground",
+    "category": "地下城 · 地面",
+    "model": "floor_moss_detail",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/floor_moss_detail.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:floor_brick:1x1",
+    "name": "砖纹地板 1×1",
+    "layer": "ground",
+    "category": "地下城 · 地面",
+    "model": "floor_brick",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/floor_brick.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:crate:1x1",
+    "name": "木箱（可打破） 1×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "crate",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/crate.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:crate:2x2",
+    "name": "木箱（可打破） 2×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "crate",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/crate.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:crate:1x2",
+    "name": "木箱（可打破） 1×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "crate",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/crate.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:crate:2x1",
+    "name": "木箱（可打破） 2×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "crate",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/crate.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:barrel:1x1",
+    "name": "木桶（可打破） 1×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "barrel",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/barrel.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:barrel:2x2",
+    "name": "木桶（可打破） 2×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "barrel",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/barrel.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:barrel:1x2",
+    "name": "木桶（可打破） 1×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "barrel",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/barrel.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:barrel:2x1",
+    "name": "木桶（可打破） 2×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "barrel",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/barrel.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "crate"
+  },
+  {
+    "id": "supplied:dungeon:wall_brick:1x1",
+    "name": "砖墙（实心） 1×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_brick",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_brick.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_brick:2x2",
+    "name": "砖墙（实心） 2×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_brick",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_brick.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_brick:1x2",
+    "name": "砖墙（实心） 1×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_brick",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_brick.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_brick:2x1",
+    "name": "砖墙（实心） 2×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_brick",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_brick.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_stone:1x1",
+    "name": "石墙（实心） 1×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_stone",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_stone.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_stone:2x2",
+    "name": "石墙（实心） 2×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_stone",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_stone.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_stone:1x2",
+    "name": "石墙（实心） 1×2",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_stone",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_stone.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:wall_stone:2x1",
+    "name": "石墙（实心） 2×1",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_stone",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_stone.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": true,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:chest_closed:1x1",
+    "name": "陈设宝箱 · 闭合 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_closed",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_closed.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_closed:2x2",
+    "name": "陈设宝箱 · 闭合 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_closed",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_closed.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_closed:1x2",
+    "name": "陈设宝箱 · 闭合 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_closed",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_closed.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_closed:2x1",
+    "name": "陈设宝箱 · 闭合 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_closed",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_closed.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_open:1x1",
+    "name": "陈设宝箱 · 开启 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_open",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_open.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_open:2x2",
+    "name": "陈设宝箱 · 开启 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_open",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_open.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_open:1x2",
+    "name": "陈设宝箱 · 开启 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_open",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_open.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:chest_open:2x1",
+    "name": "陈设宝箱 · 开启 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "chest_open",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/chest_open.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_cross:1x1",
+    "name": "木制墓碑 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_cross",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_cross.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_cross:2x2",
+    "name": "木制墓碑 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_cross",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_cross.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_cross:1x2",
+    "name": "木制墓碑 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_cross",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_cross.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_cross:2x1",
+    "name": "木制墓碑 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_cross",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_cross.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_stone:1x1",
+    "name": "石制墓碑 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_stone",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_stone.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_stone:2x2",
+    "name": "石制墓碑 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_stone",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_stone.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_stone:1x2",
+    "name": "石制墓碑 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_stone",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_stone.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_stone:2x1",
+    "name": "石制墓碑 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_stone",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_stone.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_skull:1x1",
+    "name": "骷髅墓碑 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_skull",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_skull.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_skull:2x2",
+    "name": "骷髅墓碑 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_skull",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_skull.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_skull:1x2",
+    "name": "骷髅墓碑 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_skull",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_skull.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:grave_skull:2x1",
+    "name": "骷髅墓碑 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "grave_skull",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/grave_skull.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:sign:1x1",
+    "name": "告示木牌 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "sign",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/sign.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:sign:2x2",
+    "name": "告示木牌 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "sign",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/sign.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:sign:1x2",
+    "name": "告示木牌 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "sign",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/sign.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:sign:2x1",
+    "name": "告示木牌 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "sign",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/sign.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:stump:1x1",
+    "name": "地下城树根桩 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "stump",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/stump.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:stump:2x2",
+    "name": "地下城树根桩 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "stump",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/stump.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:stump:1x2",
+    "name": "地下城树根桩 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "stump",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/stump.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:stump:2x1",
+    "name": "地下城树根桩 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "stump",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/stump.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_left:1x1",
+    "name": "曲折树根 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_left",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/root_left.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_left:2x2",
+    "name": "曲折树根 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_left",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/root_left.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_left:1x2",
+    "name": "曲折树根 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_left",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/root_left.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_left:2x1",
+    "name": "曲折树根 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_left",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/root_left.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_right:1x1",
+    "name": "枯枝根丛 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_right",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/root_right.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_right:2x2",
+    "name": "枯枝根丛 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_right",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/root_right.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_right:1x2",
+    "name": "枯枝根丛 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_right",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/root_right.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:root_right:2x1",
+    "name": "枯枝根丛 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "root_right",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/root_right.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:fallen_branch:1x1",
+    "name": "落枝 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "fallen_branch",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/fallen_branch.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:fallen_branch:2x2",
+    "name": "落枝 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "fallen_branch",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/fallen_branch.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:fallen_branch:1x2",
+    "name": "落枝 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "fallen_branch",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/fallen_branch.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:fallen_branch:2x1",
+    "name": "落枝 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "fallen_branch",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/fallen_branch.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:ivy:1x1",
+    "name": "藤蔓 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "ivy",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/ivy.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:ivy:2x2",
+    "name": "藤蔓 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "ivy",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/ivy.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:ivy:1x2",
+    "name": "藤蔓 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "ivy",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/ivy.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:ivy:2x1",
+    "name": "藤蔓 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "ivy",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/ivy.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:web:1x1",
+    "name": "蛛网 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "web",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/web.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:web:2x2",
+    "name": "蛛网 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "web",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/web.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:web:1x2",
+    "name": "蛛网 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "web",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/web.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:web:2x1",
+    "name": "蛛网 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "web",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/web.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:urn:1x1",
+    "name": "窄口木桶 1×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "urn",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/urn.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:urn:2x2",
+    "name": "窄口木桶 2×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "urn",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/urn.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:urn:1x2",
+    "name": "窄口木桶 1×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "urn",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/urn.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:urn:2x1",
+    "name": "窄口木桶 2×1",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "urn",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/urn.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:carpet_square:3x3",
+    "name": "绯红地毯 3×3",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "carpet_square",
+    "size": [
+      3,
+      3
+    ],
+    "path": "res://assets/quality_20261011/editor/carpet_square.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:carpet_long:2x6",
+    "name": "绯红长毯 2×6",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "carpet_long",
+    "size": [
+      2,
+      6
+    ],
+    "path": "res://assets/quality_20261011/editor/carpet_long.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:altar:3x2",
+    "name": "祭台陈设 3×2",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "altar",
+    "size": [
+      3,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/altar.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:gate_beast:2x3",
+    "name": "兽首祭门陈设 2×3",
+    "layer": "decor",
+    "category": "地下城 · 装饰",
+    "model": "gate_beast",
+    "size": [
+      2,
+      3
+    ],
+    "path": "res://assets/quality_20261011/editor/gate_beast.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": false
+  },
+  {
+    "id": "supplied:dungeon:wall_tall:1x4",
+    "name": "长砖墙（实心） 1×4",
+    "layer": "obstacles",
+    "category": "地下城 · 障碍",
+    "model": "wall_tall",
+    "size": [
+      1,
+      4
+    ],
+    "path": "res://assets/quality_20261011/editor/wall_tall.tres",
+    "collision": "solid",
+    "supplied": true,
+    "repeat_cells": false,
+    "kind": "stone"
+  },
+  {
+    "id": "supplied:dungeon:torch_lit:1x1",
+    "name": "动态火把（发光） 1×1",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_lit",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_lit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true,
+    "animation_path": "res://assets/quality_20261011/editor/torch_flame.tres",
+    "light_kind": "torch"
+  },
+  {
+    "id": "supplied:dungeon:torch_lit:2x2",
+    "name": "动态火把（发光） 2×2",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_lit",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_lit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true,
+    "animation_path": "res://assets/quality_20261011/editor/torch_flame.tres",
+    "light_kind": "torch"
+  },
+  {
+    "id": "supplied:dungeon:torch_lit:1x2",
+    "name": "动态火把（发光） 1×2",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_lit",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_lit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true,
+    "animation_path": "res://assets/quality_20261011/editor/torch_flame.tres",
+    "light_kind": "torch"
+  },
+  {
+    "id": "supplied:dungeon:torch_lit:2x1",
+    "name": "动态火把（发光） 2×1",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_lit",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_lit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true,
+    "animation_path": "res://assets/quality_20261011/editor/torch_flame.tres",
+    "light_kind": "torch"
+  },
+  {
+    "id": "supplied:dungeon:torch_unlit:1x1",
+    "name": "熄灭火把 1×1",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_unlit",
+    "size": [
+      1,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_unlit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:torch_unlit:2x2",
+    "name": "熄灭火把 2×2",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_unlit",
+    "size": [
+      2,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_unlit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:torch_unlit:1x2",
+    "name": "熄灭火把 1×2",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_unlit",
+    "size": [
+      1,
+      2
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_unlit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  },
+  {
+    "id": "supplied:dungeon:torch_unlit:2x1",
+    "name": "熄灭火把 2×1",
+    "layer": "decor",
+    "category": "新素材 · 火把",
+    "model": "torch_unlit",
+    "size": [
+      2,
+      1
+    ],
+    "path": "res://assets/quality_20261011/editor/torch_unlit.tres",
+    "collision": "none",
+    "supplied": true,
+    "repeat_cells": true
+  }
+]

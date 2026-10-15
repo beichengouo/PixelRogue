@@ -1,0 +1,710 @@
+{
+  "version": 1,
+  "id": "wetland_twin_pools_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    },
+    {
+      "path": "water.png"
+    },
+    {
+      "path": "bridge.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        640,
+        0,
+        255,
+        160
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        640,
+        824,
+        255,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        390,
+        112,
+        184
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1424,
+        390,
+        112,
+        184
+      ]
+    }
+  },
+  "pieces": [
+    {
+      "id": "scene:wetland_twin_pools_v03:bank_boulder_west",
+      "name": "双塘晴湾 · bank_boulder_west",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/wetland_twin_pools_v03/bank_boulder_west.png",
+      "collision": "stone",
+      "render_width_px": 82.9176,
+      "collision_polygon_px": [
+        [
+          -30.8736,
+          -26.4631
+        ],
+        [
+          -12.6435,
+          -38.8125
+        ],
+        [
+          9.1151,
+          -35.8722
+        ],
+        [
+          29.1094,
+          -23.5227
+        ],
+        [
+          26.169,
+          -10.5852
+        ],
+        [
+          0.8821,
+          -2.3523
+        ],
+        [
+          -24.9929,
+          -9.4091
+        ]
+      ]
+    },
+    {
+      "id": "scene:wetland_twin_pools_v03:bank_boulder_east",
+      "name": "双塘晴湾 · bank_boulder_east",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/wetland_twin_pools_v03/bank_boulder_east.png",
+      "collision": "stone",
+      "render_width_px": 104.0881,
+      "collision_polygon_px": [
+        [
+          -40.8707,
+          -35.2841
+        ],
+        [
+          -22.0526,
+          -49.3977
+        ],
+        [
+          3.8224,
+          -51.1619
+        ],
+        [
+          29.6974,
+          -44.1051
+        ],
+        [
+          43.8111,
+          -29.4034
+        ],
+        [
+          37.3423,
+          -11.7614
+        ],
+        [
+          11.4673,
+          -2.3523
+        ],
+        [
+          -18.5241,
+          -9.4091
+        ],
+        [
+          -39.6946,
+          -21.7585
+        ]
+      ]
+    },
+    {
+      "id": "scene:wetland_twin_pools_v03:supply_basket",
+      "name": "双塘晴湾 · supply_basket",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "crate",
+      "kind": "crate",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/wetland_twin_pools_v03/supply_basket.png",
+      "collision": "crate",
+      "render_width_px": 47.0455,
+      "collision_polygon_px": [
+        [
+          -18.8182,
+          -21.1705
+        ],
+        [
+          -5.8807,
+          -27.0511
+        ],
+        [
+          15.2898,
+          -24.1108
+        ],
+        [
+          21.1705,
+          -14.1136
+        ],
+        [
+          9.4091,
+          -2.9403
+        ],
+        [
+          -11.7614,
+          -4.1165
+        ],
+        [
+          -19.9943,
+          -12.9375
+        ]
+      ]
+    },
+    {
+      "id": "scene:wetland_twin_pools_v03:lily_lamp_upper",
+      "name": "双塘晴湾 · lily_lamp_upper",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/wetland_twin_pools_v03/lily_lamp_upper.png",
+      "collision": "light",
+      "render_width_px": 59.983,
+      "collision_polygon_px": [
+        [
+          -23.5227,
+          -24.1108
+        ],
+        [
+          -6.4687,
+          -30.5795
+        ],
+        [
+          12.3494,
+          -26.4631
+        ],
+        [
+          18.8182,
+          -12.9375
+        ],
+        [
+          7.0568,
+          -1.7642
+        ],
+        [
+          -12.3494,
+          -5.8807
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 140,
+        "color": "ffe794"
+      }
+    },
+    {
+      "id": "scene:wetland_twin_pools_v03:lily_lamp_lower",
+      "name": "双塘晴湾 · lily_lamp_lower",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "light",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/wetland_twin_pools_v03/lily_lamp_lower.png",
+      "collision": "light",
+      "render_width_px": 59.3949,
+      "collision_polygon_px": [
+        [
+          -24.9929,
+          -25.2869
+        ],
+        [
+          -9.7031,
+          -31.7557
+        ],
+        [
+          13.2315,
+          -26.4631
+        ],
+        [
+          19.7003,
+          -12.9375
+        ],
+        [
+          8.527,
+          -2.3523
+        ],
+        [
+          -11.4673,
+          -4.7045
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 140,
+        "color": "ffe794"
+      }
+    }
+  ],
+  "objects": [
+    {
+      "id": "bank_boulder_west",
+      "kind": "stone",
+      "texture": "bank_boulder_west.png",
+      "position_px": [
+        136.7259,
+        264.6307
+      ],
+      "source_rect_px": [
+        226,
+        479,
+        367,
+        578
+      ],
+      "source_foot_px": [
+        296.5,
+        578
+      ],
+      "render_width_px": 82.9176,
+      "collision_polygon_px": [
+        [
+          -30.8736,
+          -26.4631
+        ],
+        [
+          -12.6435,
+          -38.8125
+        ],
+        [
+          9.1151,
+          -35.8722
+        ],
+        [
+          29.1094,
+          -23.5227
+        ],
+        [
+          26.169,
+          -10.5852
+        ],
+        [
+          0.8821,
+          -2.3523
+        ],
+        [
+          -24.9929,
+          -9.4091
+        ]
+      ]
+    },
+    {
+      "id": "bank_boulder_east",
+      "kind": "stone",
+      "texture": "bank_boulder_east.png",
+      "position_px": [
+        651.2855,
+        147.6051
+      ],
+      "source_rect_px": [
+        1083,
+        235,
+        1260,
+        379
+      ],
+      "source_foot_px": [
+        1171.5,
+        379
+      ],
+      "render_width_px": 104.0881,
+      "collision_polygon_px": [
+        [
+          -40.8707,
+          -35.2841
+        ],
+        [
+          -22.0526,
+          -49.3977
+        ],
+        [
+          3.8224,
+          -51.1619
+        ],
+        [
+          29.6974,
+          -44.1051
+        ],
+        [
+          43.8111,
+          -29.4034
+        ],
+        [
+          37.3423,
+          -11.7614
+        ],
+        [
+          11.4673,
+          -2.3523
+        ],
+        [
+          -18.5241,
+          -9.4091
+        ],
+        [
+          -39.6946,
+          -21.7585
+        ]
+      ]
+    },
+    {
+      "id": "supply_basket",
+      "kind": "crate",
+      "texture": "supply_basket.png",
+      "position_px": [
+        716.267,
+        149.3693
+      ],
+      "source_rect_px": [
+        1242,
+        315,
+        1322,
+        382
+      ],
+      "source_foot_px": [
+        1282.0,
+        382
+      ],
+      "render_width_px": 47.0455,
+      "collision_polygon_px": [
+        [
+          -18.8182,
+          -21.1705
+        ],
+        [
+          -5.8807,
+          -27.0511
+        ],
+        [
+          15.2898,
+          -24.1108
+        ],
+        [
+          21.1705,
+          -14.1136
+        ],
+        [
+          9.4091,
+          -2.9403
+        ],
+        [
+          -11.7614,
+          -4.1165
+        ],
+        [
+          -19.9943,
+          -12.9375
+        ]
+      ]
+    },
+    {
+      "id": "lily_lamp_upper",
+      "kind": "light",
+      "texture": "lily_lamp_upper.png",
+      "position_px": [
+        348.7244,
+        140.5483
+      ],
+      "source_rect_px": [
+        606,
+        235,
+        708,
+        367
+      ],
+      "source_foot_px": [
+        657.0,
+        367
+      ],
+      "render_width_px": 59.983,
+      "collision_polygon_px": [
+        [
+          -23.5227,
+          -24.1108
+        ],
+        [
+          -6.4687,
+          -30.5795
+        ],
+        [
+          12.3494,
+          -26.4631
+        ],
+        [
+          18.8182,
+          -12.9375
+        ],
+        [
+          7.0568,
+          -1.7642
+        ],
+        [
+          -12.3494,
+          -5.8807
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 140,
+        "color": "ffe794"
+      }
+    },
+    {
+      "id": "lily_lamp_lower",
+      "kind": "light",
+      "texture": "lily_lamp_lower.png",
+      "position_px": [
+        461.3395,
+        321.6733
+      ],
+      "source_rect_px": [
+        798,
+        541,
+        899,
+        675
+      ],
+      "source_foot_px": [
+        848.5,
+        675
+      ],
+      "render_width_px": 59.3949,
+      "collision_polygon_px": [
+        [
+          -24.9929,
+          -25.2869
+        ],
+        [
+          -9.7031,
+          -31.7557
+        ],
+        [
+          13.2315,
+          -26.4631
+        ],
+        [
+          19.7003,
+          -12.9375
+        ],
+        [
+          8.527,
+          -2.3523
+        ],
+        [
+          -11.4673,
+          -4.7045
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 140,
+        "color": "ffe794"
+      }
+    }
+  ],
+  "surface_water_polygons_px": [
+    [
+      [
+        124.0824,
+        57.0426
+      ],
+      [
+        156.4261,
+        45.2812
+      ],
+      [
+        198.767,
+        47.0455
+      ],
+      [
+        240.5199,
+        54.1023
+      ],
+      [
+        284.625,
+        72.3324
+      ],
+      [
+        308.7358,
+        94.0909
+      ],
+      [
+        304.0312,
+        125.8466
+      ],
+      [
+        286.3892,
+        154.0739
+      ],
+      [
+        249.3409,
+        170.5398
+      ],
+      [
+        207.0,
+        168.1875
+      ],
+      [
+        168.7756,
+        154.0739
+      ],
+      [
+        135.8438,
+        132.9034
+      ],
+      [
+        117.0256,
+        102.9119
+      ]
+    ],
+    [
+      [
+        552.7841,
+        213.4687
+      ],
+      [
+        597.4773,
+        199.9432
+      ],
+      [
+        650.4034,
+        201.7074
+      ],
+      [
+        692.7443,
+        213.4687
+      ],
+      [
+        732.733,
+        236.4034
+      ],
+      [
+        748.0227,
+        271.0994
+      ],
+      [
+        746.8466,
+        309.9119
+      ],
+      [
+        727.4403,
+        343.4318
+      ],
+      [
+        692.1562,
+        374.0114
+      ],
+      [
+        640.9943,
+        385.7727
+      ],
+      [
+        589.8324,
+        382.2443
+      ],
+      [
+        545.1392,
+        365.1903
+      ],
+      [
+        509.267,
+        339.9034
+      ],
+      [
+        498.0937,
+        313.4403
+      ],
+      [
+        545.1392,
+        313.4403
+      ],
+      [
+        545.1392,
+        264.6307
+      ],
+      [
+        497.5057,
+        264.6307
+      ],
+      [
+        516.3239,
+        236.4034
+      ]
+    ]
+  ],
+  "source_title": "双塘晴湾",
+  "bridge_paths_px": [
+    {
+      "start": [
+        493.9773,
+        285.2131
+      ],
+      "end": [
+        523.9688,
+        285.2131
+      ],
+      "width_px": 34.108,
+      "radii": [
+        12,
+        14
+      ]
+    }
+  ]
+}

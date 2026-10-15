@@ -1,0 +1,70 @@
+{
+  "format": "pixelrogue.room",
+  "schema_version": 1,
+  "revision": 1,
+  "id": "trial_seal",
+  "name": "碎星封印殿",
+  "theme": "ruin",
+  "room_kinds": [
+    "trial"
+  ],
+  "selection_weight": 1,
+  "scene_art": "trial_seal_v01",
+  "base_ground": "floor:stone",
+  "grid": {
+    "size": [
+      23,
+      13
+    ],
+    "cell_px": 36
+  },
+  "layers": {
+    "ground": [],
+    "water": [],
+    "obstacles": [],
+    "decor": [],
+    "entities": [],
+    "markers": []
+  },
+  "ports": [
+    {
+      "id": "north",
+      "side": "north",
+      "at": [
+        11,
+        0
+      ],
+      "approach_width": 3
+    },
+    {
+      "id": "east",
+      "side": "east",
+      "at": [
+        22,
+        6
+      ],
+      "approach_width": 3
+    },
+    {
+      "id": "south",
+      "side": "south",
+      "at": [
+        11,
+        12
+      ],
+      "approach_width": 3
+    },
+    {
+      "id": "west",
+      "side": "west",
+      "at": [
+        0,
+        6
+      ],
+      "approach_width": 3
+    }
+  ],
+  "tags": [
+    "trial"
+  ]
+}

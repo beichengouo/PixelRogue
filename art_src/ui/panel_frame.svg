@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="100%" height="100%"
+     style="image-rendering: pixelated; image-rendering: crisp-edges;">
+  <!-- 9 宫格面板框（chunky pixel 风格）：48x48，四边各 12px 可以拉伸，
+       所以所有细节都必须在边角上，中间保持纯色。
+       配色取自游戏的 Palette：外描边→金边→内高光→暗金线→米色内衬 -->
+
+  <!-- 从外到内的五层线 -->
+  <rect x="0" y="0" width="48" height="48" fill="#2a1c0c"/>
+  <rect x="1" y="1" width="46" height="46" fill="#c8951a"/>
+  <rect x="2" y="2" width="44" height="44" fill="#8a6414"/>
+  <rect x="3" y="3" width="42" height="42" fill="#f0d08a"/>
+  <rect x="4" y="4" width="40" height="40" fill="#6b4a18"/>
+  <rect x="5" y="5" width="38" height="38" fill="#e8d9b8"/>
+
+  <!-- 四角不画花角：亮金压在浅金上对比度太低，会被读成"渲染瑕疵像素点"。
+       花角交给代码画（UiOrnate._corner）：那里有深色底衬 + 亮金主笔 + 角尖方钉，
+       在任何底色上都立得住。素材只负责这五层边框。 -->
+  <!-- 四角各压一块深色，让代码画的花角有"底座" -->
+  <rect x="5" y="5" width="9" height="9" fill="#8a6414"/>
+  <rect x="34" y="5" width="9" height="9" fill="#8a6414"/>
+  <rect x="5" y="34" width="9" height="9" fill="#8a6414"/>
+  <rect x="34" y="34" width="9" height="9" fill="#8a6414"/>
+
+  <!-- 注意：这里**不能**画"边中点装饰"。
+       9 宫格的边条会被横向/纵向拉伸，画在边条中间的图案会被拉成一条长条
+       （第一版就在这里留了一道白杠）。所有装饰必须放在四个角里。 -->
+</svg>

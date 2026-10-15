@@ -1,0 +1,543 @@
+{
+  "version": 1,
+  "id": "elite_thorncourt_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "planter_w",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "planter_w.png",
+      "position_px": [
+        183.115,
+        62.918
+      ],
+      "source_foot_px": [
+        420,
+        265
+      ],
+      "source_rect_px": [
+        290,
+        132,
+        260,
+        133
+      ],
+      "render_width_px": 172.5,
+      "collision_polygon_px": [
+        [
+          -74.175,
+          -17.865
+        ],
+        [
+          74.175,
+          -17.865
+        ],
+        [
+          74.175,
+          0
+        ],
+        [
+          -74.175,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "planter_e",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "planter_e.png",
+      "position_px": [
+        640.904,
+        62.918
+      ],
+      "source_foot_px": [
+        1110,
+        265
+      ],
+      "source_rect_px": [
+        977,
+        137,
+        266,
+        128
+      ],
+      "render_width_px": 176.481,
+      "collision_polygon_px": [
+        [
+          -75.887,
+          -17.193
+        ],
+        [
+          75.887,
+          -17.193
+        ],
+        [
+          75.887,
+          0
+        ],
+        [
+          -75.887,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        50.423,
+        87.662
+      ],
+      "source_foot_px": [
+        220,
+        300
+      ],
+      "source_rect_px": [
+        177,
+        220,
+        86,
+        80
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "da84f2",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        776.913,
+        87.662
+      ],
+      "source_foot_px": [
+        1315,
+        300
+      ],
+      "source_rect_px": [
+        1272,
+        222,
+        86,
+        78
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.477
+        ],
+        [
+          24.535,
+          -10.477
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "da84f2",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        50.423,
+        448.205
+      ],
+      "source_foot_px": [
+        220,
+        810
+      ],
+      "source_rect_px": [
+        177,
+        731,
+        86,
+        79
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.611
+        ],
+        [
+          24.535,
+          -10.611
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "da84f2",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        776.913,
+        448.205
+      ],
+      "source_foot_px": [
+        1315,
+        810
+      ],
+      "source_rect_px": [
+        1272,
+        730,
+        86,
+        80
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "da84f2",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:elite_thorncourt_v01:planter_w",
+      "name": "荆冠猎庭 · planter_w",
+      "path": "res://assets/room_illustrated/elite_thorncourt_v01/planter_w.png",
+      "layer": "buildings",
+      "model": "planter_w",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 172.5,
+      "collision_polygon_px": [
+        [
+          -74.175,
+          -17.865
+        ],
+        [
+          74.175,
+          -17.865
+        ],
+        [
+          74.175,
+          0
+        ],
+        [
+          -74.175,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_thorncourt_v01:planter_e",
+      "name": "荆冠猎庭 · planter_e",
+      "path": "res://assets/room_illustrated/elite_thorncourt_v01/planter_e.png",
+      "layer": "buildings",
+      "model": "planter_e",
+      "collision": "solid",
+      "size": [
+        5,
+        1
+      ],
+      "render_width_px": 176.481,
+      "collision_polygon_px": [
+        [
+          -75.887,
+          -17.193
+        ],
+        [
+          75.887,
+          -17.193
+        ],
+        [
+          75.887,
+          0
+        ],
+        [
+          -75.887,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_thorncourt_v01:lamp_nw",
+      "name": "荆冠猎庭 · lamp_nw",
+      "path": "res://assets/room_illustrated/elite_thorncourt_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_thorncourt_v01:lamp_ne",
+      "name": "荆冠猎庭 · lamp_ne",
+      "path": "res://assets/room_illustrated/elite_thorncourt_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.477
+        ],
+        [
+          24.535,
+          -10.477
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_thorncourt_v01:lamp_sw",
+      "name": "荆冠猎庭 · lamp_sw",
+      "path": "res://assets/room_illustrated/elite_thorncourt_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.611
+        ],
+        [
+          24.535,
+          -10.611
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:elite_thorncourt_v01:lamp_se",
+      "name": "荆冠猎庭 · lamp_se",
+      "path": "res://assets/room_illustrated/elite_thorncourt_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 57.058,
+      "collision_polygon_px": [
+        [
+          -24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          -10.746
+        ],
+        [
+          24.535,
+          0
+        ],
+        [
+          -24.535,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {
+    "thorn_anchors": [
+      [
+        188.423,
+        225.517
+      ],
+      [
+        640.904,
+        225.517
+      ]
+    ],
+    "thorn_direction": [
+      1,
+      0
+    ]
+  },
+  "surface_water_polygons_px": []
+}

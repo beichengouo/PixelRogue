@@ -1,0 +1,546 @@
+{
+  "version": 1,
+  "id": "shop_stone_v03",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    64,
+    128,
+    1408,
+    795.8260869565217
+  ],
+  "planes": [
+    {
+      "path": "background.png"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        680,
+        0,
+        177,
+        177
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1421,
+        359,
+        115,
+        241
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        680,
+        824,
+        177,
+        200
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        359,
+        115,
+        241
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "shop_lamp_w",
+      "kind": "light",
+      "texture": "shop_lamp_w.png",
+      "position_px": [
+        207.8821,
+        280.5085
+      ],
+      "source_rect_px": [
+        377,
+        442,
+        458,
+        605
+      ],
+      "source_foot_px": [
+        417.5,
+        605
+      ],
+      "render_width_px": 47.6335,
+      "collision_polygon_px": [
+        [
+          -9.1151,
+          -16.4659
+        ],
+        [
+          2.0582,
+          -17.054
+        ],
+        [
+          6.7628,
+          -6.4687
+        ],
+        [
+          -3.8224,
+          -1.7642
+        ],
+        [
+          -10.8793,
+          -8.233
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd477"
+      }
+    },
+    {
+      "id": "shop_lamp_e",
+      "kind": "light",
+      "texture": "shop_lamp_e.png",
+      "position_px": [
+        378.1278,
+        283.4489
+      ],
+      "source_rect_px": [
+        664,
+        438,
+        750,
+        610
+      ],
+      "source_foot_px": [
+        707.0,
+        610
+      ],
+      "render_width_px": 50.5739,
+      "collision_polygon_px": [
+        [
+          -9.4091,
+          -19.9943
+        ],
+        [
+          6.4687,
+          -19.9943
+        ],
+        [
+          11.1733,
+          -8.233
+        ],
+        [
+          -1.7642,
+          -2.9403
+        ],
+        [
+          -11.1733,
+          -9.4091
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd477"
+      }
+    },
+    {
+      "id": "herb_planters",
+      "kind": "stone",
+      "texture": "herb_planters.png",
+      "position_px": [
+        627.7628,
+        362.8381
+      ],
+      "source_rect_px": [
+        994,
+        446,
+        1269,
+        745
+      ],
+      "source_foot_px": [
+        1131.5,
+        745
+      ],
+      "render_width_px": 161.7188,
+      "collision_polygon_px": [
+        [
+          -66.1577,
+          -62.3352
+        ],
+        [
+          -41.4588,
+          -79.9773
+        ],
+        [
+          9.7031,
+          -75.2727
+        ],
+        [
+          49.1037,
+          -51.75
+        ],
+        [
+          38.5185,
+          -24.6989
+        ],
+        [
+          -19.7003,
+          -17.054
+        ],
+        [
+          -56.1605,
+          -33.5199
+        ]
+      ]
+    },
+    {
+      "id": "herb_racks",
+      "kind": "stone",
+      "texture": "herb_racks.png",
+      "position_px": [
+        732.4389,
+        392.2415
+      ],
+      "source_rect_px": [
+        1190,
+        456,
+        1429,
+        795
+      ],
+      "source_foot_px": [
+        1309.5,
+        795
+      ],
+      "render_width_px": 140.5483,
+      "collision_polygon_px": [
+        [
+          -51.456,
+          -47.6335
+        ],
+        [
+          -22.0526,
+          -59.3949
+        ],
+        [
+          37.3423,
+          -46.4574
+        ],
+        [
+          52.044,
+          -17.642
+        ],
+        [
+          -2.6463,
+          -7.0568
+        ],
+        [
+          -45.5753,
+          -20.5824
+        ]
+      ]
+    },
+    {
+      "id": "garden_bench",
+      "kind": "stone",
+      "texture": "garden_bench.png",
+      "position_px": [
+        94.0909,
+        400.4744
+      ],
+      "source_rect_px": [
+        112,
+        610,
+        336,
+        809
+      ],
+      "source_foot_px": [
+        224.0,
+        809
+      ],
+      "render_width_px": 131.7273,
+      "collision_polygon_px": [
+        [
+          -42.929,
+          -39.4006
+        ],
+        [
+          1.1761,
+          -45.2812
+        ],
+        [
+          42.929,
+          -34.108
+        ],
+        [
+          34.108,
+          -11.7614
+        ],
+        [
+          -32.3438,
+          -11.1733
+        ]
+      ]
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:shop_stone_v03:shop_lamp_w",
+      "name": "苔庭商铺 · shop_lamp_w",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/shop_stone_v03/shop_lamp_w.png",
+      "collision": "light",
+      "render_width_px": 47.6335,
+      "collision_polygon_px": [
+        [
+          -9.1151,
+          -16.4659
+        ],
+        [
+          2.0582,
+          -17.054
+        ],
+        [
+          6.7628,
+          -6.4687
+        ],
+        [
+          -3.8224,
+          -1.7642
+        ],
+        [
+          -10.8793,
+          -8.233
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd477"
+      }
+    },
+    {
+      "id": "scene:shop_stone_v03:shop_lamp_e",
+      "name": "苔庭商铺 · shop_lamp_e",
+      "layer": "entities",
+      "category": "整图房间元素",
+      "model": "lamp",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/shop_stone_v03/shop_lamp_e.png",
+      "collision": "light",
+      "render_width_px": 50.5739,
+      "collision_polygon_px": [
+        [
+          -9.4091,
+          -19.9943
+        ],
+        [
+          6.4687,
+          -19.9943
+        ],
+        [
+          11.1733,
+          -8.233
+        ],
+        [
+          -1.7642,
+          -2.9403
+        ],
+        [
+          -11.1733,
+          -9.4091
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "radius": 145,
+        "color": "ffd477"
+      }
+    },
+    {
+      "id": "scene:shop_stone_v03:herb_planters",
+      "name": "苔庭商铺 · herb_planters",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/shop_stone_v03/herb_planters.png",
+      "collision": "stone",
+      "render_width_px": 161.7188,
+      "collision_polygon_px": [
+        [
+          -66.1577,
+          -62.3352
+        ],
+        [
+          -41.4588,
+          -79.9773
+        ],
+        [
+          9.7031,
+          -75.2727
+        ],
+        [
+          49.1037,
+          -51.75
+        ],
+        [
+          38.5185,
+          -24.6989
+        ],
+        [
+          -19.7003,
+          -17.054
+        ],
+        [
+          -56.1605,
+          -33.5199
+        ]
+      ]
+    },
+    {
+      "id": "scene:shop_stone_v03:herb_racks",
+      "name": "苔庭商铺 · herb_racks",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/shop_stone_v03/herb_racks.png",
+      "collision": "stone",
+      "render_width_px": 140.5483,
+      "collision_polygon_px": [
+        [
+          -51.456,
+          -47.6335
+        ],
+        [
+          -22.0526,
+          -59.3949
+        ],
+        [
+          37.3423,
+          -46.4574
+        ],
+        [
+          52.044,
+          -17.642
+        ],
+        [
+          -2.6463,
+          -7.0568
+        ],
+        [
+          -45.5753,
+          -20.5824
+        ]
+      ]
+    },
+    {
+      "id": "scene:shop_stone_v03:garden_bench",
+      "name": "苔庭商铺 · garden_bench",
+      "layer": "obstacles",
+      "category": "整图房间元素",
+      "model": "stone",
+      "kind": "stone",
+      "size": [
+        1,
+        1
+      ],
+      "path": "res://assets/room_illustrated/shop_stone_v03/garden_bench.png",
+      "collision": "stone",
+      "render_width_px": 131.7273,
+      "collision_polygon_px": [
+        [
+          -42.929,
+          -39.4006
+        ],
+        [
+          1.1761,
+          -45.2812
+        ],
+        [
+          42.929,
+          -34.108
+        ],
+        [
+          34.108,
+          -11.7614
+        ],
+        [
+          -32.3438,
+          -11.1733
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": [],
+  "bridge_paths_px": [],
+  "source_title": "苔庭商铺",
+  "service_building": {
+    "id": "service_building",
+    "texture": "service_building.png",
+    "asset": "building_shop",
+    "position_px": [
+      273.4517,
+      241.696
+    ],
+    "width_px": 325.7898,
+    "depth_px": 214.6449,
+    "source_rect_px": [
+      252,
+      174,
+      806,
+      539
+    ],
+    "source_foot_px": [
+      529.0,
+      539
+    ],
+    "entrance_px": [
+      294.6222,
+      214.6449
+    ],
+    "collision_polygon_px": [
+      [
+        -104.0881,
+        -89.9744
+      ],
+      [
+        115.8494,
+        -89.9744
+      ],
+      [
+        115.8494,
+        -28.8153
+      ],
+      [
+        -104.0881,
+        -28.8153
+      ]
+    ]
+  }
+}

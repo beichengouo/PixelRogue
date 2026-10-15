@@ -1,0 +1,22 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://src/environment/foliage_weather.gdshader" id="1_tflvj"]
+[ext_resource type="Texture2D" path="res://assets/environment/animated/bush_map.png" id="2_tbucw"]
+[ext_resource type="Script" path="res://src/environment/environment_prop.gd" id="3_swwlj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1pxk"]
+shader = ExtResource("1_tflvj")
+shader_parameter/wetness = null
+shader_parameter/snow_amount = null
+
+[node name="Bush" type="Sprite2D" unique_id=40507182]
+z_index = 2
+texture_filter = 1
+material = SubResource("ShaderMaterial_e1pxk")
+texture = ExtResource("2_tbucw")
+offset = Vector2(0, -24)
+script = ExtResource("3_swwlj")
+wind_response = true
+touch_response = true
+weather_response = true
+visual_layer = 1

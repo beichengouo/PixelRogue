@@ -1,0 +1,335 @@
+{
+  "relic_moon_compass": {
+    "sheet": "relics_v1.png",
+    "region": [
+      61,
+      55,
+      255,
+      420
+    ]
+  },
+  "relic_leaf_brooch": {
+    "sheet": "relics_v1.png",
+    "region": [
+      447,
+      74,
+      285,
+      384
+    ]
+  },
+  "relic_rose_hourglass": {
+    "sheet": "relics_v1.png",
+    "region": [
+      845,
+      46,
+      231,
+      424
+    ]
+  },
+  "relic_star_lantern": {
+    "sheet": "relics_v1.png",
+    "region": [
+      1237,
+      35,
+      216,
+      449
+    ]
+  },
+  "relic_swallow_quill": {
+    "sheet": "relics_v1.png",
+    "region": [
+      64,
+      546,
+      286,
+      427
+    ]
+  },
+  "relic_arcane_stone": {
+    "sheet": "relics_v1.png",
+    "region": [
+      436,
+      590,
+      285,
+      358
+    ]
+  },
+  "relic_guardian_feather": {
+    "sheet": "relics_v1.png",
+    "region": [
+      831,
+      545,
+      260,
+      442
+    ]
+  },
+  "relic_dawn_bell": {
+    "sheet": "relics_v1.png",
+    "region": [
+      1177,
+      545,
+      323,
+      432
+    ]
+  },
+  "potion_vital": {
+    "sheet": "potions_v1.png",
+    "region": [
+      122,
+      26,
+      325,
+      486
+    ]
+  },
+  "potion_moon": {
+    "sheet": "potions_v1.png",
+    "region": [
+      622,
+      12,
+      293,
+      482
+    ]
+  },
+  "potion_focus": {
+    "sheet": "potions_v1.png",
+    "region": [
+      1181,
+      0,
+      159,
+      512
+    ]
+  },
+  "potion_wind": {
+    "sheet": "potions_v1.png",
+    "region": [
+      151,
+      512,
+      260,
+      507
+    ]
+  },
+  "potion_spring": {
+    "sheet": "potions_v1.png",
+    "region": [
+      612,
+      530,
+      313,
+      467
+    ]
+  },
+  "potion_starlight": {
+    "sheet": "potions_v1.png",
+    "region": [
+      1106,
+      512,
+      305,
+      492
+    ]
+  },
+  "forest_resin": {
+    "sheet": "materials_v1.png",
+    "region": [
+      93,
+      60,
+      389,
+      400
+    ]
+  },
+  "river_pearl": {
+    "sheet": "materials_v1.png",
+    "region": [
+      576,
+      76,
+      377,
+      367
+    ]
+  },
+  "moss_cloth": {
+    "sheet": "materials_v1.png",
+    "region": [
+      1059,
+      82,
+      434,
+      385
+    ]
+  },
+  "ruin_ore": {
+    "sheet": "materials_v1.png",
+    "region": [
+      73,
+      574,
+      383,
+      379
+    ]
+  },
+  "storm_crystal": {
+    "sheet": "materials_v1.png",
+    "region": [
+      587,
+      542,
+      366,
+      421
+    ]
+  },
+  "ancient_seal": {
+    "sheet": "materials_v1.png",
+    "region": [
+      1087,
+      563,
+      379,
+      390
+    ]
+  },
+  "camp_mooncoat": {
+    "sheet": "equipment_v1.png",
+    "region": [
+      49,
+      7,
+      407,
+      505
+    ]
+  },
+  "camp_thornplate": {
+    "sheet": "equipment_v1.png",
+    "region": [
+      528,
+      12,
+      473,
+      500
+    ]
+  },
+  "camp_stararmor": {
+    "sheet": "equipment_v1.png",
+    "region": [
+      1047,
+      10,
+      466,
+      502
+    ]
+  },
+  "camp_windring": {
+    "sheet": "equipment_v1.png",
+    "region": [
+      83,
+      512,
+      389,
+      455
+    ]
+  },
+  "camp_sunpendant": {
+    "sheet": "equipment_v1.png",
+    "region": [
+      581,
+      512,
+      392,
+      472
+    ]
+  },
+  "camp_queenbrooch": {
+    "sheet": "equipment_v1.png",
+    "region": [
+      1039,
+      530,
+      482,
+      459
+    ]
+  },
+  "hp_frame": {
+    "sheet": "hud_v1.png",
+    "region": [
+      22,
+      120,
+      598,
+      150
+    ]
+  },
+  "hp_fill": {
+    "sheet": "hud_v1.png",
+    "region": [
+      663,
+      174,
+      560,
+      56
+    ]
+  },
+  "mp_frame": {
+    "sheet": "hud_v1.png",
+    "region": [
+      22,
+      400,
+      597,
+      156
+    ]
+  },
+  "mp_fill": {
+    "sheet": "hud_v1.png",
+    "region": [
+      663,
+      453,
+      560,
+      57
+    ]
+  },
+  "xp_frame": {
+    "sheet": "hud_v1.png",
+    "region": [
+      22,
+      687,
+      596,
+      252
+    ]
+  },
+  "xp_fill": {
+    "sheet": "hud_v1.png",
+    "region": [
+      663,
+      727,
+      557,
+      212
+    ]
+  },
+  "coin": {
+    "sheet": "hud_v1.png",
+    "region": [
+      185,
+      939,
+      268,
+      236
+    ]
+  },
+  "potion_frame": {
+    "sheet": "hud_v1.png",
+    "region": [
+      787,
+      939,
+      309,
+      246
+    ]
+  },
+  "chest_closed": {
+    "sheet": "chest_v1.png",
+    "region": [
+      66,
+      182,
+      591,
+      473
+    ]
+  },
+  "chest_open": {
+    "sheet": "chest_v1.png",
+    "region": [
+      790,
+      48,
+      607,
+      607
+    ]
+  },
+  "chest_empty": {
+    "sheet": "chest_v1.png",
+    "region": [
+      1514,
+      48,
+      607,
+      607
+    ]
+  }
+}

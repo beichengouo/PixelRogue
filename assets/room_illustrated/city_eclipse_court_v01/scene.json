@@ -1,0 +1,715 @@
+{
+  "version": 1,
+  "id": "city_eclipse_court_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    },
+    {
+      "path": "foreground.png",
+      "layer": "foreground"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        693,
+        0,
+        150,
+        176
+      ]
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        693,
+        838,
+        150,
+        186
+      ]
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        0,
+        386,
+        144,
+        234
+      ]
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1392,
+        386,
+        144,
+        234
+      ]
+    }
+  },
+  "objects": [
+    {
+      "id": "prop_01",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_01.png",
+      "position_px": [
+        759.663,
+        132.906
+      ],
+      "source_rect_px": [
+        1105,
+        47,
+        368,
+        317
+      ],
+      "source_foot_px": [
+        1289.0,
+        364
+      ],
+      "render_width_px": 244.154,
+      "collision_polygon_px": [
+        [
+          -87.89544,
+          -35.85643504531722
+        ],
+        [
+          87.89544,
+          -35.85643504531722
+        ],
+        [
+          87.89544,
+          0
+        ],
+        [
+          -87.89544,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_02",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_02.png",
+      "position_px": [
+        83.596,
+        128.665
+      ],
+      "source_rect_px": [
+        64,
+        67,
+        412,
+        291
+      ],
+      "source_foot_px": [
+        270.0,
+        358
+      ],
+      "render_width_px": 273.346,
+      "collision_polygon_px": [
+        [
+          -98.40456,
+          -32.91552870090634
+        ],
+        [
+          98.40456,
+          -32.91552870090634
+        ],
+        [
+          98.40456,
+          0
+        ],
+        [
+          -98.40456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_03",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_03.png",
+      "position_px": [
+        303.865,
+        9.897
+      ],
+      "source_rect_px": [
+        574,
+        79,
+        56,
+        111
+      ],
+      "source_foot_px": [
+        602.0,
+        190
+      ],
+      "render_width_px": 37.154,
+      "collision_polygon_px": [
+        [
+          -13.375440000000001,
+          -12.555407854984896
+        ],
+        [
+          13.375440000000001,
+          -12.555407854984896
+        ],
+        [
+          13.375440000000001,
+          0
+        ],
+        [
+          -13.375440000000001,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_04",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_04.png",
+      "position_px": [
+        523.803,
+        9.897
+      ],
+      "source_rect_px": [
+        905,
+        80,
+        57,
+        110
+      ],
+      "source_foot_px": [
+        933.5,
+        190
+      ],
+      "render_width_px": 37.817,
+      "collision_polygon_px": [
+        [
+          -13.61412,
+          -12.442296072507554
+        ],
+        [
+          13.61412,
+          -12.442296072507554
+        ],
+        [
+          13.61412,
+          0
+        ],
+        [
+          -13.61412,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_05",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_05.png",
+      "position_px": [
+        84.923,
+        519.607
+      ],
+      "source_rect_px": [
+        63,
+        630,
+        418,
+        281
+      ],
+      "source_foot_px": [
+        272.0,
+        911
+      ],
+      "render_width_px": 277.327,
+      "collision_polygon_px": [
+        [
+          -99.83771999999999,
+          -31.78441087613293
+        ],
+        [
+          99.83771999999999,
+          -31.78441087613293
+        ],
+        [
+          99.83771999999999,
+          0
+        ],
+        [
+          -99.83771999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_06",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_06.png",
+      "position_px": [
+        752.034,
+        522.435
+      ],
+      "source_rect_px": [
+        1081,
+        639,
+        393,
+        276
+      ],
+      "source_foot_px": [
+        1277.5,
+        915
+      ],
+      "render_width_px": 260.74,
+      "collision_polygon_px": [
+        [
+          -93.8664,
+          -31.218851963746225
+        ],
+        [
+          93.8664,
+          -31.218851963746225
+        ],
+        [
+          93.8664,
+          0
+        ],
+        [
+          -93.8664,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_07",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_07.png",
+      "position_px": [
+        301.212,
+        550.006
+      ],
+      "source_rect_px": [
+        565,
+        821,
+        66,
+        133
+      ],
+      "source_foot_px": [
+        598.0,
+        954
+      ],
+      "render_width_px": 43.788,
+      "collision_polygon_px": [
+        [
+          -15.763679999999999,
+          -15.043867069486405
+        ],
+        [
+          15.763679999999999,
+          -15.043867069486405
+        ],
+        [
+          15.763679999999999,
+          0
+        ],
+        [
+          -15.763679999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "prop_08",
+      "kind": "decor",
+      "layer": "objects",
+      "texture": "prop_08.png",
+      "position_px": [
+        526.788,
+        550.006
+      ],
+      "source_rect_px": [
+        908,
+        821,
+        60,
+        133
+      ],
+      "source_foot_px": [
+        938.0,
+        954
+      ],
+      "render_width_px": 39.808,
+      "collision_polygon_px": [
+        [
+          -14.330879999999999,
+          -15.043867069486405
+        ],
+        [
+          14.330879999999999,
+          -15.043867069486405
+        ],
+        [
+          14.330879999999999,
+          0
+        ],
+        [
+          -14.330879999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "light_0",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "c8b9f5",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_1",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        48.779
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "c8b9f5",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_2",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        40.471,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "c8b9f5",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "light_3",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "light_anchor.png",
+      "position_px": [
+        786.865,
+        426.997
+      ],
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "c8b9f5",
+        "radius": 150,
+        "strength": 0.45,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:city_eclipse_court_v01:prop_01",
+      "name": "月蚀镜庭 · prop_01",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_01.png",
+      "layer": "objects",
+      "model": "prop_01",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 244.154,
+      "collision_polygon_px": [
+        [
+          -87.89544,
+          -35.85643504531722
+        ],
+        [
+          87.89544,
+          -35.85643504531722
+        ],
+        [
+          87.89544,
+          0
+        ],
+        [
+          -87.89544,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_02",
+      "name": "月蚀镜庭 · prop_02",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_02.png",
+      "layer": "objects",
+      "model": "prop_02",
+      "collision": "solid",
+      "size": [
+        8,
+        1
+      ],
+      "render_width_px": 273.346,
+      "collision_polygon_px": [
+        [
+          -98.40456,
+          -32.91552870090634
+        ],
+        [
+          98.40456,
+          -32.91552870090634
+        ],
+        [
+          98.40456,
+          0
+        ],
+        [
+          -98.40456,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_03",
+      "name": "月蚀镜庭 · prop_03",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_03.png",
+      "layer": "objects",
+      "model": "prop_03",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 37.154,
+      "collision_polygon_px": [
+        [
+          -13.375440000000001,
+          -12.555407854984896
+        ],
+        [
+          13.375440000000001,
+          -12.555407854984896
+        ],
+        [
+          13.375440000000001,
+          0
+        ],
+        [
+          -13.375440000000001,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_04",
+      "name": "月蚀镜庭 · prop_04",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_04.png",
+      "layer": "objects",
+      "model": "prop_04",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 37.817,
+      "collision_polygon_px": [
+        [
+          -13.61412,
+          -12.442296072507554
+        ],
+        [
+          13.61412,
+          -12.442296072507554
+        ],
+        [
+          13.61412,
+          0
+        ],
+        [
+          -13.61412,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_05",
+      "name": "月蚀镜庭 · prop_05",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_05.png",
+      "layer": "objects",
+      "model": "prop_05",
+      "collision": "solid",
+      "size": [
+        8,
+        1
+      ],
+      "render_width_px": 277.327,
+      "collision_polygon_px": [
+        [
+          -99.83771999999999,
+          -31.78441087613293
+        ],
+        [
+          99.83771999999999,
+          -31.78441087613293
+        ],
+        [
+          99.83771999999999,
+          0
+        ],
+        [
+          -99.83771999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_06",
+      "name": "月蚀镜庭 · prop_06",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_06.png",
+      "layer": "objects",
+      "model": "prop_06",
+      "collision": "solid",
+      "size": [
+        7,
+        1
+      ],
+      "render_width_px": 260.74,
+      "collision_polygon_px": [
+        [
+          -93.8664,
+          -31.218851963746225
+        ],
+        [
+          93.8664,
+          -31.218851963746225
+        ],
+        [
+          93.8664,
+          0
+        ],
+        [
+          -93.8664,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_07",
+      "name": "月蚀镜庭 · prop_07",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_07.png",
+      "layer": "objects",
+      "model": "prop_07",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 43.788,
+      "collision_polygon_px": [
+        [
+          -15.763679999999999,
+          -15.043867069486405
+        ],
+        [
+          15.763679999999999,
+          -15.043867069486405
+        ],
+        [
+          15.763679999999999,
+          0
+        ],
+        [
+          -15.763679999999999,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:city_eclipse_court_v01:prop_08",
+      "name": "月蚀镜庭 · prop_08",
+      "path": "res://assets/room_illustrated/city_eclipse_court_v01/prop_08.png",
+      "layer": "objects",
+      "model": "prop_08",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 39.808,
+      "collision_polygon_px": [
+        [
+          -14.330879999999999,
+          -15.043867069486405
+        ],
+        [
+          14.330879999999999,
+          -15.043867069486405
+        ],
+        [
+          14.330879999999999,
+          0
+        ],
+        [
+          -14.330879999999999,
+          0
+        ]
+      ]
+    }
+  ],
+  "surface_water_polygons_px": []
+}

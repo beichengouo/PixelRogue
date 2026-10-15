@@ -1,0 +1,402 @@
+{
+  "statuses": {
+    "clumsy": {
+      "name": "手残党",
+      "description": "自动普攻最近的有效敌人；战斗获取的金币减半。切换为键盘或鼠标模式后立即消失。",
+      "runtime_source": "attack_mode:auto",
+      "debuff": true
+    },
+    "arcane": {
+      "name": "秘法增幅",
+      "description": "秘法药剂的限时攻击力增益。",
+      "runtime_source": "GameState.temp_buffs:attack",
+      "debuff": false
+    },
+    "frost": {
+      "name": "冰霜反伤",
+      "description": "冰霜药剂的限时反伤属性增益。",
+      "runtime_source": "GameState.temp_buffs:thorns",
+      "debuff": false
+    },
+    "focus": {
+      "name": "专注",
+      "description": "专注药剂的限时攻击速度增益。",
+      "runtime_source": "GameState.temp_buffs:attack_speed",
+      "debuff": false
+    },
+    "wind": {
+      "name": "风行",
+      "description": "风行药剂的限时移动速度增益。",
+      "runtime_source": "GameState.temp_buffs:move_speed",
+      "debuff": false
+    },
+    "weave": {
+      "name": "灵动编织",
+      "description": "施放星辉震荡后获得的限时攻击力增益。",
+      "runtime_source": "GameState.temp_buffs:灵动编织",
+      "debuff": false
+    },
+    "forest_shadow": {
+      "name": "林影",
+      "description": "闪避后移动速度提高10%，持续2秒。",
+      "runtime_source": "GameState.temp_buffs:林影",
+      "debuff": false
+    },
+    "shield": {
+      "name": "护盾",
+      "description": "护盾吸收伤害，按当前真实护盾寿命计时；耗尽后消失。",
+      "runtime_source": "Player._shield_time / shield_hp",
+      "debuff": false
+    },
+    "slow": {
+      "name": "减速",
+      "description": "藤缚等敌方机制降低移动速度；同类取最强值。",
+      "runtime_source": "Player._slows",
+      "debuff": true
+    },
+    "invulnerable": {
+      "name": "短暂无敌",
+      "description": "冲刺、林间闪步或受击保护期间暂时免受伤害。",
+      "runtime_source": "Player._invuln",
+      "debuff": false
+    },
+    "wind_fan": {
+      "name": "逐风扇射",
+      "description": "冲刺后下一次普攻强化为三发风刃，限时3秒，出手后消耗。",
+      "runtime_source": "EquipmentMechanics.wind_until",
+      "debuff": false
+    },
+    "tide": {
+      "name": "回潮",
+      "description": "施放技能后下一次普攻有效命中回复MP，限时4秒，命中后消耗。",
+      "runtime_source": "EquipmentMechanics.tide_until",
+      "debuff": false
+    },
+    "patrol": {
+      "name": "巡风",
+      "description": "冲刺后下一次主动技能伤害提高，限时3秒，施放后消耗。",
+      "runtime_source": "EquipmentMechanics.patrol_until",
+      "debuff": false
+    },
+    "thousand_winds": {
+      "name": "千风猎杀",
+      "description": "持续8秒强化射箭速度、追踪和连击效果。",
+      "runtime_source": "IlyuaRuntime.ultimate_left",
+      "debuff": false
+    },
+    "moon": {
+      "name": "月影箭阵",
+      "description": "限时月箭可挡弹或自动攻击；包括闪避生成的临时反击月箭。",
+      "runtime_source": "IlyuaRuntime.moon_left / moon_slots:reaction",
+      "debuff": false
+    },
+    "pact": {
+      "name": "古老契约",
+      "description": "施放小技能后下一次主普攻追加自然伤害，4秒内有效，出手后消耗。",
+      "runtime_source": "IlyuaRuntime.next_basic_until",
+      "debuff": false
+    },
+    "light_arrow": {
+      "name": "轻盈蓄势",
+      "description": "成功闪避近身伤害后下一次主普攻伤害提高25%，3秒内有效。",
+      "runtime_source": "IlyuaRuntime.light_empower / light_empower_until",
+      "debuff": false
+    },
+    "phase": {
+      "name": "轻盈穿行",
+      "description": "成功闪避后短暂穿过敌人，持续1秒，仍受实体地形阻挡。",
+      "runtime_source": "IlyuaRuntime._skill_history:phase_until",
+      "debuff": false
+    },
+    "forest_will": {
+      "name": "森灵意志",
+      "description": "低生命天赋触发后技能伤害提高10%，持续4秒。",
+      "runtime_source": "IlyuaRuntime._skill_history:will_until",
+      "debuff": false
+    },
+    "nature_favor": {
+      "name": "自然眷顾",
+      "description": "累积三次祝福后，4秒内每秒释放灵箭。",
+      "runtime_source": "IlyuaRuntime._skill_history:favor_until",
+      "debuff": false
+    },
+    "wind_rhythm": {
+      "name": "风之律动",
+      "description": "最多5层，每层攻速+2%、箭速+4%；停止攻击后逐层衰减，移动可延长宽限。",
+      "runtime_source": "IlyuaRuntime.wind_stacks / no_fire / wind_grace",
+      "debuff": false
+    },
+    "poison": {
+      "name": "中毒",
+      "description": "每秒受到毒素伤害，持续4秒；同类刷新不叠层，每秒伤害最多为最大生命2%。",
+      "runtime_source": "Player._debuffs:poison",
+      "debuff": true
+    },
+    "scorch": {
+      "name": "灼伤",
+      "description": "每秒受到余烬伤害，持续3秒；同类刷新不叠层，每秒伤害最多为最大生命2%。",
+      "runtime_source": "Player._debuffs:scorch",
+      "debuff": true
+    },
+    "chill": {
+      "name": "寒滞",
+      "description": "移动速度降低20%，持续3秒；与其他减速取最强值。",
+      "runtime_source": "Player._debuffs:chill",
+      "debuff": true
+    },
+    "weakness": {
+      "name": "虚弱",
+      "description": "最终攻击力降低15%，持续3秒。",
+      "runtime_source": "Player._debuffs:weakness",
+      "debuff": true
+    },
+    "sluggish": {
+      "name": "迟钝",
+      "description": "攻击速度降低20%，持续3秒。",
+      "runtime_source": "Player._debuffs:sluggish",
+      "debuff": true
+    },
+    "mana_drought": {
+      "name": "枯魔",
+      "description": "MP回复速度降低35%，持续4秒。",
+      "runtime_source": "Player._debuffs:mana_drought",
+      "debuff": true
+    },
+    "bleeding": {
+      "name": "流血",
+      "description": "棘冠苔獾的利爪使伤口持续流血4秒；每秒承受少量伤害，重复受击刷新持续时间。",
+      "runtime_source": "Player._debuffs:bleeding",
+      "debuff": true
+    },
+    "bloodbath": {
+      "name": "浴血",
+      "description": "证明你的荣耀",
+      "runtime_source": "difficulty:4",
+      "debuff": true
+    },
+    "dash_cooldown": {
+      "name": "闪避冷却",
+      "description": "闪避恢复中，倒计时结束后可再次使用。",
+      "runtime_source": "Player._dash_cd",
+      "debuff": false
+    },
+    "cruel": {
+      "name": "残忍",
+      "description": "受到残忍伤害后，本次冒险生命上限永久降低。",
+      "runtime_source": "Player.cruel_hp_loss",
+      "debuff": true
+    },
+    "altar_edge": {
+      "name": "锋芒誓约",
+      "description": "每级攻击力增加4%，本次出征永久，最多三级。",
+      "debuff": false,
+      "runtime_source": "GameState.altar_blessings:edge"
+    },
+    "altar_spring": {
+      "name": "灵泉誓约",
+      "description": "每级MP回复速度增加8%，本次出征永久，最多三级。",
+      "debuff": false,
+      "runtime_source": "GameState.altar_blessings:spring"
+    },
+    "altar_step": {
+      "name": "踏风誓约",
+      "description": "每级基础闪避冷却减少4%，本次出征永久，最多三级。",
+      "debuff": false,
+      "runtime_source": "GameState.altar_blessings:step"
+    },
+    "thorn_step": {
+      "name": "荆根缠步",
+      "description": "活跃荆根使地面单位减速20%，持续2秒。同类减速取最强值。",
+      "debuff": true,
+      "runtime_source": "PlayerDebuffs:thorn_step"
+    },
+    "wind_chime": {
+      "name": "风铃回响",
+      "description": "MP回复速度增加15%，持续4秒；触发冷却8秒，原地停留不刷新。",
+      "debuff": false,
+      "runtime_source": "GameState.temp_buffs:room_windbridge"
+    },
+    "wind_pierce": {
+      "name": "贯风箭势",
+      "description": "追风箭强化：5秒内射出的普通攻击可穿透任意数量敌人，仍受实体障碍与射程限制。",
+      "runtime_source": "IlyuaRuntime.wind_pierce_until",
+      "debuff": false
+    },
+    "holy_full": {
+      "name": "祈光充盈",
+      "description": "下一个小技能触发圣辉强化；大招不消耗祈光。",
+      "debuff": false
+    },
+    "holy_feathers": {
+      "name": "圣羽巡礼",
+      "description": "圣羽环绕并自动追击有效敌人，消耗后重凝。",
+      "debuff": false
+    },
+    "holy_cloud": {
+      "name": "圣云庇佑",
+      "description": "护盾、有限净弹与承伤反击；同类护盾取较强值。",
+      "debuff": false
+    },
+    "holy_dew": {
+      "name": "晨露庇护",
+      "description": "自身神圣法阵中的有限战斗续航。",
+      "debuff": false
+    },
+    "holy_attack": {
+      "name": "流光回赠",
+      "description": "下一次普攻追加追踪光羽。",
+      "debuff": false
+    },
+    "holy_judgment": {
+      "name": "圣辉裁决",
+      "description": "预告光柱持续降临，直击积累裁决刻印。",
+      "debuff": false
+    },
+    "holy_sanctuary": {
+      "name": "永昼圣域",
+      "description": "随身圣域持续净化敌人，并有限清除普通弹幕。",
+      "debuff": false
+    },
+    "holy_grace": {
+      "name": "护身圣环",
+      "description": "一次普通弹幕抵消或一次攻击减伤；真实伤害不受此保护。",
+      "debuff": false
+    },
+    "holy_afterlight": {
+      "name": "余辉护佑",
+      "description": "圣光消散后留下短暂护盾。",
+      "debuff": false
+    },
+    "holy_hymn": {
+      "name": "辉耀交响",
+      "description": "下一次小技能获得额外神圣余辉。",
+      "debuff": false
+    },
+    "holy_devout": {
+      "name": "虔诚微光",
+      "description": "下一次主普攻追加追踪微光。",
+      "debuff": false
+    },
+    "holy_prayer": {
+      "name": "祈光",
+      "description": "通过有效直击或护盾实际承伤积累，充盈后强化小技能。",
+      "debuff": false
+    },
+    "half_star": {
+      "name": "航星引路",
+      "description": "下一次主普攻回复MP并追加伤害，命中后消耗。"
+    },
+    "leaf_page": {
+      "name": "叶辉合奏",
+      "description": "下一次小技能直击引发叶辉，命中后消耗。"
+    },
+    "cloud_runes": {
+      "name": "云冕印记",
+      "description": "三枚云冕印记强化下一次小技能；大招不消耗。"
+    },
+    "cloud_orbs": {
+      "name": "永昼灵珠",
+      "description": "三枚灵珠自动追击附近敌人，发射后逐枚消耗。"
+    },
+    "moon_oath": {
+      "name": "月叶猎誓",
+      "description": "闪避后四次主普攻有效命中获得额外追击，完成后回复MP和闪避冷却。"
+    },
+    "heal_seal": {
+      "name": "封疗",
+      "description": "受到的治疗降低40%；不会进一步修改生命上限。",
+      "debuff": true
+    },
+    "mana_leech": {
+      "name": "噬魔",
+      "description": "每秒失去2MP，魔法不会低于零。",
+      "debuff": true
+    },
+    "spell_delay": {
+      "name": "迟咒",
+      "description": "新施放小技能冷却增加15%；已在冷却的技能和大招不受影响。",
+      "debuff": true
+    },
+    "spring_charges": {
+      "name": "春鸣蓄势",
+      "description": "四次主普攻首次有效命中蓄满春鸣；基础闪避结束时释放风环。"
+    },
+    "spring_echo": {
+      "name": "返枝回响",
+      "description": "接下来三次主普攻首次有效命中追加风刃与邻敌追击，用完回复3MP。"
+    },
+    "storm_conductor": {
+      "name": "雷律蓄势",
+      "description": "最大生命+50、攻击+10%、MP回复速度+12%。每次普攻首次有效命中积累一拍；相邻命中间隔不超过4秒。第四拍在目标周围72像素引发攻击力55%的雷律波，冷却1.5秒。冷却期间不积拍。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "counterbeat": {
+      "name": "逆拍回击",
+      "description": "攻击+10%、MP回复速度+8%。成功施放小技能后，4秒内下一次普攻首次有效命中追加攻击力22%的装备伤害；重复施放刷新，不储存次数。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "mana_reservoir": {
+      "name": "澜晶储能",
+      "description": "最大生命+50、攻击+10%、MP回复速度+12%。成功施放小技能后，若剩余MP不少于50%，获得1层澜晶，最多3层，持续8秒。普攻首次有效命中消耗1层，追加攻击力30%的装备伤害并回复2MP，触发间隔0.8秒。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "orbit_guard": {
+      "name": "环星应答",
+      "description": "最大生命+30、MP回复速度+8%。角色144像素内的友军有效直击累计4拍，获得最大生命5%的护盾，持续4秒、冷却5秒。相邻拍间隔不超过4秒；同一时刻的范围攻击与齐射每0.2秒至多计一拍。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "cadence_prism": {
+      "name": "交替协鸣",
+      "description": "攻击+20%、攻击速度+8%、MP回复速度+12%。普攻首次有效命中与主动技能直击交替发生时积累协鸣。首次命中确定声部，每次换声部积累1层；同声部连续命中不增加或刷新。3层后在目标周围72像素爆发攻击力65%的交响波，冷却2秒。每次有效换声部将宽限刷新为4秒。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "copper_metre": {
+      "name": "铜律节拍",
+      "description": "普攻首次有效命中累计4拍后回复2MP，并使该目标减速20%、持续2秒，首领减半；相邻拍间隔不超过4秒，触发冷却1秒。 同名遗物持有1/2/3件时，数值效果为100%/150%/175%；次数、层数、范围与冷却不变。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "dew_battery": {
+      "name": "露华回流",
+      "description": "成功施放小技能后，若剩余MP不少于50%，4秒内下一次普攻首次有效命中回复3MP，冷却3秒。强化不储存。 同名遗物持有1/2/3件时，数值效果为100%/150%/175%；次数、层数、范围与冷却不变。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "sentinel_thread": {
+      "name": "守望传承",
+      "description": "自身护盾因承伤耗尽后，4秒内下一次普攻首次有效命中追加攻击力18%的装备伤害，并为144像素内最近一名友军提供其最大生命8%的护盾、持续4秒。无友军时仍造成追加伤害，触发冷却4秒。 同名遗物持有1/2/3件时，数值效果为100%/150%/175%；次数、层数、范围与冷却不变。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    },
+    "wayfarer_score": {
+      "name": "旅伴合奏",
+      "description": "角色144像素内友军的有效直击累计4拍后回复2MP，冷却2秒；相邻拍间隔不超过4秒，同一时刻的范围攻击与齐射每0.2秒至多计一拍。 同名遗物持有1/2/3件时，数值效果为100%/150%/175%；次数、层数、范围与冷却不变。",
+      "runtime_source": "EquipmentMechanics.cadence",
+      "debuff": false
+    }
+  },
+  "shield_sources": [
+    "烬火护衣",
+    "夜幕庇护",
+    "燕返披风",
+    "守誓胸针",
+    "送别法袍",
+    "余辉纸签",
+    "森灵意志低生命护盾"
+  ],
+  "excluded": [
+    "敌方烬印、星痕、猎手印记、寄生、森之印记",
+    "友军灯印、夜行鼓舞、共鸣攻速、召唤持续时间",
+    "技能/装备/天赋冷却",
+    "永久属性与装备光环",
+    "没有到期时间的折光充能、击杀祝福、下一自然技能祝福",
+    "营地/验证永久无敌",
+    "仅作用于地面或敌人的领域、诱饵寿命"
+  ],
+  "timing": "显示直接读取运行时剩余时间；风之律动按当前移动状态估算不再攻击时的完全衰减时间，不使用3600秒占位属性计时。"
+}

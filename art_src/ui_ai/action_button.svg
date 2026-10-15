@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 160" width="100%" height="100%">
+  <!-- 小动作按钮底稿（购买/装备/使用这类），最终显示约 160x50 -->
+  <rect x="0" y="0" width="512" height="160" rx="28" fill="#1d1409"/>
+  <rect x="12" y="12" width="488" height="136" rx="22" fill="#d8ae4a"/>
+  <rect x="26" y="26" width="460" height="108" rx="16" fill="#a8791a"/>
+  <rect x="36" y="36" width="440" height="88" rx="12" fill="#f5d98a"/>
+  <rect x="46" y="46" width="420" height="68" rx="8" fill="#e9bd55"/>
+</svg>

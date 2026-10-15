@@ -1,0 +1,154 @@
+{
+	"base_ground": "floor:grass",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "forest_clearing",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "晨光林间空地",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				5.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				5.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 6,
+	"room_bounds_override": [
+		19.0,
+		0.0,
+		792.0,
+		440.0
+	],
+	"room_kinds": [
+		"normal"
+	],
+	"scene_art": "forest_clearing_v03",
+	"scene_collision_overrides": {
+		"objects": {
+			"moss_boulder": [
+				[
+					-41.5,
+					-23.9
+				],
+				[
+					-46.1,
+					-45.8
+				],
+				[
+					-1.2,
+					-60.1
+				],
+				[
+					28.9,
+					-59.1
+				],
+				[
+					40.2,
+					-40.2
+				],
+				[
+					25.4,
+					-27.4
+				],
+				[
+					-2.2,
+					-22.3
+				]
+			],
+			"root_island": [
+				[
+					-75.4,
+					-84.0
+				],
+				[
+					-55.5,
+					-114.1
+				],
+				[
+					17.4,
+					-126.3
+				],
+				[
+					64.9,
+					-94.2
+				],
+				[
+					101.6,
+					-102.4
+				],
+				[
+					117.4,
+					-84.5
+				],
+				[
+					56.2,
+					-58.5
+				],
+				[
+					35.8,
+					-0.8
+				],
+				[
+					0.6,
+					-31.9
+				],
+				[
+					-34.6,
+					-33.0
+				],
+				[
+					-62.1,
+					-49.8
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"tags": [],
+	"theme": "forest"
+}

@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://assets/map_editor/scenery/camp_shop.tscn" id="1_7jir6"]
+[ext_resource type="Texture2D" path="res://assets/camp_refine/shop.png" id="2_4fv80"]
+
+[sub_resource type="AtlasTexture" id="crop"]
+atlas = ExtResource("2_4fv80")
+region = Rect2(23, 15, 1502, 982)
+
+[node name="星灯商铺" type="Node2D" unique_id=1602156561]
+
+[node name="CampShop" type="Sprite2D" parent="." unique_id=2014559366 instance=ExtResource("1_7jir6")]
+z_index = -5
+texture_filter = 2
+position = Vector2(0, 18)
+scale = Vector2(0.3095872, 0.3095872)
+texture = SubResource("crop")
+offset = Vector2(0, -491)

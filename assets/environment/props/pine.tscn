@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://src/environment/foliage_weather.gdshader" id="1_vek54"]
+[ext_resource type="Texture2D" path="res://assets/environment/pine.png" id="2_i7ki1"]
+[ext_resource type="Script" path="res://src/environment/environment_prop.gd" id="3_qidkb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ie1qm"]
+shader = ExtResource("1_vek54")
+shader_parameter/wetness = null
+shader_parameter/snow_amount = null
+
+[node name="Pine" type="Sprite2D" unique_id=1721997544]
+z_index = -5
+texture_filter = 1
+material = SubResource("ShaderMaterial_ie1qm")
+texture = ExtResource("2_i7ki1")
+offset = Vector2(0, -120)
+script = ExtResource("3_qidkb")
+wind_response = true
+weather_response = true

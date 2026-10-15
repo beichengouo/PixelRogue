@@ -1,0 +1,606 @@
+{
+  "version": 1,
+  "id": "event_waystation_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    6
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        710,
+        0,
+        116,
+        115
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        714,
+        895,
+        110,
+        90
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        46,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1408,
+        428,
+        80,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "event_relic",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "event_relic.png",
+      "position_px": [
+        256.096,
+        105.335
+      ],
+      "source_foot_px": [
+        530,
+        325
+      ],
+      "source_rect_px": [
+        376,
+        158,
+        309,
+        167
+      ],
+      "render_width_px": 205.01,
+      "collision_polygon_px": [
+        [
+          -88.154,
+          -31.106
+        ],
+        [
+          88.154,
+          -31.106
+        ],
+        [
+          88.154,
+          0
+        ],
+        [
+          -88.154,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "road_sign",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "road_sign.png",
+      "position_px": [
+        139.99,
+        27.571
+      ],
+      "source_foot_px": [
+        355,
+        215
+      ],
+      "source_rect_px": [
+        294,
+        116,
+        122,
+        99
+      ],
+      "render_width_px": 80.942,
+      "collision_polygon_px": [
+        [
+          -34.805,
+          -13.298
+        ],
+        [
+          34.805,
+          -13.298
+        ],
+        [
+          34.805,
+          0
+        ],
+        [
+          -34.805,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "traveler_trunk",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "traveler_trunk.png",
+      "position_px": [
+        693.981,
+        48.779
+      ],
+      "source_foot_px": [
+        1190,
+        245
+      ],
+      "source_rect_px": [
+        1143,
+        169,
+        94,
+        76
+      ],
+      "render_width_px": 62.365,
+      "collision_polygon_px": [
+        [
+          -26.817,
+          -10.208
+        ],
+        [
+          26.817,
+          -10.208
+        ],
+        [
+          26.817,
+          0
+        ],
+        [
+          -26.817,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        40.471,
+        101.801
+      ],
+      "source_foot_px": [
+        205,
+        320
+      ],
+      "source_rect_px": [
+        179,
+        229,
+        52,
+        91
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          0
+        ],
+        [
+          -14.835,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        786.865,
+        101.801
+      ],
+      "source_foot_px": [
+        1330,
+        320
+      ],
+      "source_rect_px": [
+        1304,
+        229,
+        52,
+        91
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          0
+        ],
+        [
+          -14.835,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        40.471,
+        448.205
+      ],
+      "source_foot_px": [
+        205,
+        810
+      ],
+      "source_rect_px": [
+        178,
+        713,
+        55,
+        97
+      ],
+      "render_width_px": 36.49,
+      "collision_polygon_px": [
+        [
+          -15.691,
+          -13.029
+        ],
+        [
+          15.691,
+          -13.029
+        ],
+        [
+          15.691,
+          0
+        ],
+        [
+          -15.691,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        786.865,
+        448.205
+      ],
+      "source_foot_px": [
+        1330,
+        810
+      ],
+      "source_rect_px": [
+        1302,
+        714,
+        55,
+        96
+      ],
+      "render_width_px": 36.49,
+      "collision_polygon_px": [
+        [
+          -15.691,
+          -12.895
+        ],
+        [
+          15.691,
+          -12.895
+        ],
+        [
+          15.691,
+          0
+        ],
+        [
+          -15.691,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "lamp",
+        "color": "ffd294",
+        "radius": 125,
+        "strength": 0.55,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:event_waystation_v01:event_relic",
+      "name": "落叶旅人驿 · event_relic",
+      "path": "res://assets/room_illustrated/event_waystation_v01/event_relic.png",
+      "layer": "lights",
+      "model": "event_relic",
+      "collision": "light",
+      "size": [
+        6,
+        1
+      ],
+      "render_width_px": 205.01,
+      "collision_polygon_px": [
+        [
+          -88.154,
+          -31.106
+        ],
+        [
+          88.154,
+          -31.106
+        ],
+        [
+          88.154,
+          0
+        ],
+        [
+          -88.154,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:event_waystation_v01:road_sign",
+      "name": "落叶旅人驿 · road_sign",
+      "path": "res://assets/room_illustrated/event_waystation_v01/road_sign.png",
+      "layer": "buildings",
+      "model": "road_sign",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 80.942,
+      "collision_polygon_px": [
+        [
+          -34.805,
+          -13.298
+        ],
+        [
+          34.805,
+          -13.298
+        ],
+        [
+          34.805,
+          0
+        ],
+        [
+          -34.805,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:event_waystation_v01:traveler_trunk",
+      "name": "落叶旅人驿 · traveler_trunk",
+      "path": "res://assets/room_illustrated/event_waystation_v01/traveler_trunk.png",
+      "layer": "buildings",
+      "model": "traveler_trunk",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 62.365,
+      "collision_polygon_px": [
+        [
+          -26.817,
+          -10.208
+        ],
+        [
+          26.817,
+          -10.208
+        ],
+        [
+          26.817,
+          0
+        ],
+        [
+          -26.817,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:event_waystation_v01:lamp_nw",
+      "name": "落叶旅人驿 · lamp_nw",
+      "path": "res://assets/room_illustrated/event_waystation_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          0
+        ],
+        [
+          -14.835,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:event_waystation_v01:lamp_ne",
+      "name": "落叶旅人驿 · lamp_ne",
+      "path": "res://assets/room_illustrated/event_waystation_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 34.5,
+      "collision_polygon_px": [
+        [
+          -14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          -12.223
+        ],
+        [
+          14.835,
+          0
+        ],
+        [
+          -14.835,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:event_waystation_v01:lamp_sw",
+      "name": "落叶旅人驿 · lamp_sw",
+      "path": "res://assets/room_illustrated/event_waystation_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 36.49,
+      "collision_polygon_px": [
+        [
+          -15.691,
+          -13.029
+        ],
+        [
+          15.691,
+          -13.029
+        ],
+        [
+          15.691,
+          0
+        ],
+        [
+          -15.691,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:event_waystation_v01:lamp_se",
+      "name": "落叶旅人驿 · lamp_se",
+      "path": "res://assets/room_illustrated/event_waystation_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 36.49,
+      "collision_polygon_px": [
+        [
+          -15.691,
+          -12.895
+        ],
+        [
+          15.691,
+          -12.895
+        ],
+        [
+          15.691,
+          0
+        ],
+        [
+          -15.691,
+          0
+        ]
+      ]
+    }
+  ],
+  "effects": {},
+  "surface_water_polygons_px": []
+}

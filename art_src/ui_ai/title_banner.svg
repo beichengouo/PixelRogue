@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="100%" height="100%">
+  <!-- 标题缎带底稿：扁平形状，交给模型只负责"材质"。中文标题不在这里，
+       而是排版阶段用游戏字体压上去 —— AI 画汉字必糊。 -->
+  <defs>
+    <linearGradient id="tb_body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffdf6"/>
+      <stop offset="0.45" stop-color="#fbf0d6"/>
+      <stop offset="1" stop-color="#efdfb8"/>
+    </linearGradient>
+    <linearGradient id="tb_gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0d68e"/>
+      <stop offset="1" stop-color="#c19a3c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 缎带主体：左右两端收成尖角 -->
+  <path d="M150 132 H1130 L1180 208 L1130 284 H150 L200 208 Z" fill="url(#tb_gold)"/>
+  <path d="M170 150 H1112 L1152 208 L1112 266 H170 L210 208 Z" fill="url(#tb_body)"/>
+  <path d="M196 168 H1092 L1126 208 L1092 248 H196 L230 208 Z" fill="none"
+        stroke="#dcb768" stroke-width="4"/>
+
+  <!-- 顶部徽记：菱形宝石 + 两片羽翼 -->
+  <path d="M540 96 q 40 -46 100 -46 q 60 0 100 46 q -46 -22 -100 -22 q -54 0 -100 22 z"
+        fill="url(#tb_gold)"/>
+  <path d="M600 60 L640 22 L680 60 L640 98 Z" fill="#ffe9a8" stroke="#c19a3c" stroke-width="5"/>
+  <path d="M640 40 L652 60 L640 80 L628 60 Z" fill="#ffd45e"/>
+
+  <!-- 左右两端的卷草花饰 -->
+  <g fill="none" stroke="#c9a45c" stroke-width="6" stroke-linecap="round">
+    <path d="M156 208 q -34 -30 -6 -58 q 22 -22 40 2"/>
+    <path d="M156 208 q -34 30 -6 58 q 22 22 40 -2"/>
+    <path d="M1124 208 q 34 -30 6 -58 q -22 -22 -40 2"/>
+    <path d="M1124 208 q 34 30 6 58 q -22 22 -40 -2"/>
+  </g>
+</svg>

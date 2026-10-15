@@ -1,0 +1,667 @@
+{
+  "version": 1,
+  "id": "reward_treasury_v01",
+  "canvas": [
+    1536,
+    1024
+  ],
+  "floor_rect_px": [
+    144,
+    176,
+    1248,
+    662
+  ],
+  "gate_origin": [
+    11,
+    5
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        700,
+        17,
+        132,
+        132
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        1413,
+        403,
+        83,
+        155
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        708,
+        855,
+        120,
+        125
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        40,
+        403,
+        83,
+        155
+      ],
+      "leaf_only": true
+    }
+  },
+  "objects": [
+    {
+      "id": "cabinet_nw",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "cabinet_nw.png",
+      "position_px": [
+        94.875,
+        33.934
+      ],
+      "source_foot_px": [
+        287,
+        224
+      ],
+      "source_rect_px": [
+        225,
+        60,
+        124,
+        164
+      ],
+      "render_width_px": 82.269,
+      "collision_polygon_px": [
+        [
+          -35.376,
+          -20.673
+        ],
+        [
+          35.376,
+          -20.673
+        ],
+        [
+          35.376,
+          0
+        ],
+        [
+          -35.376,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "cabinet_ne",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "cabinet_ne.png",
+      "position_px": [
+        732.462,
+        33.934
+      ],
+      "source_foot_px": [
+        1248,
+        224
+      ],
+      "source_rect_px": [
+        1186,
+        60,
+        125,
+        164
+      ],
+      "render_width_px": 82.933,
+      "collision_polygon_px": [
+        [
+          -35.661,
+          -20.673
+        ],
+        [
+          35.661,
+          -20.673
+        ],
+        [
+          35.661,
+          0
+        ],
+        [
+          -35.661,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "statue_sw",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "statue_sw.png",
+      "position_px": [
+        63.692,
+        456.689
+      ],
+      "source_foot_px": [
+        240,
+        822
+      ],
+      "source_rect_px": [
+        202,
+        628,
+        76,
+        194
+      ],
+      "render_width_px": 50.423,
+      "collision_polygon_px": [
+        [
+          -21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          0
+        ],
+        [
+          -21.682,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "statue_se",
+      "kind": "decor",
+      "layer": "buildings",
+      "texture": "statue_se.png",
+      "position_px": [
+        764.308,
+        456.689
+      ],
+      "source_foot_px": [
+        1296,
+        822
+      ],
+      "source_rect_px": [
+        1258,
+        628,
+        76,
+        194
+      ],
+      "render_width_px": 50.423,
+      "collision_polygon_px": [
+        [
+          -21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          0
+        ],
+        [
+          -21.682,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "lamp_nw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_nw.png",
+      "position_px": [
+        13.933,
+        38.882
+      ],
+      "source_foot_px": [
+        165,
+        231
+      ],
+      "source_rect_px": [
+        140,
+        117,
+        51,
+        114
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8cdded",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_ne",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_ne.png",
+      "position_px": [
+        814.067,
+        38.882
+      ],
+      "source_foot_px": [
+        1371,
+        231
+      ],
+      "source_rect_px": [
+        1346,
+        117,
+        51,
+        114
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8cdded",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_sw",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_sw.png",
+      "position_px": [
+        10.615,
+        458.103
+      ],
+      "source_foot_px": [
+        160,
+        824
+      ],
+      "source_rect_px": [
+        130,
+        685,
+        59,
+        139
+      ],
+      "render_width_px": 39.144,
+      "collision_polygon_px": [
+        [
+          -16.832,
+          -17.522
+        ],
+        [
+          16.832,
+          -17.522
+        ],
+        [
+          16.832,
+          0
+        ],
+        [
+          -16.832,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8cdded",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": false
+      }
+    },
+    {
+      "id": "lamp_se",
+      "kind": "light",
+      "layer": "lights",
+      "texture": "lamp_se.png",
+      "position_px": [
+        817.385,
+        458.103
+      ],
+      "source_foot_px": [
+        1376,
+        824
+      ],
+      "source_rect_px": [
+        1347,
+        700,
+        58,
+        124
+      ],
+      "render_width_px": 38.481,
+      "collision_polygon_px": [
+        [
+          -16.547,
+          -15.631
+        ],
+        [
+          16.547,
+          -15.631
+        ],
+        [
+          16.547,
+          0
+        ],
+        [
+          -16.547,
+          0
+        ]
+      ],
+      "light": {
+        "kind": "crystal",
+        "color": "8cdded",
+        "radius": 130,
+        "strength": 0.65,
+        "always_on": true,
+        "flicker": false
+      }
+    }
+  ],
+  "pieces": [
+    {
+      "id": "scene:reward_treasury_v01:cabinet_nw",
+      "name": "星藏陈列柜西",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/cabinet_nw.png",
+      "layer": "buildings",
+      "model": "cabinet_nw",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 82.269,
+      "collision_polygon_px": [
+        [
+          -35.376,
+          -20.673
+        ],
+        [
+          35.376,
+          -20.673
+        ],
+        [
+          35.376,
+          0
+        ],
+        [
+          -35.376,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:cabinet_ne",
+      "name": "星藏陈列柜东",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/cabinet_ne.png",
+      "layer": "buildings",
+      "model": "cabinet_ne",
+      "collision": "solid",
+      "size": [
+        2,
+        1
+      ],
+      "render_width_px": 82.933,
+      "collision_polygon_px": [
+        [
+          -35.661,
+          -20.673
+        ],
+        [
+          35.661,
+          -20.673
+        ],
+        [
+          35.661,
+          0
+        ],
+        [
+          -35.661,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:statue_sw",
+      "name": "星翼塑像西",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/statue_sw.png",
+      "layer": "buildings",
+      "model": "statue_sw",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 50.423,
+      "collision_polygon_px": [
+        [
+          -21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          0
+        ],
+        [
+          -21.682,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:statue_se",
+      "name": "星翼塑像东",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/statue_se.png",
+      "layer": "buildings",
+      "model": "statue_se",
+      "collision": "solid",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 50.423,
+      "collision_polygon_px": [
+        [
+          -21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          -24.455
+        ],
+        [
+          21.682,
+          0
+        ],
+        [
+          -21.682,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:lamp_nw",
+      "name": "西北晶灯",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/lamp_nw.png",
+      "layer": "lights",
+      "model": "lamp_nw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:lamp_ne",
+      "name": "东北晶灯",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/lamp_ne.png",
+      "layer": "lights",
+      "model": "lamp_ne",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 33.837,
+      "collision_polygon_px": [
+        [
+          -14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          -14.371
+        ],
+        [
+          14.55,
+          0
+        ],
+        [
+          -14.55,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:lamp_sw",
+      "name": "西南晶灯",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/lamp_sw.png",
+      "layer": "lights",
+      "model": "lamp_sw",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 39.144,
+      "collision_polygon_px": [
+        [
+          -16.832,
+          -17.522
+        ],
+        [
+          16.832,
+          -17.522
+        ],
+        [
+          16.832,
+          0
+        ],
+        [
+          -16.832,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "scene:reward_treasury_v01:lamp_se",
+      "name": "东南晶灯",
+      "path": "res://assets/room_illustrated/reward_treasury_v01/lamp_se.png",
+      "layer": "lights",
+      "model": "lamp_se",
+      "collision": "light",
+      "size": [
+        1,
+        1
+      ],
+      "render_width_px": 38.481,
+      "collision_polygon_px": [
+        [
+          -16.547,
+          -15.631
+        ],
+        [
+          16.547,
+          -15.631
+        ],
+        [
+          16.547,
+          0
+        ],
+        [
+          -16.547,
+          0
+        ]
+      ]
+    }
+  ],
+  "water_polygons_px": []
+}

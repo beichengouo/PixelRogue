@@ -1,0 +1,70 @@
+{
+  "format": "pixelrogue.room",
+  "schema_version": 1,
+  "revision": 1,
+  "id": "altar_moonwell",
+  "name": "月泉誓约庭",
+  "theme": "forest",
+  "room_kinds": [
+    "altar"
+  ],
+  "selection_weight": 1,
+  "scene_art": "altar_moonwell_v01",
+  "base_ground": "floor:grass",
+  "grid": {
+    "size": [
+      23,
+      13
+    ],
+    "cell_px": 36
+  },
+  "layers": {
+    "ground": [],
+    "water": [],
+    "obstacles": [],
+    "decor": [],
+    "entities": [],
+    "markers": []
+  },
+  "ports": [
+    {
+      "id": "north",
+      "side": "north",
+      "at": [
+        11,
+        0
+      ],
+      "approach_width": 3
+    },
+    {
+      "id": "east",
+      "side": "east",
+      "at": [
+        22,
+        6
+      ],
+      "approach_width": 3
+    },
+    {
+      "id": "south",
+      "side": "south",
+      "at": [
+        11,
+        12
+      ],
+      "approach_width": 3
+    },
+    {
+      "id": "west",
+      "side": "west",
+      "at": [
+        0,
+        6
+      ],
+      "approach_width": 3
+    }
+  ],
+  "tags": [
+    "altar"
+  ]
+}

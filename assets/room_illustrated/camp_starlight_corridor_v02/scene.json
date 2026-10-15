@@ -1,0 +1,681 @@
+{
+  "version": 1,
+  "id": "camp_starlight_corridor_v02",
+  "canvas": [
+    3840,
+    2560
+  ],
+  "floor_rect_px": [
+    250.0,
+    280.0,
+    3340.0,
+    1840.0
+  ],
+  "gate_origin": [
+    23,
+    13
+  ],
+  "planes": [
+    {
+      "path": "background.png",
+      "layer": "background"
+    },
+    {
+      "path": "paths.png",
+      "layer": "paths"
+    },
+    {
+      "path": "water.png",
+      "layer": "water_bridge"
+    },
+    {
+      "path": "walls.png",
+      "layer": "walls"
+    }
+  ],
+  "gates": {
+    "north": {
+      "path": "door_north.png",
+      "rect_px": [
+        1832.5,
+        77.5,
+        177.5,
+        162.5
+      ],
+      "leaf_only": true
+    },
+    "south": {
+      "path": "door_south.png",
+      "rect_px": [
+        1832.5,
+        2187.5,
+        177.5,
+        162.5
+      ],
+      "leaf_only": true
+    },
+    "west": {
+      "path": "door_west.png",
+      "rect_px": [
+        100.0,
+        1087.5,
+        142.5,
+        195.0
+      ],
+      "leaf_only": true
+    },
+    "east": {
+      "path": "door_east.png",
+      "rect_px": [
+        3600.0,
+        1087.5,
+        142.5,
+        195.0
+      ],
+      "leaf_only": true
+    }
+  },
+  "pieces": [],
+  "objects": [
+    {
+      "id": "shop_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        218.156,
+        265.793
+      ],
+      "texture": "shop_roof.png",
+      "render_width_px": 265.257,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "shop",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        218.156,
+        265.793
+      ],
+      "texture": "shop_base.png",
+      "render_width_px": 265.257,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -103.45,
+          -104.283
+        ],
+        [
+          103.45,
+          -104.283
+        ],
+        [
+          103.45,
+          -12
+        ],
+        [
+          -103.45,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "shop_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        218.156,
+        210.523
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "#ffcc83",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "shop"
+    },
+    {
+      "id": "warehouse_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        594.97,
+        250.533
+      ],
+      "texture": "warehouse_roof.png",
+      "render_width_px": 339.629,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "warehouse",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        594.97,
+        250.533
+      ],
+      "texture": "warehouse_base.png",
+      "render_width_px": 339.629,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -132.455,
+          -132.261
+        ],
+        [
+          132.455,
+          -132.261
+        ],
+        [
+          132.455,
+          -12
+        ],
+        [
+          -132.455,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "warehouse_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        594.97,
+        180.435
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "#ffe4aa",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "warehouse"
+    },
+    {
+      "id": "contracts_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        1264.311,
+        302.674
+      ],
+      "texture": "contracts_roof.png",
+      "render_width_px": 401.605,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "contracts",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        1264.311,
+        302.674
+      ],
+      "texture": "contracts_base.png",
+      "render_width_px": 401.605,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -156.626,
+          -160.239
+        ],
+        [
+          156.626,
+          -160.239
+        ],
+        [
+          156.626,
+          -12
+        ],
+        [
+          -156.626,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "contracts_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        1264.311,
+        217.747
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "lamp",
+        "color": "#ffd99c",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "contracts"
+    },
+    {
+      "id": "iris_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        220.635,
+        512.511
+      ],
+      "texture": "iris_roof.png",
+      "render_width_px": 224.353,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "iris",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        220.635,
+        512.511
+      ],
+      "texture": "iris_base.png",
+      "render_width_px": 224.353,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -87.498,
+          -103.011
+        ],
+        [
+          87.498,
+          -103.011
+        ],
+        [
+          87.498,
+          -12
+        ],
+        [
+          -87.498,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "iris_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        220.635,
+        457.915
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "#8ee7ff",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "iris"
+    },
+    {
+      "id": "result_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        555.305,
+        470.543
+      ],
+      "texture": "result_roof.png",
+      "render_width_px": 193.365,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "result",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        555.305,
+        470.543
+      ],
+      "texture": "result_base.png",
+      "render_width_px": 193.365,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -75.412,
+          -81.391
+        ],
+        [
+          75.412,
+          -81.391
+        ],
+        [
+          75.412,
+          -12
+        ],
+        [
+          -75.412,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "result_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        555.305,
+        427.406
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "#99ceff",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "result"
+    },
+    {
+      "id": "relations_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        328.473,
+        862.239
+      ],
+      "texture": "relations_roof.png",
+      "render_width_px": 477.216,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "relations",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        328.473,
+        862.239
+      ],
+      "texture": "relations_base.png",
+      "render_width_px": 477.216,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -186.114,
+          -167.87
+        ],
+        [
+          186.114,
+          -167.87
+        ],
+        [
+          186.114,
+          -12
+        ],
+        [
+          -186.114,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "relations_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        328.473,
+        773.268
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "fire",
+        "color": "#ffb27a",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": true,
+        "dispels_fog": true
+      },
+      "building_id": "relations"
+    },
+    {
+      "id": "prepare_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        970.545,
+        830.446
+      ],
+      "texture": "prepare_roof.png",
+      "render_width_px": 257.82,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "prepare",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        970.545,
+        830.446
+      ],
+      "texture": "prepare_base.png",
+      "render_width_px": 257.82,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -100.55,
+          -96.652
+        ],
+        [
+          100.55,
+          -96.652
+        ],
+        [
+          100.55,
+          -12
+        ],
+        [
+          -100.55,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "prepare_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        970.545,
+        779.22
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "#c4a3ff",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "prepare"
+    },
+    {
+      "id": "training_roof",
+      "kind": "decor",
+      "layer": "roofs",
+      "position_px": [
+        1299.018,
+        771.946
+      ],
+      "texture": "training_roof.png",
+      "render_width_px": 356.982,
+      "collision_polygon_px": []
+    },
+    {
+      "id": "training",
+      "kind": "decor",
+      "layer": "buildings",
+      "position_px": [
+        1299.018,
+        771.946
+      ],
+      "texture": "training_base.png",
+      "render_width_px": 356.982,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -139.223,
+          -119.543
+        ],
+        [
+          139.223,
+          -119.543
+        ],
+        [
+          139.223,
+          -12
+        ],
+        [
+          -139.223,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "training_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        1299.018,
+        708.588
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "plant",
+        "color": "#b2df9b",
+        "radius": 230,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "training"
+    },
+    {
+      "id": "fountain",
+      "kind": "decor",
+      "layer": "decor",
+      "position_px": [
+        830.479,
+        565.924
+      ],
+      "texture": "fountain_base.png",
+      "render_width_px": 224.353,
+      "rectangular_collision": true,
+      "collision_polygon_px": [
+        [
+          -87.498,
+          -90.293
+        ],
+        [
+          87.498,
+          -90.293
+        ],
+        [
+          87.498,
+          -12
+        ],
+        [
+          -87.498,
+          -12
+        ]
+      ]
+    },
+    {
+      "id": "fountain_light",
+      "kind": "light",
+      "layer": "lights",
+      "position_px": [
+        830.479,
+        518.069
+      ],
+      "texture": "light_anchor.png",
+      "render_width_px": 1,
+      "collision_polygon_px": [],
+      "light": {
+        "kind": "crystal",
+        "color": "#86d5ff",
+        "radius": 160,
+        "strength": 0.83,
+        "always_on": true,
+        "flicker": false,
+        "dispels_fog": true
+      },
+      "building_id": "fountain"
+    }
+  ],
+  "surface_water_polygons_px": [
+    [
+      [
+        1508.497,
+        48.326
+      ],
+      [
+        1576.671,
+        61.043
+      ],
+      [
+        1623.772,
+        108.098
+      ],
+      [
+        1611.377,
+        174.228
+      ],
+      [
+        1554.359,
+        206.022
+      ],
+      [
+        1479.988,
+        183.13
+      ],
+      [
+        1453.958,
+        129.717
+      ],
+      [
+        1463.874,
+        77.576
+      ]
+    ]
+  ]
+}
