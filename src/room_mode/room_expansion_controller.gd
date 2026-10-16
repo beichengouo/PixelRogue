@@ -105,8 +105,11 @@ func open_event()->void:
 func claim_event(index:int)->bool:
 	if not event_pending() or index<0 or index>=state.offers.size():return false
 	var before:=state.duplicate(true);state.pending.append(state.offers[index].loot.duplicate(true));state.event_resolved=true;state.chosen=index;record.rewarded=true;main.level.doors_open=true
+	var evidence:=AchievementTracker.stage("event")
 	if not _save_transaction():
+		AchievementTracker.finish_stage(evidence,false)
 		record.delta.expansion=before;state=record.delta.expansion;record.rewarded=false;main.level.doors_open=false;return false
+	AchievementTracker.finish_stage(evidence,true)
 	if is_instance_valid(panel):panel.close()
 	return true
 func _unhandled_input(event:InputEvent)->void:

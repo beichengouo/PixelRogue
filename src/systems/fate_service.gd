@@ -45,7 +45,9 @@ static func claim(room:Dictionary,id:String,reverse:bool,replace_id:="")->bool:
 	var before:=GameState.fate.duplicate(true);var delta_before:Dictionary=room.delta.duplicate(true)
 	if GameState.fate.cards.size()>=2:_remove(replace_id)
 	GameState.fate.cards.append({"id":id,"reverse":reverse});reading.done=true
-	return _finish(room,before,delta_before)
+	var evidence:=AchievementTracker.stage("fate_claim",{"id":id,"reverse":reverse,"replace":before.cards.size()>=2})
+	var success:=_finish(room,before,delta_before);AchievementTracker.finish_stage(evidence,success)
+	return success
 static func _remove(id:String)->void:
 	for i in range(GameState.fate.cards.size()-1,-1,-1):
 		if str(GameState.fate.cards[i].id)==id:GameState.fate.cards.remove_at(i)
@@ -66,4 +68,6 @@ static func pass_reading(room:Dictionary)->bool:
 	if reading.is_empty() or bool(reading.get("done",false)):return false
 	var before:=GameState.fate.duplicate(true);var delta_before:Dictionary=room.delta.duplicate(true)
 	reading.done=true
-	return _finish(room,before,delta_before)
+	var evidence:=AchievementTracker.stage("fate_pass")
+	var success:=_finish(room,before,delta_before);AchievementTracker.finish_stage(evidence,success)
+	return success

@@ -17,6 +17,9 @@ const APPEAR_SECONDS := 0.50
 const APPEAR_STAGGER := 0.07
 const CHOICE_SECONDS := 0.38
 const REDUCED_CHOICE_SECONDS := 0.16
+const FACE_INK:=Color("342d39")
+const FACE_GOLD:=Color("76542c")
+const FACE_ROOT:="res://assets/fate_v01/reward_faces/"
 
 ## 品质流光：一圈会转的亮弧（和背包里那套一致）
 const GLOW_SHADER := """
@@ -318,26 +321,24 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	card.custom_minimum_size = CARD_SIZE
 	card.size = CARD_SIZE
 	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var frame := PixelUi.plate(4)
-	for side in [SIDE_LEFT, SIDE_RIGHT, SIDE_TOP, SIDE_BOTTOM]: frame.set_content_margin(side, 24)
+	# A complete illustrated tarot face. The header belongs to the painting;
+	# live item content stays inside its quiet parchment area.
+	var frame:=StyleBoxTexture.new()
+	frame.texture=load(FACE_ROOT+("relic" if ItemDB.is_relic(item) else "equipment")+".png")
+	frame.set_content_margin(SIDE_LEFT,32);frame.set_content_margin(SIDE_RIGHT,32)
+	frame.set_content_margin(SIDE_TOP,116);frame.set_content_margin(SIDE_BOTTOM,40)
 	card.add_theme_stylebox_override("panel", frame)
 	holder.add_child(card)
 
-	var column := UiFactory.vbox(8)
+	var column := UiFactory.vbox(6)
 	column.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	card.add_child(column)
-
-	var band := ColorRect.new()
-	band.color = color
-	band.custom_minimum_size = Vector2(0.0, 6.0)
-	band.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	column.add_child(band)
 
 	# 保持整数尺寸，避免缩放动画让像素边缘变软。
 	var icon_row := UiFactory.hbox(0)
 	icon_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	column.add_child(icon_row)
-	var icon := UiFactory.item_icon(item, 64.0)
+	var icon := UiFactory.item_icon(item, 48.0)
 	icon_row.add_child(icon)
 	_reward_icons.append(icon)
 
@@ -348,7 +349,7 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	tag_row.add_child(PixelUi.chip("祭坛誓约" if item.has("altar_key") else ItemDB.kind_label(item), ItemDB.kind_color(item), 14))
 	if not item.has("altar_key"):tag_row.add_child(RarityWordmark.make(rarity,32))
 
-	var name_label := PixelUi.label(str(item["name"]), 20, PixelUi.INK)
+	var name_label := PixelUi.label(str(item["name"]), 20, FACE_INK)
 	name_label.tooltip_text = str(item["name"])
 	name_label.max_lines_visible = 2
 	name_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
@@ -356,13 +357,13 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	column.add_child(name_label)
 
-	column.add_child(_rule(Palette.PARCHMENT_RULE))
+	column.add_child(_rule(Color(color,.65)))
 
-	var activation := PixelUi.label("使用时生效" if ItemDB.is_usable(item) else ("需装备 · 在行囊中装配" if ItemDB.is_equippable(item) else "获得后立即生效"), 15, PixelUi.GOLD)
+	var activation := PixelUi.label("使用时生效" if ItemDB.is_usable(item) else ("需装备 · 在行囊中装配" if ItemDB.is_equippable(item) else "获得后立即生效"), 15, FACE_GOLD)
 	activation.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	column.add_child(activation)
 	var scroll := ScrollContainer.new()
-	scroll.custom_minimum_size.y = 72
+	scroll.custom_minimum_size.y = 48
 	scroll.follow_focus = false
 	scroll.focus_mode = Control.FOCUS_NONE
 	scroll.mouse_filter = Control.MOUSE_FILTER_PASS
@@ -371,12 +372,16 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	column.add_child(scroll)
 	_scrolls.append(scroll)
 	var details:=UiFactory.vbox(8);details.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(details)
-	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false, false, false), 17, PixelUi.INK)
+	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false, false, false), 17, FACE_INK)
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc.custom_minimum_size.x = 220
 	desc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	details.add_child(desc)
 	ItemInsight.append_story(details,item)
+	for text in details.find_children("*","Label",true,false):text.add_theme_color_override("font_color",FACE_INK)
+	for button in details.find_children("*","Button",true,false):
+		for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]:button.add_theme_color_override(state,FACE_GOLD)
+		for state in ["normal","hover","pressed","focus"]:button.add_theme_stylebox_override(state,StyleBoxEmpty.new())
 
 	# Presentation descendants pass through; the scroll remains an interactive child.
 	for node in card.find_children("*", "Control", true, false):

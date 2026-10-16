@@ -163,10 +163,13 @@ func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, i
 	var id = "%d-%d" % [Time.get_unix_time_from_system()*1000,Time.get_ticks_usec()]
 	data.active = {"constellation":constellation,"chapter_id":str(chapter_id),"id":id,"status":"active","danger":danger,"difficulty":difficulty,"spent":price,"loadout":loadout.duplicate(),"carried":carried,"initial_level":initial_level,"level_cost":DepartureLevels.cost(initial_level)}
 	SaveService.data.run = {"chapter_id":str(chapter_id),"sortie_id":id,"departure":data.active.duplicate(true),"character":str(Characters.current_id()),"passive_id":str(PassiveDefinitions.selected(Characters.current_id()))}
+	var evidence:=AchievementTracker.stage("departure",{"star":constellation})
 	if not commit():
+		AchievementTracker.finish_stage(evidence,false)
 		data = previous
 		SaveService.data = old_save
 		return false
+	AchievementTracker.finish_stage(evidence,true)
 	return true
 
 func request_checkpoint() -> void:
@@ -227,11 +230,13 @@ func settle_sortie(outcome: String) -> Dictionary:
 	SaveService.data.runs = int(SaveService.data.get("runs",0))+1
 	SaveService.data.best_wave = maxi(int(SaveService.data.get("best_wave",0)),GameState.wave)
 	SaveService.data.meta_coins = int(SaveService.data.get("meta_coins",0))+payout
+	var evidence:=AchievementTracker.stage("extraction",{"rows":rows}) if success else {}
 	if not commit():
+		if success:AchievementTracker.finish_stage(evidence,false)
 		data = before
 		SaveService.data = old_save
 		return {}
-	if success:AchievementTracker.extracted()
+	if success:AchievementTracker.finish_stage(evidence,true);AchievementTracker.extracted()
 	return result
 
 func abandon_saved() -> bool:
@@ -328,7 +333,9 @@ func claim_contract(index:int,now:int=-1,issuer:String="")->bool:
 	var gained:=_add_bond(str(contract.owner),int(contract.bond),clock)
 	data.contract_jobs[str(contract.id)]={"status":"completed","completed_at":clock,"next_accept":BondRules.next_day(clock),"bond_gained":gained}
 	if str(data.get("tracked_contract",""))==str(contract.id):data.tracked_contract=""
-	return _finish_mutation(before,old)
+	var evidence:=AchievementTracker.stage("contract")
+	var success:=_finish_mutation(before,old);AchievementTracker.finish_stage(evidence,success)
+	return success
 
 func bond_event(npc: String, event: String, gain: int, gift = false) -> bool:
 	var key = npc+":"+event

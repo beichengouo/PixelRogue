@@ -136,7 +136,9 @@ static func research(id:String,protect:=true)->String:
 	if not Outpost.data.workshop.has("unlocked"):Outpost.data.workshop.unlocked={}
 	Outpost.data.workshop.unlocked[id]=true
 	if goal()==id:Outpost.data.workshop.goal=""
-	if Outpost._finish_mutation(before,saved):return ""
+	var evidence:=AchievementTracker.stage("research",{"id":id})
+	var success:=Outpost._finish_mutation(before,saved);AchievementTracker.finish_stage(evidence,success)
+	if success:return ""
 	return "研究保存失败，材料已完整返还。"
 static func craft(id:String,variant:int,camp:bool,protect:bool,service:Node=null,quantity:=1)->String:
 	var view:=preview("craft",id,variant,camp,protect,quantity,service)
@@ -155,7 +157,10 @@ static func craft(id:String,variant:int,camp:bool,protect:bool,service:Node=null
 		var copy:Dictionary=product.duplicate(true);GameState.item_sequence+=1;copy.uid=GameState.sortie_id+":"+str(GameState.item_sequence);copy.workshop_made=true
 		copy.sale_value=mini(ExpeditionData.sale_value(copy),maxi(0,int(input_value/quantity)-1));GameState.items.append(copy);made.append(copy)
 	var outputs:Dictionary=GameState.material_ledger.get("crafted",{});outputs[str(product.id)]=int(outputs.get(str(product.id),0))+quantity;GameState.material_ledger.crafted=outputs
-	if not SaveService.save_run(GameState.snapshot()):GameState.items.assign(bag);GameState.material_ledger=ledger;GameState.item_sequence=sequence;return "制作保存失败，整批材料与产物已回滚。"
+	var evidence:=AchievementTracker.stage("alchemy",{"quantity":quantity})
+	if not SaveService.save_run(GameState.snapshot()):
+		AchievementTracker.finish_stage(evidence,false);GameState.items.assign(bag);GameState.material_ledger=ledger;GameState.item_sequence=sequence;return "制作保存失败，整批材料与产物已回滚。"
+	AchievementTracker.finish_stage(evidence,true)
 	for item in made:EventBus.item_acquired.emit(item);EventBus.item_received.emit(item)
 	EventBus.player_stats_changed.emit();EventBus.hotbar_changed.emit()
 	return ""
@@ -169,11 +174,13 @@ static func enchant(id:String,variant:int,protect:bool,service:Node)->String:
 	var cooldowns:Dictionary=mechanics.cooldowns.duplicate() if is_instance_valid(mechanics) else {}
 	# The persisted snapshot must already drop the previous accessory's charge.
 	if slot==&"accessory" and is_instance_valid(mechanics):mechanics.cooldowns.erase(&"material_accessory_pending")
+	var evidence:=AchievementTracker.stage("enchant")
 	if not SaveService.save_run(GameState.snapshot()):
+		AchievementTracker.finish_stage(evidence,false)
 		GameState.items.assign(bag);GameState.material_ledger=ledger;GameState.equipment[slot]=item
 		if is_instance_valid(mechanics):mechanics.cooldowns=cooldowns
 		return "附魔保存失败，原装备和材料已保留。"
-	GameState._after_equipment_change();return ""
+	AchievementTracker.finish_stage(evidence,true);GameState._after_equipment_change();return ""
 static func _spend_bank(needs:Dictionary)->void:
 	for id in needs:Outpost.data.inventory[id]=int(Outpost.data.inventory.get(id,0))-int(needs[id])
 static func _spend_run(needs:Dictionary,category:String)->void:

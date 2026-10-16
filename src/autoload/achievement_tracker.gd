@@ -16,13 +16,17 @@ func _ready()->void:
 func eligible()->bool:return GameState.run_active and not CampSession.active
 func _migrate()->void:
 	var stats:Dictionary=SaveService.data.achievement_stats
+	_dirty=true;_save_delay=1
+	for id in Outpost.data.get("workshop",{}).get("unlocked",{}):
+		if bool(Outpost.data.workshop.unlocked[id]):_unique(stats,"research_seen",str(id))
 	# Existing bestiary counters predate species achievements. Import once;
 	# future counters below exclude training and summoned/split children.
 	if not bool(stats.get("species_migrated",false)):
 		for kind in AchievementCatalog.ordinary_names():stats["species:"+str(kind)]=maxi(int(stats.get("species:"+str(kind),0)),int(SaveService.data.monster_kills.get(str(kind),0)))
 		for kind in BossRoster.DATA:stats["species:boss:"+str(kind)]=maxi(int(stats.get("species:boss:"+str(kind),0)),int(SaveService.data.monster_kills.get("boss:"+str(kind),0)))
 		stats.species_migrated=true;_evaluate(false);_dirty=true;_save_delay=1
-	if bool(stats.get("migrated",false)):return
+	# New catalog entries must also evaluate on existing, already migrated saves.
+	if bool(stats.get("migrated",false)):_evaluate(false);return
 	var kills:=0;var bosses:=0
 	for id in SaveService.data.monster_kills:
 		if str(id).begins_with("boss:"):bosses+=int(SaveService.data.monster_kills[id])
@@ -37,6 +41,55 @@ func best(metric:String,value:int)->void:
 	if value<=int(stats.get(metric,0)):return
 	stats[metric]=value;_changed()
 func _changed()->void:_evaluate();_dirty=true;_save_delay=1
+func stage(kind:String,payload:Dictionary={})->Dictionary:
+	# Called only by a real transaction, before its existing save. No toast or
+	# unlock is published until the owner confirms that the save succeeded.
+	var before:={"stats":SaveService.data.achievement_stats.duplicate(true),"run":GameState.achievement_run.duplicate(true)}
+	var stats:Dictionary=SaveService.data.achievement_stats
+	match kind:
+		"fate_claim":
+			if not eligible():return before
+			stats.fate_claims=int(stats.get("fate_claims",0))+1
+			if bool(payload.get("reverse",false)):stats.fate_reverse=int(stats.get("fate_reverse",0))+1
+			if bool(payload.get("replace",false)):stats.fate_replacements=int(stats.get("fate_replacements",0))+1
+			stats.fate_pair=maxi(int(stats.get("fate_pair",0)),GameState.fate.cards.size())
+			_unique(stats,"fate_seen",str(payload.get("id","")))
+			_resolved_reading(stats)
+		"fate_pass":
+			if eligible():_resolved_reading(stats)
+		"departure":
+			var star:=str(payload.get("star",""))
+			if FateCatalog.STARS.has(star):_unique(stats,"stars_departed",star)
+		"alchemy":
+			if eligible():stats.field_alchemy=int(stats.get("field_alchemy",0))+maxi(0,int(payload.get("quantity",0)))
+		"enchant":
+			if eligible():stats.field_enchants=int(stats.get("field_enchants",0))+1
+		"research":_unique(stats,"research_seen",str(payload.get("id","")))
+		"contract":stats.contracts_delivered=int(stats.get("contracts_delivered",0))+1
+		"event":
+			if eligible():stats.event_resolutions=int(stats.get("event_resolutions",0))+1
+		"extraction":
+			if not eligible():return before
+			if not FateCatalog.star().is_empty() and not GameState.fate.cards.is_empty():stats.star_returns=int(stats.get("star_returns",0))+1
+			var count:=0
+			for row in payload.get("rows",[]):
+				if bool(row.get("bound",false)) and bool(row.get("stored",false)):count+=int(row.get("count",0))
+			stats.bound_returned=int(stats.get("bound_returned",0))+count
+			if GameState.chapter_cleared:_unique(stats,"chapters_returned",str(GameState.chapter_id))
+	return before
+func finish_stage(before:Dictionary,success:bool)->void:
+	if not success:
+		SaveService.data.achievement_stats=before.stats;GameState.achievement_run=before.run
+		return
+	if before.stats!=SaveService.data.achievement_stats:_changed()
+func _unique(stats:Dictionary,key:String,value:String)->void:
+	if value.is_empty():return
+	var values:Array=stats.get(key,[])
+	if value not in values:values.append(value)
+	stats[key]=values
+func _resolved_reading(stats:Dictionary)->void:
+	GameState.achievement_run.fate_resolved=int(GameState.achievement_run.get("fate_resolved",0))+1
+	stats.fate_resolved_best=maxi(int(stats.get("fate_resolved_best",0)),int(GameState.achievement_run.fate_resolved))
 func _evaluate(notify:=true)->void:
 	for id:String in AchievementCatalog.DATA:
 		if AchievementCatalog.unlocked(id) or AchievementCatalog.progress(id)<int(AchievementCatalog.DATA[id].goal):continue
@@ -67,6 +120,8 @@ func room_cleared(record:Dictionary,growth:int)->void:
 	rooms.append(key);GameState.achievement_run.rooms=rooms;add("rooms",1);best("enrage_best",growth)
 	if RunDifficulty.is_bloodbath(GameState.difficulty):add("bloodbath_rooms",1)
 	if str(record.get("kind",""))=="boss_rush":add("rush",1)
+	if str(record.get("kind",""))=="elite":add("elite_clears",1)
+	if str(record.get("kind",""))=="trial":add("trial_clears",1)
 func set_equipped()->void:
 	if eligible() and LegendarySets.complete():best("sets",1)
 func extracted()->void:
