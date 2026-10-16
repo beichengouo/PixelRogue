@@ -37,7 +37,7 @@ static func stable_source(source:Node)->Node:
  return source
 static func player_owned(source:Node)->bool:
  if not is_instance_valid(source):return false
- if source is DamageContext:return source.owner_kind in [&"player",&"skill",&"skill_field",&"equipment",&"dot",&"spread_burn",&"basic_splash",&"character_proc"]
+ if source is DamageContext:return source.owner_kind in [&"player",&"skill",&"skill_field",&"fate",&"equipment",&"dot",&"spread_burn",&"basic_splash",&"character_proc"]
  if source is Player:return true
  if source is RoomProjectile:return source.damage_owner==&"player"
  return false
