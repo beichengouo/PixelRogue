@@ -45,3 +45,21 @@ func ready()->bool:
 	if confirmed and (_signature!=signature() or not error().is_empty()):confirmed=false
 	return confirmed
 
+
+static func advice(loadout:Array)->PackedStringArray:
+	var slots:Dictionary={};var potions:=0;var notes:PackedStringArray=[]
+	for id in loadout:
+		var item:=ExpeditionData.resolve(str(id))
+		if ItemDB.is_equippable(item):slots[str(ItemDB.slot_of(item))]=true
+		elif ItemDB.is_usable(item):potions+=1
+	var missing:PackedStringArray=[]
+	for slot in ItemDB.SLOTS:
+		if not slots.has(str(slot)):missing.append(str(ItemDB.SLOT_NAMES.get(slot,slot)))
+	if not missing.is_empty():notes.append("空装备槽："+"、".join(missing)+"；可直接出发，也可前往仓库补充。")
+	if potions==0:notes.append("未携带药剂；可自行决定是否准备。")
+	for contract in ExpeditionData.CONTRACTS:
+		if Outpost.contract_status(contract)!="accepted":continue
+		var needs:=Outpost.contract_needs(contract);var ready:=true
+		for id in needs:ready=ready and int(Outpost.data.inventory.get(id,0))>=int(needs[id])
+		if ready:notes.append("仓库已有可交付委托："+str(contract.title)+" · 找"+CampResidents.issuer_name(contract))
+	return notes

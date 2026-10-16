@@ -58,6 +58,7 @@ var _tab_labels: Array[String] = []
 ## 以前这里是 &"all"，而 TABS 里根本没有 all —— 于是打开背包时
 ## 左边走 _rebuild_stat_page()（落到 `_` 分支）、右边走道具占位文案、
 ## 顶部一个页签都不高亮，看起来就像"左右两半不是同一个界面"。
+var _material_usage_id:=""
 var _filter: StringName = &"gear"
 ## 技能页 / 天赋页当前选中的条目（详情面板用）
 var _selected_skill: StringName = &""
@@ -871,7 +872,7 @@ func _populate_detail() -> void:
 	# 药剂的 desc 和下面的「效果行」是同一句话，这里不重复显示
 	if not ItemDB.is_usable(item) and not str(item["desc"]).is_empty() \
 			and (not item.get("mechanics", []).is_empty() or not ItemDB.weapon_lines(item).is_empty() or ItemDB.stat_lines(item).is_empty()):
-		var desc := PixelUi.label(str(item["desc"]), 16, PixelUi.INK)
+		var desc := PixelUi.label(("单件机制与触发限制\n" if ItemDB.is_equippable(item) and not item.get("mechanics",[]).is_empty() else "")+str(item["desc"]), 18, PixelUi.INK)
 		desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		desc.custom_minimum_size = Vector2(0.0, 34.0)
 		desc.vertical_alignment = VERTICAL_ALIGNMENT_TOP
@@ -879,11 +880,15 @@ func _populate_detail() -> void:
 
 	var etch_note:=MaterialWorkshopCatalog.description(item)
 	if not etch_note.is_empty():
-		var note:=PixelUi.label(etch_note,18,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(note)
+		var note:=PixelUi.label("当前刻印\n"+etch_note,18,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(note)
 	if ItemDB.is_material(item):
-		var uses:=MaterialWorkshop.usage(str(item.id))
-		if not uses.is_empty():
-			var note:=PixelUi.label(uses,18,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(note)
+		var material_id:=str(item.id);var uses:=MaterialWorkshop.usage(material_id)
+		var totals:=MaterialWorkshop.cost_preview({material_id:0},false)
+		var amount:=PixelUi.label(("本局背包" if not CampSession.active else "营地训练背包 · 不消耗永久仓库")+"\n"+MaterialWorkshop.cost_text(totals.rows)+("\n"+uses if not uses.is_empty() else ""),17,PixelUi.GOLD);amount.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(amount)
+		var toggle:=PixelUi.compact_button("收起材料用途 ▴" if _material_usage_id==material_id else "查看材料用途 ▾",18);toggle.set_meta("focus_token","material_uses:"+material_id);_detail_box.add_child(toggle)
+		toggle.pressed.connect(func()->void:_material_usage_id="" if _material_usage_id==material_id else material_id;_rebuild_detail())
+		if _material_usage_id==material_id:
+			var note:=PixelUi.label(MaterialWorkshop.uses_text(material_id,CampSession.active),17,PixelUi.INK);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(note)
 
 	if ItemDB.is_relic(item) and not item.get("mechanics", []).is_empty():
 		_detail_box.add_child(PixelUi.label("同名效果：1件100% · 2件合计150% · 3件合计175%；目标数、触发条件与冷却不增加", 14, PixelUi.MUTED))

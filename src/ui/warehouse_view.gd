@@ -1,6 +1,7 @@
 class_name WarehouseView
 extends VBoxContainer
 signal status_changed(message:String)
+signal recipe_requested(material_id:String)
 var _filter="all"
 var _page=0
 var _selected=""
@@ -8,6 +9,10 @@ var _records:Array=[]
 var _cells:Array[Button]=[]
 var _mushrooms:Array[Button]=[]
 var _grid:GridContainer
+var _uses:Button
+var _recipes:Button
+var _uses_label:Label
+var _uses_open:=""
 var _detail:Label
 var _detail_quality:RarityWordmark
 var _quantity:SpinBox
@@ -70,6 +75,10 @@ func _ready()->void:
 	var detail=UiFactory.vbox(10);detail.custom_minimum_size.x=250;row.add_child(detail)
 	_detail_quality=RarityWordmark.make(0,36);_detail_quality.visible=false;detail.add_child(_detail_quality)
 	_detail=PixelUi.label("选择一个物品查看详情",18);_detail.custom_minimum_size.x=240;_detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;detail.add_child(_detail)
+	_uses=PixelUi.compact_button("查看材料用途 ▾",17);detail.add_child(_uses)
+	_uses_label=PixelUi.label("",16,PixelUi.MUTED);_uses_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_uses_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;detail.add_child(_uses_label)
+	_uses.pressed.connect(func()->void:_uses_open="" if _uses_open==_selected else _selected;_refresh_detail())
+	_recipes=PixelUi.compact_button("查看相关配方",17);detail.add_child(_recipes);_recipes.pressed.connect(func()->void:recipe_requested.emit(_selected))
 	_quantity=SpinBox.new();_quantity.min_value=1;_quantity.step=1;_quantity.prefix="出售数量 ";detail.add_child(_quantity)
 	MobileControls.decorate_number(_quantity)
 	_sell=PixelUi.compact_button("出售所选物品",17);detail.add_child(_sell)
@@ -180,6 +189,9 @@ func _refresh_detail()->void:
 	var reserved=mini(count,int(Outpost.reserved_counts(extra_reserves).get(_selected,0)))
 	if count>0:
 		_detail.text+="\n%s" % ("已保护 · 同一道具全部库存" if Outpost.is_locked(_selected) else "自动保留%d份 · 可出售%d份" % [reserved,allowed])
+	var material:=ItemDB.is_material(item);_uses.visible=material;_recipes.visible=material and not MaterialWorkshopCatalog.uses(_selected).is_empty()
+	_uses_label.visible=material and _uses_open==_selected;_uses.text="收起材料用途 ▴" if _uses_label.visible else "查看材料用途 ▾"
+	if _uses_label.visible:_uses_label.text="永久仓库 · "+MaterialWorkshop.cost_text(MaterialWorkshop.cost_preview({_selected:0},true).rows)+"\n\n"+MaterialWorkshop.uses_text(_selected,true)
 	_quantity.max_value=maxi(1,allowed);_quantity.value=1
 	_quantity.visible=allowed>0;_sell.visible=allowed>0
 	_lock.visible=count>0;_lock.text="解除保护" if Outpost.is_locked(_selected) else "保护此道具"

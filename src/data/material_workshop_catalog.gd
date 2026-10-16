@@ -9,7 +9,7 @@ const BOSS_MATERIALS:={
 "boss_wax":{"name":"记忆封蜡","rarity":2,"price":0,"boss":"verena","icon":"verena","desc":"千页司书解除控制后遗留的封蜡，保存记忆而不束缚未来。用于回响刻印研究；不可出售。"},
 "boss_star":{"name":"无名星核","rarity":3,"price":0,"boss":"nameless","icon":"nameless","desc":"无名录仪重获自由的星术核心。仅终章首领产出，用于星城高级研究与制作；不可出售或购买。"}}
 const ALCHEMY:=[
-{"id":"alch_health","name":"治疗药剂","product":"potion_health","research":"","variants":[{"forest_resin":1,"moss_cloth":1,"forest_sample":1},{"wetland_sample":2,"star_dust":1},{"ruin_sample":2,"star_dust":1},{"glow_mushroom_0":2,"star_dust":1}]},
+{"id":"alch_health","name":"治疗药剂","product":"potion_health","research":"","variants":[{"forest_sample":2,"star_dust":1},{"wetland_sample":2,"star_dust":1},{"ruin_sample":2,"star_dust":1},{"glow_mushroom_0":2,"star_dust":1}]},
 {"id":"alch_energy","name":"能量药剂","product":"potion_energy","research":"","variants":[{"star_dust":2,"forest_sample":2},{"star_dust":2,"wetland_sample":2},{"star_dust":2,"ruin_sample":2}]},
 {"id":"alch_arcane","name":"秘法药剂","product":"potion_arcane","research":"alch_arcane","variants":[{"storm_crystal":1,"star_dust":2}]},
 {"id":"alch_focus","name":"专注药剂","product":"potion_focus","research":"alch_focus","variants":[{"forest_resin":2,"star_dust":2},{"ruin_ore":1,"star_dust":2}]},
@@ -31,10 +31,10 @@ const CRAFT:=[
 {"id":"craft_sunpendant","name":"旭星坠饰","product":"camp_sunpendant","research":"craft_sunpendant","variants":[{"boss_star":1,"storm_crystal":2,"ruin_ore":6}]},
 {"id":"craft_queenbrooch","name":"女王星章","product":"camp_queenbrooch","research":"craft_queenbrooch","variants":[{"boss_root":1,"boss_star":1,"ancient_seal":2}]}]
 const RESEARCH:=[
-{"id":"alch_arcane","name":"秘法炼金","desc":"解锁秘法药剂的制作配方。","needs":{"storm_crystal":1,"star_dust":6}},
-{"id":"alch_focus","name":"专注炼金","desc":"解锁专注药剂的两种地区配方。","needs":{"forest_sample":4,"star_dust":8}},
-{"id":"alch_wind","name":"风行炼金","desc":"解锁风行药剂的两种地区配方。","needs":{"moss_cloth":4,"star_dust":5}},
-{"id":"alch_frost","name":"冰霜炼金","desc":"解锁冰霜药剂的两种地区配方。","needs":{"river_pearl":2,"star_dust":6}},
+{"id":"alch_arcane","name":"秘法炼金","desc":"解锁秘法药剂的制作配方。","needs":{"storm_crystal":1,"star_dust":5}},
+{"id":"alch_focus","name":"专注炼金","desc":"解锁专注药剂的两种地区配方。","needs":{"forest_sample":3,"star_dust":6}},
+{"id":"alch_wind","name":"风行炼金","desc":"解锁风行药剂的两种地区配方。","needs":{"moss_cloth":3,"star_dust":4}},
+{"id":"alch_frost","name":"冰霜炼金","desc":"解锁冰霜药剂的两种地区配方。","needs":{"river_pearl":2,"star_dust":5}},
 {"id":"etch_bone","name":"王骨守护研究","desc":"解锁护甲王骨护印，保护自己与最近的旅伴。","needs":{"boss_bone":1,"moss_cloth":3}},
 {"id":"etch_crystal","name":"晶裂催化研究","desc":"解锁武器晶裂刻印，追加受限装备直击。","needs":{"boss_crystal":1,"storm_crystal":2}},
 {"id":"etch_gate","name":"归城守御研究","desc":"解锁护甲归城守印，承伤后护盾与近身减速。","needs":{"boss_gate":1,"ancient_seal":2}},
@@ -70,3 +70,19 @@ static func cost_text(needs:Dictionary)->String:
 	return "、".join(parts)
 static func icon(id:String)->String:
 	return ART+id+".png"
+
+static var _uses_index:Dictionary={}
+static func uses(id:String)->Array:
+	if _uses_index.is_empty():
+		for group in [["alchemy",ALCHEMY],["craft",CRAFT],["enchant",ENCHANTS.values()],["research",RESEARCH]]:
+			for raw in group[1]:
+				var row:Dictionary=raw.duplicate(true)
+				if str(group[0])=="enchant":
+					for key in ENCHANTS:
+						if ENCHANTS[key]==raw:row.id=key;break
+				var variants:Array=[row.needs] if str(group[0])=="research" else row.variants
+				for index in variants.size():
+					for material_id in variants[index]:
+						if not _uses_index.has(str(material_id)):_uses_index[str(material_id)]=[]
+						_uses_index[str(material_id)].append({"kind":str(group[0]),"id":str(row.id),"name":str(row.name),"variant":index,"needs":variants[index],"research":str(row.id) if str(group[0])=="research" else str(row.research)})
+	return _uses_index.get(id,[])

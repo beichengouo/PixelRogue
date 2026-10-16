@@ -32,6 +32,8 @@ var _confirm: GlassConfirmUI
 var _left: Control
 var _warehouse: WarehouseView
 var _workshop:MaterialWorkshopUI
+var _visit_return:Dictionary={}
+var _result_details:=false
 var _feedback=""
 var _shop_timer=0.0
 var _shop_clock:Label
@@ -172,6 +174,7 @@ func open(result = false) -> void:
 func is_open() -> bool:return _root.visible
 func close() -> void:
 	if is_instance_valid(_workshop):_workshop.close()
+	_visit_return={}
 	var was_open:=is_open()
 	if is_instance_valid(_confirm): _confirm.close()
 	if is_instance_valid(_warehouse):_warehouse.cancel_dialog()
@@ -181,6 +184,7 @@ func close() -> void:
 	if was_open:closed.emit()
 
 func _switch(page: String) -> void:
+	if not _visit_return.is_empty() and page==str(_visit_return.page):_return_from_visit();return
 	if world_mode and page=="prepare" and _page!="prepare":close();return
 	if is_instance_valid(_warehouse):_warehouse.cancel_dialog()
 	_scroll.scroll_vertical=0
@@ -193,6 +197,7 @@ func _switch(page: String) -> void:
 func _input(event: InputEvent) -> void:
 	if not is_open() or not UIFlow.is_top(self):return
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("pause_menu"):
+		if not _visit_return.is_empty():_return_from_visit();get_viewport().set_input_as_handled();return
 		close()
 		back_requested.emit()
 		get_viewport().set_input_as_handled()
@@ -230,6 +235,7 @@ func _refresh() -> void:
 	for button in _tabs:
 		button.set_meta("interaction_selected",str(button.get_meta("camp_page"))==_page);InteractionSkin.apply_button(button,"camp")
 	_status.text="金库 %d 金 · %s\n%s" % [Outpost.gold(),RunDifficulty.title(difficulty),_feedback if not _feedback.is_empty() else "死亡不追回装备与随身金币"]
+	if not _visit_return.is_empty():_button("返回"+str(_visit_return.title),_return_from_visit).set_meta("focus_token","visit_return")
 	match _page:
 		"prepare":_prepare()
 		"warehouse":_show_warehouse()
@@ -303,6 +309,7 @@ func _prepare_supplies()->void:
 	loadout.equip_requested.connect(_add_cart)
 	loadout.remove_requested.connect(func(id:String)->void:cart.erase(id);_refresh())
 	_body.add_child(loadout)
+	_button("前往仓库整理",_visit_page.bind("warehouse"));_button("前往制作与研究",func()->void:_workshop.open_camp())
 	_button("下一步 · 核对出发清单",func()->void:_prepare_step=2;_refresh())
 
 func _preparation_check()->String:
@@ -319,6 +326,8 @@ func _prepare_confirmation()->void:
 	for id in cart:
 		var item:=ExpeditionData.resolve(str(id));_text("• "+str(item.name),18,ItemDB.rarity_color(int(item.rarity)))
 	if cart.is_empty():_text("空装出发",18,PixelUi.MUTED)
+	for advice in CampPreparation.advice(cart):_text("准备提醒 · "+advice,17,PixelUi.GOLD)
+	_button("前往仓库整理",_visit_page.bind("warehouse"));_button("前往制作与研究",func()->void:_workshop.open_camp())
 	_prepare_preview()
 	_text("出发后重置训练配置。成功撤离可带回绑定装备，死亡仍会损失带入物品。",17,PixelUi.MUTED)
 	if Outpost.overfull():_text("仓库超量，请先清理或扩容。",18,Palette.UI_DANGER)
@@ -389,7 +398,7 @@ func _contracts()->void:
 		_text(" · ".join(progress),15,PixelUi.MUTED)
 		if not str(contract.get("issuer","")).is_empty():
 			_text("请在营地找「%s」接取或交付；工会仅展示记录。"%CampResidents.issuer_name(contract),17,PixelUi.GOLD)
-			if status=="accepted":_button("追踪此委托",func()->void:Outpost.track_contract(str(contract.id));_refresh())
+			if status=="accepted":_button("追踪此委托",func()->void:Outpost.track_contract(str(contract.id));_refresh()).set_meta("focus_token","contract:"+str(contract.id)+":track")
 			continue
 		if status=="available":
 			_button("接取委托 · 开始计时",_accept_contract.bind(i)).set_meta("focus_token","contract:"+str(contract.id)+":submit")
@@ -482,6 +491,7 @@ func _result() -> void:
 	_material_result(r)
 	_text("战斗难度 · "+RunDifficulty.title(int(r.get("difficulty",1))),17,PixelUi.GOLD)
 	for row in r.get("rows",[]):
+		if ItemDB.is_material(ExpeditionData.resolve(str(row.get("id","")))):continue
 		var income=UiFactory.hbox(10)
 		var item=ExpeditionData.resolve(str(row.get("id","")))
 		if not item.is_empty():
@@ -506,29 +516,54 @@ func _material_result(result:Dictionary)->void:
 	if report.is_empty():return
 	_text("材料战利品",23,PixelUi.GOLD)
 	for entry in [["collected","本局收集"],["alchemy","炼金消耗"],["enchant","刻印消耗"],["crafted","炼金产物"],["brought_back","实际带回"],["lost","本局损失"]]:
-		var values:Dictionary=report.get(str(entry[0]),{});var parts:PackedStringArray=[]
-		for id in values:parts.append("%s ×%d"%[str(ExpeditionData.resolve(str(id)).get("name",id)),int(values[id])])
-		if not parts.is_empty():_text(str(entry[1])+" · "+"、".join(parts),17,PixelUi.MUTED if str(entry[0]) in ["alchemy","enchant","lost"] else PixelUi.INK)
+		var values:Dictionary=report.get(str(entry[0]),{});var summary:Dictionary={};var parts:PackedStringArray=[]
+		for id in values:
+			var category:="首领素材" if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(id)) else "蘑菇" if str(id).begins_with("glow_mushroom_") else "药剂" if ItemDB.is_usable(ExpeditionData.resolve(str(id))) else "地区样本" if str(id).ends_with("_sample") else "其他材料"
+			summary[category]=int(summary.get(category,0))+int(values[id])
+		for category in summary:parts.append("%s ×%d"%[str(category),int(summary[category])])
+		if not parts.is_empty():_text(str(entry[1])+" · "+"、".join(parts),18)
+		if _result_details:
+			for id in values:_text("    %s ×%d"%[str(ExpeditionData.resolve(str(id)).get("name",id)),int(values[id])],16,PixelUi.MUTED)
+	_button("收起材料明细 ▴" if _result_details else "展开材料明细 ▾",func()->void:_result_details=not _result_details;_refresh()).set_meta("focus_token","material_report")
 	for id in report.get("first",[]):_text("首次带回 · "+str(ExpeditionData.resolve(str(id)).get("name",id)),18,PixelUi.GOLD)
+	for id in report.get("brought_back",{}):
+		if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(id)):_text("首领战利品 · %s ×%d"%[str(ExpeditionData.resolve(str(id)).name),int(report.brought_back[id])],19,PixelUi.GOLD)
 	if result.get("outcome","")!="extracted":_text("只损失本局携带材料，历史仓库库存不受影响。",17,PixelUi.MUTED);return
-	var ready:PackedStringArray=[]
 	for entry in MaterialWorkshopCatalog.RESEARCH:
-		if not MaterialWorkshopCatalog.unlocked(str(entry.id)) and MaterialWorkshop.cost_error(entry.needs,true,false,str(entry.id)).is_empty():ready.append(str(entry.name))
-	if not ready.is_empty():_text("材料足够研究 · "+"、".join(ready)+"（未自动消耗）",17,PixelUi.GOLD)
+		if not MaterialWorkshopCatalog.unlocked(str(entry.id)) and MaterialWorkshop.cost_error(entry.needs,true,true,str(entry.id)).is_empty():
+			_button("查看可研究 · "+str(entry.name),func()->void:_workshop.open_camp("research","",str(entry.id)))
 	for contract in ExpeditionData.CONTRACTS:
 		if Outpost.contract_status(contract)!="accepted":continue
-		var available:=true
-		for id in Outpost.contract_needs(contract):available=available and int(Outpost.data.inventory.get(id,0))>=int(Outpost.contract_needs(contract)[id])
-		if available:_text("可交付委托 · "+str(contract.title)+" · 找"+CampResidents.issuer_name(contract),17,PixelUi.GOLD)
+		var available:=true;var needs:=Outpost.contract_needs(contract)
+		for id in needs:available=available and int(Outpost.data.inventory.get(id,0))>=int(needs[id])
+		if available:_button("查看可交付委托 · "+str(contract.title)+" · 找"+CampResidents.issuer_name(contract),func()->void:_visit_page("contracts");_focus_page_target.call_deferred("contract:"+str(contract.id)+":track"))
+
+func _visit_page(page:String)->void:
+	var current:=_body.find_child("DepartureLoadout",true,false) as CampLoadoutView
+	if is_instance_valid(current):_loadout_filter=current._filter;_loadout_scroll=current._grid_scroll.scroll_vertical
+	if _visit_return.is_empty():_visit_return={"page":_page,"scroll":_scroll.scroll_vertical,"title":"出发准备" if _page=="prepare" else "旅途记事","step":_prepare_step}
+	_page=page;_scroll.scroll_vertical=0;_refresh()
+func _return_from_visit()->void:
+	var target:=_visit_return;_visit_return={}
+	if target.is_empty():return
+	_page=str(target.page);_prepare_step=int(target.step);_refresh();_restore_page_focus.call_deferred("",int(target.scroll))
+func _focus_page_target(token:String)->void:
+	if not is_inside_tree() or not is_open():return
+	await get_tree().process_frame
+	if not is_inside_tree() or not is_open():return
+	for button in _body.find_children("*","Button",true,false):
+		if str(button.get_meta("focus_token",""))==token:_scroll.ensure_control_visible(button);button.grab_focus();break
 
 func _show_warehouse()->void:
 	_button("布琳娜的制作与研究",func()->void:_workshop.open_camp())
 	if _warehouse==null:
 		_warehouse=WarehouseView.new()
+		_warehouse.recipe_requested.connect(func(id:String)->void:_workshop.open_camp("alchemy",id))
 		_warehouse.status_changed.connect(func(message:String)->void:_feedback=message)
 	if _warehouse.get_parent()==null:_body.add_child(_warehouse)
 	elif _warehouse.get_parent()!=_body:_warehouse.reparent(_body,false)
 	_warehouse.show()
+	_body.move_child(_warehouse,_body.get_child_count()-1)
 	_warehouse.extra_reserves=Outpost.loadout_counts(cart)
 	_warehouse.refresh()
 	if _body.get_child_count()==1:_button("返回出发准备 · 金库 %d 金" % Outpost.gold(),_switch.bind("prepare"))
