@@ -6,6 +6,7 @@ signal remove_requested(id:String)
 signal selection_changed(id:String)
 var loadout:Array=[]
 var selected_id:=""
+var initial_scroll:=0
 var combat_mode:="rooms"
 var quality:=-1
 var _filter:="all"
@@ -58,7 +59,11 @@ func _ready()->void:
 	_detail=PixelUi.label("选择仓库物品查看详情",17);_detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail.size_flags_horizontal=Control.SIZE_EXPAND_FILL;add_child(_detail)
 	_action=PixelUi.compact_button("装备所选",17);add_child(_action);_action.pressed.connect(_activate_selected)
 	resized.connect(_resize_columns)
-	_populate();_resize_columns.call_deferred()
+	_populate();_resize_columns.call_deferred();_restore_scroll.call_deferred()
+func _restore_scroll()->void:
+	if not is_inside_tree() or is_queued_for_deletion():return
+	await get_tree().process_frame
+	if is_inside_tree() and not is_queued_for_deletion() and is_instance_valid(_grid_scroll):_grid_scroll.scroll_vertical=initial_scroll
 
 func equipped_id(slot:StringName)->String:
 	for id in loadout:
@@ -66,6 +71,8 @@ func equipped_id(slot:StringName)->String:
 	return ""
 
 func _populate()->void:
+	for button in _stock.find_children("*","Button",true,false):
+		if button.has_meta("loadout_filter"):button.set_meta("interaction_selected",str(button.get_meta("loadout_filter"))==_filter);InteractionSkin.apply_button(button,"camp_loadout")
 	for cell in _grid.get_children():_grid.remove_child(cell);cell.queue_free()
 	_cells.clear();_records.clear()
 	for id in Outpost.data.inventory:
@@ -110,6 +117,7 @@ func _update_detail()->void:
 	if not ItemDB.can_equip(item):_detail.text+="\n当前角色无法装备。"
 	_action.show();_action.text="卸下装备" if wearing else "携带一瓶" if ItemDB.is_usable(item) else "装备所选"
 	_action.disabled=not ItemDB.can_equip(item) or (not wearing and available<=0)
+	_action.tooltip_text="当前角色无法装备" if not ItemDB.can_equip(item) else "库存已全部加入携带清单" if not wearing and available<=0 else "卸下不会减少库存" if wearing else "加入准备清单，出发时才扣库存"
 	_action.set_meta("focus_token","camp_loadout_action")
 
 func _activate_selected()->void:

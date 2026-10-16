@@ -47,7 +47,7 @@ func _process(delta:float)->void:
 		_save_delay-=delta
 		if _save_delay<=0:
 			_dirty=not SaveService.save_data();_save_delay=5 if _dirty else 0
-	if is_instance_valid(_toast) or _pending.is_empty():return
+	if is_instance_valid(_toast) or _pending.is_empty() or UIFlow.has_screen() or TransitionLayer.busy:return
 	_toast=AchievementToast.new();_toast.achievement_id=_pending.pop_front();add_child(_toast)
 func enemy_defeated(enemy:EnemyBase)->void:
 	if not eligible() or enemy.training_target or enemy.loot_origin!="normal" or enemy is BossBase:return

@@ -12,7 +12,8 @@ var extent := Vector2(46,56)
 var caption := ""
 
 func _ready() -> void:
-	z_index=12
+	AudioManager.play(&"boss_warning",-13,0)
+	z_index=800;z_as_relative=false
 	var ink:=CanvasItemMaterial.new()
 	ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED
 	material=ink

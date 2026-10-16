@@ -164,6 +164,7 @@ func _finish_choice(epoch: int, item: Dictionary, defer_resume: bool) -> void:
 	_root.visible = false
 	if not defer_resume: UIFlow.pop_screen(self)
 	closed.emit()
+	AudioManager.play(&"reward_claim",-8,0)
 	item_chosen.emit(item)
 	if defer_resume: _resume_after_shortcut(_selection_epoch)
 
@@ -176,6 +177,8 @@ func _resume_after_shortcut(epoch: int) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	var focus:=get_viewport().gui_get_focus_owner()
+	if is_instance_valid(focus) and focus.has_meta("item_lore_toggle") and event.is_action("ui_accept"):return
 	if not UIFlow.is_top(self): return
 	if is_open() and _handle_pointer(event): return
 	if not is_open() or not event is InputEventKey: return
@@ -219,7 +222,9 @@ func _handle_pointer(event: InputEvent) -> bool:
 		if Time.get_ticks_msec() < _ignore_mouse_until:
 			get_viewport().set_input_as_handled()
 			return true
-		if event.pressed: _begin_pointer(-1, event.position)
+		if event.pressed:
+			_begin_pointer(-1,event.position)
+			if is_instance_valid(_pointer_aux):get_viewport().set_input_as_handled();return true
 		elif _pointer_id == -1:
 			if _end_pointer(event.position):
 				get_viewport().set_input_as_handled()
@@ -228,10 +233,14 @@ func _handle_pointer(event: InputEvent) -> bool:
 		_drag_pointer(event.position)
 	return false
 
+var _pointer_aux:Button
 func _begin_pointer(id: int, at: Vector2) -> void:
 	if _pointer_id != -2 or _choosing: return
 	_pointer_card = _card_at(at)
 	if _pointer_card < 0: return
+	_pointer_aux=null
+	for button in _cards[_pointer_card].find_children("ItemLoreToggle","Button",true,false):
+		if button.is_visible_in_tree() and _scrolls[_pointer_card].get_global_rect().has_point(at) and button.get_global_rect().has_point(at):_pointer_aux=button;break
 	_pointer_id = id
 	_pointer_start = at
 	_pointer_last = at
@@ -250,6 +259,12 @@ func _drag_pointer(at: Vector2) -> void:
 	_pointer_last = at
 
 func _end_pointer(at: Vector2) -> bool:
+	var auxiliary:Button=_pointer_aux
+	_pointer_aux=null
+	if is_instance_valid(auxiliary):
+		_pointer_id=-2;_pointer_card=-1
+		if not _pointer_dragged and auxiliary.get_global_rect().has_point(at):auxiliary.pressed.emit()
+		return true
 	var index := _pointer_card
 	var select := not _pointer_dragged and at.distance_to(_pointer_start) <= 8 and _card_at(at) == index
 	_pointer_id = -2
@@ -349,11 +364,13 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	column.add_child(scroll)
 	_scrolls.append(scroll)
-	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false, false), 17, PixelUi.INK)
+	var details:=UiFactory.vbox(8);details.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(details)
+	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false, false, false), 17, PixelUi.INK)
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc.custom_minimum_size.x = 220
 	desc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	scroll.add_child(desc)
+	details.add_child(desc)
+	ItemInsight.append_story(details,item)
 
 	# Presentation descendants pass through; the scroll remains an interactive child.
 	for node in card.find_children("*", "Control", true, false):
@@ -437,7 +454,7 @@ func _build() -> void:
 	_cards_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	column.add_child(_cards_box)
 
-	var tip := UiFactory.outlined_label("点击卡片领取 · 1 / 2 / 3 选择 · 方向键切换 · %s / A 确认"%KeyBindings.label("ui_accept"), 18, PixelUi.MUTED, 5)
+	var tip := UiFactory.outlined_label("点击卡片领取 · 1 / 2 / 3 选择\n%s / %s 切换 · %s 确认"%[KeyBindings.label("ui_left"),KeyBindings.label("ui_right"),KeyBindings.label("ui_accept")], 18, PixelUi.MUTED, 5)
 	if MobileControls.enabled():tip.text="轻点卡片领取 · 滑动说明查看详情"
 	tip.custom_minimum_size = Vector2(0.0, 38.0)
 	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER

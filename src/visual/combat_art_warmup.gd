@@ -24,8 +24,16 @@ static func prepare(tree:SceneTree,boss_id:String="",valid:Callable=Callable())-
 					if not valid.is_null() and (not valid.is_valid() or not bool(valid.call())):return false
 		_done[pack.key]=true
 	for family in ["flyer","bomber","caster","lantern_toad","dusk_acolyte","bell_snail","glimmer_spider"]+([boss_id] if not boss_id.is_empty() else []):
+		if _done.has("hostile:"+str(family)):continue
 		for stage in ["cast","flight","impact","area","construct","summon","slash"]:HostileAttackFX.frames(family,stage)
+		_done["hostile:"+str(family)]=true
 		await tree.process_frame
 		if not valid.is_null() and (not valid.is_valid() or not bool(valid.call())):return false
+	var spells:="spells:"+str(Characters.current_id())
+	if not _done.has(spells):
+		if Characters.current_id()==&"sylphiette":HolyFX.warm()
+		elif Characters.current_id()==&"ilyua":
+			for kind in ["basic","wind_arrow","seed","mark","trap","tree","moon","decoy","arrow_hit"]:IlyuaFX.frames(kind)
+		_done[spells]=true
 	for effect in ["rune","bone","thorn","amber"]:RoomExpansionRules.field_texture(effect)
 	return true

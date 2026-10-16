@@ -5,6 +5,8 @@ var _list: VBoxContainer
 var _status: Label
 var _guard := 0
 var _selected_index=0
+var _confirm:SaleConfirmUI
+var _pending_sale:Array=[]
 
 func _ready() -> void:
 	layer=26
@@ -45,6 +47,8 @@ func open() -> void:
 	_refresh()
 
 func close() -> void:
+	_pending_sale.clear()
+	if is_instance_valid(_confirm):_confirm.close()
 	_root.visible=false
 	UIFlow.pop_screen(self)
 
@@ -93,21 +97,28 @@ func _refresh() -> void:
 	_restore_sale_focus.call_deferred()
 
 func _sell(item: Dictionary) -> void:
-	if Time.get_ticks_msec()<_guard or not UIFlow.is_top(self):return
-	_guard=Time.get_ticks_msec()+150
-	if GameState.sell_item(item):
-		AudioManager.play(&"coin",-6)
-		_refresh()
-
+	_sell_stack([item])
 func _sell_stack(items: Array) -> void:
 	if Time.get_ticks_msec()<_guard or not UIFlow.is_top(self): return
 	_guard=Time.get_ticks_msec()+150
-	var sold=false
+	if items.any(func(item:Dictionary)->bool:return BoundEquipment.is_bound(item)):
+		if not is_instance_valid(_confirm):
+			_confirm=SaleConfirmUI.new();_confirm.title_text="出售绑定装备？";add_child(_confirm)
+			_confirm.confirmed.connect(func()->void:
+				var pending:=_pending_sale.duplicate();_pending_sale.clear()
+				if _root.visible:_commit_sale(pending))
+			_confirm.canceled.connect(func()->void:_pending_sale.clear())
+		_pending_sale=items.duplicate()
+		var rows:PackedStringArray=[];var total:=0
+		for item in items:rows.append(str(item.name));total+=ExpeditionData.sale_value(item)
+		_confirm.open("%s\n数量：%d件 · 出售收益：%d 金\n\n这些装备已绑定，成功撤离原本可以原件入库。确认后将出售。"%["、".join(rows),items.size(),total]);return
+	_commit_sale(items)
+func _commit_sale(items:Array)->void:
+	var sold:=false
 	for item in items:
-		if GameState.sell_item(item): sold=true
+		if GameState.sell_item(item):sold=true
 	if sold:
-		AudioManager.play(&"coin",-6)
-		_refresh()
+		AudioManager.play(&"coin",-6);_refresh()
 
 func _restore_sale_focus() -> void:
 	if not _root.visible: return

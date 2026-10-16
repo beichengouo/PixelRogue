@@ -85,11 +85,12 @@ func skill_cast(id:StringName)->float:
 	return bonus
 func holy_empowered()->void:
 	if Characters.current_id()!=&"sylphiette" or not LegendarySets.complete() or not owner.ready(&"cloud_set"):return
-	owner.start(&"cloud_set",6);GameState.add_mp(10);owner.grant_player_shield(owner.actor.max_hp*.10,4);halo_orbs=3;halo_until=owner.clock+6
+	owner.start(&"cloud_set",6);GameState.add_mp(10);owner.grant_player_shield(owner.actor.max_hp*.10,4);halo_orbs=3;halo_until=owner.clock+6;HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"cloud",72,.4)
 func dash_end()->void:
 	if has(&"moonwind_chime") and owner.ready(&"moonwind_echo"):
 		owner.start(&"moonwind_echo",5);chime_echoes=2;chime_until=owner.clock+4
-	if Characters.current_id()==&"ilyua" and LegendarySets.complete():moon_until=owner.clock+5;moon_hits=4
+	if Characters.current_id()==&"ilyua" and LegendarySets.complete():
+		moon_until=owner.clock+5;moon_hits=4;IlyuaFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"wind_burst",96,.3)
 	if has(&"spring_wind_bow") and spring_charges>=4 and spring_until>owner.clock and owner.ready(&"spring_cycle"):
 		spring_charges=0;owner.start(&"spring_cycle",5);spring_echoes=3;spring_echo_until=owner.clock+4;owner.area_damage(owner.actor.global_position,72,owner.attack()*.4);IlyuaFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"wind_burst",144,.4)
 func ally_hit(enemy:EnemyBase)->void:

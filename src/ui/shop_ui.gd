@@ -39,6 +39,8 @@ var _detail_title: Label
 var _detail_tag: Label
 var _detail_quality:RarityWordmark
 var _detail_description: Label
+var _detail_key:=""
+var _detail_body:VBoxContainer
 var _detail_scroll: ScrollContainer
 var _detail_icon: Control
 var _detail_price: Label
@@ -82,6 +84,7 @@ func open(offers: Array) -> void:
 	# 同一休整期返回保留货架、购买记录和休整；新局由 run_started 重置。
 	if _visit_wave != GameState.wave:
 		_visit_wave = GameState.wave
+		_detail_key=""
 		_offers = _with_wave_prices(offers)
 		_sold.clear()
 		_rest_used = false
@@ -234,7 +237,7 @@ func buy(index: int) -> void:
 	_set_status("购得 %s。%s" % [str(item.name), "请在行囊中装备。" if ItemDB.is_equippable(item) else ("可在行囊中使用。" if ItemDB.is_usable(item) else "效果已生效。")])
 	_coins_label.text = "金币 %d" % GameState.coins
 	Outpost.request_checkpoint()
-	_rebuild()
+	_update_row_prices();_refresh_detail();_update_refresh_button();_style_rows()
 	ComicMotion.emphasize(_coins_label)
 	if index+1 < _grid.get_child_count(): ComicMotion.emphasize(_grid.get_child(index+1))
 
@@ -269,6 +272,7 @@ func _refresh_coins(coins: int) -> void:
 
 
 func _set_status(text: String, danger := false) -> void:
+	if danger:AudioManager.play(&"purchase_failed",-10,0)
 	if is_instance_valid(_npc_portrait):
 		_npc_portrait.texture=NpcArt.portrait("merchant","shortage" if danger else "success" if text.begins_with("购得") or text.begins_with("完成休整") else "welcome")
 	_status_label.text = text
@@ -312,13 +316,18 @@ func _refresh_detail() -> void:
 	_detail_tag.text = str(data.tag)
 	_detail_quality.set_quality(int(data.rarity))
 	_detail_tag.add_theme_color_override("font_color", tint)
-	_detail_description.text = str(data.desc) + ("\n\n" + ItemInsight.describe(data.item,true,false) if _selected_index >= 0 else "")
-	for child in _detail_icon.get_children():
-		_detail_icon.remove_child(child)
-		child.queue_free()
-	var icon := UiFactory.item_icon(data.item, 84)
-	icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_detail_icon.add_child(icon)
+	_detail_description.text = str(data.desc) + ("\n\n" + ItemInsight.describe(data.item,true,false,false) if _selected_index >= 0 else "")
+	var detail_key:=str(_selected_index)+":"+str(data.item.get("id","key"))
+	if detail_key!=_detail_key:
+		_detail_key=detail_key
+		for child in _detail_body.get_children():
+			if child!=_detail_description:_detail_body.remove_child(child);child.queue_free()
+		if _selected_index>=0:ItemInsight.append_story(_detail_body,data.item,18)
+		for child in _detail_icon.get_children():
+			_detail_icon.remove_child(child);child.queue_free()
+		var icon := UiFactory.item_icon(data.item, 84)
+		icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_detail_icon.add_child(icon)
 	_detail_price.text = "%d 金币" % int(data.cost)
 	_purchase_button.disabled = bool(data.sold) or GameState.coins < int(data.cost) or Time.get_ticks_msec() < _opening_until
 	(_purchase_button as ShopArtButton).set_art("key" if _selected_index < 0 else "purchase")
@@ -560,7 +569,7 @@ func _build() -> void:
 	_detail_description.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_detail_description.custom_minimum_size.x = 325
 	_detail_description.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	_detail_scroll.add_child(_detail_description)
+	_detail_body=UiFactory.vbox(8);_detail_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_scroll.add_child(_detail_body);_detail_body.add_child(_detail_description)
 	_detail_price = _label("", 26, PixelUi.GOLD)
 	_place(_canvas, _detail_price, Rect2(66,448,160,40))
 	_purchase_button = _fixed_button("purchase")

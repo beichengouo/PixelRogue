@@ -30,7 +30,7 @@ static func create(parent:Node, level:RoomLevel, kind:StringName, at:Vector2, ai
 
 func _ready()->void:
 	add_to_group("affix_hazards")
-	z_index=4
+	z_index=800;z_as_relative=false
 	var ink:=CanvasItemMaterial.new();ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED;material=ink
 
 func _physics_process(dt:float)->void:

@@ -10,7 +10,7 @@ var head_y := -40.0
 var active := false
 
 func _ready() -> void:
-	z_index = 8
+	z_index =800;z_as_relative=false
 	var ink := CanvasItemMaterial.new()
 	ink.light_mode = CanvasItemMaterial.LIGHT_MODE_UNSHADED
 	material = ink

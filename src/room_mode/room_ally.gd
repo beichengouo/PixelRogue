@@ -17,6 +17,9 @@ var _firing_goal:=Vector2.ZERO
 var _firing_target:=Vector2.ZERO
 var _roam_goal:=Vector2.ZERO
 var _roam_left:=0.0
+var _roam_rest:=0.0
+var _roam_arrived:=false
+var _roam_initialized:=false
 var _roam_rng:=RandomNumberGenerator.new()
 func body_radius()->float:return 12.0
 func attack_is_melee()->bool:return HireOffers.merc_is_melee(_merc_index) if is_merc else HireOffers.monster_is_melee(enemy_kind)
@@ -41,7 +44,7 @@ func place_near_player()->void:
 func _physics_process(dt:float)->void:
 	if not is_instance_valid(player) or hp<=0 or is_queued_for_deletion():return
 	_cooldown=maxf(0,_cooldown-dt*(1.0+equipment_haste));_hurt_left=maxf(0,_hurt_left-dt);_unit_spawn_left=maxf(0,_unit_spawn_left-dt)
-	_room_target_timer-=dt;_roam_left-=dt
+	_room_target_timer-=dt;_roam_left-=dt;_roam_rest=maxf(0,_roam_rest-dt)
 	var target:EnemyBase=_choose_target()
 	var goal:Vector2=target.global_position if is_instance_valid(target) else follow_goal()
 	var dist:=global_position.distance_to(goal)
@@ -65,9 +68,9 @@ func _physics_process(dt:float)->void:
 		travel=room.path_direction(global_position,destination,body_radius(),is_flying())
 	var moving:=dist>(48 if melee else 190) or (not melee and target!=null and dist<112) or not visible or not corridor
 	if firing_here:moving=false
-	if target==null:moving=dist>42
+	if target==null:moving=dist>=24
 	velocity=travel*move_speed*movement_slow_multiplier() if moving else Vector2.ZERO
-	if target!=null and dist<112 and not melee and travel.is_zero_approx():velocity=_retreat_direction(goal)*move_speed*movement_slow_multiplier()
+	if target!=null and visible and dist<112 and not melee and travel.is_zero_approx():velocity=_retreat_direction(goal)*move_speed*movement_slow_multiplier()
 	_detour_left=maxf(0,_detour_left-dt)
 	if _detour_left>0 and moving:velocity=_detour*move_speed*movement_slow_multiplier()
 	if target!=null and visible and corridor and dist<=reach and _cooldown<=0 and attack_clock<0:
@@ -126,8 +129,12 @@ func _play_pose(pose:StringName,facing_direction:Vector2)->void:
 		_sprite.pause();_sprite.frame=mini(_sprite.sprite_frames.get_frame_count(wanted)-1,int(progress*_sprite.sprite_frames.get_frame_count(wanted)))
 	elif not _sprite.is_playing():_sprite.play()
 func follow_goal()->Vector2:
-	if _roam_left<=0 or global_position.distance_to(_roam_goal)<24 or not room.body_clear(_roam_goal,body_radius(),is_flying()):
-		_roam_goal=RoomTactics.roam_goal(room,self,_roam_rng,body_radius(),is_flying());_roam_left=_roam_rng.randf_range(2.0,4.5)
+	if _roam_initialized and not _roam_arrived and global_position.distance_to(_roam_goal)<24:
+		_roam_arrived=true;_roam_rest=_roam_rng.randf_range(1,3)
+	if _roam_rest>0:return global_position
+	if not _roam_initialized or _roam_arrived or _roam_left<=0 or not room.body_clear(_roam_goal,body_radius(),is_flying()):
+		_roam_goal=RoomTactics.roam_goal(room,self,_roam_rng,body_radius(),is_flying());_roam_left=global_position.distance_to(_roam_goal)/maxf(1,move_speed)+3
+		_roam_initialized=true;_roam_arrived=false
 	return _roam_goal
 func _choose_target()->EnemyBase:
 	if player is RoomPlayer and is_instance_valid((player as RoomPlayer).equipment_mechanics):
@@ -138,15 +145,17 @@ func _choose_target()->EnemyBase:
 		if is_instance_valid(cached) and not cached._dead and cached.level==room and not cached.is_queued_for_deletion():return cached
 	_room_target_timer=0.3
 	var result:EnemyBase;var score:=INF
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in room.tactics.enemies(room):
 		var enemy:=node as EnemyBase
 		if not is_instance_valid(enemy) or enemy._dead or enemy.is_queued_for_deletion():continue
 		var distance:=global_position.distance_squared_to(enemy.global_position)
-		if enemy.level!=room:continue
+		if enemy.level!=room or distance>=score:continue
 		var visible:=room.sight(global_position,enemy.global_position)
 		if not visible and room.path_direction(global_position,enemy.global_position,body_radius(),is_flying()).is_zero_approx():continue
 		var weight:=distance
 		if weight<score:score=weight;result=enemy
+	var previous:EnemyBase=_cached_target.get_ref() as EnemyBase if _cached_target!=null else null
+	if is_instance_valid(previous) and previous.level==room and not previous._dead and (room.sight(global_position,previous.global_position) or not room.path_direction(global_position,previous.global_position,body_radius(),is_flying()).is_zero_approx()):result=RoomTactics.stable_target(previous,result,global_position) as EnemyBase
 	_cached_target=weakref(result) if result!=null else null
 	return result
 func _retreat_direction(enemy:Vector2)->Vector2:

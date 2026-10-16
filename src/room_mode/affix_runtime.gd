@@ -37,7 +37,7 @@ var mirror_hits:=0
 var mirror_cd:=0.0
 
 func _ready()->void:
-	z_index=7
+	z_index=800;z_as_relative=false
 	for id in PERIODS:
 		if enemy.has_affix(id):clocks[str(id)]=float(PERIODS[id])*0.55
 	trail_anchor=enemy.global_position

@@ -215,7 +215,7 @@ func settle_sortie(outcome: String) -> Dictionary:
 	if success:
 		data.gold = gold()+payout
 		data.best[tier] = maxi(int(data.best.get(tier,0)),GameState.wave-(0 if GameState.wave_completed else 1))
-	var result = {"chapter_id":str(GameState.chapter_id),"chapter_cleared":GameState.chapter_cleared,"id":GameState.sortie_id,"outcome":outcome,"gold":payout,"spent":int(active.get("spent",0)),"wave":GameState.wave,"danger":GameState.danger,"difficulty":GameState.difficulty,"coins":GameState.coins,"rows":rows,"build":_build_snapshot()}
+	var result = {"chapter_id":str(GameState.chapter_id),"chapter_cleared":GameState.chapter_cleared,"id":GameState.sortie_id,"outcome":outcome,"gold":payout,"spent":int(active.get("spent",0)),"wave":GameState.wave,"danger":GameState.danger,"difficulty":GameState.difficulty,"coins":GameState.coins,"coin_income":GameState.coins if success else 0,"sale_income":payout-GameState.coins if success else 0,"rows":rows,"build":_build_snapshot()}
 	data.active = {}
 	data.last_result = result
 	SaveService.data.run = {}
@@ -327,6 +327,15 @@ func bond_event(npc: String, event: String, gain: int, gift = false) -> bool:
 	SaveService.data = old_save
 	return false
 
+func _lost_items()->Array:
+	var result:Array=[];var counts:Dictionary={};var bag:Array=GameState.items.duplicate()
+	for item in GameState.equipment.values():
+		if not item.is_empty():bag.append(item)
+	for item in bag:
+		var id:=str(item.get("id",""))
+		if not counts.has(id):counts[id]={"id":id,"name":str(item.get("name",id)),"count":0}
+		counts[id].count+=1
+	result.assign(counts.values());return result
 func mark_dead(wave: int, carried: int) -> void:
 	if active_id().is_empty(): return
 	data.active["status"]="dead"
@@ -334,6 +343,7 @@ func mark_dead(wave: int, carried: int) -> void:
 	data.active["lost_coins"]=carried
 	data.active["build"]=_build_snapshot()
 	SaveService.data.run={"sortie_id":active_id(),"terminal":"dead"}
+	data.active["lost_items"]=_lost_items()
 	finalize_death()
 
 func finalize_death() -> bool:
@@ -341,7 +351,7 @@ func finalize_death() -> bool:
 	var before=data.duplicate(true)
 	var old_save=SaveService.data.duplicate(true)
 	var active: Dictionary=data.active
-	data.last_result={"id":active.id,"outcome":"dead","gold":0,"spent":int(active.spent),"difficulty":int(active.get("difficulty",1)),"wave":int(active.get("wave",1)),"coins":int(active.get("lost_coins",0)),"rows":[],"build":active.get("build",{})}
+	data.last_result={"id":active.id,"outcome":"dead","gold":0,"spent":int(active.spent),"difficulty":int(active.get("difficulty",1)),"wave":int(active.get("wave",1)),"coins":int(active.get("lost_coins",0)),"rows":[],"lost_items":active.get("lost_items",[]),"build":active.get("build",{})}
 	data.active={}
 	SaveService.data.run={}
 	SaveService.data.runs=int(SaveService.data.get("runs",0))+1

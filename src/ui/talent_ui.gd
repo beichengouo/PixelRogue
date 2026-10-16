@@ -226,7 +226,7 @@ func _build() -> void:
 	_points_label = PixelUi.label("", 19, PixelUi.GOLD)
 	header.add_child(_points_label)
 	var close_button := PixelUi.compact_button("关闭  ×", 16)
-	close_button.tooltip_text = "T / Esc"
+	close_button.tooltip_text = "%s / %s"%[KeyBindings.label("talents"),KeyBindings.label("ui_cancel")]
 	close_button.pressed.connect(close)
 	var reset := PixelUi.compact_button("免费重置" if CampSession.active else "洗点 · 100金币", 15)
 	_reset_button = reset
@@ -414,6 +414,9 @@ func _refresh_detail() -> void:
 	add.custom_minimum_size = Vector2(DETAIL_W - 48.0, 46.0)
 	# 加点按钮就是普通按钮：不加图标（图标已经在上面标题行里了）
 	add.disabled = full or not unlocked or GameState.talent_points <= 0
+	add.tooltip_text=ItemInsight.talent_requirement(_selected)
+	if add.disabled:
+		var reason:=PixelUi.label(add.tooltip_text,16,PixelUi.MUTED);reason.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(reason)
 	add.pressed.connect(_upgrade_selected)
 	_detail_box.add_child(add)
 	_add_button = add

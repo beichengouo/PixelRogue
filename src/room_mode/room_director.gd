@@ -81,7 +81,7 @@ func enter_room(record:Dictionary)->void:
 	if not _boss_wave:
 		var habitat:=str(record.get("biome","forest"))
 		if record.kind in ["normal","elite"]:habitat="ruin" if graph.chapter_id==ChapterCatalog.NEXT else ("wetland" if habitat=="wetland" else "forest")
-		_queue.assign(RoomEnemyComposer.compose(total_this_wave,habitat,wave,spawn_rng))
+		_queue.assign(RoomEnemyComposer.compose(total_this_wave,habitat,wave,spawn_rng,int(plan.get("composition",0))))
 	else:_queue.append(StringName("boss_"+str(record.boss)))
 	if record.kind=="trial":
 		trial_rounds=[[],[],[]]

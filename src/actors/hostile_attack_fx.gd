@@ -44,7 +44,7 @@ static func pulse(parent: Node, at: Vector2, family: String, stage: String, widt
 	if is_instance_valid(room):
 		var bounds:=room.bounds();ink.set_shader_parameter("clip_arena",true);ink.set_shader_parameter("arena",Vector4(bounds.position.x,bounds.position.y,bounds.end.x,bounds.end.y))
 	effect.sprite.material=ink
-	parent.add_child(effect);effect.global_position=at;effect.rotation=direction;effect.z_index=0 if stage=="area" else 6
+	parent.add_child(effect);effect.global_position=at;effect.rotation=direction;effect.z_index=780 if stage in ["area","cast"] else 6;effect.z_as_relative=stage not in ["area","cast"]
 	effect.add_to_group("hostile_attack_fx")
 	effect.modulate.a=maxf(.3,PixelSpellArt.strength())
 	return effect

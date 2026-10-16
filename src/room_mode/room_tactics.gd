@@ -3,6 +3,25 @@ extends RefCounted
 ## Local crowd queries are shared per physics frame, never use the loot RNG.
 var _frame:=-1
 var _cells:Dictionary={}
+var _roster_frame:=-1
+var _enemies:Array[EnemyBase]=[]
+var _allies:Array[Node2D]=[]
+var roster_builds:=0
+func invalidate_roster()->void:_roster_frame=-1;_frame=-1
+func _refresh_roster(room:RoomLevel)->void:
+	var frame:=Engine.get_physics_frames()
+	if frame==_roster_frame:return
+	_roster_frame=frame;roster_builds+=1;_enemies.clear();_allies.clear()
+	for enemy in room.get_tree().get_nodes_in_group("enemies"):
+		if enemy is EnemyBase and enemy.level==room:_enemies.append(enemy)
+	for ally in room.get_tree().get_nodes_in_group("allies"):
+		if ally is RoomAlly and ally.room==room:_allies.append(ally)
+func enemies(room:RoomLevel)->Array[EnemyBase]:_refresh_roster(room);return _enemies
+func allies(room:RoomLevel)->Array[Node2D]:_refresh_roster(room);return _allies
+static func stable_target(current:Node2D,candidate:Node2D,origin:Vector2)->Node2D:
+	if not is_instance_valid(current) or current.is_queued_for_deletion() or float(current.get("hp"))<=0:return candidate
+	if not is_instance_valid(candidate) or candidate==current:return current
+	return candidate if origin.distance_squared_to(candidate.global_position)<=origin.distance_squared_to(current.global_position)*.5625 else current
 func neighbors(room:RoomLevel,unit:Node2D)->Array[Node2D]:
 	return _near_point(room,unit.global_position,unit)
 func _near_point(room:RoomLevel,point:Vector2,ignore:Node2D)->Array[Node2D]:
@@ -51,9 +70,10 @@ static func roam_goal(room:RoomLevel,unit:Node2D,rng:RandomNumberGenerator,radiu
 		var bounds:=room.bounds().grow(-42)
 		var point:=Vector2(rng.randf_range(bounds.position.x,bounds.end.x),rng.randf_range(bounds.position.y,bounds.end.y))
 		if not room.body_clear(point,radius,flying) or not room.unit_position_clear(point,radius,unit):continue
+		# Reserve the 24px arrival tolerance as well as the 110px exit margin.
 		var near_gate:=false
 		for direction in RoomGraph.DIRECTIONS:
-			if room.door_point(direction).distance_to(point)<110:near_gate=true;break
+			if room.door_point(direction).distance_to(point)<134:near_gate=true;break
 		if near_gate:continue
 		if room.path_direction(unit.global_position,point,radius,flying).is_zero_approx():continue
 		return point

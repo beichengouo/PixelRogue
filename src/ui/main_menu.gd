@@ -23,6 +23,8 @@ var _root: Control
 var _canvas: Control
 var _page: Control
 var _scroll_memory: Dictionary = {}
+var _archive_positions:Dictionary={}
+var _visible_archive_key:=""
 var _content: VBoxContainer
 var _backdrop: Panel
 var _shade: TextureRect
@@ -233,16 +235,22 @@ func _show_view(view: View, immediate := false) -> void:
 
 func _restore_scroll(view: View) -> void:
 	if _view != view: return
-	var saved: Array = _scroll_memory.get(int(view), [])
+	var saved: Array = _archive_positions.get(_visible_archive_key,[]) if view in [View.ITEMS,View.MONSTERS,View.RECORD] else _scroll_memory.get(int(view), [])
 	var scrolls := _page.find_children("*", "ScrollContainer", true, false)
 	for i in mini(saved.size(), scrolls.size()):
 		scrolls[i].scroll_horizontal = saved[i].x
 		scrolls[i].scroll_vertical = saved[i].y
 
 func _render_view(view: View) -> void:
+	if _view in [View.ITEMS,View.MONSTERS,View.RECORD] and not _visible_archive_key.is_empty():
+		var saved:Array=[]
+		for scroll in _page.find_children("*","ScrollContainer",true,false):saved.append(Vector2i(scroll.scroll_horizontal,scroll.scroll_vertical))
+		_archive_positions[_visible_archive_key]=saved
 	InteractionSkin.unmount(_content);InteractionSkin.clear_surface(_backdrop)
 	_backdrop.add_theme_stylebox_override("panel",PixelUi.plate(4))
 	_view = view
+	if view==View.RECORD and _record_character==&"":_record_character=Characters.current_id()
+	_visible_archive_key="achievements:"+_achievement_filter if view==View.ITEMS else "codex:"+_monster_category+":"+_codex_kind if view==View.MONSTERS else "story:"+str(_record_chapter)+":"+str(_record_character) if view==View.RECORD else ""
 	if not _settings_only and is_open(): AudioManager.play_menu(view != View.MAIN)
 	if _artbook != null:
 		_page.remove_child(_artbook)
@@ -640,7 +648,7 @@ func _settings_keys(body:VBoxContainer)->void:
 		hint.text = text
 		body.add_child(hint)
 	body.add_child(_rule())
-	body.add_child(PixelUi.label("键盘按键设置",18,PixelUi.GOLD))
+	body.add_child(PixelUi.label("键盘与鼠标按键",18,PixelUi.GOLD))
 	_binding_status=PixelUi.label("选择操作后按键盘键或鼠标按键（支持侧键）· Esc 取消 · 手柄键位保持原样",15,PixelUi.MUTED)
 	_binding_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;body.add_child(_binding_status)
 	_binding_buttons.clear()

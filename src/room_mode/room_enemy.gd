@@ -154,7 +154,7 @@ func think(dt: float) -> void:
 	# 0.12s rush can enter the 20px contact area around an 11px player body.
 	var melee_reach:=64.0 if kind==&"thorn_mantis" else (150.0 if charging else (100.0 if kind==&"bomber" else minf(150.0,31.0+move_speed*0.30)))
 	var can_strike:=distance<(300.0 if ranged else melee_reach) and visible and (ranged or room.segment_clear(global_position,target,body_radius(),is_flying()))
-	velocity=Vector2.ZERO if can_strike and (ranged or (not charging and kind!=&"bomber" and distance<=31.0)) else _travel*move_speed
+	velocity=Vector2.ZERO if can_strike and ((ranged and distance>=125) or (not ranged and not charging and kind!=&"bomber" and distance<=31.0)) else _travel*move_speed
 	_detour_left=maxf(0,_detour_left-dt)
 	if _detour_left>0 and not can_strike:velocity=_detour*move_speed
 	if _action_cd<=0 and can_strike:
@@ -235,7 +235,7 @@ func _think_backline(dt:float)->void:
 		_nav_cd=.3
 		var goal:=room.tactics.attack_position(room,self,attack_target(),true,body_radius(),false)
 		_travel=room.path_direction(global_position,goal,body_radius(),false)
-	velocity=_travel*move_speed if distance<180 or distance>330 else Vector2.ZERO
+	velocity=_travel*move_speed if distance<180 or distance>330 or not room.projectile_clear(global_position,target) else Vector2.ZERO
 	if _action_cd>0 or distance>360 or not room.sight(global_position,target):return
 	# Retreat before casting where terrain offers space; after three seconds
 	# trapped casters still act rather than waiting forever against a wall.

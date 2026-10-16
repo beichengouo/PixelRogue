@@ -9,7 +9,8 @@ static func create(parent:Node,level:RoomLevel,data:Dictionary,seconds:float,col
 	var warning:=BossPatternWarning.new();warning.room=level;warning.spec=data.duplicate(true);warning.duration=seconds;warning.tint=color
 	parent.add_child(warning);warning.position=data.get("at",Vector2.ZERO);return warning
 func _ready()->void:
-	z_index=12;add_to_group("boss_pattern_warnings")
+	AudioManager.play(&"boss_warning",-13,0)
+	z_index=800;z_as_relative=false;add_to_group("boss_pattern_warnings")
 	var ink:=CanvasItemMaterial.new();ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED;material=ink
 func _physics_process(dt:float)->void:
 	age+=dt

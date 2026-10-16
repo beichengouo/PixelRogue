@@ -10,6 +10,10 @@ const ROOM_MUSIC := preload("res://src/data/room_music_catalog.gd")
 ## Menu MP3s are user-provided: E:/素材/轻盈哼唱.mp3 and 轻盈哼唱 (1).mp3.
 ## Forest/king/mage originate in tools/build_music.gd; Tide in build_tide_music.gd.
 const POOL_SIZE := 12
+const CUE_SOURCE:={"skill_unavailable":"ui_click","purchase_failed":"ui_click","shield_hit":"hit","shield_break":"land","reward_claim":"coin","boss_warning":"wave_start"}
+const CUE_PITCH:={"skill_unavailable":.78,"purchase_failed":.72,"shield_hit":1.3,"shield_break":.8,"reward_claim":1.15,"boss_warning":.9}
+const CUE_GAPS:={"hit":65,"swing":70,"enemy_die":80,"enemy_shoot":85,"coin":70,"skill_unavailable":300,"purchase_failed":250,"shield_hit":120,"shield_break":200,"boss_warning":150}
+var _priority_voices:Dictionary={}
 const DEDUP_MS := 30          # 同一音效在这段时间内不重复播，避免连发时糊成噪音
 
 var _streams: Dictionary = {}
@@ -311,10 +315,10 @@ func _load_streams() -> void:
 
 func play(sfx: StringName, volume_db := 0.0, pitch_variation := 0.06) -> void:
 	var key := String(sfx)
-	if not _streams.has(key):
-		return
+	var source:String=CUE_SOURCE.get(key,key)
+	if not _streams.has(source):return
 	var now := Time.get_ticks_msec()
-	if _last_played.has(key) and now - int(_last_played[key]) < DEDUP_MS:
+	if _last_played.has(key) and now - int(_last_played[key]) < int(CUE_GAPS.get(key,DEDUP_MS)):
 		return
 	_last_played[key] = now
 	if key=="achievement_unlock":
@@ -327,6 +331,11 @@ func play(sfx: StringName, volume_db := 0.0, pitch_variation := 0.06) -> void:
 		_achievement_player.pitch_scale=1
 		_achievement_player.play()
 		return
+	var priority:="danger" if key=="boss_warning" else "hurt" if key in ["hurt","shield_break"] else "feedback" if CUE_SOURCE.has(key) or key in ["wave_clear","wave_start"] else ""
+	if not priority.is_empty():
+		if not is_instance_valid(_priority_voices.get(priority)):
+			var voice:=AudioStreamPlayer.new();voice.name="Priority_"+priority;add_child(voice);_priority_voices[priority]=voice
+		var voice:AudioStreamPlayer=_priority_voices[priority];voice.stream=_streams[source];voice.volume_db=volume_db+linear_to_db(maxf(.0001,_sfx_volume));voice.pitch_scale=float(CUE_PITCH.get(key,1.0));voice.play();return
 	var player := _players[_next]
 	_next = (_next + 1) % _players.size()
 	player.stream = _streams[key]
@@ -386,6 +395,8 @@ func shutdown() -> void:
 	if is_instance_valid(_music_player): _music_player.stop(); _music_player.stream = null
 	if is_instance_valid(_music_spare): _music_spare.stop(); _music_spare.stream=null
 	if is_instance_valid(_achievement_player):_achievement_player.stop();_achievement_player.stream=null
+	for voice in _priority_voices.values():
+		if is_instance_valid(voice):voice.stop();voice.stream=null
 	_streams.clear()
 	_music_streams.clear()
 

@@ -46,6 +46,7 @@ static func spawn(parent:Node,at:Vector2,kind:String,size:=72.0,lifetime:=.4)->I
 	fx.sprite=AnimatedSprite2D.new();var animation:=SpriteFrames.new()
 	animation.set_animation_speed(&"default",4 if size>=144 and lifetime>.6 else (4/maxf(.65,lifetime) if size>=144 else 12 if lifetime>.6 else 16));animation.set_animation_loop(&"default",lifetime>.6)
 	for texture in textures:animation.add_frame(&"default",texture)
+	if kind in ["trap","spread_vine","zone","wild_zone"]:fx.sprite.modulate.a=.55
 	fx.sprite.sprite_frames=animation;fx.sprite.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	fx.sprite.material=RedrawnHeroArt.material()
 	fx.sprite.scale=Vector2.ONE*size/maxf(textures[0].get_width(),textures[0].get_height())

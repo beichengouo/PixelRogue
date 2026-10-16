@@ -421,7 +421,7 @@ func _draw()->void:
 		draw_arc(origin,29,0,TAU,40,gold,1)
 	if _judgment_open:HolyFX.paint(self,"judgment",HolyFX.ground_rect("judgment",22,origin),phase,intensity*.9)
 	if _sanctuary_open:
-		HolyFX.paint(self,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.8)
+		HolyFX.paint(self,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.45)
 		draw_arc(origin,126,0,TAU,64,Color(1,.91,.67,.4),1)
 	for feather:Dictionary in feathers:
 		if float(feather.ready)>clock:continue
@@ -430,7 +430,7 @@ func _draw()->void:
 	for field in fields:
 		if field.kind=="court":
 			var location:=to_local(at(field))
-			HolyFX.paint(self,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.85)
+			HolyFX.paint(self,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.48)
 			draw_arc(location,90,0,TAU,48,Color(1,.9,.6,.32),1)
 	for id in marks:
 		var target:=enemy(str(id))

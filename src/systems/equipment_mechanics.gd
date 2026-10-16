@@ -337,12 +337,16 @@ func area_damage(origin: Vector2, radius: float, amount: float, excluded: EnemyB
 	for enemy in nearest_enemies(origin, radius, 100, excluded): extra_damage(enemy, amount, origin)
 
 func nearest_enemies(origin: Vector2, radius: float, limit: int, excluded: EnemyBase = null) -> Array[EnemyBase]:
-	var found: Array[EnemyBase] = []
-	for node in get_tree().get_nodes_in_group("enemies"):
-		var enemy := node as EnemyBase
-		if enemy != excluded and _live_enemy(enemy) and origin.distance_squared_to(enemy.global_position) <= radius * radius and (not is_instance_valid(actor.room) or actor.room.projectile_clear(origin,enemy.global_position)): found.append(enemy)
-	found.sort_custom(func(left: EnemyBase, right: EnemyBase) -> bool: return left.global_position.distance_squared_to(origin) < right.global_position.distance_squared_to(origin))
-	if found.size() > limit: found.resize(limit)
+	var found:Array[EnemyBase]=[];var candidates:Array[EnemyBase]=[]
+	if limit<=0:return found
+	var roster:Array=actor.room.tactics.enemies(actor.room) if is_instance_valid(actor.room) else get_tree().get_nodes_in_group("enemies")
+	for node in roster:
+		var enemy:=node as EnemyBase
+		if enemy!=excluded and _live_enemy(enemy) and origin.distance_squared_to(enemy.global_position)<=radius*radius:candidates.append(enemy)
+	candidates.sort_custom(func(left:EnemyBase,right:EnemyBase)->bool:return left.global_position.distance_squared_to(origin)<right.global_position.distance_squared_to(origin))
+	for enemy in candidates:
+		if not is_instance_valid(actor.room) or actor.room.projectile_clear(origin,enemy.global_position):found.append(enemy)
+		if found.size()>=limit:break
 	return found
 
 func grant_player_shield(amount: float, duration: float) -> void:

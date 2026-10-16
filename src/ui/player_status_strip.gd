@@ -17,7 +17,7 @@ func _ready() -> void:
 	set_process_priority(40)
 
 func _process(_delta: float) -> void:
-	refresh(GameState.player as Player)
+	refresh(GameState.player as Player if is_instance_valid(GameState.player) else null)
 
 func refresh(actor: Player) -> void:
 	var rows := PlayerStatusCatalog.snapshot(actor)

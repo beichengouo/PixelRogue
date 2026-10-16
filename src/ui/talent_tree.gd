@@ -91,7 +91,7 @@ func _build_node(branch: StringName, at: Vector2) -> Control:
 	button.position = at
 	button.size = Vector2(NODE_SIZE, NODE_SIZE)
 	button.custom_minimum_size = button.size
-	button.tooltip_text = "%s  ·  %d/%d\n%s" % [str(info.name), rank, max_rank, str(info.desc)]
+	button.tooltip_text = "%s  ·  %d/%d\n%s\n%s" % [str(info.name), rank, max_rank, str(info.desc),ItemInsight.talent_requirement(branch)]
 	_style_node(button, branch)
 	var icon := UiFactory.texture_icon(str(info.get("icon", "")), ICON_SIZE)
 	icon.position = Vector2(20, 7)

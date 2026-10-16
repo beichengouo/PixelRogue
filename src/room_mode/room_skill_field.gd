@@ -81,7 +81,7 @@ func pulse() -> void:
 			if is_instance_valid(ally) and contains(ally.global_position) and room.sight(global_position,ally.global_position): ally.heal(ally.max_hp*0.01*heal_scale)
 
 func _draw() -> void:
-	var tint := _tint; tint.a = 0.14
+	var tint := _tint; tint.a = 0.07
 	if kind=="snare":
 		var points := PackedVector2Array([direction.orthogonal()*width_value/2,-direction.orthogonal()*width_value/2,direction*length_value-direction.orthogonal()*width_value/2,direction*length_value+direction.orthogonal()*width_value/2])
 		draw_colored_polygon(points,tint); tint.a=0.7

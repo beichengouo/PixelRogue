@@ -14,7 +14,12 @@ static func _append(rows: Array[Dictionary], id: String, remaining: float, detai
 	if not permanent and (not is_finite(remaining) or remaining <= 0.0): return
 	var info: Dictionary = definitions().get(id, {})
 	if info.is_empty(): return
-	rows.append({"id": key if not key.is_empty() else id, "icon_id": id,
+	var identity:=key if not key.is_empty() else id
+	for row in rows:
+		if str(row.id)==identity:
+			row.remaining=maxf(float(row.remaining),remaining);row.stacks=maxi(int(row.stacks),stacks);row.permanent=bool(row.permanent) or permanent
+			return
+	rows.append({"id": identity, "icon_id": id,
 		"name": str(info.name), "description": detail if not detail.is_empty() else str(info.description),
 		"remaining": remaining, "permanent":permanent,"stacks": stacks, "debuff": harmful or bool(info.get("debuff", false)),
 		"icon": str(info.get("icon","res://assets/player_status_v01/" + id + ".png"))})

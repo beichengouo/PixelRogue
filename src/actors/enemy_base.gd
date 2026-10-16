@@ -305,11 +305,12 @@ func _update_aggro(delta: float) -> void:
 	if _aggro_timer > 0.0 and aggro != null and is_instance_valid(aggro) and float(aggro.get("hp"))>0:
 		return
 	_aggro_timer = 0.22
-	var best: Node2D = player if (player != null and is_instance_valid(player)) else null
+	var best: Node2D = player if is_instance_valid(player) and player.hp>0 else null
 	var best_dist := INF
 	if best != null:
 		best_dist = global_position.distance_squared_to(best.global_position)
-	for node in get_tree().get_nodes_in_group("allies"):
+	var candidates:Array=level.tactics.allies(level) if level is RoomLevel else get_tree().get_nodes_in_group("allies")
+	for node in candidates:
 		var ally := node as Node2D
 		if ally == null or not is_instance_valid(ally) or float(ally.get("hp"))<=0:
 			continue
@@ -318,6 +319,8 @@ func _update_aggro(delta: float) -> void:
 		if d < best_dist and (level is RoomLevel or d < AGGRO_RANGE * AGGRO_RANGE):
 			best_dist = d
 			best = ally
+	if aggro==player or is_instance_valid(aggro) and aggro.is_in_group("allies"):
+		best=RoomTactics.stable_target(aggro,best,global_position)
 	if aggro != best:
 		reset_path()
 	aggro = best

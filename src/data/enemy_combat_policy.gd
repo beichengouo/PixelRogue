@@ -23,6 +23,7 @@ static func filtered_affixes(kind:StringName,ids:Array[StringName])->Array[Strin
 static func excluded_affixes(kind:StringName)->Array[StringName]:
 	var excluded:Array[StringName]=[]
 	if not ranged_affix_allowed(kind):excluded.assign([EnemyAffixes.RANGED,EnemyAffixes.HUNTER_LOCK])
+	if kind==&"thorn_mantis":excluded.append(EnemyAffixes.EMBER_GRAVE)
 	return excluded
 static func create(kind:StringName)->EnemyBase:
 	var data:Dictionary=NEW_DATA[kind]

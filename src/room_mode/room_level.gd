@@ -760,6 +760,8 @@ func register_unit_body(unit:CharacterBody2D,radius:float,flying:=false)->void:
 	unit.collision_layer|=Layers.UNIT_BODY
 	unit.collision_mask|=Layers.UNIT_BODY
 	unit.add_to_group("room_units")
+	tactics.invalidate_roster()
+	if not unit.tree_exiting.is_connected(tactics.invalidate_roster):unit.tree_exiting.connect(tactics.invalidate_roster)
 	unit.set_meta("unit_radius",radius)
 	_settle_registered_body.call_deferred(weakref(unit),radius,flying)
 

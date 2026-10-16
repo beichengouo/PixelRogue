@@ -27,6 +27,7 @@ var _batch:Button
 var _batch_quality:OptionButton
 var _batch_dialog:SaleConfirmUI
 var _pending_plan:Dictionary={}
+var _pending_single:Dictionary={}
 const PAGE_SIZE=60
 func _ready()->void:
 	add_theme_constant_override("separation",10)
@@ -73,9 +74,7 @@ func _ready()->void:
 	MobileControls.decorate_number(_quantity)
 	_sell=PixelUi.compact_button("出售所选物品",17);detail.add_child(_sell)
 	_sell.set_meta("focus_token","warehouse_sell")
-	_sell.pressed.connect(func()->void:
-		status_changed.emit("出售成功" if Outpost.sell_stored(_selected,int(_quantity.value),extra_reserves) else "库存已变化、物品受保护或保存失败，物品保留")
-		refresh())
+	_sell.pressed.connect(_sell_selected)
 	_lock=PixelUi.compact_button("保护此道具",16);detail.add_child(_lock)
 	_lock.set_meta("focus_token","warehouse_lock")
 	_lock.pressed.connect(func()->void:
@@ -92,11 +91,15 @@ func _ready()->void:
 		b.pressed.connect(func()->void:_selected="glow_mushroom_%d" % i;_refresh_detail())
 	_batch_dialog=SaleConfirmUI.new();add_child(_batch_dialog)
 	_batch_dialog.confirmed.connect(func()->void:
+		var single:=_pending_single;_pending_single={}
 		var plan=_pending_plan;_pending_plan={}
 		_batch.grab_focus()
-		status_changed.emit("批量出售成功 · +%d金 · 释放%d格" % [int(plan.get("gold",0)),int(plan.get("slots_freed",0))] if Outpost.sell_batch(plan) else "清单已变化或保存失败，未出售，请重新预览")
+		if not single.is_empty():
+			status_changed.emit("出售成功 · +%d金"%int(single.gold) if Outpost.sell_stored(str(single.id),int(single.count),extra_reserves) else "库存已变化、物品受保护或保存失败，物品保留")
+		elif not plan.is_empty():
+			status_changed.emit("批量出售成功 · +%d金 · 释放%d格" % [int(plan.get("gold",0)),int(plan.get("slots_freed",0))] if Outpost.sell_batch(plan) else "清单已变化或保存失败，未出售，请重新预览")
 		refresh())
-	_batch_dialog.canceled.connect(func()->void:_pending_plan={})
+	_batch_dialog.canceled.connect(func()->void:_pending_plan={};_pending_single={})
 	refresh()
 func refresh()->void:
 	if _grid==null:return
@@ -105,7 +108,7 @@ func refresh()->void:
 	var capacity=Outpost.warehouse_capacity()
 	_capacity.text="仓库 %d / %d 格%s" % [used,capacity," · 超量！出发前请出售、交付或扩容" if used>capacity else ""]
 	_capacity.add_theme_color_override("font_color",Palette.UI_DANGER if used>capacity else PixelUi.GOLD)
-	_expand.text="扩容 +10格 · %d金" % Outpost.expansion_cost();_expand.disabled=Outpost.expansion_cost()>Outpost.gold()
+	_expand.text="扩容 +10格 · %d金" % Outpost.expansion_cost();_expand.disabled=Outpost.expansion_cost()>Outpost.gold();_expand.tooltip_text="金币不足 · 还差%d金"%(Outpost.expansion_cost()-Outpost.gold()) if _expand.disabled else "增加10个仓库格"
 	_records.clear()
 	var search=_search.text.strip_edges().to_lower()
 	var reserves=Outpost.reserved_counts(extra_reserves)
@@ -178,7 +181,16 @@ func _refresh_detail()->void:
 	_quantity.max_value=maxi(1,allowed);_quantity.value=1
 	_quantity.visible=allowed>0;_sell.visible=allowed>0
 	_lock.visible=count>0;_lock.text="解除保护" if Outpost.is_locked(_selected) else "保护此道具"
+func _sell_selected()->void:
+	var item:=Outpost.stored_item(_selected);var count:=int(_quantity.value)
+	if count<=0 or count>Outpost.sellable_count(_selected,extra_reserves):status_changed.emit("当前库存或保护状态不允许出售。请重新选择数量。");refresh();return
+	if BoundEquipment.is_bound(item):
+		_pending_plan={};_pending_single={"id":_selected,"count":count,"gold":ExpeditionData.sale_value(item)*count}
+		_batch_dialog.title_text="出售绑定装备？"
+		_batch_dialog.open("%s ×%d\n出售收益：%d 金\n\n确认后这些绑定装备将从仓库移除。"%[str(item.name),count,int(_pending_single.gold)]);return
+	status_changed.emit("出售成功" if Outpost.sell_stored(_selected,count,extra_reserves) else "库存已变化、物品受保护或保存失败，物品保留");refresh()
 func _preview_batch()->void:
+	_pending_single={};_batch_dialog.title_text="确认批量出售"
 	var ids:Array=[]
 	for record in _records:
 		if not ids.has(record.id):ids.append(record.id)
@@ -190,7 +202,7 @@ func _preview_batch()->void:
 	_batch.grab_focus()
 	_batch_dialog.open("\n".join(lines))
 func cancel_dialog()->void:
-	_pending_plan={}
+	_pending_plan={};_pending_single={}
 	if is_instance_valid(_batch_dialog):_batch_dialog.close()
 func _compact_option(option:OptionButton)->void:
 	option.custom_minimum_size.y=40

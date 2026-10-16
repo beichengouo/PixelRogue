@@ -407,6 +407,12 @@ func preview_talent(branch: StringName) -> Dictionary:
 	var before := _talent_effects(branch, current)
 	var after := _talent_effects(branch, next)
 	var lines: Array[String] = []
+	if HolyTalents.DATA.has(branch):
+		var parts:=str(TALENT_BRANCHES[branch].desc).split("；")
+		var active:PackedStringArray=[]
+		for index in mini(current,parts.size()):active.append(parts[index])
+		lines.append("当前%d级：%s"%[current,"；".join(active) if current>0 else "尚未激活"])
+		if next>current:lines.append("下一级新增："+str(parts[mini(current,parts.size()-1)]))
 	for key: String in before:
 		var label := key.replace("星跃额外距离", "星辉震荡范围").replace("星跃冷却减少秒数", "星辉震荡冷却减少秒数").replace("星跃后4秒", "星辉震荡后4秒")
 		lines.append("%s：%s%s → %s%s" % [label.replace("%", ""), str(before[key]), "%" if "%" in key else "", str(after[key]), "%" if "%" in key else ""])
@@ -424,6 +430,7 @@ func preview_talent(branch: StringName) -> Dictionary:
 	for slot: StringName in ItemDB.SLOTS:
 		if not equipment[slot].is_empty(): _apply_to(projected, equipment[slot])
 	_apply_progression_to(projected, ranks)
+	LegendarySets.apply_to(projected)
 	_apply_lifesteal_sources(projected)
 	return {"branch": branch, "current_rank": current, "next_rank": next,
 		"before": before, "after": after, "stats": projected, "text": "\n".join(lines),

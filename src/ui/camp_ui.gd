@@ -38,6 +38,8 @@ var _page_cache:Node
 var _prepare_step:=0
 var _show_presets:=false
 var _loadout_selected:=""
+var _loadout_filter:="all"
+var _loadout_scroll:=0
 var _page_heading:Label
 var _preset_index=0
 var _preset_name="方案1"
@@ -208,6 +210,9 @@ func _button(text: String, callback: Callable, disabled = false) -> Button:
 
 func _refresh() -> void:
 	if not is_open():return
+	var previous_view:=_body.find_child("DepartureLoadout",true,false) as CampLoadoutView
+	if is_instance_valid(previous_view):
+		_loadout_filter=previous_view._filter;_loadout_scroll=previous_view._grid_scroll.scroll_vertical
 	var focus=get_viewport().gui_get_focus_owner()
 	var token=str(focus.get_meta("focus_token","")) if focus!=null and _body.is_ancestor_of(focus) else ""
 	var scroll=_scroll.scroll_vertical
@@ -290,15 +295,23 @@ func _prepare_supplies()->void:
 	var filter:=OptionButton.new();_compact_option(filter);filter.add_item("全部品质")
 	for i in 4:filter.add_item(ItemDB.rarity_name(i))
 	filter.select(_rarity_filter+1);filter.item_selected.connect(func(i:int)->void:_rarity_filter=i-1;_refresh());_body.add_child(filter)
-	var loadout:=CampLoadoutView.new();loadout.name="DepartureLoadout";loadout.loadout=cart;loadout.selected_id=_loadout_selected;loadout.combat_mode=combat_mode;loadout.quality=_rarity_filter
+	var loadout:=CampLoadoutView.new();loadout.name="DepartureLoadout";loadout.loadout=cart;loadout.selected_id=_loadout_selected;loadout.combat_mode=combat_mode;loadout.quality=_rarity_filter;loadout._filter=_loadout_filter;loadout.initial_scroll=_loadout_scroll
 	loadout.selection_changed.connect(func(id:String)->void:_loadout_selected=id)
 	loadout.equip_requested.connect(_add_cart)
 	loadout.remove_requested.connect(func(id:String)->void:cart.erase(id);_refresh())
 	_body.add_child(loadout)
 	_button("下一步 · 核对出发清单",func()->void:_prepare_step=2;_refresh())
 
+func _preparation_check()->String:
+	var value:=CampPreparation.new();value.chapter_id=chapter_id;value.loadout=cart;value.carried=carried;value.initial_level=initial_level;value.difficulty=difficulty
+	return value.error()
+func _resolve_preparation_error(message:String)->void:
+	_feedback=message
+	if message.contains("仓库超量"):_switch("warehouse");_feedback=message;_refresh();return
+	_prepare_step=0 if message.begins_with("初始等级") or message.contains("失名") or message.contains("请选择有效的战斗难度") else 1
+	_refresh()
 func _prepare_confirmation()->void:
-	_text("目的地 · %s\n难度 · %s\n出发等级 · Lv.%d\n同行被动 · %s"%[ChapterCatalog.title(chapter_id),RunDifficulty.title(difficulty),initial_level,str(PassiveDefinitions.for_character(Characters.current_id()).filter(func(p:Dictionary)->bool:return StringName(p.id)==PassiveDefinitions.selected(Characters.current_id()))[0].name)],21)
+	_text("角色 · %s\n目的地 · %s\n难度 · %s\n出发等级 · Lv.%d\n同行被动 · %s"%[Characters.current_name(),ChapterCatalog.title(chapter_id),RunDifficulty.title(difficulty),initial_level,str(PassiveDefinitions.for_character(Characters.current_id()).filter(func(p:Dictionary)->bool:return StringName(p.id)==PassiveDefinitions.selected(Characters.current_id()))[0].name)],21)
 	_text("携带物资 · %d件 · 随身金币 %d金\n等级费用 %d金 · 确认不扣费，出门后结余 %d金"%[cart.size(),carried,DepartureLevels.cost(initial_level),Outpost.gold()-carried-DepartureLevels.cost(initial_level)],19,PixelUi.GOLD)
 	for id in cart:
 		var item:=ExpeditionData.resolve(str(id));_text("• "+str(item.name),18,ItemDB.rarity_color(int(item.rarity)))
@@ -308,7 +321,12 @@ func _prepare_confirmation()->void:
 	if Outpost.overfull():_text("仓库超量，请先清理或扩容。",18,Palette.UI_DANGER)
 	if maxi(int(Outpost.data.bonds.sylphiette),int(Outpost.data.bonds.iris))>=200:
 		var farewell:=CheckButton.new();farewell.text="出发前听一段专属送行";farewell.button_pressed=_farewell;farewell.toggled.connect(func(value:bool)->void:_farewell=value);_body.add_child(farewell)
-	_button("确认准备 · 开启四座大门" if world_mode else "出发 · 进入初始房间",_depart,Outpost.overfull())
+	var error:=_preparation_check()
+	if not error.is_empty():
+		_text(error,18,Palette.UI_DANGER)
+		_button("前往修正准备项目",_resolve_preparation_error.bind(error))
+	var depart:=_button("确认准备 · 开启四座大门" if world_mode else "出发 · 进入初始房间",_depart,not error.is_empty())
+	depart.tooltip_text=error if not error.is_empty() else "仅确认清单；越过大门时重新验证并扣除物资。"
 
 func _add_cart(id: String) -> void:
 	var item=ExpeditionData.resolve(id)
@@ -327,7 +345,8 @@ func _add_cart(id: String) -> void:
 
 func _depart() -> void:
 	if _busy or not is_open():return
-	if not DepartureLevels.valid(initial_level):_feedback="初始等级只能选择1至10级。";_refresh();return
+	var error:=_preparation_check()
+	if not error.is_empty():_resolve_preparation_error(error);return
 	if Outpost.overfull():_switch("warehouse");return
 	var cost=carried+DepartureLevels.cost(initial_level)
 	for id in cart:
@@ -450,7 +469,13 @@ func _result() -> void:
 	if r.is_empty():_text(CampStory.INTRO,20);return
 	_text("撤回成功" if r.get("outcome","")=="extracted" else "旅途结束 · 未撤收益全部损失",25,PixelUi.GOLD)
 	_text("第%d波 · 本次入库 %d 金 · 出发投入 %d 金" % [int(r.get("wave",0)),int(r.get("gold",0)),int(r.get("spent",0))],18)
-	_text("随身金币 %d 金" % int(r.get("coins",0)),17)
+	if r.get("outcome","")=="extracted":
+		var sold:=0
+		for row in r.get("rows",[]):sold+=int(row.get("gold",0))
+		_text("随身金币入账 %d 金\n未绑定物品折价 %d 金\n合计到账 %d 金"%[int(r.get("coin_income",r.get("coins",0))),int(r.get("sale_income",sold)),int(r.get("gold",0))],18,PixelUi.GOLD)
+	else:
+		_text("损失随身金币 %d 金；本次出征物品未带回。"%int(r.get("coins",0)),18,Palette.UI_DANGER)
+		for item in r.get("lost_items",[]):_text("遗失 · %s ×%d"%[str(item.name),int(item.count)],17,PixelUi.MUTED)
 	_text("战斗难度 · "+RunDifficulty.title(int(r.get("difficulty",1))),17,PixelUi.GOLD)
 	for row in r.get("rows",[]):
 		var income=UiFactory.hbox(10)
@@ -569,9 +594,11 @@ func _buy_stock(index:int,batch:int,nonce:int)->void:
 	var offers:Array=Outpost.data.get("shop",{}).get("offers",[])
 	var bound:=index>=0 and index<offers.size() and BoundEquipment.is_bound(Outpost.stored_item(str(offers[index].id)))
 	_feedback=("购买成功 · 装备已绑定并存入仓库" if bound else "购买成功 · 已存入仓库") if Outpost.buy_offer(index,-1,batch,nonce) else "商品已更新、库存空间不足、材料不足或保存失败。"
+	if _feedback.contains("失败") or _feedback.contains("不足"):AudioManager.play(&"purchase_failed",-10,0)
 	_refresh()
 func _buy_basic(id:String)->void:
 	_feedback=("购买成功 · 装备已绑定并存入仓库" if ItemDB.is_equippable(Outpost.stored_item(id)) else "购买成功 · 已存入仓库") if Outpost.buy_basic(id) else "金币、仓位不足或保存失败。"
+	if _feedback.contains("失败") or _feedback.contains("不足"):AudioManager.play(&"purchase_failed",-10,0)
 	_refresh()
 
 func _compact_option(option: OptionButton) -> void:

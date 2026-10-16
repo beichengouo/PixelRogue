@@ -2,6 +2,42 @@ class_name RoomSkillCaster
 extends Node
 var actor: RoomPlayer
 var room: RoomLevel
+const INPUT_BUFFER_SECONDS:=.15
+var _buffer_slot:=-1
+var _buffer_skill:StringName=&""
+var _buffer_left:=0.0
+var _buffer_frame:=-1
+func _ready()->void:
+	UIFlow.stack_changed.connect(func()->void:
+		if UIFlow.has_screen():clear_input_buffer())
+func clear_input_buffer()->void:
+	_buffer_slot=-1;_buffer_skill=&"";_buffer_left=0
+func request(slot:int)->bool:
+	if not _input_allowed():clear_input_buffer();return false
+	if slot<0 or slot>=4:return false
+	var id:=GameState.skill_for_slot(slot)
+	if id==&"" or GameState.mp<GameState.skill_cost(id):_notice("魔力不足" if id!=&"" else "技能槽尚未装配");return false
+	var left:=float(GameState.skill_cooldowns_by_id.get(id,0))
+	if left>INPUT_BUFFER_SECONDS:_notice("技能尚未就绪");return false
+	clear_input_buffer()
+	if left<=0:return cast(slot)
+	_buffer_slot=slot;_buffer_skill=id;_buffer_left=INPUT_BUFFER_SECONDS;_buffer_frame=Engine.get_physics_frames();return true
+func _input_allowed()->bool:
+	return is_instance_valid(actor) and actor.hp>0 and not UIFlow.has_screen() and (GameState.run_active or CampSession.active) and actor.extraction_pose==&""
+func _physics_process(delta:float)->void:
+	if _buffer_slot<0:return
+	if not _input_allowed() or GameState.skill_for_slot(_buffer_slot)!=_buffer_skill:clear_input_buffer();return
+	if _buffer_frame==Engine.get_physics_frames():return
+	if GameState.skill_ready(_buffer_slot) and _buffer_left>0:
+		var slot:=_buffer_slot;clear_input_buffer();cast(slot);return
+	_buffer_left-=delta
+	if _buffer_left<=0:clear_input_buffer()
+var _notice_until:=0
+func _notice(message:String)->void:
+	var now:=Time.get_ticks_msec()
+	if now<_notice_until:return
+	_notice_until=now+700;AudioManager.play(&"skill_unavailable",-12,0)
+	Effects.text(actor.get_parent(),actor.global_position-Vector2(0,54),message,PixelUi.MUTED,14)
 
 func target(distance: float) -> Vector2:
 	var goal := actor.global_position+actor.aim_direction*distance

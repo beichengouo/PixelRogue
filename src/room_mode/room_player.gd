@@ -19,6 +19,7 @@ var _holy_animation_seen:=-1
 var _holy_pose_left:=0.0
 
 func set_extraction_pose(pose: StringName, hide_model := false) -> void:
+	if pose!=&"" and is_instance_valid(caster):caster.clear_input_buffer()
 	super.set_extraction_pose(pose, hide_model)
 	if pose != &"":
 		_dash_spell_active = false
@@ -124,7 +125,7 @@ func _physics_process(dt: float) -> void:
 		_swing_timer=0.18
 		if is_instance_valid(holy_runtime):_animation_request+=1
 	for slot in 4:
-		if not pilot and Input.is_action_just_pressed(["skill_1","skill_2","skill_3","ultimate"][slot]): caster.cast(slot)
+		if not pilot and Input.is_action_just_pressed(["skill_1","skill_2","skill_3","ultimate"][slot]): caster.request(slot)
 	if not pilot:_try_potions()
 	if forest_stepping and ilyua_runtime.step_left<=0:velocity=movement*stats.get_value(&"move_speed")*movement_slow_multiplier()
 	if _dash_spell_active and _dash_timer<=0:_dash_spell_fx();_dash_spell_active=false;equipment_mechanics.on_dash_end()
@@ -137,6 +138,7 @@ func request_dash() -> void:
 	request_dash_direction(movement if movement != Vector2.ZERO else aim_direction)
 
 func stop_room_travel_motion()->void:
+	if is_instance_valid(caster):caster.clear_input_buffer()
 	# Transition screens pause physics, so a dash's remaining time otherwise
 	# survives the entire load and resumes at the destination's entrance.
 	_dash_timer=0;_dash_spell_active=false
@@ -171,7 +173,9 @@ func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
 	var before_shield:=shield_hp
 	if is_instance_valid(holy_runtime) and _invuln<=0:amount=holy_runtime.protect(amount,source)
 	super.take_damage(amount,from,source)
-	if shield_hp<before_shield and is_instance_valid(equipment_mechanics):equipment_mechanics.legendary.shield_absorbed()
+	if shield_hp<before_shield:
+		AudioManager.play(&"shield_break" if shield_hp<=0 else &"shield_hit",-9 if shield_hp<=0 else -16,0)
+		if is_instance_valid(equipment_mechanics):equipment_mechanics.legendary.shield_absorbed()
 	if is_instance_valid(holy_runtime):
 		if shield_hp<before_shield:holy_runtime.on_shield_absorbed(before_shield-shield_hp)
 		if hp<before_hp:holy_runtime.on_hurt()

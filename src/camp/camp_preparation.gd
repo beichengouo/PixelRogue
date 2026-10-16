@@ -18,14 +18,15 @@ func error()->String:
 	if not Outpost.active_id().is_empty() or SaveService.has_run():return "请继续原出征，或先确认放弃原存档。"
 	if Outpost.overfull():return "仓库超量，请先整理或扩容。"
 	if not DepartureLevels.valid(initial_level):return "初始等级必须在1至10级之间。"
-	if carried<0 or carried+DepartureLevels.cost(initial_level)>Outpost.gold():return "准备携带的金币不足。"
+	if carried<0:return "随身金币不能为负数。"
+	if carried+DepartureLevels.cost(initial_level)>Outpost.gold():return "金币不足：随身%d金＋初始等级费用%d金，金库%d金，还差%d金。"%[carried,DepartureLevels.cost(initial_level),Outpost.gold(),carried+DepartureLevels.cost(initial_level)-Outpost.gold()]
 	if not RunDifficulty.valid(difficulty):return "请选择有效的战斗难度。"
 	var counts:Dictionary={};var slots:Dictionary={};var potions:=0
 	for id in loadout:
 		var item:=ExpeditionData.resolve(str(id))
 		if item.is_empty() or not ItemDB.available_in_mode(item,"rooms"):return "准备物品不可用。"
 		counts[str(id)]=int(counts.get(str(id),0))+1
-		if counts[str(id)]>int(Outpost.data.inventory.get(str(id),0)):return "所选物品库存不足。"
+		if counts[str(id)]>int(Outpost.data.inventory.get(str(id),0)):return "%s库存不足：清单%d件，仓库%d件。"%[str(item.name),int(counts[str(id)]),int(Outpost.data.inventory.get(str(id),0))]
 		if ItemDB.is_equippable(item):
 			if not ItemDB.can_equip(item):return "装备与角色职业不符。"
 			var slot:=str(ItemDB.slot_of(item))

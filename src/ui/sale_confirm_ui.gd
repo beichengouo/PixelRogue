@@ -7,6 +7,8 @@ var _text:Label
 var _open=false
 var _panel:Control
 var _cancel:Button
+var title_text:="确认批量出售"
+var _title:Label
 func _ready()->void:
 	layer=45;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
 	_root=UiFactory.full_rect();_root.theme=PixelUi.theme();add_child(_root)
@@ -14,7 +16,7 @@ func _ready()->void:
 	_panel=StarUi.frame(_root,Vector2(700,490))
 	var plate=PixelUi.inset_panel(20);plate.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);_panel.add_child(plate)
 	var box=UiFactory.vbox(14);plate.add_child(box)
-	box.add_child(PixelUi.title("确认批量出售",25,PixelUi.GOLD))
+	_title=PixelUi.title(title_text,25,PixelUi.GOLD);box.add_child(_title)
 	var scroll=ScrollContainer.new();scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;scroll.follow_focus=true;box.add_child(scroll)
 	_text=PixelUi.label("",17);_text.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_text.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(_text)
 	var row=UiFactory.hbox(12);box.add_child(row)
@@ -28,7 +30,7 @@ func _ready()->void:
 	InteractionSkin.mount(_root,"confirm",plate)
 
 func open(text:String)->void:
-	_text.text=text;_open=true;_root.show();UIFlow.push_screen(self);_cancel.grab_focus();ComicMotion.reveal(_panel)
+	_title.text=title_text;_text.text=text;_open=true;_root.show();UIFlow.push_screen(self);_cancel.grab_focus();ComicMotion.reveal(_panel)
 func is_open()->bool:return _open
 func close()->void:
 	_open=false

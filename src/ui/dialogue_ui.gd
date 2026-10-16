@@ -166,7 +166,7 @@ func _enter_scene(id: StringName) -> void:
 	_pending_next = StringName(_scene.get("next", &""))
 	_chapter.text = ("回看 · " if _review else "") + str(_scene.get("title", "星辉之间"))
 	_skip_button.text = "关闭回看" if _review else ("跳过序章" if str(id).begins_with("intro_") else "跳过对白")
-	_skip_button.tooltip_text = "跳过序章将放弃本次初始道具" if not _review and str(id).begins_with("intro_") else ""
+	_skip_button.tooltip_text = "跳过对白会保留需要你决定的选项与奖励。" if not _review else ""
 	if _compact_decision:
 		_play_lines([{"text": "星辉之门已经打开。继续探索，还是准备离开？"}], "scene")
 		_typing = false
@@ -384,10 +384,14 @@ func _skip_story() -> void:
 		_text_label.visible_characters = -1
 		_show_choices(Story.choices_of(_scene))
 		return
-	if not _repeat_read_only: StoryState.set_flag(&"skipped_story", true)
-	# A deliberate skip completes the current scene; cancellation does not.
-	if not _repeat_read_only: StoryState.complete_scene(_scene_id)
-	_finish()
+	if not _repeat_read_only:StoryState.set_flag(&"skipped_story",true)
+	if _mode in ["reply","tail"]:
+		_tail_played=true;_goto_pending();return
+	var choices:=Story.choices_of(_scene)
+	if not choices.is_empty():
+		_typing=false;_text_label.visible_characters=-1;_tail_played=true
+		_text_label.text="对白已略过，请决定这段旅途的回应。";_show_choices(choices);return
+	_tail_played=true;_goto_pending()
 
 func _input(event: InputEvent) -> void:
 	if not UIFlow.is_top(self): return

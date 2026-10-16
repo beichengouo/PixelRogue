@@ -6,6 +6,8 @@ extends RefCounted
 ## 特效用的独立随机源：刻意和玩法随机分开，
 ## 这样改特效不会影响「同一个种子跑出同一局」的复现性。
 static var _rng := RandomNumberGenerator.new()
+static var _impact_frame:=-1
+static var _impact_sites:Dictionary={}
 
 static func damage_number(parent: Node, where: Vector2, amount: float, crit := false, color := Color.WHITE) -> void:
 	var text := str(int(round(amount)))
@@ -25,6 +27,14 @@ static func text(parent: Node, where: Vector2, content: String, color := Color.W
 
 
 static func hit_spark(parent: Node, where: Vector2, color: Color, count := 6) -> void:
+	if not is_instance_valid(parent):return
+	# A multi-hit volley can report the same contact several times in one frame.
+	# Keep one complete spark there; damage, warnings and distinct contacts remain intact.
+	var frame:=Engine.get_process_frames()
+	if frame!=_impact_frame:_impact_frame=frame;_impact_sites.clear()
+	var key:=str(parent.get_instance_id())+":"+str(Vector2i((where/2).round()))
+	if _impact_sites.has(key):return
+	_impact_sites[key]=true
 	_burst(parent, where, color, count, 60.0, 200.0, 0.28, 2.0, 4.0)
 
 

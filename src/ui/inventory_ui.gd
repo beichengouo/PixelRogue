@@ -25,6 +25,8 @@ var _gear_part:StringName=&""
 var _toolbar: Control
 var _sell_button:Button
 var _bind_button:Button
+var _sale_confirm:SaleConfirmUI
+var _pending_sale:Dictionary={}
 const SHELL_SIZE:=Vector2(2016,1100)
 var _equip_wrapper: Control
 var _equip_box: HBoxContainer
@@ -61,7 +63,7 @@ var _filter: StringName = &"gear"
 var _selected_skill: StringName = &""
 var _selected_talent: StringName = &""
 ## 页签定义：id -> 显示名
-const SKILL_KEYS := ["Q", "F", "G", "V"]
+func skill_key(slot:int)->String:return KeyBindings.label(["skill_1","skill_2","skill_3","ultimate"][slot])
 func talent_groups()->Array:
 	return GameState.talent_groups()
 
@@ -183,6 +185,8 @@ func close() -> void:
 
 
 func _finish_close() -> void:
+	_pending_sale={}
+	if is_instance_valid(_sale_confirm):_sale_confirm.close()
 	for running in [_open_tween, _portrait_tween, _caption_tween]:
 		if running != null and running.is_valid():
 			running.kill()
@@ -307,7 +311,8 @@ func _refresh_footer()->void:
 	var value:=ExpeditionData.sale_value(item);var fee:=BoundEquipment.binding_price(item)
 	_sell_button.text="售卖 · +%d金"%value if value>0 else "售卖";_sell_button.disabled=value<=0 or not (GameState.items.has(item) or GameState.is_equipped(item))
 	_bind_button.text="绑定 · %d金"%fee if fee>0 else "绑定";_bind_button.disabled=fee<=0 or CampSession.active or not GameState.items.has(item) or GameState.coins<fee
-	_bind_button.tooltip_text=BoundEquipment.description() if BoundEquipment.is_bound(item) else "仅背包内稀有/传说装备可绑定；已穿戴装备请先卸下"
+	_sell_button.tooltip_text="选择可出售的物品" if item.is_empty() else "此物品不可出售" if value<=0 else "出售绑定装备前会再次确认" if BoundEquipment.is_bound(item) else "出售所选物品，获得%d金"%value
+	_bind_button.tooltip_text="营地训练物品不能付费绑定" if CampSession.active else BoundEquipment.description() if BoundEquipment.is_bound(item) else "请先卸下这件装备" if GameState.is_equipped(item) else "仅稀有或传说装备可以付费绑定" if fee<=0 else "金币不足，还差%d金"%(fee-GameState.coins) if GameState.coins<fee else "支付%d金，将这件装备改为绑定装备"%fee
 
 func _build_titlebar() -> Control:
 	var row:=Control.new();var title:=PixelUi.title("旅人的行囊",65)
@@ -540,7 +545,7 @@ func _rebuild_skill_page() -> void:
 	_page_box.add_child(equipped)
 	for slot in 4:
 		var id := GameState.skill_for_slot(slot)
-		equipped.add_child(_skill_tile(id, SKILL_KEYS[slot], id == &""))
+		equipped.add_child(_skill_tile(id, skill_key(slot), id == &""))
 	_page_box.add_child(PixelUi.label(("箭术与自然技能" if Characters.current_id()==&"ilyua" else "法术库")+"  ·  点击图标，在右侧选择装配栏位", 17))
 	var gallery := GridContainer.new()
 	gallery.columns = 4
@@ -591,7 +596,7 @@ func _rebuild_talent_page() -> void:
 		"可用天赋点：%d　（每 3 级获得 1 点）" % GameState.talent_points, 18, PixelUi.INK))
 	# 树状图现在独立成窗口（按 T 打开，支持缩放），这里只放入口与前置说明
 	_page_box.add_child(PixelUi.label(
-		"按 [T] 打开天赋树 · 滚轮缩放、拖拽平移", 15, PixelUi.MUTED))
+		"按 [%s] 打开天赋树 · 滚轮缩放、拖拽平移"%KeyBindings.label("talents"), 15, PixelUi.MUTED))
 	# 入口按钮改用主菜单那套「白芯 + 描金花边」的底图：够醒目，也比土黄色更贴合圣洁风
 	var open_button := PixelUi.compact_button("天赋树 [%s]"%KeyBindings.label("talents"), 21)
 	open_button.custom_minimum_size = Vector2(252.0, 50.0)
@@ -663,6 +668,7 @@ func _build_talent_row(branch: StringName) -> Control:
 	var plus := PixelUi.compact_button("已满" if full else "加点", 15)
 	plus.custom_minimum_size = Vector2(86.0, 34.0)
 	plus.disabled = full or not unlocked or GameState.talent_points <= 0
+	plus.tooltip_text=ItemInsight.talent_requirement(branch)
 	plus.set_meta("focus_token", "talent_add:" + str(branch))
 	plus.pressed.connect(func() -> void:
 		_add_talent_point(branch)
@@ -806,6 +812,7 @@ func _icon_for(item: Dictionary) -> AtlasTexture:
 
 func _rebuild_detail() -> void:
 	_populate_detail()
+	if _filter in [&"gear",&"relic",&"potion",&"material"] and not _selected.is_empty():ItemInsight.append_story(_detail_box,_selected,19)
 	_fit_details(_detail_box)
 	InteractionSkin.apply_tree(_detail_box,"inventory")
 
@@ -841,9 +848,6 @@ func _populate_detail() -> void:
 	var rarity := int(item["rarity"])
 	var color := ItemDB.rarity_color(rarity)
 	var slot := ItemDB.slot_of(item)
-	if ItemDB.is_equippable(item):
-		var binding:=UiFactory.vbox(5);_detail_box.add_child(binding)
-		var note:=PixelUi.label(BoundEquipment.description() if BoundEquipment.is_bound(item) else "未绑定 · 撤离时自动出售；稀有/传说装备可付费绑定。",14,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;binding.add_child(note)
 
 	var head := UiFactory.hbox(10)
 	_detail_box.add_child(head)
@@ -855,28 +859,6 @@ func _populate_detail() -> void:
 	head_text.add_child(RarityWordmark.line(rarity,str(ItemDB.KIND_NAMES.get(item.get("kind", &"buff"),"道具")),36,20,color.darkened(.25)))
 
 	_detail_box.add_child(_parchment_rule())
-	var set_description:=LegendarySets.description(item)
-	if not set_description.is_empty():
-		var set_note:=PixelUi.label(set_description,20,PixelUi.GOLD if LegendarySets.complete() else PixelUi.MUTED);set_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(set_note);_detail_box.add_child(_parchment_rule())
-
-	# 简介：单独一行风味文本，和下面的数值说明区分开
-	var flavor := ItemDB.flavor_text(item)
-	if not flavor.is_empty():
-		var flavor_label := PixelUi.label(flavor, 17, PixelUi.MUTED)
-		flavor_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		flavor_label.custom_minimum_size = Vector2(0.0, 34.0)
-		flavor_label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
-		_detail_box.add_child(flavor_label)
-
-	# 药剂的 desc 和下面的「效果行」是同一句话，这里不重复显示
-	if not ItemDB.is_usable(item) and not str(item["desc"]).is_empty() \
-			and (not item.get("mechanics", []).is_empty() or not ItemDB.weapon_lines(item).is_empty() or ItemDB.stat_lines(item).is_empty()):
-		var desc := PixelUi.label(str(item["desc"]), 16, PixelUi.INK)
-		desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-		desc.custom_minimum_size = Vector2(0.0, 34.0)
-		desc.vertical_alignment = VERTICAL_ALIGNMENT_TOP
-		_detail_box.add_child(desc)
-
 	var lines: Array[String] = ItemDB.weapon_lines(item)
 	lines.append_array(ItemDB.stat_lines(item))
 	if str(item.get("requires_character", "")) == "xixifu" and item.get("kind", &"") != &"weapon":
@@ -886,9 +868,29 @@ func _populate_detail() -> void:
 	else:
 		for line in lines:
 			_detail_box.add_child(PixelUi.label("◆ "+line,18,PixelUi.INK))
+	# 药剂的 desc 和下面的「效果行」是同一句话，这里不重复显示
+	if not ItemDB.is_usable(item) and not str(item["desc"]).is_empty() \
+			and (not item.get("mechanics", []).is_empty() or not ItemDB.weapon_lines(item).is_empty() or ItemDB.stat_lines(item).is_empty()):
+		var desc := PixelUi.label(str(item["desc"]), 16, PixelUi.INK)
+		desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		desc.custom_minimum_size = Vector2(0.0, 34.0)
+		desc.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+		_detail_box.add_child(desc)
+
 	if ItemDB.is_relic(item) and not item.get("mechanics", []).is_empty():
 		_detail_box.add_child(PixelUi.label("同名效果：1件100% · 2件合计150% · 3件合计175%；目标数、触发条件与冷却不增加", 14, PixelUi.MUTED))
 
+	if ItemDB.is_equippable(item):
+		var binding:=UiFactory.vbox(5);_detail_box.add_child(binding)
+		var note:=PixelUi.label(BoundEquipment.description() if BoundEquipment.is_bound(item) else "未绑定 · 撤离时自动出售；稀有/传说装备可付费绑定。",14,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;binding.add_child(note)
+
+	var set_description:=LegendarySets.description(item)
+	if not set_description.is_empty():
+		var set_note:=PixelUi.label(set_description,20,PixelUi.GOLD if LegendarySets.complete() else PixelUi.MUTED);set_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(set_note);_detail_box.add_child(_parchment_rule())
+
+	var lost:=ItemInsight.replacement_losses(item) if ItemDB.is_equippable(item) else ""
+	if not lost.is_empty():_detail_box.add_child(PixelUi.label(lost,18,Palette.UI_DANGER))
+	if ItemDB.is_relic(item):_detail_box.add_child(PixelUi.label(ItemInsight.relic_increment(item),18,PixelUi.GOLD))
 	# 装备后的对比（武器比每秒输出/索敌，其它比属性）
 	# 药剂：显示效果 + 「使用」按钮（用完就从背包里消失）
 	if ItemDB.is_usable(item):
@@ -991,6 +993,16 @@ func _sell_row(item: Dictionary) -> Control:
 
 func _sell(item: Dictionary, price: int) -> void:
 	if not _claim_action():return
+	if BoundEquipment.is_bound(item):
+		if not is_instance_valid(_sale_confirm):
+			_sale_confirm=SaleConfirmUI.new();_sale_confirm.title_text="出售绑定装备？";add_child(_sale_confirm)
+			_sale_confirm.confirmed.connect(func()->void:
+				var selected:=_pending_sale;_pending_sale={}
+				if is_open() and not selected.is_empty():_commit_sale(selected,ExpeditionData.sale_value(selected)))
+			_sale_confirm.canceled.connect(func()->void:_pending_sale={})
+		_pending_sale=item;_sale_confirm.open("%s ×1\n出售收益：%d 金\n\n此装备已绑定，原本可以在成功撤离后带回仓库。确认后将出售这件装备。"%[str(item.name),ExpeditionData.sale_value(item)]);return
+	_commit_sale(item,price)
+func _commit_sale(item:Dictionary,price:int)->void:
 	if GameState.sell_item(item):
 		_rebuild()
 		ComicMotion.feedback(_shell,"已售卖 %s · +%d金" % [str(item.name),price])
@@ -1045,7 +1057,7 @@ func _detail_skill() -> void:
 	for slot: int in slots:
 		var current := GameState.skill_for_slot(slot)
 		var is_current := current == _selected_skill
-		var button := PixelUi.compact_button("已装配 %s" % SKILL_KEYS[slot] if is_current else "装配 %s · %s" % [SKILL_KEYS[slot], str(Skills.get_skill(current,GameState.combat_mode).get("name", "空栏位"))], 16)
+		var button := PixelUi.compact_button("已装配 %s" % skill_key(slot) if is_current else "装配 %s · %s" % [skill_key(slot), str(Skills.get_skill(current,GameState.combat_mode).get("name", "空栏位"))], 16)
 		button.custom_minimum_size.y = 42
 		button.disabled = is_current
 		button.set_meta("focus_token", "equip_skill:" + str(slot))
@@ -1054,7 +1066,7 @@ func _detail_skill() -> void:
 			if not _claim_action(): return
 			if GameState.equip_skill(_selected_skill, slot):
 				_rebuild()
-				ComicMotion.feedback(_shell, "%s 已装配到 %s" % [skill.name, SKILL_KEYS[slot]])
+				ComicMotion.feedback(_shell, "%s 已装配到 %s" % [skill.name, skill_key(slot)])
 		)
 		_detail_box.add_child(button)
 
@@ -1096,6 +1108,8 @@ func _detail_talent() -> void:
 	add.custom_minimum_size = Vector2(0.0, 44.0)
 	add.set_meta("focus_token", "talent_detail_add:" + str(_selected_talent))
 	add.disabled = full or not unlocked or GameState.talent_points <= 0
+	add.tooltip_text=ItemInsight.talent_requirement(_selected_talent)
+	if add.disabled:_detail_box.add_child(PixelUi.label(add.tooltip_text,16,PixelUi.MUTED))
 	add.pressed.connect(func() -> void: _add_talent_point(_selected_talent))
 	_detail_box.add_child(add)
 
