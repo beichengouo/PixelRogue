@@ -173,6 +173,7 @@ func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
 	var before_shield:=shield_hp
 	if is_instance_valid(holy_runtime) and _invuln<=0:amount=holy_runtime.protect(amount,source)
 	super.take_damage(amount,from,source)
+	if hp<before_hp and hp>0 and is_instance_valid(equipment_mechanics):equipment_mechanics.etching.hurt()
 	if shield_hp<before_shield:
 		AudioManager.play(&"shield_break" if shield_hp<=0 else &"shield_hit",-9 if shield_hp<=0 else -16,0)
 		if is_instance_valid(equipment_mechanics):equipment_mechanics.legendary.shield_absorbed()

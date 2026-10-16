@@ -28,6 +28,7 @@ var items: Array[Dictionary] = []
 ## 装备栏：槽位 -> 道具（空槽是 {}）
 var equipment: Dictionary = {}
 var run_loot: Dictionary = {}
+var material_ledger:Dictionary={}
 ## An item counts when it is shown in any run reward pool, even if declined.
 var run_refreshes: Dictionary = {}
 var loot_history_complete := true
@@ -152,7 +153,7 @@ func new_run(seed_value: int = 0) -> void:
 	sortie_id = ""
 	difficulty = 1
 	item_sequence = 0
-	run_loot.clear()
+	run_loot.clear();material_ledger.clear()
 	run_refreshes.clear()
 	loot_history_complete = true
 	items.clear()
@@ -563,6 +564,9 @@ func add_item(item: Dictionary) -> bool:
 		item_sequence+=1
 		acquired["uid"] = sortie_id+":"+str(item_sequence)
 	items.append(acquired)
+	if ItemDB.is_material(acquired) and not CampSession.active:
+		var collected:Dictionary=material_ledger.get("collected",{});var material_id:=str(acquired.id)
+		collected[material_id]=int(collected.get(material_id,0))+1;material_ledger.collected=collected
 	var loot_id := str(acquired.get("id",""))
 	run_loot[loot_id] = int(run_loot.get(loot_id,0))+1
 	if not ItemDB.is_equippable(acquired): _reset_stats()
@@ -1018,6 +1022,7 @@ func snapshot() -> Dictionary:
 		"expedition_equipment":equipment.values().filter(func(i:Dictionary)->bool:return not i.is_empty()).map(func(i:Dictionary)->Dictionary:return ExpeditionData.pack(i)),
 		"world_state":runtime_node.snapshot() if is_instance_valid(runtime_node) else {},
 		"run_loot": run_loot.duplicate(),
+		"material_ledger":material_ledger.duplicate(true),
 		"run_refreshes": run_refreshes.duplicate(),
 		"loot_history_complete": loot_history_complete,
 		"kit_version": 2,
@@ -1077,8 +1082,9 @@ func restore(snapshot_data: Dictionary) -> void:
 	difficulty=RunDifficulty.from_record(snapshot_data)
 	item_sequence=int(snapshot_data.get("item_sequence",0))
 	run_epoch += 1
-	run_loot.clear()
+	run_loot.clear();material_ledger.clear()
 	run_refreshes.clear()
+	material_ledger=snapshot_data.get("material_ledger",{}).duplicate(true) if snapshot_data.get("material_ledger",{}) is Dictionary else {}
 	var saved_loot: Variant = snapshot_data.get("run_loot", {})
 	loot_history_complete = bool(snapshot_data.get("loot_history_complete", false)) and saved_loot is Dictionary
 	if saved_loot is Dictionary:

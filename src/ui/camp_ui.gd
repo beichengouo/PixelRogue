@@ -31,6 +31,7 @@ var _scroll: ScrollContainer
 var _confirm: GlassConfirmUI
 var _left: Control
 var _warehouse: WarehouseView
+var _workshop:MaterialWorkshopUI
 var _feedback=""
 var _shop_timer=0.0
 var _shop_clock:Label
@@ -53,6 +54,7 @@ func _ready() -> void:
 	_root=UiFactory.full_rect()
 	_root.theme=PixelUi.theme()
 	add_child(_root)
+	_workshop=MaterialWorkshopUI.new();add_child(_workshop)
 	_page_cache=Node.new();_page_cache.name="PageCache";add_child(_page_cache)
 	var art = TextureRect.new()
 	if not world_mode:art.texture=CampArt.texture("background")
@@ -169,6 +171,7 @@ func open(result = false) -> void:
 
 func is_open() -> bool:return _root.visible
 func close() -> void:
+	if is_instance_valid(_workshop):_workshop.close()
 	var was_open:=is_open()
 	if is_instance_valid(_confirm): _confirm.close()
 	if is_instance_valid(_warehouse):_warehouse.cancel_dialog()
@@ -380,9 +383,9 @@ func _contracts()->void:
 		_contract_timers[str(contract.id)]=_body.get_child(_body.get_child_count()-1)
 		var progress:PackedStringArray=[]
 		var ready:=status=="accepted"
-		for id in contract.needs:
-			progress.append("%s %d/%d" % [ExpeditionData.resolve(id).name,int(Outpost.data.inventory.get(id,0)),int(contract.needs[id])])
-			ready=ready and int(Outpost.data.inventory.get(id,0))>=int(contract.needs[id])
+		for id in Outpost.contract_needs(contract):
+			progress.append("%s %d/%d" % [ExpeditionData.resolve(id).name,int(Outpost.data.inventory.get(id,0)),int(Outpost.contract_needs(contract)[id])])
+			ready=ready and int(Outpost.data.inventory.get(id,0))>=int(Outpost.contract_needs(contract)[id])
 		_text(" · ".join(progress),15,PixelUi.MUTED)
 		if not str(contract.get("issuer","")).is_empty():
 			_text("请在营地找「%s」接取或交付；工会仅展示记录。"%CampResidents.issuer_name(contract),17,PixelUi.GOLD)
@@ -476,6 +479,7 @@ func _result() -> void:
 	else:
 		_text("损失随身金币 %d 金；本次出征物品未带回。"%int(r.get("coins",0)),18,Palette.UI_DANGER)
 		for item in r.get("lost_items",[]):_text("遗失 · %s ×%d"%[str(item.name),int(item.count)],17,PixelUi.MUTED)
+	_material_result(r)
 	_text("战斗难度 · "+RunDifficulty.title(int(r.get("difficulty",1))),17,PixelUi.GOLD)
 	for row in r.get("rows",[]):
 		var income=UiFactory.hbox(10)
@@ -497,7 +501,28 @@ func _result() -> void:
 		RunBuildReport.populate(summary,build)
 	_button("准备下一次出征",func()->void:_switch("prepare"))
 
+func _material_result(result:Dictionary)->void:
+	var report:Dictionary=result.get("materials",{})
+	if report.is_empty():return
+	_text("材料战利品",23,PixelUi.GOLD)
+	for entry in [["collected","本局收集"],["alchemy","炼金消耗"],["enchant","刻印消耗"],["crafted","炼金产物"],["brought_back","实际带回"],["lost","本局损失"]]:
+		var values:Dictionary=report.get(str(entry[0]),{});var parts:PackedStringArray=[]
+		for id in values:parts.append("%s ×%d"%[str(ExpeditionData.resolve(str(id)).get("name",id)),int(values[id])])
+		if not parts.is_empty():_text(str(entry[1])+" · "+"、".join(parts),17,PixelUi.MUTED if str(entry[0]) in ["alchemy","enchant","lost"] else PixelUi.INK)
+	for id in report.get("first",[]):_text("首次带回 · "+str(ExpeditionData.resolve(str(id)).get("name",id)),18,PixelUi.GOLD)
+	if result.get("outcome","")!="extracted":_text("只损失本局携带材料，历史仓库库存不受影响。",17,PixelUi.MUTED);return
+	var ready:PackedStringArray=[]
+	for entry in MaterialWorkshopCatalog.RESEARCH:
+		if not MaterialWorkshopCatalog.unlocked(str(entry.id)) and MaterialWorkshop.cost_error(entry.needs,true,false,str(entry.id)).is_empty():ready.append(str(entry.name))
+	if not ready.is_empty():_text("材料足够研究 · "+"、".join(ready)+"（未自动消耗）",17,PixelUi.GOLD)
+	for contract in ExpeditionData.CONTRACTS:
+		if Outpost.contract_status(contract)!="accepted":continue
+		var available:=true
+		for id in Outpost.contract_needs(contract):available=available and int(Outpost.data.inventory.get(id,0))>=int(Outpost.contract_needs(contract)[id])
+		if available:_text("可交付委托 · "+str(contract.title)+" · 找"+CampResidents.issuer_name(contract),17,PixelUi.GOLD)
+
 func _show_warehouse()->void:
+	_button("布琳娜的制作与研究",func()->void:_workshop.open_camp())
 	if _warehouse==null:
 		_warehouse=WarehouseView.new()
 		_warehouse.status_changed.connect(func(message:String)->void:_feedback=message)

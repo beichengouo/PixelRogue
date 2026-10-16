@@ -5,6 +5,7 @@ var resident:CampResident
 var _root:Control
 var _body:VBoxContainer
 var _status:Label
+var _workshop:MaterialWorkshopUI
 func _ready()->void:
 	layer=32;process_mode=Node.PROCESS_MODE_ALWAYS;set_meta("blocking_screen",true)
 	_root=UiFactory.full_rect();add_child(_root);_root.add_child(UiFactory.dim_layer(0.42))
@@ -43,13 +44,14 @@ func _show()->void:
 		var contract:Dictionary=ExpeditionData.CONTRACTS[index];var status:=Outpost.contract_status(contract)
 		_text(str(contract.title),21);_text(str(contract.desc))
 		_text("奖励 %d 金 · %s好感 +%d · 接取后 %d 小时内带回"%[contract.reward,BondRules.NAMES[contract.owner],contract.bond,contract.hours],16)
-		for id in contract.needs:_text("%s：仓库 %d / 需要 %d"%[ExpeditionData.resolve(str(id)).name,int(Outpost.data.inventory.get(id,0)),int(contract.needs[id])],16)
+		for id in Outpost.contract_needs(contract):_text("%s：仓库 %d / 需要 %d"%[ExpeditionData.resolve(str(id)).name,int(Outpost.data.inventory.get(id,0)),int(Outpost.contract_needs(contract)[id])],16)
 		if status=="available":_button("接取委托",_accept.bind(index))
 		elif status=="accepted":
 			_button("交付仓库材料",_claim.bind(index),CampResidents.progress(resident.resident_id)!="ready")
 			_button("追踪委托",func()->void:Outpost.track_contract(str(contract.id));_status.text="已追踪 · 撤回后找我交付")
 		else:_text({"completed":"这份委托已经完成，下次有新消息我会告诉你。","locked":"先完成前置调查，再来找我。","expired":"委托已超时，原有冷却结束后可以重新接取。"}.get(status,status))
 	_status=PixelUi.label("",16,PixelUi.GOLD);_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_body.add_child(_status)
+	if resident.resident_id=="carpenter":_button("布琳娜的制作与研究",_open_workshop)
 	_button("返回营地",close)
 	_root.show();UIFlow.push_screen(self);PixelUi.focus_button(_root)
 func _text(value:String,font_size:=18)->void:
@@ -57,7 +59,7 @@ func _text(value:String,font_size:=18)->void:
 func _button(caption:String,callback:Callable,disabled:=false)->void:
 	var button:=PixelUi.compact_button(caption,18);button.disabled=disabled;button.pressed.connect(callback);_body.add_child(button)
 func _accept(index:int)->void:
-	if not Outpost.accept_contract(index,-1,resident.resident_id):_status.text="暂时不能接取或保存失败，请重试。";return
+	if not Outpost.accept_contract(index,-1,resident.resident_id,world.camp_ui.chapter_id):_status.text="暂时不能接取或保存失败，请重试。";return
 	close(false);resident.refresh_badge();_talk(CampResidents.DATA[resident.resident_id].accepted,release_resident)
 func _claim(index:int)->void:
 	if not Outpost.claim_contract(index,-1,resident.resident_id):_status.text="材料不足、已超时或保存失败，物资未交付。";return
@@ -65,7 +67,12 @@ func _claim(index:int)->void:
 func release_resident()->void:
 	if is_instance_valid(resident):resident.interacting=false
 func close(release:=true)->void:
+	if is_instance_valid(_workshop):_workshop.close()
 	_root.hide();UIFlow.pop_screen(self)
 	if release:release_resident()
 func _unhandled_input(event:InputEvent)->void:
 	if is_open() and UIFlow.is_top(self) and (event.is_action_pressed("ui_cancel") or event.is_action_pressed("pause_menu")):close();get_viewport().set_input_as_handled()
+
+func _open_workshop()->void:
+	if not is_instance_valid(_workshop):_workshop=MaterialWorkshopUI.new();add_child(_workshop)
+	_workshop.open_camp()

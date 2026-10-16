@@ -174,6 +174,8 @@ func _refresh_detail()->void:
 	if not item.is_empty():_detail_quality.set_quality(int(item.rarity))
 	_detail.text="选择物品查看详情" if item.is_empty() else "%s\n\n%s\n\n仓库数量 %d%s" % [str(item.name),str(item.desc),count,"\n出售单价 %d 金" % price if price>0 else "\n兑换材料 · 保留用于兑换"]
 	if BoundEquipment.is_bound(item):_detail.text+="\n"+BoundEquipment.description()
+	if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(item.get("id",""))):_detail.text=_detail.text.replace("兑换材料 · 保留用于兑换","首领素材 · 不可出售或购买")
+	if ItemDB.is_material(item):_detail.text+="\n"+MaterialWorkshop.usage(str(item.get("id","")))
 	var allowed=Outpost.sellable_count(_selected,extra_reserves)
 	var reserved=mini(count,int(Outpost.reserved_counts(extra_reserves).get(_selected,0)))
 	if count>0:

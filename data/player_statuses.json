@@ -413,6 +413,12 @@
       "runtime_source": "EquipmentMechanics",
       "debuff": false,
       "icon": "res://assets/legendary_sets_v01/icons/accessory_moonwind_chime.png"
+    },
+    "material_tide": {
+      "name": "回澜待发",
+      "description": "下一次主普攻首次有效命中消耗刻印强化并回复MP；时间结束或卸下饰品后消失。",
+      "icon": "res://assets/material_workshop_v01/tide_etch.png",
+      "debuff": false
     }
   },
   "shield_sources": [

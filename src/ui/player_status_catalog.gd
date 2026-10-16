@@ -87,6 +87,7 @@ static func snapshot(actor: Player) -> Array[Dictionary]:
 				if gear.legendary.spring_echoes>0:_append(rows,"spring_echo",gear.legendary.spring_echo_until-gear.clock,"",gear.legendary.spring_echoes)
 			if gear.has(&"half_star"):_append(rows,"half_star",gear.expansion.dash_until-gear.clock)
 			if gear.has(&"leaf_page"):_append(rows,"leaf_page",gear.expansion.verse_until-gear.clock)
+			if gear.etching.current(&"accessory") in ["tide","memory"] and not gear.ready(&"material_accessory_pending"):_append(rows,"material_tide",float(gear.cooldowns.get(&"material_accessory_pending",0))-gear.clock,"下一次普通攻击首次有效命中回复%d MP；卸下或替换刻印后失效。"%(4 if gear.etching.current(&"accessory")=="memory" else 2))
 			if gear.has(&"cloud_staff") and gear.legendary.cloud_charges>0:_append(rows,"cloud_runes",gear.legendary.cloud_until-gear.clock,"",gear.legendary.cloud_charges)
 			if gear.legendary.halo_orbs>0:_append(rows,"cloud_orbs",gear.legendary.halo_until-gear.clock,"",gear.legendary.halo_orbs)
 			if Characters.current_id()==&"ilyua" and LegendarySets.complete() and gear.legendary.moon_hits>0:_append(rows,"moon_oath",gear.legendary.moon_until-gear.clock,"",gear.legendary.moon_hits)

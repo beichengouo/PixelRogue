@@ -215,7 +215,11 @@ func settle_sortie(outcome: String) -> Dictionary:
 	if success:
 		data.gold = gold()+payout
 		data.best[tier] = maxi(int(data.best.get(tier,0)),GameState.wave-(0 if GameState.wave_completed else 1))
-	var result = {"chapter_id":str(GameState.chapter_id),"chapter_cleared":GameState.chapter_cleared,"id":GameState.sortie_id,"outcome":outcome,"gold":payout,"spent":int(active.get("spent",0)),"wave":GameState.wave,"danger":GameState.danger,"difficulty":GameState.difficulty,"coins":GameState.coins,"coin_income":GameState.coins if success else 0,"sale_income":payout-GameState.coins if success else 0,"rows":rows,"build":_build_snapshot()}
+	var material_report:=MaterialWorkshop.report(GameState.material_ledger,all_items,success)
+	if success:
+		if not data.has("material_known"):data.material_known={}
+		for id in material_report.brought_back:data.material_known[id]=true
+	var result = {"materials":material_report,"chapter_id":str(GameState.chapter_id),"chapter_cleared":GameState.chapter_cleared,"id":GameState.sortie_id,"outcome":outcome,"gold":payout,"spent":int(active.get("spent",0)),"wave":GameState.wave,"danger":GameState.danger,"difficulty":GameState.difficulty,"coins":GameState.coins,"coin_income":GameState.coins if success else 0,"sale_income":payout-GameState.coins if success else 0,"rows":rows,"build":_build_snapshot()}
 	data.active = {}
 	data.last_result = result
 	SaveService.data.run = {}
@@ -248,6 +252,17 @@ func _ensure_contract_data()->void:
 	if not data.has("bond_daily"):data.bond_daily={}
 	for npc in BondRules.NAMES:
 		if not data.bonds.has(npc):data.bonds[npc]=0
+func contract_needs(contract:Dictionary,stock:Dictionary={})->Dictionary:
+	if str(contract.get("id",""))!="survey":return contract.get("needs",{}).duplicate(true)
+	var bank:Dictionary=data.get("inventory",{}) if stock.is_empty() else stock
+	var forest:Dictionary={"forest_sample":2,"wetland_sample":1};var city:Dictionary={"ruin_sample":3};var legacy:Dictionary={"forest_sample":1,"wetland_sample":1,"ruin_sample":1}
+	var preferred_city:=str(data.get("contract_jobs",{}).get("survey",{}).get("chapter",""))==str(ChapterCatalog.NEXT)
+	for option:Dictionary in [city,forest,legacy] if preferred_city else [forest,city,legacy]:
+		var available:=true
+		for id in option:available=available and int(bank.get(id,0))>=int(option[id])
+		if available:return option.duplicate(true)
+	return city if preferred_city else forest
+
 func contract_status(contract:Dictionary,now:int=-1)->String:
 	if not contract_unlocked(contract):return "locked"
 	var job:Dictionary=data.get("contract_jobs",{}).get(str(contract.id),{})
@@ -272,14 +287,14 @@ func sync_contracts(now:int=-1)->bool:
 		data.bonds[npc]=maxi(0,int(data.bonds[npc])-int(contract.penalty))
 		if str(data.get("tracked_contract",""))==str(contract.id):data.tracked_contract=""
 	return _finish_mutation(before,old)
-func accept_contract(index:int,now:int=-1,issuer:String="")->bool:
+func accept_contract(index:int,now:int=-1,issuer:String="",chapter:StringName=ChapterCatalog.FIRST)->bool:
 	if index<0 or index>=ExpeditionData.CONTRACTS.size() or not sync_contracts(now):return false
 	var contract:Dictionary=ExpeditionData.CONTRACTS[index]
 	if str(contract.get("issuer",""))!=issuer:return false
 	if contract_status(contract,now)!="available":return false
 	var before=data.duplicate(true);var old=SaveService.data.duplicate(true);_ensure_contract_data()
 	var clock:=_contract_now(now);data.contract_clock=clock
-	data.contract_jobs[str(contract.id)]={"status":"accepted","accepted_at":clock,"deadline":clock+int(contract.hours)*3600}
+	data.contract_jobs[str(contract.id)]={"status":"accepted","accepted_at":clock,"deadline":clock+int(contract.hours)*3600,"chapter":str(chapter)}
 	data.tracked_contract=str(contract.id)
 	return _finish_mutation(before,old)
 func contract_remaining(contract:Dictionary,now:int=-1)->int:
@@ -301,11 +316,12 @@ func claim_contract(index:int,now:int=-1,issuer:String="")->bool:
 	var contract:Dictionary=ExpeditionData.CONTRACTS[index]
 	if str(contract.get("issuer",""))!=issuer:return false
 	if contract_status(contract,now)!="accepted":return false
-	for id in contract.needs:
-		if int(data.inventory.get(id,0))<int(contract.needs[id]):return false
+	var needs:=contract_needs(contract)
+	for id in needs:
+		if int(data.inventory.get(id,0))<int(needs[id]):return false
 	var before=data.duplicate(true);var old=SaveService.data.duplicate(true);_ensure_contract_data()
 	var clock:=_contract_now(now);data.contract_clock=clock
-	for id in contract.needs:data.inventory[id]=int(data.inventory[id])-int(contract.needs[id])
+	for id in needs:data.inventory[id]=int(data.inventory[id])-int(needs[id])
 	if not data.contracts.has(contract.id):data.contracts.append(contract.id)
 	data.danger=maxi(int(data.danger),int(contract.unlock));data.gold=gold()+int(contract.reward)
 	var gained:=_add_bond(str(contract.owner),int(contract.bond),clock)
@@ -344,6 +360,7 @@ func mark_dead(wave: int, carried: int) -> void:
 	data.active["build"]=_build_snapshot()
 	SaveService.data.run={"sortie_id":active_id(),"terminal":"dead"}
 	data.active["lost_items"]=_lost_items()
+	data.active["materials"]=MaterialWorkshop.report(GameState.material_ledger,GameState.items,false)
 	finalize_death()
 
 func finalize_death() -> bool:
@@ -351,7 +368,7 @@ func finalize_death() -> bool:
 	var before=data.duplicate(true)
 	var old_save=SaveService.data.duplicate(true)
 	var active: Dictionary=data.active
-	data.last_result={"id":active.id,"outcome":"dead","gold":0,"spent":int(active.spent),"difficulty":int(active.get("difficulty",1)),"wave":int(active.get("wave",1)),"coins":int(active.get("lost_coins",0)),"rows":[],"lost_items":active.get("lost_items",[]),"build":active.get("build",{})}
+	data.last_result={"id":active.id,"outcome":"dead","gold":0,"spent":int(active.spent),"difficulty":int(active.get("difficulty",1)),"wave":int(active.get("wave",1)),"coins":int(active.get("lost_coins",0)),"rows":[],"lost_items":active.get("lost_items",[]),"materials":active.get("materials",{}),"build":active.get("build",{})}
 	data.active={}
 	SaveService.data.run={}
 	SaveService.data.runs=int(SaveService.data.get("runs",0))+1
@@ -381,7 +398,7 @@ func task_reserves()->Dictionary:
 	var result:Dictionary={}
 	for contract in ExpeditionData.CONTRACTS:
 		if contract_status(contract)!="accepted":continue
-		for id in contract.needs:result[id]=int(result.get(id,0))+int(contract.needs[id])
+		for id in contract_needs(contract):result[id]=int(result.get(id,0))+int(contract_needs(contract)[id])
 	return result
 func loadout_counts(loadout:Array)->Dictionary:
 	var result:Dictionary={}
@@ -389,6 +406,9 @@ func loadout_counts(loadout:Array)->Dictionary:
 	return result
 func reserved_counts(extra:Dictionary={})->Dictionary:
 	var result=task_reserves()
+	var goal_entry:=MaterialWorkshopCatalog.research(MaterialWorkshop.goal())
+	if not goal_entry.is_empty() and not MaterialWorkshopCatalog.unlocked(str(goal_entry.id)):
+		for id in goal_entry.needs:result[id]=int(result.get(id,0))+int(goal_entry.needs[id])
 	for preset in data.get("presets",{}).values():
 		var counts=loadout_counts(preset.get("loadout",[]))
 		for id in counts:result[id]=maxi(int(result.get(id,0)),int(counts[id]))
@@ -445,9 +465,12 @@ func contract_progress(bag:Array=[])->Dictionary:
 	var carried:Dictionary={}
 	for item in bag:
 		var id=str(item.get("id",""));carried[id]=int(carried.get(id,0))+1
+	var combined:Dictionary=data.get("inventory",{}).duplicate(true)
+	for id in carried:combined[id]=int(combined.get(id,0))+int(carried[id])
+	var needs:=contract_needs(contract,combined)
 	var rows:Array=[];var bank_ready=true;var return_ready=true
-	for id in contract.needs:
-		var bank=int(data.get("inventory",{}).get(id,0));var run=int(carried.get(id,0));var need=int(contract.needs[id])
+	for id in needs:
+		var bank=int(data.get("inventory",{}).get(id,0));var run=int(carried.get(id,0));var need=int(needs[id])
 		bank_ready=bank_ready and bank>=need;return_ready=return_ready and bank+run>=need
 		rows.append({"id":id,"name":str(ExpeditionData.resolve(id).name),"warehouse":bank,"carried":run,"need":need})
 	return {"id":contract.id,"title":contract.title,"rows":rows,"bank_ready":bank_ready,"return_ready":return_ready,"owner":str(contract.owner),"remaining":contract_remaining(contract)}

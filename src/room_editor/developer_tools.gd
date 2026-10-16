@@ -45,6 +45,7 @@ func _build_console(tabs:TabContainer)->void:
 	for item in ItemDB.all():
 		if ItemDB.is_equippable(item) or ItemDB.is_relic(item) or ItemDB.is_usable(item):_items.append(item)
 	for id in ExpeditionData.MATERIALS:_items.append(ExpeditionData.resolve(str(id)))
+	for id in MaterialWorkshopCatalog.BOSS_MATERIALS:_items.append(ExpeditionData.resolve(str(id)))
 	for index in 4:_items.append(ItemDB.mushroom_item(index))
 	_search.text_changed.connect(func(_text:String)->void:_filter_items());_filter_items()
 	_amount=SpinBox.new();_amount.min_value=1;_amount.max_value=1000000;_amount.step=1;_amount.value=1;_amount.prefix="数量 ";body.add_child(_amount)

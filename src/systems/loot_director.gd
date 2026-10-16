@@ -28,6 +28,9 @@ func reward(enemy: EnemyBase) -> void:
 		for i in rng.randi_range(5,8)*multiplier:
 			var item = _material(enemy.global_position)
 			for n in rng.randi_range(1,3): bundle.append(item.duplicate(true))
+		var core:=_boss_material(enemy)
+		if not core.is_empty():
+			for index in multiplier:bundle.append(core.duplicate(true))
 		_burst_items(bundle, enemy.global_position)
 		boss_loot.emit()
 		Outpost.request_checkpoint()
@@ -47,6 +50,8 @@ func reward(enemy: EnemyBase) -> void:
 	else: item = _material(enemy.global_position)
 	drop([item],enemy.global_position)
 	Outpost.request_checkpoint()
+
+func _boss_material(_enemy:EnemyBase)->Dictionary:return {}
 
 func _combat_item(boss:bool)->Dictionary:
 	return BattleLootSelection.pick(rng,_equipment_weights(boss))

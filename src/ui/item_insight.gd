@@ -7,11 +7,13 @@ static func describe(item: Dictionary, include_activation := true, include_rules
 	for owned in GameState.items:
 		if str(owned.get("id",""))==str(item.get("id","missing")):count+=1
 	var lines:PackedStringArray=["当前持有 %d 件"%count]
+	var etch:=MaterialWorkshopCatalog.description(item)
+	if not etch.is_empty():lines.append(etch)
 	if not item.get("mechanics",[]).is_empty():
 		for line in ItemDB.stat_lines(item):lines.append(line)
 		if include_rules:lines.append(str(item.get("desc","")))
 	if ItemDB.is_usable(item):lines.append("获得后在背包使用，或放入药剂快捷栏")
-	elif ItemDB.is_material(item):lines.append("成功撤回后入库；材料可用于委托或兑换")
+	elif ItemDB.is_material(item):lines.append("成功撤回后入库；用于炼金、刻印、研究与委托。"+MaterialWorkshop.usage(str(item.get("id",""))))
 	else:
 		if ItemDB.is_equippable(item):
 			if not ItemDB.can_equip(item):return "当前角色无法装备"
@@ -69,8 +71,10 @@ static func stat_text(stat: StringName, value: float) -> String:
 
 static func replacement_losses(item:Dictionary)->String:
 	var current:=GameState.equipped(ItemDB.slot_of(item))
-	if current.is_empty() or GameState.is_equipped(item) or str(current.get("id",""))==str(item.get("id","")):return ""
+	if current.is_empty() or GameState.is_equipped(item):return ""
 	var lines:PackedStringArray=[]
+	if not MaterialWorkshopCatalog.description(current).is_empty():lines.append("替换将失去当前生效的刻印："+MaterialWorkshopCatalog.description(current))
+	if str(current.get("id",""))==str(item.get("id","")):return "\n".join(lines)
 	if not current.get("mechanics",[]).is_empty():lines.append("替换将失去「%s」的单件机制：%s"%[str(current.name),str(current.desc)])
 	if LegendarySets.complete():
 		var set:Dictionary=LegendarySets.DATA.get(Characters.current_id(),{})

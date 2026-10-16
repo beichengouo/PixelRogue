@@ -16,6 +16,7 @@ const BACKDROP := "res://assets/ui_art/shop/star_shop_backdrop.png"
 const PORTRAIT := "res://assets/ui_art/shop/merchant_portrait.png"
 var _npc_portrait:TextureRect
 
+var _workshop:MaterialWorkshopUI
 var _closing := false
 var _exit_tween: Tween
 var _root: Control
@@ -57,6 +58,8 @@ func _ready() -> void:
 	layer = 20
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	_build()
+	_workshop=MaterialWorkshopUI.new();add_child(_workshop)
+	var work_button:=PixelUi.compact_button("炼金与刻印",20);work_button.position=Vector2(535,14);work_button.size=Vector2(220,42);work_button.pressed.connect(func()->void:_workshop.open_field(self));_canvas.add_child(work_button);InteractionSkin.apply_button(work_button,"shop")
 	_root.visible = false
 	sale_ui=TradeSaleUI.new()
 	add_child(sale_ui)
@@ -198,6 +201,7 @@ func close(immediate := false) -> void:
 	_exit_tween = ComicMotion.dismiss(_canvas, _finish_close)
 
 func _finish_close() -> void:
+	if is_instance_valid(_workshop):_workshop.close()
 	_closing = false
 	if _exit_tween != null and _exit_tween.is_valid(): _exit_tween.kill()
 	if not _root.visible:

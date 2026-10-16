@@ -24,13 +24,14 @@ var legendary:=LegendaryMechanics.new()
 var expansion:=ExpansionEquipment.new()
 var cadence:=CadenceEquipment.new()
 var wayfarer:=WayfarerRelics.new()
+var etching:=EquipmentEnchant.new()
 
 func _ready() -> void:
 	if actor == null: actor = get_parent() as RoomPlayer
 	legendary.owner=self
 	expansion.owner=self
 	cadence.owner=self
-	wayfarer.owner=self
+	wayfarer.owner=self;etching.owner=self
 	EventBus.equipment_changed.connect(refresh)
 	EventBus.player_stats_changed.connect(refresh)
 	refresh()
@@ -82,7 +83,7 @@ func refresh() -> void:
 	if not has(&"patrol_bell"): patrol_until = 0.0
 	cadence.refresh()
 	legendary.refresh()
-	wayfarer.refresh()
+	wayfarer.refresh();etching.refresh()
 
 func _count_item(item: Dictionary) -> void:
 	for effect in item.get("mechanics", []):
@@ -145,7 +146,7 @@ func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: Roo
 	legendary.basic_hit(enemy,receipt)
 	expansion.basic(enemy,receipt)
 	cadence.basic(enemy,receipt)
-	wayfarer.basic(enemy,receipt)
+	wayfarer.basic(enemy,receipt);etching.basic(enemy,receipt)
 	if has(&"tide_pearl") and tide_until > clock and receipt != null and receipt.claim_effect(&"tide_pearl") and ready(&"tide_pearl"):
 		GameState.add_mp(3.0 * scale(&"tide_pearl")); tide_until = 0.0; start(&"tide_pearl", 3.0)
 	if has(&"refraction") and receipt != null and receipt.critical and receipt.claim_effect(&"refract_charge"):
@@ -227,6 +228,7 @@ func on_basic_fired(direction: Vector2, receipt: BasicAttackReceipt) -> void:
 	bullet.explosion_ratio = 0.0
 
 func on_skill_cast(shield_cast: bool = false,id:StringName=&"") -> float:
+	etching.skill(id)
 	var bonus := legendary.skill_cast(id)+wayfarer.skill(id)
 	expansion.skill(id)
 	cadence.skill(id)

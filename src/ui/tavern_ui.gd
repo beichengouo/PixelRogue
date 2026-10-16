@@ -2,6 +2,7 @@ class_name TavernUI
 extends CanvasLayer
 ## 卡片属性来自实际雇佣公式；所有交易由局内状态处理。
 signal hire_requested(offer: Dictionary)
+var _workshop:MaterialWorkshopUI
 var _closing := false
 var _exit_tween: Tween
 var _root: Control
@@ -24,6 +25,8 @@ func _ready() -> void:
 	layer = 21
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	_build()
+	_workshop=MaterialWorkshopUI.new();add_child(_workshop)
+	var work_button:=PixelUi.compact_button("炼金与刻印",20);work_button.position=Vector2(1015,28);work_button.size=Vector2(220,48);work_button.pressed.connect(func()->void:_workshop.open_field(self));_canvas.add_child(work_button);InteractionSkin.apply_button(work_button,"tavern")
 	_root.visible = false
 	EventBus.coins_changed.connect(_refresh_coins)
 	EventBus.hired_changed.connect(_refresh_hired)
@@ -62,6 +65,7 @@ func close(immediate := false) -> void:
 	_exit_tween = ComicMotion.dismiss(_canvas, _finish_close)
 
 func _finish_close() -> void:
+	if is_instance_valid(_workshop):_workshop.close()
 	ComicMotion.cancel(_reaction)
 	_reaction.hide()
 	_npc_state = ""

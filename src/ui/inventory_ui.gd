@@ -877,6 +877,14 @@ func _populate_detail() -> void:
 		desc.vertical_alignment = VERTICAL_ALIGNMENT_TOP
 		_detail_box.add_child(desc)
 
+	var etch_note:=MaterialWorkshopCatalog.description(item)
+	if not etch_note.is_empty():
+		var note:=PixelUi.label(etch_note,18,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(note)
+	if ItemDB.is_material(item):
+		var uses:=MaterialWorkshop.usage(str(item.id))
+		if not uses.is_empty():
+			var note:=PixelUi.label(uses,18,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(note)
+
 	if ItemDB.is_relic(item) and not item.get("mechanics", []).is_empty():
 		_detail_box.add_child(PixelUi.label("同名效果：1件100% · 2件合计150% · 3件合计175%；目标数、触发条件与冷却不增加", 14, PixelUi.MUTED))
 
@@ -983,7 +991,7 @@ func _populate_detail() -> void:
 func _sell_row(item: Dictionary) -> Control:
 	var row:=UiFactory.vbox(8)
 	var price:=ExpeditionData.sale_value(item)
-	row.add_child(PixelUi.label("单份售价 %d 金 · 可在背包直接售卖" % price if price>0 else "不可售卖 · 留给营地委托",16,PixelUi.MUTED))
+	row.add_child(PixelUi.label("单份售价 %d 金 · 可在背包直接售卖" % price if price>0 else "首领专属材料 · 保留用于刻印与研究" if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(item.id)) else "不可售卖 · 留给委托或营地兑换",16,PixelUi.MUTED))
 	if ItemDB.is_material(item):
 		row.add_child(PixelUi.label("仓库已有 %d 份%s" % [int(Outpost.data.inventory.get(str(item.id),0))," · 独立蘑菇格，最多999" if str(item.id).begins_with("glow_mushroom_") else " · 撤回后占用仓位"],16,PixelUi.GOLD))
 		if Outpost.task_reserves().has(str(item.id)):
