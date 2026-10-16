@@ -8,7 +8,7 @@ static func describe()->String:
 	var bosses:Array=graph.boss_ids();var index:=mini(graph.defeated.size(),bosses.size())
 	if index<bosses.size():
 		var boss:Dictionary=BossRoster.get_data(StringName(bosses[index]))
-		lines.append("下一位章节首领 · %s\n第%d场起可能出现，第%d场起下一次入房必定遭遇。"%[str(boss.get("title",bosses[index])),10+index*10,16+index*10])
+		lines.append("下一位章节首领 · %s\n固定在第%d场遭遇；到达节点后的下一次入房必定进入首领房。"%[str(boss.get("title",bosses[index])),int(RoomGraph.BOSS_ENTRY_DEADLINES[index])])
 	else:lines.append("本章三位首领均已击败。")
 	lines.append("\n邻接部署 · 仅观测已经生成、尚未踏入的普通房与精英房：")
 	var count:=0;var here:=RoomGraph.cell(graph.current)

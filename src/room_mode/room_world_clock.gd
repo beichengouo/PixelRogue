@@ -43,10 +43,12 @@ func time_label() -> String:
 	return "%02d:%02d" % [value/60,value%60]
 
 func snapshot() -> Dictionary:
-	return {"version":1,"seed":seed_value,"minutes":minutes,"days":elapsed_days,"speed":minutes_per_second,
+	return {"version":2,"seed":seed_value,"minutes":minutes,"days":elapsed_days,"speed":minutes_per_second,
 		"day_start":day_start,"dusk_start":dusk_start,"night_start":night_start,"dawn_start":dawn_start}
 
 func restore(data: Dictionary) -> void:
+	day_start=RoomEnvironmentConfig.DAY_START;dusk_start=RoomEnvironmentConfig.DUSK_START
+	night_start=RoomEnvironmentConfig.NIGHT_START;dawn_start=RoomEnvironmentConfig.DAWN_START
 	seed_value=int(data.get("seed",seed_value))
 	minutes=fposmod(float(data.get("minutes",minutes)),1440.0)
 	elapsed_days=maxi(0,int(data.get("days",0)))
@@ -56,5 +58,5 @@ func restore(data: Dictionary) -> void:
 	var day:=float(data.get("day_start",RoomEnvironmentConfig.DAY_START))
 	var dusk:=float(data.get("dusk_start",RoomEnvironmentConfig.DUSK_START))
 	var night:=float(data.get("night_start",RoomEnvironmentConfig.NIGHT_START))
-	if dawn>=0 and dawn<day and day<dusk and dusk<night and night<1440:
+	if int(data.get("version",1))>=2 and dawn>=0 and dawn<day and day<dusk and dusk<night and night<1440:
 		dawn_start=dawn;day_start=day;dusk_start=dusk;night_start=night

@@ -426,7 +426,9 @@ func _draw()->void:
 	for feather:Dictionary in feathers:
 		if float(feather.ready)>clock:continue
 		var position_value:=origin+Vector2.RIGHT.rotated(clock*2+float(feather.index)*TAU/maxi(1,feathers.size()))*30
-		HolyFX.paint(self,"feather",Rect2(position_value-Vector2(12,7),Vector2(24,14)),phase,intensity)
+		draw_set_transform(position_value,-PI*.5)
+		HolyFX.paint(self,"feather",Rect2(Vector2(-12,-7),Vector2(24,14)),phase,intensity)
+		draw_set_transform(Vector2.ZERO)
 	for field in fields:
 		if field.kind=="court":
 			var location:=to_local(at(field))

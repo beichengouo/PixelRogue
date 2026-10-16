@@ -50,7 +50,7 @@ func stage(kind:String,payload:Dictionary={})->Dictionary:
 			if not eligible():return before
 			stats.fate_claims=int(stats.get("fate_claims",0))+1
 			if bool(payload.get("reverse",false)):stats.fate_reverse=int(stats.get("fate_reverse",0))+1
-			if bool(payload.get("replace",false)):stats.fate_replacements=int(stats.get("fate_replacements",0))+1
+			if GameState.fate.cards.size()>=3:stats.fate_replacements=maxi(1,int(stats.get("fate_replacements",0)))
 			stats.fate_pair=maxi(int(stats.get("fate_pair",0)),GameState.fate.cards.size())
 			_unique(stats,"fate_seen",str(payload.get("id","")))
 			_resolved_reading(stats)

@@ -34,14 +34,15 @@ func _ready()->void:
 	if not is_flying():collision_mask|=Layers.DEEP_WATER
 	room.register_unit_body(self,body_radius(),is_flying())
 	_nav_cd=float(get_instance_id()%13)*0.013
-func is_flying()->bool:return kind==&"flyer"
+func is_flying()->bool:return kind in [&"flyer",&"crystal_familiar"]
 func body_radius()->float:return 12.0
 
 func configure(enemy_kind: StringName) -> void:
-	var sample := WaveDirector.create_enemy(enemy_kind)
+	var sample := WaveDirector.create_enemy(&"flyer" if enemy_kind==&"crystal_familiar" else enemy_kind)
 	kind=enemy_kind; display_name=sample.display_name; base_hp=sample.base_hp; base_damage=sample.base_damage
 	base_speed=sample.base_speed; base_coins=sample.base_coins; body_color=sample.body_color; body_size=sample.body_size; sprite_name=sample.sprite_name
 	sample.free(); uses_gravity=false; collides_with_world=true
+	if kind==&"crystal_familiar":display_name="棱晶眷灵";body_color=Color("c188f5")
 
 func apply_affixes(list:Array[StringName])->void:
 	super.apply_affixes(list)
@@ -176,7 +177,7 @@ func _track_blockage(dt:float,before:Vector2,commanded:Vector2)->void:
 
 func _check_contact()->void:
 	# New creatures deal damage in their authored attack windows, not by walking into a body.
-	if kind in EnemyCombatPolicy.EXPANSION_KINDS or kind in [&"caster",&"bomber",&"flyer",&"lantern_toad",&"dusk_acolyte"]:return
+	if kind in EnemyCombatPolicy.EXPANSION_KINDS or kind in [&"caster",&"bomber",&"flyer",&"crystal_familiar",&"lantern_toad",&"dusk_acolyte"]:return
 	if is_instance_valid(affix_runtime) and affix_runtime.blocks_action():return
 	if _contact_cd>0:return
 	for body in contact_area.get_overlapping_bodies():
@@ -213,7 +214,7 @@ func _release() -> void:
 
 func shoot(_aim:Vector2=Vector2.ZERO) -> void:
 	var direction:=_locked_direction if _locked_direction.length_squared()>0 else (aggro_position()-global_position).normalized()
-	var family:=str(kind)
+	var family:="mage" if kind==&"crystal_familiar" else str(kind)
 	var count:=2 if kind==&"bell_snail" else 3 if kind in [&"flyer",&"lantern_toad"] else 1
 	HostileAttackFX.pulse(_fx(),global_position+direction*18,family,"cast",46,.45,direction.angle(),room)
 	for index in count:

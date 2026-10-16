@@ -27,7 +27,7 @@ static func normalize(raw:Variant)->Dictionary:
 		var id:=str(card.id);var exists:=false
 		for owned in result.cards:
 			if owned.id==id:exists=true
-		if not exists and result.cards.size()<2:result.cards.append({"id":id,"reverse":bool(card.get("reverse",false))})
+		if not exists:result.cards.append({"id":id,"reverse":bool(card.get("reverse",false))})
 	for key in ["cooldowns","pending"]:
 		if raw.get(key) is Dictionary:
 			for id in raw[key]:
@@ -43,7 +43,7 @@ static func rank(id:String)->int:
 static func star()->String:
 	var id:=str(GameState.fate.get("star","")) if active() else ""
 	return id if STARS.has(id) else ""
-static func art(id:String)->String:return "res://assets/fate_v01/cards/"+id+".png"
+static func art(id:String,reverse:=false)->String:return "res://assets/fate_v01/cards/"+id+("_reverse" if reverse and CARDS.has(id) else "")+".png"
 static func icon(id:String)->String:return "res://assets/fate_v01/icons/"+id+".png"
 static func description(id:String,reverse:=false)->String:
 	if not CARDS.has(id):return ""

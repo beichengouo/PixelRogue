@@ -4,8 +4,8 @@ extends RefCounted
 const MINUTES_PER_SECOND := 1.0
 const DAY_START := 360.0
 const DUSK_START := 1080.0
-const NIGHT_START := 1200.0
-const DAWN_START := 300.0
+const NIGHT_START := 1320.0
+const DAWN_START := 240.0
 const PLAYER_LIGHT_RADIUS := 144.0
 const ALLY_LIGHT_RADIUS_RATIO := 0.5
 const MAX_OBSCURITY := 0.95

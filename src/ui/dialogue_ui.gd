@@ -285,7 +285,11 @@ func _play_tail_or_go() -> void:
 
 func _goto_pending() -> void:
 	var next := _pending_next
-	if not _review and not _repeat_read_only: StoryState.complete_scene(_scene_id, next)
+	if not _review and not _repeat_read_only:
+		# Combined boss introductions keep their original replay records without
+		# closing/reopening a second dialogue window.
+		for source:StringName in _scene.get("source_scenes",[]):StoryState.complete_scene(source)
+		StoryState.complete_scene(_scene_id,next)
 	_pending_next = &""
 	if next == &"": _finish()
 	else: _enter_scene(next)

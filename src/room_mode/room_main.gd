@@ -243,7 +243,8 @@ func _change_room(direction:Vector2i)->void:
 	var record:Dictionary=graph.rooms[graph.current]
 	if record.kind=="boss" and not record.delta.get("pre_story",false):
 		record.delta.pre_story=true
-		_story_queue=["city_"+str(record.boss)+"_before"] if GameState.chapter_id==ChapterCatalog.NEXT else ([40,50] if record.boss=="mage" else ([70,80,90] if record.boss=="tide" else []))
+		_story_queue=["city_"+str(record.boss)+"_before"] if GameState.chapter_id==ChapterCatalog.NEXT else (["forest_mage_before"] if record.boss=="mage" else (["forest_tide_before"] if record.boss=="tide" else []))
+		record.delta.boss_story_intro=not _story_queue.is_empty()
 		_story_context="entry";_continue_room_story(ticket,room_token)
 
 func clear_hostile_effects()->void:

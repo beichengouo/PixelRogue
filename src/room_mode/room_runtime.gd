@@ -23,6 +23,7 @@ func _apply_fields(node:Object,fields:Dictionary)->void:
 		node.max_phase=int(BossRoster.get_data(node.boss_id).get("phases",3 if node.boss_id==&"tide" else 2));node.phase=mini(node.phase,node.max_phase)
 		var roster:=BossRoster.get_data(node.boss_id)
 		node.body_size=roster.size;node.art_scale=float(roster.scale)
+		node._minion_kinds=roster.get("minions",[&"walker"]).duplicate()
 		if node.visual is AnimatedSprite2D:PixelBossArt.align(node.visual,node.boss_id,node.body_size)
 	elif node is HiredAlly and node.is_merc and is_instance_valid(node._sprite):
 		# Older checkpoints carried the previous soldier-sheet origin. Align to

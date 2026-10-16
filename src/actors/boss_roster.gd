@@ -18,7 +18,7 @@ const DATA := {
 		"hp": 900.0, "damage": 32.0, "speed": 68.0, "coins": 70,
 		"size": Vector2(44.0, 50.0), "scale": 2.2,
 		"color": "ffd166", "gravity": true, "keep": 210.0,
-		"minions": [&"walker", &"charger"],
+		"minions": [&"walker", &"guard", &"flyer", &"bomber"],
 	},
 	MAGE: {
 		"title": "晶化巨影",
@@ -27,7 +27,7 @@ const DATA := {
 		"hp": 1150.0, "damage": 30.0, "speed": 74.0, "coins": 80,
 		"size": Vector2(46.0, 56.0), "scale": 1.35,
 		"color": "c07bff", "gravity": false, "keep": 280.0,
-		"minions": [&"flyer", &"caster"],
+		"minions": [&"crystal_familiar"],
 	},
 	TIDE: {
 		"title": "潮汐之根",
@@ -36,7 +36,7 @@ const DATA := {
 		"hp": 1650.0, "damage": 36.0, "speed": 86.0, "coins": 120,
 		"size": Vector2(56.0, 66.0), "scale": 1.6,
 		"color": "8fffd8", "gravity": true, "keep": 170.0,
-		"minions": [&"walker", &"flyer", &"charger", &"caster"],
+		"minions": [&"bog_crab", &"lantern_toad", &"glimmer_spider"],
 	},
 }
 

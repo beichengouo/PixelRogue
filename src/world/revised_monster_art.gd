@@ -1,7 +1,7 @@
 class_name RevisedMonsterArt
 extends RefCounted
 const ROOT:="res://assets/combat_revision_v04/monsters/"
-const TYPES:={&"flyer":"ghost",&"bomber":"ember"}
+const TYPES:={&"flyer":"ghost",&"bomber":"ember",&"crystal_familiar":"crystal_familiar"}
 static var _cache:Dictionary={}
 static func frames(kind:StringName)->SpriteFrames:
 	if _cache.has(kind):return _cache[kind]

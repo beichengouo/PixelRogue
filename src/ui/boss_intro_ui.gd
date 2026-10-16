@@ -69,6 +69,9 @@ func _ready() -> void:
 
 func play(id: StringName) -> void:
 	if is_instance_valid(GameState.runtime_node) and GameState.runtime_node._restoring: return
+	if GameState.runtime_node is RoomRuntime:
+		var main:Node=GameState.runtime_node.main
+		if bool(main.graph.rooms[main.graph.current].delta.get("boss_story_intro",false)):return
 	cancel()
 	_epoch += 1
 	var ticket := _epoch

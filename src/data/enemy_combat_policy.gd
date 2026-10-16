@@ -13,7 +13,7 @@ const NEW_DATA:Dictionary={
 	&"lantern_toad":{"name":"沼灯囊蛙","hp":40.0,"damage":18.0,"speed":64.0,"coins":3,"theme":"wetland","role":"poison_spit"},
 	&"dusk_acolyte":{"name":"暮钟侍祭","hp":46.0,"damage":20.0,"speed":60.0,"coins":4,"theme":"ruin","role":"curse_bolt"},
 }
-static func ranged_affix_allowed(kind:StringName)->bool:return kind in [&"flyer",&"lantern_toad",&"dusk_acolyte",&"bell_snail"]
+static func ranged_affix_allowed(kind:StringName)->bool:return kind in [&"flyer",&"crystal_familiar",&"lantern_toad",&"dusk_acolyte",&"bell_snail"]
 static func filtered_affixes(kind:StringName,ids:Array[StringName])->Array[StringName]:
 	var result:Array[StringName]=[]
 	for id in ids:

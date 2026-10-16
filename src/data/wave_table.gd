@@ -97,6 +97,6 @@ static func experience_pool(wave:int)->float:
 
 static func elite_policy(wave:int)->Dictionary:
 	if wave<=5:return {"chance":0.18 if wave>=4 else 0.0,"max":1}
-	if wave<=10:return {"chance":0.32,"max":1}
-	if wave<=20:return {"chance":0.44,"max":2}
-	return {"chance":minf(0.7,0.52+float(maxi(0,wave-30))*0.001),"max":4 if wave>50 else 3}
+	# A continuous progression curve; difficulty applies its existing modifier.
+	var chance:=minf(.85,.26+float(maxi(0,wave-6))*.02)
+	return {"chance":chance,"max":1 if wave<=10 else 2 if wave<=20 else 4 if wave>50 else 3}

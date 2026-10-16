@@ -274,11 +274,15 @@ func queue_split_children(source:EnemyBase)->void:
 			RoomSpawnFX.spawn(fx_root,at,0.3)
 func spawn_boss_minion(count:int)->void:
 	if not is_instance_valid(boss) or boss._dead:return
-	var living:=_living_enemy_count()+room_pending.size()
-	for i in mini(RunDifficulty.spawn_count(count,GameState.difficulty),maxi(0,int(plan.max_alive)-living)):
+	var living:=0
+	for unit in enemies_root.get_children():
+		if unit is EnemyBase and not unit._dead and unit.loot_origin=="boss_minion":living+=1
+	for pending in room_pending:
+		if pending.get("origin","")=="boss_minion":living+=1
+	for i in mini(RunDifficulty.spawn_count(count,GameState.difficulty),maxi(0,8-living)):
 		var at:=room.spawn_point(spawn_rng,player.global_position)
-		room_pending.append({"kind":str(boss.minion_kinds()[spawn_rng.randi_range(0,boss.minion_kinds().size()-1)]),"at":at,"remaining":0.8,"origin":"boss_minion"})
-		RoomSpawnFX.spawn(fx_root,at,0.8)
+		room_pending.append({"kind":str(boss.minion_kinds()[spawn_rng.randi_range(0,boss.minion_kinds().size()-1)]),"at":at,"remaining":.9+i*.25,"origin":"boss_minion","boss_wave_tag":boss.owner_tag+":periodic"})
+		RoomSpawnFX.spawn(fx_root,at,.9+i*.25)
 func clear_boss_minions()->void:
 	# A defeated boss cancels unfinished summons, not living room enemies.
 	room_pending=room_pending.filter(func(entry:Dictionary)->bool:return str(entry.get("origin","normal"))!="boss_minion")

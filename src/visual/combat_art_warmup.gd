@@ -3,7 +3,8 @@ extends RefCounted
 static var _done:Dictionary={}
 static func prepare(tree:SceneTree,boss_id:String="",valid:Callable=Callable())->bool:
 	var inspector:=RoomSceneOcclusion.new();var packs:Array=[]
-	for kind in PixelEnemyArt.KINDS+PixelEnemyArt.NEW_KINDS:
+	var summons:Array=BossRoster.get_data(StringName(boss_id)).minions if not boss_id.is_empty() else []
+	for kind in PixelEnemyArt.KINDS+PixelEnemyArt.NEW_KINDS+summons:
 		var key:="enemy:"+str(kind)
 		if _done.has(key):continue
 		packs.append({"key":key,"frames":PixelEnemyArt.make_frames(kind)})

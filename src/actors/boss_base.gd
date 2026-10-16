@@ -117,15 +117,16 @@ func _update_visual() -> void:
 	super._update_visual()
 	if visual is AnimatedSprite2D:
 		var sprite:=visual as AnimatedSprite2D
-		var animation:StringName=&"idle"
-		if attack_id!=&"":
-			animation=&"windup" if not _warnings.is_empty() else &"release"
-		elif absf(velocity.x)>12: animation=&"move"
+		var animation:StringName=boss_visual_animation()
 		if sprite.animation!=animation:
 			if animation==&"release": sprite.speed_scale=4.0/maxf(0.05,_channel)/12.0
 			elif animation!=&"windup": sprite.speed_scale=1
 			sprite.play(animation)
 		PixelBossArt.align(sprite,boss_id,body_size)
+
+func boss_visual_animation()->StringName:
+	if attack_id!=&"":return &"windup" if not _warnings.is_empty() else &"release"
+	return &"move" if absf(velocity.x)>12 else &"idle"
 
 func _die() -> void:
 	if _dead: return

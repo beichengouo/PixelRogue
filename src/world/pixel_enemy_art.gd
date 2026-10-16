@@ -13,6 +13,7 @@ static var _generated_data:Dictionary={}
 const GENERATED_CANVAS:=512.0
 static func source_directory(id:StringName)->String:return DIR if SOURCES.get(id,"orc")=="orc" else DIR+"generated/"
 static func supports(id:StringName)->bool:
+	if id==&"crystal_familiar":return true
 	if id in NEW_KINDS:return true
 	return id in KINDS and ResourceLoader.exists(source_directory(id)+str(SOURCES[id])+".png")
 static func info(id:StringName)->Dictionary:

@@ -6,7 +6,7 @@ const SERVICE_INTERVAL := 6
 const MAX_RETAINED_ROOMS := 10
 const DIRECTIONS := [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]
 const BOSSES := ["king", "mage", "tide"]
-const BOSS_ENTRY_DEADLINES := [16,26,36]
+const BOSS_ENTRY_DEADLINES := [10,20,30]
 var chapter_id:StringName=ChapterCatalog.FIRST
 func boss_ids()->Array:return ChapterCatalog.bosses(chapter_id)
 var rooms: Dictionary = {}
@@ -65,9 +65,9 @@ func _allocate(at: Vector2i, kind: String, boss_id: String) -> Dictionary:
 		"encounter":0, "boss_stats":{}, "delta":{}}
 
 func available_boss() -> String:
-	if encounters < 10: return ""
+	if encounters < 9: return ""
 	for i in boss_ids().size():
-		if encounters >= [10,20,30][i] and not generated.has(boss_ids()[i]) and (i == 0 or defeated.has(boss_ids()[i-1])):
+		if encounters+1 >= int(BOSS_ENTRY_DEADLINES[i]) and not generated.has(boss_ids()[i]) and (i == 0 or defeated.has(boss_ids()[i-1])):
 			return boss_ids()[i]
 	return ""
 
@@ -131,7 +131,7 @@ func enter(id: String) -> Dictionary:
 	if count > 0 and is_combat(str(record.kind)) and not boss_id.is_empty():
 		pity += 1
 		var boss_index := boss_ids().find(boss_id)
-		var guaranteed_at: int = [15, 25, 35][boss_index]
+		var guaranteed_at: int = int(BOSS_ENTRY_DEADLINES[boss_index])-1
 		var chance: float = [0.10, 0.20, 0.30][boss_index]
 		if encounters >= guaranteed_at or rng.randf() < chance:
 			boss_slot = rng.randi_range(0,count-1)
@@ -151,11 +151,11 @@ func enter(id: String) -> Dictionary:
 	return {"fresh":true, "created":created.filter(func(new_id:String)->bool:return rooms.has(new_id))}
 
 func rush_unlocked()->bool:
-	return encounters>=36 and boss_ids().all(func(id:String)->bool:return defeated.has(id))
+	return encounters>=30 and boss_ids().all(func(id:String)->bool:return defeated.has(id))
 func _rush_pending()->bool:
 	return rooms.values().any(func(record:Dictionary)->bool:return record.kind=="boss_rush" and not record.cleared)
 func _roll_kind()->String:
-	if rush_unlocked() and not _rush_pending() and ((not rush_offered and encounters>=49) or rng.randf()<.03):return "boss_rush"
+	if rush_unlocked() and encounters>=49 and not _rush_pending() and ((not rush_offered) or rng.randf()<.03):return "boss_rush"
 	var weights:=RANDOM_WEIGHTS.duplicate()
 	for index in RANDOM_KINDS.size():
 		if completed_encounter<int(RoomExpansionRules.UNLOCK.get(RANDOM_KINDS[index],0)):weights[0]+=weights[index];weights[index]=0
@@ -214,7 +214,7 @@ func clear_current(readings:int=0) -> bool:
 
 func _ensure_altar_offer(readings:int)->Array[String]:
 	var protected:Array[String]=[]
-	if readings>=3 or int(altar_pacing.bonus)>=3 or int(altar_pacing.clears)<(10 if altar_pacing.seen else 6):return protected
+	if readings>=3 or int(altar_pacing.bonus)>=3 or int(altar_pacing.clears)<(7 if altar_pacing.seen else 4):return protected
 	# Breadth-first through cleared, connected rooms; unopened fights cannot be
 	# treated as a safe path to an existing altar or a new frontier.
 	var origins:Array[String]=[current];var paths:Dictionary={current:[current]}

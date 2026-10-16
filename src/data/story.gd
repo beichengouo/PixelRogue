@@ -240,6 +240,11 @@ const SCENES := {
 
 
 static func get_scene(id: StringName, replay := false, character_id:StringName=&"") -> Dictionary:
+	if id in [&"forest_mage_before",&"forest_tide_before"]:
+		var sources:Array=[&"cp_40",&"cp_50"] if id==&"forest_mage_before" else [&"cp_70",&"cp_80",&"cp_90"]
+		var lines:Array=[]
+		for source:StringName in sources:lines.append_array(get_scene(source,replay,character_id).get("lines",[]))
+		return {"title":"晶影之门" if id==&"forest_mage_before" else "最后的心跳","portrait":P_GODDESS,"lines":lines,"source_scenes":sources,"next":&""}
 	if id==&"fate_observation":return FateStory.scene(character_id,replay)
 	if String(id).begins_with("city_"):return CityStories.scene(id,replay,character_id)
 	var scene := _shared_scene(id, replay)

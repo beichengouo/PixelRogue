@@ -49,6 +49,7 @@ func _physics_process(dt:float)->void:
 	if phase!=phase_seen:
 		phase_seen=phase;cancel_attacks(true);recovery=1.5;room_cooldown=1.5
 		Effects.text(_fx(),global_position-Vector2(0,65),"崩坏加深 · 第%d阶段"%phase,body_color,20)
+	_advance_periodic_summons(dt)
 	think(dt)
 	if _slow_time>0:velocity*=1-_slow_strength
 	move_and_slide();_check_contact();_update_visual();queue_redraw()
@@ -67,7 +68,7 @@ func think(dt:float)->void:
 	room_aim=(player.global_position-global_position).normalized();room_target=player.global_position
 	var choices:Array=_available_patterns()
 	pattern=str(choices[room_action%choices.size()]);room_action+=1;attack_id=&"windup"
-	Effects.text(_fx(),global_position-Vector2(0,72),pattern,body_color.lightened(.2),18);_boss_fx("cast",global_position,88,.8)
+	_boss_fx("cast",global_position,88,.8)
 	match boss_id:
 		&"king":_king_pattern(pattern)
 		&"mage":_mage_pattern(pattern)
@@ -225,6 +226,13 @@ func _tide_pattern(name:String)->void:
 			_command("resonance",2.8,{"kind":"core","count":4})
 			for index in 3:_command("ring",4+index*.8,{"count":24,"gap":room_aim,"opening":1.5,"speed":155,"ratio":.55,"wave_sensitive":true})
 			_command("fan",6.7,{"shape":"fan","radius":330,"warning":1.5,"dir":room_aim,"spread":1.8,"count":13,"speed":205,"ratio":1.0,"wave_sensitive":true});_command("counter",7)
+func _advance_periodic_summons(dt:float)->void:
+	if not is_instance_valid(director) or director.extraction_hold or director.phase!=WaveDirector.Phase.FIGHT or get_tree().paused:return
+	room_summon_cd=maxf(0,room_summon_cd-dt)
+	if room_summon_cd>0:return
+	director.spawn_boss_minion(2 if phase==1 else 3)
+	room_summon_cd=10.0 if phase==1 else 8.0
+
 func _summon_wave(count:int)->void:
 	if not is_instance_valid(director):return
 	wave_serial+=1;active_wave=wave_serial;active_wave_kind="bones";wave_broken=false;wave_required=0;wave_defeated=0
@@ -306,9 +314,11 @@ func _boss_fx(stage:String,at:Vector2,width:float,seconds:float,direction:=0.0)-
 func _update_visual()->void:
 	super._update_visual()
 	if visual is AnimatedSprite2D:
-		var animation:=&"release" if _visual_release_left>0 else &"windup" if main_pending() else &"move" if velocity.length()>8 else &"idle"
-		if visual.animation!=animation:visual.play(animation)
-		visual.speed_scale=.75 if animation==&"release" else 1.0
+		visual.speed_scale=.75 if visual.animation==&"release" else 1.0
+func boss_visual_animation()->StringName:
+	# Choose once before the shared alignment step. Switching back to idle in
+	# BossBase first also reset the release animation to frame zero every tick.
+	return &"release" if _visual_release_left>0 else &"windup" if main_pending() else &"move" if velocity.length()>8 else &"idle"
 func visual_locomotion_state()->StringName:return &"walk" if velocity.length()>8 else &"idle"
 func _die()->void:
 	if _dead:return

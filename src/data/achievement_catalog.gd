@@ -23,7 +23,7 @@ const EXPANSION:={
 "fate_first":{"name":"命运初启","description":"在祭坛首次接纳一张命运牌。聆听星幕之后的回声，为未知的道路写下开端。","metric":"fate_claims","goal":1,"category":"探索"},
 "fate_reverse":{"name":"逆星行者","description":"接纳一张逆位命运牌。知晓代价，仍以自己的意志回应群星。","metric":"fate_reverse","goal":1,"category":"挑战"},
 "fate_pair":{"name":"双曜同契","description":"在一次出征中同时持有两张命运牌。让两道不同的星辉共同照亮前路。","metric":"fate_pair","goal":2,"category":"收集"},
-"fate_replace":{"name":"改写星轨","description":"命运牌位已满时，完成一次命运牌替换。既定的轨迹亦可因抉择而改变。","metric":"fate_replacements","goal":1,"category":"探索"},
+"fate_replace":{"name":"改写星轨","description":"在一次出征中缔结三张命运牌。让不同的星轨共同编织前行的道路。","metric":"fate_replacements","goal":1,"category":"探索"},
 "fate_three":{"name":"三问星穹","description":"在同次出征中完成三次占卜的接纳或放弃。星穹作答，最终的决定仍属于旅人。","metric":"fate_resolved_best","goal":3,"category":"挑战"},
 "fate_archive":{"name":"八象全书","description":"跨出征累计接纳全部八种命运牌，正逆位均可。将八种命运的启示铭入旅途。","metric":"fate_seen","goal":8,"category":"收集"},
 "star_paths":{"name":"群星择途","description":"分别选择明炬座、涌泉座与守灯座，成功开始三次正式出征。循不同星光，见证道路的万千可能。","metric":"stars_departed","goal":3,"category":"探索"},
