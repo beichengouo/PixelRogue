@@ -243,6 +243,9 @@ func _portrait(path: String, player := false) -> Texture2D:
 	crop.region = Rect2(extent * Vector2(0.02, 0.0 if new_pose or npc_pose else (0.02 if player else 0.08)), extent * Vector2(0.96, 0.64 if new_pose else (0.68 if player else 0.62)))
 	if path.begins_with(CampResidents.ROOT):
 		crop.region=Rect2(Vector2.ZERO,extent*Vector2(1,.7))
+	if path.begins_with(CityStories.ROOT):
+		# Verena's crown starts near the top edge; the legacy NPC inset cut it off.
+		crop.region=Rect2(Vector2.ZERO,extent*Vector2(1,.70))
 	_portrait_cache[path] = crop
 	return crop
 

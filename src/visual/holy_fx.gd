@@ -5,10 +5,12 @@ const DETAIL_ROOT:="res://assets/characters/sylphiette_holy_v01/fx_v04/"
 const DETAILS:=["ring","warning","mark","prayer","grace","bolt"]
 const STYLES:=["pillar","feather","cloud","bell","court","step","judgment","sanctuary","ring","warning","mark","prayer","grace","bolt"]
 ## Normalized center of the ground ellipse, measured in the fixed 256px cells.
-const GROUND_ANCHORS:={"pillar":.672,"cloud":.656,"bell":.703,"court":.508,"judgment":.711,"sanctuary":.594,"ring":.5,"warning":.5,"prayer":.5,"grace":.5}
+const GROUND_ANCHORS:={"pillar":.672,"cloud":.656,"bell":.703,"court":.508,"judgment":.711,"sanctuary":.594,"ring":.5,"warning":.5,"prayer":151.0/256.0,"grace":.5}
 static func ground_rect(style:String,size_value:float,foot:=Vector2.ZERO)->Rect2:
 	var height:=size_value*(2.7 if style=="pillar" else 2.4 if style=="judgment" else 2.0)
-	if style in DETAILS:return Rect2(foot-Vector2.ONE*size_value*256.0/224.0,Vector2.ONE*size_value*2*256.0/224.0)
+	if style in DETAILS:
+		var extent:=Vector2.ONE*size_value*2*256.0/224.0
+		return Rect2(foot-extent*Vector2(.5,float(GROUND_ANCHORS.get(style,.5))),extent)
 	return Rect2(foot-Vector2(size_value,height*float(GROUND_ANCHORS.get(style,.5))),Vector2(size_value*2,height))
 static var textures:Dictionary={}
 var kind:="ring"
@@ -37,7 +39,11 @@ static func paint(canvas:CanvasItem,style:String,rect:Rect2,phase:float,opacity:
 static func spawn(parent:Node,at:Vector2,style:String,size_value:float=48,seconds:float=.4)->HolyFX:
 	if not is_instance_valid(parent) or not parent.is_inside_tree():return null
 	if parent.get_tree().get_nodes_in_group("holy_visuals").size()>=48 and style!="warning":return null
-	var fx:=HolyFX.new();fx.kind=style;fx.radius=size_value;fx.duration=maxf(.08,seconds);fx.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;parent.add_child(fx);fx.global_position=at+(Vector2(0,14) if GROUND_ANCHORS.has(style) or style=="step" else Vector2.ZERO);fx.z_index=7;fx.add_to_group("holy_visuals")
+	# Spell artwork belongs above the map and beneath the sorted unit bodies.
+	# Keep the original world landing point when changing its rendering parent.
+	var player:=parent.get_tree().get_first_node_in_group("room_player") as RoomPlayer
+	if is_instance_valid(player) and is_instance_valid(player.room):parent=player.room
+	var fx:=HolyFX.new();fx.kind=style;fx.radius=size_value;fx.duration=maxf(.08,seconds);fx.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;parent.add_child(fx);fx.global_position=at+(Vector2(0,14) if GROUND_ANCHORS.has(style) or style=="step" else Vector2.ZERO);fx.z_index=0;fx.add_to_group("holy_visuals")
 	var ink:=CanvasItemMaterial.new();ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED;fx.material=ink;return fx
 func _process(delta:float)->void:
 	if _follow!=null:

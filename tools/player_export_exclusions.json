@@ -8,6 +8,9 @@
   "assets/environment/props/crown.tscn",
   "assets/environment/props/trunk.tscn",
   "assets/environment/ruins.png",
+  "assets/round5/items/life_ampoule.png",
+  "assets/round5/items/plate_mail.png",
+  "assets/round5/items/reactive_plating.png",
   "assets/tilesets/desert_36.png",
   "assets/tilesets/dungeon_36.png",
   "assets/tilesets/tiny_dungeon_36.png"

@@ -49,6 +49,7 @@ var _judgment_open:=false
 var _sanctuary_open:=false
 var _cast_bonus:=1.0
 var warning_serial:=0
+var _ground_visual:Node2D
 
 func rank(id:StringName)->int:return GameState.talent_rank(id)
 func attack()->float:return actor.stats.get_value(&"attack")
@@ -67,8 +68,23 @@ func _ready()->void:
 	room_id=str(actor.room.record.get("id",""));z_index=1
 	HolyFX.warm();texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	var ink:=CanvasItemMaterial.new();ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED;material=ink
+	_ground_visual=Node2D.new();_ground_visual.name="HolyGroundAura"
+	_ground_visual.texture_filter=texture_filter;_ground_visual.material=ink
+	actor.room.add_child(_ground_visual)
+	_ground_visual.draw.connect(_draw_ground.bind(_ground_visual))
+	_sync_ground_visual()
+func _exit_tree()->void:
+	if is_instance_valid(_ground_visual):_ground_visual.queue_free()
+func _sync_ground_visual()->void:
+	if not is_instance_valid(_ground_visual):return
+	_ground_visual.global_position=actor.global_position
+	_ground_visual.visible=actor.hp>0
+	_ground_visual.queue_redraw()
 func _process(delta:float)->void:
-	if not is_instance_valid(actor) or actor.hp<=0:return
+	if not is_instance_valid(actor):return
+	if actor.hp<=0:
+		if is_instance_valid(_ground_visual):_ground_visual.hide()
+		return
 	clock+=delta
 	var current:=str(actor.room.record.get("id",""))
 	if current!=room_id:on_room_exit();room_id=current
@@ -105,6 +121,7 @@ func _process(delta:float)->void:
 			if ready("sanctuary_tick"):start("sanctuary_tick",.75);area(actor.global_position,126,.35);HolyFX.around(actor,"ring",126,.35)
 			if ready("sanctuary_purge"):start("sanctuary_purge",1);purge(actor.global_position,60,2)
 	if _cloud_open and ready("cloud_purge"):start("cloud_purge",.75);purge(actor.global_position,46,1)
+	_sync_ground_visual()
 	queue_redraw()
 
 func cast(slot:int)->bool:
@@ -411,28 +428,31 @@ func on_room_exit()->void:
 	marks.clear();songs.clear();judgment_hits.clear();fields.clear();feathers.clear();recent_target="";prayer=0;cloud_until=0;feathers_until=0;judgment_until=0;sanctuary_until=0;_cloud_open=false;_judgment_open=false;_sanctuary_open=false
 	for unit in get_tree().get_nodes_in_group("holy_decoys"):
 		if unit.holy==self:unit.empowered=false;unit.expire()
+## Ground fields use the room plane; only orbiting feathers and target marks
+## remain in the runtime's foreground pass. No opaque aura covers the caster.
+func _draw_ground(canvas:Node2D)->void:
+	var origin:=Vector2(0,14)
+	var intensity:=clampf(float(SaveService.data.get("spell_fx_strength",1)),0,1)
+	var phase:=.30 if ComicMotion.reduced() else fposmod(clock*.55,1.0)*.45+.15
+	if prayer>=100:HolyFX.paint(canvas,"prayer",HolyFX.ground_rect("prayer",42,origin),phase,intensity)
+	if grace_until>clock:HolyFX.paint(canvas,"grace",HolyFX.ground_rect("grace",28,origin),phase,intensity)
+	if _cloud_open or actor.shield_hp>0:HolyFX.paint(canvas,"cloud",HolyFX.ground_rect("cloud",39,origin),phase,intensity*.95)
+	if _judgment_open:HolyFX.paint(canvas,"judgment",HolyFX.ground_rect("judgment",22,origin),phase,intensity*.9)
+	if _sanctuary_open:HolyFX.paint(canvas,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.45)
+	for field in fields:
+		if field.kind=="court":
+			var location:=canvas.to_local(at(field))
+			HolyFX.paint(canvas,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.48)
 func _draw()->void:
 	var origin:=Vector2(0,14)
 	var intensity:=clampf(float(SaveService.data.get("spell_fx_strength",1)),0,1)
 	var phase:=.30 if ComicMotion.reduced() else fposmod(clock*.55,1.0)*.45+.15
-	if prayer>=100:
-		HolyFX.paint(self,"prayer",HolyFX.ground_rect("prayer",42,origin),phase,intensity)
-	if grace_until>clock:HolyFX.paint(self,"grace",HolyFX.ground_rect("grace",28,origin),phase,intensity)
-	if _cloud_open or actor.shield_hp>0:
-		HolyFX.paint(self,"cloud",HolyFX.ground_rect("cloud",39,origin),phase,intensity*.95)
-	if _judgment_open:HolyFX.paint(self,"judgment",HolyFX.ground_rect("judgment",22,origin),phase,intensity*.9)
-	if _sanctuary_open:
-		HolyFX.paint(self,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.45)
 	for feather:Dictionary in feathers:
 		if float(feather.ready)>clock:continue
 		var position_value:=origin+Vector2.RIGHT.rotated(clock*2+float(feather.index)*TAU/maxi(1,feathers.size()))*30
 		draw_set_transform(position_value,-PI*.5)
 		HolyFX.paint(self,"feather",Rect2(Vector2(-12,-7),Vector2(24,14)),phase,intensity)
 		draw_set_transform(Vector2.ZERO)
-	for field in fields:
-		if field.kind=="court":
-			var location:=to_local(at(field))
-			HolyFX.paint(self,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.48)
 	for id in marks:
 		var target:=enemy(str(id))
 		if live(target):
@@ -442,7 +462,7 @@ func snapshot()->Dictionary:
 	var result:Dictionary={}
 	for property in get_property_list():
 		var name_value:=str(property.name)
-		if property.usage&PROPERTY_USAGE_SCRIPT_VARIABLE and name_value not in ["actor"]:result[name_value]=get(name_value).duplicate(true) if get(name_value) is Array or get(name_value) is Dictionary else get(name_value)
+		if property.usage&PROPERTY_USAGE_SCRIPT_VARIABLE and name_value not in ["actor","_ground_visual"]:result[name_value]=get(name_value).duplicate(true) if get(name_value) is Array or get(name_value) is Dictionary else get(name_value)
 	result["decoys"]=[]
 	for unit in get_tree().get_nodes_in_group("holy_decoys"):
 		if unit.holy==self and not unit.exploded:result.decoys.append({"at":point(unit.global_position),"remaining":unit.remaining,"empowered":unit.empowered,"fire_clock":unit.fire_clock})
@@ -453,7 +473,7 @@ func restore(saved:Dictionary,ids:Dictionary)->void:
 	for property in get_property_list():
 		if property.usage&PROPERTY_USAGE_SCRIPT_VARIABLE:allowed[str(property.name)]=true
 	for key in saved:
-		if allowed.has(key) and key!="actor":
+		if allowed.has(key) and key not in ["actor","_ground_visual"]:
 			if get(key) is Array:(get(key) as Array).assign(saved[key])
 			else:set(key,saved[key])
 	for table in [marks,songs,judgment_hits,afterglows,feather_streak]:
