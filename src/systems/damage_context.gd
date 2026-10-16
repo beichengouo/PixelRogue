@@ -2,6 +2,11 @@ class_name DamageContext
 extends Node
 ## Stable ownership survives impact projectile deletion and delayed damage ticks.
 var owner_kind:StringName=&"environment"
+var report_channel:StringName=&""
+static func continuous(actor:Node,base_kind:StringName)->Node:
+ var context:=_context(actor,StringName("continuous_"+str(base_kind)))
+ if context!=null:context.owner_kind=base_kind;context.report_channel=&"dot"
+ return context
 static func reflection(actor:Node)->Node:
  return _context(actor,&"reflection")
 static func equipment(actor:Node)->Node:

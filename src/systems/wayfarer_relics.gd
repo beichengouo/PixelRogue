@@ -31,6 +31,7 @@ func basic(enemy:EnemyBase,receipt:BasicAttackReceipt)->void:
 		owner.start(&"quartz_moth",2);GameState.add_mp(scale(&"quartz_moth"));owner.extra_damage(enemy,owner.attack()*.20*scale(&"quartz_moth"),owner.actor.global_position);CadenceProcFX.spawn(owner.actor.get_parent(),enemy.global_position,24,Color("c2a3f0"),1)
 func skill(id:StringName)->float:
 	if id==&"" or Skills.is_ultimate(id) or not has(&"amber_pendulum") or pendulum_until<=owner.clock:return 0
+	owner.consumed_status("amber_pendulum")
 	pendulum_until=0;return .16*scale(&"amber_pendulum")
 func skill_hit(enemy:EnemyBase)->void:
 	if has(&"frost_petal") and enemy._slow_time>0 and owner.ready(&"frost_petal"):

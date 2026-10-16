@@ -93,7 +93,7 @@ static func preview(kind:String,id:String,variant:int,camp:bool,protect:=true,qu
 		if not camp and id.begins_with("craft_"):result.error="当前地点不能制作此物品。"
 		elif not MaterialWorkshopCatalog.unlocked(str(entry.research)):result.error="请先在营地研究此配方。"
 		elif product.is_empty() or not ItemDB.can_equip(product):result.error="此产物不可用或与当前职业不符。"
-		elif not camp and RunDifficulty.is_bloodbath(GameState.difficulty) and str(product.id)=="potion_health":result.error="浴血无法恢复生命，不能制作无效的治疗药剂。"
+		elif not camp and RunDifficulty.is_bloodbath(GameState.difficulty) and str(product.id)=="potion_health":result.error="浴血中的普通治疗无效，不能制作治疗药剂；伤痕修复请使用命运牌。"
 		elif str(result.error).is_empty():result.error=_capacity_error(product,needs,camp,quantity)
 	if kind=="craft" and context.is_empty() and not product.is_empty() and ItemDB.can_equip(product) and MaterialWorkshopCatalog.unlocked(str(entry.research)) and (camp or not id.begins_with("craft_")) and (camp or not RunDifficulty.is_bloodbath(GameState.difficulty) or str(product.id)!="potion_health"):
 		var possible:=limit

@@ -47,7 +47,11 @@ static func art(id:String)->String:return "res://assets/fate_v01/cards/"+id+".pn
 static func icon(id:String)->String:return "res://assets/fate_v01/icons/"+id+".png"
 static func description(id:String,reverse:=false)->String:
 	if not CARDS.has(id):return ""
-	return str(CARDS[id].upright)+( "\n逆位代价与变化："+str(CARDS[id].reverse) if reverse else "")+"\n命运附加伤害不暴击、不吸血，不触发其他装备或命运牌。"
+	var repair:=""
+	if id=="star":repair="\n伤痕修复：每间战斗房清理后，修复完整生命上限的%s%%；每房一次。"%("4" if reverse else "2")
+	elif id=="empress":repair="\n伤痕修复：四格内友军累计12次有效直击，修复完整生命上限的%s%%；冷却8秒，每房至多3次。"%("2" if reverse else "1")
+	if not repair.is_empty():repair+="只返还实际修复的上限与等量生命，不补满生命；浴血中也生效。"
+	return str(CARDS[id].upright)+( "\n逆位代价与变化："+str(CARDS[id].reverse) if reverse else "")+repair+"\n命运附加伤害不暴击、不吸血，不触发其他装备或命运牌。"
 static func apply_stats(block:StatBlock)->void:
 	if rank("priestess")==2:block.add_flat(&"move_speed",-float(GameState.BASE_STATS.move_speed)*.08)
 	if rank("chariot")==2:block.add_mult(&"dash_cooldown",.15)

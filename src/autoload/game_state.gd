@@ -29,6 +29,7 @@ var items: Array[Dictionary] = []
 var equipment: Dictionary = {}
 var run_loot: Dictionary = {}
 var material_ledger:Dictionary={}
+var build_stats:Dictionary=RunBuildMetrics.empty(false)
 ## An item counts when it is shown in any run reward pool, even if declined.
 var run_refreshes: Dictionary = {}
 var loot_history_complete := true
@@ -154,7 +155,7 @@ func new_run(seed_value: int = 0) -> void:
 	sortie_id = ""
 	difficulty = 1
 	item_sequence = 0
-	run_loot.clear();material_ledger.clear()
+	run_loot.clear();material_ledger.clear();build_stats=RunBuildMetrics.empty()
 	run_refreshes.clear()
 	loot_history_complete = true
 	items.clear()
@@ -1027,6 +1028,7 @@ func snapshot() -> Dictionary:
 		"world_state":runtime_node.snapshot() if is_instance_valid(runtime_node) else {},
 		"run_loot": run_loot.duplicate(),
 		"material_ledger":material_ledger.duplicate(true),
+		"build_stats":build_stats.duplicate(true),
 		"run_refreshes": run_refreshes.duplicate(),
 		"loot_history_complete": loot_history_complete,
 		"kit_version": 2,
@@ -1069,6 +1071,7 @@ func max_hp_value() -> float:
 
 
 func restore(snapshot_data: Dictionary) -> void:
+	build_stats=RunBuildMetrics.normalize(snapshot_data.get("build_stats"))
 	achievement_run=snapshot_data.get("achievement_run",{}).duplicate(true)
 	legendary_looks=snapshot_data.get("legendary_looks",{}).duplicate(true)
 	gm_pilot_used=bool(snapshot_data.get("gm_pilot_used",false));gm_pilot_active=gm_pilot_used and bool(snapshot_data.get("gm_pilot_active",false))

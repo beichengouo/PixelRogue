@@ -156,6 +156,9 @@ func open_room_tavern()->void:
 
 func _process(dt:float)->void:
 	if not GameState.run_active or not is_instance_valid(player):return
+	if not str(graph.altar_pacing.notice).is_empty() and not UIFlow.has_screen() and not TransitionLayer.busy and _reward_pending.is_empty() and bool(graph.rooms[graph.current].rewarded):
+		var notice:=graph.take_altar_notice()
+		if not notice.is_empty():hud.show_banner(notice,3);expedition.checkpoint()
 	_deliver_pending_chest()
 	room_weather.tick(dt);world_clock.tick(dt)
 	AudioManager.sync_room_music(world_clock.minutes,room_weather.kind)

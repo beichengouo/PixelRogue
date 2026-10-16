@@ -270,14 +270,14 @@ func make_field(kind: StringName, at: Vector2, field_radius: float, duration: fl
 	field.global_position = at
 	return field
 
-func direct_hit(enemy: EnemyBase, ratio: float,skill_id:StringName=&"",natural_source:=true,at:Vector2=Vector2.ZERO) -> bool:
+func direct_hit(enemy: EnemyBase, ratio: float,skill_id:StringName=&"",natural_source:=true,at:Vector2=Vector2.ZERO,continuous:=false) -> bool:
 	if not live(enemy): return false
 	var before := enemy.hp
 	var shield_before:=enemy.affix_shield
 	var amount := attack() * ratio * actor.equipment_mechanics.skill_multiplier(enemy) * skill_bonus()
 	if rank(&"ilyua_wild_growth") >= 1 and natural_source and controlled(enemy): amount *= 1.08
 	if natural_source:natural_hits[enemy.get_instance_id()]=true
-	enemy.take_damage(amount, false, actor.global_position if at==Vector2.ZERO else at, DamageContext.field(actor), false)
+	enemy.take_damage(amount, false, actor.global_position if at==Vector2.ZERO else at, DamageContext.continuous(actor,&"skill_field") if continuous else DamageContext.field(actor), false)
 	if natural_hits.has(enemy.get_instance_id()) and (enemy.hp<before or enemy.affix_shield<shield_before):on_direct_natural_hit(enemy)
 	natural_hits.erase(enemy.get_instance_id())
 	if enemy.hp < before or enemy.affix_shield<shield_before:
@@ -287,10 +287,10 @@ func direct_hit(enemy: EnemyBase, ratio: float,skill_id:StringName=&"",natural_s
 
 func skill_bonus()->float:return 1.1 if float(_skill_history.get("will_until",0))>clock else 1.0
 
-func proc(enemy:EnemyBase,ratio:float,from:Vector2=Vector2.ZERO)->bool:
+func proc(enemy:EnemyBase,ratio:float,from:Vector2=Vector2.ZERO,continuous:=false)->bool:
 	if not live(enemy) or enemy.hp<=0:return false
 	var before:=enemy.hp;var shield:=enemy.affix_shield
-	enemy.take_damage(attack()*ratio,false,from if from!=Vector2.ZERO else actor.global_position,DamageContext.character_proc(actor),false)
+	enemy.take_damage(attack()*ratio,false,from if from!=Vector2.ZERO else actor.global_position,DamageContext.continuous(actor,&"character_proc") if continuous else DamageContext.character_proc(actor),false)
 	return enemy.hp<before or enemy.affix_shield<shield
 
 func area_proc(at: Vector2, radius: float, ratio: float, cap: int = 999) -> void:
@@ -322,13 +322,13 @@ func step_motion(delta:float)->Vector2:
 func field_tick(field:IlyuaField)->void:
 	if field.kind==&"seed":
 		var enemy:EnemyBase=field.owner_enemy.get_ref() as EnemyBase if field.owner_enemy!=null else null
-		if live(enemy) and proc(enemy,field.damage_ratio*(1.1 if overlap_seed_vine(enemy) else 1.0),field.global_position):actor.heal_player(1)
+		if live(enemy) and proc(enemy,field.damage_ratio*(1.1 if overlap_seed_vine(enemy) else 1.0),field.global_position,true):actor.heal_player(1)
 	elif field.kind in [&"trap",&"zone",&"wild_zone",&"spread_vine",&"tree"]:
 		for enemy in enemies_in(field.global_position,field.radius):
 			var ratio:=field.damage_ratio
 			if field.kind==&"trap" and overlap_seed_vine(enemy):ratio*=1.1
-			if field.kind in [&"trap",&"tree"]:direct_hit(enemy,ratio,&"ilyua_vine_trap" if field.kind==&"trap" else &"ilyua_ancient_tree",true,field.global_position)
-			else:proc(enemy,ratio,field.global_position)
+			if field.kind in [&"trap",&"tree"]:direct_hit(enemy,ratio,&"ilyua_vine_trap" if field.kind==&"trap" else &"ilyua_ancient_tree",true,field.global_position,true)
+			else:proc(enemy,ratio,field.global_position,true)
 
 func overlap_seed_vine(enemy:EnemyBase)->bool:
 	if rank(&"ilyua_nature_resonance")<2 or not seed_marks.has(enemy.get_instance_id()):return false
@@ -686,7 +686,7 @@ func _tick_marks(delta:float)->void:
 			if not live(enemy):table.erase(key);continue
 			mark.tick=float(mark.tick)+delta
 			while float(mark.tick)>=1:
-				mark.tick=float(mark.tick)-1;proc(enemy,float(mark.ratio),enemy.global_position)
+				mark.tick=float(mark.tick)-1;proc(enemy,float(mark.ratio),enemy.global_position,true)
 				if not live(enemy):break
 			if not table.has(key):continue
 			if float(mark.until)<=clock:

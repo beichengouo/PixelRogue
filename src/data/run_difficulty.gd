@@ -17,7 +17,7 @@ static func material_value_multiplier(value:int)->float:return [1.0,1.20,1.40][m
 static func title(value:int)->String:return str(OPTIONS[clampi(value,1,4)-1].name)
 static func description(value:int)->String:
 	var times:=multiplier(value)
-	return "%s · 刷怪 ×%s · 生命/攻击 ×%d · 金币奖励 ×%d%s"%[title(value),str(spawn_multiplier(value)),times,gold_multiplier(value)," · 真实伤害，永久削减生命上限，无法回血" if is_bloodbath(value) else ""]
+	return "%s · 刷怪 ×%s · 生命/攻击 ×%d · 金币奖励 ×%d%s"%[title(value),str(spawn_multiplier(value)),times,gold_multiplier(value)," · 真实伤害留下灰色伤痕；普通回血无效，部分命运牌可修复" if is_bloodbath(value) else ""]
 static func affix_chance(base:float,value:int)->float:
 	return 1.0-pow(1.0-clampf(base,0,1),multiplier(value))
 static func encounter(base:Dictionary,value:int)->Dictionary:

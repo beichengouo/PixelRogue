@@ -11,6 +11,10 @@ var _gain_time := 0.0
 var _loss_time := 0.0
 var _delta_from := 0.0
 var _amount_label:Label
+var capacity_loss:=0.0
+func set_capacity_loss(amount:float)->void:
+	var value:=maxf(0,amount) if kind=="hp" else 0.0
+	if not is_equal_approx(value,capacity_loss):capacity_loss=value;queue_redraw()
 
 func configure(type: String) -> void:
 	kind = type
@@ -30,7 +34,7 @@ func _update_amount()->void:
 
 func set_value(amount: float, instant := false) -> void:
 	if _started and not instant and not is_equal_approx(_value, amount):
-		_delta_from = _value / maxf(1.0, _max_value)
+		_delta_from = _value / maxf(1.0, _max_value+capacity_loss)
 		if amount > _value:
 			_gain_time = 0.12 if ComicMotion.reduced() else 0.4
 		else:
@@ -61,8 +65,12 @@ func _draw() -> void:
 	# Constant pixel margins keep the endcaps intact at each HUD bar width.
 	var inset := Vector2(4.0, 3.0)
 	var inner := Rect2(inset, Vector2(maxf(0.0, size.x - 8.0), maxf(0.0, size.y - 6.0)))
-	var shown := clampf(_shown / _max_value, 0.0, 1.0)
-	var ghost := clampf(_ghost / _max_value, 0.0, 1.0)
+	var full:=maxf(.0001,_max_value+capacity_loss);var usable:=clampf(_max_value/full,0,1)
+	var shown := clampf(_shown / full, 0.0, usable)
+	var ghost := clampf(_ghost / full, 0.0, usable)
+	if capacity_loss>0:
+		draw_rect(Rect2(inner.position+Vector2(inner.size.x*usable,0),Vector2(inner.size.x*(1-usable),inner.size.y)),Color("737987"))
+		draw_line(inner.position+Vector2(inner.size.x*usable,0),inner.position+Vector2(inner.size.x*usable,inner.size.y),Color("b9bdc6"),1)
 	if ghost > shown:
 		draw_texture_rect(_liquid, Rect2(inner.position, Vector2(inner.size.x * ghost, inner.size.y)), false, Color(2.0, 1.6, 1.44, 0.28))
 	if shown <= 0.0:

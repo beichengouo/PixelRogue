@@ -30,6 +30,8 @@ static func describe(item: Dictionary, include_activation := true, include_rules
 		if ItemDB.is_equippable(item):
 			var lost:=replacement_losses(item)
 			if not lost.is_empty():lines.append(lost)
+		var linkage:=BuildInsight.describe(item)
+		if not linkage.is_empty():lines.append(linkage)
 	if include_story:
 		var flavor:=ItemDB.flavor_text(item)
 		if not flavor.is_empty():lines.append("\n"+flavor)

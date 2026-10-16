@@ -47,3 +47,16 @@ static func populate(label: Label, snapshot: Dictionary) -> void:
 		card.add_child(name)
 	var lines := ItemInsight.run_summary(snapshot).split("\n")
 	label.text = "\n".join(lines.slice(2))
+	var fate:Dictionary=snapshot.get("fate",{})
+	var notes:PackedStringArray=[]
+	for card in fate.get("cards",[]):
+		var id:=str(card.get("id",""))
+		if FateCatalog.CARDS.has(id):notes.append(str(FateCatalog.CARDS[id].name)+(" · 逆位" if bool(card.get("reverse",false)) else " · 正位"))
+	var star:=str(fate.get("star",""))
+	label.text+="\n命运牌："+("、".join(notes) if not notes.is_empty() else "未持有")+"\n出发星象："+str(FateCatalog.STARS.get(star,{}).get("name","未选择"))
+	for packed in snapshot.get("expedition_equipment",[]):
+		var id:=str(packed.get("enchant",""))
+		if MaterialWorkshopCatalog.ENCHANTS.has(id):label.text+="\n最终刻印："+str(MaterialWorkshopCatalog.ENCHANTS[id].name)
+	var toggle:=PixelUi.compact_button("构筑表现 ▸",18);toggle.name="BuildPerformanceToggle";box.add_child(toggle)
+	var stats:=PixelUi.label(RunBuildMetrics.describe(snapshot),17,PixelUi.MUTED);stats.name="BuildPerformance";stats.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;box.add_child(stats);stats.hide()
+	toggle.pressed.connect(func()->void:stats.visible=not stats.visible;toggle.text="构筑表现 ▾" if stats.visible else "构筑表现 ▸")

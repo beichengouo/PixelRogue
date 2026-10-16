@@ -25,6 +25,7 @@ const RANDOM_KINDS := ["normal","elite","reward","game","shop","tavern","altar",
 const RANDOM_WEIGHTS := [50,15,8,5,4,3,4,7,4]
 var _room_serial := 0
 var rng := RandomNumberGenerator.new()
+var altar_pacing:Dictionary={"seen":false,"clears":0,"bonus":0,"notice":""}
 
 static func key(cell: Vector2i) -> String:
 	return "%d,%d" % [cell.x, cell.y]
@@ -41,6 +42,7 @@ func begin(seed_value:int,chapter:StringName=ChapterCatalog.FIRST)->void:
 	service_batches = 0; next_service = "shop"
 	rush_offered=false
 	_room_serial = 0
+	altar_pacing={"seen":false,"clears":0,"bonus":0,"notice":""}
 	rooms[current] = _allocate(Vector2i.ZERO, "spawn", "")
 	rooms[current].cleared = true
 	enter(current)
@@ -52,6 +54,7 @@ static func title(kind: String) -> String:
 	return {"spawn":"起点","shop":"商店","tavern":"酒馆","boss":"Boss","normal":"战斗房","elite":"精英房","reward":"奖励房","game":"游戏房","boss_rush":"BossRush","altar":"祭坛房","trial":"试炼房","event":"异闻房"}.get(kind,"房间")
 
 func _allocate(at: Vector2i, kind: String, boss_id: String) -> Dictionary:
+	if kind=="altar":altar_pacing.seen=true;altar_pacing.clears=0
 	var room_seed:=rng.randi()
 	_room_serial += 1
 	return {"chapter_id":str(chapter_id),"id":key(at), "seed":str(room_seed), "kind":kind, "boss":boss_id,
@@ -184,20 +187,57 @@ func _ensure_frontier() -> void:
 				rooms[key(at)] = _allocate(at, "normal", "")
 				_connect(id,key(at)); return
 
-func clear_current() -> bool:
+func clear_current(readings:int=0) -> bool:
 	var record: Dictionary = rooms[current]
 	if record.cleared or not is_combat(str(record.kind)): return false
 	record.cleared = true
 	completed_encounter=maxi(completed_encounter,int(record.encounter))
 	cleared_count += 1
+	altar_pacing.clears=int(altar_pacing.clears)+1
 	if record.kind == "boss" and not defeated.has(record.boss): defeated.append(record.boss)
 	_ensure_frontier()
-	prune_rooms()
+	var protected:=_ensure_altar_offer(readings)
+	prune_rooms(protected)
 	return true
 
-func prune_rooms() -> Array[String]:
+func _ensure_altar_offer(readings:int)->Array[String]:
+	var protected:Array[String]=[]
+	if readings>=3 or int(altar_pacing.bonus)>=3 or int(altar_pacing.clears)<(10 if altar_pacing.seen else 6):return protected
+	# Breadth-first through cleared, connected rooms; unopened fights cannot be
+	# treated as a safe path to an existing altar or a new frontier.
+	var origins:Array[String]=[current];var paths:Dictionary={current:[current]}
+	var cursor:=0
+	while cursor<origins.size():
+		var id:=origins[cursor];cursor+=1
+		for direction in DIRECTIONS:
+			var adjacent:=key(cell(id)+direction)
+			if adjacent not in rooms[id].doors or not rooms.has(adjacent):continue
+			var record:Dictionary=rooms[adjacent]
+			if record.kind=="altar" and not bool(record.visited):return protected
+			if bool(record.cleared) and not paths.has(adjacent):
+				paths[adjacent]=paths[id].duplicate();paths[adjacent].append(adjacent);origins.append(adjacent)
+	for origin:String in origins:
+		for direction:Vector2i in DIRECTIONS:
+			var at:Vector2i=cell(origin)+direction;var id:=key(at)
+			if rooms.has(id):continue
+			# Bonus generation must not advance the ordinary room RNG stream.
+			var old_seed:=rng.seed;var old_state:=rng.state
+			rng.seed=old_seed^(0x4a173+int(altar_pacing.bonus)*7919+cleared_count)
+			rooms[id]=_allocate(at,"altar","");rooms[id].delta.guaranteed_altar=true
+			rng.seed=old_seed;rng.state=old_state
+			_connect(origin,id);altar_pacing.bonus=int(altar_pacing.bonus)+1;altar_pacing.notice=id
+			# Keep the approach only during this pruning pass, not permanently.
+			protected.assign(paths[origin]);protected.append(id)
+			return protected
+	return protected
+
+func take_altar_notice()->String:
+	var value:=str(altar_pacing.notice);altar_pacing.notice=""
+	return "命运祭坛已显现 · 打开地图查看入口" if not value.is_empty() and rooms.has(value) else ""
+
+func prune_rooms(protected:Array[String]=[]) -> Array[String]:
 	var removed:Array[String]=[]
-	var oldest:Array=rooms.keys().filter(func(id:Variant)->bool:return str(id)!=current and not unfinished_boss(rooms[id]))
+	var oldest:Array=rooms.keys().filter(func(id:Variant)->bool:return str(id)!=current and str(id) not in protected and not unfinished_boss(rooms[id]))
 	oldest.sort_custom(func(a:Variant,b:Variant)->bool:return int(rooms[a].get("retention_order",0))<int(rooms[b].get("retention_order",0)))
 	for id:Variant in oldest:
 		if rooms.size()<=MAX_RETAINED_ROOMS:break
@@ -238,6 +278,7 @@ func snapshot() -> Dictionary:
 		"generated":generated.duplicate(), "defeated":defeated.duplicate(),
 		"service_batches":service_batches, "next_service":next_service,"room_serial":_room_serial,
 		"rush_offered":rush_offered,
+		"altar_pacing":altar_pacing.duplicate(true),
 		"seed":str(rng.seed), "rng":str(rng.state)}
 
 func restore(data: Dictionary) -> bool:
@@ -258,6 +299,8 @@ func restore(data: Dictionary) -> bool:
 	rng.seed = int(data.get("seed",0)); rng.state = int(data.get("rng",0))
 	service_batches = int(data.get("service_batches",0)); next_service = str(data.get("next_service","shop"))
 	rush_offered=bool(data.get("rush_offered",false))
+	var pacing:Dictionary=data.get("altar_pacing",{}) if data.get("altar_pacing",{}) is Dictionary else {}
+	altar_pacing={"seen":bool(pacing.get("seen",not defeated.is_empty() or rooms.values().any(func(room:Dictionary)->bool:return room.kind=="altar"))),"clears":clampi(int(pacing.get("clears",0)),0,10),"bonus":clampi(int(pacing.get("bonus",0)),0,3),"notice":str(pacing.get("notice",""))}
 	if version == 1: _migrate_services()
 	prune_rooms()
 	return true

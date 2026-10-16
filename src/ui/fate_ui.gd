@@ -92,6 +92,7 @@ func _altar()->void:
 		for reversed in [false,true]:
 			var button:=_button("逆位" if reversed else "正位",func()->void:_reverse=reversed;_refresh(),orientation);button.set_meta("interaction_selected",reversed==_reverse)
 		_text(FateCatalog.description(_selected,_reverse),20)
+		_text(BuildInsight.fate(_selected,_reverse),18,Color("bdd9df"))
 		if GameState.fate.cards.size()>=2:
 			var options:=OptionButton.new();options.add_item("选择将被替换的命运牌")
 			for card in GameState.fate.cards:options.add_item(str(FateCatalog.CARDS[str(card.id)].name)+(" · 逆位" if card.reverse else " · 正位"))

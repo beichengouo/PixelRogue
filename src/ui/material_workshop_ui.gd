@@ -202,6 +202,10 @@ func _research_card(entry:Dictionary)->void:
 func _enchant_card(id:String,entry:Dictionary)->void:
 	var item:=GameState.equipped(StringName(entry.slot));var old:=MaterialWorkshopCatalog.enchant(item)
 	var box:=_card(str(entry.name)+" · "+str({"weapon":"武器","armor":"护甲","accessory":"饰品"}[entry.slot]),str(entry.desc),{},MaterialWorkshopCatalog.icon(str(entry.icon)))
+	if not item.is_empty():
+		var preview:=item.duplicate(true);preview.enchant=id
+		var linkage:=BuildInsight.describe(preview)
+		if not linkage.is_empty():_text(box,linkage,17,Color("b9dbe4"))
 	_text(box,"当前装备："+str(item.get("name","未装备"))+("\n当前刻印："+str(old.name)+"；替换不返还旧材料。" if not old.is_empty() else ""),17,PixelUi.MUTED)
 	var variant:=_variants_control(box,id,entry.variants);var view:=MaterialWorkshop.preview("enchant",id,variant,false,_protect.button_pressed,1,_field_service())
 	_text(box,MaterialWorkshop.cost_text(view.rows,_protect.button_pressed),17,PixelUi.MUTED)

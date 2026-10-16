@@ -43,6 +43,7 @@ func basic_hit(enemy:EnemyBase,receipt:BasicAttackReceipt)->void:
 	if has(&"spring_wind_bow"):
 		spring_charges=mini(4,spring_charges+1);spring_until=owner.clock+6
 		if spring_echoes>0 and spring_echo_until>owner.clock:
+			owner.consumed_status("spring_echo")
 			spring_echoes-=1;owner.extra_damage(enemy,owner.attack()*.18,owner.actor.global_position)
 			for other in owner.nearest_enemies(enemy.global_position,108,1,enemy):owner.extra_damage(other,owner.attack()*.12,enemy.global_position)
 			if spring_echoes==0:GameState.add_mp(3)
@@ -54,14 +55,17 @@ func basic_hit(enemy:EnemyBase,receipt:BasicAttackReceipt)->void:
 			if owner._live_ally(ally):ally.equipment_haste=maxf(ally.equipment_haste,.12);ally.equipment_haste_time=maxf(ally.equipment_haste_time,3)
 	if has(&"moonwind_chime") and receipt.critical and owner.ready(&"moonwind_chime"):owner.start(&"moonwind_chime",1);owner.actor._dash_cd*=.85
 	if has(&"moonwind_chime") and chime_echoes>0 and chime_until>owner.clock:
+		owner.consumed_status("moonwind_echo")
 		chime_echoes-=1;owner.extra_damage(enemy,owner.attack()*.22,owner.actor.global_position);owner.actor._dash_cd=maxf(0,owner.actor._dash_cd-.2)
 		IlyuaFX.spawn(owner.actor.get_parent(),enemy.global_position,"wind_burst",44,.25)
 	if has(&"lakeleaf_guard") and owner.actor.shield_hp>0 and owner.ready(&"lakeleaf_guard"):
 		if lakeleaf_until<=owner.clock:lakeleaf_hits=0
 		lakeleaf_hits+=1;lakeleaf_until=owner.clock+5
 		if lakeleaf_hits>=4:
+			owner.consumed_status("lakeleaf_stacks")
 			lakeleaf_hits=0;owner.start(&"lakeleaf_guard",2);GameState.add_mp(2);owner.area_damage(enemy.global_position,54,owner.attack()*.45);IlyuaFX.spawn(owner.actor.get_parent(),enemy.global_position,"wind_burst",108,.35)
 	if Characters.current_id()==&"ilyua" and LegendarySets.complete() and moon_until>owner.clock and moon_hits>0:
+		owner.consumed_status("moon_oath")
 		moon_hits-=1;owner.extra_damage(enemy,owner.attack()*.3,owner.actor.global_position)
 		for target in owner.nearest_enemies(enemy.global_position,144,1,enemy):owner.extra_damage(target,owner.attack()*.2,enemy.global_position);HolyFX.spawn(owner.actor.get_parent(),target.global_position,"feather",20,.25)
 		if moon_hits==0:GameState.add_mp(6);owner.actor._dash_cd=maxf(0,owner.actor._dash_cd-.5)
@@ -78,6 +82,7 @@ func skill_cast(id:StringName)->float:
 			allies.sort_custom(func(a:HiredAlly,b:HiredAlly)->bool:return a.global_position.distance_squared_to(owner.actor.global_position)<b.global_position.distance_squared_to(owner.actor.global_position))
 			for index in mini(3,allies.size()):owner.grant_ally_shield(allies[index],allies[index].max_hp*.08,4)
 	if has(&"cloud_staff") and cloud_charges>=3 and not Skills.is_ultimate(id) and owner.ready(&"cloud_staff"):
+		owner.consumed_status("cloud_runes")
 		cloud_charges=0;owner.start(&"cloud_staff",3);bonus+=.2;owner.area_damage(owner.actor.global_position,108,owner.attack()*.75);owner.grant_player_shield(owner.actor.max_hp*.08,4);HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"cloud",108,.4)
 	if Characters.current_id()==&"xixifu" and LegendarySets.complete() and not Skills.is_ultimate(id):
 		for ally in owner.actor.get_tree().get_nodes_in_group("allies"):
@@ -92,6 +97,7 @@ func dash_end()->void:
 	if Characters.current_id()==&"ilyua" and LegendarySets.complete():
 		moon_until=owner.clock+5;moon_hits=4;IlyuaFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"wind_burst",96,.3)
 	if has(&"spring_wind_bow") and spring_charges>=4 and spring_until>owner.clock and owner.ready(&"spring_cycle"):
+		owner.consumed_status("spring_charges")
 		spring_charges=0;owner.start(&"spring_cycle",5);spring_echoes=3;spring_echo_until=owner.clock+4;owner.area_damage(owner.actor.global_position,72,owner.attack()*.4);IlyuaFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"wind_burst",144,.4)
 func ally_hit(enemy:EnemyBase)->void:
 	if has(&"covenant_bells") and owner.ready(&"covenant_receipt") and owner.ready(&"covenant_echo"):
@@ -99,6 +105,7 @@ func ally_hit(enemy:EnemyBase)->void:
 		if covenant_until<=owner.clock:covenant_hits=0
 		covenant_hits+=1;covenant_until=owner.clock+4
 		if covenant_hits>=3:
+			owner.consumed_status("covenant_beats")
 			covenant_hits=0;owner.start(&"covenant_echo",2);owner.area_damage(enemy.global_position,54,owner.attack()*.35);WeaponBuildFX.pulse(owner.actor.get_parent(),enemy.global_position,"dusk_lantern","impact",108)
 	if Characters.current_id()!=&"xixifu" or not LegendarySets.complete() or not owner.ready(&"dusk_set_hit"):return
 	owner.start(&"dusk_set_hit",1);owner.extra_damage(enemy,owner.attack()*.25,owner.actor.global_position);dusk_hits+=1
@@ -110,6 +117,7 @@ func shield_absorbed()->void:
 		if circlet_until<=owner.clock:circlet_hits=0
 		circlet_hits+=1;circlet_until=owner.clock+6
 		if circlet_hits>=3:
+			owner.consumed_status("circlet_memory")
 			circlet_hits=0;owner.start(&"circlet_wave",3);GameState.add_mp(2);owner.area_damage(owner.actor.global_position,72,owner.attack()*.45);HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"ring",72,.35)
 func contract_killed(unit:SummonedAlly,source:Node)->void:
 	if not has(&"dusk_mantle") or not owner.ready(&"dusk_mantle") or unit.remaining<=0:return

@@ -104,6 +104,10 @@ func scale(key: StringName) -> float:
 func attack() -> float: return actor.stats.get_value(&"attack") if is_instance_valid(actor) else 0.0
 func ready(key: StringName) -> bool: return clock >= float(cooldowns.get(key, 0.0))
 func start(key: StringName, duration: float) -> void: cooldowns[key] = clock + duration
+func consumed_status(id:String)->void:
+	if not is_inside_tree() or get_tree().paused:return
+	for strip in get_tree().get_nodes_in_group("player_status_strips"):
+		if strip.has_method("pulse"):strip.pulse("status:"+id)
 
 func on_room_enter(room_id: String, uncleared_normal: bool) -> void:
 	fate_runtime.room_enter(room_id)
@@ -135,6 +139,7 @@ func on_dash_end() -> void:
 func fire_basic(direction: Vector2, roll: Dictionary, receipt: BasicAttackReceipt) -> bool:
 	## Returns true when the dash empowered attack replaces the ordinary shot.
 	if wind_until <= clock or not has(&"wind_branch"): return false
+	consumed_status("wind_fan")
 	wind_until = 0.0
 	WeaponBuildFX.pulse(actor.get_parent(), actor.global_position, "wind_branch", "cast", 88.0, direction.angle())
 	for index in 3:
@@ -153,6 +158,7 @@ func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: Roo
 	cadence.basic(enemy,receipt)
 	wayfarer.basic(enemy,receipt);etching.basic(enemy,receipt)
 	if has(&"tide_pearl") and tide_until > clock and receipt != null and receipt.claim_effect(&"tide_pearl") and ready(&"tide_pearl"):
+		consumed_status("tide")
 		GameState.add_mp(3.0 * scale(&"tide_pearl")); tide_until = 0.0; start(&"tide_pearl", 3.0)
 	if has(&"refraction") and receipt != null and receipt.critical and receipt.claim_effect(&"refract_charge"):
 		refract_charges = mini(3, refract_charges + 1)
@@ -224,6 +230,7 @@ func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: Roo
 
 func on_basic_fired(direction: Vector2, receipt: BasicAttackReceipt) -> void:
 	if not refract_ready or not has(&"refraction"): return
+	consumed_status("refraction")
 	refract_ready = false; refract_charges = 0
 	var side := direction.rotated(deg_to_rad(18.0))
 	var bullet := actor.fire(side, attack() * 0.45 * scale(&"refraction"), 430.0, false, null)
@@ -238,6 +245,7 @@ func on_skill_cast(shield_cast: bool = false,id:StringName=&"") -> float:
 	expansion.skill(id)
 	cadence.skill(id)
 	if patrol_until > clock:
+		consumed_status("patrol")
 		bonus += 0.12 * scale(&"patrol_bell")
 		patrol_until = 0.0
 	if has(&"tide_pearl") and ready(&"tide_pearl"): tide_until = clock + 4.0

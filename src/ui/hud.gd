@@ -146,10 +146,12 @@ func _process(delta: float) -> void:
 func set_hp(hp: float, max_hp: float) -> void:
 	_hp_target = hp
 	_max_hp = max_hp
+	if _hp_bar is PlayerStatBar:(_hp_bar as PlayerStatBar).set_capacity_loss(GameState.player.permanent_hp_loss() if is_instance_valid(GameState.player) else 0)
 	_hp_bar.set_max_value(maxf(1, max_hp))
 	_hp_bar.set_value(hp)
 	_hp_text.text = "%d / %d" % [int(round(hp)), int(round(max_hp))]
 	_hp_bar.tooltip_text=_hp_text.text
+	if _hp_bar is PlayerStatBar and (_hp_bar as PlayerStatBar).capacity_loss>0:_hp_bar.tooltip_text+="\n灰色伤痕：%.1f生命上限，可通过星星／女皇命运牌部分修复。"%(_hp_bar as PlayerStatBar).capacity_loss
 	_hp_bar.fill_color = Color("ef596e")
 
 

@@ -452,7 +452,8 @@ func set_enraged(value: bool) -> void:
 func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source: Node = null, knockback := true) -> void:
 	if _dead:
 		return
-	amount*=FateCatalog.direct_factor(_classify_damage(_source),_source)
+	var fate_factor:=FateCatalog.direct_factor(_classify_damage(_source),_source)
+	amount*=fate_factor
 	# 「免疫普攻」：玩家的普通火球有概率被完全挡下；头顶装备 / 技能的伤害照常结算
 	if has_affix(EnemyAffixes.IMMUNE_BASIC) and _is_basic_attack(_source):
 		if Rng.stream().randf() < 0.42:
@@ -479,6 +480,7 @@ func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source:
 	_last_damage_type=damage_type
 	var applied:=minf(before_hp,maxf(0,amount))
 	if applied>0:
+		RunBuildMetrics.hit(self,applied,_source,damage_type,fate_factor)
 		damage_applied.emit(self,applied,_source,damage_type)
 		_notify_equipment("on_enemy_damaged",[self,applied,_source,damage_type])
 	_flash = HURT_FLASH

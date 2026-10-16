@@ -37,7 +37,7 @@ static func snapshot(actor: Player) -> Array[Dictionary]:
 			var remaining:=float(GameState.fate.pending.get(id,0))
 			if FateCatalog.rank(id)>0 and remaining>0:rows.append({"id":"fate_pending_"+id,"icon_id":"fate_"+id,"name":str(FateCatalog.CARDS[id].name)+" · 待发","description":"强化尚未消耗；"+FateCatalog.description(id,FateCatalog.rank(id)==2),"remaining":remaining,"permanent":false,"stacks":0,"debuff":false,"icon":FateCatalog.icon(id)})
 	if RoomInput.using_auto():_append(rows,"clumsy",0,"",0,true,"",true)
-	if RunDifficulty.is_bloodbath(GameState.difficulty) and not CampSession.active:_append(rows,"bloodbath",0,"",0,true,"",true)
+	if RunDifficulty.is_bloodbath(GameState.difficulty) and not CampSession.active:_append(rows,"bloodbath",0,"证明你的荣耀\n受到真实伤害；灰色伤痕 %.1f 生命上限。普通回血无效，星星／女皇命运牌可部分修复并返还等量生命。"%actor.bloodbath_hp_loss,0,true,"",true)
 	_append(rows,"dash_cooldown",actor._dash_cd)
 	if actor is RoomPlayer and is_instance_valid((actor as RoomPlayer).holy_runtime):
 		var holy:HolyRuntime=(actor as RoomPlayer).holy_runtime
@@ -50,7 +50,9 @@ static func snapshot(actor: Player) -> Array[Dictionary]:
 		for id:String in AltarBlessings.DEFINITIONS:
 			var rank:=int(GameState.altar_blessings.get(id,0))
 			if rank>0:_append(rows,"altar_"+id,0,"%s／级 · 当前%d／3级 · 本次出征永久。"%[AltarBlessings.DEFINITIONS[id].description,rank],rank,false,"",true)
-	if actor.cruel_hp_loss>0.0:_append(rows,"cruel",0,"本次出征已永久损失 %.0f 生命上限。"%actor.cruel_hp_loss,0,true,"",true)
+	if actor.permanent_hp_loss()>0.0:
+		_append(rows,"cruel",0,"本次出征伤痕 %.1f 生命上限（残忍 %.1f／浴血 %.1f）；血条灰色显示，可由星星／女皇命运牌部分修复。"%[actor.permanent_hp_loss(),actor.cruel_hp_loss,actor.bloodbath_hp_loss],0,true,"",true)
+		rows[-1].name="生命伤痕"
 	for buff in GameState.temp_buffs:
 		var label := str(buff.get("label", ""))
 		# Wind rhythm uses an artificial one-hour stat entry. Its real decay is below.

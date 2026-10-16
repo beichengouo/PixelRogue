@@ -43,7 +43,7 @@ var aim_direction := Vector2.RIGHT
 var aim_override := Vector2.ZERO
 var hp := 100.0
 var max_hp := 100.0
-## Permanent loss belongs to this expedition, separate from equipment/level HP.
+## Expedition wounds are separate from equipment HP; legacy field names remain save-compatible.
 var bloodbath_hp_loss := 0.0
 var cruel_hp_loss := 0.0
 
@@ -399,6 +399,18 @@ func _on_stats_changed() -> void:
 
 func bloodbath_active()->bool:return RunDifficulty.is_bloodbath(GameState.difficulty) and not CampSession.active
 func permanent_hp_loss()->float:return maxf(0.0,bloodbath_hp_loss)+maxf(0.0,cruel_hp_loss)
+func repair_capacity(amount:float)->float:
+	if hp<=0 or amount<=0 or CampSession.active:return 0.0
+	var repaired:=minf(amount,permanent_hp_loss())
+	if repaired<=0:return 0.0
+	var blood:=minf(repaired,maxf(0,bloodbath_hp_loss));bloodbath_hp_loss=maxf(0,bloodbath_hp_loss-blood)
+	cruel_hp_loss=maxf(0,cruel_hp_loss-(repaired-blood))
+	max_hp=maxf(0,stats.get_value(&"max_hp")-permanent_hp_loss())
+	# Only the repaired portion returns, not a percentage of all missing health.
+	# Ordinary healing remains blocked in bloodbath; tarot is the explicit exception.
+	var before:=hp;hp=minf(max_hp,hp+repaired)
+	EventBus.player_healed.emit(hp-before,hp,max_hp)
+	return repaired
 
 
 func _build_hitbox() -> void:

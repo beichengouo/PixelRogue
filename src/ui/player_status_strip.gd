@@ -6,6 +6,8 @@ const CELL_HEIGHT := 41.0
 var _cells: Dictionary = {}
 var _textures: Dictionary = {}
 var available_width := 336.0
+var _pulses:Dictionary={}
+var _pulse_last:Dictionary={}
 
 func _ready() -> void:
 	name = "PlayerTimedStatuses"
@@ -17,7 +19,19 @@ func _ready() -> void:
 	set_process_priority(40)
 
 func _process(_delta: float) -> void:
+	for id in _pulses.keys():
+		_pulses[id]=maxf(0,float(_pulses[id])-_delta)
+		if _pulses[id]<=0:_pulses.erase(id)
 	refresh(GameState.player as Player if is_instance_valid(GameState.player) else null)
+
+func pulse(key:String)->void:
+	var now:=Time.get_ticks_msec()
+	if now-int(_pulse_last.get(key,-1000))<450:return
+	_pulse_last[key]=now
+	var id:=key.trim_prefix("status:") if key.begins_with("status:") else "fate_"+key.trim_prefix("fate:") if key.begins_with("fate:") else "material_tide" if key in ["etch:tide","etch:memory"] else "shield" if key in ["etch:moss","etch:bone","etch:gate"] else ""
+	if id.is_empty():return
+	refresh(GameState.player as Player)
+	if _cells.has(id):_pulses[id]=.26
 
 func refresh(actor: Player) -> void:
 	var rows := PlayerStatusCatalog.snapshot(actor)
@@ -42,10 +56,12 @@ func refresh(actor: Player) -> void:
 		stacks.text = str(row.get("badge",str(row.stacks) if int(row.stacks)>0 else ""))
 		cell.tooltip_text = "%s\n%s"%[row.name,row.description] if bool(row.get("permanent",false)) else "%s\n%s\n剩余 %.1f 秒" % [row.name, row.description, row.remaining]
 	for id in _cells.keys():
-		if not active.has(id):
-			var cell := _cells[id] as Control
+		var cell:Control=_cells[id];var icon:TextureRect=cell.get_node("Icon")
+		icon.modulate=Color(1.0,1.0,1.0).lerp(Color(1.55,1.35,.8),float(_pulses.get(id,0))/.26*clampf(float(SaveService.data.get("flash_strength",1)),0,1)) if not ComicMotion.reduced() else Color.WHITE
+		if not active.has(id) and _pulses.has(id):(cell.get_node("Time") as Label).text="已用"
+		if not active.has(id) and not _pulses.has(id):
 			remove_child(cell); cell.queue_free(); _cells.erase(id)
-	visible = not rows.is_empty()
+	visible = not _cells.is_empty()
 
 static func time_text(seconds: float) -> String:
 	return "%.1fs" % seconds if seconds < 1.0 else "%ds" % ceili(seconds)

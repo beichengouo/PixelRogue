@@ -879,6 +879,9 @@ func _populate_detail() -> void:
 		_detail_box.add_child(desc)
 
 	var etch_note:=MaterialWorkshopCatalog.description(item)
+	var linkage:=BuildInsight.describe(item)
+	if not linkage.is_empty():
+		var hint:=PixelUi.label(linkage,18,Color("b9dbe4"));hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(hint)
 	if not etch_note.is_empty():
 		var note:=PixelUi.label("当前刻印\n"+etch_note,18,PixelUi.GOLD);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_detail_box.add_child(note)
 	if ItemDB.is_material(item):

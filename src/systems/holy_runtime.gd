@@ -206,7 +206,7 @@ func hit(target:EnemyBase,ratio:float,origin:Vector2,serial:int=0,direct:bool=fa
 	if direct:
 		amount*=actor.equipment_mechanics.skill_multiplier(target)
 		if skill!=&"frost_nova":amount*=float(fate_casts.get(str(serial),1.0))
-	target.take_damage(amount,false,origin,(DamageContext.field(actor) if skill==&"frost_nova" else DamageContext.skill(actor)) if direct else DamageContext.character_proc(actor),false)
+	target.take_damage(amount,false,origin,(DamageContext.continuous(actor,&"skill_field") if skill==&"frost_nova" else DamageContext.skill(actor)) if direct else DamageContext.character_proc(actor),false)
 	var effective:=is_instance_valid(target) and (target.hp<hp_before or target.affix_shield<shield_before)
 	if effective and direct:
 		hit_serial=serial;hit_skill=skill;actor.equipment_mechanics.on_skill_hit(target,true);hit_skill=&""

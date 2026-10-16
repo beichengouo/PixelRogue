@@ -181,9 +181,9 @@
       "debuff": false
     },
     "cruel": {
-      "name": "残忍",
-      "description": "受到残忍伤害后，本次冒险生命上限永久降低。",
-      "runtime_source": "Player.cruel_hp_loss",
+      "name": "生命伤痕",
+      "description": "受到残忍伤害后留下灰色伤痕，降低本次冒险生命上限；星星或女皇命运牌可部分修复。",
+      "runtime_source": "Player.permanent_hp_loss()",
       "debuff": true
     },
     "altar_edge": {

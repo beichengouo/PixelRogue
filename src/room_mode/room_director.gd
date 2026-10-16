@@ -229,7 +229,8 @@ func _on_wave_cleared()->void:
 	if phase==Phase.FIGHT and room_record.kind=="boss_rush" and rush_index<2:
 		phase=Phase.REST;rush_index+=1;time_left=RUSH_REST_SECONDS
 		EventBus.rest_started.emit(time_left);Outpost.request_checkpoint();return
-	if phase!=Phase.FIGHT or not graph.clear_current():return
+	if phase!=Phase.FIGHT or not graph.clear_current(int(GameState.fate.get("readings",0))):return
+	FateRuntime.room_clear()
 	phase=Phase.CLEARED;GameState.wave_completed=true;GameState.claim_wave_experience(true)
 	AchievementTracker.room_cleared(room_record,room_pressure_step)
 	GameState.add_reward_coins(roundi(WaveTable.coin_reward(wave)*(.6 if room_record.kind=="altar" else (1.5 if room_record.kind=="trial" else 1.0))))

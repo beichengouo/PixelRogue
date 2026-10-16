@@ -52,8 +52,10 @@ func basic(enemy:EnemyBase,receipt:BasicAttackReceipt)->void:
 			storm_hits=0;storm_until=0;owner.start(&"storm_conductor",1.5)
 			owner.area_damage(enemy.global_position,72,a*.55);pulse(enemy.global_position,72,Color("79dfff"),0)
 	if has(&"counterbeat") and counter_until>owner.clock:
+		owner.consumed_status("counterbeat")
 		counter_until=0;owner.extra_damage(enemy,a*.22,owner.actor.global_position);pulse(enemy.global_position,25,Color("ffd383"),1)
 	if has(&"mana_reservoir") and reservoir_charges>0 and owner.ready(&"mana_reservoir_hit"):
+		owner.consumed_status("mana_reservoir")
 		reservoir_charges-=1;owner.start(&"mana_reservoir_hit",.8);GameState.add_mp(2)
 		owner.extra_damage(enemy,a*.3,owner.actor.global_position);pulse(enemy.global_position,32,Color("60d4de"),2)
 	if has(&"copper_metre") and owner.ready(&"copper_metre"):
@@ -63,8 +65,10 @@ func basic(enemy:EnemyBase,receipt:BasicAttackReceipt)->void:
 			# EnemyBase applies the boss control reduction once.
 			enemy.apply_slow(.2*scale(&"copper_metre"),2)
 	if has(&"dew_battery") and battery_until>owner.clock:
+		owner.consumed_status("dew_battery")
 		battery_until=0;GameState.add_mp(3*scale(&"dew_battery"))
 	if has(&"sentinel_thread") and sentinel_until>owner.clock:
+		owner.consumed_status("sentinel_thread")
 		sentinel_until=0;owner.extra_damage(enemy,a*.18*scale(&"sentinel_thread"),owner.actor.global_position)
 		var nearest:HiredAlly;var distance:=144.0*144.0
 		for ally in owner.get_tree().get_nodes_in_group("allies"):
