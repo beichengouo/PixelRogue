@@ -25,6 +25,7 @@ var damage_multiplier:=1.0
 var volley_id:=""
 var primary_skill:StringName=&""
 var seed_ratio:=.18
+var fate_direct_multiplier:=1.0
 var pact_empowered:=false
 var guided:=false
 var _frame_elapsed := 0.0
@@ -137,7 +138,7 @@ func _hit_enemy(enemy: EnemyBase) -> bool:
 	var amount := damage * (1.0 + minf(0.16, 0.08 * bounce_count) if is_instance_valid(runtime) and runtime.rank(&"ilyua_returning_arrow") >= 3 else 1.0)
 	if is_instance_valid(runtime): amount *= runtime.arrow_multiplier(self, enemy)
 	amount*=damage_multiplier
-	if not is_basic_attack and primary_skill!=&"" and is_instance_valid(runtime): amount *= runtime.actor.equipment_mechanics.skill_multiplier(enemy)*runtime.skill_bonus()
+	if not is_basic_attack and primary_skill!=&"" and is_instance_valid(runtime): amount *= runtime.actor.equipment_mechanics.skill_multiplier(enemy)*runtime.skill_bonus()*fate_direct_multiplier
 	var source: Node = self if is_basic_attack else DamageContext.skill(runtime.actor) if primary_skill!=&"" and is_instance_valid(runtime) else DamageContext.character_proc(runtime.actor) if is_instance_valid(runtime) else self
 	if is_instance_valid(runtime) and natural and primary_skill!=&"":runtime.natural_hits[id]=true
 	enemy.take_damage(amount, is_basic_attack and attack_receipt != null and attack_receipt.critical, global_position, source, false)
@@ -176,4 +177,4 @@ func snapshot() -> Dictionary:
 	var saved_receipt:Dictionary={}
 	if attack_receipt!=null:saved_receipt={"id":str(attack_receipt.get_instance_id()),"claimed":attack_receipt.claimed,"critical":attack_receipt.critical,"effects":attack_receipt.effects.keys()}
 	var target:EnemyBase=target_ref.get_ref() as EnemyBase if target_ref!=null else null
-	return {"strong_pierce":strong_pierce,"wind_skill_serial":wind_skill_serial,"kind": str(arrow_kind), "at": [global_position.x, global_position.y], "direction": [direction.x, direction.y], "owner_aim":[owner_aim.x,owner_aim.y],"damage": damage, "speed": speed, "range": range_limit, "traveled": traveled, "life": flight_left, "main": main_arrow, "natural": natural, "basic": is_basic_attack, "bounce_left": bounce_left, "bounce_count": bounce_count, "pierce_left": pierce_left, "wall_seek": wall_seek, "seek_after_bounce": seek_after_bounce, "redirect_left": redirect_left, "hit_ids": saved_hits, "hit_counts": hit_counts.duplicate(), "receipt":saved_receipt,"weapon_fx":weapon_fx,"seed_ratio":seed_ratio,"blades_spawned":blades_spawned,"volley_id":volley_id,"pact_empowered":pact_empowered,"guided":guided,"homing_range":homing_range,"homing_turn":homing_turn,"basic_tracking":basic_tracking,"primary_skill":str(primary_skill),"target":str(target.get_instance_id()) if is_instance_valid(target) else ""}
+	return {"fate_direct_multiplier":fate_direct_multiplier,"strong_pierce":strong_pierce,"wind_skill_serial":wind_skill_serial,"kind": str(arrow_kind), "at": [global_position.x, global_position.y], "direction": [direction.x, direction.y], "owner_aim":[owner_aim.x,owner_aim.y],"damage": damage, "speed": speed, "range": range_limit, "traveled": traveled, "life": flight_left, "main": main_arrow, "natural": natural, "basic": is_basic_attack, "bounce_left": bounce_left, "bounce_count": bounce_count, "pierce_left": pierce_left, "wall_seek": wall_seek, "seek_after_bounce": seek_after_bounce, "redirect_left": redirect_left, "hit_ids": saved_hits, "hit_counts": hit_counts.duplicate(), "receipt":saved_receipt,"weapon_fx":weapon_fx,"seed_ratio":seed_ratio,"blades_spawned":blades_spawned,"volley_id":volley_id,"pact_empowered":pact_empowered,"guided":guided,"homing_range":homing_range,"homing_turn":homing_turn,"basic_tracking":basic_tracking,"primary_skill":str(primary_skill),"target":str(target.get_instance_id()) if is_instance_valid(target) else ""}

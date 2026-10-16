@@ -25,9 +25,11 @@ var expansion:=ExpansionEquipment.new()
 var cadence:=CadenceEquipment.new()
 var wayfarer:=WayfarerRelics.new()
 var etching:=EquipmentEnchant.new()
+var fate_runtime:=FateRuntime.new()
 
 func _ready() -> void:
 	if actor == null: actor = get_parent() as RoomPlayer
+	fate_runtime.owner=self
 	legendary.owner=self
 	expansion.owner=self
 	cadence.owner=self
@@ -38,6 +40,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	clock += delta
+	fate_runtime.tick(delta)
 	legendary.tick()
 	cadence.tick()
 	wayfarer.tick(delta)
@@ -103,6 +106,7 @@ func ready(key: StringName) -> bool: return clock >= float(cooldowns.get(key, 0.
 func start(key: StringName, duration: float) -> void: cooldowns[key] = clock + duration
 
 func on_room_enter(room_id: String, uncleared_normal: bool) -> void:
+	fate_runtime.room_enter(room_id)
 	if current_room_id!="" and current_room_id!=room_id:
 		for mark in star_marks.values():_remove_marker(mark.get("enemy"),"star")
 		for mark in dusk_marks.values():_remove_marker(mark.ally.get_ref(),"dusk")
@@ -141,6 +145,7 @@ func fire_basic(direction: Vector2, roll: Dictionary, receipt: BasicAttackReceip
 	return true
 
 func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: RoomProjectile) -> void:
+	fate_runtime.basic_hit(enemy,receipt)
 	if not is_instance_valid(enemy): return
 	if is_instance_valid(actor.holy_runtime):actor.holy_runtime.on_direct_hit(enemy,0,receipt)
 	legendary.basic_hit(enemy,receipt)
@@ -284,10 +289,10 @@ func on_enemy_damaged(_enemy: EnemyBase, _amount: float, _source: Node, _damage_
 	pass
 
 func on_enemy_died(enemy: EnemyBase, _source: Node, damage_type: StringName = &"") -> void:
-	wayfarer.enemy_died(enemy)
+	if damage_type!=&"fate":wayfarer.enemy_died(enemy)
 	var burn_source: Node = enemy._burn_source.get_ref() if enemy._burn_source != null else null
 	var propagated:bool = burn_source is DamageContext and burn_source.owner_kind==&"spread_burn"
-	if has(&"ember_seed") and enemy._burn_time>0 and not propagated and damage_type!=&"equipment":
+	if has(&"ember_seed") and enemy._burn_time>0 and not propagated and damage_type not in [&"equipment",&"fate"]:
 		for target in nearest_enemies(enemy.global_position,72,2,enemy):
 			target.apply_burn(enemy._burn_dps*scale(&"ember_seed"),enemy._burn_time,DamageContext.spread_burn(actor))
 	_remove_marker(enemy,"ember");_remove_marker(enemy,"star");_remove_marker(enemy,"soul")
@@ -312,6 +317,7 @@ func on_contract_killed(unit: SummonedAlly, source: Node) -> void:
 	if hit:on_dusk_hit()
 
 func on_shield_broken() -> void:
+	fate_runtime.shield_broken()
 	expansion.shield_broken()
 	cadence.shield_broken()
 	wayfarer.shield_broken()
@@ -351,10 +357,14 @@ func nearest_enemies(origin: Vector2, radius: float, limit: int, excluded: Enemy
 		if found.size()>=limit:break
 	return found
 
-func grant_player_shield(amount: float, duration: float) -> void:
+func grant_player_shield(amount: float, duration: float, timer_policy:StringName=&"stronger") -> void:
 	if not is_instance_valid(actor) or actor.hp <= 0.0: return
+	var before_time:=actor._shield_time
+	amount*=FateCatalog.shield_factor()
 	if amount>=actor.shield_hp:
 		actor.shield_hp=amount;actor._shield_time=duration
+	if timer_policy==&"refresh":actor._shield_time=duration
+	elif timer_policy==&"extend":actor._shield_time=maxf(before_time,duration)
 
 func grant_ally_shield(ally: HiredAlly, amount: float, duration: float) -> void:
 	if amount>=ally.shield_hp:

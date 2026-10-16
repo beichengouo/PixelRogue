@@ -49,11 +49,12 @@ func cast(slot:int)->bool:
 	var base:Dictionary={}
 	if id in [&"shadow_companions",&"ghost_lantern"]:
 		base=SummonRules.hero_snapshot(actor,effect)
-	var perform:=func()->void:_release(effect,positions,landing,base,cast_bonus)
+	var fate_bonus:=FateRuntime.cast_factor()
+	var perform:=func()->void:_release(effect,positions,landing,base,cast_bonus,fate_bonus)
 	if not UltimateCutin.present(actor,id,perform):perform.call()
 	return true
 
-func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Dictionary,cast_bonus:float=1.0)->void:
+func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Dictionary,cast_bonus:float=1.0,fate_bonus:float=1.0)->void:
 	actor._cast_timer=0.28;actor._cast_pose=&"cast";actor._animation_request+=1
 	var healing:=1+GameState.talent_effect(&"shadow_care","契约治疗加成%")/100
 	match str(effect.kind):
@@ -67,8 +68,7 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				units[i].heal(units[i].max_hp*float(effect.heal)*healing)
 			actor.heal_player(actor.max_hp*float(effect.self_heal)*healing)
 		"shelter":
-			actor.shield_hp=maxf(actor.shield_hp,actor.max_hp*float(effect.shield)*(1+GameState.talent_effect(&"shadow_care","夜幕护盾加成%")/100))
-			actor._shield_time=float(effect.duration)+GameState.talent_effect(&"shelter_duration","护盾额外秒数");actor._shield_thorns=0
+			(actor as RoomPlayer).equipment_mechanics.grant_player_shield(actor.max_hp*float(effect.shield)*(1+GameState.talent_effect(&"shadow_care","夜幕护盾加成%")/100),float(effect.duration)+GameState.talent_effect(&"shelter_duration","护盾额外秒数"),&"refresh");actor._shield_thorns=0
 			for ally in get_tree().get_nodes_in_group("allies"):
 				if not ally is HiredAlly or not is_instance_valid(ally) or ally.is_queued_for_deletion() or ally.hp<=0:continue
 				if ally is RoomAlly and ally.room!=actor.room:continue
@@ -82,7 +82,7 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or actor.global_position.distance_to(enemy.global_position)>radius or not actor.room.sight(actor.global_position,enemy.global_position):continue
 				var before: float = enemy.hp
 				var mechanics: EquipmentMechanics=(actor as RoomPlayer).equipment_mechanics
-				enemy.take_damage(actor.stats.get_value(&"attack")*float(effect.ratio)*cast_bonus*mechanics.skill_multiplier(enemy),false,actor.global_position,DamageContext.skill(actor),false)
+				enemy.take_damage(actor.stats.get_value(&"attack")*float(effect.ratio)*cast_bonus*fate_bonus*mechanics.skill_multiplier(enemy),false,actor.global_position,DamageContext.skill(actor),false)
 				if enemy.hp<before:mechanics.on_skill_hit(enemy,true)
 				if not enemy._dead:enemy.apply_slow(float(effect.slow),float(effect.slow_duration))
 			for unit in companions():

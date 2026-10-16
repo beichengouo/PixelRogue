@@ -214,7 +214,8 @@ func cast(slot: int) -> bool:
 	if GameState.begin_skill_cast(slot)==&"":return false
 	var bonus:=actor.equipment_mechanics.on_skill_cast(false,id)
 	actor._cast_timer=.28;actor._cast_pose=&"cast";actor._animation_request+=1
-	var perform:=func()->void:_release_skill(id,target,bonus)
+	var fate_bonus:=FateRuntime.cast_factor()
+	var perform:=func()->void:_release_skill(id,target,bonus,fate_bonus)
 	if not UltimateCutin.present(actor,id,perform):perform.call()
 	return true
 
@@ -227,7 +228,7 @@ func legal_ground(at:Vector2,require_visible:bool)->Vector2:
 			if bounds.has_point(point) and actor.room.body_clear(point,12) and (not require_visible or (actor.global_position.distance_to(point)<=216 and actor.room.sight(actor.global_position,point))):return point
 	return Vector2.INF
 
-func _release_skill(id:StringName,target:Vector2,cast_bonus:float)->void:
+func _release_skill(id:StringName,target:Vector2,cast_bonus:float,fate_bonus:=1.0)->void:
 	var at:=actor.global_position
 	var bonus:=cast_bonus
 	if next_natural_bonus>0 and id in [&"ilyua_thorn_seed",&"ilyua_vine_trap",&"ilyua_ancient_tree"]:bonus*=1+next_natural_bonus;next_natural_bonus=0
@@ -236,7 +237,7 @@ func _release_skill(id:StringName,target:Vector2,cast_bonus:float)->void:
 			wind_pierce_until=clock+5;wind_pierce_serial+=1;IlyuaFX.spawn(actor,Vector2.ZERO,"bow_cast",48,.25)
 		&"ilyua_thorn_seed":
 			var arrow:=spawn_arrow(&"seed",at+actor.aim_direction*14,actor.aim_direction,.5*bonus,true,true)
-			if arrow!=null:arrow.seed_ratio=.18*bonus
+			if arrow!=null:arrow.seed_ratio=.18*bonus;arrow.fate_direct_multiplier=fate_bonus
 		&"ilyua_forest_step":forest_step()
 		&"ilyua_thousand_winds":ultimate_left=8;ultimate_finish_pending=true;ultimate_hits.clear();IlyuaFX.spawn(actor,Vector2.ZERO,"ultimate",96,.5)
 		&"ilyua_hunter_mark":
@@ -276,7 +277,7 @@ func direct_hit(enemy: EnemyBase, ratio: float,skill_id:StringName=&"",natural_s
 	var amount := attack() * ratio * actor.equipment_mechanics.skill_multiplier(enemy) * skill_bonus()
 	if rank(&"ilyua_wild_growth") >= 1 and natural_source and controlled(enemy): amount *= 1.08
 	if natural_source:natural_hits[enemy.get_instance_id()]=true
-	enemy.take_damage(amount, false, actor.global_position if at==Vector2.ZERO else at, DamageContext.skill(actor), false)
+	enemy.take_damage(amount, false, actor.global_position if at==Vector2.ZERO else at, DamageContext.field(actor), false)
 	if natural_hits.has(enemy.get_instance_id()) and (enemy.hp<before or enemy.affix_shield<shield_before):on_direct_natural_hit(enemy)
 	natural_hits.erase(enemy.get_instance_id())
 	if enemy.hp < before or enemy.affix_shield<shield_before:
@@ -593,7 +594,7 @@ func on_hp_damage(amount:float)->void:
 	if amount<=0:return
 	if wind_stacks>0:wind_stacks=maxi(0,wind_stacks-2);refresh_wind()
 	if rank(&"ilyua_forest_will")<1 or actor.hp>=actor.max_hp*.3 or not ready(&"forest_will"):return
-	start(&"forest_will",30);actor.shield_hp=maxf(actor.shield_hp,actor.max_hp*.12);actor._shield_time=maxf(actor._shield_time,3)
+	start(&"forest_will",30);actor.equipment_mechanics.grant_player_shield(actor.max_hp*.12,3,&"extend")
 	if rank(&"ilyua_forest_will")>=2:
 		for enemy in enemies_in(actor.global_position,72):
 			enemy.apply_slow(.35,2)
@@ -623,7 +624,7 @@ func finish_ultimate()->void:
 	IlyuaFX.spawn(actor.get_parent(),actor.global_position,"ultimate_end",180,.5)
 
 func _on_enemy_damaged(enemy:EnemyBase,amount:float,source:Node,_damage_type:StringName)->void:
-	if amount>0 and natural_hits.has(enemy.get_instance_id()) and source==DamageContext.skill(actor):
+	if amount>0 and natural_hits.has(enemy.get_instance_id()) and DamageContext.is_skill(source,actor):
 		natural_hits.erase(enemy.get_instance_id());on_direct_natural_hit(enemy)
 
 func _on_enemy_died(enemy:EnemyBase,source:Node,_damage_type:StringName)->void:
@@ -662,7 +663,7 @@ func _on_enemy_died(enemy:EnemyBase,source:Node,_damage_type:StringName)->void:
 		var zones:=active_fields(&"wild_zone")
 		if zones.size()>=4:zones[0].queue_free()
 		make_field(&"wild_zone",enemy.global_position,72,2,1,.08)
-	var direct:bool=(source is IlyuaArrow and source.runtime==self and source.main_arrow) or source==DamageContext.skill(actor)
+	var direct:bool=(source is IlyuaArrow and source.runtime==self and source.main_arrow) or DamageContext.is_skill(source,actor)
 	if direct and rank(&"ilyua_nature_favor")>=1 and Rng.stream().randf()<.2:
 		blessing=1
 		if rank(&"ilyua_nature_favor")>=2:next_natural_bonus=.15
@@ -849,7 +850,7 @@ func _restore_extra(data:Dictionary,nodes:Dictionary)->void:
 		arrow.strong_pierce=bool(entry.get("strong_pierce",false));arrow.wind_skill_serial=int(entry.get("wind_skill_serial",0));arrow.bounce_left=int(entry.bounce_left);arrow.bounce_count=int(entry.bounce_count);arrow.pierce_left=int(entry.pierce_left);arrow.wall_seek=bool(entry.wall_seek);arrow.seek_after_bounce=bool(entry.seek_after_bounce);arrow.redirect_left=int(entry.redirect_left)
 		arrow.weapon_fx=str(entry.get("weapon_fx",arrow.weapon_fx));arrow.seed_ratio=float(entry.get("seed_ratio",.18));arrow.blades_spawned=int(entry.get("blades_spawned",0));arrow.volley_id=str(entry.get("volley_id",""));arrow.pact_empowered=bool(entry.get("pact_empowered",false));arrow.guided=bool(entry.get("guided",false))
 		arrow.refresh_art()
-		arrow.basic_tracking=bool(entry.get("basic_tracking",false));arrow.homing_range=float(entry.get("homing_range",108));arrow.homing_turn=float(entry.get("homing_turn",0));arrow.primary_skill=StringName(entry.get("primary_skill",""))
+		arrow.fate_direct_multiplier=float(entry.get("fate_direct_multiplier",1.0));arrow.basic_tracking=bool(entry.get("basic_tracking",false));arrow.homing_range=float(entry.get("homing_range",108));arrow.homing_turn=float(entry.get("homing_turn",0));arrow.primary_skill=StringName(entry.get("primary_skill",""))
 		var aim:Array=entry.get("owner_aim",entry.direction);arrow.owner_aim=Vector2(aim[0],aim[1])
 		var target:EnemyBase=nodes.get(str(entry.get("target",""))) as EnemyBase
 		if live(target):arrow.target_ref=weakref(target)

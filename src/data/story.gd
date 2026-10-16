@@ -240,6 +240,7 @@ const SCENES := {
 
 
 static func get_scene(id: StringName, replay := false, character_id:StringName=&"") -> Dictionary:
+	if id==&"fate_observation":return FateStory.scene(character_id,replay)
 	if String(id).begins_with("city_"):return CityStories.scene(id,replay,character_id)
 	var scene := _shared_scene(id, replay)
 	if scene.is_empty(): return scene

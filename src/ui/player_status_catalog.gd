@@ -27,6 +27,15 @@ static func _append(rows: Array[Dictionary], id: String, remaining: float, detai
 static func snapshot(actor: Player) -> Array[Dictionary]:
 	var rows: Array[Dictionary] = []
 	if not is_instance_valid(actor) or actor.is_queued_for_deletion() or actor.hp <= 0.0: return rows
+	if FateCatalog.active():
+		for card in GameState.fate.cards:
+			var id:=str(card.id);var reversed:=bool(card.reverse)
+			rows.append({"id":"fate_"+id,"badge":"逆" if reversed else "正","icon_id":"fate_"+id,"name":str(FateCatalog.CARDS[id].name)+(" · 逆位" if reversed else " · 正位"),"description":FateCatalog.description(id,reversed),"remaining":0.0,"permanent":true,"stacks":0,"debuff":false,"icon":FateCatalog.icon(id)})
+		var star:=FateCatalog.star()
+		if not star.is_empty():rows.append({"id":"star_"+star,"icon_id":"star_"+star,"name":str(FateCatalog.STARS[star].name),"description":str(FateCatalog.STARS[star].description)+"本次出征生效。","remaining":0.0,"permanent":true,"stacks":0,"debuff":false,"icon":FateCatalog.icon(star)})
+		for id in ["magician","priestess","chariot"]:
+			var remaining:=float(GameState.fate.pending.get(id,0))
+			if FateCatalog.rank(id)>0 and remaining>0:rows.append({"id":"fate_pending_"+id,"icon_id":"fate_"+id,"name":str(FateCatalog.CARDS[id].name)+" · 待发","description":"强化尚未消耗；"+FateCatalog.description(id,FateCatalog.rank(id)==2),"remaining":remaining,"permanent":false,"stacks":0,"debuff":false,"icon":FateCatalog.icon(id)})
 	if RoomInput.using_auto():_append(rows,"clumsy",0,"",0,true,"",true)
 	if RunDifficulty.is_bloodbath(GameState.difficulty) and not CampSession.active:_append(rows,"bloodbath",0,"",0,true,"",true)
 	_append(rows,"dash_cooldown",actor._dash_cd)

@@ -67,6 +67,14 @@ func _star(at:Vector2,radius:float,color:Color)->void:
 	at=at.round()
 	draw_colored_polygon(PackedVector2Array([at+Vector2(0,-radius),at+Vector2(radius*.3,-radius*.3),at+Vector2(radius,0),at+Vector2(radius*.3,radius*.3),at+Vector2(0,radius),at+Vector2(-radius*.3,radius*.3),at+Vector2(-radius,0),at+Vector2(-radius*.3,-radius*.3)]),color)
 func _draw()->void:
+	# Static celestial corners distinguish reward faces without covering the item
+	# information. Idle cards never need a running animation or another texture.
+	if is_instance_valid(_body) and _body.visible:
+		var ink:=Color(tint,.32)
+		for corner in [Vector2(24,24),Vector2(size.x-24,24),Vector2(24,size.y-24),Vector2(size.x-24,size.y-24)]:
+			_star(corner,3,ink)
+		draw_line(Vector2(34,23),Vector2(size.x-34,23),Color(tint,.14),1)
+		draw_line(Vector2(34,size.y-23),Vector2(size.x-34,size.y-23),Color(tint,.14),1)
 	if phase=="idle":return
 	var flash:=clampf(float(SaveService.data.get("flash_strength",1.0)),0,1)
 	var color:=Color(tint,flash*.8)

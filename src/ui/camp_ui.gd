@@ -14,6 +14,9 @@ var _page = "prepare"
 var _tabs: Array[Button]=[]
 var cart: Array = []
 var chapter_id:StringName=ChapterCatalog.FIRST
+var constellation:=""
+var _fate_ui:FateUI
+var _fate_dialogue:DialogueUI
 var combat_mode := "rooms"
 var carried = 0
 var initial_level := 1
@@ -274,6 +277,7 @@ func _prepare() -> void:
 	else:_prepare_confirmation()
 
 func _prepare_character()->void:
+	_button("出发星象 · "+str(FateCatalog.STARS.get(constellation,{}).get("name","不选择")),_open_stars)
 	_text("目的地",19,PixelUi.GOLD)
 	var destination:=OptionButton.new();destination.name="ChapterDestination";_compact_option(destination)
 	var chapter_ids:Array=[ChapterCatalog.FIRST,ChapterCatalog.NEXT]
@@ -313,7 +317,7 @@ func _prepare_supplies()->void:
 	_button("下一步 · 核对出发清单",func()->void:_prepare_step=2;_refresh())
 
 func _preparation_check()->String:
-	var value:=CampPreparation.new();value.chapter_id=chapter_id;value.loadout=cart;value.carried=carried;value.initial_level=initial_level;value.difficulty=difficulty
+	var value:=CampPreparation.new();value.constellation=constellation;value.chapter_id=chapter_id;value.loadout=cart;value.carried=carried;value.initial_level=initial_level;value.difficulty=difficulty
 	return value.error()
 func _resolve_preparation_error(message:String)->void:
 	_feedback=message
@@ -321,6 +325,7 @@ func _resolve_preparation_error(message:String)->void:
 	_prepare_step=0 if message.begins_with("初始等级") or message.contains("失名") or message.contains("请选择有效的战斗难度") else 1
 	_refresh()
 func _prepare_confirmation()->void:
+	_text("出发星象 · "+str(FateCatalog.STARS.get(constellation,{}).get("name","不选择")),20,PixelUi.GOLD)
 	_text("角色 · %s\n目的地 · %s\n难度 · %s\n出发等级 · Lv.%d\n同行被动 · %s"%[Characters.current_name(),ChapterCatalog.title(chapter_id),RunDifficulty.title(difficulty),initial_level,str(PassiveDefinitions.for_character(Characters.current_id()).filter(func(p:Dictionary)->bool:return StringName(p.id)==PassiveDefinitions.selected(Characters.current_id()))[0].name)],21)
 	_text("携带物资 · %d件 · 随身金币 %d金\n等级费用 %d金 · 确认不扣费，出门后结余 %d金"%[cart.size(),carried,DepartureLevels.cost(initial_level),Outpost.gold()-carried-DepartureLevels.cost(initial_level)],19,PixelUi.GOLD)
 	for id in cart:
@@ -374,7 +379,7 @@ func _depart() -> void:
 		return
 	_busy=true
 	cart=cart.filter(func(id:Variant)->bool:return ItemDB.available_in_mode(ExpeditionData.resolve(str(id)),combat_mode))
-	var payload:Dictionary={"chapter_id":str(chapter_id),"departure":{"chapter_id":str(chapter_id),"loadout":cart.duplicate(),"carried":carried,"danger":danger,"difficulty":difficulty,"initial_level":initial_level,"combat_mode":combat_mode},"combat_mode":combat_mode}
+	var payload:Dictionary={"chapter_id":str(chapter_id),"departure":{"constellation":constellation,"chapter_id":str(chapter_id),"loadout":cart.duplicate(),"carried":carried,"danger":danger,"difficulty":difficulty,"initial_level":initial_level,"combat_mode":combat_mode},"combat_mode":combat_mode}
 	close()
 	departure_requested.emit(payload)
 
@@ -428,6 +433,7 @@ func _claim(index: int) -> void:
 	else:_status.text="请先接取委托；超时、材料不足或保存失败时不能交付。"
 
 func _relations() -> void:
+	if _npc=="iris":_button("星象与命运",_open_stars)
 	var selector=OptionButton.new()
 	_compact_option(selector)
 	var npcs:=BondRules.NAMES.keys()
@@ -669,6 +675,7 @@ func _compact_option(option: OptionButton) -> void:
 
 func _restore_page_focus(token: String, scroll: int) -> void:
 	if not is_open(): return
+	if not UIFlow.is_top(self):_scroll.scroll_vertical=scroll;return
 	for button in _body.find_children("*","Button",true,false):
 		if not token.is_empty() and str(button.get_meta("focus_token",""))==token and not button.disabled:
 			button.grab_focus()
@@ -696,3 +703,17 @@ func open_facility(page:String)->void:
 	if page=="shop":Outpost.sync_shop()
 	if page=="contracts":Outpost.sync_contracts()
 	_refresh()
+
+func _open_stars()->void:
+	if _fate_ui==null:
+		_fate_ui=FateUI.new();add_child(_fate_ui)
+		_fate_ui.constellation_selected.connect(func(id:String)->void:constellation=id;_refresh())
+		_fate_ui.story_requested.connect(_fate_story)
+	if not StoryState.seen(&"fate_observation"):
+		_fate_story(true)
+	else:_fate_ui.open_stars(constellation)
+func _fate_story(then_stars:=false)->void:
+	if _fate_dialogue==null:_fate_dialogue=DialogueUI.new();add_child(_fate_dialogue)
+	if then_stars:_fate_dialogue.finished.connect(func()->void:_fate_ui.open_stars(constellation),CONNECT_ONE_SHOT)
+	if StoryState.seen(&"fate_observation"):_fate_dialogue.play_replay(&"fate_observation")
+	else:_fate_dialogue.play_scene(&"fate_observation")

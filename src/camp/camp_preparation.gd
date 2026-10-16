@@ -1,6 +1,7 @@
 class_name CampPreparation
 extends RefCounted
 var chapter_id:StringName=ChapterCatalog.FIRST
+var constellation:=""
 var loadout:Array=[]
 var carried:=0
 var initial_level:=1
@@ -12,8 +13,9 @@ var passive:StringName=&""
 var confirmed:=false
 var _signature:=""
 func signature()->String:
-	return JSON.stringify([str(chapter_id),loadout,carried,initial_level,difficulty,str(PassiveDefinitions.selected(Characters.current_id()))])
+	return JSON.stringify([constellation,str(chapter_id),loadout,carried,initial_level,difficulty,str(PassiveDefinitions.selected(Characters.current_id()))])
 func error()->String:
+	if not constellation.is_empty() and not FateCatalog.STARS.has(constellation):return "请选择有效的出发星象。"
 	if not ChapterCatalog.is_ready(chapter_id) or not ChapterCatalog.unlocked(chapter_id):return "请先通关苏醒林地，解锁失名星城。"
 	if not Outpost.active_id().is_empty() or SaveService.has_run():return "请继续原出征，或先确认放弃原存档。"
 	if Outpost.overfull():return "仓库超量，请先整理或扩容。"

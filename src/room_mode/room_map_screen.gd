@@ -21,6 +21,8 @@ func _ready()->void:
 	var legend:=PixelUi.label("金色：当前位置 · 青色：已清房 · 灰色：未清房 · 滚轮缩放，拖动平移\n保留最近10间房；旧房及其中未拾取的物品会被清理。",16);legend.position=Vector2(28,544);_canvas.add_child(legend)
 	if MobileControls.enabled():
 		close_button.text="关闭地图";legend.text=legend.text.replace("滚轮缩放，拖动平移","双指缩放，单指拖动平移")
+	var forecast:=PixelUi.compact_button("星象预告",17);forecast.position=Vector2(680,18);forecast.size=Vector2(160,40);_canvas.add_child(forecast)
+	var fate:=FateUI.new();add_child(fate);forecast.pressed.connect(fate.open_forecast)
 	_root.hide()
 func is_open()->bool:return is_instance_valid(_root) and _root.visible
 func open()->void:

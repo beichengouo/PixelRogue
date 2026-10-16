@@ -127,7 +127,8 @@ func commit() -> bool:
 	if ok: changed.emit()
 	return ok
 
-func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, initial_level:int=1, chapter_id:StringName=ChapterCatalog.FIRST) -> bool:
+func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, initial_level:int=1, chapter_id:StringName=ChapterCatalog.FIRST,constellation:String="") -> bool:
+	if not constellation.is_empty() and not FateCatalog.STARS.has(constellation):return false
 	if not ChapterCatalog.is_ready(chapter_id) or not ChapterCatalog.unlocked(chapter_id):return false
 	if not DepartureLevels.valid(initial_level):return false
 	if overfull() or not active_id().is_empty() or carried < 0:return false
@@ -160,7 +161,7 @@ func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, i
 	data.gold = gold()-price
 	for key in required:data.inventory[key]=int(data.inventory.get(key,0))-int(required[key])
 	var id = "%d-%d" % [Time.get_unix_time_from_system()*1000,Time.get_ticks_usec()]
-	data.active = {"chapter_id":str(chapter_id),"id":id,"status":"active","danger":danger,"difficulty":difficulty,"spent":price,"loadout":loadout.duplicate(),"carried":carried,"initial_level":initial_level,"level_cost":DepartureLevels.cost(initial_level)}
+	data.active = {"constellation":constellation,"chapter_id":str(chapter_id),"id":id,"status":"active","danger":danger,"difficulty":difficulty,"spent":price,"loadout":loadout.duplicate(),"carried":carried,"initial_level":initial_level,"level_cost":DepartureLevels.cost(initial_level)}
 	SaveService.data.run = {"chapter_id":str(chapter_id),"sortie_id":id,"departure":data.active.duplicate(true),"character":str(Characters.current_id()),"passive_id":str(PassiveDefinitions.selected(Characters.current_id()))}
 	if not commit():
 		data = previous

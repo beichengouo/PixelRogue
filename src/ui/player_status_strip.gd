@@ -39,7 +39,7 @@ func refresh(actor: Player) -> void:
 		text.text = "常驻" if bool(row.get("permanent",false)) else time_text(float(row.remaining))
 		text.add_theme_color_override("font_color", Color("ff9992") if row.debuff else Color("e5f7dc"))
 		var stacks := cell.get_node("Stacks") as Label
-		stacks.text = str(row.stacks) if int(row.stacks) > 0 else ""
+		stacks.text = str(row.get("badge",str(row.stacks) if int(row.stacks)>0 else ""))
 		cell.tooltip_text = "%s\n%s"%[row.name,row.description] if bool(row.get("permanent",false)) else "%s\n%s\n剩余 %.1f 秒" % [row.name, row.description, row.remaining]
 	for id in _cells.keys():
 		if not active.has(id):

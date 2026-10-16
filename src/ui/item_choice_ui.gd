@@ -13,9 +13,9 @@ signal closed
 const CARD_SIZE := Vector2(300.0, 488.0)
 const GLOW_PAD := 12.0
 const OPEN_GUARD_MS := 250
-const APPEAR_SECONDS := 0.38
+const APPEAR_SECONDS := 0.50
 const APPEAR_STAGGER := 0.07
-const CHOICE_SECONDS := 0.64
+const CHOICE_SECONDS := 0.38
 const REDUCED_CHOICE_SECONDS := 0.16
 
 ## 品质流光：一圈会转的亮弧（和背包里那套一致）
@@ -50,6 +50,7 @@ var _commit_tween: Tween
 var _card_enter_tweens:Array[Tween]=[]
 var _card_effects:Array[RewardCardFX]=[]
 var _visuals:Array[Control]=[]
+var _backs:Array[TextureRect]=[]
 var _reward_icons:Array[Control]=[]
 var _cards: Array[Button] = []
 var _scrolls: Array[ScrollContainer] = []
@@ -120,7 +121,7 @@ func choose(index: int, defer_resume := false) -> void:
 	var reduced:=ComicMotion.reduced();var duration:=REDUCED_CHOICE_SECONDS if reduced else CHOICE_SECONDS
 	_commit_tween=create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_parallel(true)
 	for i in _cards.size():
-		var card:=_cards[i];card.scale=Vector2.ONE;card.modulate=Color.WHITE;_visuals[i].position=Vector2(12,12)
+		var card:=_cards[i];_backs[i].hide();_visuals[i].show();_visuals[i].scale=Vector2.ONE;card.scale=Vector2.ONE;card.modulate=Color.WHITE;_visuals[i].position=Vector2(12,12)
 		if i==index:
 			card.z_index=2;_card_effects[i].play("selected",duration)
 			if not reduced:
@@ -130,11 +131,11 @@ func choose(index: int, defer_resume := false) -> void:
 				_card_enter_tweens.append(pulse)
 				_reward_icons[i].pivot_offset=_reward_icons[i].size*.5
 				_commit_tween.tween_property(_reward_icons[i],"scale",Vector2.ONE*1.18,.22).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-				_commit_tween.tween_property(_visuals[i],"position:y",-12.0,.22).set_delay(.40).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
-			_commit_tween.tween_property(card,"modulate:a",0.0,.10 if reduced else .22).set_delay(.06 if reduced else .42)
+				_commit_tween.tween_property(_visuals[i],"position:y",-12.0,.18).set_delay(.20).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN)
+			_commit_tween.tween_property(card,"modulate:a",0.0,.10 if reduced else .18).set_delay(.06 if reduced else .20)
 		else:
-			_card_effects[i].play("dissolve",duration if reduced else .46)
-			_commit_tween.tween_property(card,"modulate:a",0.0,duration if reduced else .46)
+			_card_effects[i].play("dissolve",duration if reduced else .34)
+			_commit_tween.tween_property(card,"modulate:a",0.0,duration if reduced else .34)
 	_commit_tween.chain().tween_callback(_finish_choice.bind(epoch,item,defer_resume))
 
 func _stop_card_animation()->void:
@@ -148,15 +149,20 @@ func _stop_card_animation()->void:
 func _animate_cards_in(epoch:int)->void:
 	if epoch!=_selection_epoch or _choosing or not is_open():return
 	for i in _cards.size():
-		var holder:=_cards[i];var visual:=_visuals[i];var effect:=_card_effects[i]
-		var duration:=.10 if ComicMotion.reduced() else APPEAR_SECONDS
-		var delay:=0.0 if ComicMotion.reduced() else float(i)*APPEAR_STAGGER
+		var holder:=_cards[i];var visual:=_visuals[i];var effect:=_card_effects[i];var back:=_backs[i]
+		var reduced:=ComicMotion.reduced();var delay:=0.0 if reduced else float(i)*APPEAR_STAGGER
+		visual.position=Vector2(12,12);visual.pivot_offset=visual.size*.5;back.pivot_offset=back.size*.5
+		visual.visible=reduced;back.visible=not reduced;visual.scale.x=1.0 if reduced else 0.0
 		var icon:=_reward_icons[i];effect.icon_center=effect.get_global_transform().affine_inverse()*icon.get_global_rect().get_center()
 		var tween:=create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 		tween.tween_interval(delay)
-		tween.tween_callback(effect.play.bind("appear",duration))
-		tween.tween_property(holder,"modulate:a",1.0,duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		if not ComicMotion.reduced():tween.parallel().tween_property(visual,"position:y",12.0,duration).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(holder,"modulate:a",1.0,.10)
+		if reduced:
+			tween.parallel().tween_callback(effect.play.bind("appear",.1))
+		else:
+			tween.tween_property(back,"scale:x",0.0,.12).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			tween.tween_callback(func()->void:back.hide();visual.show();effect.play("appear",.18))
+			tween.tween_property(visual,"scale:x",1.0,.18).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
 		_card_enter_tweens.append(tween)
 
 func _finish_choice(epoch: int, item: Dictionary, defer_resume: bool) -> void:
@@ -275,7 +281,7 @@ func _end_pointer(at: Vector2) -> bool:
 
 func _rebuild() -> void:
 	_stop_card_animation()
-	_card_effects.clear();_visuals.clear();_reward_icons.clear()
+	_card_effects.clear();_visuals.clear();_reward_icons.clear();_backs.clear()
 	_cards.clear()
 	_scrolls.clear()
 	for child in _cards_box.get_children():
@@ -390,6 +396,9 @@ func _build_card(index: int, item: Dictionary) -> Control:
 
 	var effect:=RewardCardFX.new();effect.name="RewardPresentation";holder.add_child(effect);effect.position=Vector2.ZERO;effect.size=holder.custom_minimum_size;effect.configure(card,color);_card_effects.append(effect)
 	_visuals.append(card)
+	var back:=TextureRect.new();back.name="TarotBack";back.position=Vector2(12,12);back.size=CARD_SIZE;back.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;back.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;back.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	if ResourceLoader.exists(FateCatalog.art("back")):back.texture=load(FateCatalog.art("back"))
+	holder.add_child(back);_backs.append(back)
 	holder.scale=Vector2.ONE;holder.modulate.a=0.0
 	card.position.y=12 if ComicMotion.reduced() else 36
 	return holder

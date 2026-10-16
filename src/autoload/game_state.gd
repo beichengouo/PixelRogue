@@ -48,6 +48,7 @@ var wave_completed := false
 var wave_exp_awarded := 0.0
 var wave_exp_multiplier := 1.0
 var altar_blessings:Dictionary={}
+var fate:Dictionary=FateCatalog.empty()
 var legendary_looks:Dictionary={}
 var achievement_run:Dictionary={}
 signal play_time_changed(seconds:int)
@@ -159,7 +160,7 @@ func new_run(seed_value: int = 0) -> void:
 	items.clear()
 	hired.clear()
 	temp_buffs.clear()
-	altar_blessings.clear();wave_exp_multiplier=1.0
+	altar_blessings.clear();fate=FateCatalog.empty();wave_exp_multiplier=1.0
 	legendary_looks.clear()
 	achievement_run.clear()
 	talents.clear()
@@ -300,6 +301,7 @@ func skill_cost(id: StringName) -> float:
 	if Skills.is_ultimate(id) and talent_rank(&"celestial_focus") > 0:
 		value *= 1.0 - talent_effect(&"celestial_focus", "大招魔力减少%") / 100.0
 	if passive_id == &"sylphiette_arcane": value *= 0.5
+	if not Skills.is_ultimate(id) and FateCatalog.rank("magician")==2:value*=1.1
 	return value
 
 func skill_cooldown(id: StringName) -> float:
@@ -363,6 +365,7 @@ func begin_skill_cast(slot: int) -> StringName:
 	skill_cooldowns_by_id[id] = skill_cooldown(id)
 	_sync_skill_cooldowns()
 	EventBus.mp_changed.emit(mp, MAX_MP)
+	FateRuntime.cast(id)
 	EventBus.skill_cast.emit(id)
 	return id
 
@@ -846,6 +849,7 @@ func _reset_stats() -> void:
 
 func _apply_progression_to(target: StatBlock, ranks: Variant = null) -> void:
 	AltarBlessings.apply_to(target,altar_blessings)
+	FateCatalog.apply_stats(target)
 	# 等级成长
 	var levels := float(maxi(0, level - 1))
 	if levels > 0.0:
@@ -932,7 +936,7 @@ func total_mp_regen(block: StatBlock = null) -> float:
 	var target := stats if block == null else block
 	var holder:Player=target.status_owner.get_ref() as Player if target.status_owner!=null else null
 	var factor := PlayerDebuffs.multiplier(holder,&"mp_regen")
-	return target.get_value(&"mp_regen") + talent_effect(&"arcane_reserve", "每秒额外回蓝") * factor
+	return (target.get_value(&"mp_regen") + talent_effect(&"arcane_reserve", "每秒额外回蓝") * factor)*FateCatalog.regen_factor()
 
 func _process(delta: float) -> void:
 	# 基础回蓝 3/秒，由魔力流转增强。
@@ -1034,6 +1038,7 @@ func snapshot() -> Dictionary:
 		"ultimate_skill": String(ultimate_skill), "skill_cooldowns": skill_cooldowns_by_id.duplicate(),
 		"temp_buffs": temp_buffs.duplicate(true),
 		"altar_blessings":altar_blessings.duplicate(true),
+		"fate":fate.duplicate(true),
 		"legendary_looks":legendary_looks.duplicate(true),
 		"gm_pilot_used":gm_pilot_used,"gm_pilot_active":gm_pilot_active,
 		"achievement_run":achievement_run.duplicate(true),
@@ -1068,6 +1073,7 @@ func restore(snapshot_data: Dictionary) -> void:
 	legendary_looks=snapshot_data.get("legendary_looks",{}).duplicate(true)
 	gm_pilot_used=bool(snapshot_data.get("gm_pilot_used",false));gm_pilot_active=gm_pilot_used and bool(snapshot_data.get("gm_pilot_active",false))
 	altar_blessings=AltarBlessings.normalized(snapshot_data.get("altar_blessings",{}))
+	fate=FateCatalog.normalize(snapshot_data.get("fate",{}))
 	wave_exp_multiplier=clampf(float(snapshot_data.get("wave_exp_multiplier",1)),.6,1)
 	Characters.set_current(StringName(snapshot_data.get("character", String(Characters.DEFAULT_ID))))
 	combat_mode = "rooms"

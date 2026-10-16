@@ -56,7 +56,7 @@ func _hit_enemy(enemy: EnemyBase) -> bool:
 	if mechanic_tag == &"equipment": source = DamageContext.equipment(GameState.player)
 	elif mechanic_tag==&"character_proc":source=DamageContext.character_proc(GameState.player)
 	elif damage_owner == &"player" and not is_basic_attack: source = DamageContext.skill(GameState.player)
-	elif damage_owner == &"ally": source = DamageContext.ally(GameState.player)
+	elif damage_owner == &"ally": source = DamageContext.ally(damage_actor if is_instance_valid(damage_actor) else GameState.player)
 	var amount := damage * skill_damage_multiplier
 	if damage_owner == &"player" and not is_basic_attack and mechanic_tag not in [&"equipment",&"character_proc"] and GameState.player is RoomPlayer:
 		amount *= (GameState.player as RoomPlayer).equipment_mechanics.skill_multiplier(enemy)
@@ -135,7 +135,7 @@ func _explode() -> void:
 		var enemy := node as EnemyBase
 		if not is_instance_valid(enemy) or enemy._dead or _hit_ids.has(enemy.get_instance_id()): continue
 		if global_position.distance_to(enemy.global_position)<=explosion_radius and room.sight(global_position,enemy.global_position,ghost):
-			var splash_source: Node = DamageContext.equipment(GameState.player) if mechanic_tag==&"equipment" else DamageContext.basic_splash(GameState.player) if is_basic_attack else DamageContext.skill(GameState.player) if damage_owner==&"player" else DamageContext.ally(GameState.player)
+			var splash_source: Node = DamageContext.equipment(GameState.player) if mechanic_tag==&"equipment" else DamageContext.basic_splash(GameState.player) if is_basic_attack else DamageContext.skill(GameState.player) if damage_owner==&"player" else DamageContext.ally(damage_actor if is_instance_valid(damage_actor) else GameState.player)
 			enemy.take_damage(damage*explosion_ratio,false,global_position,splash_source)
 
 func enable_hostile_tracking(aim:Vector2)->void:

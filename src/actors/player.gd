@@ -335,7 +335,7 @@ func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
 			_animation_request += 1
 			_update_animation()
 			return
-	if not bloodbath_active():amount=cruel_part+PassiveRuntime.share_damage(self,protected_amount)
+	if not bloodbath_active():amount=cruel_part+PassiveRuntime.share_damage(self,protected_amount*(1.1 if FateCatalog.rank("empress")==2 else 1.0))
 	if amount<=0:
 		_invuln=0.18;_block_timer=0.22;_animation_request+=1;_update_animation();return
 	if bloodbath_active():

@@ -19,6 +19,8 @@ var _reward_pending:Dictionary={}
 var special_rooms:SpecialRoomController
 var expansion:RoomExpansionController
 var gm_pilot:GMPilot
+var fate_ui:FateUI
+var fate_altar:FateAltar
 
 func _build_world()->void:
 	RoomInput.install()
@@ -49,6 +51,8 @@ func _build_ui()->void:
 	var room_hud:=RoomHud.new();room_hud.graph=graph;room_hud.weather=room_weather;room_hud.director=director;hud=room_hud;add_child(hud);UIFlow.bind_hud(hud)
 	map_screen=RoomMapScreen.new();map_screen.graph=graph;add_child(map_screen)
 	var clock_ui:=WorldClockUI.new();clock_ui.world_clock=world_clock;clock_ui.position=Vector2(12,6);clock_ui.scale=Vector2.ONE*.9;hud.add_child(clock_ui)
+	fate_ui=FateUI.new();add_child(fate_ui)
+	fate_altar=FateAltar.new();fate_altar.main=self;fate_altar.ui=fate_ui;add_child(fate_altar)
 	gm_pilot=GMPilot.new();gm_pilot.main=self;add_child(gm_pilot)
 
 func _begin_run(data:Dictionary)->void:
@@ -61,7 +65,7 @@ func _begin_run(data:Dictionary)->void:
 	var departure:Dictionary=data.get("departure",{})
 	if fresh:
 		var committed:=not Outpost.active_id().is_empty() and str(data.get("sortie_id",""))==Outpost.active_id()
-		if not committed and not Outpost.start_sortie(departure.get("loadout",[]),int(departure.get("carried",0)),int(departure.get("danger",0)),RunDifficulty.from_record(departure),int(departure.get("initial_level",1)),ChapterCatalog.normalize(departure.get("chapter_id",ChapterCatalog.FIRST))):start_new_run();return
+		if not committed and not Outpost.start_sortie(departure.get("loadout",[]),int(departure.get("carried",0)),int(departure.get("danger",0)),RunDifficulty.from_record(departure),int(departure.get("initial_level",1)),ChapterCatalog.normalize(departure.get("chapter_id",ChapterCatalog.FIRST)),str(departure.get("constellation",""))):start_new_run();return
 		departure=Outpost.data.active.duplicate(true)
 	elif str(data.get("sortie_id",""))!=Outpost.active_id():start_new_run();return
 	_flow_epoch+=1;room_token+=1;_choice_delay_token+=1;_navigation_pending=false
@@ -72,6 +76,7 @@ func _begin_run(data:Dictionary)->void:
 	restart_gate.enabled=true
 	if fresh:
 		GameState.new_run(hash(Outpost.active_id()));GameState.combat_mode="rooms";GameState.sortie_id=Outpost.active_id();GameState.add_coins(int(departure.get("carried",0)))
+		GameState.fate.star=str(departure.get("constellation",""))
 		DepartureLevels.apply(int(departure.get("initial_level",1)))
 		GameState.difficulty=RunDifficulty.from_record(departure)
 		GameState.chapter_id=ChapterCatalog.normalize(departure.get("chapter_id",ChapterCatalog.FIRST))
@@ -421,3 +426,7 @@ func _deliver_pending_chest()->void:
 	plan["delivered"]=true
 	chests_root.add_child(chest)
 	expedition.checkpoint()
+
+func _try_interact_chest()->bool:
+	if is_instance_valid(fate_altar) and fate_altar.try_interact():return true
+	return super._try_interact_chest()

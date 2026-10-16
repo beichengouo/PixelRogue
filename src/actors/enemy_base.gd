@@ -452,6 +452,7 @@ func set_enraged(value: bool) -> void:
 func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source: Node = null, knockback := true) -> void:
 	if _dead:
 		return
+	amount*=FateCatalog.direct_factor(_classify_damage(_source),_source)
 	# 「免疫普攻」：玩家的普通火球有概率被完全挡下；头顶装备 / 技能的伤害照常结算
 	if has_affix(EnemyAffixes.IMMUNE_BASIC) and _is_basic_attack(_source):
 		if Rng.stream().randf() < 0.42:
@@ -507,7 +508,7 @@ func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source:
 		_die()
 
 func _classify_damage(source:Node)->StringName:
-	if source is DamageContext:return (source as DamageContext).owner_kind
+	if source is DamageContext:return &"skill" if (source as DamageContext).owner_kind==&"skill_field" else (source as DamageContext).owner_kind
 	if source is Projectile:
 		if (source as Projectile).is_basic_attack:return &"basic"
 		return &"skill" if DamageContext.player_owned(source) else &"projectile"

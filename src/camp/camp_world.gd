@@ -116,7 +116,7 @@ func _copy_trial_inventory()->void:
 func _on_camp_inventory_changed()->void:
 	_copy_trial_inventory();_sync_preparation();preparation.ready()
 func _sync_preparation()->void:
-	preparation.chapter_id=camp_ui.chapter_id;preparation.loadout=camp_ui.cart.duplicate();preparation.carried=camp_ui.carried;preparation.difficulty=camp_ui.difficulty;preparation.initial_level=camp_ui.initial_level
+	preparation.constellation=camp_ui.constellation;preparation.chapter_id=camp_ui.chapter_id;preparation.loadout=camp_ui.cart.duplicate();preparation.carried=camp_ui.carried;preparation.difficulty=camp_ui.difficulty;preparation.initial_level=camp_ui.initial_level
 	var current_signature:=preparation.signature()
 	if current_signature!=_draft_signature:
 		_draft_signature=current_signature;preparation.confirmed=false;preview_preparation()
@@ -226,7 +226,7 @@ func _depart_camp()->bool:
 	if editor_validation:
 		Effects.text(fx_root,player.position-Vector2(0,50),"编辑器验证：出口通路正常",PixelUi.GOLD,17);player.position=level.room_rect.get_center();return true
 	_departing=true
-	if not Outpost.start_sortie(preparation.loadout,preparation.carried,preparation.danger,preparation.difficulty,preparation.initial_level,preparation.chapter_id):
+	if not Outpost.start_sortie(preparation.loadout,preparation.carried,preparation.danger,preparation.difficulty,preparation.initial_level,preparation.chapter_id,preparation.constellation):
 		_departing=false;preparation.confirmed=false;camp_ui._feedback="出发保存失败或物资变化，请重新确认。";camp_ui.open_facility("prepare");return false
 	var payload:=SaveService.run_info().duplicate(true);_leave_camp();departure_requested.emit(payload);return true
 func _leave_camp()->void:

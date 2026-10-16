@@ -53,7 +53,7 @@ func _physics_process(dt: float) -> void:
 				hit[enemy.get_instance_id()] = true
 				var before: float = enemy.hp
 				var mechanics: EquipmentMechanics=(actor as RoomPlayer).equipment_mechanics
-				enemy.take_damage(damage*mechanics.skill_multiplier(enemy),false,global_position,DamageContext.skill(actor))
+				enemy.take_damage(damage*mechanics.skill_multiplier(enemy),false,global_position,DamageContext.field(actor))
 				if enemy.hp<before:mechanics.on_skill_hit(enemy,true)
 	else:
 		timer -= dt
@@ -71,7 +71,7 @@ func pulse() -> void:
 		if not is_instance_valid(enemy) or enemy._dead or not contains(enemy.global_position) or not room.sight(global_position,enemy.global_position): continue
 		var mechanics: EquipmentMechanics=(actor as RoomPlayer).equipment_mechanics
 		var before: float = enemy.hp
-		enemy.take_damage(damage*(mechanics.skill_multiplier(enemy) if skill_id==&"meteor" else 1.0),false,global_position,DamageContext.skill(actor))
+		enemy.take_damage(damage*(mechanics.skill_multiplier(enemy) if skill_id==&"meteor" else 1.0),false,global_position,DamageContext.field(actor))
 		if skill_id==&"meteor" and enemy.hp<before:mechanics.on_skill_hit(enemy,true)
 		if kind == "bloom": enemy.apply_slow(0.3,1.0)
 	if kind == "bloom":

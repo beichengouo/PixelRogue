@@ -128,8 +128,7 @@ func _release(id:StringName,skill:Dictionary,field_target:Vector2,cast_bonus:flo
 				field.position=field_target; field.remaining=5+GameState.talent_effect(&"living_bloom","领域额外秒数"); field.kind="bloom"
 			room.add_child(field)
 		&"flame_shield":
-			actor.shield_hp=maxf(actor.shield_hp,actor.max_hp*0.18*(1+GameState.talent_effect(&"nature_attune","护盾加成%")/100))
-			actor._shield_time=maxf(actor._shield_time,6); actor._shield_thorns=8
+			actor.equipment_mechanics.grant_player_shield(actor.max_hp*0.18*(1+GameState.talent_effect(&"nature_attune","护盾加成%")/100),6,&"extend");actor._shield_thorns=8
 			for child in actor.get_children():
 				if child is RoomSpellSpriteFX and child.shield_owner!=null:child.queue_free()
 			var shield_fx:=RoomSpellSpriteFX.spawn(actor,Vector2.ZERO,id,76,6,true)

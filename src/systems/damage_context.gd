@@ -8,6 +8,12 @@ static func equipment(actor:Node)->Node:
  return _context(actor,&"equipment")
 static func skill(actor:Node)->Node:
  return _context(actor,&"skill")
+static func field(actor:Node)->Node:
+ var context:=_context(actor,&"skill_field")
+ if context!=null:context.owner_kind=&"skill_field"
+ return context
+static func is_skill(source:Node,actor:Node)->bool:
+ return source is DamageContext and source.get_parent()==actor and source.owner_kind in [&"skill",&"skill_field"]
 static func dot(actor:Node)->Node:
  return _context(actor,&"dot")
 static func spread_burn(actor:Node)->Node:
@@ -31,7 +37,7 @@ static func stable_source(source:Node)->Node:
  return source
 static func player_owned(source:Node)->bool:
  if not is_instance_valid(source):return false
- if source is DamageContext:return source.owner_kind in [&"player",&"skill",&"equipment",&"dot",&"spread_burn",&"basic_splash",&"character_proc"]
+ if source is DamageContext:return source.owner_kind in [&"player",&"skill",&"skill_field",&"equipment",&"dot",&"spread_burn",&"basic_splash",&"character_proc"]
  if source is Player:return true
  if source is RoomProjectile:return source.damage_owner==&"player"
  return false

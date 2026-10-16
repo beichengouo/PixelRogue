@@ -735,6 +735,7 @@ func _build_record() -> void:
 	var scenes: Array[StringName] = [Story.INTRO_FIRST, &"intro_weapon", Story.DEATH_FIRST, &"death_hall", &"death_hall_intro", &"death_reenter"]
 	for wave in range(10, 101, 10): scenes.append(Story.checkpoint_id(wave))
 	if _record_chapter==ChapterCatalog.NEXT:scenes.assign(CityStories.IDS)
+	scenes.append(&"fate_observation")
 	for scene_id in scenes:
 		var unlocked := StoryState.seen(scene_id,_record_character)
 		var scene := Story.get_scene(scene_id,false,_record_character)

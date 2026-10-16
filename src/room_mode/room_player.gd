@@ -95,7 +95,9 @@ func _physics_process(dt: float) -> void:
 		if _dash_collision_layer<0:_dash_collision_layer=collision_layer
 		_normal_dash_phase=true;collision_mask=0;collision_layer=0
 	else:
-		if _normal_dash_phase:_restore_dash_collision()
+		if _normal_dash_phase:
+			if is_instance_valid(equipment_mechanics):equipment_mechanics.fate_runtime.dash_end()
+			_restore_dash_collision()
 		if forest_stepping:
 			if _dash_collision_mask<0:_dash_collision_mask=collision_mask
 			collision_mask=(_dash_collision_mask&~Layers.UNIT_BODY)|Layers.ENEMY

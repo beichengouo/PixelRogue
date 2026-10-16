@@ -14,6 +14,7 @@ var feathers:Array[Dictionary]=[]
 var recent_target:=""
 var room_id:=""
 var cast_serial:=0
+var fate_casts:Dictionary={}
 var hit_serial:=0
 var hit_skill:StringName=&""
 var direct_events:Dictionary={}
@@ -119,7 +120,7 @@ func cast(slot:int)->bool:
 	if id in [&"flame_nova",&"frost_nova"]:
 		destination=field_destination(destination)
 	if GameState.begin_skill_cast(slot)==&"":return false
-	cast_serial+=1;var serial:=cast_serial;var empowered:bool=not bool(skill.ultimate) and prayer>=100
+	cast_serial+=1;var serial:=cast_serial;fate_casts[str(serial)]=FateRuntime.cast_factor();fate_casts.erase(str(serial-64));var empowered:bool=not bool(skill.ultimate) and prayer>=100
 	if empowered:
 		prayer=0;prayer_cycles+=1
 		actor.equipment_mechanics.legendary.holy_empowered()
@@ -202,8 +203,10 @@ func hit(target:EnemyBase,ratio:float,origin:Vector2,serial:int=0,direct:bool=fa
 	if not live(target):return false
 	var hp_before:=target.hp;var shield_before:=target.affix_shield
 	var amount:=attack()*ratio*bonus
-	if direct:amount*=actor.equipment_mechanics.skill_multiplier(target)
-	target.take_damage(amount,false,origin,DamageContext.skill(actor) if direct else DamageContext.character_proc(actor),false)
+	if direct:
+		amount*=actor.equipment_mechanics.skill_multiplier(target)
+		if skill!=&"frost_nova":amount*=float(fate_casts.get(str(serial),1.0))
+	target.take_damage(amount,false,origin,(DamageContext.field(actor) if skill==&"frost_nova" else DamageContext.skill(actor)) if direct else DamageContext.character_proc(actor),false)
 	var effective:=is_instance_valid(target) and (target.hp<hp_before or target.affix_shield<shield_before)
 	if effective and direct:
 		hit_serial=serial;hit_skill=skill;actor.equipment_mechanics.on_skill_hit(target,true);hit_skill=&""
@@ -355,7 +358,7 @@ func _tick_feathers()->void:
 			feather.ready=clock+2;feather_at(origin,target,.3*float(feather.get("bonus",1)),0,1 if feather.enhanced else 0)
 func shield(ratio:float,seconds:float)->bool:
 	var value:=actor.max_hp*ratio
-	if value<actor.shield_hp:return false
+	if value*FateCatalog.shield_factor()<actor.shield_hp:return false
 	actor.equipment_mechanics.grant_player_shield(value,seconds);return true
 func on_shield_absorbed(amount:float)->void:
 	if amount<=0:return
