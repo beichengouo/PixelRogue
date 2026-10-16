@@ -12,6 +12,8 @@ var _stuck:=0.0
 var _ignored:Dictionary={}
 var _loot_target:WeakRef
 var _loot_seconds:=0.0
+var _exit_last_position:=Vector2.INF
+var _exit_stalled:=0.0
 
 func _ready()->void:
 	process_mode=Node.PROCESS_MODE_ALWAYS
@@ -48,7 +50,7 @@ func _process(delta:float)->void:
 		return
 	if get_tree().paused or main.player.extraction_controls_locked():_clear_controls();return
 	var actor:RoomPlayer=main.player
-	if _last_room!=str(main.graph.current):_last_room=str(main.graph.current);_ignored.clear();_stuck=0;_last_position=actor.global_position;_loot_target=null;_loot_seconds=0
+	if _last_room!=str(main.graph.current):_last_room=str(main.graph.current);_ignored.clear();_stuck=0;_last_position=actor.global_position;_loot_target=null;_loot_seconds=0;_exit_last_position=Vector2.INF;_exit_stalled=0
 	_stuck=_stuck+step if actor.global_position.distance_to(_last_position)<2 and not actor.movement_override.is_zero_approx() else 0
 	_last_position=actor.global_position
 	if _gear_elapsed>=1:_gear_elapsed=0;_equip_upgrades()
@@ -73,7 +75,7 @@ func _process(delta:float)->void:
 		if chest is Chest and (not chest._landed or chest._opening):return
 	for delivery in main.special_rooms.state.get("deliveries",[]):
 		if not bool(delivery.delivered):return
-	_go_to_next_room()
+	_go_to_next_room(step)
 
 func _combat(target:EnemyBase)->void:
 	var actor:RoomPlayer=main.player;var offset:=target.global_position-actor.global_position;var distance:=offset.length()
@@ -118,25 +120,57 @@ func _collect_room_loot(delta:float)->bool:
 	if _loot_seconds>8:_ignored[target.get_instance_id()]=true;_loot_target=null;return true
 	if target is Chest and target.in_range:target.try_interact();return true
 	actor.movement_override=main.level.path_direction(actor.global_position,main.level.nearest_clear(target.global_position,12),12,false)
+	if actor.movement_override.is_zero_approx() and _loot_seconds>1.5 and actor.global_position.distance_to(target.global_position)>40:
+		_ignored[target.get_instance_id()]=true;_loot_target=null
 	return true
 
-func _go_to_next_room()->void:
+func _frontier_exits()->Array[String]:
 	var graph:RoomGraph=main.graph
-	var pending:Array=[{"id":graph.current,"first":""}];var seen:Dictionary={graph.current:true};var destination:=""
+	var pending:Array=[{"id":graph.current,"first":""}];var seen:Dictionary={graph.current:true};var exits:Array[String]=[]
 	var index:=0
 	while index<pending.size():
 		var entry:Dictionary=pending[index];index+=1
-		if entry.id!=graph.current and not bool(graph.rooms.get(entry.id,{}).get("visited",true)):destination=str(entry.first);break
+		var record:Dictionary=graph.rooms.get(entry.id,{})
+		if entry.id!=graph.current and (not bool(record.get("visited",true)) or not bool(record.get("cleared",false))):
+			if not str(entry.first) in exits:exits.append(str(entry.first))
+			continue
 		for id in graph.rooms.get(entry.id,{}).get("doors",[]):
-			if not graph.rooms.has(id) or seen.has(id):continue
+			if not graph.rooms.has(id) or seen.has(id) or RoomGraph.cell(str(id))-RoomGraph.cell(str(entry.id)) not in RoomGraph.DIRECTIONS:continue
 			seen[id]=true;pending.append({"id":id,"first":id if entry.id==graph.current else entry.first})
-	if destination.is_empty():return
-	var direction:=RoomGraph.cell(destination)-RoomGraph.cell(graph.current)
-	var point:Vector2=main.level.door_point(direction,0)
-	var approach:=point-Vector2(direction)*30
+	return exits
+
+func _go_to_next_room(step:=0.15)->void:
+	var graph:RoomGraph=main.graph
+	var exits:=_frontier_exits()
+	if exits.is_empty():
+		var protected:=graph._ensure_frontier()
+		if not protected.is_empty():
+			graph.prune_rooms(protected);Outpost.request_checkpoint();exits=_frontier_exits()
+	main.level.sync_door_links(graph.rooms[graph.current])
 	var actor:RoomPlayer=main.player
-	actor.movement_override=(point-actor.global_position).normalized() if actor.global_position.distance_to(approach)<42 else main.level.path_direction(actor.global_position,approach,12,false)
-	if _stuck>3:actor.movement_override=main.level.path_direction(actor.global_position,main.level.nearest_clear(approach,12),12,false)
+	_exit_stalled=_exit_stalled+step if actor.global_position.distance_to(_exit_last_position)<2 else 0.0
+	_exit_last_position=actor.global_position
+	for destination in exits:
+		var direction:=RoomGraph.cell(destination)-RoomGraph.cell(graph.current)
+		var point:Vector2=main.level.door_point(direction)
+		if main.level.door_at(actor.global_position)==direction:actor.movement_override=Vector2.ZERO;return
+		# Route into the real trigger disk, not to a wall-edge/grid approximation.
+		var side:=Vector2(direction).orthogonal()
+		var candidates:Array[Vector2]=[point,point-Vector2(direction)*10,point+side*14,point-side*14,point-Vector2(direction)*18+side*14,point-Vector2(direction)*18-side*14]
+		var nearest:Vector2=main.level.nearest_clear(point,12)
+		if nearest.distance_to(point)<32:candidates.append(nearest)
+		for goal in candidates:
+			if not main.level.body_clear(goal,12):continue
+			var motion:Vector2=main.level.path_direction(actor.global_position,goal,12,false)
+			if motion.is_zero_approx():continue
+			actor.movement_override=motion
+			if _exit_stalled>1.0:
+				var detour:Vector2=main.level.crowd_detour(actor.global_position,motion,12,actor)
+				if not detour.is_zero_approx():actor.movement_override=detour
+			if _exit_stalled>2.0 and actor._dash_cd<=0:
+				actor.request_dash_direction(motion);_exit_stalled=0.0
+			return
+	actor.movement_override=Vector2.ZERO
 
 func _advance_screen()->void:
 	if main.choice_ui.is_open() and UIFlow.is_top(main.choice_ui):

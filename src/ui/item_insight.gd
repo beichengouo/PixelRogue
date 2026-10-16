@@ -92,11 +92,11 @@ static func relic_increment(item:Dictionary,count:int=-1)->String:
 	var before:float=[0.0,1.0,1.5,1.75][clampi(count,0,3)]
 	var after:float=[0.0,1.0,1.5,1.75][clampi(count+1,0,3)]
 	return "同名已持有%d件 · 再获得1件增加基础机制数值的%.0f%%（合计%.0f%% → %.0f%%）；次数、目标数和冷却不增加。"%[count,(after-before)*100,before*100,after*100]
-static func append_story(parent:Control,item:Dictionary,font_size:=17)->void:
+static func append_story(parent:Control,item:Dictionary,font_size:=17,expanded:=false)->void:
 	var text:=ItemDB.flavor_text(item)
 	if text.is_empty():return
-	var toggle:=PixelUi.compact_button("背景故事 ▸",font_size);toggle.name="ItemLoreToggle";toggle.set_meta("item_lore_toggle",true);parent.add_child(toggle)
-	var story:=PixelUi.label(text,font_size,PixelUi.MUTED);story.name="ItemLoreText";story.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;story.size_flags_horizontal=Control.SIZE_EXPAND_FILL;story.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(story);story.hide()
+	var toggle:=PixelUi.compact_button("背景故事 ▾" if expanded else "背景故事 ▸",font_size);toggle.name="ItemLoreToggle";toggle.set_meta("item_lore_toggle",true);parent.add_child(toggle)
+	var story:=PixelUi.label(text,font_size,PixelUi.MUTED);story.name="ItemLoreText";story.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;story.size_flags_horizontal=Control.SIZE_EXPAND_FILL;story.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(story);story.visible=expanded
 	toggle.pressed.connect(func()->void:story.visible=not story.visible;toggle.text="背景故事 ▾" if story.visible else "背景故事 ▸")
 
 static func talent_requirement(branch:StringName)->String:

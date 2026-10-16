@@ -259,6 +259,7 @@ func clear_hostile_effects()->void:
 
 func _on_wave_cleared(progress:int)->void:
 	if not GameState.run_active or not _reward_pending.is_empty() or _reward_wave==progress:return
+	level.sync_door_links(graph.rooms[graph.current])
 	if expedition.loot is RoomLootDirector:expedition.loot.ensure_room_material()
 	_reward_pending={"progress":progress,"remaining":RoomFlowConfig.REWARD_DELAY,"epoch":_flow_epoch,"token":room_token}
 	expedition.checkpoint()

@@ -30,23 +30,11 @@ static func offers(batch:int, nonce:int, seed:int) -> Array:
 		if (ItemDB.is_equippable(item) or ItemDB.is_usable(item)) and (ItemDB.in_source(item,&"shop") or ItemDB.in_source(item,&"camp_shop")):pool.append(item)
 	var result:Array=[]
 	while result.size()<8 and not pool.is_empty():
-		var roll=rng.randi_range(0,99)
-		var quality=0
-		var limit=0
-		for i in WEIGHTS.size():
-			limit+=WEIGHTS[i]
-			if roll<limit:quality=i;break
-		var matches:Array[int]=[]
-		for i in pool.size():
-			if int(pool[i].rarity)==quality:matches.append(i)
-		if matches.is_empty():
-			var nearest=4
-			for item in pool:nearest=mini(nearest,absi(int(item.rarity)-quality))
-			for i in pool.size():
-				if absi(int(pool[i].rarity)-quality)==nearest:matches.append(i)
-		var pick=matches[rng.randi_range(0,matches.size()-1)]
-		result.append({"id":str(pool[pick].id),"sold":false})
-		pool.remove_at(pick)
+		var chosen:=LootSelection.pick(pool,WEIGHTS,rng)
+		if chosen.is_empty():break
+		result.append({"id":str(chosen.id),"sold":false})
+		for i in range(pool.size()-1,-1,-1):
+			if pool[i].id==chosen.id:pool.remove_at(i)
 	return result
 static func price(item:Dictionary) -> Dictionary:
 	var id=str(item.id)

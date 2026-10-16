@@ -248,7 +248,7 @@ func _begin_rush_boss()->void:
 	phase=Phase.PREPARE;time_left=.9;EventBus.wave_started.emit(wave,1);Outpost.request_checkpoint()
 
 func start_rest()->void:
-	phase=Phase.REST;room_record.rewarded=true;room.doors_open=true;room.queue_redraw()
+	phase=Phase.REST;room_record.rewarded=true;room.sync_door_links(room_record);room.doors_open=true;room.queue_redraw()
 	EventBus.rest_started.emit(0.0)
 func skip_rest()->void:pass
 func next_wave()->void:pass

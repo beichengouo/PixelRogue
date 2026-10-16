@@ -2110,7 +2110,6 @@
       "kind": "weapon",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "sylphiette",
       "icon": "tex:res://assets/legendary_sets_v01/icons/staff_cloud_radiance.png",
       "flat": {},
@@ -2151,7 +2150,6 @@
       "kind": "armor",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "sylphiette",
       "icon": "tex:res://assets/legendary_sets_v01/icons/armor_cloud_rites.png",
       "flat": {
@@ -2180,7 +2178,6 @@
       "kind": "accessory",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "sylphiette",
       "icon": "tex:res://assets/legendary_sets_v01/icons/accessory_eternal_ring.png",
       "flat": {
@@ -2210,7 +2207,6 @@
       "kind": "armor",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "xixifu",
       "icon": "tex:res://assets/legendary_sets_v01/icons/armor_dusk_mantle.png",
       "flat": {
@@ -2239,7 +2235,6 @@
       "kind": "accessory",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "xixifu",
       "icon": "tex:res://assets/legendary_sets_v01/icons/accessory_companion_bells.png",
       "flat": {},
@@ -2267,7 +2262,6 @@
       "kind": "armor",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "ilyua",
       "icon": "tex:res://assets/legendary_sets_v01/icons/armor_lakeleaf_hunt.png",
       "flat": {
@@ -2300,7 +2294,6 @@
       "kind": "accessory",
       "rarity": 3,
       "cost": 60,
-      "weight": 0.25,
       "requires_character": "ilyua",
       "icon": "tex:res://assets/legendary_sets_v01/icons/accessory_moonwind_chime.png",
       "flat": {
@@ -2330,7 +2323,6 @@
       "kind": "weapon",
       "rarity": 2,
       "cost": 40,
-      "weight": 0.6,
       "icon": "tex:res://assets/content_v05/items/staff_tide_prayer.png",
       "flat": {},
       "mult": {
@@ -2373,7 +2365,6 @@
       "kind": "weapon",
       "rarity": 2,
       "cost": 40,
-      "weight": 0.6,
       "icon": "tex:res://assets/content_v05/items/staff_shadow_stitch.png",
       "flat": {},
       "mult": {
@@ -2416,7 +2407,6 @@
       "kind": "weapon",
       "rarity": 2,
       "cost": 40,
-      "weight": 0.6,
       "icon": "tex:res://assets/content_v05/items/bow_willow.png",
       "flat": {},
       "mult": {
@@ -2459,7 +2449,6 @@
       "kind": "armor",
       "rarity": 2,
       "cost": 40,
-      "weight": 0.6,
       "icon": "tex:res://assets/content_v05/items/armor_oath_trace.png",
       "flat": {
         "max_hp": 30
@@ -2489,7 +2478,6 @@
       "kind": "accessory",
       "rarity": 2,
       "cost": 40,
-      "weight": 0.6,
       "icon": "tex:res://assets/content_v05/items/accessory_silver_return.png",
       "flat": {},
       "mult": {
@@ -2518,7 +2506,6 @@
       "kind": "accessory",
       "rarity": 2,
       "cost": 40,
-      "weight": 0.6,
       "icon": "tex:res://assets/content_v05/items/accessory_wind_listen.png",
       "flat": {},
       "mult": {
@@ -2547,7 +2534,6 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "weight": 0.8,
       "icon": "tex:res://assets/content_v05/items/relic_late_clock.png",
       "flat": {},
       "mult": {},
@@ -2573,7 +2559,6 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "weight": 0.8,
       "icon": "tex:res://assets/content_v05/items/relic_mist_dew.png",
       "flat": {},
       "mult": {},
@@ -2599,7 +2584,6 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "weight": 0.8,
       "icon": "tex:res://assets/content_v05/items/relic_half_star.png",
       "flat": {},
       "mult": {},
@@ -2625,7 +2609,6 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "weight": 0.8,
       "icon": "tex:res://assets/content_v05/items/relic_lamp_tassel.png",
       "flat": {},
       "mult": {},
@@ -2651,7 +2634,6 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "weight": 0.8,
       "icon": "tex:res://assets/content_v05/items/relic_broken_verse.png",
       "flat": {},
       "mult": {},
@@ -2677,7 +2659,6 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "weight": 0.8,
       "icon": "tex:res://assets/content_v05/items/relic_leaf_page.png",
       "flat": {},
       "mult": {},

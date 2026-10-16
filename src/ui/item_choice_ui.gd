@@ -346,7 +346,9 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	var tag_row := UiFactory.hbox(8)
 	tag_row.alignment = BoxContainer.ALIGNMENT_CENTER
 	column.add_child(tag_row)
-	tag_row.add_child(PixelUi.chip("祭坛誓约" if item.has("altar_key") else ItemDB.kind_label(item), ItemDB.kind_color(item), 14))
+	if item.has("altar_key"):tag_row.add_child(PixelUi.chip("祭坛誓约",ItemDB.kind_color(item),14))
+	elif ItemDB.is_equippable(item) or ItemDB.is_relic(item):tag_row.add_child(RewardCategoryWordmark.make(item))
+	else:tag_row.add_child(PixelUi.chip(ItemDB.kind_label(item),ItemDB.kind_color(item),14))
 	if not item.has("altar_key"):tag_row.add_child(RarityWordmark.make(rarity,32))
 
 	var name_label := PixelUi.label(str(item["name"]), 20, FACE_INK)
@@ -377,7 +379,7 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	desc.custom_minimum_size.x = 220
 	desc.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	details.add_child(desc)
-	ItemInsight.append_story(details,item)
+	ItemInsight.append_story(details,item,17,true)
 	for text in details.find_children("*","Label",true,false):text.add_theme_color_override("font_color",FACE_INK)
 	for button in details.find_children("*","Button",true,false):
 		for state in ["font_color","font_hover_color","font_pressed_color","font_focus_color"]:button.add_theme_color_override(state,FACE_GOLD)

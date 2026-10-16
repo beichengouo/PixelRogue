@@ -110,7 +110,7 @@ func enter(id: String) -> Dictionary:
 	_room_serial += 1; record.retention_order = _room_serial
 	if record.visited:
 		_ensure_rush_offer()
-		prune_rooms();return {"fresh":false, "created":[]}
+		prune_rooms(_ensure_frontier());return {"fresh":false, "created":[]}
 	record.visited = true
 	if is_combat(str(record.kind)):
 		encounters += 1
@@ -145,9 +145,9 @@ func enter(id: String) -> Dictionary:
 		if kind=="boss_rush":rush_offered=true
 		if record.kind=="spawn" and kind=="tavern":rooms[new_id].starting_tavern=true
 		_connect(id, new_id); created.append(new_id)
-	_ensure_frontier()
+	var frontier_path:=_ensure_frontier()
 	_ensure_rush_offer()
-	prune_rooms()
+	prune_rooms(frontier_path)
 	return {"fresh":true, "created":created.filter(func(new_id:String)->bool:return rooms.has(new_id))}
 
 func rush_unlocked()->bool:
@@ -176,16 +176,28 @@ func _ensure_rush_offer()->void:
 			if rooms.has(id):continue
 			rooms[id]=_allocate(at,"boss_rush","");_connect(origin,id);rush_offered=true;return
 
-func _ensure_frontier() -> void:
-	for record in rooms.values():
-		if not record.visited: return
-	for id in rooms:
-		if not rooms[id].cleared: continue
+func _ensure_frontier() -> Array[String]:
+	# Retained bosses and pruned branches may be disconnected. Only a frontier
+	# reachable through cleared rooms counts as a way forward from this room.
+	if not rooms.has(current) or not bool(rooms[current].cleared):return []
+	var origins:Array[String]=[current];var paths:Dictionary={current:[current]}
+	var cursor:=0
+	while cursor<origins.size():
+		var origin:=origins[cursor];cursor+=1
+		for other in rooms[origin].doors:
+			var id:=str(other)
+			if not rooms.has(id) or cell(id)-cell(origin) not in DIRECTIONS:continue
+			if not bool(rooms[id].visited) or not bool(rooms[id].cleared):return []
+			if not paths.has(id):
+				paths[id]=paths[origin].duplicate();paths[id].append(id);origins.append(id)
+	for id in origins:
 		for direction in DIRECTIONS:
 			var at: Vector2i = cell(id) + direction
 			if not rooms.has(key(at)):
 				rooms[key(at)] = _allocate(at, "normal", "")
-				_connect(id,key(at)); return
+				_connect(id,key(at))
+				var protected:Array[String]=[];protected.assign(paths[id]);protected.append(key(at));return protected
+	return []
 
 func clear_current(readings:int=0) -> bool:
 	var record: Dictionary = rooms[current]
@@ -195,8 +207,8 @@ func clear_current(readings:int=0) -> bool:
 	cleared_count += 1
 	altar_pacing.clears=int(altar_pacing.clears)+1
 	if record.kind == "boss" and not defeated.has(record.boss): defeated.append(record.boss)
-	_ensure_frontier()
-	var protected:=_ensure_altar_offer(readings)
+	var protected:=_ensure_frontier()
+	protected.append_array(_ensure_altar_offer(readings))
 	prune_rooms(protected)
 	return true
 

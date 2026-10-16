@@ -387,11 +387,18 @@ func _load_room_finish(data:Dictionary,layout:Dictionary)->void:
 	_load_room_finish_end()
 
 func _load_room_finish_begin(data:Dictionary)->void:
-	door_directions.clear()
-	for id in data.get("doors",[]): door_directions.append(RoomGraph.cell(str(id))-RoomGraph.cell(str(data.get("id","0,0"))))
+	sync_door_links(data)
 	doors_open = bool(data.get("cleared",false))
 	door_phase=1.0 if doors_open else 0.0
 	_build_service_decor(str(data.get("kind","normal")))
+
+func sync_door_links(data:Dictionary)->void:
+	var directions:Array[Vector2i]=[]
+	for id in data.get("doors",[]):
+		var direction:=RoomGraph.cell(str(id))-RoomGraph.cell(str(data.get("id","0,0")))
+		if direction in RoomGraph.DIRECTIONS and not direction in directions:directions.append(direction)
+	if directions==door_directions:return
+	door_directions=directions;scene_navigation.clear();queue_redraw()
 
 func _load_room_finish_end()->void:
 	_refresh_navigation()
