@@ -811,11 +811,13 @@ func _build_item_catalogue(body:VBoxContainer)->void:
 	for entry in [["", "全部"], ["weapon", "武器"], ["armor", "护甲"], ["accessory", "饰品"], ["buff", "遗物"], ["potion", "药剂"]]:
 		var kind := str(entry[0])
 		var tab := PixelUi.compact_button(str(entry[1]) + (" ✓" if _codex_kind == kind else ""), 17)
+		if str(entry[1])=="遗物":RewardCategoryWordmark.decorate_button(tab,"遗物",28,"✓" if _codex_kind==kind else "")
 		tabs.add_child(tab)
 		tab.pressed.connect(func() -> void:
 			_codex_kind = kind
 			_render_view(View.MONSTERS))
 	var detail := PixelUi.label("选择道具查看效果与获取途径", 18)
+	var detail_category:=RewardCategoryWordmark.for_category("equipment",28);body.add_child(detail_category);detail_category.hide()
 	detail.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	detail.custom_minimum_size.y = 100
 	var detail_scroll := ScrollContainer.new()
@@ -848,7 +850,10 @@ func _build_item_catalogue(body:VBoxContainer)->void:
 		button.add_child(row)
 		var choose := func() -> void:
 			_codex_selected = str(item.id)
-			detail.text = "%s · %s\n%s\n%s" % [item.name, ItemDB.kind_label(item), item.desc, "需装备后生效" if ItemDB.is_equippable(item) else "背包使用" if ItemDB.is_usable(item) else "获得后立即生效"]
+			detail_category.visible=ItemDB.is_equippable(item) or ItemDB.is_relic(item)
+			if detail_category.visible:detail_category.set_category("relic" if ItemDB.is_relic(item) else "equipment")
+			var subtype:="" if ItemDB.is_relic(item) else " · "+ItemDB.kind_label(item)
+			detail.text = "%s%s\n%s\n%s" % [item.name, subtype, item.desc, "需装备后生效" if ItemDB.is_equippable(item) else "背包使用" if ItemDB.is_usable(item) else "获得后立即生效"]
 			for node in list.get_children(): node.modulate = Color.WHITE if node == button else Color(0.85, 0.88, 0.92)
 		button.pressed.connect(choose)
 		if str(item.id) == _codex_selected: choose.call()
@@ -868,7 +873,8 @@ func _build_item_row(item: Dictionary) -> Control:
 
 	var kind := String(ItemDB.KIND_NAMES.get(item.get("kind", &"buff"), "?"))
 	var rarity := ItemDB.rarity_color(int(item["rarity"]))
-	row.add_child(PixelUi.label(kind, 15, rarity))
+	if ItemDB.is_equippable(item) or ItemDB.is_relic(item):row.add_child(RewardCategoryWordmark.make(item,26))
+	if kind!="遗物":row.add_child(PixelUi.label(kind, 15, rarity))
 	row.add_child(RarityWordmark.make(int(item.rarity),30))
 
 	row.add_child(UiFactory.spacer())
@@ -891,6 +897,7 @@ func _build_monsters()->void:
 	for category in [["items","装备与遗物"],["monsters","怪物与首领"],["affixes","怪物词条"],["allies","友方雇佣单位"]]:
 		var id: String=category[0]
 		var button := PixelUi.compact_button(str(category[1])+(" ✓" if _monster_category==id else ""),18)
+		if id=="items":RewardCategoryWordmark.decorate_pair(button,28)
 		filters.add_child(button);button.pressed.connect(func()->void:_monster_category=id;_render_view(View.MONSTERS))
 	var body:=_archive_panel()
 	if _monster_category=="items":

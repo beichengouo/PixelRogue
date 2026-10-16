@@ -234,6 +234,8 @@ static func slot_button(tint := LINE, size := 48.0) -> Button:
 static func tab_button(text: String, active: bool, size := 17) -> Button:
 	var node := compact_button(text, size)
 	apply_tab_style(node, active)
+	if text in ["装备","遗物"]:RewardCategoryWordmark.decorate_button(node,text,30)
+	elif text=="装备与遗物":RewardCategoryWordmark.decorate_pair(node)
 	return node
 
 static func apply_tab_style(node: Button, active: bool) -> void:

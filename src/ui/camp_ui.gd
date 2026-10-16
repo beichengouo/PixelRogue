@@ -641,6 +641,7 @@ func _shop()->void:
 		var content=UiFactory.vbox(6);card.add_child(content)
 		var title=UiFactory.hbox(10);content.add_child(title);var icon=UiFactory.item_icon(item,44);title.add_child(icon);BoundEquipment.badge(icon,item)
 		var name_label=PixelUi.label(str(item.name),18,ItemDB.rarity_color(int(item.rarity)));name_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;title.add_child(name_label);title.add_child(RarityWordmark.make(int(item.rarity),32))
+		if ItemDB.is_equippable(item) or ItemDB.is_relic(item):title.add_child(RewardCategoryWordmark.make(item,28))
 		var desc=PixelUi.label(str(item.desc),16);desc.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;desc.custom_minimum_size.x=480;content.add_child(desc)
 		if BoundEquipment.is_bound(item):
 			var binding=PixelUi.label(BoundEquipment.description(),14,Color("a9f5d4"));binding.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;content.add_child(binding)

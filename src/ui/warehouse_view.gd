@@ -15,6 +15,7 @@ var _uses_label:Label
 var _uses_open:=""
 var _detail:Label
 var _detail_quality:RarityWordmark
+var _detail_category:RewardCategoryWordmark
 var _quantity:SpinBox
 var _sell:Button
 var _expand:Button
@@ -73,7 +74,9 @@ func _ready()->void:
 		var count=PixelUi.label("",14);count.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE);count.offset_top=-21;count.offset_right=-4;count.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;count.mouse_filter=Control.MOUSE_FILTER_IGNORE;b.add_child(count);b.set_meta("count_label",count)
 		var mark=PixelUi.label("",12,PixelUi.GOLD);mark.position=Vector2(4,3);mark.mouse_filter=Control.MOUSE_FILTER_IGNORE;b.add_child(mark);b.set_meta("mark_label",mark)
 	var detail=UiFactory.vbox(10);detail.custom_minimum_size.x=250;row.add_child(detail)
-	_detail_quality=RarityWordmark.make(0,36);_detail_quality.visible=false;detail.add_child(_detail_quality)
+	var detail_head:=UiFactory.hbox(8);detail.add_child(detail_head)
+	_detail_quality=RarityWordmark.make(0,36);_detail_quality.visible=false;detail_head.add_child(_detail_quality)
+	_detail_category=RewardCategoryWordmark.for_category("equipment",32);detail_head.add_child(_detail_category);_detail_category.hide()
 	_detail=PixelUi.label("选择一个物品查看详情",18);_detail.custom_minimum_size.x=240;_detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;detail.add_child(_detail)
 	_uses=PixelUi.compact_button("查看材料用途 ▾",17);detail.add_child(_uses)
 	_uses_label=PixelUi.label("",16,PixelUi.MUTED);_uses_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_uses_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;detail.add_child(_uses_label)
@@ -181,6 +184,8 @@ func _refresh_detail()->void:
 	var price=ExpeditionData.sale_value(item)
 	_detail_quality.visible=not item.is_empty()
 	if not item.is_empty():_detail_quality.set_quality(int(item.rarity))
+	_detail_category.visible=not item.is_empty() and (ItemDB.is_equippable(item) or ItemDB.is_relic(item))
+	if _detail_category.visible:_detail_category.set_category("relic" if ItemDB.is_relic(item) else "equipment")
 	_detail.text="选择物品查看详情" if item.is_empty() else "%s\n\n%s\n\n仓库数量 %d%s" % [str(item.name),str(item.desc),count,"\n出售单价 %d 金" % price if price>0 else "\n兑换材料 · 保留用于兑换"]
 	if BoundEquipment.is_bound(item):_detail.text+="\n"+BoundEquipment.description()
 	if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(item.get("id",""))):_detail.text=_detail.text.replace("兑换材料 · 保留用于兑换","首领素材 · 不可出售或购买")

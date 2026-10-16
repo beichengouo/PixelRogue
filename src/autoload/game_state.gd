@@ -4,7 +4,7 @@ extends Node
 ## 做成 autoload 的好处：重开一局只要调 new_run()，
 ## 所有系统读到的都是最新状态，不需要在节点之间传来传去。
 ##
-## 三道「钱」：coins（金币，商店用）、keys（钥匙，开宝箱用）、
+## coins 是随身金币；keys 仅为退役存档兼容字段。
 ## items（背包里的东西，包含还没装备的装备）。
 
 ## 玩家基础属性。改这里就能改手感；道具是在这个基础上做加法 / 乘法。
@@ -243,8 +243,8 @@ func gain_exp(amount: float) -> void:
 	if levels_gained <= 0:
 		EventBus.player_stats_changed.emit()
 		return
-	# 每级成长属性，每逢 3 的倍数等级获得天赋点
-	talent_points += int(level / 3) - int((level - levels_gained) / 3)
+	# 每升一级获得一点天赋点，跨多级时逐级累计。
+	talent_points += levels_gained
 	_reset_stats()
 	if player != null and is_instance_valid(player):
 		if player.has_method("on_level_up"):
@@ -754,19 +754,10 @@ func spend_coins(amount: int) -> bool:
 	return true
 
 
-func add_keys(amount: int) -> void:
-	if amount == 0:
-		return
-	keys = maxi(0, keys + amount)
-	EventBus.keys_changed.emit(keys)
-
-
-func spend_key() -> bool:
-	if keys <= 0:
-		return false
-	keys -= 1
-	EventBus.keys_changed.emit(keys)
-	return true
+## Legacy callers cannot create or spend a retired currency.
+func add_keys(_amount:int)->void:
+	keys=0
+func spend_key()->bool:return true
 
 
 ## ---------------- 装备 ----------------
@@ -1034,7 +1025,7 @@ func snapshot() -> Dictionary:
 		"kit_version": 2,
 		"map_version": RoomGraph.VERSION,
 		"environment": player.level.environment_snapshot() if is_instance_valid(player) and player.level != null else {},
-		"level": level, "exp": exp, "talent_points": talent_points,
+		"level": level, "exp": exp, "talent_points": talent_points, "talent_progression":2,
 		"talents": talents.duplicate(), "mp": mp,
 		"unlocked_skills": unlocked_skills.duplicate(), "learned_skills": learned_skills.duplicate(),
 		"ultimate_skill": String(ultimate_skill), "skill_cooldowns": skill_cooldowns_by_id.duplicate(),
@@ -1113,7 +1104,8 @@ func restore(snapshot_data: Dictionary) -> void:
 	items.clear()
 	level = clampi(int(snapshot_data.get("level", 1)), 1, MAX_LEVEL)
 	exp = maxf(0.0, float(snapshot_data.get("exp", 0.0)))
-	talent_points = maxi(0, int(snapshot_data.get("talent_points", 1 + int(level / 3))))
+	talent_points = maxi(0, int(snapshot_data.get("talent_points", level if int(snapshot_data.get("talent_progression",1))>=2 else 1+int(level/3))))
+	if int(snapshot_data.get("talent_progression",1))<2:talent_points+=maxi(0,level-1-int(level/3))
 	talents.clear()
 	var saved_talents: Dictionary = snapshot_data.get("talents", {})
 	if Characters.current_id()==&"sylphiette":
@@ -1163,7 +1155,7 @@ func restore(snapshot_data: Dictionary) -> void:
 	_clear_equipment()
 	coins = int(snapshot_data.get("coins", 0))
 	auto_coin_remainder=clampi(int(snapshot_data.get("auto_coin_remainder",0)),0,1)
-	keys = int(snapshot_data.get("keys", 0))
+	keys = 0 # Ignore the retired currency in old checkpoints.
 	wave = maxi(1,int(snapshot_data.get("wave", 1)))
 	active_play_seconds = _saved_seconds(snapshot_data.get("active_play_seconds",0.0))
 	var saved_chapter:Variant = snapshot_data.get("first_chapter_seconds",-1.0)

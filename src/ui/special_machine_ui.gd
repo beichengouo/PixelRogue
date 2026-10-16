@@ -16,7 +16,7 @@ func _ready()->void:
 	column.add_child(PixelUi.title(str(controller.TITLES[machine]),28))
 	var rules:=PixelUi.label("每间房每台装置只能游玩一次。",18);rules.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;column.add_child(rules)
 	if machine=="machine_wheel":
-		rules.text+="\n固定投入500金币。五种结果各20%：适用传说武器、1000金币、三个需钥匙的宝箱、五把钥匙、谢谢惠顾。"
+		rules.text+="\n固定投入500金币。五种结果各20%：适用传说武器、1000金币、三个宝箱、500金币、谢谢惠顾。"
 		_wheel=TextureRect.new();_wheel.texture=SpecialRoomArt.room_icon("game");_wheel.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;_wheel.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;_wheel.custom_minimum_size=Vector2(120,110);column.add_child(_wheel)
 	elif machine=="machine_lottery":
 		rules.text+="\n输入八位数字，按相同位置对号；每猜中一位，获得投入额的50%。最低投入50金币，最高八位全部命中为四倍。"

@@ -54,6 +54,8 @@ func _process(delta:float)->void:
 	_stuck=_stuck+step if actor.global_position.distance_to(_last_position)<2 and not actor.movement_override.is_zero_approx() else 0
 	_last_position=actor.global_position
 	if _gear_elapsed>=1:_gear_elapsed=0;_equip_upgrades()
+	if main.special_rooms.chase_running():
+		_evade_shadow();return
 	var enemies:=actor.equipment_mechanics.nearest_enemies(actor.global_position,1600,100)
 	# A blocked enemy still needs to be approached, even without line of fire.
 	var target:EnemyBase=enemies[0] if not enemies.is_empty() else null
@@ -68,6 +70,13 @@ func _process(delta:float)->void:
 		_combat(target)
 		return
 	actor.movement_override=Vector2.ZERO
+	if main.expansion.event_pending():
+		var polygon:PackedVector2Array=main.level.scene_polygons.get("event_relic",PackedVector2Array())
+		if polygon.size()>=3:
+			var boundary:=RoomSceneGeometry.closest_boundary_point(actor.global_position,polygon)
+			if actor.global_position.distance_to(boundary)<=78:main.expansion.open_event()
+			else:actor.movement_override=main.level.path_direction(actor.global_position,main.level.nearest_clear(boundary.move_toward(actor.global_position,20),12),12,false)
+		return
 	if not main.safe_room():return
 	if _collect_room_loot(step):return
 	# Give scheduled deliveries and opened chest bursts time to resolve.
@@ -76,6 +85,22 @@ func _process(delta:float)->void:
 	for delivery in main.special_rooms.state.get("deliveries",[]):
 		if not bool(delivery.delivered):return
 	_go_to_next_room(step)
+
+func _evade_shadow()->void:
+	var actor:RoomPlayer=main.player;var pursuer:RoomShadowChaser=main.special_rooms.shadow
+	actor.aim_override=Vector2.ZERO;actor.movement_override=Vector2.ZERO
+	if not is_instance_valid(pursuer):return
+	var best:=-INF;var away:=actor.global_position-pursuer.global_position
+	for index in 16:
+		var direction:=Vector2.RIGHT.rotated(index*TAU/16)
+		var goal:Vector2=main.level.nearest_clear(actor.global_position+direction*130,12)
+		if goal.distance_to(actor.global_position)<45 or not main.level.segment_clear(actor.global_position,goal,12,false):continue
+		var score:float=goal.distance_to(pursuer.global_position)+direction.dot(away.normalized())*50
+		if score>best:best=score;actor.movement_override=(goal-actor.global_position).normalized()
+	if actor.movement_override.is_zero_approx():
+		var goal:Vector2=main.level.nearest_clear(main.level.bounds().get_center()+away.normalized()*200,12)
+		actor.movement_override=main.level.path_direction(actor.global_position,goal,12,false)
+	if away.length()<85 and actor._dash_cd<=0:actor.request_dash_direction(actor.movement_override)
 
 func _combat(target:EnemyBase)->void:
 	var actor:RoomPlayer=main.player;var offset:=target.global_position-actor.global_position;var distance:=offset.length()
@@ -109,7 +134,7 @@ func _collect_room_loot(delta:float)->bool:
 	for parent in [main.chests_root,main.fx_root]:
 		for node in parent.get_children():
 			if not node is Node2D or node.is_queued_for_deletion() or _ignored.has(node.get_instance_id()):continue
-			var eligible:bool=node is Chest and not node.is_open and node._landed and GameState.keys>=node.required_keys()
+			var eligible:bool=node is Chest and not node.is_open and node._landed
 			eligible=eligible or node is RoomLootDrop and not node._collected or node is Coin and not node._collected
 			if not eligible:continue
 			var distance:=actor.global_position.distance_squared_to(node.global_position)

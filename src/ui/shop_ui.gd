@@ -3,11 +3,6 @@ extends CanvasLayer
 ## 商店界面。打开时会暂停游戏（这样休整倒计时也会停）。
 
 const REST_HEAL := 30.0
-## 钥匙：每次开张价格随机（这就是「随机刷新」），每买一把涨一点
-const KEY_PRICE_MIN := 14
-const KEY_PRICE_MAX := 34
-const KEY_PRICE_STEP := 6
-const KEY_MAX_PER_VISIT := 3
 ## 花金币重新抽一次货架
 const REFRESH_COST := 8
 const ACTION_INTERVAL_MS := 120
@@ -26,19 +21,17 @@ var _close_button: Button
 var _grid: GridContainer
 var _coins_label: Label
 var _rest_button: Button
-var _key_button: Button
 var _refresh_button: Button
 var _offers: Array[Dictionary] = []
 var _sold: Dictionary = {}
 var _rest_used := false
-var _key_price := KEY_PRICE_MIN
-var _key_bought := 0
 var _visit_wave := -1
 var _selected_index := -1
 var _purchase_button: Button
 var _detail_title: Label
 var _detail_tag: Label
 var _detail_quality:RarityWordmark
+var _detail_category:RewardCategoryWordmark
 var _detail_description: Label
 var _detail_key:=""
 var _detail_body:VBoxContainer
@@ -91,9 +84,7 @@ func open(offers: Array) -> void:
 		_offers = _with_wave_prices(offers)
 		_sold.clear()
 		_rest_used = false
-		_key_bought = 0
 		_selected_index = 0 if not _offers.is_empty() else -1
-		_roll_key_price()
 	_opening_until = Time.get_ticks_msec() + int((0.10 if ComicMotion.reduced() else OPEN_DURATION) * 1000)
 	_action_until = 0
 	_rest_button.disabled = _rest_used
@@ -123,10 +114,6 @@ func _mark_transaction() -> void:
 	_action_until = Time.get_ticks_msec() + ACTION_INTERVAL_MS
 
 
-func _roll_key_price() -> void:
-	_key_price = Rng.stream().randi_range(KEY_PRICE_MIN, KEY_PRICE_MAX)
-
-
 func _wave_price_factor() -> float:
 	## 商品、雇佣和清波收入使用同一波次配置。
 	return WaveTable.shop_price_factor(GameState.wave)
@@ -145,36 +132,9 @@ func _with_wave_prices(offers: Array) -> Array[Dictionary]:
 	return out
 
 
-func key_price() -> int:
-	return _key_price + _key_bought * KEY_PRICE_STEP
-
-
-func buy_key() -> void:
-	if not _can_transact(): return
-	if _key_bought >= KEY_MAX_PER_VISIT:
-		_set_status("这次的钥匙已经售罄。", true)
-		return
-	var cost := key_price()
-	if GameState.coins < cost:
-		_set_status("金币不足，还需要 %d 金。" % (cost - GameState.coins), true)
-		return
-	_mark_transaction()
-	GameState.spend_coins(cost)
-	GameState.add_keys(1)
-	_key_bought += 1
-	AudioManager.play(&"coin", -6.0)
-	_coins_label.text = "金币 %d" % GameState.coins
-	if _key_bought >= KEY_MAX_PER_VISIT:
-		_set_status("钥匙已售罄；本次已购 %d 把。" % _key_bought)
-	else:
-		_set_status("购得 1 把钥匙；下一把 %d 金。" % key_price())
-	Outpost.request_checkpoint()
-	_rebuild()
-
-
 func refresh_offers() -> void:
 	if not _can_transact(): return
-	## 花钱换一批货（钥匙价格也跟着重新随机）
+	## 花金币更换商品。
 	if GameState.coins < REFRESH_COST:
 		_set_status("金币不足，刷新需要 %d 金。" % REFRESH_COST, true)
 		return
@@ -182,7 +142,6 @@ func refresh_offers() -> void:
 	GameState.spend_coins(REFRESH_COST)
 	_offers = _with_wave_prices(ItemDB.roll_offers(3, Rng.stream(), 0.0, &"shop"))
 	_sold.clear()
-	_roll_key_price()
 	_set_status("货架已刷新，商品按当前波次计价。")
 	AudioManager.play(&"ui_click", -6.0)
 	_coins_label.text = "金币 %d" % GameState.coins
@@ -291,14 +250,12 @@ func _selected_data() -> Dictionary:
 		var item := _offers[_selected_index]
 		return {"name": str(item.name), "rarity": int(item.rarity), "tag": ItemDB.kind_label(item),
 			"desc": str(item.get("desc", "")), "item": item, "cost": int(item.cost), "sold": _sold.has(_selected_index)}
-	return {"name": "神秘钥匙", "rarity": 3, "tag": "补给箱钥匙", "item": ItemDB.key_icon(),
-		"desc": "用于开启林地补给箱。\n\n每次休整最多购买 %d 把，已购买 %d 把。\n每买一把，下一把价格增加 %d 金币。刷新货架不会重置本次购买上限。" % [KEY_MAX_PER_VISIT, _key_bought, KEY_PRICE_STEP],
-		"cost": key_price(), "sold": _key_bought >= KEY_MAX_PER_VISIT}
+	return {"name":"暂无商品","rarity":0,"tag":"","item":{},"desc":"请刷新商品或稍后再来。","cost":0,"sold":true}
 
 
 func _select_offer(index: int) -> void:
 	if is_instance_valid(_npc_portrait):_npc_portrait.texture=NpcArt.portrait("merchant","inspect")
-	if index < -1 or index >= _offers.size(): return
+	if index < 0 or index >= _offers.size(): return
 	var changed := _selected_index != index
 	_selected_index = index
 	if changed: _detail_scroll.scroll_vertical = 0
@@ -307,8 +264,7 @@ func _select_offer(index: int) -> void:
 
 
 func _purchase_selected() -> void:
-	if _selected_index < 0: buy_key()
-	else: buy(_selected_index)
+	if _selected_index>=0:buy(_selected_index)
 
 
 func _refresh_detail() -> void:
@@ -317,7 +273,9 @@ func _refresh_detail() -> void:
 	var tint := ItemDB.rarity_color(int(data.rarity))
 	_detail_title.text = str(data.name)
 	_detail_title.tooltip_text = str(data.name)
-	_detail_tag.text = str(data.tag)
+	_detail_tag.text = "" if str(data.tag)=="遗物" else str(data.tag)
+	_detail_category.visible=not data.item.is_empty() and (ItemDB.is_equippable(data.item) or ItemDB.is_relic(data.item))
+	if _detail_category.visible:_detail_category.set_category("relic" if ItemDB.is_relic(data.item) else "equipment")
 	_detail_quality.set_quality(int(data.rarity))
 	_detail_tag.add_theme_color_override("font_color", tint)
 	_detail_description.text = str(data.desc) + ("\n\n" + ItemInsight.describe(data.item,true,false,false) if _selected_index >= 0 else "")
@@ -334,9 +292,9 @@ func _refresh_detail() -> void:
 		_detail_icon.add_child(icon)
 	_detail_price.text = "%d 金币" % int(data.cost)
 	_purchase_button.disabled = bool(data.sold) or GameState.coins < int(data.cost) or Time.get_ticks_msec() < _opening_until
-	(_purchase_button as ShopArtButton).set_art("key" if _selected_index < 0 else "purchase")
+	(_purchase_button as ShopArtButton).set_art("purchase")
 	if bool(data.sold):
-		_reason_label.text = "本次钥匙已售罄" if _selected_index < 0 else "已购买 · 物品已放入行囊"
+		_reason_label.text = "暂无商品" if _selected_index < 0 else "已购买 · 物品已放入行囊"
 	elif GameState.coins < int(data.cost):
 		_reason_label.text = "金币不足 · 还差 %d 金币" % (int(data.cost) - GameState.coins)
 	elif Time.get_ticks_msec() < _opening_until:
@@ -353,10 +311,8 @@ func _rebuild() -> void:
 	for child in _grid.get_children():
 		_grid.remove_child(child)
 		child.queue_free()
-	_key_button = _make_row(-1)
-	_grid.add_child(_key_button)
 	for i in _offers.size(): _grid.add_child(_make_row(i))
-	_selected_index = clampi(_selected_index, -1, _offers.size() - 1)
+	_selected_index = clampi(_selected_index, 0, _offers.size() - 1) if not _offers.is_empty() else -1
 	_refresh_detail()
 	_update_refresh_button()
 	_update_row_prices()
@@ -373,12 +329,8 @@ func _rebuild() -> void:
 
 
 func _make_row(index: int) -> Button:
-	var data: Dictionary
-	if index < 0:
-		data = {"name": "神秘钥匙", "rarity": 3, "tag": "补给箱钥匙", "item": ItemDB.key_icon(), "cost": key_price(), "sold": _key_bought >= KEY_MAX_PER_VISIT}
-	else:
-		var item := _offers[index]
-		data = {"name": str(item.name), "rarity": int(item.rarity), "tag": ItemDB.kind_label(item), "item": item, "cost": int(item.cost), "sold": _sold.has(index)}
+	var item := _offers[index]
+	var data:Dictionary={"name":str(item.name),"rarity":int(item.rarity),"tag":ItemDB.kind_label(item),"item":item,"cost":int(item.cost),"sold":_sold.has(index)}
 	var button := _button("", 18)
 	button.custom_minimum_size = Vector2(358, 112)
 	button.set_meta("index", index)
@@ -406,8 +358,8 @@ func _make_row(index: int) -> Button:
 func _update_row_prices() -> void:
 	for row: Button in _grid.get_children():
 		var index := int(row.get_meta("index"))
-		var cost := key_price() if index < 0 else int(_offers[index].cost)
-		var sold := _key_bought >= KEY_MAX_PER_VISIT if index < 0 else _sold.has(index)
+		var cost := int(_offers[index].cost)
+		var sold := _sold.has(index)
 		row.set_meta("cost", cost)
 		row.set_meta("sold", sold)
 		var price: Label = row.get_meta("price_label")
@@ -451,7 +403,7 @@ func _wire_navigation() -> void:
 func _update_refresh_button() -> void:
 	_refresh_button.disabled = GameState.coins < REFRESH_COST
 	(_refresh_button as ShopArtButton).update_visual()
-	_refresh_button.tooltip_text = "金币不足，还差 %d 金币" % (REFRESH_COST - GameState.coins) if _refresh_button.disabled else "更换商品，钥匙购买上限与休整次数保留。"
+	_refresh_button.tooltip_text = "金币不足，还差 %d 金币" % (REFRESH_COST - GameState.coins) if _refresh_button.disabled else "更换商品，休整次数保留。"
 
 
 func _style(bg: Color, border := Color("596880"), width := 1) -> StyleBoxFlat:
@@ -560,7 +512,7 @@ func _build() -> void:
 	_place(_canvas, _detail_title, Rect2(66,127,348,37))
 	_detail_tag = _label("", 16)
 	var quality_row:=UiFactory.hbox(8)
-	_detail_quality=RarityWordmark.make(0,34);quality_row.add_child(_detail_quality);quality_row.add_child(_detail_tag)
+	_detail_quality=RarityWordmark.make(0,34);quality_row.add_child(_detail_quality);_detail_category=RewardCategoryWordmark.for_category("equipment",30);quality_row.add_child(_detail_category);quality_row.add_child(_detail_tag)
 	_place(_canvas,quality_row,Rect2(66,166,348,34))
 	_detail_icon = Control.new()
 	_detail_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -637,7 +589,7 @@ class ShopSky extends Control:
 func expedition_snapshot() -> Dictionary:
 	var sold: Array = []
 	for key in _sold: sold.append(int(key))
-	return {"wave":_visit_wave,"offers":_offers.duplicate(true),"sold":sold,"rest_used":_rest_used,"key_price":_key_price,"key_bought":_key_bought,"selected":_selected_index}
+	return {"wave":_visit_wave,"offers":_offers.duplicate(true),"sold":sold,"rest_used":_rest_used,"selected":_selected_index}
 
 func expedition_restore(data: Dictionary) -> void:
 	_visit_wave = int(data.get("wave",-1))
@@ -645,6 +597,4 @@ func expedition_restore(data: Dictionary) -> void:
 	_sold.clear()
 	for index in data.get("sold",[]): _sold[int(index)] = true
 	_rest_used = bool(data.get("rest_used",false))
-	_key_price = int(data.get("key_price",KEY_PRICE_MIN))
-	_key_bought = int(data.get("key_bought",0))
 	_selected_index = int(data.get("selected",-1))

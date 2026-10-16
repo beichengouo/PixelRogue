@@ -67,6 +67,8 @@ func _accept_file(path:String)->void:
 	if str(data.get("id","")) in RETIRED_IDS:return
 	var errors := RoomTemplateValidator.load_errors(data)
 	if not errors.is_empty():rejected[path]=errors;return
+	# Reclassify old editor copies in memory without overwriting user geometry.
+	if str(data.id)=="normal_windbridge":data.room_kinds=["game"]
 	for i in templates.size():
 		if templates[i].id==data.id:templates[i]=data;return
 	templates.append(data)

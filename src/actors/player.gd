@@ -325,7 +325,7 @@ func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
 		if shield_hp <= 0.0 and absorbed > 0.0 and self is RoomPlayer:
 			var mechanics: EquipmentMechanics = (self as RoomPlayer).equipment_mechanics
 			if is_instance_valid(mechanics): mechanics.on_shield_broken()
-		if self is RoomPlayer and is_instance_valid((self as RoomPlayer).holy_runtime):HolyFX.spawn(get_parent(),global_position,"cloud",30,.25)
+		if self is RoomPlayer and is_instance_valid((self as RoomPlayer).holy_runtime):HolyFX.around(self,"cloud",30,.25)
 		else:PaintedSpellFX.spawn(get_parent(), global_position, "res://assets/fx/painted/fx_fire_burst.png", 60, 0.32)
 		if _shield_thorns>0.0 and is_instance_valid(source) and source.has_method("take_damage"):
 			source.take_damage(_shield_thorns, false, global_position, DamageContext.reflection(self))
@@ -474,7 +474,7 @@ func _update_animation() -> void:
 	pass # RoomPlayer owns directional animation.
 
 func _draw() -> void:
-	if shield_hp > 0 and hp > 0 and Characters.current_id()!=&"xixifu":
+	if shield_hp > 0 and hp > 0 and Characters.current_id() not in [&"xixifu",&"sylphiette"]:
 		draw_arc(Vector2(0, -4), 32, -PI * 0.8, PI * 0.8, 48, Color(1, 0.74, 0.34, 0.65), 2, false)
 
 
@@ -484,6 +484,10 @@ func _process(_delta: float) -> void:
 	_update_shield_visual(_delta)
 
 func _update_shield_visual(delta: float) -> void:
+	if self is RoomPlayer and is_instance_valid((self as RoomPlayer).holy_runtime):
+		# HolyRuntime owns the grounded holy shield; never layer the old fire orb.
+		if is_instance_valid(_shield_visual):_shield_visual.queue_free();_shield_visual=null
+		return
 	if Characters.current_id()==&"xixifu":
 		if is_instance_valid(_shield_visual):_shield_visual.queue_free();_shield_visual=null
 		if shield_hp>0 and hp>0 and not is_instance_valid(_night_shelter_visual):

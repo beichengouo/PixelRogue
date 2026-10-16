@@ -19,10 +19,11 @@ func _ready()->void:
 
 func _fit()->void:
 	var view:=get_viewport().get_visible_rect()
-	var factor:=minf(DISPLAY_SCALE,(view.size.x-32)/400.0)
-	_panel.scale=Vector2.ONE*factor;_panel.size=_extent
 	var safe:=MobileControls.safe_rect() if MobileControls.enabled() else view
-	_panel.position=safe.end-_panel.size*factor-Vector2(16,180 if MobileControls.enabled() else 150)
+	_panel.size=_extent.max(_panel.get_combined_minimum_size())
+	var factor:=minf(DISPLAY_SCALE,minf((safe.size.x-32)/_panel.size.x,(safe.size.y-32)/_panel.size.y))
+	_panel.scale=Vector2.ONE*maxf(.1,factor)
+	_panel.position=safe.end-_panel.size*_panel.scale-Vector2(16,16)
 func _process(delta:float)->void:
 	_elapsed+=minf(delta,.1);_fit()
 	_panel.modulate.a=clampf(_elapsed/.2,0,1)*clampf((5-_elapsed)/.35,0,1)

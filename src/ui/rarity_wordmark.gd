@@ -21,11 +21,15 @@ func set_quality(rarity:int)->void:
 	quality=clampi(rarity,0,3);texture=texture_for(quality)
 	tooltip_text=ItemDB.rarity_name(quality);set_meta("quality",quality);set_meta("quality_name",tooltip_text)
 static func line(rarity:int,category:String,height:=32.0,font_size:=18,color:=Color.WHITE)->HBoxContainer:
+	var original_category:=category
 	var row:=HBoxContainer.new();row.name="QualityLine";row.add_theme_constant_override("separation",8);row.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	row.add_child(make(rarity,height))
+	if category in ["装备","遗物","武器","护甲","饰品","法杖","弓箭","刀剑","战锤"]:
+		row.add_child(RewardCategoryWordmark.for_category("relic" if category=="遗物" else "equipment",height))
+		if category in ["装备","遗物"]:category=""
 	if not category.is_empty():
 		var label:=PixelUi.label(category,font_size,color);label.name="ItemCategory";label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;label.mouse_filter=Control.MOUSE_FILTER_IGNORE;row.add_child(label)
-	row.tooltip_text=ItemDB.rarity_name(clampi(rarity,0,3))+" · "+category
+	row.tooltip_text=ItemDB.rarity_name(clampi(rarity,0,3))+" · "+original_category
 	return row
 static func compact_texture(rarity:int)->Texture2D:
 	var rank:=clampi(rarity,0,3)

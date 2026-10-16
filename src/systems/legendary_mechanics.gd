@@ -73,7 +73,7 @@ func skill_cast(id:StringName)->float:
 	var bonus:=1.0
 	if id!=&"" and not Skills.is_ultimate(id):
 		if has(&"cloud_vestment") and owner.ready(&"cloud_vestment_cast"):
-			owner.start(&"cloud_vestment_cast",6);owner.grant_player_shield(owner.actor.max_hp*.12,4);HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"cloud",64,.35)
+			owner.start(&"cloud_vestment_cast",6);owner.grant_player_shield(owner.actor.max_hp*.12,4);HolyFX.around(owner.actor,"cloud",64,.35)
 		if has(&"dusk_mantle") and owner.ready(&"dusk_mantle_cast"):
 			owner.start(&"dusk_mantle_cast",5)
 			var allies:Array[HiredAlly]=[]
@@ -83,14 +83,14 @@ func skill_cast(id:StringName)->float:
 			for index in mini(3,allies.size()):owner.grant_ally_shield(allies[index],allies[index].max_hp*.08,4)
 	if has(&"cloud_staff") and cloud_charges>=3 and not Skills.is_ultimate(id) and owner.ready(&"cloud_staff"):
 		owner.consumed_status("cloud_runes")
-		cloud_charges=0;owner.start(&"cloud_staff",3);bonus+=.2;owner.area_damage(owner.actor.global_position,108,owner.attack()*.75);owner.grant_player_shield(owner.actor.max_hp*.08,4);HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"cloud",108,.4)
+		cloud_charges=0;owner.start(&"cloud_staff",3);bonus+=.2;owner.area_damage(owner.actor.global_position,108,owner.attack()*.75);owner.grant_player_shield(owner.actor.max_hp*.08,4);HolyFX.around(owner.actor,"cloud",108,.4)
 	if Characters.current_id()==&"xixifu" and LegendarySets.complete() and not Skills.is_ultimate(id):
 		for ally in owner.actor.get_tree().get_nodes_in_group("allies"):
 			if owner._live_ally(ally):owner.grant_ally_shield(ally,ally.max_hp*.08,4);ally.equipment_haste=maxf(ally.equipment_haste,.20);ally.equipment_haste_time=maxf(ally.equipment_haste_time,4)
 	return bonus
 func holy_empowered()->void:
 	if Characters.current_id()!=&"sylphiette" or not LegendarySets.complete() or not owner.ready(&"cloud_set"):return
-	owner.start(&"cloud_set",6);GameState.add_mp(10);owner.grant_player_shield(owner.actor.max_hp*.10,4);halo_orbs=3;halo_until=owner.clock+6;HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"cloud",72,.4)
+	owner.start(&"cloud_set",6);GameState.add_mp(10);owner.grant_player_shield(owner.actor.max_hp*.10,4);halo_orbs=3;halo_until=owner.clock+6;HolyFX.around(owner.actor,"cloud",72,.4)
 func dash_end()->void:
 	if has(&"moonwind_chime") and owner.ready(&"moonwind_echo"):
 		owner.start(&"moonwind_echo",5);chime_echoes=2;chime_until=owner.clock+4
@@ -118,7 +118,7 @@ func shield_absorbed()->void:
 		circlet_hits+=1;circlet_until=owner.clock+6
 		if circlet_hits>=3:
 			owner.consumed_status("circlet_memory")
-			circlet_hits=0;owner.start(&"circlet_wave",3);GameState.add_mp(2);owner.area_damage(owner.actor.global_position,72,owner.attack()*.45);HolyFX.spawn(owner.actor.get_parent(),owner.actor.global_position,"ring",72,.35)
+			circlet_hits=0;owner.start(&"circlet_wave",3);GameState.add_mp(2);owner.area_damage(owner.actor.global_position,72,owner.attack()*.45);HolyFX.around(owner.actor,"ring",72,.35)
 func contract_killed(unit:SummonedAlly,source:Node)->void:
 	if not has(&"dusk_mantle") or not owner.ready(&"dusk_mantle") or unit.remaining<=0:return
 	var hostile:bool=is_instance_valid(source) and (source is EnemyBase or source is AffixHazard or source is Projectile and not source.is_friendly)

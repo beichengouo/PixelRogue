@@ -4,7 +4,7 @@ extends RefCounted
 const FIRST := &"awakening_woods"
 const NEXT := &"chapter_2"
 const CHAPTERS := {
-	FIRST:{"title":"苏醒林地","last_wave":36,"next":NEXT,"scene":"res://src/room_mode/room_main.tscn","start":"forest_clearing","bosses":["king","mage","tide"],"maps":["forest_clearing","forest_grove","forest_timber","forest_bone_glade","wetland_curve","wetland_twin_pools","normal_windbridge"],"enemies":["charger","treant","moss_badger","thorn_mantis","glimmer_spider","bog_crab","lantern_toad","bell_snail"]},
+	FIRST:{"title":"苏醒林地","last_wave":36,"next":NEXT,"scene":"res://src/room_mode/room_main.tscn","start":"forest_clearing","bosses":["king","mage","tide"],"maps":["forest_clearing","forest_grove","forest_timber","forest_bone_glade","wetland_curve","wetland_twin_pools"],"enemies":["charger","treant","moss_badger","thorn_mantis","glimmer_spider","bog_crab","lantern_toad","bell_snail"]},
 	NEXT:{"title":"失名星城","last_wave":36,"next":&"","scene":"res://src/room_mode/room_main.tscn","start":"city_silent_gate","bosses":["sephra","verena","nameless"],"maps":["ruin_courtyard","ruin_archive","city_silent_gate","city_star_canal","city_wax_street","city_eclipse_court","city_name_archive","city_observatory"],"enemies":["walker","flyer","caster","bomber","guard","ruin_sentinel","dusk_acolyte"]},
 }
 
@@ -23,6 +23,7 @@ static func map_chapter(id:String)->StringName:
 	return &""
 static func allows(template:Dictionary,chapter:Variant,kind:String)->bool:
 	if kind not in ["normal","spawn"]:return true
+	if str(template.get("id",""))=="normal_windbridge" or str(template.get("scene_art",""))=="normal_windbridge_v01":return false
 	var owner:=map_chapter(str(template.get("id","")))
 	if owner!=&"":return owner==normalize(chapter)
 	var chapters:Array=template.get("chapters",[])

@@ -10,7 +10,6 @@ func _ready()->void:
 	process_mode=Node.PROCESS_MODE_ALWAYS
 	EventBus.boss_defeated.connect(_boss)
 	EventBus.chest_opened.connect(func(_loot:Dictionary)->void:if eligible():add("chests",1))
-	EventBus.keys_changed.connect(func(value:int)->void:if eligible():best("keys_best",value))
 	EventBus.player_healed.connect(func(value:float,_hp:float,_maximum:float)->void:if eligible() and Characters.current_id()==&"sylphiette":add("holy_healing",value))
 	call_deferred("_migrate")
 func eligible()->bool:return GameState.run_active and not CampSession.active

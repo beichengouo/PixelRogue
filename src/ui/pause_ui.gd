@@ -32,7 +32,7 @@ func open() -> void:
 	UIFlow.push_screen(self)
 	_status.text = ""
 	_leave_chapter.visible = GameState.chapter_cleared
-	_summary.text = "第 %d 波  /  Lv.%d\n金币 %d  ·  钥匙 %d\n有效游玩  %s" % [GameState.wave, GameState.level, GameState.coins, GameState.keys, GameState.play_time_text()]
+	_summary.text = "第 %d 波  /  Lv.%d\n金币 %d\n有效游玩  %s" % [GameState.wave, GameState.level, GameState.coins, GameState.play_time_text()]
 	if _transition != null and _transition.is_valid():
 		_transition.kill()
 	_transition = StarUi.reveal(_panel)

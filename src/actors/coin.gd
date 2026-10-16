@@ -82,6 +82,7 @@ func setup(
 
 
 func _ready() -> void:
+	if kind==&"key":queue_free();return # Retired pickup in legacy rooms.
 	collision_layer = Layers.PICKUP
 	# 只和地形碰：不带 PLAYER / ENEMY，金币就不会把角色或怪物顶开
 	collision_mask = Layers.WORLD
@@ -208,9 +209,7 @@ func _collect() -> void:
 		return
 	_collected = true
 	if kind == &"key":
-		GameState.add_keys(value)
-		AudioManager.play(&"coin", -4.0)
-		Effects.text(get_parent(), global_position + Vector2(0.0, -14.0), "钥匙 +%d" % value, Palette.UI_ACCENT, 20)
+		queue_free();return
 	else:
 		var earned:=GameState.add_reward_coins(value)
 		AudioManager.play(&"coin", -6.0)

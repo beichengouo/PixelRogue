@@ -36,7 +36,7 @@ func _process(delta: float) -> void:
 			var d: float=node.global_position.distance_to(main.player.global_position)
 			if bool(node.get("in_range")) and d < distance and (not bool(node.get("_harvested")) if group=="mushrooms" else not node.is_open):
 				distance=d
-				var caption:="采集发光蘑菇" if group=="mushrooms" else ("开启星赐宝箱（无需钥匙）" if node.required_keys()==0 else "打开补给箱（消耗%d把钥匙）"%node.required_keys())
+				var caption:="采集发光蘑菇" if group=="mushrooms" else "打开宝箱"
 				text="按 %s %s" % [UIFlow.hint(&"interact"),caption]
 	var store=StorefrontInteraction.closest(get_tree(),main.player)
 	if store!=null and store.global_position.distance_to(main.player.global_position)<distance:

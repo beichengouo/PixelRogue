@@ -388,6 +388,7 @@ func _refresh_tab_counts() -> void:
 			&"stat":
 				text += " Lv%d" % GameState.level
 		_tab_buttons[i].text = text
+		if id in [&"gear",&"relic"]:RewardCategoryWordmark.decorate_button(_tab_buttons[i],_tab_labels[i],38,str(gear_count if id==&"gear" else relic_count))
 		var active: bool = _tab_ids[i] == _filter
 		_tab_buttons[i].disabled = false
 		# 页签底图是「创建时算一次」的样式，切换页签必须重新算一遍，否则高亮不会跟着动
@@ -594,7 +595,7 @@ func _skill_tile(id: StringName, caption: String, locked: bool) -> Control:
 
 func _rebuild_talent_page() -> void:
 	_page_box.add_child(PixelUi.label(
-		"可用天赋点：%d　（每 3 级获得 1 点）" % GameState.talent_points, 18, PixelUi.INK))
+		"可用天赋点：%d　（每升 1 级获得 1 点）" % GameState.talent_points, 18, PixelUi.INK))
 	# 树状图现在独立成窗口（按 T 打开，支持缩放），这里只放入口与前置说明
 	_page_box.add_child(PixelUi.label(
 		"按 [%s] 打开天赋树 · 滚轮缩放、拖拽平移"%KeyBindings.label("talents"), 15, PixelUi.MUTED))
@@ -989,6 +990,7 @@ func _populate_detail() -> void:
 	var current: Dictionary = GameState.equipped(slot)
 	if MobileControls.enabled():
 		var equip:=PixelUi.primary("装备",18);equip.disabled=not ItemDB.can_equip(item)
+		RewardCategoryWordmark.decorate_button(equip,"装备",30)
 		equip.pressed.connect(func()->void:_equip(item));_detail_box.add_child(equip)
 	if not current.is_empty():
 		_detail_box.add_child(PixelUi.label("将替换：%s" % str(current["name"]), 18, PixelUi.GOLD))

@@ -34,15 +34,13 @@ func _ready_for_world()->bool:
 func _process(dt:float)->void:
 	if state.is_empty() or not (GameState.run_active or validation_mode) or not _ready_for_world():return
 	state.clock=float(state.clock)+maxf(0,dt)
-	if event_pending() and (not bool(state.event_started) or bool(state.get("event_panel_open",false))) and not is_instance_valid(panel) and main._story_queue.is_empty() and main._story_context.is_empty():
-		state.event_started=true;open_event();return
 	for reward in state.pending.duplicate():
 		if not is_instance_valid(main.expedition):break
 		state.pending.erase(reward)
 		reward["coin_visual_scale"]=2.0/3.0
 		main.expedition.loot.burst_reward(reward,main.level.nearest_clear(main.player.position+Vector2(0,40),8));_checkpoint()
 	var scene:=str(record.get("terrain_layout",{}).get("scene_art",""))
-	if scene=="normal_windbridge_v01":_wind_step()
+	if scene=="normal_windbridge_v01" and record.kind!="game":_wind_step()
 	if record.cleared or main.director.phase!=WaveDirector.Phase.FIGHT or main.player.extraction_controls_locked():
 		clear_danger_fields();return
 	if record.kind=="trial" or scene in ["elite_boneflags_v01","elite_thorncourt_v01"]:
@@ -101,7 +99,7 @@ func _event_offers()->void:
 			state.offers=[first,{"name":"保存残页","desc":"替它寻找下一位解读者。获得150基础金币，沿用冒险收益倍率。","loot":{"kind":"coins","amount":150}}]
 func open_event()->void:
 	if not event_pending() or is_instance_valid(panel) or not _ready_for_world():return
-	_event_offers();state.event_panel_open=true;panel=RoomEventUI.new();panel.controller=self;add_child(panel);_checkpoint()
+	_event_offers();state.event_started=true;state.event_panel_open=true;panel=RoomEventUI.new();panel.controller=self;add_child(panel);_checkpoint()
 func claim_event(index:int)->bool:
 	if not event_pending() or index<0 or index>=state.offers.size():return false
 	var before:=state.duplicate(true);state.pending.append(state.offers[index].loot.duplicate(true));state.event_resolved=true;state.chosen=index;record.rewarded=true;main.level.doors_open=true

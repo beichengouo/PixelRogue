@@ -61,6 +61,8 @@ func enter_room(record:Dictionary)->void:
 	trial_index=0;trial_rounds.clear()
 	GameState.wave_exp_multiplier=.6 if record.kind=="altar" else 1.0
 	spawn_rng.seed=int(record.seed)^0x142c
+	if SpecialRoomController.is_shadow_room(record):
+		phase=Phase.REST;total_this_wave=0;room.doors_open=bool(record.delta.get("special",{}).get("chase",{}).get("done",false));return
 	if record.cleared:
 		phase=Phase.REST;total_this_wave=0;room.doors_open=bool(record.rewarded) or record.kind=="spawn";room.queue_redraw();return
 	var existing_experience:=GameState.wave_exp_awarded if GameState.wave==wave and not record.delta.get("runtime",{}).is_empty() else 0.0

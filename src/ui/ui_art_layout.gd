@@ -14,7 +14,7 @@ static func register(kind:String,node:Control,rect:Rect2,id:String="")->void:
 	var key:=kind+":"+id
 	node.set_meta("art_layout_key",key);node.set_meta("art_layout_default",rect)
 	var caption:=str(node.get("text")) if node is Label or node is Button else id
-	if node is ShopArtButton:caption={"purchase":"购买","refresh":"刷新","key":"钥匙","rest":"休憩","close":"关闭"}.get(node.art_key,node.art_key)
+	if node is ShopArtButton:caption={"purchase":"购买","refresh":"刷新","rest":"休憩","close":"关闭"}.get(node.art_key,node.art_key)
 	defaults[key]={"id":key,"kind":kind,"caption":caption,"rect":[rect.position.x,rect.position.y,rect.size.x,rect.size.y],"type":"button" if node is Button else ("text" if node is Label else ("glass" if node is Panel or node is PanelContainer else "region")),"font_size":node.get_theme_font_size("font_size")}
 	var origin:=rect.position;var parent:=node.get_parent();var owner:=""
 	while parent is Control and not parent.has_meta("ui_layout_canvas"):

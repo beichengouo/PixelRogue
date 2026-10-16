@@ -10,7 +10,7 @@ const BASE:={
 "three_bosses":{"name":"三冠尽落","description":"在同次出征中击败三位章节首领。三座王冠相继坠落，旅人的誓言仍在回响。","metric":"three_bosses","goal":1,"category":"战斗"},
 "boss_rush":{"name":"终境试剑","description":"完成一次BossRush连战。在三重强敌的试炼中，铸就终境之名。","metric":"rush","goal":1,"category":"挑战"},
 "coins":{"name":"星金聚辉","description":"累计获得五千冒险金币。将征途中的收获汇聚为光，见证每一次前行。","metric":"gold","goal":5000,"category":"收集"},
-"keys":{"name":"五钥启途","description":"同次出征中同时持有五把钥匙。集齐启封之钥，叩响沉睡秘藏的门扉。","metric":"keys_best","goal":5,"category":"收集"},
+"keys":{"name":"秘藏巡礼","description":"累计开启二十五个宝箱。踏遍遗迹与星庭，让沉眠的珍藏重见天光。","metric":"chests","goal":25,"category":"收集"},
 "chests":{"name":"启封秘藏","description":"累计开启五个宝箱。拨开岁月的封印，寻得遗落在星辉之下的珍藏。","metric":"chests","goal":5,"category":"收集"},
 "extraction":{"name":"星辉归航","description":"成功撤离一次。循女神的接引越过长夜，将未尽的故事带回回廊。","metric":"extractions","goal":1,"category":"探索"},
 "bloodbath":{"name":"浴血之誓","description":"在浴血难度清理一间战斗房间。以不可复原的伤痕为证，守住立于危境的誓言。","metric":"bloodbath_rooms","goal":1,"category":"挑战"},
@@ -64,5 +64,6 @@ static func progress(id:String)->int:
 	return mini(int(DATA[id].goal),value.size() if value is Array else int(value))
 static func unlocked(id:String)->bool:return SaveService.data.get("achievements",{}).has(id)
 static func icon(id:String)->Texture2D:
+	if id=="keys":id="chests" # Keep old unlock IDs while retiring key imagery.
 	var path:=ROOT+("mastery/" if id.begins_with("slayer_") or id.begins_with("boss_slayer_") else "")+id+".png"
 	return load(path) if ResourceLoader.exists(path) else null

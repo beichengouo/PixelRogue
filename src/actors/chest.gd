@@ -52,12 +52,7 @@ func _update_glow()->void:
 	_chest_light.enabled=not is_queued_for_deletion()
 
 func required_keys() -> int:
-	var wave := maxi(1, GameState.wave)
-	if wave >= 25:
-		return 3
-	if wave >= 10:
-		return 2
-	return 1
+	return 0
 
 func setup(level_node: Level, player_node: Node2D) -> void:
 	level = level_node
@@ -206,22 +201,11 @@ func _land() -> void:
 func _refresh_prompt() -> void:
 	if is_open or not _landed:
 		return
-	var cost := required_keys()
-	if GameState.keys >= cost:
-		EventBus.interact_prompt_show.emit("按 [%s] 打开补给箱（消耗 %d 把钥匙 · 你有 %d）" % [UIFlow.hint(&"interact"),cost, GameState.keys])
-	else:
-		EventBus.interact_prompt_show.emit("补给箱：需要 %d 把钥匙（姜糖有售）" % cost)
+	EventBus.interact_prompt_show.emit("按 [%s] 打开宝箱" % UIFlow.hint(&"interact"))
 
 func try_interact() -> void:
 	if is_open or not _landed or not in_range:
 		return
-	var cost := required_keys()
-	if GameState.keys < cost:
-		EventBus.interaction_failed.emit("钥匙不足：需要 %d 把，你有 %d 把。" % [cost, GameState.keys])
-		_refresh_prompt()
-		return
-	for i in cost:
-		GameState.spend_key()
 	_open()
 
 func _open() -> void:

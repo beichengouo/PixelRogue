@@ -38,7 +38,7 @@ func _build_console(tabs:TabContainer)->void:
 	var dialog:=FileDialog.new();dialog.access=FileDialog.ACCESS_FILESYSTEM;dialog.file_mode=FileDialog.FILE_MODE_OPEN_FILE;dialog.filters=PackedStringArray(["*.json ; 游戏存档"]);add_child(dialog);dialog.file_selected.connect(func(path:String)->void:_path.text=path;_load_save())
 	_button(row,"选择存档…",func()->void:dialog.popup_centered_ratio(.8));_button(row,"载入 / 重新载入",_load_save)
 	_grant_kind=OptionButton.new();body.add_child(_grant_kind)
-	for entry in [["营地金库金币","gold"],["活跃出征随身金币","coins"],["活跃出征钥匙","keys"],["物品 → 营地仓库（装备绑定）","warehouse"],["物品 → 活跃出征背包","bag"]]:
+	for entry in [["营地金库金币","gold"],["活跃出征随身金币","coins"],["物品 → 营地仓库（装备绑定）","warehouse"],["物品 → 活跃出征背包","bag"]]:
 		_grant_kind.add_item(entry[0]);_grant_kind.set_item_metadata(_grant_kind.item_count-1,entry[1])
 	_search=LineEdit.new();_search.placeholder_text="按物品名称或ID筛选";body.add_child(_search)
 	_item=OptionButton.new();body.add_child(_item)
@@ -63,7 +63,7 @@ func _preview_grant()->void:
 	var kind:=str(_grant_kind.get_selected_metadata());var id:=str(_item.get_selected_metadata()) if _item.selected>=0 else ""
 	var result:=console.preview(kind,id,int(_amount.value))
 	if not str(result.get("error","")).is_empty():_message.text=result.error;return
-	_confirm.dialog_text="目标存档：%s\n发放到：%s\n物品：%s\n数量：%d\n自动备份后提交。"%[console.path,_grant_kind.get_item_text(_grant_kind.selected),id if kind in ["warehouse","bag"] else "金币 / 钥匙",int(_amount.value)]
+	_confirm.dialog_text="目标存档：%s\n发放到：%s\n物品：%s\n数量：%d\n自动备份后提交。"%[console.path,_grant_kind.get_item_text(_grant_kind.selected),id if kind in ["warehouse","bag"] else "金币",int(_amount.value)]
 	_confirm.popup_centered();_confirm.get_cancel_button().grab_focus()
 func _grant()->void:
 	var error:=console.grant(str(_grant_kind.get_selected_metadata()),str(_item.get_selected_metadata()) if _item.selected>=0 else "",int(_amount.value))

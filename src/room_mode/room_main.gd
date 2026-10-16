@@ -52,7 +52,7 @@ func _build_ui()->void:
 	map_screen=RoomMapScreen.new();map_screen.graph=graph;add_child(map_screen)
 	var clock_ui:=WorldClockUI.new();clock_ui.world_clock=world_clock;clock_ui.position=Vector2(12,6);clock_ui.scale=Vector2.ONE*.9;hud.add_child(clock_ui)
 	fate_ui=FateUI.new();add_child(fate_ui)
-	fate_altar=FateAltar.new();fate_altar.main=self;fate_altar.ui=fate_ui;add_child(fate_altar)
+	fate_altar=FateAltar.new();fate_altar.main=self;fate_altar.ui=fate_ui;actors_root.get_parent().add_child(fate_altar)
 	gm_pilot=GMPilot.new();gm_pilot.main=self;add_child(gm_pilot)
 
 func _begin_run(data:Dictionary)->void:
@@ -402,7 +402,7 @@ func _spawn_template_chests()->void:
 
 func _on_chest_spawned()->void:
 	if graph.rooms.get(graph.current,{}).get("kind","") in ["elite","reward","trial"]:
-		hud.show_banner("星赐宝箱降临 · 无需钥匙",1.5,Palette.UI_ACCENT);return
+		hud.show_banner("宝箱降临",1.5,Palette.UI_ACCENT);return
 	super._on_chest_spawned()
 
 static func _chest_template_position(record:Dictionary)->Vector2:

@@ -337,7 +337,7 @@ func _on_enemy_died(_kind: StringName, _where: Vector2, _coins: int) -> void:
 
 func _on_chest_spawned() -> void:
 	hud.show_banner("附近出现了一个补给箱！", 2.0, Palette.UI_ACCENT)
-	hud.set_hint("补给箱要用钥匙打开　·　钥匙只能在商店购买")
+	hud.set_hint("靠近宝箱并交互即可开启")
 
 
 func _on_wave_cleared(_progress:int)->void:

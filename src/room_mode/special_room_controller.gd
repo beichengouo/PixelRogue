@@ -7,10 +7,15 @@ var record:Dictionary={}
 var panel:SpecialMachineUI
 var validation_mode:=false
 var _marks:Dictionary={}
+var shadow:RoomShadowChaser
 const MACHINES:=["machine_wheel","machine_lottery","machine_reserved"]
 const TITLES:={"machine_wheel":"星运转盘","machine_lottery":"八星彩票","machine_reserved":"沉睡的星匣"}
 const REWARD_CHEST_WEIGHTS:=[512,256,128,64,32,16,8,4,2,1]
+static func is_shadow_room(value:Dictionary)->bool:
+	return str(value.get("kind",""))=="game" and str(value.get("terrain_layout",{}).get("scene_art",""))=="normal_windbridge_v01"
 func configure(room_record:Dictionary)->void:
+	if is_instance_valid(shadow):shadow.queue_free()
+	shadow=null
 	for marker in _marks.values():
 		if is_instance_valid(marker):marker.queue_free()
 	_marks.clear()
@@ -23,6 +28,11 @@ func configure(room_record:Dictionary)->void:
 		for index in 8:answer+=str(rng.randi_range(0,9))
 		record.delta.special={"clock":0.0,"deliveries":[],"pending_prizes":[],"used":{},"answer":answer,"rng":str(rng.state),"reward_started":false}
 	state=record.delta.special
+	if is_shadow_room(record):
+		if not state.has("chase"):state.chase={"prepare":5.0,"remaining":30.0,"contact":0.0,"at":[],"done":false}
+		record.cleared=bool(state.chase.done);record.rewarded=bool(state.chase.done)
+		main.level.doors_open=bool(state.chase.done)
+		if not bool(state.chase.done) and float(state.chase.prepare)<=0:_spawn_shadow()
 	if record.kind=="reward" and not state.reward_started:
 		state.reward_started=true;var rng:=_rng();schedule_chests(reward_chest_count(rng),true,rng);state.rng=str(rng.state)
 static func reward_chest_count(rng:RandomNumberGenerator)->int:
@@ -37,6 +47,11 @@ func _visible_and_ready()->bool:
 	return is_instance_valid(main.player) and main.player.hp>0 and not TransitionLayer.busy and not get_tree().paused and not UIFlow.has_screen() and not bool(main.get("_navigation_pending")) and not bool(main.get("_room_transfer"))
 func _process(dt:float)->void:
 	if state.is_empty() or not (GameState.run_active or validation_mode) or not _visible_and_ready():return
+	if is_shadow_room(record):
+		if main.player.extraction_controls_locked():
+			if is_instance_valid(shadow):shadow.hide()
+			return
+		_advance_chase(maxf(0,dt))
 	state.clock=float(state.clock)+maxf(0,dt)
 	_update_amber_marks()
 	if record.kind in ["elite","trial"] and record.cleared and not state.reward_started:
@@ -53,6 +68,42 @@ func _process(dt:float)->void:
 	for prize in state.pending_prizes.duplicate():
 		if not is_instance_valid(main.get("expedition")):break
 		main.expedition.loot.burst_reward(prize.loot,Vector2(prize.at[0],prize.at[1]));state.pending_prizes.erase(prize);_checkpoint()
+
+func chase_running()->bool:
+	return not state.is_empty() and is_shadow_room(record) and state.has("chase") and not bool(state.chase.done) and float(state.chase.prepare)<=0 and (GameState.run_active or validation_mode) and _visible_and_ready() and not main.player.extraction_controls_locked()
+
+func _advance_chase(dt:float)->void:
+	var chase:Dictionary=state.chase
+	if bool(chase.done):return
+	if float(chase.prepare)>0:
+		var elapsed:=minf(dt,float(chase.prepare));chase.prepare=maxf(0,float(chase.prepare)-elapsed);dt-=elapsed
+		if float(chase.prepare)>0:return
+		_spawn_shadow();_checkpoint()
+	if not is_instance_valid(shadow):_spawn_shadow()
+	if is_instance_valid(shadow):shadow.show()
+	chase.remaining=maxf(0,float(chase.remaining)-dt)
+	if float(chase.remaining)>0:return
+	chase.done=true;record.cleared=true;record.rewarded=true
+	if is_instance_valid(shadow):shadow.dissolve()
+	shadow=null;main.level.doors_open=true;main.level.sync_door_links(record)
+	if not bool(state.reward_started):
+		state.reward_started=true;var rng:=_rng();schedule_chests(rng.randi_range(1,3),true,rng);state.rng=str(rng.state)
+	main.hud.show_banner("追影消散 · 风铃为你送来星赐宝箱",3)
+	_checkpoint()
+
+func _spawn_shadow()->void:
+	if is_instance_valid(shadow) or not is_instance_valid(main.player):return
+	var chase:Dictionary=state.chase
+	var at:=Vector2.INF
+	var stored:Array=chase.get("at",[])
+	if stored.size()==2:at=main.level.nearest_clear(Vector2(stored[0],stored[1]),RoomShadowChaser.BODY_RADIUS)
+	if not at.is_finite():
+		var bounds:Rect2=main.level.bounds().grow(-45)
+		var away:Vector2=bounds.get_center()+(bounds.get_center()-main.player.position).normalized()*bounds.size.length()*.4
+		at=main.level.scene_navigation.main_spawn_point(main.level,away,main.player.position,RoomShadowChaser.BODY_RADIUS,false)
+	shadow=RoomShadowChaser.new();shadow.controller=self;shadow.room=main.level;shadow.position=at
+	# Kept outside snapshot entity roots; the room delta stores its exact state.
+	add_child(shadow);chase.at=[at.x,at.y]
 func _checkpoint()->void:
 	if not validation_mode:Outpost.request_checkpoint()
 func schedule_chests(count:int,free:bool,rng:RandomNumberGenerator)->void:
@@ -121,7 +172,7 @@ func machine_distance(id:String)->float:
 	var boundary:=RoomSceneGeometry.closest_boundary_point(from,polygon)
 	return from.distance_to(boundary) if main.level.sight(from,boundary.move_toward(from,1)) else INF
 func nearest_machine()->String:
-	if record.get("kind","")!="game":return ""
+	if record.get("kind","")!="game" or is_shadow_room(record):return ""
 	var best:=82.0;var found:=""
 	for id in MACHINES:
 		var distance:=machine_distance(id)
@@ -136,7 +187,7 @@ func _unhandled_input(event:InputEvent)->void:
 	if id.is_empty():return
 	panel=SpecialMachineUI.new();panel.controller=self;panel.machine=id;add_child(panel);get_viewport().set_input_as_handled()
 func play(id:String,stake:int=0,guess:String="")->Dictionary:
-	if state.is_empty() or record.kind!="game" or id not in MACHINES:return {"error":"装置不在当前房间。"}
+	if state.is_empty() or record.kind!="game" or is_shadow_room(record) or id not in MACHINES:return {"error":"装置不在当前房间。"}
 	if id=="machine_lottery" and guess=="beicheng":return _gm_easter_egg()
 	if bool(state.used.get(id,false)):return {"error":"这台装置在本房间已使用。"}
 	if machine_distance(id)>90:return {"error":"请靠近装置。"}
@@ -146,7 +197,7 @@ func play(id:String,stake:int=0,guess:String="")->Dictionary:
 	var matches:=lottery_matches(guess,str(state.answer)) if id=="machine_lottery" else 0
 	if matches<0:return {"error":"请输入完整的八位数字，可保留开头的0。"}
 	if stake>GameState.coins:return {"error":"随身金币不足。"}
-	var before:=state.duplicate(true);var old_coins:=GameState.coins;var old_keys:=GameState.keys
+	var before:=state.duplicate(true);var old_coins:=GameState.coins
 	var rng:=_rng();var result:={"error":"","message":"","payout":0}
 	GameState.spend_coins(stake);state.used[id]=true
 	if id=="machine_lottery":
@@ -165,15 +216,15 @@ func play(id:String,stake:int=0,guess:String="")->Dictionary:
 					var point:Vector2=main.level.nearest_clear(main.player.position+Vector2(0,40),8)
 					state.pending_prizes.append({"loot":{"kind":"gear","item":weapon},"at":[point.x,point.y]});result.message="获得传说武器："+str(weapon.name);result.weapon=weapon
 			1:GameState.add_coins(1000);result.message="金币翻倍 · 获得1000金币！";result.payout=1000
-			2:schedule_chests(3,false,rng);result.message="三只补给宝箱即将天降 · 开启仍需钥匙。"
+			2:schedule_chests(3,false,rng);result.message="三只宝箱即将天降。"
 			3:
-				GameState.add_keys(5)
-				result.message="获得五把钥匙！"
+				GameState.add_coins(500);result.payout=500
+				result.message="获得500金币！"
 			4:result.message="谢谢惠顾，本次没有奖励。"
 	state.rng=str(rng.state)
 	if not validation_mode and not SaveService.save_run(GameState.snapshot()):
-		record.delta.special=before;state=record.delta.special;GameState.coins=old_coins;GameState.keys=old_keys
-		EventBus.coins_changed.emit(old_coins);EventBus.keys_changed.emit(old_keys)
+		record.delta.special=before;state=record.delta.special;GameState.coins=old_coins
+		EventBus.coins_changed.emit(old_coins)
 		return {"error":"保存失败，金币与装置次数已退回，请重试。"}
 	return result
 

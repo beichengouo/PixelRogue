@@ -402,11 +402,8 @@ func _build() -> void:
 	level_row.add_child(coin_icon)
 	_coin_text = _label(str(GameState.coins), 15, PixelUi.GOLD)
 	level_row.add_child(_coin_text)
-	var key_icon := UiFactory.item_icon(ItemDB.key_icon(), 18.0)
-	key_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	level_row.add_child(key_icon)
-	_key_text = _label(str(GameState.keys), 15, Palette.UI_TEXT)
-	level_row.add_child(_key_text)
+	# A hidden legacy label avoids breaking old HUD references; keys are retired.
+	_key_text = _label("",15,Palette.UI_TEXT);_key_text.hide();level_row.add_child(_key_text)
 	_player_statuses = PlayerStatusStrip.new()
 	_player_statuses.position = Vector2(20, 92)
 	root.add_child(_player_statuses)

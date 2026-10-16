@@ -183,6 +183,7 @@ func restore_room(d:Dictionary,with_player:=false)->void:
 	for hazard in get_tree().get_nodes_in_group("affix_hazards"):
 		if not hazard.is_queued_for_deletion() and hazard.room==main.level:hazard.restore_hit_cooldowns(_restore_ids)
 	main.level.doors_open=bool(main.graph.rooms[main.graph.current].rewarded) or main.graph.rooms[main.graph.current].kind=="spawn"
+	main.level.sync_door_links(main.graph.rooms[main.graph.current])
 	main.level.queue_redraw();_restoring=false
 
 func _restore_room_node(record:Dictionary)->Node:

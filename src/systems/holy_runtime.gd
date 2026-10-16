@@ -86,7 +86,7 @@ func _process(delta:float)->void:
 	for field:Dictionary in fields.duplicate():
 		if _tick_field(field,delta):fields.erase(field)
 	if _cloud_open and (clock>=cloud_until or actor.shield_hp<=0):
-		_cloud_open=false;cloud_until=0;area(actor.global_position,72,.6);HolyFX.spawn(actor.get_parent(),actor.global_position,"cloud",72,.35)
+		_cloud_open=false;cloud_until=0;area(actor.global_position,72,.6);HolyFX.around(actor,"cloud",72,.35)
 	if veil_until>0 and (clock>=veil_until or actor.shield_hp<=0):
 		veil_until=0
 		if rank(&"holy_veil")>=3:area(actor.global_position,72,.25)
@@ -102,7 +102,7 @@ func _process(delta:float)->void:
 		if clock>=sanctuary_until:
 			_sanctuary_open=false;area(actor.global_position,126,.9);shield(.06,3);afterlight_until=clock+3
 		else:
-			if ready("sanctuary_tick"):start("sanctuary_tick",.75);area(actor.global_position,126,.35);HolyFX.spawn(actor.get_parent(),actor.global_position,"ring",126,.35)
+			if ready("sanctuary_tick"):start("sanctuary_tick",.75);area(actor.global_position,126,.35);HolyFX.around(actor,"ring",126,.35)
 			if ready("sanctuary_purge"):start("sanctuary_purge",1);purge(actor.global_position,60,2)
 	if _cloud_open and ready("cloud_purge"):start("cloud_purge",.75);purge(actor.global_position,46,1)
 	queue_redraw()
@@ -151,14 +151,14 @@ func field_destination(requested:Vector2)->Vector2:
 func _release(id:StringName,destination:Vector2,empowered:bool,bonus:float,serial:int,hymn:bool=false)->void:
 	if actor.hp<=0:return
 	_cast_bonus=bonus;actor._cast_timer=.28;actor._cast_pose=&"cast";actor._animation_request+=1;rhythm_cast=clock
-	HolyFX.spawn(actor.get_parent(),actor.global_position,"cloud",30,.3)
+	HolyFX.around(actor,"cloud",30,.3)
 	match id:
 		&"flame_nova":
 			var near:=targets(destination,90,1);pillar(destination,64,1.4,.55,true,near[0] if not near.is_empty() else null,serial,true,bonus)
 			if empowered:
 				for i in 3:pillar(destination+Vector2.RIGHT.rotated(i*TAU/3)*64,36,.65,.8+i*.18,false,null,serial,false,bonus)
 		&"fan_bolts":
-			HolyFX.spawn(actor.get_parent(),actor.global_position,"feather",40,.45)
+			HolyFX.around(actor,"feather",40,.45)
 			feathers_until=clock+8;feathers.clear()
 			for i in (6 if empowered else 3):feathers.append({"ready":clock,"end":clock+(3 if empowered and i>=3 else 8),"index":i,"guard":false,"enhanced":empowered,"bonus":bonus})
 		&"blink":
@@ -182,10 +182,10 @@ func _release(id:StringName,destination:Vector2,empowered:bool,bonus:float,seria
 			if step_fx!=null:step_fx.facing=direction
 		&"meteor":
 			judgment_until=clock+8;_judgment_open=true;cooldowns.erase("judgment_pillars");judgment_hits.clear()
-			HolyFX.spawn(actor.get_parent(),actor.global_position,"judgment",84,.7)
+			HolyFX.around(actor,"judgment",84,.7)
 		&"starfall":
 			sanctuary_until=clock+8;_sanctuary_open=true;shield(.12,4);cooldowns.erase("sanctuary_tick")
-			HolyFX.spawn(actor.get_parent(),actor.global_position,"sanctuary",126,.7)
+			HolyFX.around(actor,"sanctuary",126,.7)
 	if not HolySkills.DATA[id].ultimate:
 		skill_count+=1
 		if GameState.passive_id==&"sylphiette_grace" and combat_active():add_grace(1)
@@ -246,7 +246,7 @@ func _tick_field(field:Dictionary,delta:float)->bool:
 		if live(followed):
 			origin=followed.global_position.clamp(actor.room.bounds().position+Vector2.ONE*12,actor.room.bounds().end-Vector2.ONE*12);field.at=point(origin)
 			for warning in get_tree().get_nodes_in_group("holy_visuals"):
-				if warning is HolyFX and warning.warning_id==str(field.get("warning_id","")):warning.global_position=origin
+				if warning is HolyFX and warning.warning_id==str(field.get("warning_id","")):warning.global_position=origin+Vector2(0,14)
 	field.delay-=delta
 	if field.delay>0:return false
 	match str(field.kind):
@@ -368,7 +368,7 @@ func on_shield_absorbed(amount:float)->void:
 		for target in targets(actor.global_position,250,1):feather_at(actor.global_position,target,.25,1)
 func on_hurt()->void:
 	if rank(&"holy_purity")<=0 or not ready("purity"):return
-	start("purity",6);purge(actor.global_position,64,2);HolyFX.spawn(actor.get_parent(),actor.global_position,"ring",64,.3)
+	start("purity",6);purge(actor.global_position,64,2);HolyFX.around(actor,"ring",64,.3)
 	if rank(&"holy_purity")>=2:area(actor.global_position,64,.2)
 	if rank(&"holy_purity")>=3 and feathers.size()<8:feathers.append({"ready":clock+.75,"end":clock+1.5,"index":feathers.size(),"guard":true,"enhanced":false})
 func add_grace(value:int)->void:
@@ -412,20 +412,17 @@ func on_room_exit()->void:
 	for unit in get_tree().get_nodes_in_group("holy_decoys"):
 		if unit.holy==self:unit.empowered=false;unit.expire()
 func _draw()->void:
-	var gold:=Color(1,.86,.53,.7);var origin:=Vector2(0,14)
+	var origin:=Vector2(0,14)
 	var intensity:=clampf(float(SaveService.data.get("spell_fx_strength",1)),0,1)
 	var phase:=.30 if ComicMotion.reduced() else fposmod(clock*.55,1.0)*.45+.15
 	if prayer>=100:
-		var center:=to_local(actor.global_position+Vector2(0,-2))
-		draw_arc(center,36,0,TAU,64,gold,2);draw_arc(center,32,0,TAU,64,Color(.65,.84,1,.5),1)
-	if grace_until>clock:draw_arc(origin,24,0,TAU,36,Color(.8,.9,1,.6),2)
-	if _cloud_open:
+		HolyFX.paint(self,"prayer",HolyFX.ground_rect("prayer",42,origin),phase,intensity)
+	if grace_until>clock:HolyFX.paint(self,"grace",HolyFX.ground_rect("grace",28,origin),phase,intensity)
+	if _cloud_open or actor.shield_hp>0:
 		HolyFX.paint(self,"cloud",HolyFX.ground_rect("cloud",39,origin),phase,intensity*.95)
-		draw_arc(origin,29,0,TAU,40,gold,1)
 	if _judgment_open:HolyFX.paint(self,"judgment",HolyFX.ground_rect("judgment",22,origin),phase,intensity*.9)
 	if _sanctuary_open:
 		HolyFX.paint(self,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.45)
-		draw_arc(origin,126,0,TAU,64,Color(1,.91,.67,.4),1)
 	for feather:Dictionary in feathers:
 		if float(feather.ready)>clock:continue
 		var position_value:=origin+Vector2.RIGHT.rotated(clock*2+float(feather.index)*TAU/maxi(1,feathers.size()))*30
@@ -434,12 +431,11 @@ func _draw()->void:
 		if field.kind=="court":
 			var location:=to_local(at(field))
 			HolyFX.paint(self,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.48)
-			draw_arc(location,90,0,TAU,48,Color(1,.9,.6,.32),1)
 	for id in marks:
 		var target:=enemy(str(id))
 		if live(target):
 			var position_value:=to_local(target.global_position+Vector2(0,12))
-			draw_arc(position_value,13,0,TAU,24,gold,1.5);draw_line(position_value+Vector2(0,-5),position_value+Vector2(0,5),gold,1.5)
+			HolyFX.paint(self,"mark",Rect2(position_value-Vector2(16,22),Vector2(32,32)),phase,intensity)
 func snapshot()->Dictionary:
 	var result:Dictionary={}
 	for property in get_property_list():

@@ -16,8 +16,9 @@ func preview(kind:String,id:String,amount:int)->Dictionary:
 	if amount<=0 or amount>1000000:return {"error":"数量必须在1至1000000之间。"}
 	var draft:=data.duplicate(true)
 	if kind=="gold":draft.outpost.gold=int(draft.outpost.get("gold",0))+amount
-	elif kind in ["coins","keys"]:
-		if not draft.get("run") is Dictionary or draft.run.is_empty():return {"error":"该存档没有可继续的出征；随身金币和钥匙仅能发给活跃出征。"}
+	elif kind=="keys":return {"error":"钥匙机制已移除。"}
+	elif kind=="coins":
+		if not draft.get("run") is Dictionary or draft.run.is_empty():return {"error":"该存档没有可继续的出征；随身金币仅能发给活跃出征。"}
 		draft.run[kind]=int(draft.run.get(kind,0))+amount
 	elif kind in ["warehouse","bag"]:
 		var item:=ExpeditionData.resolve(id)

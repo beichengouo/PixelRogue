@@ -409,6 +409,9 @@ func _load_room_finish_end()->void:
 
 func _process(dt:float)->void:
 	if Engine.is_editor_hint():return
+	# Guaranteed altars/frontiers can add a connection after this scene loaded.
+	# The graph remains authoritative; unchanged links never rebuild navigation.
+	sync_door_links(record)
 	var units:Array=[]
 	# Players, enemies, bosses and all friendly bodies share this registry.
 	# Apply the same painted-pixel occlusion rule to every living room unit.

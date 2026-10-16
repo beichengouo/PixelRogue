@@ -8,7 +8,7 @@ static func cost(value:int)->int:
 static func apply(value:int)->void:
 	GameState.level=clampi(value,1,MAXIMUM)
 	GameState.exp=0.0
-	GameState.talent_points=1+int(GameState.level/3)
+	GameState.talent_points=GameState.level
 	for id in Skills.order_for():
 		if Skills.unlock_level(id)<=GameState.level and not GameState.unlocked_skills.has(id):GameState.unlocked_skills.append(id)
 	GameState._reset_stats()
