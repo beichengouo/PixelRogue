@@ -78,35 +78,44 @@ static func accent(parent: Control, tint := Color("e8bf79")) -> void:
 	ink.resized.connect(ink.queue_redraw)
 
 static func bind_button(button: Button) -> void:
-	if button.has_meta("comic_bound"): return
-	button.set_meta("comic_bound", true)
-	var mark := ComicFocus.new()
-	mark.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	button.add_child(mark)
-	mark.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	var focus_style := button.get_theme_stylebox("focus").duplicate()
-	var pointer_style := StyleBoxEmpty.new()
-	var update := func() -> void:
-		button.add_theme_stylebox_override("focus", pointer_style if UIFlow.pointer_active else focus_style)
-		mark.active = not button.disabled and (button.is_hovered() if UIFlow.pointer_active else button.has_focus())
-		mark.queue_redraw()
-	for event in [button.focus_entered, button.focus_exited, button.mouse_entered, button.mouse_exited, button.button_down, button.button_up, button.resized]: event.connect(update)
-	button.mouse_entered.connect(func() -> void: UIFlow.set_pointer_active(true))
-	UIFlow.navigation_mode_changed.connect(update)
-	button.tree_exiting.connect(func() -> void:
-		if UIFlow.navigation_mode_changed.is_connected(update): UIFlow.navigation_mode_changed.disconnect(update))
-	button.ready.connect(update)
-	button.focus_entered.connect(func() -> void:
-		if not UIFlow.pointer_active and button.is_inside_tree() and button.is_visible_in_tree(): AudioManager.play(&"ui_click", -22))
+	if button.has_meta("comic_bound"):return
+	button.set_meta("comic_bound",true)
+	var mark:=ComicFocus.new();mark.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	button.add_child(mark);mark.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
 class ComicFocus extends Control:
-	var active := false
-	func _draw() -> void:
-		if not active: return
-		var gold := Color("ffe0a2")
-		var y := size.y * 0.5
-		draw_colored_polygon(PackedVector2Array([Vector2(3, y-5), Vector2(10, y), Vector2(3, y+5)]), gold)
-		draw_line(Vector2(15, size.y-3), Vector2(size.x-12, size.y-3), Color(gold, 0.75), 2, true)
+	var active:=false
+	var _button:Button
+	var _focus_style:StyleBox
+	var _pointer_style:=StyleBoxEmpty.new()
+	func _enter_tree()->void:
+		_button=get_parent() as Button
+		if is_instance_valid(UIFlow) and not UIFlow.navigation_mode_changed.is_connected(_refresh):UIFlow.navigation_mode_changed.connect(_refresh)
+		_refresh.call_deferred()
+	func _ready()->void:
+		if not is_instance_valid(_button):return
+		for event in [_button.focus_entered,_button.focus_exited,_button.mouse_entered,_button.mouse_exited,_button.button_down,_button.button_up,_button.resized]:
+			if not event.is_connected(_refresh):event.connect(_refresh)
+		if not _button.mouse_entered.is_connected(_pointer_entered):_button.mouse_entered.connect(_pointer_entered)
+		if not _button.focus_entered.is_connected(_focus_sound):_button.focus_entered.connect(_focus_sound)
+		_refresh()
+	func _exit_tree()->void:
+		if is_instance_valid(UIFlow) and UIFlow.navigation_mode_changed.is_connected(_refresh):UIFlow.navigation_mode_changed.disconnect(_refresh)
+	func _refresh()->void:
+		if not is_inside_tree() or is_queued_for_deletion() or not is_instance_valid(_button) or _button.is_queued_for_deletion():return
+		if _focus_style==null:_focus_style=_button.get_theme_stylebox("focus").duplicate()
+		_button.add_theme_stylebox_override("focus",_pointer_style if UIFlow.pointer_active else _focus_style)
+		active=not _button.disabled and (_button.is_hovered() if UIFlow.pointer_active else _button.has_focus())
+		queue_redraw()
+	func _pointer_entered()->void:
+		if is_inside_tree() and not is_queued_for_deletion():UIFlow.set_pointer_active(true)
+	func _focus_sound()->void:
+		if not UIFlow.pointer_active and is_instance_valid(_button) and _button.is_inside_tree() and _button.is_visible_in_tree():AudioManager.play(&"ui_click",-22)
+	func _draw()->void:
+		if not active:return
+		var gold:=Color("ffe0a2");var y:=size.y*.5
+		draw_colored_polygon(PackedVector2Array([Vector2(3,y-5),Vector2(10,y),Vector2(3,y+5)]),gold)
+		draw_line(Vector2(15,size.y-3),Vector2(size.x-12,size.y-3),Color(gold,.75),2,true)
 
 class ComicEdge extends Control:
 	var tint := Color("e8bf79")

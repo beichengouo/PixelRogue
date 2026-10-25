@@ -36,7 +36,7 @@ func glow_radius()->float:
 	return 104.0
 
 func _build_glow()->void:
-	_chest_light=LightUtil.make_point_light(glow_color(),0.78,glow_radius())
+	_chest_light=LightUtil.make_point_light(glow_color(),0.78,glow_radius(),false,"loot")
 	_chest_light.name="ChestGlow"
 	_chest_light.set_meta("day_glow",true)
 	add_child(_chest_light)

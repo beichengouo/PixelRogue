@@ -28,8 +28,8 @@ func basic(enemy:EnemyBase,receipt:BasicAttackReceipt)->void:
 		if selected!=&"":GameState.skill_cooldowns_by_id[selected]=maxf(0,longest-.15*strength(&"late_clock"));GameState._sync_skill_cooldowns();owner.start(&"late_clock",1)
 	if has(&"half_star") and dash_until>owner.clock:
 		owner.consumed_status("half_star")
-		dash_until=0;GameState.add_mp(2*strength(&"half_star"));owner.extra_damage(enemy,owner.attack()*.1*strength(&"half_star"),owner.actor.global_position)
-	if has(&"broken_verse") and receipt.critical and owner.ready(&"broken_verse"):owner.start(&"broken_verse",5);owner.grant_player_shield(owner.actor.max_hp*.03*strength(&"broken_verse"),2)
+		dash_until=0;GameState.add_mp(2*strength(&"half_star"));owner.extra_damage(enemy,owner.fixed_value(&"half_star",&"damage_flat"),owner.actor.global_position)
+	if has(&"broken_verse") and receipt.critical and owner.ready(&"broken_verse"):owner.start(&"broken_verse",5);owner.grant_player_shield(owner.fixed_value(&"broken_verse",&"shield_flat"),2)
 func skill(id:StringName)->void:
 	if id==&"" or Skills.is_ultimate(id):return
 	for key in verse_skills.keys():
@@ -39,10 +39,10 @@ func skill(id:StringName)->void:
 		if verse_skills.size()>=3:verse_skills.clear();verse_until=owner.clock+4;owner.start(&"leaf_page",4)
 func skill_hit(enemy:EnemyBase)->void:
 	if has(&"mist_dew") and owner.actor.hp<owner.actor.max_hp*.5 and owner.ready(&"mist_dew"):
-		owner.start(&"mist_dew",3);owner.actor.heal_player(owner.actor.max_hp*.01*strength(&"mist_dew"))
+		owner.start(&"mist_dew",3);owner.actor.heal_player(owner.fixed_value(&"mist_dew",&"heal_flat"))
 	if has(&"leaf_page") and verse_until>owner.clock:
 		owner.consumed_status("leaf_page")
-		verse_until=0;owner.area_damage(enemy.global_position,36,owner.attack()*.18*strength(&"leaf_page"));HolyFX.spawn(owner.actor.get_parent(),enemy.global_position,"ring",36,.3)
+		verse_until=0;owner.area_damage(enemy.global_position,36,owner.fixed_value(&"leaf_page",&"damage_flat"));HolyFX.spawn(owner.actor.get_parent(),enemy.global_position,"ring",36,.3)
 func ally_hit(ally:Node2D)->void:
 	if has(&"lamp_tassel") and owner.actor.global_position.distance_to(ally.global_position)<=144 and owner.ready(&"lamp_tassel"):owner.start(&"lamp_tassel",1);GameState.add_mp(strength(&"lamp_tassel"))
 func dash()->void:

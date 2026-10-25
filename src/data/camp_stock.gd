@@ -39,8 +39,8 @@ static func offers(batch:int, nonce:int, seed:int) -> Array:
 static func price(item:Dictionary) -> Dictionary:
 	var id=str(item.id)
 	if id.begins_with("camp_"):
-		return {"gold":0,"materials":{"glow_mushroom_4":2} if int(item.rarity)==2 else {"glow_mushroom_7":1}}
-	if id=="potion_starlight":return {"gold":0,"materials":{"glow_mushroom_2":3}}
+		return {"gold":0,"materials":{"storm_crystal":6,"river_pearl":8} if int(item.rarity)==2 else {"ancient_seal":8,"storm_crystal":8}}
+	if id=="potion_starlight":return {"gold":maxi(300,basic_price(item)),"materials":{}}
 	return {"gold":basic_price(item),"materials":{}}
 static func basic_price(item:Dictionary)->int:return int(item.get("cost",0))*GOLD_MULTIPLIER
 static func price_text(item:Dictionary) -> String:

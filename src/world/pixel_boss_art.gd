@@ -53,6 +53,11 @@ static func make_frames(id:StringName) -> SpriteFrames:
 	return frames
 
 static func align(sprite:AnimatedSprite2D,id:StringName,body:Vector2) -> void:
+	if sprite.sprite_frames.get_meta("boss_stage_art",false):
+		var stage_factor:float=HEIGHTS[id]/maxf(1,float(sprite.sprite_frames.get_meta("body_height",190)))
+		var cell:=float(sprite.sprite_frames.get_meta("cell",256));var foot:Vector2=sprite.sprite_frames.get_meta("foot",Vector2(128,240))
+		sprite.scale=Vector2.ONE*stage_factor;sprite.position=Vector2(0,body.y*.5)-(foot-Vector2.ONE*cell*.5)*stage_factor
+		sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;return
 	var factor:=float(_scale[id])
 	if city_boss(id):
 		sprite.scale=Vector2.ONE*factor;sprite.position=Vector2(0,roundf(body.y*.5-(240-128)*factor));return
@@ -65,6 +70,8 @@ static func align(sprite:AnimatedSprite2D,id:StringName,body:Vector2) -> void:
 	sprite.position=Vector2(0,roundf(body.y/2-(126-64)*factor))
 
 static func icon(id:StringName) -> Texture2D:
+	var portrait := "res://assets/boss_portraits_v09/%s.png" % id
+	if ResourceLoader.exists(portrait): return load(portrait) as Texture2D
 	# 图标使用完整第一帧，避免把武器或王冠切断。
 	return make_frames(id).get_frame_texture(&"idle",0)
 

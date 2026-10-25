@@ -15,8 +15,8 @@ static func frames(id:String)->SpriteFrames:
 	for row in actions.size():
 		var positions:Array=[]
 		for column in 4:positions.append(Vector2(column,row))
-		var speed:=8.0 if str(actions[row]).begins_with("walk") else (5.0 if actions[row]=="talk" else 2.0)
-		PixelEnemyArt._add(result,StringName(actions[row]),texture,Vector2(128,128),positions,speed,true)
+		var speed:=8.0 if str(actions[row]).begins_with("walk") else (5.0 if actions[row]=="talk" else (1.25 if actions[row]=="rest" else .75))
+		PixelEnemyArt._add(result,StringName(actions[row]),texture,Vector2(128,128),positions,speed,actions[row]!="rest")
 	_frames[id]=result;return result
 static func align(sprite:AnimatedSprite2D,id:String)->void:
 	var extent:Array=metadata(id).get("extents",[104,100]);var scale_value:=minf(38.0/maxf(1,extent[0]),32.0/maxf(1,extent[1]))

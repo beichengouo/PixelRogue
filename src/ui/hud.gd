@@ -18,6 +18,8 @@ var _time_text: Label
 var _contract_text:Label
 ## 等级 / 经验 / 魔法值 / 技能栏 / 药水快捷栏
 var _level_text: Label
+var _exp_bar: StatBar
+var _exp_level := -1
 var _mp_bar: StatBar
 var _mp_text: Label
 var _skill_bar: HBoxContainer
@@ -92,6 +94,7 @@ func _ready() -> void:
 	_refresh_contract()
 	set_coins(GameState.coins)
 	set_keys(GameState.keys)
+	_refresh_progress()
 
 
 func _process(delta: float) -> void:
@@ -117,11 +120,13 @@ func _process(delta: float) -> void:
 			var id := GameState.skill_for_slot(i)
 			var left := GameState.skill_cooldowns[i] if i < GameState.skill_cooldowns.size() else 0.0
 			var missing_mp := id != &"" and left <= 0 and GameState.mp < GameState.skill_cost(id)
-			var state := ("empty" if _slot_has_choices(i) else "locked") if id == &"" else ("cooldown" if left > 0 else ("mana" if missing_mp else "ready"))
+			var blocked:=GameState.skill_block_reason(id)
+			var state := ("empty" if _slot_has_choices(i) else "locked") if id == &"" else ("cooldown" if left > 0 else ("blocked" if not blocked.is_empty() else ("mana" if missing_mp else "ready")))
 			while _skill_states.size() <= i: _skill_states.append("")
 			if state != _skill_states[i]:
 				if state == "ready" and _skill_states[i] != "": ComicMotion.emphasize(_skill_slots[i])
 				_skill_states[i] = state
+				_skill_slots[i].tooltip_text=str(_skill_slots[i].get_meta("base_tooltip",""))+("\n暂不可用："+blocked if not blocked.is_empty() else "")
 				_skill_icons[i].modulate = Color.WHITE if state == "ready" else (Color("7faacc") if state == "mana" else Color(0.52, 0.58, 0.65))
 				_skill_shades[i].visible = state != "ready"
 				_skill_cd_labels[i].add_theme_color_override("font_color", Color("a3d8fa") if state == "mana" else (Color("9ee6ab") if state == "ready" else PixelUi.INK))
@@ -130,7 +135,7 @@ func _process(delta: float) -> void:
 				style.border_color = Color("6da9c8") if state == "mana" else (Color("9ee6ab") if state == "ready" else Color("65748a"))
 			# The padlock/empty-slot art communicates availability. Keep the icon
 			# clear; detailed availability remains in the slot tooltip.
-			var text := "" if state in ["locked", "empty", "ready"] else ("缺蓝" if state == "mana" else "%.0f" % ceilf(left))
+			var text := "" if state in ["locked", "empty", "ready"] else ("同行中" if state=="blocked" else ("缺蓝" if state == "mana" else "%.0f" % ceilf(left)))
 			if _skill_cd_labels[i].text != text: _skill_cd_labels[i].text = text
 			_skill_meters[i].value = 0.0 if id == &"" else clampf(1 - left / maxf(0.1, GameState.skill_cooldown(id)), 0, 1)
 
@@ -237,6 +242,7 @@ func refresh_skill_bar() -> void:
 		else:
 			column.tooltip_text = "%s\n%s\n消耗 %d 魔法 · 冷却 %.1f 秒" % [caption,
 				str(skill.get("desc", "")), int(GameState.skill_cost(id)), GameState.skill_cooldown(id)]
+		column.set_meta("base_tooltip",column.tooltip_text)
 		column.mouse_filter = Control.MOUSE_FILTER_PASS
 		_skill_slots.append(column)
 		_skill_icons.append(icon)
@@ -376,7 +382,7 @@ func _build() -> void:
 	var hp_row := UiFactory.hbox(8)
 	left.add_child(hp_row)
 	_hp_bar = PlayerStatBar.new()
-	_hp_bar.setup(Color("ef596e"),26.0,0)
+	_hp_bar.setup(Color("ef596e"),32.0,0)
 	(_hp_bar as PlayerStatBar).configure("hp")
 	_hp_bar.custom_minimum_size.x = 232.0
 	_hp_bar.warn_ratio = 0.32
@@ -386,21 +392,28 @@ func _build() -> void:
 	var mp_row := UiFactory.hbox(8)
 	left.add_child(mp_row)
 	_mp_bar = PlayerStatBar.new()
-	_mp_bar.setup(Color("6db9ec"),20.0,0)
+	_mp_bar.setup(Color("6db9ec"),28.0,0)
 	(_mp_bar as PlayerStatBar).configure("mp")
 	_mp_bar.custom_minimum_size.x = 232.0
 	_mp_bar.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	mp_row.add_child(_mp_bar)
 	_mp_text = _label("100 / 100", 15, Palette.UI_TEXT_DIM.lightened(0.25))
 	mp_row.add_child(_mp_text);_mp_text.hide()
+	_exp_bar = preload("res://src/ui/hud_experience_bar.gd").new().setup(Color("ebc25c"),24.0,0)
+	(_exp_bar as PlayerStatBar).configure("xp")
+	_exp_bar.name = "ExperienceBar"
+	_exp_bar.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	_exp_bar.custom_minimum_size.x = 232.0
+	_exp_bar.mouse_filter = Control.MOUSE_FILTER_PASS
+	left.add_child(_exp_bar)
 	var level_row := UiFactory.hbox(8);_resources_row=level_row
 	left.add_child(level_row)
-	_level_text = _label("Lv.1", 15, Palette.UI_ACCENT)
+	_level_text = _label("Lv.1", 20, Palette.UI_ACCENT)
 	level_row.add_child(_level_text)
-	var coin_icon := UiFactory.sheet_icon(ItemDB.ICON_COIN, 18.0)
+	var coin_icon := UiFactory.sheet_icon(ItemDB.ICON_COIN, 24.0)
 	coin_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	level_row.add_child(coin_icon)
-	_coin_text = _label(str(GameState.coins), 15, PixelUi.GOLD)
+	_coin_text = _label(str(GameState.coins), 20, PixelUi.GOLD)
 	level_row.add_child(_coin_text)
 	# A hidden legacy label avoids breaking old HUD references; keys are retired.
 	_key_text = _label("",15,Palette.UI_TEXT);_key_text.hide();level_row.add_child(_key_text)
@@ -507,6 +520,14 @@ func _refresh_input_hints() -> void:
 
 func _refresh_progress() -> void:
 	_level_text.text = "Lv.%d" % GameState.level
+	if _exp_bar == null: return
+	var capped := GameState.level >= GameState.MAX_LEVEL
+	_exp_bar.call("set_capped",capped)
+	var needed := 1.0 if capped else maxf(1.0,GameState.exp_needed(GameState.level))
+	_exp_bar.set_max_value(needed)
+	_exp_bar.set_value(needed if capped else GameState.exp,_exp_level != GameState.level)
+	_exp_bar.tooltip_text = "经验 · 已满级" if capped else "经验 %.0f / %.0f" % [GameState.exp,needed]
+	_exp_level = GameState.level
 
 func _refresh_contract()->void:
 	if _contract_text==null:return

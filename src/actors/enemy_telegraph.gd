@@ -8,6 +8,13 @@ var age := 0.0
 var direction := Vector2.RIGHT
 var head_y := -40.0
 var active := false
+var fan_spread:=1.6
+var shot_offsets:Array[float]=[0.0]
+var room:RoomLevel
+func paint_point(at:Vector2,color:Color)->void:
+	if is_instance_valid(room) and not room.bounds().grow(-3).has_point(global_position+at):return
+	draw_rect(Rect2(at-Vector2.ONE*2,Vector2.ONE*4),Color(.05,.02,.03,.85))
+	draw_rect(Rect2(at-Vector2.ONE,Vector2.ONE*2),color)
 
 func _ready() -> void:
 	z_index =800;z_as_relative=false
@@ -50,21 +57,21 @@ func _draw() -> void:
 		var radius := reach if style=="blast" else 34.0
 		for i in 64:
 			var point := (Vector2.from_angle(TAU*i/64.0)*radius).round()
-			draw_rect(Rect2(point,Vector2(3,3)),Color(color,0.85 if i%4==0 else 0.5))
+			paint_point(point,Color(color,0.85 if i%4==0 else 0.5))
 		return
 	var angle := direction.angle()
 	if style in ["shot","bolt"]:
-		var spreads := [-0.28,0.0,0.28] if style=="shot" else [0.0]
+		var spreads := shot_offsets if style=="shot" else [0.0]
 		for spread: float in spreads:
 			for r in range(24,97,12):
-				draw_rect(Rect2((Vector2.from_angle(angle+spread)*r).round(),Vector2(3,3)),Color(color,0.7))
+				paint_point((Vector2.from_angle(angle+spread)*r).round(),Color(color,.85))
 	elif style=="charge":
-		for r: int in [32,56,80,104]:
+		for r in range(24,int(reach),24):
 			var at := (direction*r).round()
 			for j in range(-3,4):
 				var pixel := at+Vector2(-abs(j)*2,j*2).rotated(angle)
-				draw_rect(Rect2(pixel.round(),Vector2(3,3)),color)
+				paint_point(pixel.round(),color)
 	else:
 		for i in 17:
-			var point := (Vector2.from_angle(angle+lerpf(-0.8,0.8,i/16.0))*reach).round()
-			draw_rect(Rect2(point,Vector2(3,3)),Color(color,0.75))
+			var point := (Vector2.from_angle(angle+lerpf(-fan_spread*.5,fan_spread*.5,i/16.0))*reach).round()
+			paint_point(point,Color(color,.9))

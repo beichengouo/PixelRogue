@@ -47,6 +47,7 @@ func unit_visual_rect(unit:Node2D)->Rect2:
 	return Rect2(unit.global_position+Vector2(-size.x*.5,-size.y),size)
 
 func _painted_bounds(texture:Texture2D)->Rect2:
+	if texture.has_meta("painted_bounds"):return texture.get_meta("painted_bounds")
 	var id:=texture.get_instance_id()
 	if _frame_bounds.has(id) and _frame_bounds[id].texture.get_ref()==texture:return _frame_bounds[id].rect
 	var image:=TexturePixels.image(texture)

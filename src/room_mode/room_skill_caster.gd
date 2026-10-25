@@ -1,55 +1,107 @@
 class_name RoomSkillCaster
 extends Node
 var actor: RoomPlayer
-var room: RoomLevel
+var _fallback_room:RoomLevel
+var room: RoomLevel:
+	get:
+		if is_instance_valid(actor) and is_instance_valid(actor.room):return actor.room
+		return _fallback_room if is_instance_valid(_fallback_room) else null
+	set(value):_fallback_room=value
 const INPUT_BUFFER_SECONDS:=.15
 var _buffer_slot:=-1
 var _buffer_skill:StringName=&""
 var _buffer_left:=0.0
 var _buffer_frame:=-1
+const WINDUP_SECONDS := .32
+const RECOVERY_SECONDS := .10
+var _pending_slot := -1
+var _pending_skill: StringName = &""
+var _windup_left := 0.0
+var _recovery_left := 0.0
+var _cast_direction := Vector2.RIGHT
+func busy() -> bool: return _pending_slot >= 0 or _recovery_left > 0
+func cancel_cast() -> void:
+	if _pending_slot>=0 and is_instance_valid(actor) and actor._cast_pose==&"skill_cast":
+		actor._cast_timer=0;actor._holy_pose_left=0
+	_pending_slot = -1; _pending_skill = &""; _windup_left = 0; _recovery_left = 0
+	clear_input_buffer()
 func _ready()->void:
 	UIFlow.stack_changed.connect(func()->void:
-		if UIFlow.has_screen():clear_input_buffer())
+		if UIFlow.has_screen():cancel_cast())
 func clear_input_buffer()->void:
 	_buffer_slot=-1;_buffer_skill=&"";_buffer_left=0
 func request(slot:int)->bool:
 	if not _input_allowed():clear_input_buffer();return false
 	if slot<0 or slot>=4:return false
 	var id:=GameState.skill_for_slot(slot)
+	var blocked:=GameState.skill_block_reason(id)
+	if not blocked.is_empty():clear_input_buffer();_notice(blocked);return false
 	if id==&"" or GameState.mp<GameState.skill_cost(id):_notice("魔力不足" if id!=&"" else "技能槽尚未装配");return false
 	var left:=float(GameState.skill_cooldowns_by_id.get(id,0))
 	if left>INPUT_BUFFER_SECONDS:_notice("技能尚未就绪");return false
 	clear_input_buffer()
-	if left<=0:return cast(slot)
+	if left<=0 and not busy():return cast(slot)
+	var action_left := _windup_left+RECOVERY_SECONDS if _pending_slot>=0 else _recovery_left
+	if busy() and action_left>INPUT_BUFFER_SECONDS:return false
 	_buffer_slot=slot;_buffer_skill=id;_buffer_left=INPUT_BUFFER_SECONDS;_buffer_frame=Engine.get_physics_frames();return true
 func _input_allowed()->bool:
-	return is_instance_valid(actor) and actor.hp>0 and not UIFlow.has_screen() and (GameState.run_active or CampSession.active) and actor.extraction_pose==&""
+	return is_instance_valid(actor) and is_instance_valid(room) and actor.hp>0 and not UIFlow.has_screen() and (GameState.run_active or CampSession.active) and actor.extraction_pose==&""
 func _physics_process(delta:float)->void:
+	if not _input_allowed():
+		cancel_cast();return
+	if _buffer_slot>=0 and _buffer_frame!=Engine.get_physics_frames():
+		_buffer_left-=delta
+		if _buffer_left<0:clear_input_buffer()
+	_recovery_left = maxf(0, _recovery_left - delta)
+	if _pending_slot >= 0:
+		if GameState.skill_for_slot(_pending_slot) != _pending_skill:
+			cancel_cast();return
+		_windup_left = maxf(0, _windup_left - delta)
+		actor.aim_direction = _cast_direction
+		if _windup_left > 0: return
+		var releasing_slot := _pending_slot
+		_pending_slot = -1; _pending_skill = &""
+		if _cast_immediate(releasing_slot): _recovery_left = RECOVERY_SECONDS
+		return
 	if _buffer_slot<0:return
 	if not _input_allowed() or GameState.skill_for_slot(_buffer_slot)!=_buffer_skill:clear_input_buffer();return
 	if _buffer_frame==Engine.get_physics_frames():return
-	if GameState.skill_ready(_buffer_slot) and _buffer_left>0:
+	if not busy() and GameState.skill_ready(_buffer_slot) and _buffer_left>0:
 		var slot:=_buffer_slot;clear_input_buffer();cast(slot);return
-	_buffer_left-=delta
-	if _buffer_left<=0:clear_input_buffer()
+
 var _notice_until:=0
 func _notice(message:String)->void:
+	if message=="魔力不足" and is_instance_valid(actor) and is_instance_valid(actor.emotes):actor.emotes.react("no_mana")
 	var now:=Time.get_ticks_msec()
 	if now<_notice_until:return
 	_notice_until=now+700;AudioManager.play(&"skill_unavailable",-12,0)
 	Effects.text(actor.get_parent(),actor.global_position-Vector2(0,54),message,PixelUi.MUTED,14)
 
 func target(distance: float) -> Vector2:
+	var active_room:=room
+	if not is_instance_valid(actor) or not is_instance_valid(active_room):return Vector2.ZERO
 	var goal := actor.global_position+actor.aim_direction*distance
 	var best := distance*distance
 	for enemy in get_tree().get_nodes_in_group("enemies"):
 		if not is_instance_valid(enemy) or enemy._dead: continue
 		var offset: Vector2 = enemy.global_position-actor.global_position
-		if offset.length_squared()<best and actor.aim_direction.dot(offset.normalized())>=cos(PI/4) and room.sight(actor.global_position,enemy.global_position):
+		if offset.length_squared()<best and actor.aim_direction.dot(offset.normalized())>=cos(PI/4) and active_room.sight(actor.global_position,enemy.global_position):
 			best=offset.length_squared(); goal=enemy.global_position
-	return room.bounds().get_center() if not room.bounds().has_point(actor.global_position) else goal.clamp(room.bounds().position+Vector2(18,18),room.bounds().end-Vector2(18,18))
+	return active_room.bounds().get_center() if not active_room.bounds().has_point(actor.global_position) else goal.clamp(active_room.bounds().position+Vector2(18,18),active_room.bounds().end-Vector2(18,18))
 
 func cast(slot: int) -> bool:
+	if busy() or not _input_allowed() or not GameState.skill_ready(slot): return false
+	var id := GameState.skill_for_slot(slot)
+	if id == &"": return false
+	_pending_slot = slot; _pending_skill = id; _windup_left = WINDUP_SECONDS
+	_cast_direction = actor.aim_direction; actor._cast_timer = WINDUP_SECONDS
+	actor._cast_pose = &"skill_cast"; actor._animation_request += 1
+	# Hurt and shield feedback also increment the general animation counter.
+	# Only an actual new cast should restart the committed casting gesture.
+	actor._skill_animation_serial=-1
+	return true
+
+func _cast_immediate(slot: int) -> bool:
 	if UIFlow.has_screen() or (not GameState.run_active and not CampSession.active) or actor.hp<=0:return false
 	if is_instance_valid(actor.ilyua_runtime):return actor.ilyua_runtime.cast(slot)
 	if is_instance_valid(actor.holy_runtime):return actor.holy_runtime.cast(slot)
@@ -150,5 +202,3 @@ func _push_body_radius(body:Node2D)->float:
 		var scale_factor:float=maxf(child.global_transform.x.length(),child.global_transform.y.length())
 		radius=maxf(radius,local_radius*scale_factor+body.global_position.distance_to(child.global_position))
 	return radius if radius>0 else (24.0 if body is BossBase else 12.0)
-
-

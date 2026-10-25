@@ -30,7 +30,7 @@ func _ready()->void:
 	var visible:=CheckBox.new();visible.text="选中图层参与合成";sidebar.add_child(visible)
 	label=Label.new();label.text="可拖动的界面文案 / 按钮 / 区域";sidebar.add_child(label)
 	_controls=ItemList.new();_controls.custom_minimum_size.y=170;_controls.size_flags_vertical=Control.SIZE_EXPAND_FILL;sidebar.add_child(_controls)
-	_font=SpinBox.new();_font.min_value=10;_font.max_value=48;_font.prefix="选中文案字号";sidebar.add_child(_font)
+	_font=SpinBox.new();_font.min_value=10;_font.max_value=96;_font.prefix="选中文案字号";sidebar.add_child(_font)
 	_button(sidebar,"恢复该控件默认布局",_reset_control)
 	canvas=ArtEditCanvas.new();canvas.size_flags_horizontal=Control.SIZE_EXPAND_FILL;canvas.size_flags_vertical=Control.SIZE_EXPAND_FILL;body.add_child(canvas)
 	_status=Label.new();_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;root.add_child(_status)

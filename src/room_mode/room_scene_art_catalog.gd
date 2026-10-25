@@ -13,7 +13,23 @@ static func definition(id:String)->Dictionary:
 		_signatures[id]=signature
 		var value:Variant=JSON.parse_string(FileAccess.get_file_as_string(path)) if FileAccess.file_exists(path) else null
 		_cache[id]=value if value is Dictionary and int(value.get("version",0))==1 else {}
+		_complete_light_pieces(id,_cache[id])
 	return _cache[id]
+static func _complete_light_pieces(id:String,data:Dictionary)->void:
+	# Older palette entries omit the light descriptor carried by their placed
+	# source object. Copying that lamp must retain its colour/radius/type.
+	for piece:Dictionary in data.get("pieces",[]):
+		if str(piece.get("collision",""))!="light":continue
+		if str(piece.get("layer",""))=="lights":piece.layer="entities"
+		if piece.get("light",{}) is Dictionary and not piece.get("light",{}).is_empty():continue
+		for object:Dictionary in data.get("objects",[]):
+			var texture:=str(object.get("texture",""))
+			if str(piece.get("path",""))!=(texture if texture.begins_with("res://") else ROOT+id+"/"+texture):continue
+			if object.get("light",{}) is Dictionary and not object.get("light",{}).is_empty():piece.light=object.light.duplicate(true);break
+		if not piece.get("light",{}) is Dictionary or piece.get("light",{}).is_empty():
+			var kind:=str(piece.get("model","lamp"))
+			if not RoomEnvironmentConfig.LIGHTS.has(kind):kind="lamp"
+			piece.light=RoomEnvironmentConfig.LIGHTS[kind].duplicate();piece.light.kind=kind
 static func entries()->Array[Dictionary]:
 	var result:Array[Dictionary]=[]
 	for id in IDS:

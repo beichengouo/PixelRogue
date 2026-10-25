@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpk7c2gop515u"
-path="res://.godot/imported/veranda-plane.png-a0f6259a356a88d763fcb712132d2843.ctex"
+path.s3tc="res://.godot/imported/veranda-plane.png-a0f6259a356a88d763fcb712132d2843.s3tc.ctex"
+path.etc2="res://.godot/imported/veranda-plane.png-a0f6259a356a88d763fcb712132d2843.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/tavern_veranda_v03/veranda-plane.png"
-dest_files=["res://.godot/imported/veranda-plane.png-a0f6259a356a88d763fcb712132d2843.ctex"]
+dest_files=["res://.godot/imported/veranda-plane.png-a0f6259a356a88d763fcb712132d2843.s3tc.ctex", "res://.godot/imported/veranda-plane.png-a0f6259a356a88d763fcb712132d2843.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

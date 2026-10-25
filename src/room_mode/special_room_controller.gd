@@ -8,6 +8,7 @@ var panel:SpecialMachineUI
 var validation_mode:=false
 var _marks:Dictionary={}
 var shadow:RoomShadowChaser
+var second_shadow:RoomShadowChaser
 const MACHINES:=["machine_wheel","machine_lottery","machine_reserved"]
 const TITLES:={"machine_wheel":"星运转盘","machine_lottery":"八星彩票","machine_reserved":"沉睡的星匣"}
 const REWARD_CHEST_WEIGHTS:=[512,256,128,64,32,16,8,4,2,1]
@@ -15,7 +16,9 @@ static func is_shadow_room(value:Dictionary)->bool:
 	return str(value.get("kind",""))=="game" and str(value.get("terrain_layout",{}).get("scene_art",""))=="normal_windbridge_v01"
 func configure(room_record:Dictionary)->void:
 	if is_instance_valid(shadow):shadow.queue_free()
+	if is_instance_valid(second_shadow):second_shadow.queue_free()
 	shadow=null
+	second_shadow=null
 	for marker in _marks.values():
 		if is_instance_valid(marker):marker.queue_free()
 	_marks.clear()
@@ -32,7 +35,11 @@ func configure(room_record:Dictionary)->void:
 		if not state.has("chase"):state.chase={"prepare":5.0,"remaining":30.0,"contact":0.0,"at":[],"done":false}
 		record.cleared=bool(state.chase.done);record.rewarded=bool(state.chase.done)
 		main.level.doors_open=bool(state.chase.done)
-		if not bool(state.chase.done) and float(state.chase.prepare)<=0:_spawn_shadow()
+		if not bool(state.chase.done):
+			if float(state.chase.prepare)<=0:
+				_spawn_shadow()
+				if float(state.chase.remaining)<=15:_spawn_shadow(1)
+			main.hud.show_banner(chase_hint(state.chase),4)
 	if record.kind=="reward" and not state.reward_started:
 		state.reward_started=true;var rng:=_rng();schedule_chests(reward_chest_count(rng),true,rng);state.rng=str(rng.state)
 static func reward_chest_count(rng:RandomNumberGenerator)->int:
@@ -49,7 +56,7 @@ func _process(dt:float)->void:
 	if state.is_empty() or not (GameState.run_active or validation_mode) or not _visible_and_ready():return
 	if is_shadow_room(record):
 		if main.player.extraction_controls_locked():
-			if is_instance_valid(shadow):shadow.hide()
+			for pursuer in active_shadows():pursuer.hide()
 			return
 		_advance_chase(maxf(0,dt))
 	state.clock=float(state.clock)+maxf(0,dt)
@@ -72,6 +79,17 @@ func _process(dt:float)->void:
 func chase_running()->bool:
 	return not state.is_empty() and is_shadow_room(record) and state.has("chase") and not bool(state.chase.done) and float(state.chase.prepare)<=0 and (GameState.run_active or validation_mode) and _visible_and_ready() and not main.player.extraction_controls_locked()
 
+func active_shadows()->Array[RoomShadowChaser]:
+	var result:Array[RoomShadowChaser]=[]
+	for pursuer in [shadow,second_shadow]:
+		if is_instance_valid(pursuer) and not pursuer.is_queued_for_deletion():result.append(pursuer)
+	return result
+
+static func chase_hint(chase:Dictionary)->String:
+	if bool(chase.get("done",false)):return "追影已散 · 星赐宝箱即将降临"
+	if float(chase.get("prepare",5))>0:return "%d秒后直面心魔，坚持三十秒"%ceili(float(chase.get("prepare",5)))
+	return "直面心魔 · 还需坚持 %d 秒"%ceili(float(chase.get("remaining",30)))
+
 func _advance_chase(dt:float)->void:
 	var chase:Dictionary=state.chase
 	if bool(chase.done):return
@@ -80,30 +98,37 @@ func _advance_chase(dt:float)->void:
 		if float(chase.prepare)>0:return
 		_spawn_shadow();_checkpoint()
 	if not is_instance_valid(shadow):_spawn_shadow()
-	if is_instance_valid(shadow):shadow.show()
+	for pursuer in active_shadows():pursuer.show()
+	chase.contact=maxf(0,float(chase.get("contact",0))-dt)
 	chase.remaining=maxf(0,float(chase.remaining)-dt)
-	if float(chase.remaining)>0:return
+	if float(chase.remaining)>0:
+		if float(chase.remaining)<=15 and not is_instance_valid(second_shadow):
+			_spawn_shadow(1);main.hud.show_banner("第二道心魔已现 · 小心两侧追影",2.5);_checkpoint()
+		return
 	chase.done=true;record.cleared=true;record.rewarded=true
-	if is_instance_valid(shadow):shadow.dissolve()
-	shadow=null;main.level.doors_open=true;main.level.sync_door_links(record)
+	for pursuer in active_shadows():pursuer.dissolve()
+	shadow=null;second_shadow=null;main.level.doors_open=true;main.level.sync_door_links(record)
 	if not bool(state.reward_started):
 		state.reward_started=true;var rng:=_rng();schedule_chests(rng.randi_range(1,3),true,rng);state.rng=str(rng.state)
 	main.hud.show_banner("追影消散 · 风铃为你送来星赐宝箱",3)
 	_checkpoint()
 
-func _spawn_shadow()->void:
-	if is_instance_valid(shadow) or not is_instance_valid(main.player):return
+func _spawn_shadow(index:=0)->void:
+	if is_instance_valid(shadow if index==0 else second_shadow) or not is_instance_valid(main.player):return
 	var chase:Dictionary=state.chase
 	var at:=Vector2.INF
-	var stored:Array=chase.get("at",[])
-	if stored.size()==2:at=main.level.nearest_clear(Vector2(stored[0],stored[1]),RoomShadowChaser.BODY_RADIUS)
+	var stored:Array=chase.get("at" if index==0 else "second_at",[])
+	if stored.size()==2:at=main.level.nearest_clear(Vector2(stored[0],stored[1]),RoomShadowChaser.ROUTE_RADIUS)
 	if not at.is_finite():
 		var bounds:Rect2=main.level.bounds().grow(-45)
 		var away:Vector2=bounds.get_center()+(bounds.get_center()-main.player.position).normalized()*bounds.size.length()*.4
-		at=main.level.scene_navigation.main_spawn_point(main.level,away,main.player.position,RoomShadowChaser.BODY_RADIUS,false)
-	shadow=RoomShadowChaser.new();shadow.controller=self;shadow.room=main.level;shadow.position=at
+		if index==1 and is_instance_valid(shadow):away=main.player.position+(main.player.position-shadow.position).normalized()*180
+		at=main.level.scene_navigation.main_spawn_point(main.level,away,main.player.position,RoomShadowChaser.ROUTE_RADIUS,false)
+	var pursuer:=RoomShadowChaser.new();pursuer.controller=self;pursuer.room=main.level;pursuer.position=at;pursuer.flank_index=index
+	if index==0:shadow=pursuer
+	else:second_shadow=pursuer
 	# Kept outside snapshot entity roots; the room delta stores its exact state.
-	add_child(shadow);chase.at=[at.x,at.y]
+	add_child(pursuer);chase["at" if index==0 else "second_at"]=[at.x,at.y]
 func _checkpoint()->void:
 	if not validation_mode:Outpost.request_checkpoint()
 func schedule_chests(count:int,free:bool,rng:RandomNumberGenerator)->void:

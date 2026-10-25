@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c440cmfet1o8y"
-path="res://.godot/imported/relations_roof.png-3dcec6d6f6f1f986a8a0a6825c205d84.ctex"
+path.s3tc="res://.godot/imported/relations_roof.png-3dcec6d6f6f1f986a8a0a6825c205d84.s3tc.ctex"
+path.etc2="res://.godot/imported/relations_roof.png-3dcec6d6f6f1f986a8a0a6825c205d84.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/camp_starlight_corridor_v02/relations_roof.png"
-dest_files=["res://.godot/imported/relations_roof.png-3dcec6d6f6f1f986a8a0a6825c205d84.ctex"]
+dest_files=["res://.godot/imported/relations_roof.png-3dcec6d6f6f1f986a8a0a6825c205d84.s3tc.ctex", "res://.godot/imported/relations_roof.png-3dcec6d6f6f1f986a8a0a6825c205d84.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

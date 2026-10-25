@@ -224,14 +224,8 @@ func _draw() -> void:
 	]), Color("72db8b"))
 	## 头顶血条：让玩家看得出帮手还剩多少血（以前完全没有提示，死了像凭空消失）
 	var width := 34.0
-	var height := 4.0
-	var origin := Vector2(-width * 0.5, visual_top - 10.0)
-	draw_rect(Rect2(origin + Vector2(-1.0, -1.0), Vector2(width + 2.0, height + 2.0)),
-		Color(0.05, 0.06, 0.10, 0.85), true)
-	draw_rect(Rect2(origin, Vector2(width, height)), Color(0.16, 0.19, 0.26), true)
-	var ratio := clampf(hp / maxf(1.0, max_hp), 0.0, 1.0)
-	var fill := Palette.ALLY_HEALTH
-	draw_rect(Rect2(origin, Vector2(width * ratio, height)), fill, true)
+	var origin := Vector2(-width * 0.5, visual_top - 18.0)
+	UnitHealthArt.draw(self,Rect2(origin,Vector2(width,18)),hp/maxf(1,max_hp),"ally")
 
 
 func _update_sprite_pose() -> void:

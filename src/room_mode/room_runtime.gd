@@ -1,11 +1,56 @@
 class_name RoomRuntime
 extends ExpeditionRuntime
 var _room_receipts:Dictionary={}
+var _restored_pressure_step:=-1
+func checkpoint()->void:
+	# graph.current changes before async geometry loading and director setup.
+	# Save only after the transition has installed one coherent room state.
+	if main._navigation_pending:return
+	super.checkpoint()
+
 func _apply_fields(node:Object,fields:Dictionary)->void:
 	super._apply_fields(node,fields)
+	if node is RoomEnemy and EnemyCombatPolicy.RETIRED.has(node.kind):
+		node.kind=EnemyCombatPolicy.active_kind(node.kind)
+		var current:Dictionary=EnemyCombatPolicy.NEW_DATA[node.kind]
+		node.display_name=str(current.name);node.body_size=current.get("size",Vector2(29,32));node._rush=0
+		if node.visual is AnimatedSprite2D:
+			node.visual.sprite_frames=PixelEnemyArt.make_frames(node.kind);PixelEnemyArt.align(node.visual,node.kind,node.body_size)
+	if node is RoomDirector:node.room_pressure_step=clampi(node.room_pressure_step,0,RoomDirector.MAX_PRESSURE_LEVEL)
+	var old_revision:=int(fields.get("combat_balance_revision",0))
+	if node is RoomDirector and old_revision<25:
+		var attack_ratio:=_difficulty_attack_ratio()
+		var hp_ratio:=_difficulty_hp_ratio()
+		node._damage_scale*=attack_ratio;node._hp_scale*=hp_ratio
+		for key in ["hp_scale","boss_hp_scale"]:
+			if node.plan.has(key):node.plan[key]=float(node.plan[key])*hp_ratio
+		if node.plan.has("damage_scale"):node.plan.damage_scale=float(node.plan.damage_scale)*attack_ratio
+		node.combat_balance_revision=25
+	if node is EnemyBase and old_revision<25:
+		var step:=clampi(int(fields.get("room_pressure_growth",0)),0,5)
+		var old_step:=maxi(0,int(fields.get("room_pressure_growth",0)))
+		var old_speed:=float([1.0,1.08,1.15,1.21,1.26,1.30][step]) if fields.has("pressure_speed_revision") else minf(2.0,1.0+old_step*.25)
+		var speed_ratio:=float(RoomDirector.PRESSURE_SPEED[step])/old_speed
+		var attack_ratio:=_difficulty_attack_ratio()*float(RoomDirector.PRESSURE_ATTACK[step])/minf(10,1.0+old_step)
+		var hp_ratio:=_difficulty_hp_ratio()
+		node.damage*=attack_ratio;node._damage_scale*=attack_ratio
+		node.move_speed*=speed_ratio;node._speed_scale*=speed_ratio
+		node.max_hp*=hp_ratio;node.hp*=hp_ratio;node._hp_scale*=hp_ratio
+		node.room_pressure_growth=step;node.pressure_speed_revision=1;node.combat_balance_revision=25
+	if node is RoomProjectile and not node.is_friendly and old_revision<25:
+		var step:int=_restored_pressure_step if _restored_pressure_step>=0 else (main.director.room_pressure_step if is_instance_valid(main) else 0)
+		node.damage*=_difficulty_attack_ratio()*float(RoomDirector.PRESSURE_ATTACK[clampi(step,0,5)])/minf(10,1.0+step)
+		node.combat_balance_revision=25
 	if node is Player and is_instance_valid(node.stats):
+		var old_max:=float(fields.get("max_hp",node.max_hp))
+		var ratio:=clampf(float(fields.get("hp",node.hp))/maxf(.0001,old_max),0,1)
 		node.max_hp=maxf(0.0,node.stats.get_value(&"max_hp")-node.permanent_hp_loss())
-		node.hp=clampf(node.hp,0.0,node.max_hp)
+		if int(fields.get("stat_balance_revision",0))<25:node.balance_scar_overflow=ratio>0 and node.max_hp<=0
+		if node.balance_scar_overflow:
+			if node.max_hp>0:node.balance_scar_overflow=false
+			else:node.max_hp=1.0
+		node.hp=ratio*node.max_hp if int(fields.get("stat_balance_revision",0))<25 else clampf(node.hp,0.0,node.max_hp)
+		node.stat_balance_revision=25
 	if node is EnemyBase and not fields.has("balance_revision"):
 		node.base_damage*=3;node.damage*=3;node.balance_revision=4
 		if node.kind==&"guard":node.base_hp*=3;node.max_hp*=3;node.hp*=3
@@ -20,21 +65,34 @@ func _apply_fields(node:Object,fields:Dictionary)->void:
 		if node.kind==&"bomber" and node.display_name=="自爆骷髅":node.display_name="烬骨法师"
 	# Apply the current authored sizes, including saves made before size corrections.
 	if node is RoomBoss:
-		node.max_phase=int(BossRoster.get_data(node.boss_id).get("phases",3 if node.boss_id==&"tide" else 2));node.phase=mini(node.phase,node.max_phase)
+		if node is CityBoss and int(fields.get("boss_pattern_revision",0))<30:
+			node.cancel_attacks(true);node.boss_pattern_revision=30;node.recovery=1.0;node.room_cooldown=1.0
+		if bool(fields.get("phase_presenting",false)):
+			node.phase_presenting=false;node.phase_guard_left=.6;node.recovery=maxf(node.recovery,.6);node.room_cooldown=maxf(node.room_cooldown,.6)
+		node.phase=node.phase_for_health();node.phase_seen=node.phase
+		node.max_phase=BossPhaseRules.thresholds(node.boss_id).size()-1;node.phase=mini(node.phase,node.max_phase)
 		var roster:=BossRoster.get_data(node.boss_id)
 		node.body_size=roster.size;node.art_scale=float(roster.scale)
 		node._minion_kinds=roster.get("minions",[&"walker"]).duplicate()
-		if node.visual is AnimatedSprite2D:PixelBossArt.align(node.visual,node.boss_id,node.body_size)
+		if node.visual is AnimatedSprite2D:
+			node.visual.sprite_frames=BossStageArt.frames(node.boss_id,node.phase);node.visual.play(&"idle");PixelBossArt.align(node.visual,node.boss_id,node.body_size)
 	elif node is HiredAlly and node.is_merc and is_instance_valid(node._sprite):
 		# Older checkpoints carried the previous soldier-sheet origin. Align to
 		# the new grounded atlas after restoring fields, preserving combat stats.
 		node._sprite.sprite_frames=PixelHireArt.make_frames(node._merc_index)
 		PixelHireArt.align(node._sprite,node._merc_index,node.navigation_body())
 		node._sprite_origin=node._sprite.position
+
+func _difficulty_attack_ratio()->float:
+	return RunDifficulty.attack_multiplier(GameState.difficulty)/float([1.0,1.25,1.5,2.0][clampi(GameState.difficulty,1,4)-1])
+func _difficulty_hp_ratio()->float:
+	return RunDifficulty.health_multiplier(GameState.difficulty)/float(RunDifficulty.multiplier(GameState.difficulty))
+
 func _fields(node:Object)->Dictionary:
 	var fields:=super._fields(node)
 	# The graph owns room deltas; embedding the room inside its runtime recursively grows saves.
 	fields.erase("room_record");fields.erase("_live_warnings")
+	fields.erase("_restored_pressure_step")
 	if node is RoomPlayer:fields.erase("_mouse_attack_blocked")
 	return fields
 
@@ -42,7 +100,13 @@ func _node_record(node:Node)->Dictionary:
 	var record:=super._node_record(node)
 	if node is RoomEnemy and is_instance_valid(node.affix_runtime):
 		record["affix_state"]=node.affix_runtime.snapshot()
+	if node is RoomProjectile and is_instance_valid(node.damage_actor) and node.damage_actor is HiredAlly:
+		record["damage_actor_uid"]=node.damage_actor.uid
 	return record
+
+func _process(dt:float)->void:
+	super._process(dt)
+	if is_instance_valid(main.stage_gate) and main.stage_gate.in_range() and not UIFlow.has_screen():main.hud.set_prompt("按 %s 与阶段星门交互"%UIFlow.hint(&"interact"))
 
 func _ready()->void:
 	motion=DefeatMotion.new();add_child(motion)
@@ -70,13 +134,14 @@ func capture_room()->Dictionary:
 			elif (node is RoomProjectile and not node is IlyuaArrow) or node is RoomSkillField:records.append(_node_record(node))
 	var allies:Array=[]
 	for node in get_tree().get_nodes_in_group("allies"):
-		if is_instance_valid(node) and not node.is_queued_for_deletion():allies.append(_node_record(node))
+		if is_instance_valid(node) and not node is FateAltar and not node.is_queued_for_deletion():allies.append(_node_record(node))
 	return {"entities":records,"hazards":hazards,"allies":allies,"director":_fields(main.director),
 		"player":_node_record(main.player),"loot":loot.snapshot(),"spawn_rng":str(main.director.spawn_rng.state),
 		"shop":_encode(main.shop_ui.expedition_snapshot()),"tavern":_encode(main.tavern_ui.expedition_snapshot())}
 
 func persist_room()->void:
 	if not is_instance_valid(main.player):return
+	if str(main.director.room_record.get("id",""))!=str(main.graph.current):return
 	main.graph.rooms[main.graph.current].delta["runtime"]=capture_room()
 
 func snapshot()->Dictionary:
@@ -89,7 +154,7 @@ func snapshot()->Dictionary:
 		"extraction":extraction.snapshot(),"motion":motion.snapshot(),"passive_units":PassiveRuntime.snapshot_units(main.player),
 		"talent_view":main.talent_ui.expedition_snapshot(),
 		"flow":_encode({"reward_pending":main._reward_pending,"offers":main._reward_offers,"reward_wave":main._reward_wave,"checkpoint":main._checkpoint_wave,"active_story":str(main._active_room_story),"dialogue":main.dialogue.expedition_snapshot(),"story_queue":main._story_queue,"story_context":main._story_context}),
-		"environment_rng":str(main._room_rng.state),"mushroom_timer":main._mushroom_timer,
+		"environment_rng":str(main._room_rng.state),
 		"rng_seed":str(Rng.run_seed),"rng_state":str(Rng.stream().state)}
 
 func restore(d:Dictionary)->void:
@@ -105,13 +170,14 @@ func restore(d:Dictionary)->void:
 	main.talent_ui.expedition_restore(d.get("talent_view",{}))
 	loot.restore(main.graph.rooms[main.graph.current].delta.get("runtime",{}).get("loot",{}))
 	Rng.run_seed=int(d.get("rng_seed",Rng.run_seed));Rng.stream().state=int(d.get("rng_state",Rng.stream().state))
-	main._room_rng.state=int(d.get("environment_rng",main._room_rng.state));main._mushroom_timer=float(d.get("mushroom_timer",45))
+	main._room_rng.state=int(d.get("environment_rng",main._room_rng.state))
 	extraction.restore(d.get("extraction",{}));motion.restore(d.get("motion",{}))
 	_restoring=false
 
 func restore_room(d:Dictionary,with_player:=false)->void:
 	if d.is_empty():return
 	_restoring=true;_restore_ids.clear();_room_receipts.clear()
+	_restored_pressure_step=maxi(0,int(d.get("director",{}).get("room_pressure_step",0)))
 	if with_player and d.has("player"):_restore_ids[str(d.player.instance)]=main.player
 	# Ground-plane fields are children of RoomLevel, outside the regular entity roots.
 	for field in get_tree().get_nodes_in_group("spell_fields"):
@@ -120,12 +186,22 @@ func restore_room(d:Dictionary,with_player:=false)->void:
 	for parent in [main.enemies_root,main.chests_root,main.fx_root]:
 		for child in parent.get_children():parent.remove_child(child);child.queue_free()
 	main.director.boss=null
+	var retired_city_attack:=false
+	var interrupted_phase:=false
 	for record in d.get("entities",[]):
+		if str(record.get("script",""))=="res://src/room_mode/city_boss.gd" and int(record.get("fields",{}).get("boss_pattern_revision",0))<30:retired_city_attack=true
+		if str(record.get("script","")) in ["res://src/room_mode/room_boss.gd","res://src/room_mode/city_boss.gd"] and bool(record.get("fields",{}).get("phase_presenting",false)):interrupted_phase=true
+	for record in d.get("entities",[]):
+		if retired_city_attack and str(record.get("script",""))=="res://src/room_mode/boss_pattern_projectile.gd":continue
 		var node:Node=_restore_room_node(record)
 		if node is BossBase:main.director.boss=node
 	for hazard_data in d.get("hazards",[]):
 		if hazard_data is Dictionary:
-			var hazard:=AffixHazard.restore_hazard(main.fx_root,main.level,hazard_data)
+			var converted:Dictionary=hazard_data.duplicate(true)
+			if int(converted.get("combat_balance_revision",0))<25:
+				converted.damage=float(converted.get("damage",0))*_difficulty_attack_ratio()*float(RoomDirector.PRESSURE_ATTACK[clampi(_restored_pressure_step,0,5)])/minf(10,1.0+_restored_pressure_step)
+				converted.combat_balance_revision=25
+			var hazard:=AffixHazard.restore_hazard(main.fx_root,main.level,converted)
 			var source:Node=_restore_ids.get(str(hazard_data.get("source_key",0)))
 			if is_instance_valid(source):hazard.source_ref=weakref(source);hazard.source_key=source.get_instance_id()
 	# Rebind pierced-target IDs and shared basic-attack receipts after all bodies exist.
@@ -142,7 +218,12 @@ func restore_room(d:Dictionary,with_player:=false)->void:
 				node.set_meta("boss_owner",main.director.boss.get_instance_id())
 				main.director.boss._owned_bullets.append(node)
 			for old in record.get("hit_ids",[]):
-				if _restore_ids.has(str(old)):node._hit_ids[_restore_ids[str(old)].get_instance_id()]=true
+				var hit:Node=_restore_ids.get(str(old))
+				if hit is EnemyBase:
+					node._hit_ids[hit.get_instance_id()]=true
+					# The physics exception and damage receipt must survive together:
+					# otherwise a resumed piercing shot gets stuck inside its last target.
+					node.add_collision_exception_with(hit)
 			var saved:Dictionary=record.get("receipt",{})
 			if not saved.is_empty():
 				var id:=str(saved.id)
@@ -176,23 +257,39 @@ func restore_room(d:Dictionary,with_player:=false)->void:
 				_apply_fields(ally,record.fields)
 				if with_player:ally.global_position=Vector2(record.at[0],record.at[1])
 				if ally is SummonedAlly:ally.contract_epoch=GameState.run_epoch
+	# Object references are not serialized. Resolve friendly shots only after
+	# allies exist, using their persistent UID rather than an expired instance ID.
+	var projectile_owners:Dictionary={}
+	for ally in get_tree().get_nodes_in_group("allies"):
+		if ally is RoomAlly and not ally.is_queued_for_deletion() and ally.player==main.player and ally.room==main.level and not ally.uid.is_empty():
+			projectile_owners[ally.uid]=ally
+	for record in d.get("entities",[]):
+		var node:Node=_restore_ids.get(str(record.instance))
+		if node is RoomProjectile and node.damage_owner==&"ally":
+			node.damage_actor=projectile_owners.get(str(record.get("damage_actor_uid","")))
 	if with_player and d.has("player"):
 		_apply_fields(main.player,d.player.fields)
 		main.player.global_position=Vector2(d.player.at[0],d.player.at[1])
 		main.player.velocity=Vector2(d.player.velocity[0],d.player.velocity[1])
+	if interrupted_phase:
+		main.player._invuln=maxf(main.player._invuln,.6)
+		main.player.firing=false;main.player.movement_override=Vector2.ZERO;main.player.aim_override=Vector2.ZERO;main.player._mouse_attack_blocked=true
+		main.player.caster.clear_input_buffer()
 	main.shop_ui.expedition_restore(_decode(d.get("shop",{})));main.tavern_ui.expedition_restore(_decode(d.get("tavern",{})))
 	for hazard in get_tree().get_nodes_in_group("affix_hazards"):
 		if not hazard.is_queued_for_deletion() and hazard.room==main.level:hazard.restore_hit_cooldowns(_restore_ids)
 	main.level.doors_open=bool(main.graph.rooms[main.graph.current].rewarded) or main.graph.rooms[main.graph.current].kind=="spawn"
 	main.level.sync_door_links(main.graph.rooms[main.graph.current])
-	main.level.queue_redraw();_restoring=false
+	main.level.queue_redraw();_restoring=false;_restored_pressure_step=-1
 
 func _restore_room_node(record:Dictionary)->Node:
 	var path:=str(record.get("script",""))
 	# Retired monster key drops must not return when an older room is resumed.
-	if path=="res://src/room_mode/room_key.gd":return null
+	if path in ["res://src/room_mode/room_key.gd","res://src/actors/glow_mushroom.gd"]:return null
 	if path=="res://src/actors/coin.gd" and str(_decode(record.get("fields",{}).get("kind","")))=="key":return null
 	if not path.begins_with("res://src/room_mode/") and path!="res://src/actors/glow_mushroom.gd" and path!="res://src/actors/coin.gd":return null
+	if path=="res://src/room_mode/boss_pattern_projectile.gd" and is_instance_valid(main.director.boss) and main.director.boss is CityBoss:
+		if main.director.boss.get_meta("retired_pattern_snapshot",false):return null
 	var node:Node=RoomEnemy.new() if path=="res://src/room_mode/room_ambush_enemy.gd" else load(path).new()
 	_apply_fields(node,record.get("fields",{}))
 	if node is RoomEnemy or node is RoomBoss or node is BossConstruct:node.room=main.level;node.director=main.director;node.fx_root=main.fx_root;node.player=main.player;node.level=main.level
@@ -214,7 +311,9 @@ func _restore_room_node(record:Dictionary)->Node:
 			node.affix_runtime.restore(affix_state)
 	if node is RoomChest:
 		node._art_state="";node.set_art(("empty" if node._open_timer<1 else "open") if node.is_open else "closed")
-	if node is RoomBoss:node.restore_warning()
+	if node is RoomBoss:
+		if node is CityBoss and int(record.get("fields",{}).get("boss_pattern_revision",0))<30:node.set_meta("retired_pattern_snapshot",true)
+		node.restore_warning()
 	if node is RoomEnemy:node.restore_flame_warnings()
 	if node is RoomEnemy and node._windup>0:node.warn_attack("circle" if node.kind==&"bomber" else "arrow",node._windup,100)
 	if node is RoomEnemy and node._teleport_left>0:

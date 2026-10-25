@@ -17,10 +17,15 @@ var _choice_scroll: ScrollContainer
 var _text_scroll: ScrollContainer
 var _skip_hint: Label
 var _skip_button: Button
-var _continue_button: Button
 var _role: Label
 var _player_art: TextureRect
 var _goddess_art: TextureRect
+var _face_art: TextureRect
+var _ribbon: Control
+var _actor_id := ""
+var _local_transaction := false
+var _local_committed := false
+var _local_commit: Callable
 var _scene: Dictionary = {}
 var _scene_id: StringName = &""
 var _lines: Array = []
@@ -58,6 +63,9 @@ func is_open() -> bool:
 	return _root != null and _root.visible
 
 func _open(review := false) -> void:
+	_local_transaction = false
+	_local_committed = false
+	_local_commit = Callable()
 	_presentation_epoch += 1
 	_closing = false
 	ComicMotion.cancel(_root)
@@ -71,6 +79,7 @@ func _open(review := false) -> void:
 	_root.visible = true
 	_player_art.visible = false
 	_goddess_art.visible = false
+	_face_art.visible = false
 	UIFlow.push_screen(self)
 	get_viewport().set_meta("dialogue_modal", get_instance_id())
 	_layout()
@@ -150,6 +159,21 @@ func play_local_lines(lines:Array,chapter:="营地故事")->void:
 	_repeat_read_only=true
 	_chapter.text=chapter
 
+func play_local_scene(scene: Dictionary, commit: Callable) -> void:
+	if is_open() or _automatic_pending: return
+	_open()
+	_local_transaction = true
+	_local_commit = commit
+	_repeat_read_only = true
+	_scene_id = &""
+	_scene = scene.duplicate(true)
+	_tail_played = true
+	_pending_next = &""
+	_compact_decision = false
+	_chapter.text = str(scene.get("title", "灯下交谈"))
+	_skip_button.text = "略过对白"
+	_play_lines(_scene.get("lines", []), "scene")
+
 func _enter_scene(id: StringName) -> void:
 	if not _review:
 		id = _automatic_target(id)
@@ -192,44 +216,37 @@ func _show_line(i: int) -> void:
 	_text_label.visible_characters = 0
 	_text_scroll.scroll_vertical = 0
 	var who := str(line.get("who", ""))
-	var character:Dictionary=Characters.DATA.get(_review_character,Characters.current()) if _review else Characters.current()
-	var player := who == "player" or who == str(character.name)
-	var expression := str(line.get("expression", ""))
-	var explicit_portrait:=str(line.get("portrait",""))
-	var has_explicit_portrait:=explicit_portrait.begins_with("res://assets/") and ResourceLoader.exists(explicit_portrait)
-	var other_speaker:=not player and (has_explicit_portrait or who == Story.GODDESS or who in ["merchant","tavern",BondRules.NAMES.merchant,BondRules.NAMES.tavern])
-	_name_label.text = str(character.name) if who.is_empty() or player else str(BondRules.NAMES.get(who,who))
-	_role.text = "心声" if who.is_empty() else "对话"
+	var hero := _review_character if _review and _review_character != &"" else Characters.current_id()
+	_actor_id = DialogueCast.actor(who, hero)
+	var expression := DialogueCast.expression(str(line.get("expression", "")), _full, str(line.get("portrait", "")))
+	var player := _actor_id in ["sylphiette", "xixifu", "ilyua"]
+	_name_label.text = str(DialogueCast.NAMES.get(_actor_id, who)) if not who.is_empty() else "旅途纪事"
+	_role.text = "" if not who.is_empty() else "叙述"
 	_progress.text = "%02d / %02d" % [i + 1, _lines.size()]
-	_skip_hint.text = "%s / 点击正文继续"%KeyBindings.label("ui_accept") if not _review else "回看不会改变选择、奖励或进度"
-	DialogueButtonArt.set_show_full(_continue_button, true)
-	if has_explicit_portrait:
-		var art:=_player_art if player else _goddess_art
-		art.texture=_portrait(explicit_portrait,player);art.visible=true
-	elif player or (who.is_empty() and not expression.is_empty()):
-		var portraits: Dictionary = character.get("dialogue_portraits", {})
-		_player_art.texture = _portrait(str(portraits.get(expression, character.get("dialogue_portrait", character.get("portrait",Characters.portrait_path())))), true)
-		_player_art.visible = true
-	elif who in ["merchant","tavern",BondRules.NAMES.merchant,BondRules.NAMES.tavern]:
-		var npc:="merchant" if who in ["merchant",BondRules.NAMES.merchant] else "tavern"
-		_goddess_art.texture=_portrait(NpcArt.portrait_path(npc,expression if expression in ["welcome","inspect","success","shortage"] else "welcome"))
-		_goddess_art.visible=true
-	elif who == Story.GODDESS:
-		_goddess_art.texture = _portrait(str(DialoguePortraits.GODDESS.get(expression, Story.P_GODDESS)))
-		_goddess_art.visible = true
+	_skip_hint.text = "%s / 点击继续" % KeyBindings.label("ui_accept") if not _review else "回看不会改变选择、奖励或进度"
+	_player_art.hide()
+	_goddess_art.hide()
+	_face_art.hide()
+	var art := _player_art if player else _goddess_art
+	art.texture = DialogueCast.portrait(_actor_id, expression, not _review)
+	if art.texture == null and not _actor_id.is_empty():
+		var legacy := str(line.get("portrait", ""))
+		if legacy.begins_with("res://assets/") and ResourceLoader.exists(legacy): art.texture = _portrait(legacy, player)
+	art.visible = art.texture != null
+	_face_art.texture = DialogueCast.portrait(_actor_id, expression, not _review, true)
+	_face_art.visible = _face_art.texture != null
 	if _reveal != null and _reveal.is_valid(): _reveal.kill()
-	_reveal = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_parallel()
-	var duration := 0.10 if ComicMotion.reduced() else 0.14
-	_reveal.tween_property(_player_art, "modulate", Color.WHITE if player or who.is_empty() else Color(0.65, 0.72, 0.76), duration)
-	_reveal.tween_property(_goddess_art, "modulate", Color.WHITE if other_speaker else Color(0.65, 0.72, 0.76), duration)
-	if who != _last_speaker or expression != _last_expression:
-		ComicMotion.reveal(_name_label, duration)
-		var art := _goddess_art if other_speaker else _player_art
-		if art.visible: ComicMotion.reveal(art, duration)
-	_last_speaker = who
+	var changed := _actor_id != _last_speaker
+	# Faces share one framing and pose. Expression changes never squash or move art.
+	art.modulate = Color.WHITE
+	_face_art.modulate = Color.WHITE
+	if changed and art.visible and not ComicMotion.reduced():
+		art.modulate.a = 0.0
+		_reveal = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+		_reveal.tween_property(art, "modulate:a", 1.0, 0.14)
+	_last_speaker = _actor_id
 	_last_expression = expression
-	_bubble.modulate.a = 0.6
-	_reveal.tween_property(_bubble, "modulate:a", 1.0, duration)
+	_layout()
 
 func _portrait(path: String, player := false) -> Texture2D:
 	if _portrait_cache.has(path): return _portrait_cache[path]
@@ -254,14 +271,12 @@ func _process(delta: float) -> void:
 	_shown += delta * CHARS_PER_SEC
 	_typing = _shown < _full.length()
 	_text_label.visible_characters = int(_shown) if _typing else -1
-	if not _typing: DialogueButtonArt.set_show_full(_continue_button, false)
 
 func _advance() -> void:
 	if not is_open() or _choosing or _closing: return
 	if _typing:
 		_typing = false
 		_text_label.visible_characters = -1
-		DialogueButtonArt.set_show_full(_continue_button, false)
 		return
 	if _index + 1 < _lines.size():
 		_index += 1
@@ -287,6 +302,16 @@ func _play_tail_or_go() -> void:
 	else: _goto_pending()
 
 func _goto_pending() -> void:
+	if _local_transaction:
+		if not _local_committed:
+			if not _local_commit.is_valid() or not bool(_local_commit.call({})):
+				_text_label.text = "这段交谈尚未保存，请稍后重试。点击正文可再次保存。"
+				_text_label.visible_characters = -1
+				_typing = false
+				return
+			_local_committed = true
+		_finish()
+		return
 	var next := _pending_next
 	if not _review and not _repeat_read_only:
 		# Combined boss introductions keep their original replay records without
@@ -339,10 +364,10 @@ func _show_choices(choices: Array) -> void:
 	for child in _choice_box.get_children():
 		_choice_box.remove_child(child)
 		child.queue_free()
+	choices = choices.slice(0, Story.MAX_CHOICES)
 	_offered = choices.duplicate(true)
 	_choosing = not choices.is_empty()
 	_side.visible = _choosing
-	_continue_button.visible = not _choosing
 	if not _choosing: return
 	_typing = false
 	_text_label.visible_characters = -1
@@ -350,7 +375,9 @@ func _show_choices(choices: Array) -> void:
 	var token := _choice_token
 	for raw in choices:
 		var option: Dictionary = raw
-		var button := DialogueButtonArt.choice_button(str(option.get("text", "…")))
+		var button := DialogueButtonArt.choice_button(str(option.get("text", "…")), 22, 64)
+		button.disabled = bool(option.get("disabled", false))
+		button.tooltip_text = str(option.get("unavailable_reason", ""))
 		button.pressed.connect(func() -> void:
 			if token == _choice_token: _pick(option)
 		)
@@ -362,15 +389,24 @@ func _show_choices(choices: Array) -> void:
 
 func _focus_choices(token: int) -> void:
 	if token != _choice_token or not is_open() or not _choosing: return
-	if _choice_box.get_child_count() > 0: (_choice_box.get_child(0) as Button).grab_focus()
+	for child in _choice_box.get_children():
+		if child is Button and not child.disabled:
+			child.grab_focus()
+			break
 
 func _pick(option: Dictionary) -> void:
-	if not is_open() or not _choosing or not _offered.has(option): return
+	if not is_open() or not _choosing or not _offered.has(option) or bool(option.get("disabled", false)): return
+	if _local_transaction and not _local_committed:
+		if not _local_commit.is_valid() or not bool(_local_commit.call(option)):
+			_text_label.text = "心意尚未记录：条件不满足或保存失败，原状态已保留。请重试。"
+			_text_label.visible_characters = -1
+			return
+		_local_committed = true
 	_choosing = false
 	_choice_token += 1
 	for child in _choice_box.get_children(): (child as Button).disabled = true
 	AudioManager.play(&"ui_click", -6)
-	if not _review and not _repeat_read_only: StoryState.apply_choice(option)
+	if not _local_transaction and not _review and not _repeat_read_only: StoryState.apply_choice(option)
 	_pending_next = StringName(option.get("next", _pending_next))
 	var reply: Array = option.get("reply", [])
 	if not _compact_decision and not reply.is_empty(): _play_lines(reply, "reply")
@@ -412,7 +448,7 @@ func _input(event: InputEvent) -> void:
 		return
 	if _choosing: return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if _skip_button.get_global_rect().has_point(event.position) or _continue_button.get_global_rect().has_point(event.position): return
+		if _skip_button.get_global_rect().has_point(event.position): return
 		if _text_scroll.get_global_rect().has_point(event.position) and event.position.x > _text_scroll.get_global_rect().end.x - 22: return
 		_advance()
 		get_viewport().set_input_as_handled()
@@ -423,11 +459,9 @@ func _input(event: InputEvent) -> void:
 
 func _build() -> void:
 	_root = UiFactory.full_rect()
-	_root.theme = PixelUi.theme()
+	_root.theme = InteractionSkin.theme()
 	add_child(_root)
-	var shade := ColorRect.new()
-	shade.color = Color(0.025, 0.055, 0.08, 0.48)
-	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	var shade := UiFactory.dim_layer(0.28)
 	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_root.add_child(shade)
 	for is_player in [true, false]:
@@ -439,30 +473,23 @@ func _build() -> void:
 		_root.add_child(art)
 		if is_player: _player_art = art
 		else: _goddess_art = art
-	_chapter = PixelUi.label("", 20, PixelUi.GOLD)
-	_chapter.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
-	_root.add_child(_chapter)
-	_skip_button = DialogueButtonArt.choice_button("跳过对白", 16, 44)
-	_skip_button.pressed.connect(_skip_story)
-	_root.add_child(_skip_button)
-	_bubble = PixelUi.panel()
-	var bubble_style := PixelUi.plate(4)
-	bubble_style.content_margin_left = 28
-	bubble_style.content_margin_right = 28
-	bubble_style.content_margin_top = 22
-	bubble_style.content_margin_bottom = 22
-	_bubble.add_theme_stylebox_override("panel", bubble_style)
+	_ribbon = load("res://src/ui/dialogue_ribbon.gd").new()
+	_root.add_child(_ribbon)
+	_bubble = PanelContainer.new()
+	_bubble.name = "DialogueText"
+	_bubble.set_meta("glass_exempt", true)
+	var empty := StyleBoxEmpty.new()
+	for edge in [SIDE_TOP, SIDE_BOTTOM, SIDE_LEFT, SIDE_RIGHT]: empty.set_content_margin(edge, 12)
+	_bubble.add_theme_stylebox_override("panel", empty)
 	_root.add_child(_bubble)
-	var column := UiFactory.vbox(10)
+	var column := UiFactory.vbox(8)
 	_bubble.add_child(column)
 	var heading := UiFactory.hbox(12)
 	heading.custom_minimum_size.y = 32
 	column.add_child(heading)
-	_name_label = PixelUi.label("", 22, PixelUi.GOLD)
-	_name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_name_label = PixelUi.label("", 28, Color("f9e7bd"))
 	heading.add_child(_name_label)
-	_role = PixelUi.label("心声", 15, PixelUi.MUTED)
-	_role.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	_role = PixelUi.label("", 15, PixelUi.MUTED)
 	heading.add_child(_role)
 	heading.add_child(UiFactory.spacer())
 	_progress = PixelUi.label("", 14, PixelUi.MUTED)
@@ -471,57 +498,74 @@ func _build() -> void:
 	_text_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_text_scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	column.add_child(_text_scroll)
-	_text_label = PixelUi.label("", 22)
+	_text_label = PixelUi.label("", 28)
+	_text_label.add_theme_constant_override("line_spacing", 8)
+	_text_label.add_theme_constant_override("outline_size", 3)
+	_text_label.add_theme_color_override("font_outline_color", Color(.025, .035, .065, .75))
 	_text_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_text_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_text_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_text_scroll.add_child(_text_label)
-	var footer := UiFactory.hbox(8)
-	column.add_child(footer)
-	_skip_hint = PixelUi.label("", 17, PixelUi.MUTED)
-	_skip_hint.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	footer.add_child(_skip_hint)
-	_continue_button = DialogueButtonArt.action_button()
-	_continue_button.pressed.connect(_advance)
-	footer.add_child(_continue_button)
+	_skip_hint = PixelUi.label("", 16, Color(.78, .84, .90))
+	_skip_hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	column.add_child(_skip_hint)
+	_face_art = TextureRect.new()
+	_face_art.name = "SpeakerFace"
+	_face_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	_face_art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	_face_art.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+	_face_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_root.add_child(_face_art)
+	_chapter = PixelUi.label("", 18, PixelUi.MUTED)
+	_chapter.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+	_root.add_child(_chapter)
+	_skip_button = DialogueButtonArt.choice_button("跳过对白", 16, 44)
+	_skip_button.pressed.connect(_skip_story)
+	_root.add_child(_skip_button)
 	_side = PanelContainer.new()
-	var clear_panel := StyleBoxEmpty.new()
-	for edge in [SIDE_LEFT, SIDE_TOP, SIDE_RIGHT, SIDE_BOTTOM]:
-		clear_panel.set_content_margin(edge, 12)
-	_side.add_theme_stylebox_override("panel", clear_panel)
+	_side.add_theme_stylebox_override("panel", StyleBoxEmpty.new())
 	_root.add_child(_side)
 	_choice_scroll = ScrollContainer.new()
 	_choice_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	_side.add_child(_choice_scroll)
-	_choice_box = UiFactory.vbox(7)
+	_choice_box = UiFactory.vbox(8)
 	_choice_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	_choice_scroll.add_child(_choice_box)
 	_root.resized.connect(_layout)
 	_layout.call_deferred()
-	InteractionSkin.mount(_root,"dialogue",_bubble);InteractionSkin.surface(_side,"dialogue",false)
 
 func _layout() -> void:
 	if _bubble == null: return
 	var extent := _root.size
-	var width := minf(1160.0, extent.x - 64.0)
-	var left := (extent.x - width) * 0.5
-	var height := minf(296.0, extent.y * 0.42)
-	var top := extent.y - height - 28.0
-	_bubble.position = Vector2(left, top)
-	_bubble.size = Vector2(width, height)
-	_chapter.position = Vector2(left, 28)
-	_chapter.size = Vector2(width - 200, 36)
-	_skip_button.position = Vector2(left + width - 188, 24)
-	_skip_button.size = Vector2(188, 44)
-	var art_height := maxf(100.0, top - 70.0)
-	var art_width := minf(width * 0.41, 410)
-	_player_art.position = Vector2(left + 24, 76)
-	_player_art.size = Vector2(art_width, art_height)
-	_goddess_art.position = Vector2(left + width - art_width - 24, 76)
-	_goddess_art.size = Vector2(art_width, art_height)
-	var choice_height := minf(float(_choice_box.get_child_count()) * 59.0 + 24.0, maxf(80, top - 108))
-	_side.position = Vector2(left + (width - minf(620, width)) * 0.5, top - choice_height - 16)
-	_side.size = Vector2(minf(620, width), choice_height)
+	var compact := extent.x < 900.0
+	var margin := clampf(extent.x * .025, 16.0, 64.0)
+	var height := clampf(extent.y * .28, 210.0, 320.0)
+	if extent.y < 520: height = extent.y * .46
+	var top := extent.y - height
+	var face_width := clampf(extent.x * .155, 100.0, 230.0)
+	_ribbon.position = Vector2(0, top - 38)
+	_ribbon.size = Vector2(extent.x, height + 38)
+	_face_art.position = Vector2(margin, top - 20)
+	_face_art.size = Vector2(face_width, height + 12)
+	var inset := margin + (face_width + 16 if _face_art.visible else 0.0)
+	_bubble.position = Vector2(inset, top + 8)
+	_bubble.size = Vector2(maxf(120, extent.x - inset - margin), height - 18)
+	_text_label.add_theme_font_size_override("font_size", 24 if compact else 28)
+	_name_label.add_theme_font_size_override("font_size", 25 if compact else 28)
+	_chapter.position = Vector2(margin, 18)
+	_chapter.size = Vector2(maxf(100, extent.x - 2 * margin - 190), 32)
+	_skip_button.position = Vector2(extent.x - margin - 160, 14)
+	_skip_button.size = Vector2(160, 44)
+	# One centered half-body figure; the dialogue ribbon overlays the lower waist.
+	var art_height := maxf(120, top + height * .30 - 64)
+	var art_width := minf(extent.x * .78, art_height * .80)
+	for art in [_player_art, _goddess_art]:
+		art.position = Vector2((extent.x - art_width) * .5, 64)
+		art.size = Vector2(art_width, art_height)
+	var choice_height := minf(float(_choice_box.get_child_count()) * 78.0, maxf(80, top - 84))
+	var choice_width := minf(640, extent.x - 2 * margin)
+	_side.position = Vector2((extent.x - choice_width) * .5, top - choice_height - 16)
+	_side.size = Vector2(choice_width, choice_height)
 
 func expedition_snapshot() -> Dictionary:
 	if not is_open() or _review: return {}
@@ -534,6 +578,20 @@ func expedition_restore(data: Dictionary) -> void:
 	_compact_decision = bool(data.get("compact_decision", false))
 	_scene=data.get("scene",{}).duplicate(true)
 	_scene_id=StringName(data.get("scene_id",""))
+	if _scene_id == &"intro_weapon":
+		_scene = Story.get_scene(_scene_id)
+		_show_choices([])
+		_finish.call_deferred()
+		return
+	if int(_scene.get("narrative_revision",0))<ContractorNarrative.REVISION:
+		var canonical:=Story.get_scene(_scene_id)
+		if int(canonical.get("narrative_revision",0))>=ContractorNarrative.REVISION:
+			# Old saves may contain entire obsolete lines/choices, not just an ID.
+			# Replace their presentation without repeating their already committed effects.
+			_scene=canonical;_mode="scene";_tail_played=false;_compact_decision=false
+			_pending_next=StringName(_scene.get("next",&""));_chapter.text=str(_scene.title)
+			_play_lines(_scene.get("lines",[]),"scene")
+			return
 	_lines=data.get("lines",[]).duplicate(true)
 	_mode=str(data.get("mode","scene"))
 	_pending_next=StringName(data.get("pending",""))

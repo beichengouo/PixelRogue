@@ -80,7 +80,7 @@ func _build_light(frame_size: Vector2i, scale_factor: float, tint: Color) -> voi
 		return
 	_light_radius = float(frame_size.x) * scale_factor * LIGHT_RADIUS_RATIO
 	light_color = tint
-	_light = LightUtil.make_point_light(tint, light_energy, _light_radius, false)
+	_light = LightUtil.make_point_light(tint, light_energy, _light_radius, false,"fire" if tint.r>tint.b*1.2 else "arcane")
 	add_child(_light)
 
 

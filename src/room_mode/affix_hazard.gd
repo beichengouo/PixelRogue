@@ -52,6 +52,7 @@ func _strike()->void:
 	if mode in [&"ring",&"line"] and _struck:return
 	_struck=true
 	for body in _targets():
+		if body is FateAltar and mode in [&"trail",&"grave"]:continue
 		if not _inside(body.global_position):continue
 		if not room.bounds().grow(-6).has_point(body.global_position):continue
 		if not room.projectile_clear(global_position,body.global_position):continue
@@ -65,7 +66,8 @@ func _strike()->void:
 					if now-int(trail_hit_at[old_key])>2000:trail_hit_at.erase(old_key)
 		var source:Node=source_ref.get_ref() if source_ref!=null else null
 		if not is_instance_valid(source):source=self
-		body.take_damage(damage,global_position,source)
+		if body is Player:body.take_damage(damage,global_position,source,mode not in [&"trail",&"grave"])
+		else:body.take_damage(damage,global_position,source)
 		if mode==&"line" and body.has_method("apply_slow"):body.apply_slow(0.35,2.0)
 
 func _targets()->Array[Node2D]:
@@ -123,7 +125,7 @@ func snapshot()->Dictionary:
 		for key in trail_hit_at:
 			if str(key).begins_with(prefix) and now-int(trail_hit_at[key])<500:
 				hits.append({"victim":str(key).trim_prefix(prefix),"left":500-now+int(trail_hit_at[key])})
-	return {"kind":str(mode),"at":[global_position.x,global_position.y],"dir":[direction.x,direction.y],"damage":damage,"life":lifetime,"age":age,"tick":tick_left,"struck":_struck,"source_key":source_key,"hit_cooldowns":hits,"cruel_damage":cruel_damage}
+	return {"combat_balance_revision":25,"kind":str(mode),"at":[global_position.x,global_position.y],"dir":[direction.x,direction.y],"damage":damage,"life":lifetime,"age":age,"tick":tick_left,"struck":_struck,"source_key":source_key,"hit_cooldowns":hits,"cruel_damage":cruel_damage}
 
 func restore_hit_cooldowns(ids:Dictionary)->void:
 	for hit in pending_hits:

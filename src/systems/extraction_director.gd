@@ -145,7 +145,7 @@ func _render() -> void:
 	match state:
 		PRAYING: _label.text = "合掌祈祷  %.1f / 3秒\n移动或受击打断 · %s 取消" % [channel, key]
 		WAITING: _label.text = "星辉回应  %d秒\n可移动与战斗 · %s 取消呼唤" % [ceili(remaining), key]
-		RECEIVING: _label.text = "女神接引 · 握住她的手"
+		RECEIVING: _label.text = "星辉接引 · 身影渐隐"
 		SETTLING: _label.text = "星辉归途"
 		_: _label.text = "呼唤重连 %d秒" % ceili(cooldown) if cooldown > 0 else "%s  合掌呼唤女神" % key
 	if is_instance_valid(main.player): _fx.present(state, channel, waiting_elapsed, reception_elapsed, anchor, main.player)
@@ -209,7 +209,7 @@ func restore(data: Dictionary) -> void:
 		var saved_reception:=reception_elapsed
 		(self as RoomExtraction).begin_reception();reception_elapsed=saved_reception
 	if state == PRAYING: main.player.set_extraction_pose(&"prayer")
-	elif state == RECEIVING: main.player.set_extraction_pose(&"receiving", reception_elapsed >= 0.55)
+	elif state == RECEIVING: main.player.set_extraction_pose(&"receiving")
 	else: main.player.set_extraction_pose(&"")
 	_render()
 

@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2nhk4py7c1b8"
-path="res://.godot/imported/water.png-c55aaf7aa9c5a1a40ea5b638da4e7208.ctex"
+path.s3tc="res://.godot/imported/water.png-c55aaf7aa9c5a1a40ea5b638da4e7208.s3tc.ctex"
+path.etc2="res://.godot/imported/water.png-c55aaf7aa9c5a1a40ea5b638da4e7208.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/forest_timber_v03/water.png"
-dest_files=["res://.godot/imported/water.png-c55aaf7aa9c5a1a40ea5b638da4e7208.ctex"]
+dest_files=["res://.godot/imported/water.png-c55aaf7aa9c5a1a40ea5b638da4e7208.s3tc.ctex", "res://.godot/imported/water.png-c55aaf7aa9c5a1a40ea5b638da4e7208.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

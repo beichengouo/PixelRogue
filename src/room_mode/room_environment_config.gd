@@ -27,7 +27,8 @@ const FOOTPRINT_LIFETIME := 12.0
 const MAX_FOOTPRINTS := 160
 const FOOTPRINT_SNOW_THRESHOLD := 0.10
 const FOOTPRINT_TELEPORT_DISTANCE := 80.0
-const LIGHT_KINDS := ["torch", "lamp", "plant", "crystal", "fire"]
+const LIGHT_KINDS := ["torch", "lamp", "plant", "crystal", "fire", "moon_lantern", "ember_brazier", "star_bloom"]
+const LIGHT_NAMES:={"torch":"火把","lamp":"灯笼","plant":"荧光植株","crystal":"发光晶簇","fire":"营火","moon_lantern":"弦月提灯","ember_brazier":"余烬铜炉","star_bloom":"星露花灯"}
 const LIGHT_SIZES := [Vector2i.ONE, Vector2i(2,2), Vector2i(1,2), Vector2i(2,1)]
 const LIGHTS := {
 	"torch": {"radius":108.0,"strength":0.95,"color":Color("ffbf74"),"flicker":true,"always_on":true,"dispels_fog":true},
@@ -35,4 +36,7 @@ const LIGHTS := {
 	"plant": {"radius":90.0,"strength":0.8,"color":Color("99e8c6"),"flicker":false,"always_on":true,"dispels_fog":true},
 	"crystal": {"radius":144.0,"strength":1.0,"color":Color("b5c9ff"),"flicker":false,"always_on":true,"dispels_fog":true},
 	"fire": {"radius":216.0,"strength":1.0,"color":Color("ffd09a"),"flicker":true,"always_on":true,"dispels_fog":true},
+ "moon_lantern":{"radius":168.0,"strength":.95,"color":Color("d5e9ff"),"flicker":false,"always_on":true,"dispels_fog":true},
+ "ember_brazier":{"radius":204.0,"strength":1.0,"color":Color("ffc17d"),"flicker":true,"always_on":true,"dispels_fog":true},
+ "star_bloom":{"radius":120.0,"strength":.85,"color":Color("91e8db"),"flicker":false,"always_on":true,"dispels_fog":true},
 }

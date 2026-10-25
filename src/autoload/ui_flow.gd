@@ -8,6 +8,7 @@ var pointer_active := true
 var background_paused := false
 var _stack: Array[Dictionary] = []
 var _huds: Array[WeakRef] = []
+var _pause_sync_pending:=false
 
 func _ready() -> void:
 	if "--room-editor" in OS.get_cmdline_user_args():return
@@ -38,7 +39,7 @@ func push_screen(owner: Node) -> void:
 		if entry.id == owner.get_instance_id(): return
 	var focused := get_viewport().gui_get_focus_owner()
 	var entry := {"id": owner.get_instance_id(), "owner": weakref(owner), "focus": weakref(focused) if focused != null else null}
-	if top_screen() == get_node_or_null("/root/TransitionLayer") and owner != top_screen():
+	if owner!=top_screen() and ((top_screen()==get_node_or_null("/root/TransitionLayer") and not bool(owner.get_meta("interrupt_transition",false))) or (top_screen()!=null and bool(top_screen().get_meta("blocking_screen",false)) and bool(owner.get_meta("wait_for_previous_screen",false)))):
 		_stack.insert(_stack.size() - 1, entry)
 	else:
 		_stack.append(entry)
@@ -80,7 +81,14 @@ func refresh() -> void:
 	_sync()
 
 func _sync() -> void:
-	get_tree().paused = background_paused or not _stack.is_empty()
+	if not is_inside_tree():return
+	# PROCESS_MODE_ALWAYS still cannot process while the editor suspends the
+	# tree. Do not write SceneTree.paused then; reconcile leases on resume.
+	if can_process():get_tree().paused = background_paused or not _stack.is_empty()
+	elif not _pause_sync_pending:
+		_pause_sync_pending=true
+		get_tree().process_frame.connect(_sync_after_resume)
+		get_tree().physics_frame.connect(_sync_after_resume)
 	var backdrop:Node=null
 	var top:=top_screen()
 	if top!=null and bool(top.get_meta("show_previous_screen",false)) and _stack.size()>1:
@@ -94,6 +102,13 @@ func _sync() -> void:
 		if is_instance_valid(node): node.visible = _stack.is_empty()
 	stack_changed.emit()
 	_focus_top.call_deferred()
+
+func _sync_after_resume()->void:
+	if not can_process():return
+	get_tree().process_frame.disconnect(_sync_after_resume)
+	get_tree().physics_frame.disconnect(_sync_after_resume)
+	_pause_sync_pending=false
+	_sync()
 
 func _focus_top() -> void:
 	var owner := top_screen()

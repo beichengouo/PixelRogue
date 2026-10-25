@@ -16,8 +16,15 @@ var _collision_add: CheckButton
 var _spawn_enemies: CheckBox
 var _file_dialog: FileDialog
 var _save_mode := false
+var _light_kind:OptionButton
+var _light_size:OptionButton
 
 func _ready() -> void:
+	if get_tree().current_scene==self and not "--native-room-editor" in OS.get_cmdline_user_args():
+		var launcher: GDScript=load("res://tools/browser_tools/launcher.gd")
+		if launcher.launch()>0:get_tree().quit();return
+		push_error("浏览器开发工具启动失败，请检查 Python 路径。")
+		return
 	get_window().title="PixelRogue · 房间模板编辑器"
 	get_window().min_size=Vector2i(1080,680)
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(RoomTemplatePool.USER))
@@ -80,8 +87,18 @@ func _build_ui() -> void:
 		check.toggled.connect(func(value):
 			canvas.visible_layers[layer_name]=value;canvas.queue_redraw()
 			_preview.set_layer_visible(layer_name,value))
-	var tools := _option(left,["编辑碰撞轮廓","出生/营地交互点","移动四个进出口"])
-	tools.item_selected.connect(func(index):canvas.tool=["collision","spawn","port"][index];canvas.queue_redraw())
+	var tools := _option(left,["编辑碰撞轮廓","出生/营地交互点","移动四个进出口","布置光源装饰"])
+	tools.item_selected.connect(func(index):canvas.tool=["collision","spawn","port","light"][index];canvas.queue_redraw())
+	var light_panel:=VBoxContainer.new();left.add_child(light_panel)
+	var light_label:=Label.new();light_label.text="光源装饰（选择布置工具后点击画布）";light_panel.add_child(light_label)
+	_light_kind=OptionButton.new();light_panel.add_child(_light_kind)
+	for kind:String in RoomEnvironmentConfig.LIGHT_KINDS:
+		var index:=_light_kind.item_count;_light_kind.add_item(RoomEnvironmentConfig.LIGHT_NAMES.get(kind,kind));_light_kind.set_item_metadata(index,kind)
+	_light_kind.select(RoomEnvironmentConfig.LIGHT_KINDS.find("moon_lantern"))
+	_light_size=_option(light_panel,["1×1","2×2","1×2","2×1"])
+	_light_kind.item_selected.connect(func(_index:int)->void:_select_light_asset())
+	_light_size.item_selected.connect(func(_index:int)->void:_select_light_asset())
+	var light_help:=Label.new();light_help.text="左键空位放置，拖中心点移动，右键删除；支持撤销和夜晚渲染预览。光源为装饰，不新增碰撞。";light_help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;light_help.add_theme_font_size_override("font_size",14);light_panel.add_child(light_help)
 	var collision_panel := VBoxContainer.new();left.add_child(collision_panel)
 	var collision_label := Label.new();collision_label.text="碰撞轮廓目标（场景 / 放置物件 / 水面）";collision_panel.add_child(collision_label)
 	_collision_targets=OptionButton.new();collision_panel.add_child(_collision_targets)
@@ -98,6 +115,7 @@ func _build_ui() -> void:
 	var scroll := ScrollContainer.new();scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL;body.add_child(scroll)
 	var stage := VBoxContainer.new();stage.size_flags_horizontal=Control.SIZE_EXPAND_FILL;stage.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.add_child(stage)
 	canvas=RoomEditorCanvas.new();stage.add_child(canvas);canvas.gesture.connect(_gesture);canvas.object_drag.connect(_move_entry);canvas.collision_edit.connect(_collision_edit)
+	_select_light_asset()
 	_preview=RoomTemplatePreview.new();stage.add_child(_preview);_preview.hide()
 	_status=Label.new();_status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;root.add_child(_status)
 	_file_dialog=FileDialog.new();_file_dialog.access=FileDialog.ACCESS_FILESYSTEM;_file_dialog.filters=PackedStringArray(["*.json ; 房间模板 JSON"]);add_child(_file_dialog)
@@ -197,6 +215,7 @@ func _collision_delete_water() -> void:
 	_checkpoint();RoomEditorCollision.delete_water(document,int(key.trim_prefix("water:")));canvas.collision_target="";_changed();_status.text="水面轮廓已删除；Ctrl+Z 可撤销"
 
 func _gesture(tool: String, start: Vector2i, end: Vector2i, cells: Array[Vector2i]) -> void:
+	if tool in ["light","light_erase"]:_edit_light(start,tool=="light_erase");return
 	if tool=="spawn" or tool=="erase":
 		if document.room_kinds.has("camp"):_status.text="营地固定交互点只能拖动，不能新增或删除。";return
 		var grid := Rect2i(Vector2i.ZERO,Vector2i(int(document.grid.size[0]),int(document.grid.size[1])))
@@ -223,6 +242,7 @@ func _gesture(tool: String, start: Vector2i, end: Vector2i, cells: Array[Vector2
 		return
 	return
 func _move_entry(layer: String, entry_id: String, offset: Vector2i) -> void:
+	if layer=="entities":_move_light(entry_id,offset);return
 	if layer!="markers" or not document.layers.has(layer):return
 	for entry in document.layers[layer]:
 		if str(entry.id)!=entry_id or (str(entry.asset_id)!="spawn" and not str(entry.asset_id).begins_with("camp:")):continue
@@ -236,6 +256,47 @@ func _move_entry(layer: String, entry_id: String, offset: Vector2i) -> void:
 		if not Rect2i(Vector2i.ZERO,Vector2i(int(document.grid.size[0]),int(document.grid.size[1]))).has_point(at):_status.text="出生点不能移出地图";return
 		_checkpoint();entry.at=[int(entry.at[0])+offset.x,int(entry.at[1])+offset.y]
 		_changed();_status.text="已移动："+str(entry.asset_id)+" · 保持整块占格 · Ctrl+Z 可撤销";return
+
+func _select_light_asset()->void:
+	if canvas==null or _light_kind==null or _light_size==null:return
+	var size:Vector2i=RoomEnvironmentConfig.LIGHT_SIZES[_light_size.selected]
+	canvas.light_asset_id="light:%s:%dx%d"%[_light_kind.get_item_metadata(_light_kind.selected),size.x,size.y]
+	canvas.queue_redraw()
+
+func _light_fits(asset_id:String,at:Vector2i,ignore_id:="")->bool:
+	var entry:=RoomEditorCatalog.get_entry(asset_id)
+	if entry.is_empty():return false
+	var rect:=Rect2i(at,Vector2i(entry.size[0],entry.size[1]));var grid:=Rect2i(Vector2i.ZERO,Vector2i(document.grid.size[0],document.grid.size[1]))
+	if not grid.encloses(rect):return false
+	for existing:Dictionary in document.layers.entities:
+		if str(existing.id)==ignore_id:continue
+		var asset:=RoomEditorCatalog.get_entry(str(existing.asset_id))
+		if asset.is_empty():continue
+		if rect.intersects(Rect2i(Vector2i(existing.at[0],existing.at[1]),Vector2i(asset.size[0],asset.size[1]))):return false
+	return true
+
+func _edit_light(at:Vector2i,erase:bool)->void:
+	if document.is_empty():return
+	if erase:
+		for entry:Dictionary in document.layers.entities:
+			if not str(entry.asset_id).begins_with("light:"):continue
+			var asset:=RoomEditorCatalog.get_entry(str(entry.asset_id))
+			if Rect2i(Vector2i(entry.at[0],entry.at[1]),Vector2i(asset.size[0],asset.size[1])).has_point(at):
+				_checkpoint();document.layers.entities.erase(entry);_changed();_status.text="已删除光源 · Ctrl+Z 撤销";return
+		return
+	var asset_id:=canvas.light_asset_id
+	if not _light_fits(asset_id,at):_status.text="光源占格越界或与已有实体重叠，请选择其他位置；移动已有光源请拖中心点。";return
+	_checkpoint();document.layers.entities.append({"id":"light_%d"%Time.get_ticks_usec(),"asset_id":asset_id,"at":[at.x,at.y],"config":{"range_animation":true}})
+	_changed();_status.text="已放置："+str(RoomEditorCatalog.get_entry(asset_id).name)+" · Ctrl+Z 撤销"
+
+func _move_light(id:String,offset:Vector2i)->void:
+	if document.is_empty():return
+	for entry:Dictionary in document.layers.entities:
+		if str(entry.id)!=id or not str(entry.asset_id).begins_with("light:"):continue
+		if offset==Vector2i.ZERO:return
+		var at:=Vector2i(entry.at[0],entry.at[1])+offset
+		if not _light_fits(str(entry.asset_id),at,id):_status.text="光源无法移到此处：占格越界或与实体重叠。";return
+		_checkpoint();entry.at=[at.x,at.y];_changed();_status.text="已移动光源 · Ctrl+Z 撤销";return
 
 func _zoom(change: float) -> void:
 	canvas.zoom=clampf(canvas.zoom+change,0.5,2);canvas.set_document(document)

@@ -177,7 +177,7 @@ func _fire_hunter()->void:
 		var bullet:=RoomProjectile.new();bullet.room=enemy.room;bullet.is_friendly=false;bullet.art_scale=0.48;bullet.range_limit=360
 		bullet.hostile_effects=PlayerDebuffs.effects_for(enemy).duplicate(true)
 		if enemy.kind in EnemyCombatPolicy.EXPANSION_KINDS:bullet.hostile_fx=str(enemy.kind)
-		bullet.damage_owner=&"enemy"
+		bullet.damage_owner=&"enemy";bullet.boss_source_tag=enemy.boss_wave_tag
 		bullet.cruel_damage=enemy.has_affix(EnemyAffixes.CRUEL)
 		enemy._fx().add_child(bullet)
 		bullet.setup(enemy.global_position+dir*18,dir,enemy.damage*0.45,330,enemy.room,enemy.player,Color("ff8175"))
@@ -192,7 +192,7 @@ func _release_echo()->void:
 		var bullet:=RoomProjectile.new();bullet.room=enemy.room;bullet.is_friendly=false;bullet.art_scale=0.52;bullet.range_limit=360
 		bullet.hostile_effects=PlayerDebuffs.effects_for(enemy).duplicate(true)
 		if enemy.kind in EnemyCombatPolicy.EXPANSION_KINDS:bullet.hostile_fx=str(enemy.kind)
-		bullet.damage_owner=&"enemy";enemy._fx().add_child(bullet)
+		bullet.damage_owner=&"enemy";bullet.boss_source_tag=enemy.boss_wave_tag;enemy._fx().add_child(bullet)
 		bullet.cruel_damage=enemy.has_affix(EnemyAffixes.CRUEL)
 		bullet.setup(echo_origin+echo_aim*18,echo_aim,enemy.damage*0.5,240,enemy.room,enemy.player,Color("eaa0ff"))
 		return

@@ -22,7 +22,7 @@ func open_reading(record:Dictionary)->void:
 	var reading:Dictionary=room.delta.get("fate_reading",{})
 	var choices:Array[Dictionary]=[]
 	for value in reading.get("offers",[]):choices.append({"fate_id":str(value),"reverse":FateService.orientation(room)})
-	(_column.get_child(0) as Label).text="命运祭坛 · "+("逆位" if FateService.orientation(room) else "正位")
+	(_column.get_child(0) as Label).text="命运祭坛 · 选择命运"
 	open(choices)
 
 func choose(index:int,defer_resume:=false)->void:
@@ -30,7 +30,7 @@ func choose(index:int,defer_resume:=false)->void:
 	if _committing:super.choose(index,defer_resume);return
 	pending_index=index
 	var card:Dictionary=offers[index]
-	confirmation.title=str(FateCatalog.CARDS[card.fate_id].name)+(" · 逆位" if card.reverse else " · 正位")
+	confirmation.title=str(FateCatalog.CARDS[card.fate_id].name)+" · "+str(FateCatalog.CARDS[card.fate_id].theme)
 	confirmation.dialog_text=FateCatalog.description(card.fate_id,card.reverse)+"\n\n"+BuildInsight.fate(card.fate_id,card.reverse)+"\n\n确认后本祭坛占卜结束，卡牌在本次出征中持续生效。"
 	confirmation.popup_centered()
 
@@ -62,16 +62,18 @@ func _build_card(index:int,item:Dictionary)->Control:
 	var card:=Control.new();card.name="FateFace";card.size=CARD_SIZE;card.position=Vector2(12,12);card.mouse_filter=Control.MOUSE_FILTER_IGNORE;holder.add_child(card)
 	var art:=TextureRect.new();art.texture=load(FateCatalog.art(id,reverse));art.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;art.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	art.position=Vector2(0,0);art.size=Vector2(300,450);art.mouse_filter=Control.MOUSE_FILTER_IGNORE;card.add_child(art);_reward_icons.append(art)
-	var name_label:=UiFactory.outlined_label(str(FateCatalog.CARDS[id].name)+(" · 逆位" if reverse else " · 正位"),22,color,4)
-	name_label.position=Vector2(8,450);name_label.size=Vector2(284,36);name_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;name_label.mouse_filter=Control.MOUSE_FILTER_IGNORE;card.add_child(name_label)
+	var name_art:=TextureRect.new();name_art.name="FateNameArt";name_art.texture=load(FateCatalog.wordmark(id,reverse));name_art.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;name_art.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	name_art.position=Vector2(8,439);name_art.size=Vector2(284,49);name_art.mouse_filter=Control.MOUSE_FILTER_IGNORE;card.add_child(name_art)
 	holder.tooltip_text=FateCatalog.description(id,reverse)
+	if FateCatalog.owned_card()==id:
+		var badge:=PixelUi.label("角色共鸣",18,Color("b6e9d6"));badge.position=Vector2(16,410);card.add_child(badge)
 	# The inherited pointer drag handler expects one scroll slot per card.
 	var scroll:=ScrollContainer.new();scroll.position=Vector2(0,0);scroll.size=Vector2(300,450);scroll.mouse_filter=Control.MOUSE_FILTER_IGNORE;card.add_child(scroll);_scrolls.append(scroll)
 	holder.pressed.connect(func()->void:_choose_from_input(index,_selection_epoch,true))
 	holder.focus_entered.connect(func()->void:_hover(holder,true));holder.focus_exited.connect(func()->void:_hover(holder,false))
 	holder.mouse_entered.connect(func()->void:_hover(holder,true));holder.mouse_exited.connect(func()->void:_hover(holder,false))
 	var effect:=RewardCardFX.new();holder.add_child(effect);effect.size=holder.custom_minimum_size;effect.configure(card,color);_card_effects.append(effect);_visuals.append(card)
-	var back:=TextureRect.new();back.texture=load(FateCatalog.art("back"));back.position=Vector2(12,12);back.size=CARD_SIZE;back.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;back.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;back.mouse_filter=Control.MOUSE_FILTER_IGNORE;holder.add_child(back);_backs.append(back)
+	var back:=TextureRect.new();back.name="TarotBack";back.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;back.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;back.texture=load(FateCatalog.art("back"));back.position=Vector2(12,12);back.size=CARD_SIZE;back.mouse_filter=Control.MOUSE_FILTER_IGNORE;holder.add_child(back);_backs.append(back)
 	holder.modulate.a=0;return holder
 
 func _input(event:InputEvent)->void:

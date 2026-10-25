@@ -5,6 +5,7 @@ const DANGER_HP = [1.0, 1.15, 1.30, 1.50]
 const DANGER_VALUE = [1.0, 1.20, 1.40, 1.65]
 const CAPACITY = 24
 const MATERIALS = {
+	"starbound_sigil":{"name":"星誓辉印","price":0,"rarity":3,"icon":0,"desc":"完成第四阶段三首领连战并成功撤离的凭证。象征跨越终局的誓约；死亡不可保留，不可购买或出售。"},
 	"forest_resin": {"name":"林脂凝晶", "price":10, "rarity":0, "icon":0},
 	"river_pearl": {"name":"溪湾明珠", "price":18, "rarity":1, "icon":0},
 	"moss_cloth": {"name":"苔纹织片", "price":9, "rarity":0, "icon":0},
@@ -20,15 +21,141 @@ const MATERIALS = {
 	"star_dust": {"name":"星辉尘", "price":6, "rarity":0, "icon":1},
 	"memory_gift": {"name":"未褪色的记忆花", "price":16, "rarity":1, "icon":3},
 }
-const CONTRACTS = [
-	{"id":"survey","title":"地区踏勘","desc":"带回三份地区样本：林地晶芽2份与湿地琥珀1份，或星城遗迹碎晶3份。旧三地样本各1份亦可等价提交。","needs":{"forest_sample":2,"wetland_sample":1},"danger":0,"wave":1,"unlock":1,"reward":30,"owner":"merchant","issuer":"surveyor","bond":3,"penalty":2,"hours":2,"require":""},
-	{"id":"deep","title":"黑晶的来处","desc":"提交2份深层黑晶物证（危险或绝境，第10场起掉落）。","needs":{"deep_evidence":2},"danger":1,"wave":10,"unlock":2,"reward":60,"owner":"iris","bond":4,"penalty":3,"hours":6,"require":"survey"},
-	{"id":"echo","title":"回廊的代价","desc":"提交3份回廊回响物证（绝境，第20场起掉落）。","needs":{"echo_evidence":3},"danger":2,"wave":20,"unlock":3,"reward":100,"owner":"sylphiette","bond":5,"penalty":4,"hours":12,"require":"deep"},
-	{"id":"daily_repairs","title":"货架的修补","desc":"提交苔纹织片3份、林脂凝晶2份。每日可完成一次。","needs":{"moss_cloth":3,"forest_resin":2},"danger":0,"wave":1,"unlock":0,"reward":35,"owner":"merchant","issuer":"carpenter","bond":2,"penalty":1,"hours":2,"require":"","repeatable":true},
-	{"id":"daily_soup","title":"雨夜的药汤","desc":"提交焰光菇2份。每日可完成一次。","needs":{"glow_mushroom_0":2},"danger":0,"wave":1,"unlock":0,"reward":30,"owner":"tavern","issuer":"herbalist","bond":3,"penalty":2,"hours":6,"require":"","repeatable":true},
-	{"id":"daily_flower","title":"留给归人的花","desc":"提交未褪色的记忆花1份、林地晶芽2份。每日可完成一次。","needs":{"memory_gift":1,"forest_sample":2},"danger":0,"wave":1,"unlock":0,"reward":25,"owner":"sylphiette","bond":4,"penalty":2,"hours":12,"require":"","repeatable":true},
-	{"id":"daily_seal","title":"修补旧约","desc":"提交远古封印片1份、风暴晶核1份。每日可完成一次。","needs":{"ancient_seal":1,"storm_crystal":1},"danger":2,"wave":1,"unlock":0,"reward":50,"owner":"iris","bond":5,"penalty":3,"hours":12,"require":"deep","repeatable":true},
+const LEGACY_CONTRACTS = [
+  {
+    "id": "survey",
+    "title": "地区踏勘",
+    "desc": "提交林地晶芽8份与湿地琥珀4份，或遗迹碎晶12份；材料成功撤离后交付。",
+    "needs": {
+      "forest_sample": 8,
+      "wetland_sample": 4
+    },
+    "danger": 0,
+    "wave": 1,
+    "unlock": 1,
+    "reward": 30,
+    "owner": "merchant",
+    "issuer": "surveyor",
+    "bond": 3,
+    "penalty": 2,
+    "hours": 2,
+    "require": ""
+  },
+  {
+    "id": "deep",
+    "title": "黑晶的来处",
+    "desc": "提交深层黑晶物证4份。",
+    "needs": {
+      "deep_evidence": 4
+    },
+    "danger": 1,
+    "wave": 10,
+    "unlock": 2,
+    "reward": 60,
+    "owner": "iris",
+    "bond": 4,
+    "penalty": 3,
+    "hours": 6,
+    "require": "survey"
+  },
+  {
+    "id": "echo",
+    "title": "回廊的代价",
+    "desc": "提交回廊回响物证6份。",
+    "needs": {
+      "echo_evidence": 6
+    },
+    "danger": 2,
+    "wave": 20,
+    "unlock": 3,
+    "reward": 100,
+    "owner": "sylphiette",
+    "bond": 5,
+    "penalty": 4,
+    "hours": 12,
+    "require": "deep"
+  },
+  {
+    "id": "daily_repairs",
+    "title": "货架的修补",
+    "desc": "提交苔纹织片6份、林脂凝晶4份。每日可完成一次。",
+    "needs": {
+      "moss_cloth": 6,
+      "forest_resin": 4
+    },
+    "danger": 0,
+    "wave": 1,
+    "unlock": 0,
+    "reward": 35,
+    "owner": "merchant",
+    "issuer": "carpenter",
+    "bond": 2,
+    "penalty": 1,
+    "hours": 2,
+    "require": "",
+    "repeatable": true
+  },
+  {
+    "id": "daily_soup",
+    "title": "雨夜的药汤",
+    "desc": "提交林脂凝晶4份、星辉尘8份。每日可完成一次。",
+    "needs": {
+      "forest_resin": 4,
+      "star_dust": 8
+    },
+    "danger": 0,
+    "wave": 1,
+    "unlock": 0,
+    "reward": 30,
+    "owner": "tavern",
+    "issuer": "herbalist",
+    "bond": 3,
+    "penalty": 2,
+    "hours": 6,
+    "require": "",
+    "repeatable": true
+  },
+  {
+    "id": "daily_flower",
+    "title": "留给归人的花",
+    "desc": "提交未褪色的记忆花2份、林地晶芽8份。每日可完成一次。",
+    "needs": {
+      "memory_gift": 2,
+      "forest_sample": 8
+    },
+    "danger": 0,
+    "wave": 1,
+    "unlock": 0,
+    "reward": 25,
+    "owner": "sylphiette",
+    "bond": 4,
+    "penalty": 2,
+    "hours": 12,
+    "require": "",
+    "repeatable": true
+  },
+  {
+    "id": "daily_seal",
+    "title": "修补旧约",
+    "desc": "提交远古封印片3份、风暴晶核3份。每日可完成一次。",
+    "needs": {
+      "ancient_seal": 3,
+      "storm_crystal": 3
+    },
+    "danger": 2,
+    "wave": 1,
+    "unlock": 0,
+    "reward": 50,
+    "owner": "iris",
+    "bond": 5,
+    "penalty": 3,
+    "hours": 12,
+    "require": "deep",
+    "repeatable": true
+  }
 ]
+
+static var CONTRACTS:Array = LEGACY_CONTRACTS + CampCommissionCatalog.contracts()
 
 static func material(id: String) -> Dictionary:
 	if not MATERIALS.has(id) and not MaterialWorkshopCatalog.BOSS_MATERIALS.has(id): return {}
@@ -53,6 +180,7 @@ static func stack_limit(item: Dictionary) -> int:
 	return 1
 
 static func sale_value(item: Dictionary) -> int:
+	if str(item.get("id",""))==StageRules.EXTREME_MATERIAL:return 0
 	if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(item.get("id",""))):return 0
 	if str(item.get("id","")).begins_with("glow_mushroom_") and int(item.get("rarity",0))>0:return 0
 	if not ItemDB.is_equippable(item) and not ItemDB.is_material(item) and not ItemDB.is_usable(item) and not ItemDB.is_relic(item): return 0
@@ -95,6 +223,7 @@ static func reserve_limit(id: String) -> int:
 	return 999 if id.begins_with("glow_mushroom_") else 2147483647
 
 static func material_icon(id: String) -> String:
+	if id==StageRules.EXTREME_MATERIAL:return "res://assets/achievements_v01/extreme_return.png"
 	if MaterialWorkshopCatalog.BOSS_MATERIALS.has(id):return MaterialWorkshopCatalog.icon(str(MaterialWorkshopCatalog.BOSS_MATERIALS[id].icon))
 	var revised="res://assets/next_revision/materials/"+id+".png"
 	if ResourceLoader.exists(revised):return revised

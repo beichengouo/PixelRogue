@@ -15,7 +15,7 @@ func _ready() -> void:
 func reward(enemy: EnemyBase) -> void:
 	if enemy.loot_origin != "normal" or receipts.has(enemy.reward_uid) or not GameState.run_active: return
 	receipts[enemy.reward_uid] = true
-	GameState.claim_wave_experience()
+	_award_experience(enemy)
 	if _wave != GameState.wave:
 		_wave=GameState.wave
 		dropped=0
@@ -50,6 +50,9 @@ func reward(enemy: EnemyBase) -> void:
 	else: item = _material(enemy.global_position)
 	drop([item],enemy.global_position)
 	Outpost.request_checkpoint()
+
+func _award_experience(_enemy:EnemyBase)->void:
+	GameState.claim_wave_experience()
 
 func _boss_material(_enemy:EnemyBase)->Dictionary:return {}
 
@@ -167,4 +170,3 @@ func restore(d: Dictionary) -> void:
 	gear_dropped = int(d.get("gear",0))
 	keys_dropped = int(d.get("keys",0))
 	receipts = d.get("receipts",{}).duplicate()
-

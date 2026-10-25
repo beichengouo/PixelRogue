@@ -11,6 +11,7 @@ var data := {
 	"achievement_stats": {},
 	"best_wave": 0,
 	"monster_seen": {},
+	"boss_entrances_seen": {},
 	"monster_kills": {},
 	"meta_coins": 0,
 	"runs": 0,
@@ -36,7 +37,8 @@ var data := {
 	"run": {},
 	"outpost": {},
 	"version": 3,
-	"rondo_core_migration": 0,
+	# New room-mode profiles must not be retired as pre-room saves on restart.
+	"rondo_core_migration": CORE_MIGRATION,
 }
 
 
@@ -62,6 +64,9 @@ func load_data() -> void:
 		if parsed is Dictionary:
 			for key in data.keys():
 				if parsed.has(key): data[key] = parsed[key]
+			# A missing marker belongs to an old file, even though fresh profiles
+			# default to the current revision. Keep it pending if backup/save fails.
+			data.rondo_core_migration=int(parsed.get("rondo_core_migration",0))
 			# Existing profiles keep a previously chosen control scheme. Fresh
 			# profiles have no file and receive the first-launch choice instead.
 			if not parsed.has("control_setup_done"):
@@ -78,12 +83,29 @@ func _migrate_room_only(parsed:Dictionary,source_path:String) -> void:
 		return
 	var before:=data.duplicate(true)
 	var had_run:bool=not data.get("run",{}).is_empty() or not data.get("outpost",{}).get("active",{}).is_empty()
-	data.run={}
-	if data.outpost is Dictionary:data.outpost["active"]={}
+	var preserve_room_run:=_has_room_checkpoint(data)
+	if not preserve_room_run:
+		data.run={}
+		if data.outpost is Dictionary:data.outpost["active"]={}
 	data.rondo_core_migration=CORE_MIGRATION
 	data.version=3
 	if not save_data():data=before;return
-	if had_run:migration_notice="星辉旅途已更新：上一趟未完成出征已结束，营地物资与记录均已保留。"
+	if had_run and not preserve_room_run:migration_notice="星辉旅途已更新：上一趟未完成出征已结束，营地物资与记录均已保留。"
+
+func _has_room_checkpoint(record:Dictionary)->bool:
+	var run:Variant=record.get("run",{});var outpost:Variant=record.get("outpost",{})
+	if not run is Dictionary or not outpost is Dictionary or str(run.get("combat_mode",""))!="rooms" or run.has("terminal"):return false
+	var world:Variant=run.get("world_state",{});var active:Variant=outpost.get("active",{})
+	if not world is Dictionary or not active is Dictionary:return false
+	if str(run.get("sortie_id","")).is_empty() or str(run.sortie_id)!=str(active.get("id","")) or str(active.get("status",""))!="active":return false
+	if world.is_empty():
+		# The real departure transaction may have committed before its first room.
+		var departure:Variant=run.get("departure",{})
+		return departure is Dictionary and str(departure.get("id",""))==str(active.id) and str(departure.get("combat_mode",""))=="rooms" and str(active.get("combat_mode",""))=="rooms"
+	var graph:Variant=world.get("graph",{})
+	if not graph is Dictionary or int(graph.get("version",0)) not in [1,2,3]:return false
+	var rooms:Variant=graph.get("rooms",{})
+	return rooms is Dictionary and rooms.has(str(graph.get("current","")))
 
 func take_migration_notice() -> String:
 	var message:=migration_notice;migration_notice="";return message
@@ -122,8 +144,12 @@ func record_run(final_wave: int, coins: int) -> void:
 
 ## ---------------- 局内存档（单存档位）----------------
 
-func save_run(snapshot: Dictionary) -> bool:
+var _transition_checkpoint:Dictionary={}
+func save_run(snapshot: Dictionary,coherent_transition:bool=false) -> bool:
 	if CampSession.active:return false
+	# Background/OS-close saves may arrive between graph replacement and actor
+	# restoration. Only the transition owner can commit its installed destination.
+	if not coherent_transition and not _transition_checkpoint.is_empty():snapshot=_transition_checkpoint.duplicate(true)
 	if snapshot.is_empty() or str(snapshot.get("sortie_id","")) != Outpost.active_id(): return false
 	if str(Outpost.data.get("active",{}).get("status","")) == "dead": return false
 	if snapshot.has("hp_ratio") and float(snapshot.hp_ratio)<=0: return false
@@ -168,10 +194,13 @@ func quit_game() -> void:
 			GameState.runtime_node.main.pause_ui.set_status("保存失败：本局仍保留，请稍后重试退出。")
 			return
 	_quitting=true
-	get_tree().paused=true
+	# UIFlow preserves a pause lease even across debugger suspension. Direct
+	# SceneTree.paused writes are rejected while an embedded game is suspended.
+	UIFlow.push_screen(self)
 	if is_instance_valid(GameState.runtime_node): GameState.runtime_node.motion.cancel()
 	AudioManager.shutdown()
-	await get_tree().create_timer(0.2,true).timeout
+	# Editor suspension freezes scaled time; audio draining must use wall time.
+	await get_tree().create_timer(0.2,true,false,true).timeout
 	get_tree().quit()
 
 func _record_encounter(enemy:Node) -> void:

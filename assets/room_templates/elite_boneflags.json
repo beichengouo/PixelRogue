@@ -1,70 +1,164 @@
 {
-  "format": "pixelrogue.room",
-  "schema_version": 1,
-  "revision": 1,
-  "id": "elite_boneflags",
-  "name": "骸旗演武场",
-  "theme": "ruin",
-  "room_kinds": [
-    "elite"
-  ],
-  "selection_weight": 1,
-  "scene_art": "elite_boneflags_v01",
-  "base_ground": "floor:stone",
-  "grid": {
-    "size": [
-      23,
-      13
-    ],
-    "cell_px": 36
-  },
-  "layers": {
-    "ground": [],
-    "water": [],
-    "obstacles": [],
-    "decor": [],
-    "entities": [],
-    "markers": []
-  },
-  "ports": [
-    {
-      "id": "north",
-      "side": "north",
-      "at": [
-        11,
-        0
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "east",
-      "side": "east",
-      "at": [
-        22,
-        6
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "south",
-      "side": "south",
-      "at": [
-        11,
-        12
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "west",
-      "side": "west",
-      "at": [
-        0,
-        6
-      ],
-      "approach_width": 3
-    }
-  ],
-  "tags": [
-    "elite"
-  ]
+	"base_ground": "floor:stone",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "elite_boneflags",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "骸旗演武场",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				6.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				6.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 2,
+	"room_kinds": [
+		"elite"
+	],
+	"scene_art": "elite_boneflags_v01",
+	"scene_collision_overrides": {
+		"objects": {
+			"lamp_ne": [
+				[
+					-13.6,
+					-23.5
+				],
+				[
+					14.4,
+					-24.0
+				],
+				[
+					14.4,
+					-1.0
+				],
+				[
+					-11.6,
+					-2.6
+				]
+			],
+			"lamp_nw": [
+				[
+					-15.9,
+					-20.9
+				],
+				[
+					16.2,
+					-21.4
+				],
+				[
+					13.2,
+					-3.1
+				],
+				[
+					-13.9,
+					-2.6
+				]
+			],
+			"lamp_se": [
+				[
+					-20.541,
+					-17.059
+				],
+				[
+					20.541,
+					-17.059
+				],
+				[
+					12.9,
+					0.0
+				],
+				[
+					-11.6,
+					-1.0
+				]
+			],
+			"lamp_sw": [
+				[
+					-20.256,
+					-17.059
+				],
+				[
+					20.256,
+					-17.059
+				],
+				[
+					10.6,
+					-1.0
+				],
+				[
+					-12.3,
+					-1.5
+				]
+			],
+			"weapon_rack": [
+				[
+					-25.4,
+					-21.8
+				],
+				[
+					25.6,
+					-20.8
+				],
+				[
+					25.6,
+					-4.4
+				],
+				[
+					-23.9,
+					-4.4
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"tags": [
+		"elite"
+	],
+	"theme": "ruin"
 }

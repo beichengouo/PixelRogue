@@ -1,6 +1,7 @@
 class_name Story
 extends RefCounted
-## 序章《第一次死亡》的剧本数据。
+## 稳定事件与旧存档兼容入口。V1.1正式文案来自 ContractorNarrative /
+## data/narrative_v11.json、CityStories 和 CampStory；下方旧文本只保留兼容回退。
 ##
 ## 一个「场景」= 若干句台词/旁白 +（可选）一组选项：
 ##   portrait        立绘路径，空字符串 = 这一段不出现人
@@ -13,6 +14,7 @@ extends RefCounted
 ## 想改剧情/加分支，改这个文件就够了，不用碰界面代码。
 
 ## 她的名字：显示在名牌上，也决定"该亮谁的立绘"
+const MAX_CHOICES := 3
 const GODDESS := CharacterStories.GODDESS
 const P_GODDESS := "res://assets/characters/goddess_portrait.png"
 
@@ -240,19 +242,36 @@ const SCENES := {
 
 
 static func get_scene(id: StringName, replay := false, character_id:StringName=&"") -> Dictionary:
-	if id in [&"forest_mage_before",&"forest_tide_before"]:
-		var sources:Array=[&"cp_40",&"cp_50"] if id==&"forest_mage_before" else [&"cp_70",&"cp_80",&"cp_90"]
-		var lines:Array=[]
-		for source:StringName in sources:lines.append_array(get_scene(source,replay,character_id).get("lines",[]))
-		return {"title":"晶影之门" if id==&"forest_mage_before" else "最后的心跳","portrait":P_GODDESS,"lines":lines,"source_scenes":sources,"next":&""}
+	if id == &"intro_weapon": return {"title":"已移除的装备教学","lines":[],"choices":[],"next":&""}
 	if id==&"fate_observation":return FateStory.scene(character_id,replay)
 	if String(id).begins_with("city_"):return CityStories.scene(id,replay,character_id)
+	var revised := ContractorNarrative.scene(id,replay,character_id)
+	if not revised.is_empty(): return DialoguePortraits.decorate(revised,id,replay,character_id)
 	var scene := _shared_scene(id, replay)
 	if scene.is_empty(): return scene
 	var character:Dictionary=Characters.DATA.get(character_id,Characters.current())
 	scene = CharacterStories.apply(scene, id, replay, str(character.get("story_profile", "")))
-	return DialoguePortraits.decorate(scene, id, replay,character_id)
+	return _present_scene(DialoguePortraits.decorate(scene, id, replay,character_id), id)
 
+
+
+## Preserve stable replay/save IDs while retiring the old tutorial equipment grant.
+## Character variants are resolved before reducing choices so their replies and
+## effects stay paired with the original branch, rather than changing indices.
+static func _present_scene(scene: Dictionary, id: StringName) -> Dictionary:
+	if id == &"intro_weapon":
+		return {"title": "序章 · 已移除的装备教学", "lines": [], "choices": [], "next": &""}
+	var choices: Array = scene.get("choices", [])
+	var keep: Array = [0, 3, 4] if id == &"intro_wake" else [0, 1, 4] if id == &"death_hall" else []
+	if not keep.is_empty():
+		var selected: Array = []
+		for index: int in keep:
+			if index < choices.size(): selected.append(choices[index])
+		choices = selected
+	if id == &"intro_wake":
+		for option: Dictionary in choices: option["next"] = &""
+	scene["choices"] = choices.slice(0, MAX_CHOICES)
+	return scene
 
 static func _shared_scene(id: StringName, replay := false) -> Dictionary:
 	# Stable checkpoint IDs are replay keys; room/Boss events decide when they play.
@@ -363,6 +382,9 @@ static func checkpoint_id(wave: int) -> StringName:
 
 
 static func random_death_line(line := "", affinity := 0) -> Array:
+	return [{"who":GODDESS,"text":"先让她休息。遗失的物资留在旅途里，灯下的位置仍为她留着。"}]
+
+static func _legacy_death_line(line := "", affinity := 0) -> Array:
 	if Characters.current_id()==&"xixifu":return SummonerStories.death_line(GODDESS)
 	if Characters.current_id()==&"ilyua":return IlyuaStories.death_line(GODDESS)
 	## 第一次死亡之后的每一次死亡：只留一句女神短句，避免重复演整段回廊
@@ -402,6 +424,6 @@ static func choices_of(scene: Dictionary) -> Array:
 		if need != &"" and not StoryState.has_flag(need):
 			continue
 		out.append(option)
-	return out
+	return out.slice(0, MAX_CHOICES)
 
 

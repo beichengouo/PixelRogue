@@ -1,0 +1,992 @@
+{
+  "revision": 34,
+  "cell": 384,
+  "foot": [
+    192,
+    360
+  ],
+  "body_height": 156.6721991701245,
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 5
+    },
+    "move": {
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 7
+    },
+    "transform": {
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "fps": 8
+    },
+    "skill_0_windup": {
+      "frames": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "fps": 6
+    },
+    "skill_0_release": {
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "fps": 8
+    },
+    "skill_1_windup": {
+      "frames": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "fps": 6
+    },
+    "skill_1_release": {
+      "frames": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "fps": 8
+    },
+    "skill_2_windup": {
+      "frames": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "fps": 6
+    },
+    "skill_2_release": {
+      "frames": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "fps": 8
+    },
+    "skill_3_windup": {
+      "frames": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "fps": 6
+    },
+    "skill_3_release": {
+      "frames": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "fps": 8
+    },
+    "skill_4_windup": {
+      "frames": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "fps": 6
+    },
+    "skill_4_release": {
+      "frames": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "fps": 8
+    },
+    "skill_5_windup": {
+      "frames": [
+        56,
+        57,
+        58,
+        59
+      ],
+      "fps": 6
+    },
+    "skill_5_release": {
+      "frames": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "fps": 8
+    },
+    "skill_6_windup": {
+      "frames": [
+        64,
+        65,
+        66,
+        67
+      ],
+      "fps": 6
+    },
+    "skill_6_release": {
+      "frames": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "fps": 8
+    },
+    "windup": {
+      "frames": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "fps": 6
+    },
+    "release": {
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "fps": 8
+    }
+  },
+  "bounds": [
+    [
+      113,
+      203,
+      310,
+      360
+    ],
+    [
+      120,
+      203,
+      313,
+      360
+    ],
+    [
+      121,
+      203,
+      312,
+      360
+    ],
+    [
+      121,
+      206,
+      315,
+      360
+    ],
+    [
+      130,
+      206,
+      320,
+      360
+    ],
+    [
+      133,
+      206,
+      321,
+      360
+    ],
+    [
+      135,
+      204,
+      310,
+      360
+    ],
+    [
+      126,
+      207,
+      286,
+      360
+    ],
+    [
+      110,
+      217,
+      279,
+      360
+    ],
+    [
+      122,
+      217,
+      316,
+      360
+    ],
+    [
+      128,
+      217,
+      319,
+      360
+    ],
+    [
+      129,
+      217,
+      315,
+      360
+    ],
+    [
+      126,
+      209,
+      319,
+      360
+    ],
+    [
+      126,
+      209,
+      311,
+      360
+    ],
+    [
+      118,
+      208,
+      309,
+      360
+    ],
+    [
+      122,
+      209,
+      287,
+      360
+    ],
+    [
+      102,
+      203,
+      301,
+      360
+    ],
+    [
+      97,
+      193,
+      315,
+      360
+    ],
+    [
+      113,
+      193,
+      290,
+      360
+    ],
+    [
+      111,
+      193,
+      289,
+      360
+    ],
+    [
+      88,
+      212,
+      323,
+      360
+    ],
+    [
+      98,
+      210,
+      312,
+      360
+    ],
+    [
+      115,
+      195,
+      302,
+      360
+    ],
+    [
+      122,
+      211,
+      307,
+      360
+    ],
+    [
+      101,
+      203,
+      299,
+      360
+    ],
+    [
+      86,
+      165,
+      290,
+      360
+    ],
+    [
+      78,
+      170,
+      295,
+      360
+    ],
+    [
+      76,
+      201,
+      288,
+      360
+    ],
+    [
+      99,
+      216,
+      366,
+      360
+    ],
+    [
+      92,
+      218,
+      304,
+      360
+    ],
+    [
+      88,
+      217,
+      300,
+      360
+    ],
+    [
+      92,
+      220,
+      290,
+      360
+    ],
+    [
+      112,
+      203,
+      299,
+      360
+    ],
+    [
+      105,
+      210,
+      303,
+      360
+    ],
+    [
+      107,
+      210,
+      270,
+      360
+    ],
+    [
+      112,
+      210,
+      272,
+      360
+    ],
+    [
+      115,
+      225,
+      286,
+      360
+    ],
+    [
+      113,
+      217,
+      326,
+      360
+    ],
+    [
+      115,
+      206,
+      301,
+      360
+    ],
+    [
+      109,
+      213,
+      294,
+      360
+    ],
+    [
+      102,
+      203,
+      311,
+      360
+    ],
+    [
+      106,
+      206,
+      312,
+      360
+    ],
+    [
+      104,
+      204,
+      312,
+      360
+    ],
+    [
+      102,
+      201,
+      302,
+      360
+    ],
+    [
+      102,
+      211,
+      311,
+      360
+    ],
+    [
+      104,
+      208,
+      312,
+      360
+    ],
+    [
+      109,
+      211,
+      306,
+      360
+    ],
+    [
+      110,
+      214,
+      300,
+      360
+    ],
+    [
+      97,
+      203,
+      301,
+      360
+    ],
+    [
+      105,
+      201,
+      303,
+      360
+    ],
+    [
+      103,
+      203,
+      301,
+      360
+    ],
+    [
+      94,
+      201,
+      300,
+      360
+    ],
+    [
+      98,
+      206,
+      303,
+      360
+    ],
+    [
+      104,
+      207,
+      307,
+      360
+    ],
+    [
+      102,
+      210,
+      301,
+      360
+    ],
+    [
+      105,
+      211,
+      298,
+      360
+    ],
+    [
+      101,
+      203,
+      298,
+      360
+    ],
+    [
+      101,
+      203,
+      297,
+      360
+    ],
+    [
+      73,
+      203,
+      298,
+      360
+    ],
+    [
+      69,
+      197,
+      298,
+      360
+    ],
+    [
+      94,
+      211,
+      347,
+      360
+    ],
+    [
+      104,
+      213,
+      336,
+      360
+    ],
+    [
+      89,
+      213,
+      321,
+      360
+    ],
+    [
+      133,
+      207,
+      305,
+      360
+    ],
+    [
+      80,
+      203,
+      328,
+      360
+    ],
+    [
+      100,
+      143,
+      309,
+      360
+    ],
+    [
+      94,
+      142,
+      294,
+      360
+    ],
+    [
+      103,
+      139,
+      305,
+      360
+    ],
+    [
+      80,
+      214,
+      317,
+      360
+    ],
+    [
+      68,
+      210,
+      320,
+      360
+    ],
+    [
+      45,
+      211,
+      312,
+      360
+    ],
+    [
+      53,
+      209,
+      317,
+      360
+    ]
+  ],
+  "source_frames": [
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 3
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 4
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 5
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 6
+    },
+    {
+      "source": "king_2_final",
+      "row": 0,
+      "column": 7
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 3
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 4
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 5
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 6
+    },
+    {
+      "source": "king_2_final",
+      "row": 1,
+      "column": 7
+    },
+    {
+      "source": "king_skill0",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill0",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill0",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill0",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill0",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill0",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill0",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill0",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "king_skill1",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill1",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill1",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill1",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill1",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill1",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill1",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill1",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "king_skill2",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill2",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill2",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill2",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill2",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill2",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill2",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill2",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "king_skill3",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill3",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill3",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill3",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill3",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill3",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill3",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill3",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "king_skill4",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill4",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill4",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill4",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill4",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill4",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill4",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill4",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "king_skill5",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill5",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill5",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill5",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill5",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill5",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill5",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill5",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "king_skill6",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "king_skill6",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "king_skill6",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "king_skill6",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "king_skill6",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "king_skill6",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "king_skill6",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "king_skill6",
+      "row": 3,
+      "column": 3
+    }
+  ],
+  "source_sha256": {
+    "king_2_final": "edc6aad032b9b308bcb3fb628c3efb331a85ee5b5ee6757a9d08d44ab4a6768c",
+    "king_skill0": "f14c338bdb6fc2af88f2ea5dcf1177905eeb1402bce9a9230c818df05d5c8905",
+    "king_skill1": "7ac12f10ec05b4a44854690e71d11b2ebe344703df9de7662b3d624ecd59ab27",
+    "king_skill2": "25ece8d5802ac8f1e7cfd171a2686593370bdd9ef049ee562115fe6455b74623",
+    "king_skill3": "b3f4197a037fd909fe140a5d121f901294d9cc64f3caa44839c3e9b7c767e0ce",
+    "king_skill4": "20ed918810b355da5b852d13d495cfc5bfdbe867f23649c802c6a56bfbab0b30",
+    "king_skill5": "433c1c023782d1c31f51d76cc57ecab0ccd963a2e64ff0209fdfaee7989e363a",
+    "king_skill6": "38c47b9657c8a2aa00e442eab1530ca10cddf9ef207f2324f947fbd953df9503"
+  }
+}

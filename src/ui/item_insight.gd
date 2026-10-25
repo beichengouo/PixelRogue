@@ -7,6 +7,8 @@ static func describe(item: Dictionary, include_activation := true, include_rules
 	for owned in GameState.items:
 		if str(owned.get("id",""))==str(item.get("id","missing")):count+=1
 	var lines:PackedStringArray=["当前持有 %d 件"%count]
+	var path:=BuildPaths.item_routes(str(item.get("id","")))
+	if not path.is_empty():lines.append(path)
 	var etch:=MaterialWorkshopCatalog.description(item)
 	if not etch.is_empty():lines.append(etch)
 	if not item.get("mechanics",[]).is_empty():
@@ -84,6 +86,7 @@ static func replacement_losses(item:Dictionary)->String:
 	return "\n".join(lines)
 static func relic_increment(item:Dictionary,count:int=-1)->String:
 	if not ItemDB.is_relic(item):return ""
+	if item.get("mechanics",[]).any(func(effect:Dictionary)->bool:return str(effect.get("id",""))=="room_coin"):return "同名遗物的固定金币相加；每房仅在首次清理时结算。"
 	if count<0:
 		count=0
 		for owned in GameState.items:
@@ -100,12 +103,8 @@ static func append_story(parent:Control,item:Dictionary,font_size:=17,expanded:=
 	toggle.pressed.connect(func()->void:story.visible=not story.visible;toggle.text="背景故事 ▾" if story.visible else "背景故事 ▸")
 
 static func talent_requirement(branch:StringName)->String:
-	var info:Dictionary=GameState.TALENT_BRANCHES.get(branch,{})
-	if info.is_empty():return "天赋不可用"
-	if GameState.talent_rank(branch)>=int(info.get("max_rank",3)):return "已达到最高等级"
-	var needs:PackedStringArray=[]
-	for id in info.get("requires",{}):
-		var level:=int(info.requires[id]);var current:=GameState.talent_rank(StringName(id))
-		if current<level:needs.append("%s需要%d级（当前%d级）"%[str(GameState.TALENT_BRANCHES[id].name),level,current])
-	if not needs.is_empty():return "前置未满足："+"；".join(needs)
-	return "天赋点不足：需要1点，当前0点" if GameState.talent_points<=0 else "投入1点提升至%d级"%(GameState.talent_rank(branch)+1)
+	var id := TalentGraph.resolve(branch, GameState.talents)
+	if id == &"": return "天赋不可用"
+	if TalentGraph.owned(id, GameState.talents): return "节点已点亮"
+	if not TalentGraph.unlocked(id, GameState.talents): return "前置未满足：" + TalentGraph.requirement_text(id, GameState.talents)
+	return "天赋点不足：需要1点，当前0点" if GameState.talent_points <= 0 else "投入1点，点亮「%s」" % TalentGraph.node(id).name

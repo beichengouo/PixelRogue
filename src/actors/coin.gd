@@ -39,6 +39,20 @@ var flight_origin := Vector2.ZERO
 var flight_duration := 0.0
 var flight_left := 0.0
 var landing_wait := 0.0
+var _drop_light:PointLight2D
+
+func _build_drop_glow()->void:
+	_drop_light=LightUtil.make_point_light(drop_glow_color(),.38,drop_glow_radius(),false,"loot")
+	_drop_light.name="DropGlow";_drop_light.set_meta("day_glow",true);add_child(_drop_light)
+	_update_drop_glow()
+
+func drop_glow_color()->Color:return Color("ffe1a0")
+func drop_glow_radius()->float:return 36.0
+
+func _update_drop_glow()->void:
+	if not is_instance_valid(_drop_light):return
+	_drop_light.position=_sprite.position if is_instance_valid(_sprite) else Vector2.ZERO
+	_drop_light.enabled=not _collected and is_visible_in_tree()
 
 func launch_scatter(from: Vector2, landing: Vector2, duration := 0.48, pause := 0.32) -> void:
 	global_position = landing
@@ -65,6 +79,7 @@ func _scatter_visual() -> void:
 	if _sprite == null: return
 	var progress := 1.0 - flight_left / maxf(0.01, flight_duration)
 	_sprite.position = (flight_origin - global_position) * (1.0 - progress) + Vector2.UP * sin(progress * PI) * 38.0
+	_update_drop_glow()
 
 
 func setup(
@@ -90,6 +105,7 @@ func _ready() -> void:
 	floor_snap_length = 0.0
 	_build_collider()
 	_build_visual()
+	_build_drop_glow()
 
 
 func _build_collider() -> void:
@@ -171,6 +187,7 @@ func _set_world_collision(on: bool) -> void:
 
 
 func _animate(delta: float) -> void:
+	_update_drop_glow()
 	# 金币独立四帧旋转；钥匙继续使用原24帧旋转图集。
 	if kind == &"coin":
 		_frame_timer -= delta

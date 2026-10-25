@@ -8,7 +8,7 @@ static func record()->Dictionary:
 	var main:Node=runtime.main
 	return main.graph.rooms.get(main.graph.current,{})
 static func eligible(room:Dictionary)->bool:
-	return FateCatalog.active() and room.get("kind","")=="altar" and bool(room.get("cleared",false)) and bool(room.get("rewarded",false))
+	return FateCatalog.active() and room.get("kind","")=="altar" and bool(room.get("cleared",false)) and bool(room.get("rewarded",false)) and not bool(room.get("delta",{}).get("fate_guard",{}).get("dead",false))
 static func _save()->bool:
 	return bool(save_override.call()) if save_override.is_valid() else SaveService.save_run(GameState.snapshot())
 static func _finish(room:Dictionary,old_state:Dictionary,old_delta:Dictionary)->bool:
@@ -31,7 +31,14 @@ static func draw(room:Dictionary)->Dictionary:
 	for card in GameState.fate.cards:pool.erase(str(card.id))
 	var rng:=RandomNumberGenerator.new();rng.seed=int(room.get("seed",0))^0x5f74ab
 	var offers:Array=[]
-	while offers.size()<3 and not pool.is_empty():offers.append(pool.pop_at(rng.randi_range(0,pool.size()-1)))
+	while offers.size()<3 and not pool.is_empty():
+		var total:=0.0
+		for card_id in pool:total+=2.0 if str(card_id)==FateCatalog.owned_card() else 1.0
+		var ticket:=rng.randf()*total;var selected:=pool.size()-1
+		for index in pool.size():
+			ticket-=2.0 if str(pool[index])==FateCatalog.owned_card() else 1.0
+			if ticket<0:selected=index;break
+		offers.append(pool.pop_at(selected))
 	room.delta.fate_reading={"offers":offers,"done":false,"reverse":orientation(room)}
 	GameState.fate.readings=int(GameState.fate.readings)+1
 	if not _finish(room,before,delta_before):return {"error":"保存失败，占卜尚未开始，请重试。"}
@@ -52,6 +59,9 @@ static func _remove(id:String)->void:
 	for i in range(GameState.fate.cards.size()-1,-1,-1):
 		if str(GameState.fate.cards[i].id)==id:GameState.fate.cards.remove_at(i)
 	GameState.fate.pending.erase(id)
+	if id=="world":GameState.fate.state.erase("world_marks");GameState.fate.pending.erase("world_window")
+	if id=="fool":GameState.fate.pending.erase("fool_start");GameState.fate.pending.erase("fool_risk")
+	if id=="moon":GameState.fate.pending.erase("ilyua_pursuit")
 	if id=="priestess":GameState.fate.still=0.0
 static func discard(room:Dictionary,id:String)->bool:
 	if not eligible(room):return false

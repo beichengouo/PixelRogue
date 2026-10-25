@@ -2,7 +2,9 @@ class_name MonsterCodex
 extends RefCounted
 static var _icons:Dictionary={}
 const HABITS := {
-	"bell_snail":"铃壳蜗使出没于第十一场起的湿地。保持射线距离，摆铃蓄势0.8秒后吐出两枚红色声波；实际伤及生命会使随后的小技能冷却略微延长。",
+	"goblin_scout":"哥布林斥候持短刀近身刺击，抬手蓄势后才造成伤害，不会靠贴身接触持续扣血。离开正面短距离扇区即可躲开。",
+	"goblin_spearman":"哥布林投矛手从第三场起出没于林地和湿地边缘，保持距离、抬臂投出一根直线飞矛。飞矛不追踪，利用横移与地形躲避。",
+	"goblin_mage":"哥布林法师从第六场起出现，蓄势0.65秒后沿预告方向发射一枚魔法弹。它会寻找通畅射线，不召唤额外怪物。",
 	"glimmer_spider":"荧纱蛛出没于第八场起的森林。前肢蓄势后近身咬击，伤及生命会暂时封疗；它没有远程攻击，及时拉开便能避开口器。",
 	"walker":"苍白骸骨靠近旅人，留意近身挥击。",
 	"flyer":"青色幽骨披着残袍悬浮，越过地形并一次释放三枚轻度追踪幽弹袭击。",
@@ -11,14 +13,13 @@ const HABITS := {
 	"bomber":"烬骨法师尝试远离旅人，在其周围预告三个互不重叠的火焰爆点。",
 	"guard":"重装骸骨盾卫具有正面防御，近身威胁更大。",
 	"treant":"森林绿兽人守卫缓慢逼近，蓄势后冲刺并近身挥斧。",
-	"moss_badger":"棘冠苔獾潜伏在林地，短距离突进后以利爪近身攻击，实际受伤后流血。",
 	"bog_crab":"泥沼甲蟹栖息于湿地，接近后挥钳近战。",
 	"ruin_sentinel":"星冕残卫守护遗迹，以盾抵御正面攻击，再用星盘锤近身反击。",
 	"thorn_mantis":"灰棘螳卫出没于第四场起的林地。自带瞬移与死亡爆炸；两柄镰臂连续近身横扫，第二击延迟片刻，留意蓄势后的挥斩。",
 	"lantern_toad":"沼灯囊蛙栖息于湿地。保持距离，鼓起发光毒囊，朝目标喷吐三枚扇形毒弹；实际受伤后中毒。",
 	"dusk_acolyte":"暮钟侍祭出没于第六场起的遗迹。举灯锁定通畅射线，释放紫红咒弹；实际受伤后短暂虚弱。"
 }
-const NEW_NAMES := {"moss_badger":"棘冠苔獾", "bog_crab":"泥沼甲蟹", "ruin_sentinel":"星冕残卫","thorn_mantis":"灰棘螳卫","lantern_toad":"沼灯囊蛙","dusk_acolyte":"暮钟侍祭"}
+const NEW_NAMES := {"goblin_scout":"哥布林斥候","goblin_spearman":"哥布林投矛手","goblin_mage":"哥布林法师","bog_crab":"泥沼甲蟹", "ruin_sentinel":"星冕残卫","thorn_mantis":"灰棘螳卫","lantern_toad":"沼灯囊蛙","dusk_acolyte":"暮钟侍祭"}
 static func entries(category := "all")->Array[Dictionary]:
 	var result:Array[Dictionary]=[]
 	for kind in HABITS:

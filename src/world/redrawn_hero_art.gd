@@ -27,6 +27,7 @@ static func material()->ShaderMaterial:
 
 static func frames(id:StringName)->SpriteFrames:
 	var set_form:=LegendarySets.form_unlocked(id) and ResourceLoader.exists(LegendarySets.ROOT+str(id)+"/core.png")
+	if HanddrawnHeroArt.available(id):return HanddrawnHeroArt.frames(set_form,id)
 	var cache_key:=StringName(str(id)+"_set") if set_form else id
 	if _cache.has(cache_key):return _cache[cache_key]
 	var holy:=id==&"sylphiette"
@@ -54,14 +55,23 @@ static func frames(id:StringName)->SpriteFrames:
 			# The final red-haired idle/cast source turns away from its facing.
 			# Recover to the matching ready pose rather than showing that turn.
 			if id==&"sylphiette" and not holy and action in ["idle","attack"]:order=[0,1,2,0]
-			if action=="back_attack" and id!=&"ilyua" and not separate:order=[3,2,1,0]
+			# Retreat changes locomotion, not the chronological casting gesture.
 			var bow_action:bool=id==&"ilyua" and action in ["attack","move_attack","back_attack"]
 			# Backpedaling changes locomotion, never the nock/draw/release order.
 			var casting:bool=action in ["attack","move_attack","back_attack"]
 			var fps:=12.5 if separate and casting else 18.0 if action=="attack" or bow_action else 5.0 if action=="idle" else 7.5
 			_add(result,StringName(action+"_"+DIRECTIONS[direction]),action_texture,row,first,order,fps,not casting if separate else action!="attack" and not bow_action)
 	for spec in [[&"prayer",0,8.0,true],[&"hurt",1,12.0,false],[&"death",2,5.0,false],[&"jump",3,12.0,false],[&"land",4,20.0,false],[&"interact",5,12.5,false]]:
-		_add(result,spec[0],utility,int(spec[1]),0,[0,1,2,3],float(spec[2]),bool(spec[3]))
+		# The authored fourth set death pose recovers to standing. Keep the
+		# completed fallen pose on screen through the final beat instead.
+		var order:Array[int]=[0,1,2,3]
+		if id==&"xixifu" and set_form and spec[0]==&"death":order[3]=2
+		_add(result,spec[0],utility,int(spec[1]),0,order,float(spec[2]),bool(spec[3]))
+	var cast_path := "res://assets/heroes_cast_v09/"+str(id)+("/set.png" if set_form else "/normal.png")
+	if ResourceLoader.exists(cast_path):
+		var cast_texture := load(cast_path) as Texture2D
+		for direction in 8:
+			_add(result,StringName("skill_cast_"+DIRECTIONS[direction]),cast_texture,SOURCE_ROWS[direction],0,[0,1,2,3],12.5,false)
 	var aliases:={"idle":"idle_w","run":"walk_w","cast":"attack_w","attack":"attack_w","move_attack":"move_attack_w","move_cast":"move_attack_w","dash":"walk_w","fall":"idle_w","double_jump":"jump","brake":"land","victory":"interact","heal":"attack_w","shield":"attack_w","blink_in":"attack_w","blink_out":"attack_w","air_attack":"attack_w","air_cast":"attack_w","block":"hurt"}
 	for name:String in aliases:
 		var source:=StringName(aliases[name]);result.add_animation(name)
@@ -78,6 +88,8 @@ static func _add(result:SpriteFrames,name:StringName,texture:Texture2D,row:int,f
 		result.add_frame(name,atlas)
 
 static func align(sprite:AnimatedSprite2D,height:=32.0,floor_y:=14.0)->void:
+	if bool(sprite.sprite_frames.get_meta("handdrawn",false)):
+		HanddrawnHeroArt.align(sprite,height,floor_y);return
 	var utility:=str(sprite.animation) in ["prayer","hurt","death","jump","land","interact","victory","double_jump","brake","block"]
 	var source_height:=float(sprite.sprite_frames.get_meta("utility_height" if utility else "core_height",ART_HEIGHT))
 	if bool(sprite.sprite_frames.get_meta("separate_actions",false)) and not utility:
@@ -88,8 +100,8 @@ static func align(sprite:AnimatedSprite2D,height:=32.0,floor_y:=14.0)->void:
 		if HOLY_BODY_HEIGHTS.has(action):
 			var row:int=SOURCE_ROWS[direction if direction>=0 else 2]
 			source_height*=float(HOLY_BODY_HEIGHTS[action][row])/64.0
+	if str(sprite.animation).begins_with("skill_cast_"):source_height=64.0
 	var factor:=height/source_height
 	sprite.scale=Vector2.ONE*factor
 	sprite.position=Vector2(0,floor_y-(FOOT.y-CELL*.5)*factor)
 	sprite.material=material()
-

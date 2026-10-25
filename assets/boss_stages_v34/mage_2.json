@@ -1,0 +1,986 @@
+{
+  "revision": 34,
+  "cell": 384,
+  "foot": [
+    192,
+    360
+  ],
+  "body_height": 285.0,
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 5
+    },
+    "move": {
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 7
+    },
+    "transform": {
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "fps": 8
+    },
+    "skill_0_windup": {
+      "frames": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "fps": 6
+    },
+    "skill_0_release": {
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "fps": 8
+    },
+    "skill_1_windup": {
+      "frames": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "fps": 6
+    },
+    "skill_1_release": {
+      "frames": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "fps": 8
+    },
+    "skill_2_windup": {
+      "frames": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "fps": 6
+    },
+    "skill_2_release": {
+      "frames": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "fps": 8
+    },
+    "skill_3_windup": {
+      "frames": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "fps": 6
+    },
+    "skill_3_release": {
+      "frames": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "fps": 8
+    },
+    "skill_4_windup": {
+      "frames": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "fps": 6
+    },
+    "skill_4_release": {
+      "frames": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "fps": 8
+    },
+    "skill_5_windup": {
+      "frames": [
+        56,
+        57,
+        58,
+        59
+      ],
+      "fps": 6
+    },
+    "skill_5_release": {
+      "frames": [
+        60,
+        61,
+        62,
+        63
+      ],
+      "fps": 8
+    },
+    "skill_6_windup": {
+      "frames": [
+        64,
+        65,
+        66,
+        67
+      ],
+      "fps": 6
+    },
+    "skill_6_release": {
+      "frames": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "fps": 8
+    },
+    "windup": {
+      "frames": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "fps": 6
+    },
+    "release": {
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "fps": 8
+    }
+  },
+  "bounds": [
+    [
+      110,
+      75,
+      303,
+      360
+    ],
+    [
+      108,
+      74,
+      297,
+      360
+    ],
+    [
+      96,
+      75,
+      285,
+      360
+    ],
+    [
+      92,
+      74,
+      285,
+      360
+    ],
+    [
+      108,
+      73,
+      323,
+      359
+    ],
+    [
+      96,
+      71,
+      304,
+      360
+    ],
+    [
+      95,
+      69,
+      293,
+      360
+    ],
+    [
+      102,
+      75,
+      307,
+      360
+    ],
+    [
+      106,
+      63,
+      301,
+      359
+    ],
+    [
+      96,
+      67,
+      301,
+      360
+    ],
+    [
+      94,
+      66,
+      297,
+      360
+    ],
+    [
+      82,
+      67,
+      317,
+      360
+    ],
+    [
+      73,
+      63,
+      319,
+      360
+    ],
+    [
+      66,
+      63,
+      321,
+      360
+    ],
+    [
+      54,
+      65,
+      338,
+      359
+    ],
+    [
+      70,
+      67,
+      300,
+      360
+    ],
+    [
+      100,
+      113,
+      307,
+      360
+    ],
+    [
+      98,
+      113,
+      301,
+      359
+    ],
+    [
+      100,
+      113,
+      297,
+      360
+    ],
+    [
+      89,
+      111,
+      283,
+      360
+    ],
+    [
+      98,
+      116,
+      321,
+      360
+    ],
+    [
+      92,
+      113,
+      295,
+      359
+    ],
+    [
+      85,
+      115,
+      297,
+      360
+    ],
+    [
+      83,
+      115,
+      295,
+      359
+    ],
+    [
+      104,
+      115,
+      323,
+      360
+    ],
+    [
+      100,
+      114,
+      317,
+      360
+    ],
+    [
+      95,
+      111,
+      313,
+      359
+    ],
+    [
+      90,
+      109,
+      307,
+      360
+    ],
+    [
+      86,
+      111,
+      333,
+      360
+    ],
+    [
+      72,
+      115,
+      327,
+      360
+    ],
+    [
+      70,
+      112,
+      329,
+      360
+    ],
+    [
+      70,
+      109,
+      313,
+      360
+    ],
+    [
+      104,
+      101,
+      301,
+      360
+    ],
+    [
+      98,
+      100,
+      297,
+      360
+    ],
+    [
+      96,
+      100,
+      293,
+      360
+    ],
+    [
+      76,
+      96,
+      285,
+      360
+    ],
+    [
+      86,
+      96,
+      341,
+      360
+    ],
+    [
+      72,
+      97,
+      324,
+      360
+    ],
+    [
+      45,
+      108,
+      341,
+      360
+    ],
+    [
+      43,
+      109,
+      328,
+      360
+    ],
+    [
+      114,
+      105,
+      295,
+      360
+    ],
+    [
+      98,
+      113,
+      293,
+      360
+    ],
+    [
+      96,
+      103,
+      289,
+      360
+    ],
+    [
+      91,
+      97,
+      286,
+      360
+    ],
+    [
+      52,
+      113,
+      347,
+      360
+    ],
+    [
+      39,
+      109,
+      344,
+      359
+    ],
+    [
+      43,
+      107,
+      342,
+      359
+    ],
+    [
+      37,
+      111,
+      332,
+      360
+    ],
+    [
+      111,
+      109,
+      297,
+      360
+    ],
+    [
+      104,
+      121,
+      295,
+      360
+    ],
+    [
+      99,
+      115,
+      291,
+      360
+    ],
+    [
+      98,
+      113,
+      287,
+      360
+    ],
+    [
+      88,
+      112,
+      299,
+      360
+    ],
+    [
+      79,
+      113,
+      299,
+      360
+    ],
+    [
+      78,
+      119,
+      293,
+      359
+    ],
+    [
+      76,
+      105,
+      295,
+      360
+    ],
+    [
+      106,
+      104,
+      301,
+      360
+    ],
+    [
+      98,
+      101,
+      294,
+      360
+    ],
+    [
+      91,
+      101,
+      289,
+      360
+    ],
+    [
+      89,
+      97,
+      285,
+      360
+    ],
+    [
+      88,
+      109,
+      289,
+      360
+    ],
+    [
+      84,
+      111,
+      311,
+      360
+    ],
+    [
+      76,
+      107,
+      309,
+      360
+    ],
+    [
+      74,
+      108,
+      309,
+      360
+    ],
+    [
+      101,
+      75,
+      294,
+      360
+    ],
+    [
+      88,
+      75,
+      280,
+      360
+    ],
+    [
+      87,
+      76,
+      287,
+      360
+    ],
+    [
+      90,
+      76,
+      285,
+      360
+    ],
+    [
+      68,
+      78,
+      336,
+      360
+    ],
+    [
+      58,
+      76,
+      334,
+      360
+    ],
+    [
+      62,
+      77,
+      323,
+      360
+    ],
+    [
+      63,
+      77,
+      323,
+      360
+    ]
+  ],
+  "source_frames": [
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 0,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 1,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 2,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 3,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 4,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 5,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 6,
+      "column": 7
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 0
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 1
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 2
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 3
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 4
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 5
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 6
+    },
+    {
+      "source": "mage_2",
+      "row": 7,
+      "column": 7
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 0,
+      "column": 3
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "source": "mage_burst_2",
+      "row": 1,
+      "column": 3
+    }
+  ],
+  "source_sha256": {
+    "mage_2": "dddc5a1ca278ef5127611bec6ec72aef142025253b0808a6272f313888acf297",
+    "mage_burst_2": "5ccc74bcb7e76d6e9eb45a502938f9efcab044f099ee81f7e08403c8194b3e6e"
+  }
+}

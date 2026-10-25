@@ -2,11 +2,11 @@ class_name RoomEnemyComposer
 extends RefCounted
 ## Habitat owns species; formations mix front line, pursuit and support slots.
 const POOLS:={
-	"forest":[["moss_badger",1,4],["charger",1,3],["thorn_mantis",4,2],["glimmer_spider",8,2],["treant",9,1]],
-	"wetland":[["bog_crab",1,5],["lantern_toad",1,2],["bell_snail",11,1]],
+	"forest":[["goblin_scout",1,4],["charger",1,3],["goblin_spearman",3,2],["thorn_mantis",4,2],["goblin_mage",6,1],["glimmer_spider",8,2],["treant",9,1]],
+	"wetland":[["bog_crab",1,5],["lantern_toad",1,2],["goblin_spearman",3,2],["goblin_mage",6,1]],
 	"ruin":[["walker",1,5],["ruin_sentinel",1,2],["flyer",2,2],["bomber",5,1],["caster",6,1],["dusk_acolyte",6,2],["guard",7,2]],
 }
-const ROLES:={"walker":"walkers","moss_badger":"chargers","charger":"chargers","thorn_mantis":"chargers","glimmer_spider":"casters","treant":"treants","bog_crab":"walkers","lantern_toad":"bombers","bell_snail":"treants","ruin_sentinel":"guards","flyer":"flyers","bomber":"bombers","caster":"casters","dusk_acolyte":"casters","guard":"guards"}
+const ROLES:={"goblin_scout":"walkers","goblin_spearman":"flyers","goblin_mage":"casters","walker":"walkers","moss_badger":"chargers","charger":"chargers","thorn_mantis":"chargers","glimmer_spider":"casters","treant":"treants","bog_crab":"walkers","lantern_toad":"bombers","bell_snail":"treants","ruin_sentinel":"guards","flyer":"flyers","bomber":"bombers","caster":"casters","dusk_acolyte":"casters","guard":"guards"}
 static func compose(total:int,biome:String,wave:int,rng:RandomNumberGenerator,composition:int=-1)->Array[StringName]:
 	var eligible:Array=POOLS.get(biome,POOLS.ruin).filter(func(entry:Array)->bool:return wave>=int(entry[1]))
 	var result:Array[StringName]=[]

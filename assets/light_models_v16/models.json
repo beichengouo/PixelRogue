@@ -1,0 +1,1406 @@
+{
+  "res://assets/fate_v01/altar/moonwell.png": {
+    "cell": [
+      321.0,
+      384.0
+    ],
+    "file": "ed27914bd26194d14e675e18d9ded723.png",
+    "kind": "crystal",
+    "source_size": [
+      321.0,
+      384.0
+    ]
+  },
+  "res://assets/fate_v01/altar/moonwell_reverse.png": {
+    "cell": [
+      321.0,
+      384.0
+    ],
+    "file": "b98148ccdc0a68883d9081c9fbb68513.png",
+    "kind": "crystal",
+    "source_size": [
+      321.0,
+      384.0
+    ]
+  },
+  "res://assets/room_illustrated/altar_moonwell_v01/lamp_e.png": {
+    "cell": [
+      381.0,
+      378.0
+    ],
+    "file": "564a3a3670b8360348f900c459708519.png",
+    "kind": "crystal",
+    "source_size": [
+      381.0,
+      378.0
+    ]
+  },
+  "res://assets/room_illustrated/altar_moonwell_v01/lamp_w.png": {
+    "cell": [
+      366.0,
+      360.0
+    ],
+    "file": "88bc66e53c0654de7e216fc9bc46262c.png",
+    "kind": "crystal",
+    "source_size": [
+      366.0,
+      360.0
+    ]
+  },
+  "res://assets/room_illustrated/altar_moonwell_v01/moon_altar.png": {
+    "cell": [
+      1152.0,
+      825.0
+    ],
+    "file": "9b29cca526b678251894325d970de0a0.png",
+    "kind": "crystal",
+    "source_size": [
+      1152.0,
+      825.0
+    ]
+  },
+  "res://assets/room_illustrated/bone_glade_v02/lamp_east.png": {
+    "cell": [
+      150.0,
+      492.0
+    ],
+    "file": "3d34c316d1029e09489252df3fd3289d.png",
+    "kind": "lamp",
+    "source_size": [
+      150.0,
+      492.0
+    ]
+  },
+  "res://assets/room_illustrated/bone_glade_v02/lamp_west.png": {
+    "cell": [
+      144.0,
+      453.0
+    ],
+    "file": "f9620a91afc8652168ccbecd8f781bb4.png",
+    "kind": "lamp",
+    "source_size": [
+      144.0,
+      453.0
+    ]
+  },
+  "res://assets/room_illustrated/boss_king_court_v03/candle_east.png": {
+    "cell": [
+      179.0,
+      378.0
+    ],
+    "file": "b3b9ccd32d693f5347bb8fabc364e777.png",
+    "kind": "fire",
+    "source_size": [
+      179.0,
+      378.0
+    ]
+  },
+  "res://assets/room_illustrated/boss_king_court_v03/candle_west.png": {
+    "cell": [
+      179.0,
+      361.0
+    ],
+    "file": "5d2c96ffba99ae3ff387d6cf88cc3f7f.png",
+    "kind": "fire",
+    "source_size": [
+      179.0,
+      361.0
+    ]
+  },
+  "res://assets/room_illustrated/boss_mage_garden_v03/mage_crystal_southeast.png": {
+    "cell": [
+      206.0,
+      311.0
+    ],
+    "file": "ad1a55a81ad6b45b66b00fe07720aaf0.png",
+    "kind": "crystal",
+    "source_size": [
+      206.0,
+      311.0
+    ]
+  },
+  "res://assets/room_illustrated/boss_mage_garden_v03/mage_crystal_west.png": {
+    "cell": [
+      203.0,
+      342.0
+    ],
+    "file": "3aef7c7fef9c1e7e7a10959f82ee877c.png",
+    "kind": "crystal",
+    "source_size": [
+      203.0,
+      342.0
+    ]
+  },
+  "res://assets/room_illustrated/boss_tide_shore_v03/shell_lantern_east.png": {
+    "cell": [
+      363.0,
+      423.0
+    ],
+    "file": "0c11fb468d903c2a05d74ab6edce4ebe.png",
+    "kind": "crystal",
+    "source_size": [
+      363.0,
+      423.0
+    ]
+  },
+  "res://assets/room_illustrated/boss_tide_shore_v03/shell_lantern_west.png": {
+    "cell": [
+      342.0,
+      339.0
+    ],
+    "file": "5775dbc54021873b46e82278f941fcb9.png",
+    "kind": "crystal",
+    "source_size": [
+      342.0,
+      339.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_boneflags_v01/lamp_ne.png": {
+    "cell": [
+      213.0,
+      384.0
+    ],
+    "file": "5366e4466f62177298449825adda2559.png",
+    "kind": "lamp",
+    "source_size": [
+      213.0,
+      384.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_boneflags_v01/lamp_nw.png": {
+    "cell": [
+      213.0,
+      381.0
+    ],
+    "file": "412bdb626292382210fe420a0f087f94.png",
+    "kind": "lamp",
+    "source_size": [
+      213.0,
+      381.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_boneflags_v01/lamp_se.png": {
+    "cell": [
+      216.0,
+      381.0
+    ],
+    "file": "605e4409d951b304121bfffb1d9e13f6.png",
+    "kind": "lamp",
+    "source_size": [
+      216.0,
+      381.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_boneflags_v01/lamp_sw.png": {
+    "cell": [
+      213.0,
+      381.0
+    ],
+    "file": "59cd76cee6acf8b6dbe3bdf49dbf520e.png",
+    "kind": "lamp",
+    "source_size": [
+      213.0,
+      381.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_thorncourt_v01/lamp_ne.png": {
+    "cell": [
+      258.0,
+      234.0
+    ],
+    "file": "2964a3ddaa3a96a7a980081d698d8ee3.png",
+    "kind": "lamp",
+    "source_size": [
+      258.0,
+      234.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_thorncourt_v01/lamp_nw.png": {
+    "cell": [
+      258.0,
+      240.0
+    ],
+    "file": "5040784225c39c7b4c046e181c3f8cd9.png",
+    "kind": "lamp",
+    "source_size": [
+      258.0,
+      240.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_thorncourt_v01/lamp_se.png": {
+    "cell": [
+      258.0,
+      240.0
+    ],
+    "file": "75f57d3538be5aba7470aeb9cd5da2e0.png",
+    "kind": "lamp",
+    "source_size": [
+      258.0,
+      240.0
+    ]
+  },
+  "res://assets/room_illustrated/elite_thorncourt_v01/lamp_sw.png": {
+    "cell": [
+      258.0,
+      237.0
+    ],
+    "file": "2f7097c1f2365133503a9ae68d6f558f.png",
+    "kind": "lamp",
+    "source_size": [
+      258.0,
+      237.0
+    ]
+  },
+  "res://assets/room_illustrated/event_waystation_v01/event_relic.png": {
+    "cell": [
+      703.0,
+      379.0
+    ],
+    "file": "d6980ec6d6aea746a95c7b9f5b268f6f.png",
+    "kind": "lamp",
+    "source_size": [
+      703.0,
+      379.0
+    ]
+  },
+  "res://assets/room_illustrated/event_waystation_v01/lamp_ne.png": {
+    "cell": [
+      156.0,
+      273.0
+    ],
+    "file": "533099c0f09e05ef9baf81690293fef2.png",
+    "kind": "lamp",
+    "source_size": [
+      156.0,
+      273.0
+    ]
+  },
+  "res://assets/room_illustrated/event_waystation_v01/lamp_nw.png": {
+    "cell": [
+      156.0,
+      273.0
+    ],
+    "file": "00894a640ccdd80b57c4227314321ab9.png",
+    "kind": "lamp",
+    "source_size": [
+      156.0,
+      273.0
+    ]
+  },
+  "res://assets/room_illustrated/event_waystation_v01/lamp_se.png": {
+    "cell": [
+      165.0,
+      288.0
+    ],
+    "file": "5914c34bd5859995b83ed3df3a88079d.png",
+    "kind": "lamp",
+    "source_size": [
+      165.0,
+      288.0
+    ]
+  },
+  "res://assets/room_illustrated/event_waystation_v01/lamp_sw.png": {
+    "cell": [
+      165.0,
+      291.0
+    ],
+    "file": "89484c9d851a1084458649a89b1ec6e8.png",
+    "kind": "lamp",
+    "source_size": [
+      165.0,
+      291.0
+    ]
+  },
+  "res://assets/room_illustrated/flower_bend_v02/lamp_east.png": {
+    "cell": [
+      279.0,
+      423.0
+    ],
+    "file": "32f1408b0a4c54219034fbd6e44bca1c.png",
+    "kind": "lamp",
+    "source_size": [
+      279.0,
+      423.0
+    ]
+  },
+  "res://assets/room_illustrated/flower_bend_v02/violet_crystal.png": {
+    "cell": [
+      531.0,
+      489.0
+    ],
+    "file": "5dcd699ed450990f58177e00f15b0a08.png",
+    "kind": "crystal",
+    "source_size": [
+      531.0,
+      489.0
+    ]
+  },
+  "res://assets/room_illustrated/forest_clearing_v03/firefly_stone_ne.png": {
+    "cell": [
+      405.0,
+      456.0
+    ],
+    "file": "0a3a35dd388c0e4ab826bc3158b27d46.png",
+    "kind": "crystal",
+    "source_size": [
+      405.0,
+      456.0
+    ]
+  },
+  "res://assets/room_illustrated/forest_clearing_v03/firefly_stone_sw.png": {
+    "cell": [
+      381.0,
+      468.0
+    ],
+    "file": "e92852319bff3c41c7839b5442e1b02a.png",
+    "kind": "crystal",
+    "source_size": [
+      381.0,
+      468.0
+    ]
+  },
+  "res://assets/room_illustrated/forest_grove_v03/tree_lamp_east.png": {
+    "cell": [
+      312.0,
+      426.0
+    ],
+    "file": "90764387a611b5ff171b9554daad916c.png",
+    "kind": "lamp",
+    "source_size": [
+      312.0,
+      426.0
+    ]
+  },
+  "res://assets/room_illustrated/forest_grove_v03/tree_lamp_west.png": {
+    "cell": [
+      267.0,
+      354.0
+    ],
+    "file": "13ac3b643ff6d00175d18d3f58e630a2.png",
+    "kind": "lamp",
+    "source_size": [
+      267.0,
+      354.0
+    ]
+  },
+  "res://assets/room_illustrated/forest_timber_v03/campfire_southwest.png": {
+    "cell": [
+      388.0,
+      449.0
+    ],
+    "file": "e903a77558dff52b85849c3c49e47e77.png",
+    "kind": "fire",
+    "source_size": [
+      388.0,
+      449.0
+    ]
+  },
+  "res://assets/room_illustrated/forest_timber_v03/torch_northeast.png": {
+    "cell": [
+      302.0,
+      363.0
+    ],
+    "file": "37fe86f2cc83e3b8c3412b560a189275.png",
+    "kind": "torch",
+    "source_size": [
+      302.0,
+      363.0
+    ]
+  },
+  "res://assets/room_illustrated/game_hall_v01/lamp_ne.png": {
+    "cell": [
+      201.0,
+      396.0
+    ],
+    "file": "85cc112a29b640f64d1962e117078857.png",
+    "kind": "lamp",
+    "source_size": [
+      201.0,
+      396.0
+    ]
+  },
+  "res://assets/room_illustrated/game_hall_v01/lamp_nw.png": {
+    "cell": [
+      201.0,
+      396.0
+    ],
+    "file": "756814441a1f7465421fa509bc1c0d24.png",
+    "kind": "lamp",
+    "source_size": [
+      201.0,
+      396.0
+    ]
+  },
+  "res://assets/room_illustrated/game_hall_v01/lamp_se.png": {
+    "cell": [
+      204.0,
+      387.0
+    ],
+    "file": "3cf2f5ce4512ee16bd17d2be6eb69d32.png",
+    "kind": "lamp",
+    "source_size": [
+      204.0,
+      387.0
+    ]
+  },
+  "res://assets/room_illustrated/game_hall_v01/lamp_sw.png": {
+    "cell": [
+      207.0,
+      384.0
+    ],
+    "file": "441ea33f70c6d534c90f8e52a4616cc4.png",
+    "kind": "lamp",
+    "source_size": [
+      207.0,
+      384.0
+    ]
+  },
+  "res://assets/room_illustrated/game_moonboat_v01/lamp_ne.png": {
+    "cell": [
+      153.0,
+      321.0
+    ],
+    "file": "affa69087c751da5f841e384ffcaeda0.png",
+    "kind": "lamp",
+    "source_size": [
+      153.0,
+      321.0
+    ]
+  },
+  "res://assets/room_illustrated/game_moonboat_v01/lamp_nw.png": {
+    "cell": [
+      153.0,
+      321.0
+    ],
+    "file": "d91232f566b5b5326b5e747b905c7841.png",
+    "kind": "lamp",
+    "source_size": [
+      153.0,
+      321.0
+    ]
+  },
+  "res://assets/room_illustrated/game_moonboat_v01/lamp_se.png": {
+    "cell": [
+      159.0,
+      306.0
+    ],
+    "file": "2381fe8076d0ea1cbe4c843a4b6ea0fb.png",
+    "kind": "lamp",
+    "source_size": [
+      159.0,
+      306.0
+    ]
+  },
+  "res://assets/room_illustrated/game_moonboat_v01/lamp_sw.png": {
+    "cell": [
+      156.0,
+      306.0
+    ],
+    "file": "d80149a8bdf930becdc341708770fbfc.png",
+    "kind": "lamp",
+    "source_size": [
+      156.0,
+      306.0
+    ]
+  },
+  "res://assets/room_illustrated/normal_windbridge_v01/lamp_ne.png": {
+    "cell": [
+      195.0,
+      297.0
+    ],
+    "file": "dad5fdeb06f6f1a403fba5d8fb93806f.png",
+    "kind": "lamp",
+    "source_size": [
+      195.0,
+      297.0
+    ]
+  },
+  "res://assets/room_illustrated/normal_windbridge_v01/lamp_nw.png": {
+    "cell": [
+      195.0,
+      291.0
+    ],
+    "file": "ff58df771249105fea13dbac122a8483.png",
+    "kind": "lamp",
+    "source_size": [
+      195.0,
+      291.0
+    ]
+  },
+  "res://assets/room_illustrated/normal_windbridge_v01/lamp_se.png": {
+    "cell": [
+      198.0,
+      303.0
+    ],
+    "file": "4dcf33b2ee6e25b889511190ccb7496a.png",
+    "kind": "lamp",
+    "source_size": [
+      198.0,
+      303.0
+    ]
+  },
+  "res://assets/room_illustrated/normal_windbridge_v01/lamp_sw.png": {
+    "cell": [
+      195.0,
+      297.0
+    ],
+    "file": "8be435bb2cf4ad1c8d84a0e300ea5bb1.png",
+    "kind": "lamp",
+    "source_size": [
+      195.0,
+      297.0
+    ]
+  },
+  "res://assets/room_illustrated/normal_windbridge_v01/wind_stone.png": {
+    "cell": [
+      366.0,
+      318.0
+    ],
+    "file": "68c52b535f97e6e36890b08076b2e5b8.png",
+    "kind": "lamp",
+    "source_size": [
+      366.0,
+      318.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_amber_v01/amber_e.png": {
+    "cell": [
+      389.0,
+      424.0
+    ],
+    "file": "440073f1091281d503a37fff3bbd2172.png",
+    "kind": "crystal",
+    "source_size": [
+      389.0,
+      424.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_amber_v01/amber_w.png": {
+    "cell": [
+      388.0,
+      424.0
+    ],
+    "file": "e2f2ad399043d20cc2495488be50fed0.png",
+    "kind": "crystal",
+    "source_size": [
+      388.0,
+      424.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_amber_v01/lamp_ne.png": {
+    "cell": [
+      162.0,
+      234.0
+    ],
+    "file": "9dd429ce2e680461af88c887c6c6e6c5.png",
+    "kind": "crystal",
+    "source_size": [
+      162.0,
+      234.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_amber_v01/lamp_nw.png": {
+    "cell": [
+      162.0,
+      234.0
+    ],
+    "file": "26469c3a639381f088cd1e9456ff1e87.png",
+    "kind": "crystal",
+    "source_size": [
+      162.0,
+      234.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_amber_v01/lamp_se.png": {
+    "cell": [
+      168.0,
+      234.0
+    ],
+    "file": "944a59485356a76c287391018b1483ad.png",
+    "kind": "crystal",
+    "source_size": [
+      168.0,
+      234.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_amber_v01/lamp_sw.png": {
+    "cell": [
+      165.0,
+      237.0
+    ],
+    "file": "13fc57b0e2b6e2c3e509ff63b8039cbe.png",
+    "kind": "crystal",
+    "source_size": [
+      165.0,
+      237.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/mushroom_ne.png": {
+    "cell": [
+      410.0,
+      474.0
+    ],
+    "file": "5c4fa414ae3dd3495fc8440f8e39cf97.png",
+    "kind": "crystal",
+    "source_size": [
+      410.0,
+      474.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/mushroom_nw.png": {
+    "cell": [
+      414.0,
+      475.0
+    ],
+    "file": "3c5fa95832dd0f9abb92921dbc3eefa4.png",
+    "kind": "crystal",
+    "source_size": [
+      414.0,
+      475.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/mushroom_se.png": {
+    "cell": [
+      466.0,
+      459.0
+    ],
+    "file": "20635d8eef9dcfb889af71e21d764712.png",
+    "kind": "crystal",
+    "source_size": [
+      466.0,
+      459.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/mushroom_sw.png": {
+    "cell": [
+      458.0,
+      454.0
+    ],
+    "file": "8c2d2ee1169a2b7f0adb69943c22d2ec.png",
+    "kind": "crystal",
+    "source_size": [
+      458.0,
+      454.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/pearl_altar.png": {
+    "cell": [
+      381.0,
+      333.0
+    ],
+    "file": "a0d653a8f49ae31ed7c0de7e561e32a1.png",
+    "kind": "crystal",
+    "source_size": [
+      381.0,
+      333.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/pearl_e.png": {
+    "cell": [
+      408.0,
+      375.0
+    ],
+    "file": "c2a3cf701cbf0dabe31ab3708c55c288.png",
+    "kind": "crystal",
+    "source_size": [
+      408.0,
+      375.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_glowcave_v01/pearl_w.png": {
+    "cell": [
+      408.0,
+      375.0
+    ],
+    "file": "8423989a4fc7944eb078d9c5dbf7d1f0.png",
+    "kind": "crystal",
+    "source_size": [
+      408.0,
+      375.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_treasury_v01/lamp_ne.png": {
+    "cell": [
+      153.0,
+      342.0
+    ],
+    "file": "b7da9ce494cae1b5996f0d7d72950f9e.png",
+    "kind": "crystal",
+    "source_size": [
+      153.0,
+      342.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_treasury_v01/lamp_nw.png": {
+    "cell": [
+      153.0,
+      342.0
+    ],
+    "file": "51d75a6436fac7284ab122ec80d2a689.png",
+    "kind": "crystal",
+    "source_size": [
+      153.0,
+      342.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_treasury_v01/lamp_se.png": {
+    "cell": [
+      174.0,
+      372.0
+    ],
+    "file": "7404c7fb5b01e24dd10d8c8b6cfe2118.png",
+    "kind": "crystal",
+    "source_size": [
+      174.0,
+      372.0
+    ]
+  },
+  "res://assets/room_illustrated/reward_treasury_v01/lamp_sw.png": {
+    "cell": [
+      177.0,
+      417.0
+    ],
+    "file": "e77f0b499962c9844eeef3ae209e9ed9.png",
+    "kind": "crystal",
+    "source_size": [
+      177.0,
+      417.0
+    ]
+  },
+  "res://assets/room_illustrated/ruin_archive_v03/oil_lamp_ne.png": {
+    "cell": [
+      297.0,
+      558.0
+    ],
+    "file": "bea5a6590b65aed2497957ebf8f11df5.png",
+    "kind": "lamp",
+    "source_size": [
+      297.0,
+      558.0
+    ]
+  },
+  "res://assets/room_illustrated/ruin_archive_v03/oil_lamp_sw.png": {
+    "cell": [
+      176.0,
+      450.0
+    ],
+    "file": "e007be07fa5b6c6b252ed1d6d27676b1.png",
+    "kind": "lamp",
+    "source_size": [
+      176.0,
+      450.0
+    ]
+  },
+  "res://assets/room_illustrated/ruin_courtyard_v03/runestone_nw.png": {
+    "cell": [
+      460.0,
+      434.0
+    ],
+    "file": "b5a59761a686293fbbfd74772a27d1ce.png",
+    "kind": "crystal",
+    "source_size": [
+      460.0,
+      434.0
+    ]
+  },
+  "res://assets/room_illustrated/ruin_courtyard_v03/runestone_se.png": {
+    "cell": [
+      402.0,
+      426.0
+    ],
+    "file": "c62126898a7a64647dd1703251b1acab.png",
+    "kind": "crystal",
+    "source_size": [
+      402.0,
+      426.0
+    ]
+  },
+  "res://assets/room_illustrated/shop_garden_v03/hanging_lamp_e.png": {
+    "cell": [
+      174.0,
+      267.0
+    ],
+    "file": "e053eff1ddf9a8e46bdd1b5cf2cdbc8b.png",
+    "kind": "lamp",
+    "source_size": [
+      174.0,
+      267.0
+    ]
+  },
+  "res://assets/room_illustrated/shop_garden_v03/hanging_lamp_w.png": {
+    "cell": [
+      168.0,
+      264.0
+    ],
+    "file": "934297fc5cd333868833d19a69fa5893.png",
+    "kind": "lamp",
+    "source_size": [
+      168.0,
+      264.0
+    ]
+  },
+  "res://assets/room_illustrated/shop_stone_v03/shop_lamp_e.png": {
+    "cell": [
+      209.0,
+      418.0
+    ],
+    "file": "c3d7316f44c71ca0f2209831a034ae0c.png",
+    "kind": "lamp",
+    "source_size": [
+      209.0,
+      418.0
+    ]
+  },
+  "res://assets/room_illustrated/shop_stone_v03/shop_lamp_w.png": {
+    "cell": [
+      218.0,
+      438.0
+    ],
+    "file": "4cb16c7bc6bbbb7fcb1f130c9ffe7e91.png",
+    "kind": "lamp",
+    "source_size": [
+      218.0,
+      438.0
+    ]
+  },
+  "res://assets/room_illustrated/tavern_veranda_v03/tavern_lamp_e.png": {
+    "cell": [
+      150.0,
+      336.0
+    ],
+    "file": "29a11c98c4d4eac86eea27a013638ffb.png",
+    "kind": "lamp",
+    "source_size": [
+      150.0,
+      336.0
+    ]
+  },
+  "res://assets/room_illustrated/tavern_veranda_v03/tavern_lamp_w.png": {
+    "cell": [
+      144.0,
+      314.0
+    ],
+    "file": "0609d94a091f0ec1389d8384d5f6b527.png",
+    "kind": "lamp",
+    "source_size": [
+      144.0,
+      314.0
+    ]
+  },
+  "res://assets/room_illustrated/tavern_veranda_v03/veranda_lamp_ne.png": {
+    "cell": [
+      192.0,
+      432.0
+    ],
+    "file": "fba3285da003695c3dbf7e3b1d7171cf.png",
+    "kind": "lamp",
+    "source_size": [
+      192.0,
+      432.0
+    ]
+  },
+  "res://assets/room_illustrated/tavern_veranda_v03/veranda_lamp_nw.png": {
+    "cell": [
+      150.0,
+      426.0
+    ],
+    "file": "c30c985f882e6326658c572968d251c5.png",
+    "kind": "lamp",
+    "source_size": [
+      150.0,
+      426.0
+    ]
+  },
+  "res://assets/room_illustrated/tavern_waterfront_v03/harbor_lamp_tavern.png": {
+    "cell": [
+      222.0,
+      360.0
+    ],
+    "file": "95165076ebc28a6be90609eff454b9d7.png",
+    "kind": "lamp",
+    "source_size": [
+      222.0,
+      360.0
+    ]
+  },
+  "res://assets/room_illustrated/tavern_waterfront_v03/harbor_lamp_west.png": {
+    "cell": [
+      165.0,
+      285.0
+    ],
+    "file": "37b3b67f24b6c948ea9c3ca9fa683743.png",
+    "kind": "lamp",
+    "source_size": [
+      165.0,
+      285.0
+    ]
+  },
+  "res://assets/room_illustrated/trial_seal_v01/lamp_ne.png": {
+    "cell": [
+      147.0,
+      417.0
+    ],
+    "file": "e6aa6270af0b826e38c7a389652a284c.png",
+    "kind": "crystal",
+    "source_size": [
+      147.0,
+      417.0
+    ]
+  },
+  "res://assets/room_illustrated/trial_seal_v01/lamp_nw.png": {
+    "cell": [
+      142.0,
+      411.0
+    ],
+    "file": "81f98555994ad9ab80e1ce9b16484c48.png",
+    "kind": "crystal",
+    "source_size": [
+      142.0,
+      411.0
+    ]
+  },
+  "res://assets/room_illustrated/trial_seal_v01/lamp_se.png": {
+    "cell": [
+      147.0,
+      423.0
+    ],
+    "file": "451bdc51cc932589e5e12704e27f138e.png",
+    "kind": "crystal",
+    "source_size": [
+      147.0,
+      423.0
+    ]
+  },
+  "res://assets/room_illustrated/trial_seal_v01/lamp_sw.png": {
+    "cell": [
+      150.0,
+      423.0
+    ],
+    "file": "b9e7dc78b944c69defb40495066a10a7.png",
+    "kind": "crystal",
+    "source_size": [
+      150.0,
+      423.0
+    ]
+  },
+  "res://assets/room_illustrated/trial_seal_v01/seal_crystal.png": {
+    "cell": [
+      225.0,
+      372.0
+    ],
+    "file": "354abbcd1bbf6a106a54d294ece57f73.png",
+    "kind": "crystal",
+    "source_size": [
+      225.0,
+      372.0
+    ]
+  },
+  "res://assets/room_illustrated/wetland_twin_pools_v03/lily_lamp_lower.png": {
+    "cell": [
+      303.0,
+      402.0
+    ],
+    "file": "d43d924acf8b529ba82f1fbf7241622a.png",
+    "kind": "lamp",
+    "source_size": [
+      303.0,
+      402.0
+    ]
+  },
+  "res://assets/room_illustrated/wetland_twin_pools_v03/lily_lamp_upper.png": {
+    "cell": [
+      306.0,
+      396.0
+    ],
+    "file": "87eac48d2aec88f3118024d4d944d190.png",
+    "kind": "lamp",
+    "source_size": [
+      306.0,
+      396.0
+    ]
+  },
+  "res://assets/room_mode/lights/crystal_1x1.png": {
+    "cell": [
+      288.0,
+      288.0
+    ],
+    "file": "4347c94bf3a15380b090cfaca6431d23.png",
+    "kind": "crystal",
+    "source_size": [
+      36.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/crystal_1x2.png": {
+    "cell": [
+      36.0,
+      72.0
+    ],
+    "file": "a4e8ea6101f903c25bf4d75e5b67748f.png",
+    "kind": "crystal",
+    "source_size": [
+      36.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/crystal_2x1.png": {
+    "cell": [
+      72.0,
+      36.0
+    ],
+    "file": "cf36e7deae5db1d243551fd00a90a058.png",
+    "kind": "crystal",
+    "source_size": [
+      72.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/crystal_2x2.png": {
+    "cell": [
+      72.0,
+      72.0
+    ],
+    "file": "c86914f5ec643697ebe7785575cf7317.png",
+    "kind": "crystal",
+    "source_size": [
+      72.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/ember_brazier_1x1.png": {
+    "cell": [
+      256,
+      256
+    ],
+    "file": "res://assets/light_models_v18/ember_brazier_1x1.png",
+    "kind": "ember_brazier",
+    "source_size": [
+      256,
+      256
+    ]
+  },
+  "res://assets/room_mode/lights/ember_brazier_1x2.png": {
+    "cell": [
+      256,
+      512
+    ],
+    "file": "res://assets/light_models_v18/ember_brazier_1x2.png",
+    "kind": "ember_brazier",
+    "source_size": [
+      256,
+      512
+    ]
+  },
+  "res://assets/room_mode/lights/ember_brazier_2x1.png": {
+    "cell": [
+      512,
+      256
+    ],
+    "file": "res://assets/light_models_v18/ember_brazier_2x1.png",
+    "kind": "ember_brazier",
+    "source_size": [
+      512,
+      256
+    ]
+  },
+  "res://assets/room_mode/lights/ember_brazier_2x2.png": {
+    "cell": [
+      512,
+      512
+    ],
+    "file": "res://assets/light_models_v18/ember_brazier_2x2.png",
+    "kind": "ember_brazier",
+    "source_size": [
+      512,
+      512
+    ]
+  },
+  "res://assets/room_mode/lights/fire_1x1.png": {
+    "cell": [
+      288.0,
+      288.0
+    ],
+    "file": "227e3d84357a6b4186c33dd362c4e17d.png",
+    "kind": "fire",
+    "source_size": [
+      36.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/fire_1x2.png": {
+    "cell": [
+      36.0,
+      72.0
+    ],
+    "file": "cd416a08f9af48c06adf2fbb69f490ca.png",
+    "kind": "fire",
+    "source_size": [
+      36.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/fire_2x1.png": {
+    "cell": [
+      72.0,
+      36.0
+    ],
+    "file": "b9bf620a373f7b0f9da09743db9a2fc9.png",
+    "kind": "fire",
+    "source_size": [
+      72.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/fire_2x2.png": {
+    "cell": [
+      72.0,
+      72.0
+    ],
+    "file": "75f14e47e7d055f79a9cb5137da7f5e9.png",
+    "kind": "fire",
+    "source_size": [
+      72.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/lamp_1x1.png": {
+    "cell": [
+      288.0,
+      288.0
+    ],
+    "file": "b58b2e623c0b99ecb0b7ea6bbd90df16.png",
+    "kind": "lamp",
+    "source_size": [
+      36.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/lamp_1x2.png": {
+    "cell": [
+      36.0,
+      72.0
+    ],
+    "file": "d5d198a3bf09bfc7fe4e222df4d5d403.png",
+    "kind": "lamp",
+    "source_size": [
+      36.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/lamp_2x1.png": {
+    "cell": [
+      72.0,
+      36.0
+    ],
+    "file": "db1b9adce6d2af5bc9fa68ef8195b505.png",
+    "kind": "lamp",
+    "source_size": [
+      72.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/lamp_2x2.png": {
+    "cell": [
+      72.0,
+      72.0
+    ],
+    "file": "e719966f1fed3a610891de8681bbf4ad.png",
+    "kind": "lamp",
+    "source_size": [
+      72.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/moon_lantern_1x1.png": {
+    "cell": [
+      256,
+      256
+    ],
+    "file": "res://assets/light_models_v18/moon_lantern_1x1.png",
+    "kind": "moon_lantern",
+    "source_size": [
+      256,
+      256
+    ]
+  },
+  "res://assets/room_mode/lights/moon_lantern_1x2.png": {
+    "cell": [
+      256,
+      512
+    ],
+    "file": "res://assets/light_models_v18/moon_lantern_1x2.png",
+    "kind": "moon_lantern",
+    "source_size": [
+      256,
+      512
+    ]
+  },
+  "res://assets/room_mode/lights/moon_lantern_2x1.png": {
+    "cell": [
+      512,
+      256
+    ],
+    "file": "res://assets/light_models_v18/moon_lantern_2x1.png",
+    "kind": "moon_lantern",
+    "source_size": [
+      512,
+      256
+    ]
+  },
+  "res://assets/room_mode/lights/moon_lantern_2x2.png": {
+    "cell": [
+      512,
+      512
+    ],
+    "file": "res://assets/light_models_v18/moon_lantern_2x2.png",
+    "kind": "moon_lantern",
+    "source_size": [
+      512,
+      512
+    ]
+  },
+  "res://assets/room_mode/lights/plant_1x1.png": {
+    "cell": [
+      288.0,
+      288.0
+    ],
+    "file": "3a443858916433c79332daaaefac9294.png",
+    "kind": "plant",
+    "source_size": [
+      36.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/plant_1x2.png": {
+    "cell": [
+      36.0,
+      72.0
+    ],
+    "file": "7661d2943be66ac00df516fd6a84396e.png",
+    "kind": "plant",
+    "source_size": [
+      36.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/plant_2x1.png": {
+    "cell": [
+      72.0,
+      36.0
+    ],
+    "file": "6496de15aa454445a5d050e119f682c4.png",
+    "kind": "plant",
+    "source_size": [
+      72.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/plant_2x2.png": {
+    "cell": [
+      72.0,
+      72.0
+    ],
+    "file": "491f238f19f81a55fbb9ee1d895ecb04.png",
+    "kind": "plant",
+    "source_size": [
+      72.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/star_bloom_1x1.png": {
+    "cell": [
+      256,
+      256
+    ],
+    "file": "res://assets/light_models_v18/star_bloom_1x1.png",
+    "kind": "star_bloom",
+    "source_size": [
+      256,
+      256
+    ]
+  },
+  "res://assets/room_mode/lights/star_bloom_1x2.png": {
+    "cell": [
+      256,
+      512
+    ],
+    "file": "res://assets/light_models_v18/star_bloom_1x2.png",
+    "kind": "star_bloom",
+    "source_size": [
+      256,
+      512
+    ]
+  },
+  "res://assets/room_mode/lights/star_bloom_2x1.png": {
+    "cell": [
+      512,
+      256
+    ],
+    "file": "res://assets/light_models_v18/star_bloom_2x1.png",
+    "kind": "star_bloom",
+    "source_size": [
+      512,
+      256
+    ]
+  },
+  "res://assets/room_mode/lights/star_bloom_2x2.png": {
+    "cell": [
+      512,
+      512
+    ],
+    "file": "res://assets/light_models_v18/star_bloom_2x2.png",
+    "kind": "star_bloom",
+    "source_size": [
+      512,
+      512
+    ]
+  },
+  "res://assets/room_mode/lights/torch_1x1.png": {
+    "cell": [
+      288.0,
+      288.0
+    ],
+    "file": "35a3b66a6f5a7cb87d81bce403704269.png",
+    "kind": "torch",
+    "source_size": [
+      36.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/torch_1x2.png": {
+    "cell": [
+      36.0,
+      72.0
+    ],
+    "file": "546a12edc17c24321d947c032e35184c.png",
+    "kind": "torch",
+    "source_size": [
+      36.0,
+      72.0
+    ]
+  },
+  "res://assets/room_mode/lights/torch_2x1.png": {
+    "cell": [
+      72.0,
+      36.0
+    ],
+    "file": "ea51fa6ceee392cb2ab4c6151241ff96.png",
+    "kind": "torch",
+    "source_size": [
+      72.0,
+      36.0
+    ]
+  },
+  "res://assets/room_mode/lights/torch_2x2.png": {
+    "cell": [
+      72.0,
+      72.0
+    ],
+    "file": "b010ae2cbfc7384b38cdca288062c8e4.png",
+    "kind": "torch",
+    "source_size": [
+      72.0,
+      72.0
+    ]
+  }
+}

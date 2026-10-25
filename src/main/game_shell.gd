@@ -6,6 +6,7 @@ const ROOM_PATH := "res://src/room_mode/room_main.tscn"
 # script load to that worker can stall cold threaded loading.
 const INVENTORY_SHELL := preload("res://src/ui/inventory_shell.tscn")
 var camp: CampWorld
+var training:TrainingWorld
 var menu: MainMenu
 var game: Node
 var loading: CanvasLayer
@@ -117,6 +118,8 @@ func _build_loading() -> void:
 
 func begin(snapshot: Dictionary) -> void:
 	if busy or (is_instance_valid(_review_dialogue) and _review_dialogue.is_open()): return
+	if str(snapshot.get("combat_mode",snapshot.get("departure",{}).get("combat_mode","rooms")))!="rooms":
+		menu.set_notice("该存档所属的试行玩法已移除。请选择启程赴星，确认放弃旧出征后开始章节冒险；旧存档不会被自动删除。");menu.open();return
 	var destination:=ChapterCatalog.normalize(snapshot.get("chapter_id",snapshot.get("departure",{}).get("chapter_id",ChapterCatalog.FIRST)))
 	_loading_chapter.text=ChapterCatalog.title(destination)
 	busy = true
@@ -250,7 +253,7 @@ func _open_camp(reason:="new") -> void:
 			if ticket==_load_epoch:_failed("营地转场暂时无法开始")
 			return
 		if ticket!=_load_epoch:return
-		TransitionLayer.set_loading_progress(-1.0,"正在布置营地与训练场…")
+		TransitionLayer.set_loading_progress(-1.0,"正在布置营地…")
 		await get_tree().process_frame
 		if ticket!=_load_epoch:return
 	menu.close()
@@ -265,7 +268,7 @@ func _open_camp(reason:="new") -> void:
 		if ticket!=_load_epoch:return
 	if not is_instance_valid(camp) or not camp.initialization_success:
 		_failed("营地资源暂时无法载入");return
-	camp.departure_requested.connect(begin);camp.resume_requested.connect(begin)
+	camp.departure_requested.connect(begin);camp.resume_requested.connect(begin);camp.training_requested.connect(_open_training)
 	camp.back_requested.connect(func()->void:
 		if is_instance_valid(camp):remove_child(camp);camp.queue_free();camp=null
 		menu.open())
@@ -275,3 +278,27 @@ func _open_camp(reason:="new") -> void:
 		await TransitionLayer.uncover()
 		if ticket!=_load_epoch:return
 	busy=false
+
+func _open_training()->void:
+	if busy or not is_instance_valid(camp) or is_instance_valid(training):return
+	busy=true
+	if not await TransitionLayer.cover("星辉演武场 · 进入训练","goddess",self):busy=false;return
+	if not is_instance_valid(camp):TransitionLayer.cancel();busy=false;return
+	camp.suspend_for_training()
+	training=TrainingWorld.new();training.preparation=camp.preparation;add_child(training)
+	while is_instance_valid(training) and not training.initialization_complete:await get_tree().process_frame
+	if not is_instance_valid(training) or not training.initialization_success:
+		if is_instance_valid(training):training.shutdown();remove_child(training);training.queue_free();training=null
+		camp.resume_from_training();await TransitionLayer.uncover();busy=false;return
+	training.return_requested.connect(_close_training)
+	await TransitionLayer.uncover();busy=false
+
+func _close_training()->void:
+	if busy or not is_instance_valid(training):return
+	busy=true
+	if not await TransitionLayer.cover("星辉回廊 · 返回营地","goddess",self):
+		training._leaving=false;busy=false;return
+	training.shutdown();remove_child(training);training.queue_free();training=null
+	await get_tree().process_frame
+	if is_instance_valid(camp):camp.resume_from_training()
+	await TransitionLayer.uncover();busy=false

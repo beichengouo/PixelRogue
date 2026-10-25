@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cemp77q6l0g7w"
-path="res://.godot/imported/paths.png-f61ebb3e5f0522e62cf9146166d18875.ctex"
+path.s3tc="res://.godot/imported/paths.png-f61ebb3e5f0522e62cf9146166d18875.s3tc.ctex"
+path.etc2="res://.godot/imported/paths.png-f61ebb3e5f0522e62cf9146166d18875.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/camp_starlight_corridor_v02/paths.png"
-dest_files=["res://.godot/imported/paths.png-f61ebb3e5f0522e62cf9146166d18875.ctex"]
+dest_files=["res://.godot/imported/paths.png-f61ebb3e5f0522e62cf9146166d18875.s3tc.ctex", "res://.godot/imported/paths.png-f61ebb3e5f0522e62cf9146166d18875.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

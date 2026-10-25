@@ -37,7 +37,7 @@ static func spawn(parent: Node, where: Vector2, family := "fire", kind := "impac
 	fx.material = PixelSpellArt.material()
 	# 高频小命中不创建额外灯，避免几十枚火球同时增加光源。
 	if width >= 90:
-		fx._light = LightUtil.make_point_light(PixelSpellArt.tint(family), 0.6 * strength, width * 0.75 / fx.scale.x, false)
+		fx._light = LightUtil.make_point_light(PixelSpellArt.tint(family), 0.6 * strength, width * 0.75 / fx.scale.x, false,"fire" if family=="fire" else "arcane")
 		fx.add_child(fx._light)
 	parent.add_child(fx)
 	fx.add_to_group("pixel_spell_fx")

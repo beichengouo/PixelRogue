@@ -2,14 +2,14 @@
   "version": 1,
   "id": "city_star_canal_v01",
   "canvas": [
-    1536,
-    1024
+    2816,
+    1792
   ],
   "floor_rect_px": [
-    144,
-    176,
-    1248,
-    662
+    264.0,
+    308.0,
+    2288.0,
+    1158.5
   ],
   "gate_origin": [
     11,
@@ -17,53 +17,141 @@
   ],
   "planes": [
     {
-      "path": "background.png",
-      "layer": "background"
+      "path": "detail_v17/background_0_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "walls.png",
-      "layer": "walls"
+      "path": "detail_v17/background_0_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "foreground.png",
-      "layer": "foreground"
+      "path": "detail_v17/background_1_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        896,
+        264,
+        571
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_1.png",
+      "layer": "walls",
+      "rect_px": [
+        2552,
+        896,
+        264,
+        571
+      ]
+    },
+    {
+      "path": "detail_v17/foreground_1_0.png",
+      "layer": "foreground",
+      "rect_px": [
+        0,
+        1467,
+        1408,
+        325
+      ]
+    },
+    {
+      "path": "detail_v17/foreground_1_1.png",
+      "layer": "foreground",
+      "rect_px": [
+        1408,
+        1467,
+        1408,
+        325
+      ]
     }
   ],
   "gates": {
     "north": {
       "path": "door_north.png",
       "rect_px": [
-        693,
-        0,
-        150,
-        176
+        1270.5,
+        0.0,
+        275.0,
+        308.0
       ]
     },
     "south": {
       "path": "door_south.png",
       "rect_px": [
-        693,
-        838,
-        150,
-        186
+        1270.5,
+        1466.5,
+        275.0,
+        325.5
       ]
     },
     "west": {
       "path": "door_west.png",
       "rect_px": [
-        0,
-        386,
-        144,
-        234
+        0.0,
+        675.5,
+        264.0,
+        409.5
       ]
     },
     "east": {
       "path": "door_east.png",
       "rect_px": [
-        1392,
-        386,
-        144,
-        234
+        2552.0,
+        675.5,
+        264.0,
+        409.5
       ]
     }
   },
@@ -1710,5 +1798,9 @@
         468
       ]
     ]
+  ],
+  "camera_reference_floor_ratio": [
+    1.2307692307692308,
+    1.5468277945619335
   ]
 }

@@ -1,70 +1,164 @@
 {
-  "format": "pixelrogue.room",
-  "schema_version": 1,
-  "revision": 1,
-  "id": "game_hall",
-  "name": "星运游艺厅",
-  "theme": "forest",
-  "room_kinds": [
-    "game"
-  ],
-  "selection_weight": 1,
-  "scene_art": "game_hall_v01",
-  "base_ground": "floor:grass",
-  "grid": {
-    "size": [
-      23,
-      13
-    ],
-    "cell_px": 36
-  },
-  "layers": {
-    "ground": [],
-    "water": [],
-    "obstacles": [],
-    "decor": [],
-    "entities": [],
-    "markers": []
-  },
-  "ports": [
-    {
-      "id": "north",
-      "side": "north",
-      "at": [
-        11,
-        0
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "east",
-      "side": "east",
-      "at": [
-        22,
-        5
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "south",
-      "side": "south",
-      "at": [
-        11,
-        12
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "west",
-      "side": "west",
-      "at": [
-        0,
-        5
-      ],
-      "approach_width": 3
-    }
-  ],
-  "tags": [
-    "game"
-  ]
+	"base_ground": "floor:grass",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "game_hall",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "星运游艺厅",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				5.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				5.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 2,
+	"room_kinds": [
+		"game"
+	],
+	"scene_art": "game_hall_v01",
+	"scene_collision_overrides": {
+		"objects": {
+			"bench_se": [
+				[
+					-62.8,
+					-47.8
+				],
+				[
+					61.1,
+					-48.3
+				],
+				[
+					55.061,
+					0.0
+				],
+				[
+					-55.061,
+					0.0
+				]
+			],
+			"bench_sw": [
+				[
+					-60.1,
+					-45.7
+				],
+				[
+					61.8,
+					-46.7
+				],
+				[
+					55.2,
+					-1.8
+				],
+				[
+					-55.5,
+					-2.8
+				]
+			],
+			"machine_lottery": [
+				[
+					-66.5,
+					-59.5
+				],
+				[
+					63.1,
+					-58.0
+				],
+				[
+					64.6,
+					-7.0
+				],
+				[
+					-64.5,
+					-7.0
+				]
+			],
+			"machine_reserved": [
+				[
+					-62.7,
+					-63.6
+				],
+				[
+					65.8,
+					-60.6
+				],
+				[
+					65.8,
+					-4.9
+				],
+				[
+					-61.2,
+					-5.5
+				]
+			],
+			"machine_wheel": [
+				[
+					-64.8,
+					-53.5
+				],
+				[
+					64.3,
+					-53.5
+				],
+				[
+					63.619,
+					0.0
+				],
+				[
+					-63.619,
+					0.0
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"tags": [
+		"game"
+	],
+	"theme": "forest"
 }

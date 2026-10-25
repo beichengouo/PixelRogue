@@ -151,6 +151,7 @@ func seconds_since_kill() -> float:
 
 
 static func create_enemy(kind: StringName) -> EnemyBase:
+	kind=EnemyCombatPolicy.active_kind(kind)
 	if kind in EnemyCombatPolicy.NEW_KINDS:return EnemyCombatPolicy.create(kind)
 	match kind:
 		&"flyer":

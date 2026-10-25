@@ -2,59 +2,102 @@
   "version": 1,
   "id": "tavern_veranda_v03",
   "canvas": [
-    1536,
-    1024
+    2816,
+    1792
   ],
   "floor_rect_px": [
-    64,
-    128,
-    1408,
-    795.8260869565217
+    117.33333333333333,
+    224.0,
+    2581.333333333333,
+    1392.695652173913
   ],
   "planes": [
     {
-      "path": "background.png"
+      "path": "detail_v17/background_0_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "veranda-plane.png",
-      "surface": "bridge"
+      "path": "detail_v17/background_0_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1645,
+        285,
+        854,
+        492
+      ]
     }
   ],
   "gates": {
     "north": {
       "path": "door_north.png",
       "rect_px": [
-        680,
-        0,
-        177,
-        177
+        1246.6666666666665,
+        0.0,
+        324.5,
+        309.75
       ]
     },
     "east": {
       "path": "door_east.png",
       "rect_px": [
-        1421,
-        359,
-        115,
-        241
+        2605.1666666666665,
+        628.25,
+        210.83333333333331,
+        421.75
       ]
     },
     "south": {
       "path": "door_south.png",
       "rect_px": [
-        680,
-        824,
-        177,
-        200
+        1246.6666666666665,
+        1442.0,
+        324.5,
+        350.0
       ]
     },
     "west": {
       "path": "door_west.png",
       "rect_px": [
-        0,
-        359,
-        115,
-        241
+        0.0,
+        628.25,
+        210.83333333333331,
+        421.75
       ]
     }
   },
@@ -542,5 +585,9 @@
         -22.9347
       ]
     ]
-  }
+  },
+  "camera_reference_floor_ratio": [
+    1.0909090909090908,
+    1.2867132867132867
+  ]
 }

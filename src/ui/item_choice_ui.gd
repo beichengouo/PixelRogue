@@ -89,10 +89,17 @@ func open(offers: Array) -> void:
 	_root.visible = true
 	UIFlow.push_screen(self)
 	opened.emit()
-	_animate_panel_in()
-	_animate_cards_in.call_deferred(_selection_epoch)
-	PixelUi.focus_button(_root)
+	_canvas.hide()
+	_present_after_layout(_selection_epoch)
 
+
+func _present_after_layout(epoch: int) -> void:
+	await get_tree().process_frame
+	await get_tree().process_frame
+	if epoch != _selection_epoch or not is_open() or _choosing: return
+	_canvas.show(); _animate_panel_in(); _animate_cards_in(epoch)
+	_input_ready_at = Time.get_ticks_msec()+(OPEN_GUARD_MS if ComicMotion.reduced() else maxi(OPEN_GUARD_MS,ceili((APPEAR_SECONDS+APPEAR_STAGGER*maxi(0,offers.size()-1))*1000)))
+	PixelUi.focus_button(_root)
 
 func cancel() -> void:
 	_stop_card_animation()
@@ -154,7 +161,7 @@ func _animate_cards_in(epoch:int)->void:
 	for i in _cards.size():
 		var holder:=_cards[i];var visual:=_visuals[i];var effect:=_card_effects[i];var back:=_backs[i]
 		var reduced:=ComicMotion.reduced();var delay:=0.0 if reduced else float(i)*APPEAR_STAGGER
-		visual.position=Vector2(12,12);visual.pivot_offset=visual.size*.5;back.pivot_offset=back.size*.5
+		visual.position=Vector2(12,12);visual.pivot_offset=visual.size*.5;back.size=CARD_SIZE;back.position=Vector2(12,12);back.scale=Vector2.ONE;back.pivot_offset=back.size*.5
 		visual.visible=reduced;back.visible=not reduced;visual.scale.x=1.0 if reduced else 0.0
 		var icon:=_reward_icons[i];effect.icon_center=effect.get_global_transform().affine_inverse()*icon.get_global_rect().get_center()
 		var tween:=create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
@@ -217,6 +224,9 @@ func _handle_pointer(event: InputEvent) -> bool:
 	if event is InputEventScreenTouch:
 		_ignore_mouse_until = Time.get_ticks_msec() + 100
 		UIFlow.set_pointer_active(true)
+		# A native finger takes over an unfinished emulated mouse press.
+		if event.pressed and _pointer_id == -1:
+			_pointer_id = -2; _pointer_card = -1; _pointer_aux = null
 		if event.pressed: _begin_pointer(event.index, event.position)
 		elif _pointer_id == event.index: _end_pointer(event.position)
 		get_viewport().set_input_as_handled()
@@ -374,6 +384,10 @@ func _build_card(index: int, item: Dictionary) -> Control:
 	column.add_child(scroll)
 	_scrolls.append(scroll)
 	var details:=UiFactory.vbox(8);details.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(details)
+	# Names and activation hints share the scroll budget with long descriptions.
+	# Their wrapping must never enlarge the illustrated card beyond CARD_SIZE.
+	column.remove_child(name_label); details.add_child(name_label)
+	column.remove_child(activation); details.add_child(activation)
 	var desc := PixelUi.label(str(item["desc"]) + "\n\n" + ItemInsight.describe(item, false, false, false), 17, FACE_INK)
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc.custom_minimum_size.x = 220
@@ -394,10 +408,8 @@ func _build_card(index: int, item: Dictionary) -> Control:
 		if _choosing: return
 		var active := holder.get_global_rect().has_point(get_viewport().get_mouse_position()) if UIFlow.pointer_active else holder.has_focus()
 		_hover(holder, active)
-	for event in [holder.focus_entered, holder.focus_exited, holder.mouse_entered, holder.mouse_exited, scroll.mouse_entered, scroll.mouse_exited]: event.connect(update)
-	UIFlow.navigation_mode_changed.connect(update)
-	holder.tree_exiting.connect(func() -> void:
-		if UIFlow.navigation_mode_changed.is_connected(update): UIFlow.navigation_mode_changed.disconnect(update))
+	var navigation:=NavigationModeBinding.attach(holder,update,[self])
+	for event in [holder.focus_entered, holder.focus_exited, holder.mouse_entered, holder.mouse_exited, scroll.mouse_entered, scroll.mouse_exited]: event.connect(navigation.refresh)
 	var epoch := _selection_epoch
 	holder.pressed.connect(func() -> void: _choose_from_input(index, epoch, true))
 
@@ -476,4 +488,3 @@ func _build() -> void:
 	tip.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	column.add_child(tip)
 	InteractionSkin.mount(_root,"reward")
-

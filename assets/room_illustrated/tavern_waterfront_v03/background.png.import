@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4pgbt3btgjet"
-path="res://.godot/imported/background.png-4b393ca5571ffafaf14ef2bcb2250c94.ctex"
+path.s3tc="res://.godot/imported/background.png-4b393ca5571ffafaf14ef2bcb2250c94.s3tc.ctex"
+path.etc2="res://.godot/imported/background.png-4b393ca5571ffafaf14ef2bcb2250c94.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/tavern_waterfront_v03/background.png"
-dest_files=["res://.godot/imported/background.png-4b393ca5571ffafaf14ef2bcb2250c94.ctex"]
+dest_files=["res://.godot/imported/background.png-4b393ca5571ffafaf14ef2bcb2250c94.s3tc.ctex", "res://.godot/imported/background.png-4b393ca5571ffafaf14ef2bcb2250c94.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

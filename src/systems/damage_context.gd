@@ -12,7 +12,11 @@ static func reflection(actor:Node)->Node:
 static func equipment(actor:Node)->Node:
  return _context(actor,&"equipment")
 static func skill(actor:Node)->Node:
- return _context(actor,&"skill")
+ var context:=_context(actor,&"skill")
+ if context!=null and FateCatalog.active():
+  context.set_meta("fate_serial",int(FateRuntime.state().get("cast_serial",0)))
+  context.set_meta("fate_small",bool(FateRuntime.state().get("small_cast",false)))
+ return context
 static func field(actor:Node)->Node:
  var context:=_context(actor,&"skill_field")
  if context!=null:context.owner_kind=&"skill_field"
@@ -46,3 +50,9 @@ static func player_owned(source:Node)->bool:
  if source is Player:return true
  if source is RoomProjectile:return source.damage_owner==&"player"
  return false
+
+static func skill_event(actor:Node,serial:int,small:bool)->Node:
+ var context:=_context(actor,StringName("skill_event_"+str(posmod(serial,64))))
+ if context!=null:
+  context.owner_kind=&"skill";context.set_meta("fate_serial",serial);context.set_meta("fate_small",small)
+ return context

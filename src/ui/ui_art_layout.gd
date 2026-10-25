@@ -31,7 +31,7 @@ static func apply(node:Control)->void:
 	if position is Array and position.size()==2:rect.position=Vector2(float(position[0]),float(position[1]))
 	node.position=rect.position;node.size=rect.size
 	if entry.has("font_size") and (node is Label or node is Button):
-		node.set_meta("art_layout_font_size",clampi(int(entry.font_size),10,48));node.add_theme_font_size_override("font_size",clampi(int(entry.font_size),10,48))
+		node.set_meta("art_layout_font_size",clampi(int(entry.font_size),10,96));node.add_theme_font_size_override("font_size",clampi(int(entry.font_size),10,96))
 	elif node.has_meta("art_layout_font_size"):node.remove_meta("art_layout_font_size")
 static func refresh(root:Node)->void:
 	if root is Control:apply(root)

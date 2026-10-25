@@ -6,9 +6,22 @@ var serial:=0
 
 func companions(guardian_only:=false)->Array:
 	var found:Array=[]
-	for unit in get_tree().get_nodes_in_group("contracts"):
-		if is_instance_valid(unit) and not unit.is_queued_for_deletion() and unit.hp>0 and unit.player==actor and (not guardian_only or unit.guardian):found.append(unit)
+	var roster:Array=actor.room.tactics.allies(actor.room) if actor is RoomPlayer and is_instance_valid(actor.room) else get_tree().get_nodes_in_group("contracts")
+	for unit in roster:
+		if is_instance_valid(unit) and not unit.is_queued_for_deletion() and unit.is_in_group("contracts") and unit.hp>0 and unit.player==actor and (not guardian_only or unit.guardian):found.append(unit)
 	return found
+
+func parade_active()->bool:
+	for unit in companions():
+		if unit.source_skill==&"spirit_parade" or unit.art_variant=="parade_guardian":return true
+	return false
+
+func parade_kind()->StringName:
+	var melee:=0;var ranged:=0
+	for unit in companions():
+		if unit.attack_is_melee():melee+=1
+		else:ranged+=1
+	return &"caster" if melee>ranged else &"guard"
 
 func safe_positions(count:int, radius:float=12)->Array[Vector2]:
 	var positions:Array[Vector2]=[]
@@ -33,7 +46,16 @@ func cast(slot:int)->bool:
 	if not is_instance_valid(actor) or actor.hp<=0 or actor.extraction_pose!=&"":return false
 	var id:=GameState.skill_for_slot(slot)
 	if not SummonerSkills.DATA.has(id) or not GameState.skill_ready(slot):return false
-	var effect:Dictionary=Skills.get_skill(id).effect
+	var effect:Dictionary=Skills.get_skill(id).effect.duplicate(true)
+	effect["source_skill"]=str(id)
+	var potency:=SkillTalentCatalog.power(id)
+	if effect.has("duration"):effect.duration=float(effect.duration)+SkillTalentCatalog.shape(id,"duration")
+	match str(effect.kind):
+		"summon":effect.attack=float(effect.attack)*potency
+		"recall":effect.heal=float(effect.heal)*potency;effect.self_heal=float(effect.self_heal)*potency
+		"shelter":effect.shield=float(effect.shield)*potency
+		"shadow_echo":effect.ratio=float(effect.ratio)*potency;effect.radius=float(effect.radius)+SkillTalentCatalog.shape(id,"radius")
+		"rally":effect.attack=float(effect.attack)*potency
 	var positions:Array[Vector2]=[]
 	var landing:=actor.global_position
 	if effect.kind=="summon":
@@ -41,13 +63,14 @@ func cast(slot:int)->bool:
 		if positions.size()<int(effect.count):
 			Effects.text(actor.get_parent(),actor.global_position-Vector2(0,56),"附近没有召唤空间",PixelUi.MUTED,14);return false
 	if effect.kind=="rally":
-		positions=parade_positions()
-		if positions.size()<8:
+		effect["parade_enemy"]=str(parade_kind())
+		positions=parade_positions(effect.parade_enemy=="caster")
+		if positions.size()<3:
 			Effects.text(actor.get_parent(),actor.global_position-Vector2(0,56),"附近没有召唤空间",PixelUi.MUTED,14);return false
 	if GameState.begin_skill_cast(slot)==&"":return false
 	var cast_bonus: float = (actor as RoomPlayer).equipment_mechanics.on_skill_cast(str(effect.kind)=="shelter",id) if actor is RoomPlayer else 1.0
 	var base:Dictionary={}
-	if id in [&"shadow_companions",&"ghost_lantern"]:
+	if effect.kind=="summon":
 		base=SummonRules.hero_snapshot(actor,effect)
 	var fate_bonus:=FateRuntime.cast_factor()
 	var perform:=func()->void:_release(effect,positions,landing,base,cast_bonus,fate_bonus)
@@ -92,11 +115,15 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				unit.rally_attack=maxf(unit.rally_attack if active_rally else 0.0,float(effect.attack))
 				unit.rally_haste=maxf(unit.rally_haste if active_rally else 0.0,float(effect.haste));unit._refresh_bonus()
 		"rally":
-			var guard_effect:Dictionary={"enemy":"guard","attack":effect.get("guard_attack",.65),"hp":effect.get("guard_hp",1.2),"speed":effect.get("guard_speed",150.0),"duration":effect.get("guard_duration",30.0),"art_variant":"parade_guardian"}
-			for index in mini(5,positions.size()):_summon(guard_effect,positions[index],{})
-			var lantern_effect:Dictionary=SummonerSkills.DATA[&"ghost_lantern"].effect.duplicate(true)
-			var lantern_base:=SummonRules.hero_snapshot(actor,lantern_effect)
-			for index in range(5,positions.size()):_summon(lantern_effect,positions[index],lantern_base)
+			var kind:=StringName(effect.get("parade_enemy",parade_kind()))
+			var summon_effect:Dictionary={"enemy":"guard","attack":effect.get("guard_attack",.65),"hp":effect.get("guard_hp",1.2),"speed":effect.get("guard_speed",150.0),"duration":effect.get("guard_duration",30.0),"art_variant":"parade_guardian","source_skill":"spirit_parade"}
+			var summon_base:Dictionary={}
+			if kind==&"caster":
+				summon_effect=SummonerSkills.DATA[&"ghost_lantern"].effect.duplicate(true)
+				summon_effect["source_skill"]="spirit_parade"
+				summon_base=SummonRules.hero_snapshot(actor,summon_effect)
+			if summon_base.is_empty():summon_base=SummonRules.hero_snapshot(actor,summon_effect)
+			for index in mini(3,positions.size()):_summon(summon_effect,positions[index],summon_base)
 			for unit in companions():
 				unit.heal(unit.max_hp*float(effect.heal)*healing)
 				unit.rally_time=float(effect.duration)+GameState.talent_effect(&"parade_duration","夜行额外秒数")
@@ -113,18 +140,21 @@ func _summon(effect:Dictionary,at:Vector2,base:Dictionary)->void:
 	unit.player=actor;unit.level=actor.level;unit.fx_root=actor.get_parent();unit.uid="contract_%d_%d_%d"%[GameState.run_epoch,actor.get_instance_id(),serial]
 	unit.enemy_kind=StringName(effect.enemy);unit.body_color=Color("c3a0ff");unit.display_name={"walker":"骸灵伙伴","caster":"幽灯伙伴","guard":"骸甲守卫","treant":"树灵守望者"}.get(str(effect.enemy),"契约伙伴")
 	unit.art_variant=str(effect.get("art_variant","ghost_lantern" if str(effect.enemy)=="caster" else ("gate_guardian" if str(effect.enemy)=="guard" else "")));unit.guardian=bool(effect.get("guardian",false));unit.attack_ratio=float(effect.attack);unit.hp_ratio_base=float(effect.hp);unit.speed_base=float(effect.speed)
+	unit.source_skill=StringName(effect.get("source_skill",""))
+	unit.contract_attack_bonus=GameState.talent_effect(&"contract_might","契约物攻击加成%")/100
+	unit.contract_hp_bonus=GameState.talent_effect(&"contract_vitality","契约物生命加成%")/100
 	unit.monster_base_attack=float(base.get("attack",0));unit.monster_base_hp=float(base.get("hp",0))
 	unit.remaining=float(effect.duration)+GameState.talent_effect(&"contract_duration","新契约额外秒数")+(GameState.talent_effect(&"guardian_duration","守望者额外秒数") if unit.guardian else 0)
 	unit.total_duration=unit.remaining;unit.contract_epoch=GameState.run_epoch;unit.position=at;unit.room=actor.room
 	actor.get_parent().add_child(unit)
 
-func parade_positions()->Array[Vector2]:
+func parade_positions(ranged:=false)->Array[Vector2]:
 	var result:Array[Vector2]=[];var occupied:Array[Vector2]=[]
 	for unit in get_tree().get_nodes_in_group("allies"):
 		if is_instance_valid(unit) and not unit.is_queued_for_deletion() and unit.hp>0:occupied.append(unit.global_position)
-	for index in 8:
-		var angle:float=-PI*.5+(float(index)*TAU/5 if index<5 else float(index-5)*TAU/3)
-		var distance:=96.0 if index<5 else 150.0
+	for index in 3:
+		var angle:float=-PI*.5+float(index)*TAU/3
+		var distance:=150.0 if ranged else 96.0
 		var ideal:=actor.global_position+Vector2.RIGHT.rotated(angle)*distance
 		var found:=false
 		for offset_radius in [0.0,24.0,48.0,72.0,96.0]:

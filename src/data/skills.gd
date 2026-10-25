@@ -1,6 +1,6 @@
 class_name Skills
 extends RefCounted
-## 希露媞雅的火焰 / 自然魔法；普通技能与大招分开配装。
+## 三名角色的技能目录；三个小技能与一个大招在出发前配装。
 ## 原有 id 保留以兼容存档，名称和机制以本表为准。
 const SKILL_ICON_DIR := "res://assets/skills/"
 const UI_ICON_DIR := "res://assets/pixel_batch3/"
@@ -9,13 +9,13 @@ const FRAME_LOCKED := UI_ICON_DIR + "lock.tres"
 const ORDER: Array[StringName] = [&"flame_nova", &"fan_bolts", &"blink", &"meteor", &"flame_shield", &"frost_nova", &"healing_light", &"starfall"]
 const MAGE_DATA := {
 	&"flame_nova": {"id": &"flame_nova", "name": "烬环震退", "unlock_level": 1, "ultimate": false, "mp": 24.0, "cd": 6.0, "role": "烬火", "desc": "释放半径3格的烬火环，造成0.9×攻击并推退普通怪2格；首领推力为25%。", "icon": "res://assets/pixel_batch3/flame_nova.tres", "effect": {"kind": "repulse", "radius":108.0,"ratio":0.9,"push":72.0}},
-	&"fan_bolts": {"id": &"fan_bolts", "name": "绯焰散射", "unlock_level": 5, "ultimate": false, "mp": 24.0, "cd": 7.0, "role": "爆破", "desc": "向瞄准方向散射五枚火球，每枚造成 0.65×攻击力；可附带爆裂与点燃。", "icon": "res://assets/pixel_batch3/fan_bolts.tres", "effect": {"kind": "fan", "shots": 5, "spread_deg": 46.0, "ratio": 0.65, "speed": 470.0}},
-	&"blink": {"id": &"blink", "name": "星辉震荡", "unlock_level": 8, "ultimate": false, "mp": 18.0, "cd": 8.0, "role": "星辉", "desc": "周身半径3格星环对敌造成0.9×攻击并减速35%，持续2秒。", "icon": "res://assets/pixel_batch3/blink.tres", "effect": {"kind": "star_pulse", "radius": 108.0, "ratio": 0.9, "slow": 0.35, "slow_duration": 2.0}},
-	&"meteor": {"id": &"meteor", "name": "绯星坠落", "unlock_level": 12, "ultimate": true, "mp": 55.0, "cd": 24.0, "role": "爆破", "desc": "短暂预告后，向最近敌人落下一颗炽焰陨星；半径 210 内造成 3.6×攻击力。", "icon": "res://assets/pixel_batch3/meteor.tres", "effect": {"kind": "meteor", "radius": 210.0, "ratio": 3.6, "max_distance": 900.0, "delay": 0.45}},
-	&"flame_shield": {"id": &"flame_shield", "name": "烬火护衣", "unlock_level": 15, "ultimate": false, "mp": 26.0, "cd": 16.0, "role": "守护", "desc": "获得可吸收最大生命 18% 伤害的护衣，持续 6 秒；受到攻击时反伤。", "icon": "res://assets/pixel_batch3/flame_shield.tres", "effect": {"kind": "shield", "hp_ratio": 0.18, "duration": 6.0, "thorns": 8.0}},
-	&"frost_nova": {"id": &"frost_nova", "name": "藤蔓缠绕", "unlock_level": 18, "ultimate": false, "mp": 28.0, "cd": 10.0, "role": "自然", "desc": "半径 180 内的藤蔓造成 0.9×攻击力，并使敌人减速 60%，持续 3 秒；首领减速较弱。", "icon": "res://assets/pixel_batch3/nature_bind.tres", "effect": {"kind": "snare", "radius": 180.0, "ratio": 0.9, "slow": 0.6, "duration": 3.0}},
-	&"healing_light": {"id": &"healing_light", "name": "芽灵祝福", "unlock_level": 22, "ultimate": false, "mp": 32.0, "cd": 16.0, "role": "自然", "desc": "唤醒芽灵，立刻恢复最大生命的 22%；自然天赋可强化治疗并返还魔力。", "icon": "res://assets/pixel_batch3/healing_light.tres", "effect": {"kind": "heal", "hp_ratio": 0.22}},
-	&"starfall": {"id": &"starfall", "name": "森罗绽放", "unlock_level": 25, "ultimate": true, "mp": 60.0, "cd": 28.0, "role": "自然", "desc": "展开半径 220、持续 5 秒的领域，立即生效并每 0.75 秒造成 0.45×攻击力伤害，使敌人减速 30%、持续 1 秒；每次脉冲为领域内的自己恢复最大生命的 2%。", "icon": "res://assets/pixel_batch3/nature_bloom.tres", "effect": {"kind": "bloom", "radius": 220.0, "ratio": 0.45, "duration": 5.0, "interval": 0.75, "heal_ratio": 0.02}},
+	&"fan_bolts": {"id": &"fan_bolts", "name": "绯焰散射", "unlock_level": 3, "ultimate": false, "mp": 24.0, "cd": 7.0, "role": "爆破", "desc": "向瞄准方向散射五枚火球，每枚造成 0.65×攻击力；可附带爆裂与点燃。", "icon": "res://assets/pixel_batch3/fan_bolts.tres", "effect": {"kind": "fan", "shots": 5, "spread_deg": 46.0, "ratio": 0.65, "speed": 470.0}},
+	&"blink": {"id": &"blink", "name": "星辉震荡", "unlock_level": 5, "ultimate": false, "mp": 18.0, "cd": 8.0, "role": "星辉", "desc": "周身半径3格星环对敌造成0.9×攻击并减速35%，持续2秒。", "icon": "res://assets/pixel_batch3/blink.tres", "effect": {"kind": "star_pulse", "radius": 108.0, "ratio": 0.9, "slow": 0.35, "slow_duration": 2.0}},
+	&"meteor": {"id": &"meteor", "name": "绯星坠落", "unlock_level": 10, "ultimate": true, "mp": 55.0, "cd": 24.0, "role": "爆破", "desc": "短暂预告后，向最近敌人落下一颗炽焰陨星；半径 210 内造成 3.6×攻击力。", "icon": "res://assets/pixel_batch3/meteor.tres", "effect": {"kind": "meteor", "radius": 210.0, "ratio": 3.6, "max_distance": 900.0, "delay": 0.45}},
+	&"flame_shield": {"id": &"flame_shield", "name": "烬火护衣", "unlock_level": 2, "ultimate": false, "mp": 26.0, "cd": 16.0, "role": "守护", "desc": "获得可吸收最大生命 18% 伤害的护衣，持续 6 秒；受到攻击时反伤。", "icon": "res://assets/pixel_batch3/flame_shield.tres", "effect": {"kind": "shield", "hp_ratio": 0.18, "duration": 6.0, "thorns": 8.0}},
+	&"frost_nova": {"id": &"frost_nova", "name": "藤蔓缠绕", "unlock_level": 4, "ultimate": false, "mp": 28.0, "cd": 10.0, "role": "自然", "desc": "半径 180 内的藤蔓造成 0.9×攻击力，并使敌人减速 60%，持续 3 秒；首领减速较弱。", "icon": "res://assets/pixel_batch3/nature_bind.tres", "effect": {"kind": "snare", "radius": 180.0, "ratio": 0.9, "slow": 0.6, "duration": 3.0}},
+	&"healing_light": {"id": &"healing_light", "name": "芽灵祝福", "unlock_level": 6, "ultimate": false, "mp": 32.0, "cd": 16.0, "role": "自然", "desc": "唤醒芽灵，立刻恢复最大生命的 22%；自然天赋可强化治疗并返还魔力。", "icon": "res://assets/pixel_batch3/healing_light.tres", "effect": {"kind": "heal", "hp_ratio": 0.22}},
+	&"starfall": {"id": &"starfall", "name": "森罗绽放", "unlock_level": 10, "ultimate": true, "mp": 60.0, "cd": 28.0, "role": "自然", "desc": "展开半径 220、持续 5 秒的领域，立即生效并每 0.75 秒造成 0.45×攻击力伤害，使敌人减速 30%、持续 1 秒；每次脉冲为领域内的自己恢复最大生命的 2%。", "icon": "res://assets/pixel_batch3/nature_bloom.tres", "effect": {"kind": "bloom", "radius": 220.0, "ratio": 0.45, "duration": 5.0, "interval": 0.75, "heal_ratio": 0.02}},
 }
 
 static var DATA: Dictionary = _all_data()
@@ -28,6 +28,34 @@ static func order_for(character: StringName = &"")->Array[StringName]:
 	if id==&"xixifu":return SummonerSkills.ORDER
 	if id==&"ilyua":return IlyuaSkills.ORDER
 	return ORDER
+
+static func default_loadout(character: StringName = &"") -> Array[StringName]:
+	var normal: Array[StringName] = []; var ultimate: StringName = &""
+	for id: StringName in order_for(character):
+		if is_ultimate(id):
+			if ultimate == &"": ultimate = id
+		elif normal.size() < 3: normal.append(id)
+	normal.append(ultimate)
+	return normal
+
+static func valid_loadout(value: Variant, character: StringName = &"") -> bool:
+	if not value is Array or value.size() != 4: return false
+	var seen: Dictionary = {}; var legal := order_for(character)
+	for slot in 4:
+		if not (value[slot] is String or value[slot] is StringName): return false
+		var id := StringName(value[slot])
+		if not legal.has(id) or seen.has(id) or is_ultimate(id) != (slot == 3): return false
+		seen[id] = true
+	return true
+
+static func equip_in_loadout(value: Array, id: StringName, slot: int) -> Array[StringName]:
+	var result: Array[StringName] = []
+	if not valid_loadout(value) or not order_for().has(id) or slot < 0 or slot > 3 or is_ultimate(id) != (slot == 3): return result
+	for entry in value: result.append(StringName(entry))
+	var old := result.find(id)
+	if old >= 0 and old != slot: result[old] = result[slot]
+	result[slot] = id
+	return result
 
 static func get_skill(id: StringName, mode: String = "rooms") -> Dictionary:
 	if HolySkills.DATA.has(id):return HolySkills.DATA[id].duplicate(true)
@@ -51,14 +79,11 @@ static func get_skill(id: StringName, mode: String = "rooms") -> Dictionary:
 		result.effect.merge(changes[id].effect,true)
 	return result
 
+# Kept as compatibility helpers; character skills no longer unlock on level-up.
 static func unlock_level(id: StringName) -> int:
-	return int(get_skill(id).get("unlock_level", 999))
-
-static func next_skill_for_level(level: int) -> StringName:
-	for id in order_for():
-		if unlock_level(id) == level:
-			return id
-	return &""
+	return 1 if DATA.has(id) else 999
+static func next_skill_for_level(_level: int) -> StringName: return &""
+static func skills_for_level(_level: int) -> Array[StringName]: return []
 
 static func is_ultimate(id: StringName) -> bool:
 	return bool(get_skill(id).get("ultimate", false))
@@ -79,4 +104,3 @@ static func fx_of(id: StringName) -> Dictionary:
 		tint = "c4aaff"
 	var path := "res://assets/pixel_batch3/" + family + "_vfx_v1.png"
 	return {"sheet": path, "color": tint, "family": family}
-

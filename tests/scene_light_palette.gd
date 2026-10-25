@@ -13,15 +13,22 @@ func run()->void:
    var descriptor:Dictionary=object.light
    check(RoomEnvironmentConfig.LIGHTS.has(str(descriptor.kind)),id+" actual runtime light kind supported")
    kind_set[str(descriptor.kind)]=true
-   var path:String=RoomSceneArtCatalog.ROOT+str(id)+"/"+str(object.texture)
+   var texture:=str(object.texture)
+   var path:String=texture if texture.begins_with("res://") else RoomSceneArtCatalog.ROOT+str(id)+"/"+texture
+   if texture.begins_with("res://"):
+    check(ResourceLoader.exists(path) and not LightModelArt.frames(load(path)).is_empty(),id+" legacy lamp uses the canonical animated model")
+    continue
+   if float(object.get("render_width_px",36))<=1:
+    check(ResourceLoader.exists(path),id+" baked-in lamp keeps descriptor anchor without a duplicate palette model")
+    continue
    var piece:Dictionary={}
    for entry in RoomSceneArtCatalog.definition(id).get("pieces",[]):
     if str(entry.path)==path:piece=entry;break
    check(not piece.is_empty(),id+" light appears in editor palette")
    if piece.is_empty():continue
-   var placed:=RoomTemplateCodec._placed_scene_object({"id":"copied_light","at":[11,6],"config":{}},piece)
+   var placed:=RoomTemplateCodec._placed_scene_object({"id":"copied_light","at":[11,6],"config":{}},piece,RoomTemplateCodec.blank())
    check(placed.light==descriptor,id+" palette keeps authored color/radius/light behavior")
-   var changed:=RoomTemplateCodec._placed_scene_object({"id":"copied_light","at":[11,6],"config":{"radius":99}},piece)
+   var changed:=RoomTemplateCodec._placed_scene_object({"id":"copied_light","at":[11,6],"config":{"radius":99}},piece,RoomTemplateCodec.blank())
    check(changed.light.kind==descriptor.kind and changed.light.radius==99,id+" editor override preserves authored defaults")
  check(kind_set.size()>=4,"maps use varied supported runtime light types")
  print("SCENE_LIGHT_PALETTE checks=",checks," failures=",failures)

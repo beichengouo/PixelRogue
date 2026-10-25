@@ -1,11 +1,15 @@
 class_name GoddessExtractionFX
 extends Node2D
-## Clocks supplied by the director keep pause/restore synchronized with the sprite sequence.
+## Reception dissolves the exact current actor pose. Director clocks preserve pause/restore.
 var prayer: AnimatedSprite2D
 var pillar: AnimatedSprite2D
 var ground_rune: AnimatedSprite2D
-var goddess: AnimatedSprite2D
-var success: AnimatedSprite2D
+var dissolve:Sprite2D
+var _dissolve_material:ShaderMaterial
+var _source_actor:WeakRef
+var _source_self_modulate:=Color.WHITE
+var _last_reception_time:=-1.0
+var _appearance_key:=""
 
 func _ready() -> void:
 	z_index = 12
@@ -26,12 +30,13 @@ func _ready() -> void:
 		pillar.scale=Vector2(1,2)
 		pillar.z_as_relative=false;pillar.z_index=6
 	else:pillar = _make("pillar", 280, material, false)
-	var height:=ExtractionSpriteArt.character_height(Characters.current_id())*RoomHeroArt.WORLD_HEIGHT/RedrawnHeroArt.ART_HEIGHT
-	goddess = _make("goddess", height*float(ExtractionSpriteArt.SUCCESS_GODDESS_HEIGHT[Characters.current_id()])/float(ExtractionSpriteArt.SUCCESS_HEIGHT[Characters.current_id()]), material, false)
-	success = _make("success", height, material, true)
+	dissolve=Sprite2D.new();dissolve.name="DepartingCharacter"
+	_dissolve_material=ShaderMaterial.new();_dissolve_material.shader=preload("res://src/world/extraction_dissolve.gdshader")
+	dissolve.material=_dissolve_material;add_child(dissolve)
 	clear()
 
 func _exit_tree()->void:
+	_reset_dissolve()
 	if is_instance_valid(ground_rune) and ground_rune.get_parent()!=self:ground_rune.queue_free()
 
 func _make_beam_row(row:int,pivot:Vector2,scale_value:float,material:ShaderMaterial)->AnimatedSprite2D:
@@ -53,6 +58,7 @@ func _make(kind: String, height: float, material: ShaderMaterial, pixel: bool) -
 	sprite.sprite_frames = ExtractionSpriteArt.frames(kind)
 	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST if pixel else CanvasItem.TEXTURE_FILTER_LINEAR
 	sprite.material = RedrawnHeroArt.material() if kind=="prayer" else material
+	if kind=="prayer" and HanddrawnHeroArt.available(Characters.current_id()):sprite.material=null;sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
 	sprite.scale = Vector2.ONE * ExtractionSpriteArt.scale_for(kind, height)
 	add_child(sprite)
 	return sprite
@@ -68,20 +74,56 @@ func _place(sprite: AnimatedSprite2D, at: Vector2, frame_index: int, alpha := 1.
 	sprite.visible = alpha > 0.001
 
 func clear() -> void:
-	for sprite in [prayer,pillar,ground_rune,goddess,success]:
+	_hide_layers()
+	_reset_dissolve()
+
+func _hide_layers()->void:
+	for sprite in [prayer,pillar,ground_rune,dissolve]:
 		if is_instance_valid(sprite): sprite.hide()
+
+func _reset_dissolve()->void:
+	var source:Player=_source_actor.get_ref() if _source_actor!=null else null
+	if is_instance_valid(source):
+		source.self_modulate=_source_self_modulate
+		if source.extraction_pose==&"receiving":source.set_extraction_pose(&"receiving",false)
+	_source_actor=null;_last_reception_time=-1.0
+	if is_instance_valid(dissolve):dissolve.hide();dissolve.texture=null
+
+func _capture_dissolve(player:Player)->void:
+	_reset_dissolve()
+	var sprite:=player._sprite
+	dissolve.texture=sprite.sprite_frames.get_frame_texture(sprite.animation,sprite.frame)
+	dissolve.centered=sprite.centered;dissolve.offset=sprite.offset
+	dissolve.flip_h=sprite.flip_h;dissolve.flip_v=sprite.flip_v
+	dissolve.texture_filter=sprite.texture_filter;dissolve.global_transform=sprite.global_transform
+	dissolve.modulate=Color(sprite.modulate.r,sprite.modulate.g,sprite.modulate.b,1)
+	_source_actor=weakref(player);_source_self_modulate=player.self_modulate
+	var origin:=Vector2.ZERO;var size:=Vector2.ONE
+	var atlas:=dissolve.texture as AtlasTexture
+	if atlas!=null:
+		origin=atlas.region.position/atlas.atlas.get_size();size=atlas.region.size/atlas.atlas.get_size()
+	_dissolve_material.set_shader_parameter("frame_origin",origin)
+	_dissolve_material.set_shader_parameter("frame_size",size)
 
 func present(state: String, prayer_time: float, waiting_time: float, reception_time: float, at: Vector2, player: Player) -> void:
 	if not is_node_ready(): return
-	clear()
+	_hide_layers()
+	if state!="receiving":_reset_dissolve()
 	var reduced := ComicMotion.reduced()
 	var id:=Characters.current_id()
+	var appearance:=str(id)+("_set" if LegendarySets.form_unlocked(id) else "_normal")
+	if appearance!=_appearance_key:
+		prayer.sprite_frames=ExtractionSpriteArt.frames("prayer")
+		_appearance_key=appearance
 	# Read the real actor transform so room and legacy scenes share the same size.
 	prayer.scale=player._sprite.scale
-	var height:=ExtractionSpriteArt.character_height(id)*absf(player._sprite.scale.y)
-	success.scale=Vector2.ONE*ExtractionSpriteArt.scale_for("success",height)
-	goddess.scale=Vector2.ONE*ExtractionSpriteArt.scale_for("goddess",height*float(ExtractionSpriteArt.SUCCESS_GODDESS_HEIGHT[id])/float(ExtractionSpriteArt.SUCCESS_HEIGHT[id]))
-	var feet := player._sprite.to_global(RedrawnHeroArt.FOOT-Vector2.ONE*RedrawnHeroArt.CELL*.5)
+	# Use the same logical cell and sole as the current handdrawn/set model.
+	# The retired 96px anchor lifts the current 448px models far above ground.
+	var model_frames:=player._sprite.sprite_frames
+	var model_foot:Vector2=model_frames.get_meta("hd_foot",RedrawnHeroArt.FOOT)
+	var model_cell:=float(model_frames.get_meta("hd_cell",RedrawnHeroArt.CELL))
+	var feet := player._sprite.to_global(model_foot-Vector2.ONE*model_cell*.5)
+	prayer.material=player._sprite.material
 	var flipped := player.facing < 0
 	match state:
 		"praying":
@@ -94,13 +136,11 @@ func present(state: String, prayer_time: float, waiting_time: float, reception_t
 				_place(ground_rune,at,index,0.65 if reduced else 0.82)
 			_place(pillar, at, index, 0.65 if reduced else 0.82)
 		"receiving":
-			var direction := -1.0 if flipped else 1.0
-			if reception_time < 0.55:
-				_place(goddess, feet + Vector2(direction * float(ExtractionSpriteArt.SUCCESS_GODDESS_OFFSET[id])*success.scale.x,-3), mini(2,int(reception_time / 0.55 * 3)), clampf(reception_time / 0.12,0,1), flipped)
-				player.set_extraction_pose(&"receiving", false)
-			else:
-				player.set_extraction_pose(&"receiving", true)
-				var progress := clampf((reception_time - 0.55) / 1.30,0,1)
-				var fade := 1.0 - clampf((reception_time - 1.88) / 0.12,0,1)
-				var count:=success.sprite_frames.get_frame_count(&"default")
-				_place(success, feet, mini(count-1,int(progress*count)), fade, flipped)
+			if _source_actor==null or _source_actor.get_ref()!=player or reception_time<_last_reception_time:_capture_dissolve(player)
+			_last_reception_time=reception_time
+			var progress:=clampf(reception_time/ExtractionDirector.RECEPTION_SECONDS,0,1)
+			_dissolve_material.set_shader_parameter("progress",progress)
+			_dissolve_material.set_shader_parameter("reduced_motion",reduced)
+			dissolve.visible=progress<1
+			var shadow:=_source_self_modulate;shadow.a*=1.0-progress;player.self_modulate=shadow
+			player.set_extraction_pose(&"receiving",true)

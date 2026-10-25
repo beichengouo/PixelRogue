@@ -25,6 +25,16 @@ var art_scale := 2.4
 var phase := 1
 var max_phase := 1
 
+func phase_health() -> Dictionary:
+	var cutoffs:Array=BossPhaseRules.thresholds(boss_id)
+	var count:=cutoffs.size()-1
+	var active := 0
+	var ratio := clampf(hp / maxf(.001, max_hp), 0, 1)
+	while active < count - 1 and ratio <= cutoffs[active + 1]: active += 1
+	var ceiling: float = cutoffs[active] * max_hp
+	var floor_value: float = cutoffs[active + 1] * max_hp
+	return {"phase": active + 1, "count": count, "hp": clampf(hp - floor_value, 0, ceiling - floor_value), "max_hp": maxf(.001, ceiling - floor_value)}
+
 var _ability_index := 0
 var _ability_cd := 1.2
 var _channel := 0.0
@@ -47,7 +57,7 @@ func _ready() -> void:
 			visual.position = Vector2(0,-body_size.y*(art_scale-1)*0.5)
 	EventBus.player_died.connect(cancel_attacks)
 	EventBus.boss_started.emit(boss_id)
-	if not is_instance_valid(GameState.runtime_node) or not GameState.runtime_node._restoring:
+	if not self is RoomBoss and (not is_instance_valid(GameState.runtime_node) or not GameState.runtime_node._restoring):
 		Effects.text(_fx(),global_position+Vector2(0,-80),boss_title,EnemyAffixes.danger_color(9),30)
 		EventBus.request_screen_shake.emit(10.0)
 

@@ -4,6 +4,11 @@ uniform sampler2D snow_sprite : filter_nearest;
 uniform float snow_amount : hint_range(0.0,1.0) = 0.0;
 uniform float wet_amount : hint_range(0.0,1.0) = 0.0;
 uniform bool ground_plane = false;
+// Authored masks address only real luminous pixels baked into map models.
+// Defaults leave every existing weather surface unchanged.
+uniform int model_light_count = 0;
+uniform vec4 model_light_ellipses[16];
+uniform float model_light_frame = 0.0;
 varying vec4 vertex_tint;
 varying vec2 world_position;
 void vertex() {
@@ -27,7 +32,22 @@ void fragment() {
 	float grain = mix(mix(a,b,fraction.x),mix(c,d,fraction.x),fraction.y);
 	float ledge = ground_plane ? 1.0 : max(upper_edge, smoothstep(0.72,0.05,UV.y)*0.65);
 	float coverage = smoothstep(grain-0.18,grain+0.18,snow_amount) * ledge;
-	vec3 wet = original.rgb * (1.0-wet_amount*0.16);
+	float model_paint = 0.0;
+ if(model_light_count>0 && original.a>.01){
+  float bright=max(original.r,max(original.g,original.b));
+  float chroma=bright-min(original.r,min(original.g,original.b));
+  float luminous=max(smoothstep(.08,.24,chroma),smoothstep(.85,.99,bright)*.7);
+  for(int i=0;i<16;i++){
+   if(i>=model_light_count){break;}
+   vec4 area=model_light_ellipses[i];
+   if(any(greaterThan(abs(UV-area.xy),area.zw))){continue;}
+   float region=1.0-smoothstep(.55,1.0,length((UV-area.xy)/max(area.zw,vec2(.00001))));
+   model_paint=max(model_paint,region*smoothstep(.55,.90,bright)*luminous);
+  }
+ }
+ float lamp_power=model_light_frame==1.0?.92:(model_light_frame==2.0?1.035:(model_light_frame==3.0?.98:1.0));
+ vec3 model_color=original.rgb*mix(1.0,lamp_power,model_paint);
+ vec3 wet = model_color * (1.0-wet_amount*0.16);
 	vec3 settled_color = mix(vec3(0.83,0.90,0.94),snow.rgb,0.35) * (ground_plane ? 0.78 : 0.92);
 	COLOR = vec4(mix(wet*tint.rgb,settled_color,coverage*snow_amount),original.a*tint.a);
 }

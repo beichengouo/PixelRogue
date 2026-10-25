@@ -123,7 +123,7 @@ static func validate(data: Dictionary) -> Array[String]:
 			roles[role]=true
 		for role in ["player","shop","warehouse","contracts","prepare","relations","iris","result","training","dummy"]:
 			if not roles.has(role):errors.append("缺少营地固定交互点："+role)
-		if not data.layers.entities.is_empty() or roles.has("spawn"):errors.append("营地不允许随机敌人或刷怪点")
+		if data.layers.entities.any(func(entry:Dictionary)->bool:return not str(entry.asset_id).begins_with("light:") and str(RoomEditorCatalog.get_entry(str(entry.asset_id)).get("collision",""))!="light") or roles.has("spawn"):errors.append("营地不允许随机敌人或刷怪点")
 	var anchors: Array[Vector2i] = []
 	var sides := {}
 	if not data.get("ports",[]) is Array:return errors+["入口必须是数组"]

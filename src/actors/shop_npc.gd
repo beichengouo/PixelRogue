@@ -28,7 +28,7 @@ func _ready() -> void:
 	EventBus.rest_ended.connect(_on_rest_ended)
 	# 自带一盏灯：夜里商人的位置要能一眼看到（开张时亮、打烊时压暗）。
 	# 不做投影，范围也收得比较小 —— 影子交给月亮和蘑菇。
-	_npc_light = LightUtil.make_point_light(Color(1.0, 0.82, 0.5), 1.0, 165.0, false)
+	_npc_light = LightUtil.make_point_light(Color(1.0, 0.82, 0.5), 1.0, 165.0, false,"lamp")
 	_npc_light.position = Vector2(0.0, -22.0)
 	add_child(_npc_light)
 	_set_open(false)

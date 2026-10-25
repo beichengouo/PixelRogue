@@ -40,7 +40,7 @@ func _ready() -> void:
 	if not scene_object_id.is_empty() and art.texture!=null:
 		art.scale=Vector2.ONE*scene_width/art.texture.get_width();art.position.y=-art.texture.get_height()*art.scale.y*.5
 	add_child(art)
-	add_to_group("room_props")
+	if not is_instance_valid(room) or not room.prefetching:add_to_group("room_props")
 
 func take_damage(amount: float, _crit := false, _from := Vector2.ZERO, _source: Node = null) -> void:
 	if prop_kind != "crate" or hp <= 0: return

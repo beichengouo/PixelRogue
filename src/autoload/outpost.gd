@@ -21,6 +21,7 @@ func _ready() -> void:
 		data.bonds[npc]=clampi(int(data.bonds.get(npc,0)),0,BondRules.MAX)
 	data.version=VERSION
 	if migrated: commit()
+	RetiredMushrooms.redeem_bank()
 
 func gold() -> int: return int(data.get("gold",0))
 func max_rarity() -> int: return mini(2,int(data.get("danger",0)))
@@ -127,9 +128,12 @@ func commit() -> bool:
 	if ok: changed.emit()
 	return ok
 
-func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, initial_level:int=1, chapter_id:StringName=ChapterCatalog.FIRST,constellation:String="") -> bool:
+func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, initial_level:int=1, chapter_id:StringName=ChapterCatalog.FIRST,constellation:String="",skill_loadout:Variant=null,combat_mode:String="rooms") -> bool:
+	var skills:Variant=Skills.default_loadout() if skill_loadout==null else skill_loadout
+	if not CharacterUnlocks.valid_loadout(skills):return false
 	if not constellation.is_empty() and not FateCatalog.STARS.has(constellation):return false
-	if not ChapterCatalog.is_ready(chapter_id) or not ChapterCatalog.unlocked(chapter_id):return false
+	if combat_mode!="rooms":return false
+	if (not ChapterCatalog.is_ready(chapter_id) or not ChapterCatalog.unlocked(chapter_id)):return false
 	if not DepartureLevels.valid(initial_level):return false
 	if overfull() or not active_id().is_empty() or carried < 0:return false
 	if difficulty==0:
@@ -158,11 +162,14 @@ func start_sortie(loadout: Array, carried: int, danger: int, difficulty:int=0, i
 	if price > gold(): return false
 	var previous = data.duplicate(true)
 	var old_save = SaveService.data.duplicate(true)
+	var goal_before:=WorkshopGoals.snapshot()
 	data.gold = gold()-price
 	for key in required:data.inventory[key]=int(data.inventory.get(key,0))-int(required[key])
 	var id = "%d-%d" % [Time.get_unix_time_from_system()*1000,Time.get_ticks_usec()]
-	data.active = {"constellation":constellation,"chapter_id":str(chapter_id),"id":id,"status":"active","danger":danger,"difficulty":difficulty,"spent":price,"loadout":loadout.duplicate(),"carried":carried,"initial_level":initial_level,"level_cost":DepartureLevels.cost(initial_level)}
-	SaveService.data.run = {"chapter_id":str(chapter_id),"sortie_id":id,"departure":data.active.duplicate(true),"character":str(Characters.current_id()),"passive_id":str(PassiveDefinitions.selected(Characters.current_id()))}
+	data.active = {"combat_mode":combat_mode,"constellation":constellation,"chapter_id":str(chapter_id),"id":id,"status":"active","danger":danger,"difficulty":difficulty,"spent":price,"loadout":loadout.duplicate(),"carried":carried,"initial_level":initial_level,"level_cost":DepartureLevels.cost(initial_level),"skill_loadout":skills.duplicate()}
+	data.active["goal_before"]=goal_before
+	data.active["build_goal"]=BuildPaths.selected()
+	SaveService.data.run = {"combat_mode":combat_mode,"chapter_id":str(chapter_id),"sortie_id":id,"departure":data.active.duplicate(true),"character":str(Characters.current_id()),"passive_id":str(PassiveDefinitions.selected(Characters.current_id()))}
 	var evidence:=AchievementTracker.stage("departure",{"star":constellation})
 	if not commit():
 		AchievementTracker.finish_stage(evidence,false)
@@ -201,6 +208,14 @@ func settle_sortie(outcome: String) -> Dictionary:
 	var all_items: Array = GameState.items.duplicate()
 	for item in GameState.equipment.values():
 		if not item.is_empty(): all_items.append(item)
+	var stage_graph:RoomGraph=null
+	if is_instance_valid(GameState.runtime_node) and GameState.runtime_node is RoomRuntime:stage_graph=GameState.runtime_node.main.graph
+	var extreme:=success and stage_graph!=null and stage_graph.staged and stage_graph.boss_rush_completed
+	var exclusive_count:=0
+	if extreme:
+		var reward_rng:=RandomNumberGenerator.new();reward_rng.seed=stage_graph.stage_seed^0x71a39
+		exclusive_count=reward_rng.randi_range(StageRules.EXTREME_MATERIAL_MIN,StageRules.EXTREME_MATERIAL_MAX)
+		for index in exclusive_count:all_items.append(ExpeditionData.material(StageRules.EXTREME_MATERIAL))
 	var counts = {}
 	for item in all_items:
 		var id = str(item.get("id",""))
@@ -224,18 +239,29 @@ func settle_sortie(outcome: String) -> Dictionary:
 		if not data.has("material_known"):data.material_known={}
 		for id in material_report.brought_back:data.material_known[id]=true
 	var result = {"materials":material_report,"chapter_id":str(GameState.chapter_id),"chapter_cleared":GameState.chapter_cleared,"id":GameState.sortie_id,"outcome":outcome,"gold":payout,"spent":int(active.get("spent",0)),"wave":GameState.wave,"danger":GameState.danger,"difficulty":GameState.difficulty,"coins":GameState.coins,"coin_income":GameState.coins if success else 0,"sale_income":payout-GameState.coins if success else 0,"rows":rows,"build":_build_snapshot()}
+	result["goal_progress"]=WorkshopGoals.result(active.get("goal_before",{}),success)
+	result["combat_mode"]=GameState.combat_mode
+	result["memory_unlocked"]=CampStory.remember_clear(str(Characters.current_id()),str(GameState.chapter_id)) if success and GameState.chapter_cleared else ""
+	result["stage_index"]=stage_graph.stage_index if stage_graph!=null and stage_graph.staged else 0
+	result["clear_tier"]="extreme" if extreme else "normal" if success and GameState.chapter_cleared else "withdrawal" if success else "failed"
+	result["exclusive_materials"]=exclusive_count
+	if extreme:
+		var completions:Dictionary=data.get("extreme_clears",{});var chapter:=str(GameState.chapter_id)
+		completions[chapter]=int(completions.get(chapter,0))+1;data.extreme_clears=completions
 	data.active = {}
 	data.last_result = result
 	SaveService.data.run = {}
 	SaveService.data.runs = int(SaveService.data.get("runs",0))+1
 	SaveService.data.best_wave = maxi(int(SaveService.data.get("best_wave",0)),GameState.wave)
 	SaveService.data.meta_coins = int(SaveService.data.get("meta_coins",0))+payout
-	var evidence:=AchievementTracker.stage("extraction",{"rows":rows}) if success else {}
+	var evidence:=AchievementTracker.stage("extraction",{"rows":rows,"extreme":extreme}) if success else {}
 	if not commit():
 		if success:AchievementTracker.finish_stage(evidence,false)
 		data = before
 		SaveService.data = old_save
 		return {}
+	if stage_graph!=null and stage_graph.staged:
+		stage_graph.extraction_committed=success;stage_graph.run_failed=not success
 	if success:AchievementTracker.finish_stage(evidence,true);AchievementTracker.extracted()
 	return result
 
@@ -243,7 +269,9 @@ func abandon_saved() -> bool:
 	if active_id().is_empty() and not SaveService.has_run():return true
 	var before = data.duplicate(true)
 	var old_save = SaveService.data.duplicate(true)
-	data.last_result = {"id":active_id(),"outcome":"abandoned","gold":0,"spent":int(data.active.get("spent",0)),"difficulty":int(data.active.get("difficulty",SaveService.run_info().get("difficulty",1))),"rows":[]}
+	var goal_progress:=WorkshopGoals.result(data.get("active",{}).get("goal_before",{}),false)
+	data.last_result = {"goal_progress":goal_progress,"id":active_id(),"outcome":"abandoned","gold":0,"spent":int(data.active.get("spent",0)),"difficulty":int(data.active.get("difficulty",SaveService.run_info().get("difficulty",1))),"rows":[]}
+	data.last_result["combat_mode"]=str(data.active.get("combat_mode",SaveService.run_info().get("combat_mode","rooms")))
 	data.active = {}
 	SaveService.data.run = {}
 	if commit(): return true
@@ -259,11 +287,15 @@ func _ensure_contract_data()->void:
 	for npc in BondRules.NAMES:
 		if not data.bonds.has(npc):data.bonds[npc]=0
 func contract_needs(contract:Dictionary,stock:Dictionary={})->Dictionary:
-	if str(contract.get("id",""))!="survey":return contract.get("needs",{}).duplicate(true)
+	var job:Dictionary=data.get("contract_jobs",{}).get(str(contract.get("id","")),{})
+	var legacy:=str(job.get("status",""))=="accepted" and int(job.get("cost_revision",0))<34 and CommissionCosts.LEGACY.has(str(contract.id))
+	if str(contract.get("id",""))!="survey":return (CommissionCosts.LEGACY[str(contract.id)] if legacy else contract.get("needs",{})).duplicate(true)
 	var bank:Dictionary=data.get("inventory",{}) if stock.is_empty() else stock
-	var forest:Dictionary={"forest_sample":2,"wetland_sample":1};var city:Dictionary={"ruin_sample":3};var legacy:Dictionary={"forest_sample":1,"wetland_sample":1,"ruin_sample":1}
+	var forest:Dictionary={"forest_sample":8,"wetland_sample":4};var city:Dictionary={"ruin_sample":12}
+	if legacy:forest={"forest_sample":2,"wetland_sample":1};city={"ruin_sample":3}
+	var mixed:Dictionary={"forest_sample":1,"wetland_sample":1,"ruin_sample":1} if legacy else {"forest_sample":4,"wetland_sample":4,"ruin_sample":4}
 	var preferred_city:=str(data.get("contract_jobs",{}).get("survey",{}).get("chapter",""))==str(ChapterCatalog.NEXT)
-	for option:Dictionary in [city,forest,legacy] if preferred_city else [forest,city,legacy]:
+	for option:Dictionary in [city,forest,mixed] if preferred_city else [forest,city,mixed]:
 		var available:=true
 		for id in option:available=available and int(bank.get(id,0))>=int(option[id])
 		if available:return option.duplicate(true)
@@ -300,7 +332,7 @@ func accept_contract(index:int,now:int=-1,issuer:String="",chapter:StringName=Ch
 	if contract_status(contract,now)!="available":return false
 	var before=data.duplicate(true);var old=SaveService.data.duplicate(true);_ensure_contract_data()
 	var clock:=_contract_now(now);data.contract_clock=clock
-	data.contract_jobs[str(contract.id)]={"status":"accepted","accepted_at":clock,"deadline":clock+int(contract.hours)*3600,"chapter":str(chapter)}
+	data.contract_jobs[str(contract.id)]={"status":"accepted","accepted_at":clock,"deadline":clock+int(contract.hours)*3600,"chapter":str(chapter),"cost_revision":34}
 	data.tracked_contract=str(contract.id)
 	return _finish_mutation(before,old)
 func contract_remaining(contract:Dictionary,now:int=-1)->int:
@@ -333,18 +365,41 @@ func claim_contract(index:int,now:int=-1,issuer:String="")->bool:
 	var gained:=_add_bond(str(contract.owner),int(contract.bond),clock)
 	data.contract_jobs[str(contract.id)]={"status":"completed","completed_at":clock,"next_accept":BondRules.next_day(clock),"bond_gained":gained}
 	if str(data.get("tracked_contract",""))==str(contract.id):data.tracked_contract=""
-	var evidence:=AchievementTracker.stage("contract")
+	var evidence:=AchievementTracker.stage("contract",{"id":str(contract.id),"story":bool(contract.get("story",false))})
 	var success:=_finish_mutation(before,old);AchievementTracker.finish_stage(evidence,success)
 	return success
 
-func bond_event(npc: String, event: String, gain: int, gift = false) -> bool:
+func bond_event(npc: String, event: String, gain: int, gift = false, relation: String = "") -> bool:
 	var key = npc+":"+event
-	if not data.bonds.has(npc) or data.events.has(key): return false
+	var daily:=event=="daily_conversation"
+	if not data.bonds.has(npc) or (data.events.has(key) and not daily): return false
+	var definition: Dictionary = {}
+	for candidate: Dictionary in CampStory.EVENTS.get(npc,[]):
+		if str(candidate.id)==event: definition=candidate;break
+	if event=="invitation":definition=CampStory.invitation_event(npc)
+	if daily:
+		definition=CampStory.daily_event(npc)
+		if int(data.get("conversation_days",{}).get(npc,-1))==BondRules.day_key(BondRules.now()):return false
+	if definition.is_empty() or not CampStory.available(npc,definition): return false
+	gift=bool(definition.get("gift",false))
+	if relation not in ["","friendship","mutual_interest","romance"]: return false
+	if not definition.get("choices",[]).is_empty():
+		var allowed:=false
+		for option:Dictionary in definition.choices:
+			if option.has("relation") and str(option.relation)==relation:allowed=true
+		if not allowed:return false
+	if relation=="romance" and not CampStory.can_romance(npc): return false
 	if gift and int(data.inventory.get("memory_gift",0)) <= 0: return false
 	var before = data.duplicate(true)
 	var old_save = SaveService.data.duplicate(true)
 	if gift: data.inventory.memory_gift = int(data.inventory.memory_gift)-1
 	data.events[key] = true
+	if daily:
+		if not data.has("conversation_days"):data.conversation_days={}
+		data.conversation_days[npc]=BondRules.day_key(BondRules.now())
+	if not relation.is_empty():
+		if not data.has("relationships"): data.relationships={}
+		data.relationships[npc]=relation
 	_add_bond(npc,clampi(gain,0,5))
 	if commit(): return true
 	data = before
@@ -362,6 +417,9 @@ func _lost_items()->Array:
 	result.assign(counts.values());return result
 func mark_dead(wave: int, carried: int) -> void:
 	if active_id().is_empty(): return
+	if is_instance_valid(GameState.runtime_node) and GameState.runtime_node is RoomRuntime:
+		var graph:RoomGraph=GameState.runtime_node.main.graph
+		if graph.staged:graph.run_failed=true;data.active["stage_index"]=graph.stage_index
 	data.active["status"]="dead"
 	data.active["wave"]=wave
 	data.active["lost_coins"]=carried
@@ -377,6 +435,9 @@ func finalize_death() -> bool:
 	var old_save=SaveService.data.duplicate(true)
 	var active: Dictionary=data.active
 	data.last_result={"id":active.id,"outcome":"dead","gold":0,"spent":int(active.spent),"difficulty":int(active.get("difficulty",1)),"wave":int(active.get("wave",1)),"coins":int(active.get("lost_coins",0)),"rows":[],"lost_items":active.get("lost_items",[]),"materials":active.get("materials",{}),"build":active.get("build",{})}
+	data.last_result["combat_mode"]=str(active.get("combat_mode","rooms"))
+	data.last_result["goal_progress"]=WorkshopGoals.result(active.get("goal_before",{}),false)
+	data.last_result["stage_index"]=int(active.get("stage_index",0));data.last_result["clear_tier"]="failed"
 	data.active={}
 	SaveService.data.run={}
 	SaveService.data.runs=int(SaveService.data.get("runs",0))+1
@@ -392,6 +453,7 @@ func _build_snapshot() -> Dictionary:
 	var build = GameState.snapshot()
 	build.erase("world_state")
 	build.erase("environment")
+	build["build_goal"]=str(data.get("active",{}).get("build_goal",""))
 	return build
 
 func is_locked(id:String)->bool:return bool(data.get("locks",{}).get(id,false))
@@ -414,9 +476,8 @@ func loadout_counts(loadout:Array)->Dictionary:
 	return result
 func reserved_counts(extra:Dictionary={})->Dictionary:
 	var result=task_reserves()
-	var goal_entry:=MaterialWorkshopCatalog.research(MaterialWorkshop.goal())
-	if not goal_entry.is_empty() and not MaterialWorkshopCatalog.unlocked(str(goal_entry.id)):
-		for id in goal_entry.needs:result[id]=int(result.get(id,0))+int(goal_entry.needs[id])
+	var goal_needs:=WorkshopGoals.requirements()
+	for id in goal_needs:result[id]=int(result.get(id,0))+int(goal_needs[id])
 	for preset in data.get("presets",{}).values():
 		var counts=loadout_counts(preset.get("loadout",[]))
 		for id in counts:result[id]=maxi(int(result.get(id,0)),int(counts[id]))

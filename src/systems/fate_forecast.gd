@@ -1,12 +1,15 @@
 class_name FateForecast
 extends RefCounted
 static func describe()->String:
-	if FateCatalog.star().is_empty():return "本次出征未选择星象。可在营地女神灯坛或出发准备中免费选择。"
+	if FateCatalog.star().is_empty():return "出发星象将在第一阶段起始房间以三选一方式确定，仅本次出征有效。"
 	var runtime:=GameState.runtime_node as RoomRuntime
 	if not is_instance_valid(runtime):return "星象仅在正式出征中观测既有房间。"
 	var graph:RoomGraph=runtime.main.graph;var lines:Array[String]=[]
 	var bosses:Array=graph.boss_ids();var index:=mini(graph.defeated.size(),bosses.size())
-	if index<bosses.size():
+	if graph.staged:
+		var name_value:="三首领连战" if graph.stage_index==4 else BossRoster.title_of(StringName(bosses[graph.stage_index-1]))
+		lines.append("第%d阶段 · %s\n首领位于本阶段固定终点；沿已开放的道路探索。"%[graph.stage_index,name_value])
+	elif index<bosses.size():
 		var boss:Dictionary=BossRoster.get_data(StringName(bosses[index]))
 		lines.append("下一位章节首领 · %s\n固定在第%d场遭遇；到达节点后的下一次入房必定进入首领房。"%[str(boss.get("title",bosses[index])),int(RoomGraph.BOSS_ENTRY_DEADLINES[index])])
 	else:lines.append("本章三位首领均已击败。")

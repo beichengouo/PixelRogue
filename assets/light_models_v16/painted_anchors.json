@@ -1,0 +1,3584 @@
+{
+  "city_boss_nameless_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [],
+    "uncertain": [
+      "All four current background tiles inspected. Gold finials, star inlays and distant stars are not verified luminous model cores; do not animate them. The 1px markers describe illumination regions only."
+    ],
+    "evidence": [],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {}
+  },
+  "city_boss_sephra_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        1281.0,
+        140.0,
+        6.0,
+        17.0,
+        "lamp"
+      ],
+      [
+        208.0,
+        824.0,
+        5.0,
+        13.0,
+        "lamp"
+      ],
+      [
+        1533.0,
+        140.0,
+        6.0,
+        17.0,
+        "lamp"
+      ],
+      [
+        2606.0,
+        824.0,
+        5.0,
+        13.0,
+        "lamp"
+      ],
+      [
+        1280.0,
+        1536.0,
+        6.0,
+        16.0,
+        "lamp"
+      ],
+      [
+        1533.0,
+        1536.0,
+        6.0,
+        16.0,
+        "lamp"
+      ],
+      [
+        2599.0,
+        1330.0,
+        5.0,
+        12.0,
+        "lamp"
+      ]
+    ],
+    "uncertain": [
+      "Lower-left side wall near canvas (219,1328) has reflected glow but no verified opaque lamp core; intentionally not masked."
+    ],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1281,
+          140,
+          6,
+          17
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 302
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          208,
+          824,
+          5,
+          13
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 170
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          125,
+          140,
+          6,
+          17
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 308
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1198,
+          824,
+          5,
+          13
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 175
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1280,
+          640,
+          6,
+          16
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 261
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          125,
+          640,
+          6,
+          16
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 293
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1191,
+          434,
+          5,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_1.png": 171
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/walls_0_0.png": [
+        [
+          1281.0,
+          140.0,
+          6.0,
+          17.0,
+          "lamp"
+        ],
+        [
+          208.0,
+          824.0,
+          5.0,
+          13.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          1533.0,
+          140.0,
+          6.0,
+          17.0,
+          "lamp"
+        ],
+        [
+          2606.0,
+          824.0,
+          5.0,
+          13.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_1_1.png": [
+        [
+          2599.0,
+          1330.0,
+          5.0,
+          12.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/foreground_1_0.png": [
+        [
+          1280.0,
+          1536.0,
+          6.0,
+          16.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/foreground_1_1.png": [
+        [
+          1533.0,
+          1536.0,
+          6.0,
+          16.0,
+          "lamp"
+        ]
+      ]
+    }
+  },
+  "city_boss_verena_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        363.0,
+        156.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        617.0,
+        156.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        991.0,
+        252.0,
+        4.0,
+        10.0,
+        "fire"
+      ],
+      [
+        1181.0,
+        209.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1198.0,
+        189.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1215.0,
+        209.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        185.0,
+        703.0,
+        5.0,
+        13.0,
+        "fire"
+      ],
+      [
+        2200.0,
+        156.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        2451.0,
+        156.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1824.0,
+        252.0,
+        4.0,
+        10.0,
+        "fire"
+      ],
+      [
+        1600.0,
+        209.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1617.0,
+        189.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1634.0,
+        209.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        2630.0,
+        703.0,
+        5.0,
+        13.0,
+        "fire"
+      ],
+      [
+        169.0,
+        955.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        182.0,
+        935.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        195.0,
+        955.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        564.0,
+        1606.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        993.0,
+        1606.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1181.0,
+        1555.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1198.0,
+        1537.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1215.0,
+        1555.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        2621.0,
+        955.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        2634.0,
+        935.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        2647.0,
+        955.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1823.0,
+        1606.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        2250.0,
+        1606.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1600.0,
+        1555.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1617.0,
+        1537.0,
+        4.0,
+        9.0,
+        "fire"
+      ],
+      [
+        1634.0,
+        1555.0,
+        4.0,
+        9.0,
+        "fire"
+      ]
+    ],
+    "uncertain": [],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          363,
+          156,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 93
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          617,
+          156,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 99
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          991,
+          252,
+          4,
+          10
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 112
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1181,
+          209,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 105
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1198,
+          189,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 107
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1215,
+          209,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 97
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          185,
+          703,
+          5,
+          13
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 197
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          792,
+          156,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 96
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1043,
+          156,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 107
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          416,
+          252,
+          4,
+          10
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 121
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          192,
+          209,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 105
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          209,
+          189,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 104
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          226,
+          209,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 105
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1222,
+          703,
+          5,
+          13
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 196
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          169,
+          59,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 35
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          182,
+          39,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 106
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          195,
+          59,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 60
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          564,
+          710,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 100
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          993,
+          710,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 107
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1181,
+          659,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 79
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1198,
+          641,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 107
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1215,
+          659,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 83
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1213,
+          59,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_1.png": 59
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1226,
+          39,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_1.png": 107
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1239,
+          59,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_1.png": 64
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          415,
+          710,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 103
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          842,
+          710,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 106
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          192,
+          659,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 107
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          209,
+          641,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 106
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          226,
+          659,
+          4,
+          9
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 106
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/walls_0_0.png": [
+        [
+          363.0,
+          156.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          617.0,
+          156.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          991.0,
+          252.0,
+          4.0,
+          10.0,
+          "fire"
+        ],
+        [
+          1181.0,
+          209.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1198.0,
+          189.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1215.0,
+          209.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          185.0,
+          703.0,
+          5.0,
+          13.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          2200.0,
+          156.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          2451.0,
+          156.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1824.0,
+          252.0,
+          4.0,
+          10.0,
+          "fire"
+        ],
+        [
+          1600.0,
+          209.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1617.0,
+          189.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1634.0,
+          209.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          2630.0,
+          703.0,
+          5.0,
+          13.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/walls_1_0.png": [
+        [
+          169.0,
+          955.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          182.0,
+          935.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          195.0,
+          955.0,
+          4.0,
+          9.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/walls_1_1.png": [
+        [
+          2621.0,
+          955.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          2634.0,
+          935.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          2647.0,
+          955.0,
+          4.0,
+          9.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/foreground_1_0.png": [
+        [
+          564.0,
+          1606.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          993.0,
+          1606.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1181.0,
+          1555.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1198.0,
+          1537.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1215.0,
+          1555.0,
+          4.0,
+          9.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/foreground_1_1.png": [
+        [
+          1823.0,
+          1606.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          2250.0,
+          1606.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1600.0,
+          1555.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1617.0,
+          1537.0,
+          4.0,
+          9.0,
+          "fire"
+        ],
+        [
+          1634.0,
+          1555.0,
+          4.0,
+          9.0,
+          "fire"
+        ]
+      ]
+    }
+  },
+  "city_eclipse_court_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        1284.0,
+        128.0,
+        6.0,
+        8.0,
+        "lamp"
+      ],
+      [
+        1533.0,
+        128.0,
+        6.0,
+        8.0,
+        "lamp"
+      ],
+      [
+        1284.0,
+        1466.0,
+        6.0,
+        8.0,
+        "lamp"
+      ],
+      [
+        1533.0,
+        1469.0,
+        6.0,
+        8.0,
+        "lamp"
+      ]
+    ],
+    "uncertain": [],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1284,
+          128,
+          6,
+          8
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 91
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          125,
+          128,
+          6,
+          8
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 45
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1284,
+          570,
+          6,
+          8
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 29,
+        "visible_core_planes": {
+          "detail_v17/background_1_0.png": 29,
+          "detail_v17/foreground_1_0.png": 41
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          125,
+          573,
+          6,
+          8
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 9,
+        "visible_core_planes": {
+          "detail_v17/background_1_1.png": 9,
+          "detail_v17/foreground_1_1.png": 24
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/background_1_0.png": [
+        [
+          1284.0,
+          1466.0,
+          6.0,
+          8.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_1_1.png": [
+        [
+          1533.0,
+          1469.0,
+          6.0,
+          8.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_0.png": [
+        [
+          1284.0,
+          128.0,
+          6.0,
+          8.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          1533.0,
+          128.0,
+          6.0,
+          8.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/foreground_1_0.png": [
+        [
+          1284.0,
+          1466.0,
+          6.0,
+          8.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/foreground_1_1.png": [
+        [
+          1533.0,
+          1469.0,
+          6.0,
+          8.0,
+          "lamp"
+        ]
+      ]
+    }
+  },
+  "city_name_archive_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        1287.0,
+        136.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        237.0,
+        704.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        1529.0,
+        136.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        2579.0,
+        704.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        237.0,
+        976.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        1287.0,
+        1440.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        2579.0,
+        976.0,
+        8.0,
+        12.0,
+        "lamp"
+      ],
+      [
+        1525.0,
+        1440.0,
+        8.0,
+        12.0,
+        "lamp"
+      ]
+    ],
+    "uncertain": [],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1287,
+          136,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 297
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          237,
+          704,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 296
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          121,
+          136,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 297
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1171,
+          704,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 297
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          237,
+          80,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 296
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1287,
+          544,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 297,
+        "visible_core_planes": {
+          "detail_v17/background_1_0.png": 297
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1171,
+          80,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_1.png": 297
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          117,
+          544,
+          8,
+          12
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 297,
+        "visible_core_planes": {
+          "detail_v17/background_1_1.png": 297
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/background_1_0.png": [
+        [
+          1287.0,
+          1440.0,
+          8.0,
+          12.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_1_1.png": [
+        [
+          1525.0,
+          1440.0,
+          8.0,
+          12.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_0.png": [
+        [
+          1287.0,
+          136.0,
+          8.0,
+          12.0,
+          "lamp"
+        ],
+        [
+          237.0,
+          704.0,
+          8.0,
+          12.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          1529.0,
+          136.0,
+          8.0,
+          12.0,
+          "lamp"
+        ],
+        [
+          2579.0,
+          704.0,
+          8.0,
+          12.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_1_0.png": [
+        [
+          237.0,
+          976.0,
+          8.0,
+          12.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_1_1.png": [
+        [
+          2579.0,
+          976.0,
+          8.0,
+          12.0,
+          "lamp"
+        ]
+      ]
+    }
+  },
+  "city_observatory_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [],
+    "uncertain": [
+      "All four current background tiles inspected. Gold star chart, blue foliage and sky stars cannot be reliably treated as model lamps/crystals. Leave these pixels unchanged."
+    ],
+    "evidence": [],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {}
+  },
+  "city_silent_gate_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        350.0,
+        184.0,
+        6.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        1252.0,
+        142.0,
+        5.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        186.0,
+        684.0,
+        5.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        2469.0,
+        188.0,
+        6.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        1568.0,
+        142.0,
+        5.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        2630.0,
+        684.0,
+        5.0,
+        10.0,
+        "lamp"
+      ]
+    ],
+    "uncertain": [],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          350,
+          184,
+          6,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 43
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1252,
+          142,
+          5,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 157
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          186,
+          684,
+          5,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 159
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1061,
+          188,
+          6,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 141
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          160,
+          142,
+          5,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 159
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1222,
+          684,
+          5,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 159
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/walls_0_0.png": [
+        [
+          350.0,
+          184.0,
+          6.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          1252.0,
+          142.0,
+          5.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          186.0,
+          684.0,
+          5.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          2469.0,
+          188.0,
+          6.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          1568.0,
+          142.0,
+          5.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          2630.0,
+          684.0,
+          5.0,
+          10.0,
+          "lamp"
+        ]
+      ]
+    }
+  },
+  "city_star_canal_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [],
+    "uncertain": [
+      "All four current background tiles inspected. Bright cyan areas are canal-water reflections, not a flame, lamp wick or crystal model. Do not animate these as lamp cores."
+    ],
+    "evidence": [],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {}
+  },
+  "city_wax_street_v01": {
+    "canvas": [
+      2816,
+      1792
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        294.0,
+        325.0,
+        10.0,
+        15.0,
+        "lamp"
+      ],
+      [
+        1210.0,
+        202.0,
+        7.0,
+        13.0,
+        "lamp"
+      ],
+      [
+        180.0,
+        678.0,
+        9.0,
+        15.0,
+        "lamp"
+      ],
+      [
+        2523.0,
+        320.0,
+        10.0,
+        15.0,
+        "lamp"
+      ],
+      [
+        1606.0,
+        196.0,
+        7.0,
+        13.0,
+        "lamp"
+      ],
+      [
+        2636.0,
+        678.0,
+        9.0,
+        15.0,
+        "lamp"
+      ],
+      [
+        1193.0,
+        1536.0,
+        9.0,
+        14.0,
+        "lamp"
+      ],
+      [
+        1622.0,
+        1536.0,
+        9.0,
+        14.0,
+        "lamp"
+      ]
+    ],
+    "uncertain": [],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          294,
+          325,
+          10,
+          15
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 467,
+        "visible_core_planes": {
+          "detail_v17/background_0_0.png": 467
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1210,
+          202,
+          7,
+          13
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 281
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          180,
+          678,
+          9,
+          15
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 420
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1115,
+          320,
+          10,
+          15
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 450,
+        "visible_core_planes": {
+          "detail_v17/background_0_1.png": 450,
+          "detail_v17/walls_0_1.png": 13
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          198,
+          196,
+          7,
+          13
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 281
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1228,
+          678,
+          9,
+          15
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 420
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          1193,
+          640,
+          9,
+          14
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_0.png": 391
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          214,
+          640,
+          9,
+          14
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/foreground_1_1.png": 391
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/background_0_0.png": [
+        [
+          294.0,
+          325.0,
+          10.0,
+          15.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_0_1.png": [
+        [
+          2523.0,
+          320.0,
+          10.0,
+          15.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_0.png": [
+        [
+          1210.0,
+          202.0,
+          7.0,
+          13.0,
+          "lamp"
+        ],
+        [
+          180.0,
+          678.0,
+          9.0,
+          15.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          2523.0,
+          320.0,
+          10.0,
+          15.0,
+          "lamp"
+        ],
+        [
+          1606.0,
+          196.0,
+          7.0,
+          13.0,
+          "lamp"
+        ],
+        [
+          2636.0,
+          678.0,
+          9.0,
+          15.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/foreground_1_0.png": [
+        [
+          1193.0,
+          1536.0,
+          9.0,
+          14.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/foreground_1_1.png": [
+        [
+          1622.0,
+          1536.0,
+          9.0,
+          14.0,
+          "lamp"
+        ]
+      ]
+    }
+  },
+  "camp_starlight_corridor_v02": {
+    "canvas": [
+      4224,
+      2688
+    ],
+    "coordinate_space": "scene.json canvas pixels; centers derived from planes.rect_px, never 1px marker positions",
+    "centers": [
+      [
+        667.0,
+        238.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        1200.0,
+        239.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        355.0,
+        498.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        498.0,
+        711.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        1479.0,
+        280.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        1815.0,
+        164.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        1956.0,
+        224.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        2272.0,
+        223.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        2410.0,
+        164.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        2406.0,
+        446.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        1889.0,
+        725.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        2264.0,
+        812.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        2715.0,
+        739.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        1905.0,
+        37.0,
+        8.0,
+        19.0,
+        "fire"
+      ],
+      [
+        2325.0,
+        36.0,
+        8.0,
+        19.0,
+        "fire"
+      ],
+      [
+        2825.0,
+        252.0,
+        6.0,
+        8.0,
+        "lamp"
+      ],
+      [
+        3597.0,
+        247.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        3759.0,
+        407.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        3897.0,
+        422.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        3441.0,
+        828.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        3695.0,
+        802.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        262.0,
+        934.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        98.0,
+        1238.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        325.0,
+        1296.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        550.0,
+        1200.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        968.0,
+        1201.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        247.0,
+        1530.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        398.0,
+        1758.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        1867.0,
+        1004.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        2575.0,
+        1123.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        1802.0,
+        1525.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        2425.0,
+        1526.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        1955.0,
+        1728.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        3961.0,
+        930.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        2839.0,
+        1127.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        4131.0,
+        1243.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        3901.0,
+        1304.0,
+        7.0,
+        13.0,
+        "fire"
+      ],
+      [
+        3926.0,
+        1287.0,
+        6.0,
+        12.0,
+        "fire"
+      ],
+      [
+        3987.0,
+        1549.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        185.0,
+        2153.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        1228.0,
+        2113.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        2622.0,
+        1851.0,
+        8.0,
+        10.0,
+        "lamp"
+      ],
+      [
+        1903.0,
+        2222.0,
+        9.0,
+        20.0,
+        "fire"
+      ],
+      [
+        2326.0,
+        2222.0,
+        9.0,
+        20.0,
+        "fire"
+      ],
+      [
+        1815.0,
+        2374.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        1959.0,
+        2433.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        2271.0,
+        2433.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        2411.0,
+        2373.0,
+        7.0,
+        9.0,
+        "lamp"
+      ],
+      [
+        3986.0,
+        1922.0,
+        9.0,
+        11.0,
+        "lamp"
+      ],
+      [
+        2966.0,
+        2403.0,
+        8.0,
+        10.0,
+        "lamp"
+      ]
+    ],
+    "uncertain": [],
+    "evidence": [
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          667,
+          238,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 240
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          1200,
+          239,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_0.png": 241
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          355,
+          498,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 192,
+        "visible_core_planes": {
+          "detail_v17/background_0_0.png": 192
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_0.png",
+        "local": [
+          498,
+          711,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 272,
+        "visible_core_planes": {
+          "detail_v17/background_0_0.png": 272
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          71,
+          280,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 190
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          407,
+          164,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 169
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          548,
+          224,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 170
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          864,
+          223,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 162
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1002,
+          164,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 175
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          998,
+          446,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 274,
+        "visible_core_planes": {
+          "detail_v17/background_0_1.png": 274
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          481,
+          725,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 290,
+        "visible_core_planes": {
+          "detail_v17/background_0_1.png": 290
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          856,
+          812,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 203,
+        "visible_core_planes": {
+          "detail_v17/background_0_1.png": 203
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          1307,
+          739,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 228,
+        "visible_core_planes": {
+          "detail_v17/background_0_1.png": 228
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          497,
+          37,
+          8,
+          19
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 333
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_1.png",
+        "local": [
+          917,
+          36,
+          8,
+          19
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_1.png": 353
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_2.png",
+        "local": [
+          9,
+          252,
+          6,
+          8
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_2.png": 143
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_2.png",
+        "local": [
+          781,
+          247,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_0_2.png": 223
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_2.png",
+        "local": [
+          943,
+          407,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 189,
+        "visible_core_planes": {
+          "detail_v17/background_0_2.png": 189
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_2.png",
+        "local": [
+          1081,
+          422,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 175,
+        "visible_core_planes": {
+          "detail_v17/background_0_2.png": 175
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_2.png",
+        "local": [
+          625,
+          828,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 236,
+        "visible_core_planes": {
+          "detail_v17/background_0_2.png": 236
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_0_2.png",
+        "local": [
+          879,
+          802,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 244,
+        "visible_core_planes": {
+          "detail_v17/background_0_2.png": 244
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          262,
+          38,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 214
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          98,
+          342,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 222
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          325,
+          400,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/paths_1_0.png": 241
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          550,
+          304,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 300,
+        "visible_core_planes": {
+          "detail_v17/background_1_0.png": 300
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          968,
+          305,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 20,
+        "visible_core_planes": {
+          "detail_v17/background_1_0.png": 20,
+          "detail_v17/paths_1_0.png": 269
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          247,
+          634,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_0.png": 242
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_0.png",
+        "local": [
+          398,
+          862,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 276,
+        "visible_core_planes": {
+          "detail_v17/background_1_0.png": 276
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          459,
+          108,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/paths_1_1.png": 260
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1167,
+          227,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 232,
+        "visible_core_planes": {
+          "detail_v17/background_1_1.png": 232
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          394,
+          629,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 303,
+        "visible_core_planes": {
+          "detail_v17/background_1_1.png": 303
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          1017,
+          630,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 293,
+        "visible_core_planes": {
+          "detail_v17/background_1_1.png": 293
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_1.png",
+        "local": [
+          547,
+          832,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 301,
+        "visible_core_planes": {
+          "detail_v17/background_1_1.png": 301
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_2.png",
+        "local": [
+          1145,
+          34,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_2.png": 143
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_2.png",
+        "local": [
+          23,
+          231,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 184,
+        "visible_core_planes": {
+          "detail_v17/background_1_2.png": 184
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_2.png",
+        "local": [
+          1315,
+          347,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_2.png": 184
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_2.png",
+        "local": [
+          1085,
+          408,
+          7,
+          13
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/paths_1_2.png": 271
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_2.png",
+        "local": [
+          1110,
+          391,
+          6,
+          12
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 75,
+        "visible_core_planes": {
+          "detail_v17/background_1_2.png": 75,
+          "detail_v17/paths_1_2.png": 128
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_1_2.png",
+        "local": [
+          1171,
+          653,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_1_2.png": 202
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_0.png",
+        "local": [
+          185,
+          361,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_0.png": 227
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_0.png",
+        "local": [
+          1228,
+          321,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 184,
+        "visible_core_planes": {
+          "detail_v17/background_2_0.png": 184
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          1214,
+          59,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 204,
+        "visible_core_planes": {
+          "detail_v17/background_2_1.png": 204
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          495,
+          430,
+          9,
+          20
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 275,
+        "visible_core_planes": {
+          "detail_v17/background_2_1.png": 275,
+          "detail_v17/walls_2_1.png": 217
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          918,
+          430,
+          9,
+          20
+        ],
+        "kind": "fire",
+        "background_opaque_bright_pixels": 274,
+        "visible_core_planes": {
+          "detail_v17/background_2_1.png": 274,
+          "detail_v17/walls_2_1.png": 217
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          407,
+          582,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_1.png": 139
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          551,
+          641,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_1.png": 184
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          863,
+          641,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_1.png": 188
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_1.png",
+        "local": [
+          1003,
+          581,
+          7,
+          9
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_1.png": 140
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_2.png",
+        "local": [
+          1170,
+          130,
+          9,
+          11
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_2.png": 304
+        },
+        "confidence": "manual_core_confirmed_visible"
+      },
+      {
+        "plane": "detail_v17/background_2_2.png",
+        "local": [
+          150,
+          611,
+          8,
+          10
+        ],
+        "kind": "lamp",
+        "background_opaque_bright_pixels": 0,
+        "visible_core_planes": {
+          "detail_v17/walls_2_2.png": 232
+        },
+        "confidence": "manual_core_confirmed_visible"
+      }
+    ],
+    "constraints": "Bind matching UV ellipses on all authored planes, including walls: many background RGB cores have alpha=0 while walls are opaque. Only original luminous core pixels inside these conservative ellipses; do not brighten the surrounding hardware, floor, wall, reflected light or an entire circle. No extra overlay sprites.",
+    "plane_centers": {
+      "detail_v17/background_0_0.png": [
+        [
+          355.0,
+          498.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          498.0,
+          711.0,
+          9.0,
+          11.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_0_1.png": [
+        [
+          2406.0,
+          446.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          1889.0,
+          725.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          2264.0,
+          812.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          2715.0,
+          739.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_0_2.png": [
+        [
+          3759.0,
+          407.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          3897.0,
+          422.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          3441.0,
+          828.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          3695.0,
+          802.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_1_0.png": [
+        [
+          550.0,
+          1200.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          968.0,
+          1201.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          398.0,
+          1758.0,
+          9.0,
+          11.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_1_1.png": [
+        [
+          2575.0,
+          1123.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          1802.0,
+          1525.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          2425.0,
+          1526.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          1955.0,
+          1728.0,
+          9.0,
+          11.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_1_2.png": [
+        [
+          2839.0,
+          1127.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          3926.0,
+          1287.0,
+          6.0,
+          12.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/background_2_0.png": [
+        [
+          1228.0,
+          2113.0,
+          7.0,
+          9.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/background_2_1.png": [
+        [
+          2622.0,
+          1851.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          1903.0,
+          2222.0,
+          9.0,
+          20.0,
+          "fire"
+        ],
+        [
+          2326.0,
+          2222.0,
+          9.0,
+          20.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/paths_1_0.png": [
+        [
+          325.0,
+          1296.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          968.0,
+          1201.0,
+          9.0,
+          11.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/paths_1_1.png": [
+        [
+          1867.0,
+          1004.0,
+          9.0,
+          11.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/paths_1_2.png": [
+        [
+          3901.0,
+          1304.0,
+          7.0,
+          13.0,
+          "fire"
+        ],
+        [
+          3926.0,
+          1287.0,
+          6.0,
+          12.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/walls_0_0.png": [
+        [
+          667.0,
+          238.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          1200.0,
+          239.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_0_1.png": [
+        [
+          1479.0,
+          280.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          1815.0,
+          164.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          1956.0,
+          224.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          2272.0,
+          223.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          2410.0,
+          164.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          1905.0,
+          37.0,
+          8.0,
+          19.0,
+          "fire"
+        ],
+        [
+          2325.0,
+          36.0,
+          8.0,
+          19.0,
+          "fire"
+        ]
+      ],
+      "detail_v17/walls_0_2.png": [
+        [
+          2825.0,
+          252.0,
+          6.0,
+          8.0,
+          "lamp"
+        ],
+        [
+          3597.0,
+          247.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_1_0.png": [
+        [
+          262.0,
+          934.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          98.0,
+          1238.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          247.0,
+          1530.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_1_2.png": [
+        [
+          3961.0,
+          930.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          4131.0,
+          1243.0,
+          8.0,
+          10.0,
+          "lamp"
+        ],
+        [
+          3987.0,
+          1549.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_2_0.png": [
+        [
+          185.0,
+          2153.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_2_1.png": [
+        [
+          1903.0,
+          2222.0,
+          9.0,
+          20.0,
+          "fire"
+        ],
+        [
+          2326.0,
+          2222.0,
+          9.0,
+          20.0,
+          "fire"
+        ],
+        [
+          1815.0,
+          2374.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          1959.0,
+          2433.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          2271.0,
+          2433.0,
+          7.0,
+          9.0,
+          "lamp"
+        ],
+        [
+          2411.0,
+          2373.0,
+          7.0,
+          9.0,
+          "lamp"
+        ]
+      ],
+      "detail_v17/walls_2_2.png": [
+        [
+          3986.0,
+          1922.0,
+          9.0,
+          11.0,
+          "lamp"
+        ],
+        [
+          2966.0,
+          2403.0,
+          8.0,
+          10.0,
+          "lamp"
+        ]
+      ]
+    }
+  }
+}

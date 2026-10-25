@@ -6,6 +6,10 @@ static var _cache:Dictionary={}
 var remaining:=.4
 var duration:=.4
 var sprite:AnimatedSprite2D
+var _field_owner:WeakRef
+var _field_offset:=Vector2(0,14)
+var _hd_id:=""
+var _detail_material:ShaderMaterial
 static func frames(kind:String,phase:="flight")->Array[Texture2D]:
 	if phase=="flight" and LargeSkillArt.ELF.has(kind):return LargeSkillArt.frames(LargeSkillArt.ELF[kind])
 	var key:=kind+"_"+phase
@@ -43,19 +47,40 @@ static func spawn(parent:Node,at:Vector2,kind:String,size:=72.0,lifetime:=.4)->I
 	if impact and parent.get_tree().get_nodes_in_group("legendary_full_impact").size()>=24:
 		Effects.hit_spark(parent,at,Color("c8e59d"),2);return null
 	var fx:=IlyuaFX.new();fx.position=at;fx.remaining=maxf(lifetime,.65) if size>=144 else lifetime;fx.duration=fx.remaining
+	var hd:Texture2D
+	if size>=120 and SizedSkillArt.ELF.has(kind):
+		fx._hd_id=str(SizedSkillArt.ELF[kind])
+		var pixels:=SizedSkillArt.screen_extent(parent,Vector2.ONE*size) if parent is CanvasItem else size*3
+		hd=SizedSkillArt.texture(fx._hd_id,pixels)
+		if hd!=null:textures.assign([hd,hd,hd,hd])
 	fx.sprite=AnimatedSprite2D.new();var animation:=SpriteFrames.new()
 	animation.set_animation_speed(&"default",4 if size>=144 and lifetime>.6 else (4/maxf(.65,lifetime) if size>=144 else 12 if lifetime>.6 else 16));animation.set_animation_loop(&"default",lifetime>.6)
 	for texture in textures:animation.add_frame(&"default",texture)
-	if kind in ["trap","spread_vine","zone","wild_zone"]:fx.sprite.modulate.a=.55
+	if kind in ["trap","spread_vine","zone","wild_zone"]:fx.sprite.modulate.a=.42
 	fx.sprite.sprite_frames=animation;fx.sprite.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	fx.sprite.material=RedrawnHeroArt.material()
+	if hd!=null:
+		fx.sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;fx._detail_material=SizedSkillArt.material();fx.sprite.material=fx._detail_material
 	fx.sprite.scale=Vector2.ONE*size/maxf(textures[0].get_width(),textures[0].get_height())
 	if kind=="tree":fx.sprite.position.y=-size*.4375
 	if ComicMotion.reduced():animation.set_animation_speed(&"default",6)
-	fx.add_child(fx.sprite);parent.add_child(fx)
+	fx.add_child(fx.sprite)
+	if parent is IlyuaField and is_instance_valid(parent.runtime) and is_instance_valid(parent.runtime.actor.room):
+		# Keep gameplay fields in FX for saves/cleanup, but render their art on
+		# the ground plane so the caster and hostile telegraphs stay readable.
+		var owner_field:IlyuaField=parent
+		fx._field_owner=weakref(owner_field);fx._field_offset=at+Vector2(0,14)
+		owner_field.runtime.actor.room.add_child(fx)
+		fx.global_position=owner_field.to_global(fx._field_offset)
+	else:parent.add_child(fx)
 	if impact:fx.add_to_group("legendary_full_impact")
 	fx.sprite.play();return fx
 func _process(dt:float)->void:
+	if _detail_material!=null:_detail_material.set_shader_parameter("phase",1-remaining/maxf(.01,duration));_detail_material.set_shader_parameter("still",ComicMotion.reduced())
+	if _field_owner!=null:
+		var field:=_field_owner.get_ref() as Node2D
+		if not is_instance_valid(field) or field.is_queued_for_deletion():queue_free();return
+		global_position=field.to_global(_field_offset)
 	remaining-=dt
 	if remaining<=0:queue_free()
 	elif sprite!=null and duration<1:sprite.modulate.a=minf(1,remaining/maxf(.08,duration*.3))

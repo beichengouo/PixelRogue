@@ -35,9 +35,8 @@ static func reserves(camp:bool,exclude_goal:="")->Dictionary:
 		if Outpost.contract_status(contract)!="accepted":continue
 		var needs:=Outpost.contract_needs(contract,combined)
 		for id in needs:result[id]=int(result.get(id,0))+int(needs[id])
-	var key:=goal();var research:=MaterialWorkshopCatalog.research(key)
-	if key!=exclude_goal and not MaterialWorkshopCatalog.unlocked(key) and not research.is_empty():
-		for id in research.needs:result[id]=int(result.get(id,0))+int(research.needs[id])
+	var goal_needs:=WorkshopGoals.requirements(exclude_goal)
+	for id in goal_needs:result[id]=int(result.get(id,0))+int(goal_needs[id])
 	if not camp:
 		for id in result:result[id]=maxi(0,int(result[id])-int(bank.get(id,0)))
 	return result
@@ -54,7 +53,7 @@ static func cost_preview(needs:Dictionary,camp:bool,protect:=true,exclude_goal:=
 	for id in needs:
 		var total:=int(inventory.get(id,0));var held:=mini(total,int(reserved.get(id,0)));var available:=maxi(0,total-(held if protect else 0));var need:=int(needs[id])
 		rows.append({"id":str(id),"total":total,"reserved":held,"available":available,"need":need,"missing":maxi(0,need-available),"after":total-need,"used_reserved":maxi(0,need-maxi(0,total-held))})
-		if need>available:errors.append("%s不足：需要%d，可用%d%s"%[str(ExpeditionData.resolve(str(id)).get("name",id)),need,available,"（保留%d份用于委托或目标研究）"%held if protect and held>0 else ""])
+		if need>available:errors.append("%s不足：需要%d，可用%d%s"%[str(ExpeditionData.resolve(str(id)).get("name",id)),need,available,"（保留%d份用于委托或出征目标）"%held if protect and held>0 else ""])
 	return {"rows":rows,"error":"；".join(errors)}
 static func _capacity_error(product:Dictionary,needs:Dictionary,camp:bool,quantity:int)->String:
 	if camp:
@@ -76,7 +75,7 @@ static func preview(kind:String,id:String,variant:int,camp:bool,protect:=true,qu
 	var product:=ExpeditionData.resolve(str(entry.product)) if kind=="craft" else {}
 	var limit:=10 if kind=="craft" and ItemDB.is_usable(product) else 1
 	if quantity<1 or quantity>limit:result.error="药剂每次可制作1至10份；装备与研究每次仅一份。";return result
-	var unit:Dictionary=variants[variant];var needs:=scale_cost(unit,quantity);var costs:=cost_preview(needs,camp,protect,id if kind=="research" else "")
+	var unit:Dictionary=variants[variant];var needs:=scale_cost(unit,quantity);var costs:=cost_preview(needs,camp,protect,id if kind=="research" else "craft:"+id if camp and kind=="craft" else "")
 	result.merge({"needs":needs,"rows":costs.rows,"product":product,"error":costs.error},true)
 	var context:=bank_error() if camp else field_error(service)
 	if not context.is_empty():result.error=context
@@ -120,12 +119,12 @@ static func uses_text(id:String,camp:bool)->String:
 static func set_goal(id:String)->String:
 	var error:=bank_error()
 	if not error.is_empty():return error
-	if not id.is_empty() and (MaterialWorkshopCatalog.research(id).is_empty() or MaterialWorkshopCatalog.unlocked(id)):return "此研究不存在或已经完成。"
+	if not id.is_empty() and WorkshopGoals.entry(id).is_empty():return "此目标不存在或已经完成。"
 	var before:=Outpost.data.duplicate(true);var saved:=SaveService.data.duplicate(true)
 	if not Outpost.data.has("workshop"):Outpost.data.workshop={"unlocked":{},"goal":""}
 	Outpost.data.workshop.goal=id
 	if Outpost._finish_mutation(before,saved):return ""
-	return "保存失败，研究目标未改变。"
+	return "保存失败，出征目标未改变。"
 static func research(id:String,protect:=true)->String:
 	var view:=preview("research",id,0,true,protect)
 	if not str(view.error).is_empty():return str(view.error)
@@ -147,6 +146,7 @@ static func craft(id:String,variant:int,camp:bool,protect:bool,service:Node=null
 	if camp:
 		var before:=Outpost.data.duplicate(true);var saved:=SaveService.data.duplicate(true)
 		_spend_bank(needs);Outpost.data.inventory[str(product.id)]=int(Outpost.data.inventory.get(str(product.id),0))+quantity
+		if goal()=="craft:"+id:Outpost.data.workshop.goal=""
 		if Outpost._finish_mutation(before,saved):return ""
 		return "制作保存失败，整批材料与仓库已回滚。"
 	var bag:=GameState.items.duplicate();var ledger:=GameState.material_ledger.duplicate(true);var sequence:int=GameState.item_sequence;var made:Array[Dictionary]=[]
@@ -202,7 +202,7 @@ static func usage(id:String)->String:
 	var notes:PackedStringArray=[]
 	for contract in ExpeditionData.CONTRACTS:
 		if Outpost.contract_status(contract)=="accepted" and Outpost.contract_needs(contract).has(id):notes.append("委托需要："+str(contract.title))
-	var goal_entry:=MaterialWorkshopCatalog.research(goal())
-	if not goal_entry.is_empty() and goal_entry.needs.has(id):notes.append("目标研究需要："+str(goal_entry.name))
+	var goal_entry:=WorkshopGoals.entry(goal())
+	if not goal_entry.is_empty() and goal_entry.needs.has(id):notes.append("追踪目标需要："+str(goal_entry.name))
 	if MaterialWorkshopCatalog.BOSS_MATERIALS.has(id):notes.append("首领专属 · 无购买或普通材料兑换来源")
 	return "\n".join(notes)

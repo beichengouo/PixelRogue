@@ -23,10 +23,10 @@ static func entries() -> Array[Dictionary]:
 		var path := "res://assets/room_mode/structure/"+str(model)+".png"
 		if not ResourceLoader.exists(path):path="res://assets/room_mode/services/"+str(model)+".png"
 		result.append({"id":"service:"+str(model),"name":str(SERVICE_NAMES[model]),"layer":"decor","category":"服务装饰","model":model,"size":[1,1],"path":path,"collision":"service","width_px":SERVICE_DEFAULTS[model][0],"depth_px":SERVICE_DEFAULTS[model][1]})
-	for kind in ["torch","lamp","plant","crystal","fire"]:
+	for kind in RoomEnvironmentConfig.LIGHT_KINDS:
 		for size: Vector2i in RoomTerrainCatalog.SIZES:
 			var suffix := "%dx%d" % [size.x,size.y]
-			result.append({"id":"light:%s:%s" % [kind,suffix],"name":"光源 · %s %s" % [kind,suffix],"layer":"entities","category":"光源","model":kind,"size":[size.x,size.y],"path":"res://assets/room_mode/lights/"+kind+"_"+suffix+".png","collision":"none"})
+			result.append({"id":"light:%s:%s" % [kind,suffix],"name":"光源 · %s %s" % [RoomEnvironmentConfig.LIGHT_NAMES.get(kind,kind),suffix],"layer":"entities","category":"光源","model":kind,"size":[size.x,size.y],"path":"res://assets/room_mode/lights/"+kind+"_"+suffix+".png","collision":"none"})
 	for role in ["player","shop","warehouse","contracts","prepare","relations","iris","result","training","dummy"]:
 		result.append({"id":"camp:"+role,"name":"营地 · "+role,"layer":"markers","category":"营地交互点","model":role,"size":[1,1],"path":"res://assets/room_mode/fx/enemy_spawn.png","collision":"none"})
 	result.append_array(SuppliedMapAssets.entries())

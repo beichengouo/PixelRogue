@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc1dlyxbhru2j"
-path="res://.godot/imported/bridge_east-plane.png-4481448f74cb0c06ffb4a1db3f7f1412.ctex"
+path.s3tc="res://.godot/imported/bridge_east-plane.png-4481448f74cb0c06ffb4a1db3f7f1412.s3tc.ctex"
+path.etc2="res://.godot/imported/bridge_east-plane.png-4481448f74cb0c06ffb4a1db3f7f1412.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/ruin_courtyard_v03/bridge_east-plane.png"
-dest_files=["res://.godot/imported/bridge_east-plane.png-4481448f74cb0c06ffb4a1db3f7f1412.ctex"]
+dest_files=["res://.godot/imported/bridge_east-plane.png-4481448f74cb0c06ffb4a1db3f7f1412.s3tc.ctex", "res://.godot/imported/bridge_east-plane.png-4481448f74cb0c06ffb4a1db3f7f1412.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

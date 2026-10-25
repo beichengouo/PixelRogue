@@ -2,7 +2,7 @@ class_name BondRules
 extends RefCounted
 const MAX := 500
 const DAILY_GAIN := 8
-const NAMES := {"sylphiette":"希露媞雅","iris":"伊莉丝","merchant":"姜糖","tavern":"温阮"}
+const NAMES := {"sylphiette":"希露媞雅","xixifu":"希希芙","ilyua":"伊露雅","iris":"伊莉丝","merchant":"姜糖","tavern":"温阮"}
 const STAGES := [[0,50,"初识"],[50,100,"相知"],[100,200,"信任"],[200,300,"亲近"],[300,400,"默契"],[400,501,"羁绊"]]
 static func stage(value:int)->String:
 	for entry in STAGES:

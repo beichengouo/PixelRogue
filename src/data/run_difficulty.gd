@@ -5,6 +5,8 @@ extends RefCounted
 const OPTIONS := [{"id":1,"name":"普通"},{"id":2,"name":"危险"},{"id":3,"name":"绝境"},{"id":4,"name":"浴血"}]
 static func valid(value:int)->bool:return value>=1 and value<=4
 static func multiplier(value:int)->int:return clampi(value,1,3)
+static func health_multiplier(value:int)->float:return [1.0,1.5,2.0,2.25][clampi(value,1,4)-1]
+static func attack_multiplier(value:int)->float:return [1.0,1.2,1.4,1.65][clampi(value,1,4)-1]
 static func gold_multiplier(value:int)->int:return 5 if value==4 else multiplier(value)
 static func is_bloodbath(value:int)->bool:return value==4
 static func from_legacy_danger(value:int)->int:return clampi(value+1,1,3)
@@ -16,14 +18,13 @@ static func spawn_count(count:int,value:int)->int:return ceili(maxi(0,count)*spa
 static func material_value_multiplier(value:int)->float:return [1.0,1.20,1.40][multiplier(value)-1]
 static func title(value:int)->String:return str(OPTIONS[clampi(value,1,4)-1].name)
 static func description(value:int)->String:
-	var times:=multiplier(value)
-	return "%s · 刷怪 ×%s · 生命/攻击 ×%d · 金币奖励 ×%d%s"%[title(value),str(spawn_multiplier(value)),times,gold_multiplier(value)," · 真实伤害留下灰色伤痕；普通回血无效，部分命运牌可修复" if is_bloodbath(value) else ""]
+	return "%s · 刷怪 ×%s · 生命 ×%s · 攻击 ×%s · 金币奖励 ×%d%s"%[title(value),str(spawn_multiplier(value)),str(health_multiplier(value)),str(attack_multiplier(value)),gold_multiplier(value)," · 真实伤害留下灰色伤痕；普通回血无效，部分命运牌可修复" if is_bloodbath(value) else ""]
 static func affix_chance(base:float,value:int)->float:
 	return 1.0-pow(1.0-clampf(base,0,1),multiplier(value))
 static func encounter(base:Dictionary,value:int)->Dictionary:
-	var plan:=base.duplicate(true);var times:=multiplier(value)
-	for attribute in ["hp_scale","damage_scale"]:
-		plan[attribute]=float(plan.get(attribute,1.0))*times
+	var plan:=base.duplicate(true);var times:=health_multiplier(value)
+	plan.hp_scale=float(plan.get("hp_scale",1.0))*times
+	plan.damage_scale=float(plan.get("damage_scale",1.0))*attack_multiplier(value)
 	if bool(plan.get("boss",false)):
 		plan.total=1
 		plan.boss_hp_scale=float(plan.get("boss_hp_scale",1))*times

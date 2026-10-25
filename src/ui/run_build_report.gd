@@ -47,6 +47,7 @@ static func populate(label: Label, snapshot: Dictionary) -> void:
 		card.add_child(name)
 	var lines := ItemInsight.run_summary(snapshot).split("\n")
 	label.text = "\n".join(lines.slice(2))
+	label.text+="\n构筑路线 · "+BuildPaths.summary(snapshot)
 	var fate:Dictionary=snapshot.get("fate",{})
 	var notes:PackedStringArray=[]
 	for card in fate.get("cards",[]):

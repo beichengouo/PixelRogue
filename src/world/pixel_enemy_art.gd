@@ -13,6 +13,7 @@ static var _generated_data:Dictionary={}
 const GENERATED_CANVAS:=512.0
 static func source_directory(id:StringName)->String:return DIR if SOURCES.get(id,"orc")=="orc" else DIR+"generated/"
 static func supports(id:StringName)->bool:
+	if ForestUnitArt.supports(id):return true
 	if id==&"crystal_familiar":return true
 	if id in NEW_KINDS:return true
 	return id in KINDS and ResourceLoader.exists(source_directory(id)+str(SOURCES[id])+".png")
@@ -59,6 +60,8 @@ static func _add(result:SpriteFrames,name:StringName,source:Texture2D,cell:Vecto
 		var atlas:=AtlasTexture.new();atlas.atlas=source;atlas.region=Rect2(position*cell,cell);atlas.filter_clip=true
 		result.add_frame(name,atlas)
 static func make_frames(id:StringName)->SpriteFrames:
+	if ForestUnitArt.supports(id):
+		return ForestUnitArt.frames(id)
 	if RevisedMonsterArt.TYPES.has(id):return RevisedMonsterArt.frames(id)
 	if id in NEW_KINDS:return NewMonsterAtlasArt.frames(id)
 	if _frames.has(id):return _frames[id]
@@ -85,6 +88,7 @@ static func make_frames(id:StringName)->SpriteFrames:
 	_frames[id]=frames;return frames
 static func directional_action(_id:StringName,action:StringName,_direction:Vector2)->StringName:return action
 static func align(sprite:AnimatedSprite2D,id:StringName,body:Vector2)->void:
+	if ForestUnitArt.supports(id):ForestUnitArt.align(sprite,id,body);return
 	if RevisedMonsterArt.TYPES.has(id):RevisedMonsterArt.align(sprite,body);return
 	if id in NEW_KINDS:
 		NewMonsterAtlasArt.align(sprite,id,body)

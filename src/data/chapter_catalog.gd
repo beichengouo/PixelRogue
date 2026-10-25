@@ -4,7 +4,7 @@ extends RefCounted
 const FIRST := &"awakening_woods"
 const NEXT := &"chapter_2"
 const CHAPTERS := {
-	FIRST:{"title":"苏醒林地","last_wave":30,"next":NEXT,"scene":"res://src/room_mode/room_main.tscn","start":"forest_clearing","bosses":["king","mage","tide"],"maps":["forest_clearing","forest_grove","forest_timber","forest_bone_glade","wetland_curve","wetland_twin_pools","ruin_courtyard"],"enemies":["charger","treant","moss_badger","thorn_mantis","glimmer_spider","bog_crab","lantern_toad","bell_snail"]},
+	FIRST:{"title":"苏醒林地","last_wave":30,"next":NEXT,"scene":"res://src/room_mode/room_main.tscn","start":"forest_clearing","bosses":["king","mage","tide"],"maps":["forest_clearing","forest_grove","forest_timber","forest_bone_glade","wetland_curve","wetland_twin_pools","ruin_courtyard"],"enemies":["charger","treant","goblin_scout","goblin_spearman","goblin_mage","thorn_mantis","glimmer_spider","bog_crab","lantern_toad"]},
 	NEXT:{"title":"失名星城","last_wave":30,"next":&"","scene":"res://src/room_mode/room_main.tscn","start":"city_silent_gate","bosses":["sephra","verena","nameless"],"maps":["ruin_archive","city_silent_gate","city_star_canal","city_wax_street","city_eclipse_court","city_name_archive","city_observatory"],"enemies":["walker","flyer","caster","bomber","guard","ruin_sentinel","dusk_acolyte"]},
 }
 
@@ -34,6 +34,7 @@ static func stage(boss_id:String)->int:
 		if index>=0:return index
 	return 0
 static func enemy_variant(original:StringName,chapter:Variant,biome:String,rng:RandomNumberGenerator,wave:int)->StringName:
+	original=EnemyCombatPolicy.active_kind(original)
 	var habitat:="ruin" if normalize(chapter)==NEXT else ("wetland" if biome=="wetland" else "forest")
 	if config(chapter).enemies.has(str(original)) and EnemyCombatPolicy.biome_of(original)==habitat:return original
 	var mapped:=EnemyCombatPolicy.room_variant(original,habitat,rng,wave)

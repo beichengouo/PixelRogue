@@ -11,7 +11,10 @@ func invalidate_roster()->void:_roster_frame=-1;_frame=-1
 func _refresh_roster(room:RoomLevel)->void:
 	var frame:=Engine.get_physics_frames()
 	if frame==_roster_frame:return
-	_roster_frame=frame;roster_builds+=1;_enemies.clear();_allies.clear()
+	_roster_frame=frame;roster_builds+=1
+	# A hit callback can spawn/remove a unit and request a fresh roster while
+	# an outer area attack is still iterating. Preserve that outer snapshot.
+	_enemies=[];_allies=[]
 	for enemy in room.get_tree().get_nodes_in_group("enemies"):
 		if enemy is EnemyBase and enemy.level==room:_enemies.append(enemy)
 	for ally in room.get_tree().get_nodes_in_group("allies"):
@@ -54,7 +57,17 @@ func separation(room:RoomLevel,unit:Node2D)->Vector2:
 		result+=away.normalized()*(1-distance/desired)
 	return result.limit_length(1)
 func attack_position(room:RoomLevel,unit:Node2D,target:Node2D,ranged:bool,radius:float,flying:bool)->Vector2:
-	var center:=target.global_position;var ring:=190.0 if ranged else radius+float(target.get_meta("unit_radius",12.0))+9.0
+	if not is_instance_valid(target):return unit.global_position
+	var center:=target.global_position
+	var distance:=unit.global_position.distance_to(center)
+	var current_valid:=room.projectile_clear(unit.global_position,center) if ranged else room.segment_clear(unit.global_position,center,radius,flying)
+	if current_valid and (distance>=112 and distance<=300 if ranged else distance<=radius+float(target.get_meta("unit_radius",12.0))+10):return unit.global_position
+	var cached:Dictionary=unit.get_meta("tactical_position",{})
+	var now:=Time.get_ticks_msec()
+	if not cached.is_empty() and int(cached.target)==target.get_instance_id() and center.distance_to(cached.center)<36 and now<int(cached.until):
+		var held:Vector2=cached.at
+		if room.body_clear(held,radius,flying) and (room.projectile_clear(held,center) if ranged else room.sight(held,center)):return held
+	var ring:=190.0 if ranged else radius+float(target.get_meta("unit_radius",12.0))+9.0
 	var phase:=float(unit.get_instance_id()%32)*2.399963
 	var best:=INF;var goal:=center
 	for step in 16:
@@ -64,7 +77,11 @@ func attack_position(room:RoomLevel,unit:Node2D,target:Node2D,ranged:bool,radius
 		var score:=unit.global_position.distance_squared_to(point)*.18+minf(step,16-step)*350.0
 		if occupied(room,point,radius,unit):score+=12000
 		if score<best:best=score;goal=point
+	unit.set_meta("tactical_position",{"target":target.get_instance_id(),"center":center,"at":goal,"until":now+300})
 	return goal
+func invalidate_position(unit:Node2D)->void:
+	unit.remove_meta("tactical_position")
+
 static func roam_goal(room:RoomLevel,unit:Node2D,rng:RandomNumberGenerator,radius:float,flying:bool)->Vector2:
 	for attempt in 24:
 		var bounds:=room.bounds().grow(-42)

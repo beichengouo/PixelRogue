@@ -46,6 +46,8 @@ var max_hp := 100.0
 ## Expedition wounds are separate from equipment HP; legacy field names remain save-compatible.
 var bloodbath_hp_loss := 0.0
 var cruel_hp_loss := 0.0
+var stat_balance_revision := 25
+var balance_scar_overflow := false
 
 var stats: StatBlock
 var level: Level
@@ -73,6 +75,7 @@ var _feedback_timer := 0.0
 var _feedback_duration := 0.32
 var _move_input_active := false
 var shield_hp := 0.0
+var _shield_talent_revision := -1
 var _shield_time := 0.0
 var _shield_thorns := 0.0
 var _shield_visual: Sprite2D
@@ -94,7 +97,7 @@ func apply_slow(strength: float, duration: float) -> void:
 func movement_slow_multiplier() -> float:
 	var strongest := 1.0-PlayerDebuffs.multiplier(self,&"move_speed")
 	for effect in _slows: strongest = maxf(strongest, float(effect.strength))
-	return 1.0 - strongest
+	return (1.0 - strongest)*FateCatalog.move_factor()
 
 ## 视觉：AnimatedSprite2D 播放 Elf 精灵表；武器挂在「手部挂点」下面，有自己的动画
 var _sprite: AnimatedSprite2D
@@ -255,7 +258,7 @@ func request_attack() -> void:
 		if is_instance_valid(rp.equipment_mechanics):rp.equipment_mechanics.on_basic_fired(aim_direction,_attack_receipt)
 
 
-## ---------------- 技能（按等级解锁，消耗魔法值）----------------
+## ---------------- 技能（出发前装配，消耗魔法值）----------------
 
 const SKILL_ACTIONS := ["skill_1", "skill_2", "skill_3", "ultimate"]
 
@@ -310,10 +313,11 @@ func _update_visual(delta: float) -> void:
 	visual.modulate = color
 
 
-func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
+func take_damage(amount: float, from: Vector2, source: Node = null, direct_hit := true) -> void:
 	if extraction_controls_locked() or _invuln > 0.0 or hp <= 0.0 or amount<=0.0:
 		return
 	if extraction_pose == &"prayer": extraction_interrupted.emit()
+	var had_shield:=shield_hp>0
 	var cruel_part:=CruelDamage.portion(source,amount)
 	var true_damage:=bloodbath_active() or cruel_part>0.0
 	var protected_amount:=0.0 if bloodbath_active() else maxf(0.0,amount-cruel_part)
@@ -335,21 +339,27 @@ func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
 			_animation_request += 1
 			_update_animation()
 			return
-	if not bloodbath_active():amount=cruel_part+PassiveRuntime.share_damage(self,protected_amount*(1.1 if FateCatalog.rank("empress")==2 else 1.0))
+	var fate_hurt:=FateRuntime.hurt_adjust(0.0 if bloodbath_active() else protected_amount,amount if bloodbath_active() else cruel_part,had_shield)
+	if not bloodbath_active():amount=cruel_part+PassiveRuntime.share_damage(self,float(fate_hurt.normal))
 	if amount<=0:
 		_invuln=0.18;_block_timer=0.22;_animation_request+=1;_update_animation();return
 	if bloodbath_active():
-		bloodbath_hp_loss+=amount
-	elif cruel_part>0.0:cruel_hp_loss+=cruel_part
-	if true_damage:max_hp=maxf(0.0,stats.get_value(&"max_hp")-permanent_hp_loss())
+		bloodbath_hp_loss+=float(fate_hurt.scar)
+	elif cruel_part>0.0:cruel_hp_loss+=float(fate_hurt.scar)
+	if true_damage:
+		max_hp=maxf(0.0,stats.get_value(&"max_hp")-permanent_hp_loss())
+		Effects.text(get_parent(),global_position-Vector2(0,57),"生命伤痕",Color("c1b6ca"),14)
+		AudioManager.play(&"scar_hit",-13,0)
+	var hp_before_fate:=hp
 	hp = minf(max_hp,maxf(0.0, hp - amount))
+	FateRuntime.hurt_after(source,hp_before_fate,hp,direct_hit)
 	if amount>0.0 and hp>0.0: PlayerDebuffs.from_source(self,source)
 	_invuln = INVULN_TIME
 	_flash = 0.28
 	_hurt_timer = 0.35
 	_animation_request += 1
 	EventBus.player_damaged.emit(amount, hp, max_hp)
-	EventBus.request_screen_shake.emit(8.0)
+	EventBus.request_screen_shake.emit(3.0)
 	Effects.damage_number(get_parent(), global_position + Vector2(0.0, -34.0), amount, false, Palette.UI_DANGER)
 
 	var push := global_position - from
@@ -389,6 +399,11 @@ func _on_stats_changed() -> void:
 	var new_max := stats.get_value(&"max_hp")
 	new_max=maxf(0.0,new_max-permanent_hp_loss())
 	var was_alive:=hp>0.0
+	# A living legacy save must not die merely because its gear changed to flat
+	# stats. Keep its actual scars; only this migration may retain one HP capacity.
+	if balance_scar_overflow and was_alive:
+		if new_max>0:balance_scar_overflow=false
+		else:new_max=1.0
 	var delta := new_max - max_hp
 	max_hp = new_max
 	if delta > 0.0 and not bloodbath_active():
@@ -406,6 +421,9 @@ func repair_capacity(amount:float)->float:
 	var blood:=minf(repaired,maxf(0,bloodbath_hp_loss));bloodbath_hp_loss=maxf(0,bloodbath_hp_loss-blood)
 	cruel_hp_loss=maxf(0,cruel_hp_loss-(repaired-blood))
 	max_hp=maxf(0,stats.get_value(&"max_hp")-permanent_hp_loss())
+	if balance_scar_overflow:
+		if max_hp>0:balance_scar_overflow=false
+		else:max_hp=1.0
 	# Only the repaired portion returns, not a percentage of all missing health.
 	# Ordinary healing remains blocked in bloodbath; tarot is the explicit exception.
 	var before:=hp;hp=minf(max_hp,hp+repaired)
@@ -510,5 +528,3 @@ func _update_shield_visual(delta: float) -> void:
 	_shield_visual_age += delta
 	_shield_visual.texture = PixelSpellArt.frames("fire")[[0, 1, 2, 1][int(_shield_visual_age * 7) % 4]]
 	_shield_visual.modulate.a = 0.45 * PixelSpellArt.strength()
-
-

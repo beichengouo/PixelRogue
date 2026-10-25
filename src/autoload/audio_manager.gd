@@ -10,16 +10,20 @@ const ROOM_MUSIC := preload("res://src/data/room_music_catalog.gd")
 ## Menu MP3s are user-provided: E:/素材/轻盈哼唱.mp3 and 轻盈哼唱 (1).mp3.
 ## Forest/king/mage originate in tools/build_music.gd; Tide in build_tide_music.gd.
 const POOL_SIZE := 12
-const CUE_SOURCE:={"skill_unavailable":"ui_click","purchase_failed":"ui_click","shield_hit":"hit","shield_break":"land","reward_claim":"coin","boss_warning":"wave_start"}
-const CUE_PITCH:={"skill_unavailable":.78,"purchase_failed":.72,"shield_hit":1.3,"shield_break":.8,"reward_claim":1.15,"boss_warning":.9}
-const CUE_GAPS:={"hit":65,"swing":70,"enemy_die":80,"enemy_shoot":85,"coin":70,"skill_unavailable":300,"purchase_failed":250,"shield_hit":120,"shield_break":200,"boss_warning":150}
+const CUE_SOURCE:={"skill_unavailable":"ui_click","purchase_failed":"ui_click","shield_hit":"hit","shield_break":"land","reward_claim":"coin","boss_warning":"wave_start","impact_hit":"hit","impact_critical":"hit","scar_hit":"hurt","scar_repair":"wave_clear","extraction_call":"wave_start","extraction_answer":"wave_clear","extraction_depart":"wave_clear"}
+const CUE_PITCH:={"skill_unavailable":.78,"purchase_failed":.72,"shield_hit":1.3,"shield_break":.8,"reward_claim":1.15,"boss_warning":.9,"impact_hit":1.10,"impact_critical":.85,"scar_hit":.85,"scar_repair":1.15,"extraction_call":.8,"extraction_answer":1.2,"extraction_depart":1.05}
+const CUE_GAPS:={"hit":65,"swing":70,"enemy_die":80,"enemy_shoot":85,"coin":70,"skill_unavailable":300,"purchase_failed":250,"shield_hit":120,"shield_break":200,"boss_warning":150,"impact_hit":80,"impact_critical":100,"scar_hit":250,"scar_repair":300}
 var _priority_voices:Dictionary={}
+var _presentation_ducks:Dictionary={}
+var _presentation_gain:=1.0
+var _presentation_tween:Tween
 const DEDUP_MS := 30          # 同一音效在这段时间内不重复播，避免连发时糊成噪音
 
 var _streams: Dictionary = {}
 var _players: Array[AudioStreamPlayer] = []
 var _next := 0
 var _last_played: Dictionary = {}
+var _emote_player:AudioStreamPlayer
 var _achievement_player:AudioStreamPlayer
 ## Two reused music players crossfade without stopping the incoming music.
 var _music_player: AudioStreamPlayer
@@ -165,9 +169,21 @@ func _set_music_gain(value: float) -> void:
 
 func _apply_music_volumes() -> void:
 	if is_instance_valid(_music_player):
-		_music_player.volume_db=linear_to_db(maxf(0.00001,_music_volume*_music_gain))
+		_music_player.volume_db=linear_to_db(maxf(0.00001,_music_volume*_music_gain*_presentation_gain))
 	if is_instance_valid(_music_spare):
-		_music_spare.volume_db=linear_to_db(maxf(0.00001,_music_volume*_outgoing_gain))
+		_music_spare.volume_db=linear_to_db(maxf(0.00001,_music_volume*_outgoing_gain*_presentation_gain))
+
+func set_presentation_duck(owner:Node,enabled:bool)->void:
+	if not is_instance_valid(owner):return
+	if enabled:_presentation_ducks[owner.get_instance_id()]=weakref(owner)
+	else:_presentation_ducks.erase(owner.get_instance_id())
+	for key in _presentation_ducks.keys():
+		if not is_instance_valid(_presentation_ducks[key].get_ref()):_presentation_ducks.erase(key)
+	var target:=1.0 if _presentation_ducks.is_empty() else .4
+	if _presentation_tween!=null and _presentation_tween.is_valid():_presentation_tween.kill()
+	if not is_inside_tree():_presentation_gain=target;return
+	_presentation_tween=create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_presentation_tween.tween_method(func(value:float)->void:_presentation_gain=value;_apply_music_volumes(),_presentation_gain,target,.2)
 
 func _restart_finished_music() -> void:
 	_on_music_finished(_music_player)
@@ -321,6 +337,10 @@ func play(sfx: StringName, volume_db := 0.0, pitch_variation := 0.06) -> void:
 	if _last_played.has(key) and now - int(_last_played[key]) < int(CUE_GAPS.get(key,DEDUP_MS)):
 		return
 	_last_played[key] = now
+	if key.begins_with("emote_"):
+		if not is_instance_valid(_emote_player):
+			_emote_player=AudioStreamPlayer.new();_emote_player.name="EmotePop";add_child(_emote_player)
+		_emote_player.stream=_streams[key];_emote_player.volume_db=volume_db+linear_to_db(maxf(.0001,_sfx_volume));_emote_player.pitch_scale=1;_emote_player.play();return
 	if key=="achievement_unlock":
 		# A dense fight can recycle the combat pool before the chime finishes.
 		# Unlocks have their own voice, still governed by the normal SFX volume.
@@ -331,7 +351,7 @@ func play(sfx: StringName, volume_db := 0.0, pitch_variation := 0.06) -> void:
 		_achievement_player.pitch_scale=1
 		_achievement_player.play()
 		return
-	var priority:="danger" if key=="boss_warning" else "hurt" if key in ["hurt","shield_break"] else "feedback" if CUE_SOURCE.has(key) or key in ["wave_clear","wave_start"] else ""
+	var priority:="danger" if key=="boss_warning" else "scar" if key in ["scar_hit","scar_repair"] else "hurt" if key in ["hurt","shield_break"] else "impact" if key in ["impact_hit","impact_critical","shield_hit"] else "extraction" if key in ["extraction_call","extraction_answer","extraction_depart"] else "feedback" if CUE_SOURCE.has(key) or key in ["wave_clear","wave_start"] else ""
 	if not priority.is_empty():
 		if not is_instance_valid(_priority_voices.get(priority)):
 			var voice:=AudioStreamPlayer.new();voice.name="Priority_"+priority;add_child(voice);_priority_voices[priority]=voice
@@ -386,6 +406,7 @@ func _connect_events() -> void:
 	)
 
 func shutdown() -> void:
+	if is_instance_valid(_emote_player):_emote_player.stop();_emote_player.stream=null
 	_music_epoch += 1
 	_current_music = &""
 	_environment_playlist_active=false;_room_music_synced=false;_active_boss=&"";_gameplay_loading=false

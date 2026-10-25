@@ -6,6 +6,31 @@ var _map:MapCanvas
 var _tick:=0.0
 class MapCanvas extends Control:
 	var world:CampWorld
+	func marker_targets()->Array[Dictionary]:
+		var result:Array[Dictionary]=[]
+		if not is_instance_valid(world) or world.level.illustration==null:return result
+		var bounds:Rect2=world.level.illustration.frame_rect()
+		var factor:=minf((size.x-36)/bounds.size.x,(size.y-36)/bounds.size.y)
+		var area:=Rect2((size-bounds.size*factor)*.5,bounds.size*factor)
+		for role in world.facilities:result.append({"kind":"facility","id":str(role),"at":point(world.facility_guide_center(role),bounds,area),"label":str(world.FACILITY_NAMES[role])+str({"shop":" · 姜糖","relations":" · 温阮","iris":" · 伊莉丝"}.get(role,""))})
+		for direction in [Vector2i.UP,Vector2i.RIGHT,Vector2i.DOWN,Vector2i.LEFT]:result.append({"kind":"door","id":RoomGraph.key(direction),"at":point(world.level.door_point(direction,0),bounds,area),"label":"营地大门"})
+		if is_instance_valid(world.residents_root):
+			for npc in world.residents_root.get_children():result.append({"kind":"resident","id":str(npc.resident_id),"at":point(world.level.to_local(npc.global_position),bounds,area),"label":str(CampResidents.DATA.get(npc.resident_id,{}).get("name",npc.resident_id))})
+		if is_instance_valid(world.dummy):result.append({"kind":"dummy","id":"dummy","at":point(world.dummy.position,bounds,area),"label":"训练稻草人"})
+		return result
+	func _gui_input(event:InputEvent)->void:
+		var at:=Vector2.INF
+		if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT and event.pressed:at=event.position
+		elif event is InputEventScreenTouch and event.pressed:at=event.position
+		if not at.is_finite():return
+		var best:=INF;var target:Dictionary={}
+		for row in marker_targets():
+			var distance:float=at.distance_to(row.at)
+			var width:=GameFonts.get_font("body").get_string_size(row.label,HORIZONTAL_ALIGNMENT_LEFT,-1,16).x
+			var origin:=Vector2(clampf(float(row.at.x)+10,4,maxf(4,size.x-width-4)),clampf(float(row.at.y)+5,18,size.y-6))
+			var label_rect:=Rect2(origin-Vector2(0,18),Vector2(width,24))
+			if (label_rect.has_point(at) or distance<=12) and distance<best:best=distance;target=row
+		if not target.is_empty() and world.start_navigation(target.kind,target.id):world.camp_map.close();accept_event()
 	func point(value:Vector2,bounds:Rect2,area:Rect2)->Vector2:
 		return area.position+(value-bounds.position)*area.size/bounds.size
 	func building_sprites()->Array[Sprite2D]:
@@ -47,7 +72,7 @@ class MapCanvas extends Control:
 			_marker(at,name,Color("f2d28b"))
 		for direction in [Vector2i.UP,Vector2i.RIGHT,Vector2i.DOWN,Vector2i.LEFT]:
 			var at:=point(world.level.door_point(direction,0),bounds,area)
-			_marker(at,str({Vector2i.UP:"北门",Vector2i.RIGHT:"东门",Vector2i.DOWN:"南门",Vector2i.LEFT:"西门"}[direction])+(" · 已开启" if world.level.doors_open else " · 未开启"),Color("9fe6c4") if world.level.doors_open else Color("b0bcc7"))
+			_marker(at,str({Vector2i.UP:"北门",Vector2i.RIGHT:"东门",Vector2i.DOWN:"南门",Vector2i.LEFT:"西门"}[direction]),Color("b0bcc7"))
 		if is_instance_valid(world.residents_root):
 			for npc in world.residents_root.get_children():
 				var at:=point(world.level.to_local(npc.global_position),bounds,area)
@@ -68,7 +93,7 @@ func _ready()->void:
 	var heading:=PixelUi.title("星辉回廊 · 营地地图",28);heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(heading)
 	var close_button:=PixelUi.compact_button("关闭 [%s]"%KeyBindings.label("room_map"),18);row.add_child(close_button);close_button.pressed.connect(close)
 	_map=MapCanvas.new();_map.world=world;_map.custom_minimum_size.y=450;_map.size_flags_vertical=Control.SIZE_EXPAND_FILL;body.add_child(_map)
-	body.add_child(PixelUi.label("蓝色 · 自己    金色 · 设施    绿色 · 营地旅人",16,PixelUi.MUTED))
+	body.add_child(PixelUi.label("蓝色 · 自己    金色 · 设施    绿色 · 营地旅人\n点击设施可导航；出发台直接启程，训练入口进入独立地图。",16,PixelUi.MUTED))
 	InteractionSkin.mount(_root,"camp_map",panel);_root.hide();visible=false
 func open()->void:
 	if not UIFlow.can_open(self):return

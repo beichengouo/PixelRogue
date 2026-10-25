@@ -2,6 +2,8 @@ class_name HolyRuntime
 extends Node2D
 ## All derived damage is a character_proc: no equipment, lifesteal or recursive grants.
 var actor:RoomPlayer
+var talent_revision:=0
+var skill_power:Dictionary={}
 var clock:=0.0
 var prayer:=0.0
 var last_hit:=-99.0
@@ -15,6 +17,7 @@ var recent_target:=""
 var room_id:=""
 var cast_serial:=0
 var fate_casts:Dictionary={}
+var fate_serials:Dictionary={}
 var hit_serial:=0
 var hit_skill:StringName=&""
 var direct_events:Dictionary={}
@@ -65,8 +68,9 @@ func point(position_value:Vector2)->Array:return [position_value.x,position_valu
 func combat_active()->bool:return not targets(actor.global_position,1000,1).is_empty()
 
 func _ready()->void:
+	talent_revision=GameState.talent_revision
 	room_id=str(actor.room.record.get("id",""));z_index=1
-	HolyFX.warm();texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+	HolyFX.warm();texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
 	var ink:=CanvasItemMaterial.new();ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED;material=ink
 	_ground_visual=Node2D.new();_ground_visual.name="HolyGroundAura"
 	_ground_visual.texture_filter=texture_filter;_ground_visual.material=ink
@@ -110,15 +114,18 @@ func _process(delta:float)->void:
 	if _judgment_open:
 		if clock>=judgment_until:
 			_judgment_open=false
-			for target in targets(actor.global_position,1000,8):pillar(target.global_position,42,1.1,.45,false,null,0,false)
+			for target in targets(actor.global_position,1000,8):pillar(target.global_position,42,1.26,.45,false,null,0,false,float(skill_power.get("meteor",1)))
 		elif ready("judgment_pillars"):
 			start("judgment_pillars",1.2)
-			for target in targets(actor.global_position,1000,2):pillar(target.global_position,54,.5,.55,false,target,0,false)
+			var chosen:=targets(actor.global_position,1000,2)
+			for index in (2 if not chosen.is_empty() else 0):
+				var target:EnemyBase=chosen[index%chosen.size()]
+				pillar(target.global_position,54,.63,.55+index*.18,false,target,0,false,float(skill_power.get("meteor",1)))
 	if _sanctuary_open:
 		if clock>=sanctuary_until:
-			_sanctuary_open=false;area(actor.global_position,126,.9);shield(.06,3);afterlight_until=clock+3
+			_sanctuary_open=false;area(actor.global_position,126,1.04*float(skill_power.get("starfall",1)));shield(.06,3);afterlight_until=clock+3
 		else:
-			if ready("sanctuary_tick"):start("sanctuary_tick",.75);area(actor.global_position,126,.35);HolyFX.around(actor,"ring",126,.35)
+			if ready("sanctuary_tick"):start("sanctuary_tick",.75);area(actor.global_position,126,.40*float(skill_power.get("starfall",1)));HolyFX.around(actor,"ring",126,.35)
 			if ready("sanctuary_purge"):start("sanctuary_purge",1);purge(actor.global_position,60,2)
 	if _cloud_open and ready("cloud_purge"):start("cloud_purge",.75);purge(actor.global_position,46,1)
 	_sync_ground_visual()
@@ -137,7 +144,7 @@ func cast(slot:int)->bool:
 	if id in [&"flame_nova",&"frost_nova"]:
 		destination=field_destination(destination)
 	if GameState.begin_skill_cast(slot)==&"":return false
-	cast_serial+=1;var serial:=cast_serial;fate_casts[str(serial)]=FateRuntime.cast_factor();fate_casts.erase(str(serial-64));var empowered:bool=not bool(skill.ultimate) and prayer>=100
+	cast_serial+=1;var serial:=cast_serial;fate_serials[str(serial)]=int(FateRuntime.state().get("cast_serial",0));fate_serials.erase(str(serial-64));fate_casts[str(serial)]=FateRuntime.cast_factor();fate_casts.erase(str(serial-64));var empowered:bool=not bool(skill.ultimate) and prayer>=100
 	if empowered:
 		prayer=0;prayer_cycles+=1
 		actor.equipment_mechanics.legendary.holy_empowered()
@@ -167,41 +174,43 @@ func field_destination(requested:Vector2)->Vector2:
 
 func _release(id:StringName,destination:Vector2,empowered:bool,bonus:float,serial:int,hymn:bool=false)->void:
 	if actor.hp<=0:return
+	skill_power[str(id)]=SkillTalentCatalog.power(id)
+	if id!=&"blink":bonus*=float(skill_power[str(id)])
 	_cast_bonus=bonus;actor._cast_timer=.28;actor._cast_pose=&"cast";actor._animation_request+=1;rhythm_cast=clock
 	HolyFX.around(actor,"cloud",30,.3)
 	match id:
 		&"flame_nova":
-			var near:=targets(destination,90,1);pillar(destination,64,1.4,.55,true,near[0] if not near.is_empty() else null,serial,true,bonus)
+			var near:=targets(destination,90,1);pillar(destination,64+SkillTalentCatalog.shape(id,"radius"),1.77,.55,true,near[0] if not near.is_empty() else null,serial,true,bonus)
 			if empowered:
-				for i in 3:pillar(destination+Vector2.RIGHT.rotated(i*TAU/3)*64,36,.65,.8+i*.18,false,null,serial,false,bonus)
+				for i in 3:pillar(destination+Vector2.RIGHT.rotated(i*TAU/3)*64,36,.71,.8+i*.18,false,null,serial,false,bonus)
 		&"fan_bolts":
 			HolyFX.around(actor,"feather",40,.45)
-			feathers_until=clock+8;feathers.clear()
-			for i in (6 if empowered else 3):feathers.append({"ready":clock,"end":clock+(3 if empowered and i>=3 else 8),"index":i,"guard":false,"enhanced":empowered,"bonus":bonus})
+			feathers_until=clock+8+SkillTalentCatalog.shape(id,"duration");feathers.clear()
+			for i in (6 if empowered else 3):feathers.append({"ready":clock,"end":clock+(3 if empowered and i>=3 else 8)+SkillTalentCatalog.shape(id,"duration"),"index":i,"guard":false,"enhanced":empowered,"bonus":bonus})
 		&"blink":
-			shield(.20,6);cloud_until=clock+6;_cloud_open=true
+			shield(.20*float(skill_power[str(id)]),6+SkillTalentCatalog.shape(id,"duration"));cloud_until=clock+6+SkillTalentCatalog.shape(id,"duration");_cloud_open=true
 			if empowered:purge(actor.global_position,90,3);push(actor.global_position,90,24)
 		&"flame_shield":
-			bell(actor.global_position,.9,serial,true,bonus)
+			bell(actor.global_position,1.04,serial,true,bonus)
 			if empowered:fields.append({"kind":"bell","at":point(actor.global_position),"delay":.45,"elapsed":0.0,"ratio":.55,"serial":serial,"bonus":bonus})
 		&"frost_nova":
-			fields.append({"kind":"court","at":point(destination),"remaining":6.0,"timer":0.0,"radius":90.0,"enhanced":empowered,"healed":0.0,"pulses":0,"serial":serial,"bonus":bonus});HolyFX.spawn(actor.get_parent(),destination,"court",90,.5)
+			fields.append({"kind":"court","at":point(destination),"remaining":6.0+SkillTalentCatalog.shape(id,"duration"),"timer":0.0,"radius":90.0,"enhanced":empowered,"healed":0.0,"pulses":0,"serial":serial,"bonus":bonus});HolyFX.spawn(actor.get_parent(),destination,"court",90,.5)
 		&"healing_light":
 			var origin:=actor.global_position;var direction:=actor.velocity.normalized() if actor.velocity.length()>1 else actor.aim_direction.normalized();var end:=origin
-			for i in range(1,37):
+			for i in range(1,37+int(SkillTalentCatalog.shape(id,"distance")/3)):
 				var probe:=origin+direction*(i*3)
 				if not actor.room.body_clear(probe,12):break
 				end=probe
 			for target in targets((origin+end)*.5,108):
 				if Geometry2D.get_closest_point_to_segment(target.global_position,origin,end).distance_to(target.global_position)<=20:hit(target,.15,origin,serial,true,id,bonus);mark(target,serial)
-			actor.global_position=end;actor._invuln=maxf(actor._invuln,.18);step_attack_until=clock+4;decoy(origin,3,empowered)
+			actor.global_position=end;actor._invuln=maxf(actor._invuln,.18);step_attack_until=clock+4;decoy(origin,3,empowered).damage_factor=bonus
 			var step_fx:=HolyFX.spawn(actor.get_parent(),(origin+end)*.5,"step",maxf(30,origin.distance_to(end)*.6),.5)
 			if step_fx!=null:step_fx.facing=direction
 		&"meteor":
-			judgment_until=clock+8;_judgment_open=true;cooldowns.erase("judgment_pillars");judgment_hits.clear()
+			judgment_until=clock+8+SkillTalentCatalog.shape(id,"duration");_judgment_open=true;cooldowns.erase("judgment_pillars");judgment_hits.clear()
 			HolyFX.around(actor,"judgment",84,.7)
 		&"starfall":
-			sanctuary_until=clock+8;_sanctuary_open=true;shield(.12,4);cooldowns.erase("sanctuary_tick")
+			sanctuary_until=clock+8+SkillTalentCatalog.shape(id,"duration");_sanctuary_open=true;shield(.12,4);cooldowns.erase("sanctuary_tick")
 			HolyFX.around(actor,"sanctuary",126,.7)
 	if not HolySkills.DATA[id].ultimate:
 		skill_count+=1
@@ -209,7 +218,7 @@ func _release(id:StringName,destination:Vector2,empowered:bool,bonus:float,seria
 		if rank(&"holy_chorus")>0 and feathers.size()<8:feathers.append({"ready":clock,"end":clock+2,"index":feathers.size(),"guard":true,"enhanced":false})
 		if rank(&"holy_veil")>0 and skill_count%3==0 and combat_active() and ready("veil"):
 			start("veil",8)
-			if shield(.06,3):veil_until=clock+3
+			if shield(.06,3,true):veil_until=clock+3
 		if rank(&"holy_flow")>=2 and movement_time>=1.2:
 			for target in targets(actor.global_position,216,1):feather_at(actor.global_position,target,.2,1)
 		if rank(&"holy_flow")>=3 and movement_time>0 and clock-rhythm_hit<4 and ready("flow_shadow"):start("flow_shadow",10);decoy(actor.global_position,4,false)
@@ -222,8 +231,7 @@ func hit(target:EnemyBase,ratio:float,origin:Vector2,serial:int=0,direct:bool=fa
 	var amount:=attack()*ratio*bonus
 	if direct:
 		amount*=actor.equipment_mechanics.skill_multiplier(target)
-		if skill!=&"frost_nova":amount*=float(fate_casts.get(str(serial),1.0))
-	target.take_damage(amount,false,origin,(DamageContext.continuous(actor,&"skill_field") if skill==&"frost_nova" else DamageContext.skill(actor)) if direct else DamageContext.character_proc(actor),false)
+	target.take_damage(amount,false,origin,(DamageContext.continuous(actor,&"skill_field") if skill==&"frost_nova" else DamageContext.skill_event(actor,int(fate_serials.get(str(serial),0)),not Skills.is_ultimate(skill))) if direct else DamageContext.character_proc(actor),false)
 	var effective:=is_instance_valid(target) and (target.hp<hp_before or target.affix_shield<shield_before)
 	if effective and direct:
 		hit_serial=serial;hit_skill=skill;actor.equipment_mechanics.on_skill_hit(target,true);hit_skill=&""
@@ -246,12 +254,12 @@ func _tick_field(field:Dictionary,delta:float)->bool:
 	if field.kind=="court":
 		field.remaining-=delta;field.timer-=delta
 		if field.timer<=0:
-			field.timer+=1;var hits:=area(origin,90,.22,int(field.serial),int(field.get("pulses",0))==0,&"frost_nova",float(field.bonus));field.pulses=int(field.get("pulses",0))+1
+			field.timer+=1;var hits:=area(origin,90,.28,int(field.serial),int(field.get("pulses",0))==0,&"frost_nova",float(field.bonus));field.pulses=int(field.get("pulses",0))+1
 			if hits>0 and actor.global_position.distance_to(origin)<=90 and actor.room.sight(origin,actor.global_position) and float(field.healed)<.06:
 				var heal_ratio:=minf(.01,.06-float(field.healed));actor.heal_player(actor.max_hp*heal_ratio);field.healed+=heal_ratio
 			HolyFX.spawn(actor.get_parent(),origin,"ring",90,.35)
 		if field.remaining<=0:
-			area(origin,90,.5)
+			area(origin,90,.55*float(field.bonus))
 			if field.enhanced:
 				for target in targets(origin,216,3):feather_at(origin,target,.2,1)
 				if actor.global_position.distance_to(origin)<=90:shield(.08,3);afterlight_until=clock+3
@@ -273,7 +281,7 @@ func _tick_field(field:Dictionary,delta:float)->bool:
 				if hit(target,float(field.ratio),origin,int(field.serial),bool(field.direct),&"flame_nova",float(field.bonus)):hits+=1
 				if field.branded and live(target):mark(target,int(field.serial))
 			HolyFX.spawn(actor.get_parent(),origin,"pillar",float(field.radius),.4)
-			if field.branded:fields.append({"kind":"burst","at":point(origin),"delay":.2,"elapsed":0.0,"radius":float(field.radius)+16,"ratio":.35})
+			if field.branded:fields.append({"kind":"burst","at":point(origin),"delay":.2,"elapsed":0.0,"radius":float(field.radius)+16,"ratio":.35*float(field.bonus)})
 			if field.hymn and hits>0:
 				add_prayer(4);echoes.append(clock)
 				while not echoes.is_empty() and echoes[0]<clock-4:echoes.pop_front()
@@ -301,7 +309,9 @@ func on_direct_hit(target:EnemyBase,kind:int,receipt:BasicAttackReceipt=null)->v
 			if GameState.passive_id==&"sylphiette_grace":add_grace(1)
 			if live(target):recent_target=str(target.get_instance_id())
 			if rank(&"holy_feather_birth")>0 and basic_count%4==0:feather_at(actor.global_position,target,.15,1,1 if rank(&"holy_feather_birth")>=2 else 0)
-			if clock<step_attack_until or clock<devout_until:step_attack_until=0;devout_until=0;feather_at(actor.global_position,target,.18,1)
+			if clock<step_attack_until or clock<devout_until:
+				var factor:=float(skill_power.get("healing_light",1)) if clock<step_attack_until else 1.0
+				step_attack_until=0;devout_until=0;feather_at(actor.global_position,target,.18*factor,1)
 			if clock<harmony_until:harmony_until=0;area(target.global_position,60,.25);if_extra_harmony(target)
 			if rank(&"holy_veil")>=2 and actor.shield_hp>0 and ready("veil_light"):start("veil_light",1);area(target.global_position,30,.1)
 		else:
@@ -314,7 +324,7 @@ func on_direct_hit(target:EnemyBase,kind:int,receipt:BasicAttackReceipt=null)->v
 				if rank(&"holy_word")>=3 and recent_skills.size()>=3:bell(actor.global_position,.35,serial,false)
 		if rank(&"holy_dew")>0 and dew_count>=(4 if rank(&"holy_dew")>=2 and in_field() else 5) and ready("dew_heal"):
 			dew_count=0;start("dew_heal",3);actor.heal_player(actor.max_hp*.01)
-		if rank(&"holy_dew")>=3 and actor.hp<actor.max_hp*.3 and ready("dew_danger"):start("dew_danger",20);shield(.12,3);afterlight_until=clock+3
+		if rank(&"holy_dew")>=3 and actor.hp<actor.max_hp*.3 and ready("dew_danger"):start("dew_danger",20);shield(.12,3,true);afterlight_until=clock+3
 	for key in recent_skills.keys():
 		if float(recent_skills[key])<clock-6:recent_skills.erase(key)
 	if not live(target):return
@@ -334,8 +344,8 @@ func on_direct_hit(target:EnemyBase,kind:int,receipt:BasicAttackReceipt=null)->v
 		else:fields.append({"kind":"burst","at":point(target.global_position),"delay":.18,"elapsed":0.0,"radius":50.0 if rank(&"holy_afterglow")>=2 and marks.has(id) else 30.0,"ratio":.1})
 	if _judgment_open:
 		judgment_hits[id]=int(judgment_hits.get(id,0))+1
-		if int(judgment_hits[id])>=(2 if marks.has(id) else 3) and ready("judgment_"+id):judgment_hits[id]=0;start("judgment_"+id,1);pillar(target.global_position,40,.6,.35)
-	if _sanctuary_open and target.global_position.distance_to(actor.global_position)<=126 and ready("sanctuary_hit_"+id):start("sanctuary_hit_"+id,.8);area(target.global_position,50,.12)
+		if int(judgment_hits[id])>=(2 if marks.has(id) else 3) and ready("judgment_"+id):judgment_hits[id]=0;start("judgment_"+id,1);pillar(target.global_position,40,.6*float(skill_power.get("meteor",1)),.35)
+	if _sanctuary_open and target.global_position.distance_to(actor.global_position)<=126 and ready("sanctuary_hit_"+id):start("sanctuary_hit_"+id,.8);area(target.global_position,50,.12*float(skill_power.get("starfall",1)))
 
 func if_extra_harmony(target:EnemyBase)->void:
 	if rank(&"holy_harmony")>=2:hit(target,.15,actor.global_position)
@@ -372,11 +382,11 @@ func _tick_feathers()->void:
 		if target!=null:
 			var origin:=actor.global_position+Vector2(0,14)+Vector2.RIGHT.rotated(clock*2+float(feather.index)*TAU/maxi(1,feathers.size()))*30
 			if not actor.room.body_clear(origin,2) or not actor.room.sight(actor.global_position,origin):origin=actor.global_position
-			feather.ready=clock+2;feather_at(origin,target,.3*float(feather.get("bonus",1)),0,1 if feather.enhanced else 0)
-func shield(ratio:float,seconds:float)->bool:
+			feather.ready=clock+2;feather_at(origin,target,.38*float(feather.get("bonus",1)),0,1 if feather.enhanced else 0)
+func shield(ratio:float,seconds:float,talent_owned:=false)->bool:
 	var value:=actor.max_hp*ratio
 	if value*FateCatalog.shield_factor()<actor.shield_hp:return false
-	actor.equipment_mechanics.grant_player_shield(value,seconds);return true
+	actor.equipment_mechanics.grant_player_shield(value,seconds,&"stronger",talent_owned);return true
 func on_shield_absorbed(amount:float)->void:
 	if amount<=0:return
 	if ready("shield_prayer"):start("shield_prayer",.35);add_prayer(12)
@@ -416,8 +426,9 @@ func push(origin:Vector2,radius:float,distance:float)->void:
 			if not actor.room.body_clear(probe,target.body_radius() if target.has_method("body_radius") else 12):break
 			target.global_position=probe
 func bell(origin:Vector2,ratio:float,serial:int,direct:bool,bonus:float=1)->void:
-	area(origin,108,ratio,serial,direct,&"flame_shield",bonus);push(origin,108,54);purge(origin,108,3);HolyFX.spawn(actor.get_parent(),origin,"bell",108,.55)
-	for target in targets(origin,108):target.apply_slow(.2 if target is BossBase else .3 if target.is_elite() else 1.0,1.2 if target is BossBase or target.is_elite() else .55)
+	var radius:=108+SkillTalentCatalog.shape(&"flame_shield","radius")
+	area(origin,radius,ratio,serial,direct,&"flame_shield",bonus);push(origin,radius,54);purge(origin,radius,3);HolyFX.spawn(actor.get_parent(),origin,"bell",radius,.55)
+	for target in targets(origin,radius):target.apply_slow(.2 if target is BossBase else .3 if target.is_elite() else 1.0,1.2 if target is BossBase or target.is_elite() else .55)
 func decoy(origin:Vector2,seconds:float,empowered:bool)->HolyDecoy:
 	var unit:=HolyDecoy.new();unit.holy=self;unit.remaining=seconds;unit.empowered=empowered;actor.get_tree().get_first_node_in_group("room_fx").add_child(unit);unit.global_position=origin
 	return unit
@@ -465,7 +476,7 @@ func snapshot()->Dictionary:
 		if property.usage&PROPERTY_USAGE_SCRIPT_VARIABLE and name_value not in ["actor","_ground_visual"]:result[name_value]=get(name_value).duplicate(true) if get(name_value) is Array or get(name_value) is Dictionary else get(name_value)
 	result["decoys"]=[]
 	for unit in get_tree().get_nodes_in_group("holy_decoys"):
-		if unit.holy==self and not unit.exploded:result.decoys.append({"at":point(unit.global_position),"remaining":unit.remaining,"empowered":unit.empowered,"fire_clock":unit.fire_clock})
+		if unit.holy==self and not unit.exploded:result.decoys.append({"at":point(unit.global_position),"remaining":unit.remaining,"empowered":unit.empowered,"fire_clock":unit.fire_clock,"damage_factor":unit.damage_factor})
 	return result
 func restore(saved:Dictionary,ids:Dictionary)->void:
 	if saved.is_empty():return
@@ -491,8 +502,23 @@ func restore(saved:Dictionary,ids:Dictionary)->void:
 				if ids.has(old_id):cooldowns[prefix+str(ids[old_id].get_instance_id())]=value
 				break
 	for record in saved.get("decoys",[]):
-		var unit:=decoy(Vector2(record.at[0],record.at[1]),float(record.remaining),bool(record.empowered));unit.fire_clock=float(record.get("fire_clock",.5))
+		var unit:=decoy(Vector2(record.at[0],record.at[1]),float(record.remaining),bool(record.empowered));unit.fire_clock=float(record.get("fire_clock",.5));unit.damage_factor=float(record.get("damage_factor",1))
 	for field in fields:
 		if field.kind=="pillar" and float(field.delay)>0:
 			var warning:=HolyFX.spawn(actor.get_parent(),at(field),"warning",float(field.radius),float(field.delay))
 			if warning!=null:warning.warning_id=str(field.get("warning_id",""))
+
+	if talent_revision!=GameState.talent_revision:clear_talent_effects()
+
+func clear_talent_effects()->void:
+	talent_revision=GameState.talent_revision
+	clear_talent_shield()
+	devout_until=0;harmony_until=0;veil_until=0
+	basic_count=0;skill_count=0;dew_count=0;mark_count=0;last_direct_skill=&"";last_direct_kind=-1
+	recent_skills.clear();echoes.clear();afterglows.clear();feather_streak.clear()
+	for index in range(feathers.size()-1,-1,-1):
+		if bool(feathers[index].get("guard",false)):feathers.remove_at(index)
+
+func clear_talent_shield()->void:
+	if actor._shield_talent_revision>=0 and actor._shield_talent_revision!=GameState.talent_revision:
+		actor.shield_hp=0;actor._shield_time=0;actor._shield_talent_revision=-1

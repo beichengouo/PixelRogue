@@ -66,16 +66,25 @@ func sources(main:Node,world_clock:RoomWorldClock,fog:float) -> Array[Dictionary
 			radius=64.0*source.texture_scale*maxf(absf(source.global_scale.x),absf(source.global_scale.y))
 			strength=source.energy;tint=source.color
 		if not bool(config.get("always_on",true)) and maxf(darkness,fog)<0.05:continue
-		if bool(config.get("flicker",false)):
-			strength*=0.94+sin(now*7.4+float(id%83))*0.04+sin(now*11.3)*0.02
+		var animation_kind:=str(source.get_meta("light_animation_kind",config.get("animation_kind","fire" if bool(config.get("flicker",false)) else "lamp")))
+		if source.has_method("light_motion_sample"):
+			var sample:Dictionary=source.light_motion_sample()
+			radius*=float(sample.get("radius",1.0));strength*=float(sample.get("energy",1.0))
+		else:strength*=LightSpriteArt.energy(animation_kind,now+float(id%83)*.17,ComicMotion.reduced())
+		strength=clampf(strength,0,1.2)
 		var at:Vector2=source.source_position() if source.has_method("source_position") else source.global_position
-		result.append({"position":at,"radius":maxf(1,radius),"strength":clampf(strength,0,1.2),"color":tint,"dispels_fog":bool(config.get("dispels_fog",true)),"day_glow":bool(source.get_meta("day_glow",false))})
+		result.append({"position":at,"radius":maxf(1,radius),"strength":clampf(strength,0,1.2),"color":tint,"dispels_fog":bool(config.get("dispels_fog",true)),"day_glow":bool(source.get_meta("day_glow",false)),"priority_light":bool(source.get_meta("priority_light",false))})
 	# Preserve player and companion visibility before budgeting transient spell lights.
 	if result.size()>RoomEnvironmentConfig.MAX_LIGHTS:
 		var center:Vector2=actor.global_position if player_valid else Vector2.ZERO
 		var transient:Array[Dictionary]=result.slice(protected_count)
-		transient.sort_custom(func(a:Dictionary,b:Dictionary)->bool:return a.position.distance_squared_to(center)<b.position.distance_squared_to(center))
-		result.resize(mini(protected_count,RoomEnvironmentConfig.MAX_LIGHTS))
+		var reserved:=0
+		for light in transient:
+			if bool(light.get("priority_light",false)):reserved+=1
+		transient.sort_custom(func(a:Dictionary,b:Dictionary)->bool:
+			if bool(a.get("priority_light",false))!=bool(b.get("priority_light",false)):return bool(a.get("priority_light",false))
+			return a.position.distance_squared_to(center)<b.position.distance_squared_to(center))
+		result.resize(mini(protected_count,maxi(1,RoomEnvironmentConfig.MAX_LIGHTS-reserved)))
 		for light in transient:
 			if result.size()>=RoomEnvironmentConfig.MAX_LIGHTS:break
 			result.append(light)

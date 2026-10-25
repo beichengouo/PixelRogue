@@ -7,17 +7,18 @@ extends RefCounted
 ## 加新角色 = 往 DATA 里加一条，然后 set_current() 切过去。
 
 const DEFAULT_ID := &"sylphiette"
+const ATTACK_FACTORS:={&"sylphiette":1.05,&"xixifu":1.0,&"ilyua":1.2}
 
 const DATA := {
 	&"sylphiette": {
 		"id":&"sylphiette","name":"希露媞雅","job":"圣光祭司","class_id":"mage","story_profile":"sylphiette",
 		"portrait":"res://assets/characters/sylphiette_holy_v01/portrait.png",
 		"select_portrait":"res://assets/characters/sylphiette_holy_v01/portrait.png",
-		"dialogue_portrait":"res://assets/characters/sylphiette_holy_v01/portrait.png",
+		"dialogue_portrait":"res://assets/dialogue_portraits_v21/sylphiette/neutral.png",
 		"portraits":{"stand":"res://assets/characters/sylphiette_holy_v01/portrait.png","thoughtful":"res://assets/characters/sylphiette_holy_v01/thoughtful.png","surprised":"res://assets/characters/sylphiette_holy_v01/surprised.png","determined":"res://assets/characters/sylphiette_holy_v01/determined.png","sad":"res://assets/characters/sylphiette_holy_v01/sad.png"},
-		"dialogue_portraits":{"happy":"res://assets/characters/sylphiette_holy_v01/portrait.png","thoughtful":"res://assets/characters/sylphiette_holy_v01/thoughtful.png","surprised":"res://assets/characters/sylphiette_holy_v01/surprised.png","determined":"res://assets/characters/sylphiette_holy_v01/determined.png","sad":"res://assets/characters/sylphiette_holy_v01/sad.png"},
+		"dialogue_portraits":{"neutral":"res://assets/dialogue_portraits_v21/sylphiette/neutral.png","happy":"res://assets/dialogue_portraits_v21/sylphiette/happy.png"},
 		"avatar":"res://assets/characters/sylphiette_holy_v01/avatar.png","icon":"res://assets/characters/sylphiette_holy_v01/avatar.png",
-		"artbook":"res://assets/characters/sylphiette_holy_v01/artbook_v2.png","accent":"f3dda2",
+		"artbook":"res://assets/characters/sylphiette_holy_v01/artbook_v3.png","accent":"f3dda2",
 		"themes":"圣辉 / 祈愿 / 圣云","intro":"银发如流云，圣光温暖而克制。\n她以祝祷守护旅伴，也以裁决驱散林地的暗影。",
 		"battle_style":"祈光积累 · 圣辉强化\n天降圣裁 · 移动圣域 · 弹幕净化",
 		"preview_skills":[&"flame_nova",&"fan_bolts",&"blink",&"meteor"],
@@ -28,9 +29,9 @@ const DATA := {
 		"story_profile":"xixifu", "id": &"xixifu", "name": "希希芙", "job": "召唤师", "class_id": "summoner",
 		"portrait": "res://assets/characters/xixifu/portrait.png",
 		"select_portrait": "res://assets/characters/xixifu/portrait.png",
-		"dialogue_portrait": "res://assets/characters/xixifu/portrait.png",
+		"dialogue_portrait":"res://assets/dialogue_portraits_v21/xixifu/neutral.png",
 		"portraits": {"stand":"res://assets/characters/xixifu/portrait.png"},
-		"dialogue_portraits": {"happy":"res://assets/characters/xixifu/portrait.png", "thoughtful":"res://assets/characters/xixifu/portrait.png", "determined":"res://assets/characters/xixifu/portrait.png"},
+		"dialogue_portraits":{"neutral":"res://assets/dialogue_portraits_v21/xixifu/neutral.png","happy":"res://assets/dialogue_portraits_v21/xixifu/happy.png"},
 		"avatar": "res://assets/characters/xixifu/avatar.png", "icon": "res://assets/characters/xixifu/skill_0.png", "accent": "c3a0ff",
 		"artbook": "res://assets/characters/xixifu/artbook.png",
 		"themes":"影契 / 守护 / 引导",
@@ -43,8 +44,8 @@ const DATA := {
 	&"ilyua": {
 		"id":&"ilyua", "name":"伊露雅", "job":"弓箭手", "class_id":"archer", "story_profile":"ilyua",
 		"portrait":"res://assets/characters/ilyua/portrait.png", "select_portrait":"res://assets/characters/ilyua/select_portrait.png",
-		"dialogue_portrait":"res://assets/characters/ilyua/portrait.png",
-		"dialogue_portraits":{"happy":"res://assets/characters/ilyua/portrait.png","thoughtful":"res://assets/characters/ilyua/portrait.png","determined":"res://assets/characters/ilyua/portrait.png"},
+		"dialogue_portrait":"res://assets/dialogue_portraits_v21/ilyua/neutral.png",
+		"dialogue_portraits":{"neutral":"res://assets/dialogue_portraits_v21/ilyua/neutral.png","happy":"res://assets/dialogue_portraits_v21/ilyua/happy.png"},
 		"portraits":{"stand":"res://assets/characters/ilyua/portrait.png"},
 		"avatar":"res://assets/characters/ilyua/avatar.png", "icon":"res://assets/characters/ilyua/avatar.png",
 		"artbook":"res://assets/characters/ilyua/artbook.png", "accent":"a8d7a5",

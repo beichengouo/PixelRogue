@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Rondo at Starlight’s End"
 config/description="轮舞于星辉尽头 · 俯视房间探索与星辉肉鸽"
-config/version="0.45"
+config/version="0.55"
 run/main_scene="res://src/main/game_shell.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Godot/app_userdata/PixelRogue"
@@ -21,6 +21,7 @@ config/icon="res://assets/ui_art/application/goddess_head_v01.png"
 
 [autoload]
 
+ErrorReporter="*res://src/autoload/error_reporter.gd"
 UIFlow="*res://src/autoload/ui_flow.gd"
 TransitionLayer="*res://src/autoload/transition_layer.gd"
 EventBus="*res://src/autoload/event_bus.gd"
@@ -32,6 +33,10 @@ StoryState="*res://src/autoload/story_state.gd"
 Outpost="*res://src/autoload/outpost.gd"
 AchievementTracker="*res://src/autoload/achievement_tracker.gd"
 MobileControls="*res://src/autoload/mobile_controls.gd"
+
+[debug]
+
+settings/gdscript/always_track_call_stacks=true
 
 [display]
 

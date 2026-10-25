@@ -29,11 +29,13 @@ static func make_point_light(
 	color: Color,
 	energy: float,
 	radius: float,
-	casts_shadow := false
+	casts_shadow := false,
+	animation_kind := "aura"
 ) -> PointLight2D:
 	## radius 是"光能照到多大范围"（像素），内部换算成贴图缩放。
 	var light := PointLight2D.new()
 	light.add_to_group("room_point_lights")
+	light.set_meta("light_animation_kind",animation_kind)
 	light.texture = radial_texture()
 	light.color = color
 	light.energy = energy

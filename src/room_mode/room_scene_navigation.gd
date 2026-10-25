@@ -71,15 +71,20 @@ func direction(room:Node,from:Vector2,to:Vector2,radius:float,flying:bool)->Vect
 	var at:=Vector2i((from/18).floor())
 	var starts:Array[int]=[]
 	var reachable_components:Dictionary={}
+	var start_visibility:Dictionary={}
 	for y in range(at.y-3,at.y+4):
 		for x in range(at.x-3,at.x+4):
 			var cell:=Vector2i(x,y)
 			if not cells.has(cell):continue
 			var id:int=cells[cell]
-			if not room.segment_clear(from,graph.get_point_position(id),radius,flying):continue
 			starts.append(id)
-			reachable_components[components[id]]=true
-	if starts.is_empty():return Vector2.ZERO
+			# One visible entry establishes component reachability. Other entry
+			# capsules are checked only if their full route can improve the result.
+			if not reachable_components.has(components[id]):
+				var visible:bool=room.segment_clear(from,graph.get_point_position(id),radius,flying)
+				start_visibility[id]=visible
+				if visible:reachable_components[components[id]]=true
+	if starts.is_empty() or reachable_components.is_empty():return Vector2.ZERO
 	var goal_clear:bool=room.body_clear(to,radius,flying)
 	var goal_id:=graph.get_closest_point(to)
 	if not reachable_components.has(components[goal_id]) or (goal_clear and not room.segment_clear(graph.get_point_position(goal_id),to,radius,flying)):
@@ -94,6 +99,10 @@ func direction(room:Node,from:Vector2,to:Vector2,radius:float,flying:bool)->Vect
 	if goal_id<0:return Vector2.ZERO
 	var best:=INF
 	var route:=PackedVector2Array()
+	var goal:Vector2=graph.get_point_position(goal_id)
+	starts.sort_custom(func(a:int,b:int)->bool:
+		var left:Vector2=graph.get_point_position(a);var right:Vector2=graph.get_point_position(b)
+		return from.distance_to(left)+left.distance_to(goal)<from.distance_to(right)+right.distance_to(goal))
 	for start_id in starts:
 		if components[start_id]!=components[goal_id]:continue
 		# Euclidean distance is a lower bound on every valid graph route.
@@ -111,7 +120,9 @@ func direction(room:Node,from:Vector2,to:Vector2,radius:float,flying:bool)->Vect
 		if path.is_empty():continue
 		var cost:float=from.distance_to(path[0])+routes[route_key].distance
 		if cost>=best:continue
-		if cost<best:best=cost;route=path
+		if not start_visibility.has(start_id):start_visibility[start_id]=room.segment_clear(from,start,radius,flying)
+		if not bool(start_visibility[start_id]):continue
+		best=cost;route=path
 	if route.is_empty():return Vector2.ZERO
 	for index in range(mini(8,route.size()-1),-1,-1):
 		if from.distance_to(route[index])<1:continue

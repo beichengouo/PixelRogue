@@ -19,25 +19,37 @@ var spawn_rng:=RandomNumberGenerator.new()
 var room_pending:Array=[]
 var room_intro:=false
 var _room_timer:=0.0
-const PRESSURE_GRACE:=[60.0,30.0,5.0]
-const PRESSURE_INTERVAL:=15.0
+const PRESSURE_GRACE:=[60.0,50.0,40.0,35.0]
+const BOSS_PRESSURE_GRACE:=[90.0,80.0,70.0,60.0]
+const PRESSURE_INTERVAL:=20.0
+const PRESSURE_ATTACK:=[1.0,1.10,1.20,1.35,1.50,1.65]
+const PRESSURE_SPEED:=[1.0,1.04,1.08,1.12,1.16,1.20]
+const MAX_PRESSURE_LEVEL:=5
 var room_pressure_elapsed:=0.0
 var room_pressure_step:=0
+var combat_balance_revision:=25
+var pressure_warned:=false
+var strength:=1
 var rush_index:=0
 var trial_index:=0
 var trial_rounds:Array=[]
 const RUSH_REST_SECONDS:=15.0
 
-func pressure_attack_multiplier(step:int)->float:return minf(10.0,1.0+maxi(0,step))
-func pressure_speed_multiplier(step:int)->float:return minf(2.0,1.0+maxi(0,step)*.25)
+func pressure_attack_multiplier(step:int)->float:return PRESSURE_ATTACK[clampi(step,0,MAX_PRESSURE_LEVEL)]
+func pressure_speed_multiplier(step:int)->float:return PRESSURE_SPEED[clampi(step,0,MAX_PRESSURE_LEVEL)]
+func pressure_grace()->float:
+	return (BOSS_PRESSURE_GRACE if str(room_record.get("kind","")) in ["boss","boss_rush"] else PRESSURE_GRACE)[clampi(GameState.difficulty,1,4)-1]
 
 func advance_room_pressure(dt:float)->void:
 	if phase!=Phase.FIGHT or extraction_hold or not GameState.run_active or get_tree().paused:return
 	if _queue.is_empty() and room_pending.is_empty() and _living_enemy_count()==0:return
 	room_pressure_elapsed+=maxf(0.0,dt)
 	var elapsed:=room_pressure_elapsed+0.000001
-	var grace:float=PRESSURE_GRACE[RunDifficulty.multiplier(GameState.difficulty)-1]
-	var next_step:=mini(9,1+floori((elapsed-grace)/PRESSURE_INTERVAL)) if elapsed>=grace else 0
+	var grace:=pressure_grace()
+	if not pressure_warned and room_pressure_step==0 and elapsed>=grace-5:
+		pressure_warned=true
+		if get_parent()!=null and get_parent().has_method("safe_room"):get_parent().hud.show_banner("敌人即将暴怒",2.0,Palette.UI_DANGER,1)
+	var next_step:=mini(MAX_PRESSURE_LEVEL,1+floori((elapsed-grace)/PRESSURE_INTERVAL)) if elapsed>=grace else 0
 	if next_step<=room_pressure_step:return
 	var attack_ratio:=pressure_attack_multiplier(next_step)/pressure_attack_multiplier(room_pressure_step)
 	var speed_ratio:=pressure_speed_multiplier(next_step)/pressure_speed_multiplier(room_pressure_step)
@@ -54,8 +66,10 @@ func _ready()->void:
 
 func enter_room(record:Dictionary)->void:
 	room_record=record
+	strength=int(record.get("strength",maxi(1,int(record.encounter))))
+	if graph.staged and str(record.kind) in ["boss","boss_rush"]:strength=StageRules.maximum_strength(graph.stage_index)
 	wave=maxi(1,int(record.encounter)); time_left=0; alive=0; _queue.clear();room_pending.clear();boss=null;_room_timer=0;_kill_timer=0
-	room_pressure_elapsed=0;room_pressure_step=0
+	room_pressure_elapsed=0;room_pressure_step=0;pressure_warned=false
 	deployment_cd=0
 	rush_index=0
 	trial_index=0;trial_rounds.clear()
@@ -68,7 +82,7 @@ func enter_room(record:Dictionary)->void:
 	var existing_experience:=GameState.wave_exp_awarded if GameState.wave==wave and not record.delta.get("runtime",{}).is_empty() else 0.0
 	GameState.wave=wave;GameState.wave_completed=false;GameState.wave_exp_awarded=float(record.delta.get("experience_awarded",existing_experience))
 	if record.kind=="boss_rush":record.boss=graph.boss_ids()[rush_index]
-	plan=RoomLayout.encounter(wave,str(record.boss))
+	plan=RoomLayout.encounter(strength,str(record.boss))
 	if record.kind=="boss":
 		if record.boss_stats.is_empty():record.boss_stats=plan.duplicate(true)
 		plan=record.boss_stats.duplicate(true)
@@ -83,7 +97,7 @@ func enter_room(record:Dictionary)->void:
 	if not _boss_wave:
 		var habitat:=str(record.get("biome","forest"))
 		if record.kind in ["normal","elite"]:habitat="ruin" if graph.chapter_id==ChapterCatalog.NEXT else ("wetland" if habitat=="wetland" else "forest")
-		_queue.assign(RoomEnemyComposer.compose(total_this_wave,habitat,wave,spawn_rng,int(plan.get("composition",0))))
+		_queue.assign(RoomEnemyComposer.compose(total_this_wave,habitat,strength,spawn_rng,int(plan.get("composition",0))))
 	else:_queue.append(StringName("boss_"+str(record.boss)))
 	if record.kind=="trial":
 		trial_rounds=[[],[],[]]
@@ -147,21 +161,22 @@ func _process(dt:float)->void:
 		if _queue.is_empty() and room_pending.is_empty() and alive==0:_on_wave_cleared()
 
 func _spawn_room_enemy(kind_value:StringName,at:Vector2,split:=false,origin:="normal",reinforcement:=false)->EnemyBase:
+	kind_value=EnemyCombatPolicy.active_kind(kind_value)
 	var biome:=EnemyCombatPolicy.record_biome(room_record)
 	if origin=="normal" and not str(kind_value).begins_with("boss_") and room_record.kind in ["normal","elite"]:
-		kind_value=ChapterCatalog.enemy_variant(kind_value,graph.chapter_id,biome,spawn_rng,wave)
+		kind_value=ChapterCatalog.enemy_variant(kind_value,graph.chapter_id,biome,spawn_rng,strength)
 	elif origin=="normal" and not str(kind_value).begins_with("boss_") and EnemyCombatPolicy.biome_of(kind_value)!=biome:
-		kind_value=EnemyCombatPolicy.room_variant(kind_value,biome,spawn_rng,wave)
+		kind_value=EnemyCombatPolicy.room_variant(kind_value,biome,spawn_rng,strength)
 	var enemy:EnemyBase
 	var affix_list:Array[StringName]=[]
 	if not split and origin=="normal" and not str(kind_value).begins_with("boss_"):
 		var excluded:Array[StringName]=EnemyCombatPolicy.excluded_affixes(kind_value)
-		affix_list.assign(EnemyAffixes.roll_for_wave(wave,spawn_rng,room_record.kind=="elite",excluded,GameState.difficulty))
+		affix_list.assign(EnemyAffixes.roll_for_wave(strength,spawn_rng,room_record.kind=="elite",excluded,GameState.difficulty))
 		if room_record.kind=="elite":
 			var target_count:=mini(5,affix_list.size()+2)
 			for attempt in 40:
 				if affix_list.size()>=target_count:break
-				var additions:=EnemyAffixes.roll_for_wave(wave,spawn_rng,true,excluded,GameState.difficulty)
+				var additions:=EnemyAffixes.roll_for_wave(strength,spawn_rng,true,excluded,GameState.difficulty)
 				for id in additions:
 					if not affix_list.has(id) and EnemyAffixes.compatible(affix_list,id) and affix_list.size()<target_count:affix_list.append(id)
 	if room_record.kind=="elite" or room_record.kind=="boss_rush" and str(kind_value).begins_with("boss_"):affix_list.append(EnemyAffixes.CRUEL)
@@ -180,6 +195,8 @@ func _spawn_room_enemy(kind_value:StringName,at:Vector2,split:=false,origin:="no
 	enemy.reinforcement_spawn=reinforcement and not split and origin=="normal"
 	enemies_root.add_child(enemy)
 	enemy.died.connect(_on_unit_died)
+	if enemy is RoomBoss and is_instance_valid(get_parent().get("boss_intro")):
+		get_parent().boss_intro.present(enemy)
 	if enemy is RoomEnemy and not split and origin=="normal":
 		if enemy.kind==&"thorn_mantis":
 			for inherent in [EnemyAffixes.TELEPORT,EnemyAffixes.DEATH_BOMB]:
@@ -230,13 +247,31 @@ func _on_wave_cleared()->void:
 		phase=Phase.REST;trial_index+=1;time_left=5.0;EventBus.rest_started.emit(time_left);Outpost.request_checkpoint();return
 	if phase==Phase.FIGHT and room_record.kind=="boss_rush" and rush_index<2:
 		phase=Phase.REST;rush_index+=1;time_left=RUSH_REST_SECONDS
+		# Rest also prewarms every upcoming form/action and portrait, not just
+		# the entrance title; no resource upload should wait for a phase change.
+		var warmup:Script=load("res://src/visual/combat_art_warmup.gd")
+		warmup.prepare(get_tree(),str(graph.boss_ids()[rush_index]),func()->bool:return is_inside_tree() and room_record.kind=="boss_rush")
 		EventBus.rest_started.emit(time_left);Outpost.request_checkpoint();return
 	if phase!=Phase.FIGHT or not graph.clear_current(int(GameState.fate.get("readings",0))):return
 	FateRuntime.room_clear()
-	phase=Phase.CLEARED;GameState.wave_completed=true;GameState.claim_wave_experience(true)
+	phase=Phase.CLEARED;GameState.wave_completed=true
+	_award_room_coins()
+	if not graph.staged:GameState.claim_wave_experience(true)
+	elif graph.boss_rush_completed and get_parent().expedition.loot is RoomLootDirector:get_parent().expedition.loot.complete_stage_bonus()
 	AchievementTracker.room_cleared(room_record,room_pressure_step)
 	GameState.add_reward_coins(roundi(WaveTable.coin_reward(wave)*(.6 if room_record.kind=="altar" else (1.5 if room_record.kind=="trial" else 1.0))))
 	room_cleared.emit();EventBus.wave_cleared.emit(wave)
+
+func _award_room_coins()->void:
+	if bool(room_record.get("delta",{}).get("economy_bonus_paid",false)):return
+	room_record.delta.economy_bonus_paid=true
+	var amount:=0
+	var held:Array=GameState.items.duplicate()
+	for item in GameState.equipment.values():held.append(item)
+	for item in held:
+		for effect in item.get("mechanics",[]):
+			if str(effect.get("id",""))=="room_coin":amount+=maxi(0,int(effect.get("coins",0)))
+	if amount>0:GameState.add_reward_coins(amount)
 
 func _begin_trial_round()->void:
 	_queue.assign(trial_rounds[trial_index]);room_pending.clear();alive=0;_room_timer=0;phase=Phase.FIGHT;time_left=0
@@ -244,7 +279,7 @@ func _begin_trial_round()->void:
 
 func _begin_rush_boss()->void:
 	room_record.boss=graph.boss_ids()[rush_index]
-	plan=RunDifficulty.encounter(RoomLayout.encounter(wave,str(room_record.boss)),GameState.difficulty)
+	plan=RunDifficulty.encounter(RoomLayout.encounter(strength,str(room_record.boss)),GameState.difficulty)
 	_hp_scale=float(plan.hp_scale);_damage_scale=float(plan.damage_scale);_speed_scale=float(plan.speed_scale);_attack_scale=float(plan.attack_scale)
 	_boss_wave=true;_queue.assign([StringName("boss_"+str(room_record.boss))]);room_pending.clear();boss=null;alive=0;_room_timer=0
 	phase=Phase.PREPARE;time_left=.9;EventBus.wave_started.emit(wave,1);Outpost.request_checkpoint()

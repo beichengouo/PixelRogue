@@ -22,3 +22,8 @@ static func flip_for(action:String,direction:String)->bool:
 
 static func align(sprite: AnimatedSprite2D) -> void:
 	RedrawnHeroArt.align(sprite,WORLD_HEIGHT,14.0)
+
+static func utility_flip(frames:SpriteFrames,facing:int)->bool:
+	# Utility clips have one authored side view; metadata distinguishes the
+	# new west-facing master from the legacy east-facing utility artwork.
+	return facing>0 if str(frames.get_meta("utility_facing","e"))=="w" else facing<0

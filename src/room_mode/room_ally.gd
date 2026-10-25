@@ -55,7 +55,7 @@ func _physics_process(dt:float)->void:
 	var firing_here:=target!=null and not melee and visible and dist>=112 and dist<=reach
 	nav_timer-=dt
 	if nav_timer<=0:
-		nav_timer=0.18
+		nav_timer=0.3
 		var destination:=goal
 		if firing_here:
 			_firing_goal=global_position;_firing_target=goal;destination=global_position
@@ -94,7 +94,7 @@ func _physics_process(dt:float)->void:
 	var commanded:=velocity
 	move_and_slide();_track_blockage(dt,before,commanded)
 	var facing_direction:Vector2=attack_direction if attack_clock>=0 else ((goal-global_position) if target!=null else travel)
-	var pose:StringName=&"hurt" if _hurt_left>0 else (&"attack" if attack_clock>=0 else (&"walk" if velocity.length()>10 else &"idle"))
+	var pose:StringName=&"attack" if attack_clock>=0 else &"hurt" if _hurt_left>0 else &"walk" if velocity.length()>10 else &"idle"
 	_play_pose(pose,facing_direction)
 	queue_redraw()
 func combat_movement(_target:EnemyBase,current:Vector2)->Vector2:return current
@@ -108,8 +108,8 @@ func _track_blockage(dt:float,before:Vector2,commanded:Vector2)->void:
 	if commanded.length()<20:_blocked_time=0;return
 	if before.distance_to(global_position)<move_speed*dt*0.12:_blocked_time+=dt
 	else:_blocked_time=0
-	if _blocked_time<0.4:return
-	_blocked_time=0;nav_timer=0
+	if _blocked_time<1.0:return
+	_blocked_time=0;nav_timer=0;_firing_goal=Vector2.ZERO;room.tactics.invalidate_position(self)
 	_detour=room.crowd_detour(global_position,travel,body_radius(),self,is_flying())
 	_detour_left=0.4 if not _detour.is_zero_approx() else 0.0
 func _play_pose(pose:StringName,facing_direction:Vector2)->void:

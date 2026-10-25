@@ -1,0 +1,778 @@
+{
+  "revision": 30,
+  "cell": 256,
+  "foot": [
+    128,
+    240
+  ],
+  "body_height": 114.3931623931624,
+  "animations": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 5
+    },
+    "move": {
+      "frames": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 7
+    },
+    "transform": {
+      "frames": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "fps": 8
+    },
+    "skill_0_windup": {
+      "frames": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "fps": 6
+    },
+    "skill_0_release": {
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "fps": 8
+    },
+    "skill_1_windup": {
+      "frames": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "fps": 6
+    },
+    "skill_1_release": {
+      "frames": [
+        28,
+        29,
+        30,
+        31
+      ],
+      "fps": 8
+    },
+    "skill_2_windup": {
+      "frames": [
+        32,
+        33,
+        34,
+        35
+      ],
+      "fps": 6
+    },
+    "skill_2_release": {
+      "frames": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "fps": 8
+    },
+    "skill_3_windup": {
+      "frames": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "fps": 6
+    },
+    "skill_3_release": {
+      "frames": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "fps": 8
+    },
+    "skill_4_windup": {
+      "frames": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "fps": 6
+    },
+    "skill_4_release": {
+      "frames": [
+        52,
+        53,
+        54,
+        55
+      ],
+      "fps": 8
+    },
+    "windup": {
+      "frames": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "fps": 6
+    },
+    "release": {
+      "frames": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "fps": 8
+    }
+  },
+  "bounds": [
+    [
+      82,
+      126,
+      175,
+      240
+    ],
+    [
+      81,
+      126,
+      176,
+      240
+    ],
+    [
+      82,
+      126,
+      174,
+      240
+    ],
+    [
+      79,
+      126,
+      176,
+      240
+    ],
+    [
+      78,
+      123,
+      180,
+      240
+    ],
+    [
+      80,
+      125,
+      177,
+      240
+    ],
+    [
+      80,
+      124,
+      179,
+      240
+    ],
+    [
+      80,
+      125,
+      177,
+      240
+    ],
+    [
+      82,
+      126,
+      172,
+      240
+    ],
+    [
+      75,
+      125,
+      173,
+      240
+    ],
+    [
+      72,
+      123,
+      174,
+      240
+    ],
+    [
+      66,
+      122,
+      172,
+      240
+    ],
+    [
+      71,
+      123,
+      173,
+      240
+    ],
+    [
+      71,
+      121,
+      175,
+      240
+    ],
+    [
+      73,
+      123,
+      177,
+      240
+    ],
+    [
+      62,
+      121,
+      176,
+      240
+    ],
+    [
+      57,
+      126,
+      192,
+      240
+    ],
+    [
+      50,
+      130,
+      190,
+      240
+    ],
+    [
+      74,
+      117,
+      191,
+      240
+    ],
+    [
+      62,
+      100,
+      192,
+      240
+    ],
+    [
+      58,
+      129,
+      226,
+      240
+    ],
+    [
+      68,
+      139,
+      236,
+      240
+    ],
+    [
+      83,
+      112,
+      199,
+      240
+    ],
+    [
+      77,
+      137,
+      207,
+      240
+    ],
+    [
+      70,
+      126,
+      182,
+      240
+    ],
+    [
+      71,
+      126,
+      171,
+      240
+    ],
+    [
+      66,
+      129,
+      180,
+      240
+    ],
+    [
+      64,
+      128,
+      181,
+      240
+    ],
+    [
+      62,
+      134,
+      211,
+      240
+    ],
+    [
+      56,
+      137,
+      214,
+      240
+    ],
+    [
+      54,
+      136,
+      218,
+      240
+    ],
+    [
+      54,
+      137,
+      207,
+      240
+    ],
+    [
+      87,
+      126,
+      178,
+      240
+    ],
+    [
+      88,
+      126,
+      181,
+      240
+    ],
+    [
+      83,
+      126,
+      175,
+      240
+    ],
+    [
+      85,
+      128,
+      177,
+      240
+    ],
+    [
+      90,
+      134,
+      181,
+      240
+    ],
+    [
+      92,
+      135,
+      179,
+      240
+    ],
+    [
+      86,
+      136,
+      185,
+      240
+    ],
+    [
+      92,
+      135,
+      177,
+      240
+    ],
+    [
+      76,
+      126,
+      164,
+      240
+    ],
+    [
+      76,
+      125,
+      201,
+      240
+    ],
+    [
+      75,
+      121,
+      177,
+      240
+    ],
+    [
+      72,
+      123,
+      192,
+      240
+    ],
+    [
+      64,
+      139,
+      218,
+      240
+    ],
+    [
+      53,
+      141,
+      220,
+      240
+    ],
+    [
+      63,
+      136,
+      232,
+      240
+    ],
+    [
+      65,
+      138,
+      213,
+      240
+    ],
+    [
+      94,
+      88,
+      178,
+      240
+    ],
+    [
+      92,
+      75,
+      182,
+      240
+    ],
+    [
+      88,
+      72,
+      181,
+      240
+    ],
+    [
+      91,
+      73,
+      183,
+      240
+    ],
+    [
+      88,
+      94,
+      191,
+      240
+    ],
+    [
+      83,
+      93,
+      191,
+      240
+    ],
+    [
+      78,
+      93,
+      190,
+      240
+    ],
+    [
+      79,
+      95,
+      185,
+      240
+    ]
+  ],
+  "source_frames": [
+    {
+      "source": "sephra_move2",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "source": "sephra_move2",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "source": "sephra_move2",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "source": "sephra_move2",
+      "row": 0,
+      "column": 3
+    },
+    {
+      "source": "sephra_move2",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "source": "sephra_move2",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "source": "sephra_move2",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "source": "sephra_move2",
+      "row": 1,
+      "column": 3
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 3
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 4
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 5
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 6
+    },
+    {
+      "source": "sephra_2",
+      "row": 1,
+      "column": 7
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "sephra_skill0",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 0,
+      "column": 3
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 1,
+      "column": 3
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "sephra_skill2",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "sephra_skill3",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "source": "sephra2_repair",
+      "row": 3,
+      "column": 3
+    }
+  ],
+  "source_sha256": {
+    "sephra2_repair": "364752eae78e329fca3ac12db0db8d11dfdaaf07633134f5b266402e6cd05afe",
+    "sephra_2": "f1185b070d6ddd5e91f94d49da2fd9ac8a44e1e11d24227a4a8360ead85f8550",
+    "sephra_move2": "71bad588e37eaebfdbb7eb8bbe17ab45cc1b66d30a32e8edb65748c6cb2c3c1f",
+    "sephra_skill0": "1c2cec6d47889d5c68adb3d2485edca61173c6f802816f1efb401dd95274a790",
+    "sephra_skill2": "24c9773d5857143e6b1cc1be338df2d0cf42d517d49195d7b8243614858b9d51",
+    "sephra_skill3": "5a0a938bdde64d40823ee5a814e32c25f08f211a7e1377579f09370530743379"
+  }
+}

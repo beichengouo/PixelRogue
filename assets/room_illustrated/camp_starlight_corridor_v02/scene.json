@@ -2,14 +2,14 @@
   "version": 1,
   "id": "camp_starlight_corridor_v02",
   "canvas": [
-    3840,
-    2560
+    4224,
+    2688
   ],
   "floor_rect_px": [
-    250.0,
-    280.0,
-    3340.0,
-    1840.0
+    275.0,
+    294.0,
+    3674.0000000000005,
+    1932.0
   ],
   "gate_origin": [
     23,
@@ -17,60 +17,314 @@
   ],
   "planes": [
     {
-      "path": "background.png",
-      "layer": "background"
+      "path": "detail_v17/background_0_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "paths.png",
-      "layer": "paths"
+      "path": "detail_v17/background_0_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "water.png",
-      "layer": "water_bridge"
+      "path": "detail_v17/background_0_2.png",
+      "layer": "background",
+      "rect_px": [
+        2816,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "walls.png",
-      "layer": "walls"
+      "path": "detail_v17/background_1_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_2.png",
+      "layer": "background",
+      "rect_px": [
+        2816,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_2_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        1792,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_2_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        1792,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_2_2.png",
+      "layer": "background",
+      "rect_px": [
+        2816,
+        1792,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/paths_0_0.png",
+      "layer": "paths",
+      "rect_px": [
+        385,
+        328,
+        1023,
+        568
+      ]
+    },
+    {
+      "path": "detail_v17/paths_0_1.png",
+      "layer": "paths",
+      "rect_px": [
+        1408,
+        294,
+        1408,
+        602
+      ]
+    },
+    {
+      "path": "detail_v17/paths_0_2.png",
+      "layer": "paths",
+      "rect_px": [
+        2816,
+        328,
+        651,
+        568
+      ]
+    },
+    {
+      "path": "detail_v17/paths_1_0.png",
+      "layer": "paths",
+      "rect_px": [
+        275,
+        896,
+        1133,
+        474
+      ]
+    },
+    {
+      "path": "detail_v17/paths_1_1.png",
+      "layer": "paths",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/paths_1_2.png",
+      "layer": "paths",
+      "rect_px": [
+        2816,
+        896,
+        1133,
+        761
+      ]
+    },
+    {
+      "path": "detail_v17/paths_2_0.png",
+      "layer": "paths",
+      "rect_px": [
+        960,
+        1967,
+        448,
+        112
+      ]
+    },
+    {
+      "path": "detail_v17/paths_2_1.png",
+      "layer": "paths",
+      "rect_px": [
+        1408,
+        1792,
+        1023,
+        434
+      ]
+    },
+    {
+      "path": "detail_v17/paths_2_2.png",
+      "layer": "paths",
+      "rect_px": [
+        2832,
+        1948,
+        580,
+        92
+      ]
+    },
+    {
+      "path": "detail_v17/water_bridge_0_2.png",
+      "layer": "water_bridge",
+      "rect_px": [
+        3500,
+        394,
+        380,
+        327
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        294
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_2.png",
+      "layer": "walls",
+      "rect_px": [
+        2816,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        896,
+        275,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_2.png",
+      "layer": "walls",
+      "rect_px": [
+        3949,
+        896,
+        275,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_2_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        1792,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_2_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        2226,
+        1408,
+        462
+      ]
+    },
+    {
+      "path": "detail_v17/walls_2_2.png",
+      "layer": "walls",
+      "rect_px": [
+        2816,
+        1792,
+        1408,
+        896
+      ]
     }
   ],
   "gates": {
     "north": {
       "path": "door_north.png",
       "rect_px": [
-        1832.5,
-        77.5,
-        177.5,
-        162.5
+        2015.7500000000002,
+        81.375,
+        195.25000000000003,
+        170.625
       ],
       "leaf_only": true
     },
     "south": {
       "path": "door_south.png",
       "rect_px": [
-        1832.5,
-        2187.5,
-        177.5,
-        162.5
+        2015.7500000000002,
+        2296.875,
+        195.25000000000003,
+        170.625
       ],
       "leaf_only": true
     },
     "west": {
       "path": "door_west.png",
       "rect_px": [
-        100.0,
-        1087.5,
-        142.5,
-        195.0
+        110.00000000000001,
+        1141.875,
+        156.75,
+        204.75
       ],
       "leaf_only": true
     },
     "east": {
       "path": "door_east.png",
       "rect_px": [
-        3600.0,
-        1087.5,
-        142.5,
-        195.0
+        3960.0000000000005,
+        1141.875,
+        156.75,
+        204.75
       ],
       "leaf_only": true
     }
@@ -677,5 +931,9 @@
         77.576
       ]
     ]
+  ],
+  "camera_reference_floor_ratio": [
+    1.1497005988023952,
+    1.391304347826087
   ]
 }

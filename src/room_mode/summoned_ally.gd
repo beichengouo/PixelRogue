@@ -1,11 +1,15 @@
 class_name SummonedAlly
 extends RoomAlly
 var is_contract:=true
+var contract_attack_bonus:=-1.0
+var contract_hp_bonus:=-1.0
+var source_skill:StringName=&""
 var guardian:=false
 var art_variant:=""
 var _lantern_dodge_left:=0.0
 var _lantern_dodge_direction:=Vector2.ZERO
 var _appearance_duration:=0.334
+var fate_haste_left:=0.0
 var remaining:=22.0
 var total_duration:=22.0
 var attack_ratio:=0.55
@@ -25,10 +29,16 @@ var guardian_target:=Vector2.ZERO
 var guardian_room_id:=""
 var guardian_facing:=0
 func body_radius()->float:return 18.0 if guardian else 12.0
+func attack_is_melee()->bool:
+	# Contract lanterns use their own projectile attack, independent of the
+	# hostile necromancer's summoning-only combat policy.
+	return false if enemy_kind==&"caster" else super.attack_is_melee()
 func _ready()->void:
 	super._ready();SummonRules.ready(self)
 func _physics_process(dt:float)->void:
 	if not SummonRules.tick(self,dt):return
+	if fate_haste_left>0:
+		var active_dt:=minf(fate_haste_left,dt);fate_haste_left=maxf(0,fate_haste_left-dt);_cooldown=maxf(0,_cooldown-active_dt*.12)
 	_lantern_dodge_left=maxf(0,_lantern_dodge_left-dt)
 	if guardian and _tick_guardian(dt):return
 	super._physics_process(dt)
@@ -68,8 +78,8 @@ func _release_attack(melee:bool)->void:
 		var center:=global_position+attack_direction*20
 		var radius:=110.0 if enemy_kind==&"treant" else 76.0
 		Effects.slash_arc(_fx(),center,attack_direction.angle(),radius*.82,Color("c5b3ff"),150,4,.25)
-		for enemy in get_tree().get_nodes_in_group("enemies"):
-			if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead:continue
+		for enemy in room.tactics.enemies(room):
+			if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or enemy.hp<=0:continue
 			var offset:Vector2=enemy.global_position-global_position
 			if offset.length()<=radius and attack_direction.dot(offset.normalized())>=.15 and room.sight(global_position,enemy.global_position) and room.segment_clear(global_position,enemy.global_position,body_radius(),is_flying()):
 				var before: float = enemy.hp
@@ -109,10 +119,8 @@ func _draw()->void:
 		# The large guardian keeps its life bar above the head, outside the sprite.
 		var head_y:=14.0-112.0
 		draw_colored_polygon(PackedVector2Array([Vector2(0,head_y-12),Vector2(-4,head_y-18),Vector2(4,head_y-18)]),Color("72db8b"))
-		draw_rect(Rect2(-21,head_y-8,42,4),Color("22132d"))
-		draw_rect(Rect2(-20,head_y-7,40*clampf(hp/maxf(1,max_hp),0,1),2),Palette.ALLY_HEALTH)
+		UnitHealthArt.draw(self,Rect2(-21,head_y-18,42,18),hp/maxf(1,max_hp),"ally")
 	else:super._draw()
-	SummonRules.draw_marker(self)
 	if guardian_windup>0:
 		var at:=to_local(guardian_target)
 		var radius:=90.0 if guardian_spell=="roots" else 108.0
@@ -180,7 +188,7 @@ func combat_movement(target:EnemyBase,current:Vector2)->Vector2:
 		if perpendicular.dot(global_position-threat.global_position)<0:perpendicular=-perpendicular
 		for direction:Vector2 in [perpendicular,-perpendicular,-threat.direction]:
 			if _lantern_path_clear(direction):_lantern_dodge_direction=direction;_lantern_dodge_left=.22;return direction*speed
-	if is_instance_valid(target) and global_position.distance_to(target.global_position)<180:
+	if is_instance_valid(target) and global_position.distance_to(target.global_position)<180 and room.projectile_clear(global_position,target.global_position):
 		var retreat:=_retreat_direction(target.global_position)
 		if not retreat.is_zero_approx():return retreat*speed
 	return current

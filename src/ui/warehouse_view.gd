@@ -7,7 +7,6 @@ var _page=0
 var _selected=""
 var _records:Array=[]
 var _cells:Array[Button]=[]
-var _mushrooms:Array[Button]=[]
 var _grid:GridContainer
 var _uses:Button
 var _recipes:Button
@@ -47,7 +46,7 @@ func _ready()->void:
 		status_changed.emit("扩容成功 · 增加10格" if Outpost.expand_warehouse() else "金币不足或保存失败，未扣款")
 		refresh())
 	var filters=UiFactory.hbox(8);add_child(filters)
-	for entry in [["全部","all"],["装备","gear"],["药剂","potion"],["材料","material"],["蘑菇","mushroom"]]:
+	for entry in [["全部","all"],["装备","gear"],["药剂","potion"],["材料","material"]]:
 		var b=PixelUi.tab_button(entry[0],false,17);filters.add_child(b)
 		_filters.append(b)
 		b.set_meta("filter",entry[1]);b.pressed.connect(func()->void:_filter=entry[1];_page=0;refresh())
@@ -64,7 +63,7 @@ func _ready()->void:
 	_batch_quality.select(1)
 	_batch=PixelUi.compact_button("批量出售预览",16);toolbar.add_child(_batch);_batch.pressed.connect(_preview_batch)
 	_batch.set_meta("focus_token","warehouse_batch")
-	var note=PixelUi.label("批量整理当前分类与搜索结果；保留保护锁、委托、配装与准备清单所需库存，蘑菇仅手动出售。",14,PixelUi.MUTED);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;add_child(note)
+	var note=PixelUi.label("批量整理当前分类与搜索结果；保留保护锁、委托、配装与准备清单所需库存。",14,PixelUi.MUTED);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;add_child(note)
 	var row=UiFactory.hbox(18);add_child(row)
 	_grid=GridContainer.new();_grid.columns=10;_grid.add_theme_constant_override("h_separation",6);_grid.add_theme_constant_override("v_separation",6)
 	_grid.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(_grid)
@@ -96,11 +95,6 @@ func _ready()->void:
 	_previous=PixelUi.compact_button("上一页",16);nav.add_child(_previous);_previous.pressed.connect(func()->void:_page=maxi(0,_page-1);refresh())
 	_pager=PixelUi.label("",16);nav.add_child(_pager)
 	_next=PixelUi.compact_button("下一页",16);nav.add_child(_next);_next.pressed.connect(func()->void:_page+=1;refresh())
-	add_child(PixelUi.label("蘑菇收藏 · 不占仓库容量 · 每种最多999",17,PixelUi.GOLD))
-	var mushrooms=UiFactory.hbox(8);add_child(mushrooms)
-	for i in ItemDB.mushroom_count():
-		var b=PixelUi.compact_button("",15);b.custom_minimum_size=Vector2(110,64);b.expand_icon=true;b.add_theme_constant_override("icon_max_width",36);mushrooms.add_child(b);_mushrooms.append(b)
-		b.pressed.connect(func()->void:_selected="glow_mushroom_%d" % i;_refresh_detail())
 	_batch_dialog=SaleConfirmUI.new();add_child(_batch_dialog)
 	_batch_dialog.confirmed.connect(func()->void:
 		var single:=_pending_single;_pending_single={}
@@ -144,7 +138,6 @@ func refresh()->void:
 	var total=maxi(1,ceili(float(maxi(_records.size(),capacity if _filter=="all" else 1))/PAGE_SIZE))
 	_page=clampi(_page,0,total-1)
 	var visible_count=mini(PAGE_SIZE,maxi(_records.size(),capacity) -_page*PAGE_SIZE) if _filter=="all" else mini(PAGE_SIZE,maxi(1,_records.size()-_page*PAGE_SIZE))
-	if _filter=="mushroom":visible_count=0
 	for i in _cells.size():
 		var b=_cells[i];b.visible=i<visible_count
 		var index=_page*PAGE_SIZE+i
@@ -159,10 +152,6 @@ func refresh()->void:
 			(b.get_meta("mark_label") as Label).text=""
 			b.add_theme_stylebox_override("disabled",PixelUi.style(Color("152432"),PixelUi.LINE,2,4,1))
 	_pager.text="%d / %d 页" % [_page+1,total];_previous.disabled=_page==0;_next.disabled=_page>=total-1
-	for i in _mushrooms.size():
-		var item=ItemDB.mushroom_item(i);var b=_mushrooms[i]
-		b.icon=_texture(item);b.text="×%d%s" % [int(Outpost.data.inventory.get(str(item.id),0))," 锁" if Outpost.is_locked(str(item.id)) else ""];b.tooltip_text=str(item.name)+"\n"+str(item.desc)
-		b.visible=search.is_empty() or (str(item.name)+str(item.desc)).to_lower().contains(search)
 	if int(Outpost.data.inventory.get(_selected,0))<=0:
 		_selected=str(_records[mini(_records.size()-1,_page*PAGE_SIZE)].id) if not _records.is_empty() else ""
 	_refresh_detail()
@@ -215,7 +204,7 @@ func _preview_batch()->void:
 		if not ids.has(record.id):ids.append(record.id)
 	var quality=3 if _batch_quality.selected==2 else _batch_quality.selected
 	_pending_plan=Outpost.sale_plan(ids,quality,extra_reserves)
-	if _pending_plan.rows.is_empty():status_changed.emit("没有可批量出售的物品；保护、委托、配装和蘑菇库存保留");return
+	if _pending_plan.rows.is_empty():status_changed.emit("没有可批量出售的物品；保护、委托、配装库存保留");return
 	var lines:PackedStringArray=["预计 +%d 金 · 共%d份 · 释放%d格" % [_pending_plan.gold,_pending_plan.count,_pending_plan.slots_freed],"以下清单确认后一次出售，保存失败不扣物品。",""]
 	for record in _pending_plan.rows:lines.append("%s ×%d  →  %d金" % [record.name,record.count,record.gold])
 	_batch.grab_focus()

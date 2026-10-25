@@ -18,11 +18,12 @@ static func _record_has_pickup(entity: Dictionary) -> bool:
 		"res://src/room_mode/room_key.gd":
 			return not bool(fields.get("_collected", false))
 		"res://src/actors/glow_mushroom.gd":
-			return not bool(fields.get("_harvested", false)) and float(fields.get("_grow", 0.0)) >= 1.0
+			return false
 	return false
 
 func has_pickups(id: String) -> bool:
 	if graph == null or not graph.rooms.has(id): return false
+	if graph.staged and not bool(graph.rooms[id].visited): return false
 	if id == graph.current and is_instance_valid(GameState.runtime_node):
 		var main: Variant = GameState.runtime_node.get("main")
 		if is_instance_valid(main) and main.get("graph") == graph:
@@ -32,12 +33,45 @@ func has_pickups(id: String) -> bool:
 					if not is_instance_valid(node) or node.is_queued_for_deletion(): continue
 					if node is RoomLootDrop and not node._collected and not node.contents.is_empty(): return true
 					if node is RoomKey and not node._collected: return true
-					if node is GlowMushroom and not node._harvested and node._grow >= 1.0: return true
 			return false
 	var runtime: Dictionary = graph.rooms[id].get("delta", {}).get("runtime", {})
 	for entity in runtime.get("entities", []):
 		if entity is Dictionary and _record_has_pickup(entity): return true
 	return false
+
+func type_icon(id:String)->Texture2D:
+	if graph==null or not graph.room_type_revealed(id):return null
+	return SpecialRoomArt.room_icon(str(graph.rooms[id].kind))
+
+func room_background(id:String)->Color:
+	if graph==null or not graph.rooms.has(id):return Color.TRANSPARENT
+	if id==graph.current:return Color("ffe5a4")
+	var record:Dictionary=graph.rooms[id]
+	if not bool(record.visited):return Color("283747")
+	match str(record.kind):
+		"boss":return Color("eaba87")
+		"shop":return Color("f3ce75")
+		"tavern":return Color("da9ccc")
+	return Color("80c8b5") if bool(record.cleared) else Color("a2b5c7")
+
+func clearance_state(id:String)->String:
+	if graph==null or not graph.rooms.has(id):return "unknown"
+	var record:Dictionary=graph.rooms[id]
+	if not RoomGraph.is_combat(str(record.kind)):return "safe" if bool(record.visited) else "unseen"
+	return "cleared" if bool(record.cleared) else "uncleared"
+
+func _draw_clearance(at:Vector2,block:Vector2,state:String)->void:
+	if state not in ["cleared","uncleared"]:return
+	var tint:=Color("8ef0b3") if state=="cleared" else Color("ff796f")
+	draw_rect(Rect2(at-block*.5-Vector2.ONE,block+Vector2.ONE*2),tint,false,1)
+	# Draw above the large type artwork, which used to hide the room-state fill.
+	var badge:=at+block*.5+Vector2(-1,0)
+	draw_rect(Rect2(badge-Vector2(5,5),Vector2(10,10)),Color("152537"))
+	if state=="cleared":
+		draw_line(badge+Vector2(-3,0),badge+Vector2(-1,2),tint,2)
+		draw_line(badge+Vector2(-1,2),badge+Vector2(3,-3),tint,2)
+	else:
+		draw_line(badge+Vector2(0,-3),badge,tint,2);draw_rect(Rect2(badge+Vector2(-1,2),Vector2(2,2)),tint)
 
 func _draw_pickup_marker(at: Vector2) -> void:
 	# One small pouch; it stays outside the room/type glyph and reads at minimap scale.
@@ -53,9 +87,10 @@ func _draw()->void:
 	var origin:=size/2+pan
 	var step:=36.0
 	var nearby:Array[String]=[]
+	var visible_ids:=graph.visible_rooms()
 	var center:=Vector2(RoomGraph.cell(graph.current))
 	if expanded:
-		nearby.assign(graph.rooms.keys())
+		nearby.assign(visible_ids)
 		var lower:=center;var upper:=center
 		for id in nearby:
 			var at:=Vector2(RoomGraph.cell(id));lower=lower.min(at);upper=upper.max(at)
@@ -65,28 +100,29 @@ func _draw()->void:
 		for y in range(-3,4):
 			for x in range(-4,5):
 				var id:=RoomGraph.key(RoomGraph.cell(graph.current)+Vector2i(x,y))
-				if graph.rooms.has(id):nearby.append(id)
+				if id in visible_ids:nearby.append(id)
 	for id in nearby:
 		var cell:=Vector2(RoomGraph.cell(id))-center
 		var at:=origin+cell*step
 		if not Rect2(Vector2(14,14),size-Vector2(28,28)).has_point(at):continue
 		var record:Dictionary=graph.rooms[id]
 		for next in record.doors:
+			if graph.staged and (str(next) not in nearby or not bool(record.visited) and not bool(graph.rooms[next].visited)):continue
 			var direction:=RoomGraph.cell(str(next))-RoomGraph.cell(id)
 			draw_line(at,at+Vector2(direction)*step*.5,Color("7b9b92"),2)
-		var tint:=Color("eaba87") if record.kind=="boss" else (Color("80c8b5") if record.cleared else Color("728291"))
-		if record.kind=="shop":tint=Color("f3ce75")
-		elif record.kind=="tavern":tint=Color("da9ccc")
-		if id==graph.current:tint=Color("ffe5a4")
+		var tint:=room_background(id)
 		var block:=Vector2(minf(22,step*.62),minf(18,step*.5)) if expanded else Vector2(22,18)
 		draw_rect(Rect2(at-block*.5,block),tint)
 		if id==graph.current:draw_rect(Rect2(at-block*.5-Vector2.ONE*3,block+Vector2.ONE*6),Color("ffe5a4"),false,2)
-		var icon:=SpecialRoomArt.room_icon(str(record.kind))
+		var icon:=type_icon(id)
 		if icon!=null:
 			var extent:Vector2=Vector2.ONE*(minf(28,step*.70) if expanded else 26.0)
-			draw_texture_rect(icon,Rect2(at-extent*.5,extent),false)
+			draw_texture_rect(icon,Rect2(at-extent*.5,extent),false,Color.WHITE if bool(record.visited) else Color(.68,.73,.82))
+		_draw_clearance(at,block,clearance_state(id))
 		if id != graph.current and has_pickups(id):
 			_draw_pickup_marker(at + Vector2(block.x * 0.5 + 3, -block.y * 0.5 - 2))
+	if expanded:
+		draw_string(GameFonts.get_font(),Vector2(20,size.y-14),"✓ 已清理    ! 待清理    深色未进入 / 浅色已进入",HORIZONTAL_ALIGNMENT_LEFT,-1,14,Color("cbdde5"))
 
 func _gui_input(event:InputEvent)->void:
 	if not expanded:return

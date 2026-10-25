@@ -2,61 +2,162 @@
   "version": 1,
   "id": "boss_tide_shore_v03",
   "canvas": [
-    1536,
-    1024
+    2816,
+    1792
   ],
   "floor_rect_px": [
-    64,
-    128,
-    1408,
-    795.8260869565217
+    117.33333333333333,
+    224.0,
+    2581.333333333333,
+    1392.695652173913
   ],
   "planes": [
     {
-      "path": "background.png"
+      "path": "detail_v17/background_0_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "water.png"
+      "path": "detail_v17/background_0_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "bridge.png"
+      "path": "detail_v17/background_1_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/water_bridge_0_0.png",
+      "layer": "water_bridge",
+      "rect_px": [
+        172,
+        290,
+        1014,
+        510
+      ]
+    },
+    {
+      "path": "detail_v17/water_bridge_0_1.png",
+      "layer": "water_bridge",
+      "rect_px": [
+        1819,
+        744,
+        823,
+        152
+      ]
+    },
+    {
+      "path": "detail_v17/water_bridge_1_1.png",
+      "layer": "water_bridge",
+      "rect_px": [
+        1489,
+        896,
+        1164,
+        593
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
     }
   ],
   "gates": {
     "north": {
       "path": "door_north.png",
       "rect_px": [
-        640,
-        0,
-        255,
-        160
+        1173.3333333333333,
+        0.0,
+        467.5,
+        280.0
       ]
     },
     "south": {
       "path": "door_south.png",
       "rect_px": [
-        640,
-        824,
-        255,
-        200
+        1173.3333333333333,
+        1442.0,
+        467.5,
+        350.0
       ]
     },
     "west": {
       "path": "door_west.png",
       "rect_px": [
-        0,
-        390,
-        112,
-        184
+        0.0,
+        682.5,
+        205.33333333333331,
+        322.0
       ]
     },
     "east": {
       "path": "door_east.png",
       "rect_px": [
-        1424,
-        390,
-        112,
-        184
+        2610.6666666666665,
+        682.5,
+        205.33333333333331,
+        322.0
       ]
     }
   },
@@ -685,5 +786,9 @@
         26
       ]
     }
+  ],
+  "camera_reference_floor_ratio": [
+    1.0909090909090908,
+    1.2867132867132867
   ]
 }

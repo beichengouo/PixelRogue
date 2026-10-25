@@ -6,6 +6,7 @@ var busy := false
 var _root: Control
 var _ink: GoddessPass
 var _title: Label
+var _slide: RoomSlideOverlay
 var _tween: Tween
 var _epoch := 0
 var _progress_bar: ProgressBar
@@ -89,6 +90,35 @@ func cover(caption := "新的旅途", effect := "goddess", request_owner: Node =
 	_ink.looping = not _ink.reduced
 	covered.emit()
 	return true
+
+func cover_room(direction:Vector2i,request_owner:Node)->bool:
+	if busy or direction not in RoomGraph.DIRECTIONS:return false
+	_epoch+=1
+	var ticket:=_epoch
+	_request_owner=weakref(request_owner);_owner_cleanup=_on_owner_exit.bind(ticket)
+	request_owner.tree_exiting.connect(_owner_cleanup,CONNECT_ONE_SHOT)
+	busy=true;_root.hide()
+	var visible_huds:Array[CanvasLayer]=[]
+	for reference in UIFlow._huds:
+		var hud:Variant=reference.get_ref()
+		if is_instance_valid(hud) and hud.visible:visible_huds.append(hud)
+	UIFlow.push_screen(self)
+	_slide=RoomSlideOverlay.new();add_child(_slide)
+	_slide.capture_old(direction)
+	# Preserve the HUD in screen space. It was hidden only for the internal world capture.
+	for hud in visible_huds:
+		if is_instance_valid(hud):hud.show()
+	covered.emit()
+	return true
+
+func uncover_room()->void:
+	if not busy or not is_instance_valid(_slide):return
+	var ticket:=_epoch
+	_slide.capture_new()
+	_tween=create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_tween.tween_property(_slide,"progress",1.0,.10 if ComicMotion.reduced() else RoomSlideOverlay.DURATION).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	if not await _wait_motion(ticket):return
+	cancel();finished.emit()
 
 func play_boot_sequence(caption := "正在准备菜单与旅途资源…", request_owner: Node = null) -> bool:
 	if busy or boot_played: return false
@@ -188,6 +218,8 @@ func cancel() -> void:
 	if _tween != null and _tween.is_valid(): _tween.kill()
 	_tween = null
 	busy = false
+	if is_instance_valid(_slide):_slide.release();_slide.queue_free()
+	_slide=null
 	_boot_active = false
 	if _root != null: _root.hide()
 	if _ink != null: _ink.set_progress(0.0)

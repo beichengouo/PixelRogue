@@ -35,6 +35,7 @@ var _monster_scroll:ScrollContainer
 var _video: VideoStreamPlayer
 var _view: View = View.MAIN
 var _picked: StringName = Characters.DEFAULT_ID
+var _selection_curtain: ColorRect
 var _transition: Tween
 var _switching := false
 var _activation_pending := false
@@ -104,6 +105,7 @@ func open_settings() -> void:
 func close(immediate := true) -> void:
 	if is_instance_valid(_abandon_confirm):_abandon_confirm.close()
 	_binding_capture=""
+	_clear_selection_curtain()
 	if not immediate and is_open():
 		if _menu_closing: return
 		_menu_closing = true
@@ -173,6 +175,7 @@ func _build() -> void:
 	_selection_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_root.add_child(_selection_art)
 	_canvas = StarUi.frame(_root, Vector2(1280, 720))
+	_root.resized.connect(_fit_menu_canvas)
 	_canvas.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_character_art = TextureRect.new()
 	var character: Dictionary = Characters.DATA[Characters.DEFAULT_ID]
@@ -198,6 +201,49 @@ func _build() -> void:
 	_content = UiFactory.vbox(12)
 	_page.add_child(_content)
 
+func _fit_menu_canvas() -> void:
+	if not is_instance_valid(_canvas): return
+	var area := MobileControls.safe_rect() if MobileControls.enabled() else Rect2(Vector2.ZERO, _root.size)
+	var design := Vector2(1280,720)
+	var page := _view == View.CHARACTER
+	var extent := design if page else design + Vector2(48,48)
+	var factor := maxf(.1,minf(area.size.x/extent.x,area.size.y/extent.y))
+	if not page: factor = minf(factor,1.0)
+	_canvas.scale = Vector2.ONE * factor
+	_canvas.position = area.position + (area.size-design*factor)*.5
+	if page and is_instance_valid(_artbook):
+		_artbook.fit_background(Rect2(-_canvas.position/factor,_root.size/factor))
+
+func _clear_selection_curtain() -> void:
+	if is_instance_valid(_selection_curtain):
+		_selection_curtain.queue_free()
+	_selection_curtain = null
+	if is_instance_valid(_page): _page.position = Vector2.ZERO
+
+func _enter_character_page() -> void:
+	_switching = true
+	_selection_curtain = ColorRect.new()
+	_selection_curtain.name = "SelectionPageTurn"
+	_selection_curtain.color = Color("f5eddd")
+	_selection_curtain.mouse_filter = Control.MOUSE_FILTER_STOP
+	_root.add_child(_selection_curtain)
+	_selection_curtain.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	_selection_curtain.modulate.a = 0
+	_transition = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_transition.set_parallel(true)
+	_transition.tween_property(_page,"modulate:a",0.0,.16)
+	_transition.tween_property(_selection_curtain,"modulate:a",1.0,.22).set_trans(Tween.TRANS_SINE)
+	_transition.chain().tween_callback(func()->void:
+		_render_view(View.CHARACTER)
+		_page.modulate.a = 1.0
+		_page.position.x = 24)
+	_transition.chain().tween_property(_selection_curtain,"modulate:a",0.0,.34).set_trans(Tween.TRANS_SINE)
+	_transition.parallel().tween_property(_page,"position:x",0.0,.34).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	_transition.chain().tween_callback(func()->void:
+		_clear_selection_curtain()
+		_switching = false
+		_focus_first())
+
 func _fit_video() -> void:
 	if _video == null:
 		return
@@ -218,6 +264,10 @@ func _show_view(view: View, immediate := false) -> void:
 	_scroll_memory[int(_view)] = scrolls
 	if _transition != null and _transition.is_valid(): _transition.kill()
 	ComicMotion.cancel(_page)
+	_clear_selection_curtain()
+	if not immediate and _view == View.MAIN and view == View.CHARACTER and not ComicMotion.reduced():
+		_enter_character_page()
+		return
 	if immediate:
 		_switching = false
 		_render_view(view)
@@ -327,7 +377,7 @@ func _focus_first() -> void:
 	if _view == View.CHARACTER and _artbook != null:
 		var previous := str(_return_focus.get(int(_view), ""))
 		for button in _artbook.find_children("*", "Button", true, false):
-			if button.text == previous and not button.disabled:
+			if not previous.is_empty() and button.text == previous and not button.disabled:
 				button.grab_focus()
 				return
 		_artbook.focus_first()
@@ -343,6 +393,7 @@ func _focus_first() -> void:
 			return
 
 func _place_content() -> void:
+	_fit_menu_canvas()
 	_content.add_theme_constant_override("separation", 8 if _view == View.MAIN else 12)
 	# 纹理首次载入会延迟刷新最小尺寸，在控件入树后固定立绘展示区域。
 	_character_art.set_deferred("size", Vector2(480, 620))
@@ -350,8 +401,9 @@ func _place_content() -> void:
 	_character_art.visible = false
 	if _video != null:
 		_video.visible = _view != View.CHARACTER and not _settings_only
-	_background_art.visible=not _settings_only
-	_shade.visible=not _settings_only
+		_video.paused = not _video.visible
+	_background_art.visible=not _settings_only and _view != View.CHARACTER
+	_shade.visible=not _settings_only and _view != View.CHARACTER
 	_backdrop.visible = _view not in [View.MAIN, View.CHARACTER, View.SETTINGS, View.ITEMS, View.MONSTERS]
 	_shade.modulate.a = 1.0 if _view == View.MAIN else 0.3
 	match _view:
@@ -457,6 +509,8 @@ func _on_continue() -> void:
 	var info := SaveService.run_info()
 	if info.is_empty():
 		return
+	if str(info.get("combat_mode",info.get("departure",{}).get("combat_mode","rooms")))!="rooms":
+		set_notice("该存档所属的试行玩法已移除。请选择启程赴星，确认放弃旧出征后开始章节冒险；旧存档不会被自动删除。");_render_view(View.MAIN);return
 	close()
 	continue_requested.emit(info)
 
@@ -479,6 +533,7 @@ func _build_character() -> void:
 		start_requested.emit()
 	)
 	_page.add_child(_artbook)
+	_fit_menu_canvas()
 
 func _title_logo(height: float) -> Control:
 	## 标题图是浅色发光的书法字，直接压在明亮的天空背景上会"糊"在一起
@@ -732,9 +787,11 @@ func _build_record() -> void:
 	var entries := UiFactory.vbox(6)
 	entries.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	journal.add_child(entries)
-	var scenes: Array[StringName] = [Story.INTRO_FIRST, &"intro_weapon", Story.DEATH_FIRST, &"death_hall", &"death_hall_intro", &"death_reenter"]
+	var scenes: Array[StringName] = [Story.INTRO_FIRST, Story.DEATH_FIRST, &"death_hall", &"death_hall_intro", &"death_reenter"]
 	for wave in range(10, 101, 10): scenes.append(Story.checkpoint_id(wave))
+	scenes.append_array([&"forest_king_before",&"forest_mage_before",&"forest_tide_before",&"stage_echo_entry"])
 	if _record_chapter==ChapterCatalog.NEXT:scenes.assign(CityStories.IDS)
+	if _record_chapter==ChapterCatalog.NEXT:scenes.append(&"stage_echo_entry")
 	scenes.append(&"fate_observation")
 	for scene_id in scenes:
 		var unlocked := StoryState.seen(scene_id,_record_character)
@@ -744,6 +801,13 @@ func _build_record() -> void:
 		entry.disabled = not unlocked
 		entries.add_child(entry)
 		entry.pressed.connect(func() -> void: story_replay_requested.emit(scene_id,_record_character))
+
+	for memory in CampStory.memories():
+		if str(memory.hero)!=str(_record_character) or str(memory.chapter)!=str(_record_chapter):continue
+		var memory_button:=PixelUi.list_button("纪念回响 · "+str(memory.title)+(" · 回看" if memory.unlocked else " · 通关并成功撤离后解锁"),56)
+		memory_button.disabled=not bool(memory.unlocked);entries.add_child(memory_button)
+		var text:=PixelUi.label("\n".join(memory.lines),19,PixelUi.MUTED);text.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;entries.add_child(text);text.hide()
+		memory_button.pressed.connect(func()->void:text.visible=not text.visible)
 
 	_content.add_child(_rule())
 	var info := SaveService.run_info()
@@ -780,7 +844,7 @@ func _archive_panel()->VBoxContainer:
 func _archive_back()->void:
 	var back:=StarUi.button("返回星辉",22);back.custom_minimum_size.y=48;InteractionSkin.apply_button(back,"archive");_content.add_child(back);back.pressed.connect(func()->void:_show_view(View.MAIN))
 func _build_items()->void:
-	var unlocked_count:int=SaveService.data.achievements.size();_content.add_child(PixelUi.title("星遗录 · %d／%d 成就"%[unlocked_count,AchievementCatalog.DATA.size()],34))
+	var unlocked_count:int=AchievementCatalog.unlocked_count();_content.add_child(PixelUi.title("星遗录 · %d／%d 成就"%[unlocked_count,AchievementCatalog.DATA.size()],34))
 	var tabs:=UiFactory.hbox(10);_content.add_child(tabs)
 	for category in ["全部","未完成","已完成","探索","战斗","收集","挑战"]:
 		var button:=StarUi.button(category,20);button.size_flags_horizontal=Control.SIZE_EXPAND_FILL;button.set_meta("interaction_selected",category==_achievement_filter);InteractionSkin.apply_button(button,"archive");tabs.add_child(button);button.pressed.connect(func()->void:_achievement_filter=category;_render_view(View.ITEMS))
@@ -853,7 +917,7 @@ func _build_item_catalogue(body:VBoxContainer)->void:
 			detail_category.visible=ItemDB.is_equippable(item) or ItemDB.is_relic(item)
 			if detail_category.visible:detail_category.set_category("relic" if ItemDB.is_relic(item) else "equipment")
 			var subtype:="" if ItemDB.is_relic(item) else " · "+ItemDB.kind_label(item)
-			detail.text = "%s%s\n%s\n%s" % [item.name, subtype, item.desc, "需装备后生效" if ItemDB.is_equippable(item) else "背包使用" if ItemDB.is_usable(item) else "获得后立即生效"]
+			detail.text = "%s%s\n%s\n%s\n获取线索 · %s\n%s" % [item.name, subtype, item.desc, "需装备后生效" if ItemDB.is_equippable(item) else "背包使用" if ItemDB.is_usable(item) else "获得后立即生效",BuildPaths.source(item),BuildPaths.item_routes(str(item.id))]
 			for node in list.get_children(): node.modulate = Color.WHITE if node == button else Color(0.85, 0.88, 0.92)
 		button.pressed.connect(choose)
 		if str(item.id) == _codex_selected: choose.call()
@@ -880,7 +944,7 @@ func _build_item_row(item: Dictionary) -> Control:
 	row.add_child(UiFactory.spacer())
 	# 产出信息：渠道 + 权重（权重越大越常出）
 	var sources: Array = item.get("sources", [])
-	var source_text := "全部渠道" if sources.is_empty() else "、".join(sources.map(func(source: Variant) -> String: return {"shop":"商店", "chest":"宝箱", "reward":"奖励"}.get(str(source),str(source))))
+	var source_text := BuildPaths.source(item)
 	var source_label := PixelUi.label("获取：%s" % source_text, 14, PixelUi.MUTED)
 	source_label.custom_minimum_size.x = 160
 	source_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
@@ -961,11 +1025,9 @@ func _star_menu_button(text:String,extent:Vector2,art_id := "")->Button:
 		lettering.offset_top = padding
 		lettering.offset_bottom = -padding
 		var update := func() -> void: _update_menu_lettering(button,lettering)
+		var navigation:=NavigationModeBinding.attach(button,update,[self,lettering])
 		for event in [button.ready,button.mouse_entered,button.mouse_exited,button.focus_entered,button.focus_exited,button.button_down,button.button_up]:
-			event.connect(update)
-		UIFlow.navigation_mode_changed.connect(update)
-		button.tree_exiting.connect(func() -> void:
-			if UIFlow.navigation_mode_changed.is_connected(update):UIFlow.navigation_mode_changed.disconnect(update))
+			event.connect(navigation.refresh)
 	var sparks:=PixelUi.MenuLetterSpark.new();sparks.size=extent;sparks.letter_width=180
 	sparks.mouse_filter=Control.MOUSE_FILTER_IGNORE;button.add_child(sparks)
 	button.pressed.connect(sparks.fire)

@@ -111,9 +111,7 @@ func _build_ui() -> void:
 	# 底下的血条、技能格、药水格会透出来和它们挤在一起（画面自查时被点出来了）
 	add_child(inventory_ui)
 
-	talent_ui = TalentUI.new()
-	talent_ui.name = "TalentUI"
-	add_child(talent_ui)
+	talent_ui = inventory_ui.talent_view
 
 	dialogue = DialogueUI.new()
 	dialogue.name = "DialogueUI"
@@ -191,11 +189,7 @@ func _on_manual_save() -> void:
 
 
 func open_talents() -> void:
-	## 背包「天赋」页的按钮走这里：统一入口，避免和背包抢输入
-	if is_instance_valid(inventory_ui) and inventory_ui.is_open():
-		inventory_ui.close()
-	if is_instance_valid(talent_ui):
-		talent_ui.open()
+	if is_instance_valid(inventory_ui):inventory_ui.open_talent_page()
 
 
 func _on_return_to_menu() -> void:
@@ -392,16 +386,8 @@ func _on_shop_opened(offers: Array) -> void:
 
 
 func _try_harvest_mushroom() -> bool:
-	## 遍历场上的蘑菇，谁在采集范围内就采掉谁（蘑菇自己判断距离）
-	for node in get_tree().get_nodes_in_group("mushrooms"):
-		var mushroom := node as GlowMushroom
-		if mushroom == null or not is_instance_valid(mushroom):
-			continue
-		if mushroom.try_interact():
-			if is_instance_valid(player): player.play_action_feedback(&"interact")
-			return true
+	# Compatibility hook: mushroom harvesting has been retired.
 	return false
-
 
 func _on_player_died() -> void:
 	_navigation_pending = false
@@ -471,9 +457,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		if shop_ui.is_open() or choice_ui.is_open():
 			return
 		if talent_ui.is_open():
-			talent_ui.close()
+			inventory_ui.close()
 		else:
-			talent_ui.open()
+			open_talents()
 		get_viewport().set_input_as_handled()
 		return
 	if event.is_action_pressed("pause_menu"):
@@ -493,9 +479,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if is_instance_valid(expedition) and expedition.interact():
 			get_viewport().set_input_as_handled()
-			return
-		# 采集发光蘑菇的优先级最高：它就长在脚下，别被旁边的商人抢走这次 E
-		if _try_harvest_mushroom():
 			return
 		if _try_interact_chest():
 			return
@@ -536,23 +519,24 @@ func _extraction_blocks_input() -> bool:
 func _settle_extraction(runtime: ExpeditionRuntime, ticket: int) -> void:
 	if _navigation_pending or not runtime.extraction.can_complete(ticket): return
 	_navigation_pending = true
+	var direct:bool=runtime.extraction is RoomExtraction and runtime.extraction.direct_gate
 	var flow_ticket := _flow_epoch
 	var cover_ticket := TransitionLayer._epoch + 1
-	runtime._completion_cover_epoch = cover_ticket
-	if not await TransitionLayer.cover("女神接引 · 满载而归", "goddess", self):
+	runtime._completion_cover_epoch = -1 if direct else cover_ticket
+	if not direct and not await TransitionLayer.cover("女神接引 · 满载而归", "goddess", self):
 		if flow_ticket == _flow_epoch:
 			_navigation_pending = false
 			if is_instance_valid(runtime) and runtime.extraction.can_complete(ticket): runtime.extraction.retry_completion()
 		return
 	if flow_ticket != _flow_epoch or not is_instance_valid(runtime) or not runtime.extraction.can_complete(ticket):
-		if TransitionLayer._epoch == cover_ticket: TransitionLayer.cancel()
+		if not direct and TransitionLayer._epoch == cover_ticket: TransitionLayer.cancel()
 		if flow_ticket == _flow_epoch: _navigation_pending = false
 		return
 	var completed_city:=GameState.chapter_id==ChapterCatalog.NEXT and GameState.chapter_cleared
 	var result := Outpost.settle_sortie("extracted")
 	if result.is_empty():
 		runtime.extraction.retry_completion()
-		await TransitionLayer.uncover()
+		if not direct:await TransitionLayer.uncover()
 		if flow_ticket == _flow_epoch: _navigation_pending = false
 		return
 	if completed_city:StoryState.set_flag(StringName("city_return_pending_"+str(Characters.current_id())),true)
@@ -560,7 +544,7 @@ func _settle_extraction(runtime: ExpeditionRuntime, ticket: int) -> void:
 	runtime.motion.cancel()
 	_extracted_to_camp()
 	var arrival_ticket := _flow_epoch
-	await TransitionLayer.uncover()
+	if not direct:await TransitionLayer.uncover()
 	if arrival_ticket == _flow_epoch: _navigation_pending = false
 
 func _safe_exit() -> void:

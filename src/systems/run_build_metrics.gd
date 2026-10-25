@@ -50,10 +50,10 @@ static func hit(enemy:EnemyBase,amount:float,source:Node,kind:StringName,fate_fa
 	GameState.build_stats.recorded=true
 	GameState.build_stats.damage[channel]=float(GameState.build_stats.damage.get(channel,0))+amount
 	var ally_source:Node=source.get_parent() if source is DamageContext else source
-	if kind==&"ally" and fate_factor>1.0 and FateCatalog.rank("empress")>0 and ally_source is HiredAlly:trigger("fate:empress");FateRuntime.repair_ally_hit()
-	var neutral:=1.0+(.08 if kind==&"basic" and FateCatalog.star()=="torch" else 0.0)-(.08 if kind==&"basic" and FateCatalog.rank("moon")==2 else 0.0)
+	if kind==&"ally" and fate_factor>1.0 and FateCatalog.rank("empress")>0 and ally_source is HiredAlly:trigger("fate:empress")
+	var neutral:=1.0-(.08 if kind==&"basic" and FateCatalog.rank("moon")==2 else 0.0)
 	# Reuse the actual damage multiplier, avoiding another full ally search.
-	if kind in [&"basic",&"skill"] and FateCatalog.rank("hermit")>0 and fate_factor>neutral+.001:trigger("fate:hermit")
+	if kind in [&"basic",&"skill"] and FateCatalog.rank("hermit")==2 and FateRuntime.disconnected() and FateRuntime.direct_source(source) and fate_factor>neutral+.001:trigger("fate:hermit")
 static func describe(snapshot:Dictionary)->String:
 	var stats:=normalize(snapshot.get("build_stats"))
 	if not stats.recorded:return "更新前未记录构筑表现。"

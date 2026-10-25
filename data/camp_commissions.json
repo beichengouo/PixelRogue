@@ -1,0 +1,750 @@
+{
+  "commissions": [
+    {
+      "id": "camp_surveyor_labels",
+      "title": "先把标签写清楚",
+      "desc": "请帮忙备齐林地晶芽8份、苔纹织片2份。材料成功撤离入库后交付。",
+      "needs": {
+        "forest_sample": 8,
+        "moss_cloth": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 24,
+      "owner": "merchant",
+      "issuer": "surveyor",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "",
+      "story": true,
+      "offer": [
+        {
+          "text": "我想给样本做一套摸得出来的标签，需要一批林地晶芽和一批苔纹织片。",
+          "expression": "neutral"
+        },
+        {
+          "text": "林地晶芽就是林子里会发微光的小晶簇，不是能吃的嫩芽。之前有人把它送进厨房，我追了半个营地。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你们记不起以前的事，第一次见这些名字很正常。别不好意思问，我的工作就是把东西讲清楚。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐林地晶芽8份、苔纹织片2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "这片织物正好能剪成标签。两道线是晶芽，三个结是琥珀，天黑也摸得出来。",
+          "expression": "neutral"
+        },
+        {
+          "text": "姜糖说她会按这套标记整理货单。以后有哪个名字不明白，拿过来，我们一起对着实物认。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你问我是不是从来不认错？上次那份送进厨房的样本……咳，是我标签写反了。报酬已经入库。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_surveyor_rain",
+      "title": "雨后的对照记录",
+      "desc": "请帮忙备齐林地晶芽4份、湿地琥珀4份、林脂凝晶2份。材料成功撤离入库后交付。",
+      "needs": {
+        "forest_sample": 4,
+        "wetland_sample": 4,
+        "forest_resin": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 27,
+      "owner": "merchant",
+      "issuer": "surveyor",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_surveyor_labels",
+      "story": true,
+      "offer": [
+        {
+          "text": "再帮我带一批晶芽、一批湿地琥珀和一批林脂凝晶吧，我想做雨前雨后的对照。",
+          "expression": "neutral"
+        },
+        {
+          "text": "湿地琥珀是沼地里凝住的小块树脂，林脂凝晶则更硬。看起来像，保存办法却不同。",
+          "expression": "neutral"
+        },
+        {
+          "text": "最近有人说晶芽变暗就预示灾祸。我没找到证据，先把采来的东西摆在一起看，比猜来猜去强。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐林地晶芽4份、湿地琥珀4份、林脂凝晶2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "你看，擦掉表面的泥水，两份样本的光其实差不多。至少这一次，跟灾祸没关系。",
+          "expression": "neutral"
+        },
+        {
+          "text": "我把采样地点也补上了。下回再有人担心，我就拿记录给他看，不让一句传闻吓得大家睡不着。",
+          "expression": "neutral"
+        },
+        {
+          "text": "谢谢你愿意陪我做这种慢活。奖励入库了，剩下的记录我来写，你去歇歇。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_surveyor_handbook",
+      "title": "谁都能看懂的手册",
+      "desc": "请帮忙备齐苔纹织片4份、溪湾明珠2份。材料成功撤离入库后交付。",
+      "needs": {
+        "moss_cloth": 4,
+        "river_pearl": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 32,
+      "owner": "merchant",
+      "issuer": "surveyor",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_surveyor_rain",
+      "story": true,
+      "offer": [
+        {
+          "text": "我想把采样手册放在公共桌上。一批织片做封皮，一批溪湾明珠压住书角，风就吹不乱了。",
+          "expression": "neutral"
+        },
+        {
+          "text": "第一版写得太像研究笔记，布琳娜看完只问我：能不能直接写“别用火烤”？我觉得她说得对。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你帮我当第一个读者吧。有看不懂的地方就圈出来，不用照顾我的面子。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐苔纹织片4份、溪湾明珠2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "你圈了这么多？……好，我说了不用照顾面子，算数。这里改成“沾水后放阴凉处”，确实明白多了。",
+          "expression": "neutral"
+        },
+        {
+          "text": "第一页留了空白，谁发现新用法都可以添。记不起过去也没关系，今天学到的东西可以从今天开始记。",
+          "expression": "neutral"
+        },
+        {
+          "text": "姜糖答应帮忙保管。以后新人少走一点弯路，就有你一份功劳。报酬已经入库。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_carpenter_bench",
+      "title": "坐下再说",
+      "desc": "请帮忙备齐苔纹织片4份、林脂凝晶2份。材料成功撤离入库后交付。",
+      "needs": {
+        "moss_cloth": 4,
+        "forest_resin": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 24,
+      "owner": "merchant",
+      "issuer": "carpenter",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "",
+      "story": true,
+      "offer": [
+        {
+          "text": "门边那张长凳坐着扎人。我缺一批苔纹织片和一批林脂凝晶，给它包个软垫。",
+          "expression": "neutral"
+        },
+        {
+          "text": "有人回来连坐都不敢坐，怕把椅子弄脏。家具就是给人用的，供起来算怎么回事？",
+          "expression": "neutral"
+        },
+        {
+          "text": "别看我，那个坐下后立刻弹起来的人我不点名。你帮我找材料，我保证这回没有木刺。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐苔纹织片4份、林脂凝晶2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "好了，你坐坐看。别只用一根手指碰，整个人坐上去。稳吧？",
+          "expression": "neutral"
+        },
+        {
+          "text": "我故意留宽了一个位置。谁回来想安静待着，就能有地方坐；想聊天，也不用隔着一地木屑喊。",
+          "expression": "neutral"
+        },
+        {
+          "text": "姜糖把报酬记进金库了。再坐一会儿也行，我削木头不收座位钱。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_carpenter_shelf",
+      "title": "放得下的心事",
+      "desc": "请帮忙备齐苔纹织片2份、遗迹铁矿2份、林脂凝晶2份。材料成功撤离入库后交付。",
+      "needs": {
+        "moss_cloth": 2,
+        "ruin_ore": 2,
+        "forest_resin": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 30,
+      "owner": "merchant",
+      "issuer": "carpenter",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_carpenter_bench",
+      "story": true,
+      "offer": [
+        {
+          "text": "这回修公共寄物架：一批织片、一批遗迹铁矿、一批凝晶，给每格加个扣。",
+          "expression": "neutral"
+        },
+        {
+          "text": "寄物架只收大家自愿留下的小物件，不是仓库，也不会把你的出征物资扣在这里。",
+          "expression": "neutral"
+        },
+        {
+          "text": "有些人怕自己记性不好，把东西塞得到处都是。我做几个一眼就看清的小格子，省得他们再找半天。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐苔纹织片2份、遗迹铁矿2份、林脂凝晶2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "扣子装好了，开起来不费劲。标签你自己写，我不会偷看。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你问空着的那一格给谁？给暂时还没有东西想留下的人。哪天有了，再放进去就是。",
+          "expression": "neutral"
+        },
+        {
+          "text": "行了，别把我夸得跟做了什么大事似的。只是一个架子。报酬进金库，记得检查。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_carpenter_table",
+      "title": "今晚把桌子拼起来",
+      "desc": "请帮忙备齐遗迹铁矿4份、林脂凝晶2份。材料成功撤离入库后交付。",
+      "needs": {
+        "ruin_ore": 4,
+        "forest_resin": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 36,
+      "owner": "tavern",
+      "issuer": "carpenter",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_carpenter_shelf",
+      "story": true,
+      "offer": [
+        {
+          "text": "温阮说晚饭要多坐几个人，旧桌腿又开始晃。两块铁矿和一份凝晶，我能给它加固。",
+          "expression": "neutral"
+        },
+        {
+          "text": "她问我能不能赶上今晚，我说能。然后才发现，材料箱空了……这段别替我传出去。",
+          "expression": "neutral"
+        },
+        {
+          "text": "带不回来也别硬撑，饭可以分两轮吃。桌子晚修一天，没人会饿着。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐遗迹铁矿4份、林脂凝晶2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "接头锁紧了。你按这边，我按那边——看，一点都不晃。",
+          "expression": "neutral"
+        },
+        {
+          "text": "温阮让我问你，今晚想坐靠窗还是靠锅那边。我选靠锅，添饭方便。",
+          "expression": "neutral"
+        },
+        {
+          "text": "她说报酬已经存好了，还给我们留了热饭。工作收尾，去洗手。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_herbalist_travel",
+      "title": "出门前的小药包",
+      "desc": "请帮忙备齐苔纹织片2份、林脂凝晶2份。材料成功撤离入库后交付。",
+      "needs": {
+        "moss_cloth": 2,
+        "forest_resin": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 22,
+      "owner": "tavern",
+      "issuer": "herbalist",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "",
+      "story": true,
+      "offer": [
+        {
+          "text": "帮我带一批苔纹织片和一批林脂凝晶吧，我想给公共药箱补几个示范药包。",
+          "expression": "neutral"
+        },
+        {
+          "text": "林脂凝晶是菌褶透暖光的那种。这个药包只用来教大家辨认材料，不替代你背包里的药剂。",
+          "expression": "neutral"
+        },
+        {
+          "text": "我会把“外用”和“煮汤”分开放。上回两张纸贴反，温阮端着锅来找我，我到现在都不敢忘。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐苔纹织片2份、林脂凝晶2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "布条够软，不磨手。林脂凝晶这边画一口小锅，外用那边画一只手，这样识不识字都看得懂。",
+          "expression": "neutral"
+        },
+        {
+          "text": "受伤了就来找我，别先说“只是擦破一点”。到底是一点还是很多，让我看过再讲。",
+          "expression": "neutral"
+        },
+        {
+          "text": "材料记下了，报酬也入库了。你愿意再帮我检查一遍标签吗？我可不想再看见那口锅。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_herbalist_flavor",
+      "title": "苦味少一点",
+      "desc": "请帮忙备齐林地晶芽4份、林脂凝晶4份。材料成功撤离入库后交付。",
+      "needs": {
+        "forest_sample": 4,
+        "forest_resin": 4
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 28,
+      "owner": "tavern",
+      "issuer": "herbalist",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_herbalist_travel",
+      "story": true,
+      "offer": [
+        {
+          "text": "两份林脂凝晶，再加一份晶芽。我想让温阮试试新汤的配比。",
+          "expression": "neutral"
+        },
+        {
+          "text": "先说清楚：晶芽不下锅，我只用它的光检查菌褶有没有霉斑。汤里还是大家认得的食材。",
+          "expression": "neutral"
+        },
+        {
+          "text": "药草有用，也不代表非得把每顿饭煮苦。能吃得舒服一点，我想多试一次。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐林地晶芽4份、林脂凝晶4份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "她刚尝完，说总算不像在喝树皮水了。我当这是夸奖。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你那碗先别急，烫。我们照顾的是回来的人，不是急着交差的任务单。",
+          "expression": "neutral"
+        },
+        {
+          "text": "报酬已存进金库。今晚如果有人问配方，就说温阮掌勺、我负责少放苦草。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_herbalist_rest",
+      "title": "好好休息也算正事",
+      "desc": "请帮忙备齐苔纹织片4份、溪湾明珠2份。材料成功撤离入库后交付。",
+      "needs": {
+        "moss_cloth": 4,
+        "river_pearl": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 32,
+      "owner": "tavern",
+      "issuer": "herbalist",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_herbalist_flavor",
+      "story": true,
+      "offer": [
+        {
+          "text": "休息角的布帘破了，想请你带一批织片和一批溪湾明珠。明珠做坠子，帘子就不会一直飘。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次不是什么治疗仪式，只是挡光、挡风，让累的人能睡一觉。",
+          "expression": "neutral"
+        },
+        {
+          "text": "过去想不起来，很多人就逼自己一直忙。我不能替大家找回记忆，但至少能劝你们先把眼睛闭一会儿。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐苔纹织片4份、溪湾明珠2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "拉上了。你听，外头的声音小了吧？明珠只是坠子，别被我挂得像护身符的样子骗了。",
+          "expression": "neutral"
+        },
+        {
+          "text": "不想说话就不说，睡不着也不用假装睡着。来这里坐一会儿，同样算休息。",
+          "expression": "neutral"
+        },
+        {
+          "text": "报酬已经入库。这次轮到我值守，你把肩膀放松一点。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_minstrel_strap",
+      "title": "先修好这根琴带",
+      "desc": "请帮忙备齐苔纹织片2份、林脂凝晶2份。材料成功撤离入库后交付。",
+      "needs": {
+        "moss_cloth": 2,
+        "forest_resin": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 20,
+      "owner": "tavern",
+      "issuer": "minstrel",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "",
+      "story": true,
+      "offer": [
+        {
+          "text": "我今天真有件事想求你：一批苔纹织片、一批凝晶，修修快断的琴带。",
+          "expression": "neutral"
+        },
+        {
+          "text": "别笑，我写了三首赶路的曲子，却一直拖着没修它。再拖下去，下一首大概叫《琴掉地上了》。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你不用替我买新琴，手边材料就够。取回来记得先存仓库，我来做登记。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐苔纹织片2份、林脂凝晶2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "这下不会突然往下滑了。你是第一个听到修好之后这两个音的人。",
+          "expression": "neutral"
+        },
+        {
+          "text": "怎么样？“比摔地上的声音好听”也算好评，我记下了。",
+          "expression": "neutral"
+        },
+        {
+          "text": "温阮帮我垫了报酬，已经进金库。她说下次让我自己缝，我觉得她是认真的。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_minstrel_chorus",
+      "title": "给大家留一句",
+      "desc": "请帮忙备齐星辉尘8份、苔纹织片2份。材料成功撤离入库后交付。",
+      "needs": {
+        "star_dust": 8,
+        "moss_cloth": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 24,
+      "owner": "tavern",
+      "issuer": "minstrel",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_minstrel_strap",
+      "story": true,
+      "offer": [
+        {
+          "text": "再帮我找一批星辉尘、一批织片吧。星辉尘是遗迹里收集的微光粉末，混在墨里能让布上的字更醒目。",
+          "expression": "neutral"
+        },
+        {
+          "text": "我想做一面留言布，不问大家以前是谁，只写今天想说的一句话。",
+          "expression": "neutral"
+        },
+        {
+          "text": "布琳娜已经写了“别把锤子拿去压菜”。这可比我想出来的押韵句子好记多了。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐星辉尘8份、苔纹织片2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "希尔薇娅写了“认不准就来问”，艾莉娅写了“汤在锅里”。都是大实话。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你的那一格留好了，愿意写什么由你。不想写名字，画个记号也行。",
+          "expression": "neutral"
+        },
+        {
+          "text": "我本来想把这些都编成歌，后来觉得，先让大家原原本本读到更好。报酬入库了。",
+          "expression": "neutral"
+        }
+      ]
+    },
+    {
+      "id": "camp_minstrel_evening",
+      "title": "没有观众席的晚会",
+      "desc": "请帮忙备齐未褪色的记忆花2份、苔纹织片2份。材料成功撤离入库后交付。",
+      "needs": {
+        "memory_gift": 2,
+        "moss_cloth": 2
+      },
+      "danger": 0,
+      "wave": 1,
+      "unlock": 0,
+      "reward": 30,
+      "owner": "tavern",
+      "issuer": "minstrel",
+      "bond": 2,
+      "penalty": 0,
+      "hours": 72,
+      "require": "camp_minstrel_chorus",
+      "story": true,
+      "offer": [
+        {
+          "text": "最后缺一朵记忆花和一份织片，给今晚的小聚做个桌饰。记忆花只是这里的叫法，不会替谁找回记忆。",
+          "expression": "neutral"
+        },
+        {
+          "text": "不搭台，也不安排谁坐观众席。有人讲笑话、有人吃东西，我吹两段，不好听就当场改。",
+          "expression": "neutral"
+        },
+        {
+          "text": "你和她们要是想来，随时都能坐下。今天开心一点，不需要先把过去都弄明白。",
+          "expression": "neutral"
+        },
+        {
+          "text": "这次要备齐未褪色的记忆花2份、苔纹织片2份，够营地用一阵子。别冒险硬凑，平安带回来再交给我。",
+          "expression": "neutral"
+        }
+      ],
+      "accepted": [
+        {
+          "text": "好，先登记在这儿。材料成功撤离、存进仓库后再来找我。",
+          "expression": "neutral"
+        },
+        {
+          "text": "三天内来得及；要是超时也不扣好感，等一小时后还能重新接。",
+          "expression": "neutral"
+        }
+      ],
+      "finished": [
+        {
+          "text": "桌饰摆好了。布琳娜说歪了，我说这是随意，她伸手就给扶正了。",
+          "expression": "neutral"
+        },
+        {
+          "text": "我不问你记起了多少。今晚要是有一句话值得留下，就把它记在今天这页。",
+          "expression": "neutral"
+        },
+        {
+          "text": "报酬已经入库。好，正事说完——先帮我尝尝那盘饼干，别让我一个人面对温阮的新配方。",
+          "expression": "neutral"
+        }
+      ]
+    }
+  ]
+}

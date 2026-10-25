@@ -2,14 +2,14 @@
   "version": 1,
   "id": "altar_moonwell_v01",
   "canvas": [
-    1536,
-    1024
+    2816,
+    1792
   ],
   "floor_rect_px": [
-    144,
-    176,
-    1248,
-    662
+    264.0,
+    308.0,
+    2288.0,
+    1158.5
   ],
   "gate_origin": [
     11,
@@ -17,52 +17,124 @@
   ],
   "planes": [
     {
-      "path": "background.png",
-      "layer": "background"
+      "path": "detail_v17/background_0_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
     },
     {
-      "path": "walls.png",
-      "layer": "walls"
+      "path": "detail_v17/background_0_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
     }
   ],
   "gates": {
     "north": {
       "path": "door_north.png",
       "rect_px": [
-        710,
-        0,
-        116,
-        115
+        1301.6666666666665,
+        0.0,
+        212.66666666666666,
+        201.25
       ],
       "leaf_only": true
     },
     "south": {
       "path": "door_south.png",
       "rect_px": [
-        714,
-        895,
-        110,
-        90
+        1309.0,
+        1566.25,
+        201.66666666666666,
+        157.5
       ],
       "leaf_only": true
     },
     "west": {
       "path": "door_west.png",
       "rect_px": [
-        46,
-        428,
-        80,
-        155
+        84.33333333333333,
+        749.0,
+        146.66666666666666,
+        271.25
       ],
       "leaf_only": true
     },
     "east": {
       "path": "door_east.png",
       "rect_px": [
-        1408,
-        428,
-        80,
-        155
+        2581.333333333333,
+        749.0,
+        146.66666666666666,
+        271.25
       ],
       "leaf_only": true
     }
@@ -306,5 +378,15 @@
     }
   ],
   "effects": {},
-  "surface_water_polygons_px": []
+  "surface_water_polygons_px": [],
+  "camera_reference_floor_ratio": [
+    1.2307692307692308,
+    1.5468277945619335
+  ],
+  "gameplay_anchors": {
+    "fate_altar_uv": [
+      0.5,
+      0.5
+    ]
+  }
 }

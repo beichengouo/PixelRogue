@@ -4,11 +4,13 @@ extends CanvasLayer
 ## 星辉主题仅作用于这页，旧菜单可逐步迁移。
 signal opened
 signal closed
+var camp_preparation:CampPreparation
+var camp_content:CampBackpackContent
 
-const COLS := 6
+const COLS := 10
 const ROWS := 3
 ## 保持固定方形格子，长列表由滚动容器承载。
-const SLOT_SIZE := 126.0
+const SLOT_SIZE := 74.0
 const EQUIP_SLOT := 104.0
 
 var _root: Control
@@ -30,6 +32,8 @@ var _pending_sale:Dictionary={}
 const SHELL_SIZE:=Vector2(2016,1100)
 var _equip_wrapper: Control
 var _equip_box: HBoxContainer
+var talent_view: TalentUI
+var _talent_mount: Control
 var _grid: GridContainer
 var _grid_hint: Label
 var _page_box: VBoxContainer
@@ -61,6 +65,8 @@ var _tab_labels: Array[String] = []
 var _material_usage_id:=""
 var _filter: StringName = &"gear"
 ## 技能页 / 天赋页当前选中的条目（详情面板用）
+var _skill_editing:=false
+var _skill_draft:Array=[]
 var _selected_skill: StringName = &""
 var _selected_talent: StringName = &""
 ## 页签定义：id -> 显示名
@@ -90,12 +96,15 @@ func _ready() -> void:
 	layer = 22
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	_build()
+	camp_content=CampBackpackContent.new();camp_content.bag=self
 	_root.visible = false
-	EventBus.run_started.connect(func(_id: int) -> void: _tab_memory.clear(); _selected = {}; _selected_skill = &""; _selected_talent = &"")
+	EventBus.run_started.connect(func(_id: int) -> void: _tab_memory.clear(); _selected = {}; _selected_skill = &""; _selected_talent = &"";_cancel_skill_reconfiguration(false))
 	EventBus.item_acquired.connect(func(_item: Dictionary) -> void: _refresh_if_open())
 	EventBus.equipment_changed.connect(_refresh_if_open)
 	EventBus.coins_changed.connect(func(_c: int) -> void: _refresh_counters())
 	EventBus.keys_changed.connect(func(_k: int) -> void: _refresh_counters())
+	EventBus.talents_changed.connect(func()->void:if is_open():_refresh_tab_counts())
+	EventBus.level_changed.connect(func(_lv:int,_g:int)->void:if is_open():_refresh_tab_counts())
 
 
 func is_open() -> bool:
@@ -106,6 +115,7 @@ func open() -> void:
 	if not UIFlow.can_open(self): return
 	if _root.visible and not _closing:
 		return
+	if camp_preparation!=null and _filter not in [&"gear",&"potion",&"skill",&"stat"]:_filter=&"gear"
 	_closing = false
 	if _close_tween != null and _close_tween.is_valid():
 		_close_tween.kill()
@@ -163,6 +173,7 @@ func _play_open_animation() -> void:
 
 
 func close() -> void:
+	_cancel_skill_reconfiguration(false)
 	if not _root.visible or _closing:
 		return
 	# 关闭也走一小段收拢动画（面板缩回 + 淡出），播完再真正隐藏并解除暂停。
@@ -186,6 +197,8 @@ func close() -> void:
 
 
 func _finish_close() -> void:
+	_cancel_skill_reconfiguration(false)
+	if is_instance_valid(talent_view):talent_view.hide_embedded()
 	_pending_sale={}
 	if is_instance_valid(_sale_confirm):_sale_confirm.close()
 	for running in [_open_tween, _portrait_tween, _caption_tween]:
@@ -203,6 +216,7 @@ func _finish_close() -> void:
 	if _caption_node != null:
 		_caption_node.modulate.a = 1.0
 	UIFlow.pop_screen(self)
+	if camp_preparation!=null:camp_preparation.save_memory()
 	closed.emit()
 
 
@@ -220,9 +234,8 @@ func _input(event: InputEvent) -> void:
 				if ItemDB.can_equip(item):
 					_equip(item);get_viewport().set_input_as_handled();return
 	if event.is_action_pressed("talents"):
-		_finish_close()
-		if get_parent() != null and get_parent().has_method("open_talents"):
-			get_parent().open_talents()
+		if _filter==&"talent":close()
+		else:open_talent_page()
 		get_viewport().set_input_as_handled()
 		return
 	# 注意：背包打开时游戏是暂停的，主节点收不到输入，
@@ -245,6 +258,8 @@ func _refresh_if_open() -> void:
 func _refresh_counters() -> void:
 	if not _root.visible:
 		return
+	if camp_preparation!=null:
+		_bag_count.text="携带药剂 %d / 15"%camp_preparation.potion_count() if _filter==&"potion" else "营地配装 · 出发才扣库存";return
 	_bag_count.text = "遗物不占格" if _filter == &"relic" else ("%d / 24 格" % GameState.bag_slots({},_filter) if _filter in [&"gear",&"material",&"potion"] else "分类容量各24格")
 	_refresh_footer()
 
@@ -278,7 +293,7 @@ func _build() -> void:
 	for caption in ["全部部位","武器","护甲","饰品"]:_gear_filter.add_item(caption)
 	_toolbar.add_child(_gear_filter);_place_layout(_gear_filter,Rect2(616,0,200,42));_gear_filter.item_selected.connect(func(index:int)->void:_gear_part=[&"",&"weapon",&"armor",&"accessory"][index];_selected={};_rebuild())
 	var items:=_shell.get_node("Panel/Content/Body/ItemsScroll/Items") as VBoxContainer
-	_grid=GridContainer.new();_grid.columns=COLS;_grid.add_theme_constant_override("h_separation",11);_grid.add_theme_constant_override("v_separation",11);items.add_child(_grid)
+	_grid=GridContainer.new();_grid.columns=COLS;_grid.add_theme_constant_override("h_separation",8);_grid.add_theme_constant_override("v_separation",8);items.add_child(_grid)
 	_page_box=UiFactory.vbox(12);items.add_child(_page_box)
 	_grid_hint=PixelUi.label("",18,PixelUi.MUTED);_grid_hint.hide();content.add_child(_grid_hint);_place_layout(_grid_hint,Rect2(96,706,810,28))
 	_equip_box=UiFactory.hbox(22);_equip_wrapper=_build_equip_row();content.add_child(_equip_wrapper);_place_layout(_equip_wrapper,Rect2(306,718,360,140))
@@ -296,6 +311,10 @@ func _build() -> void:
 		if not _claim_action() or _selected.is_empty():return
 		var ok:=GameState.bind_inventory_equipment(_selected);_rebuild();ComicMotion.feedback(_shell,"装备已绑定" if ok else "无法绑定，未扣费"))
 	close_button.pressed.connect(close)
+	_talent_mount=Control.new();_talent_mount.name="EmbeddedTalentPage";content.add_child(_talent_mount)
+	_place_layout(_talent_mount,Rect2(47,235,1446,635))
+	talent_view=TalentUI.new();talent_view.name="TalentTree";talent_view.embedded_host=self;talent_view._embedded_parent=_talent_mount;add_child(talent_view)
+	_talent_mount.hide()
 	get_viewport().size_changed.connect(_layout_shell);_layout_shell()
 	InteractionSkin.mount(_root,"inventory",_panel)
 
@@ -308,12 +327,14 @@ func _layout_shell() -> void:
 
 func _refresh_footer()->void:
 	if _sell_button==null:return
+	if camp_preparation!=null:
+		_sell_button.hide();_bind_button.hide();return
 	var item:=_selected if _filter in [&"gear",&"relic",&"potion",&"material"] else {}
 	var value:=ExpeditionData.sale_value(item);var fee:=BoundEquipment.binding_price(item)
 	_sell_button.text="售卖 · +%d金"%value if value>0 else "售卖";_sell_button.disabled=value<=0 or not (GameState.items.has(item) or GameState.is_equipped(item))
-	_bind_button.text="绑定 · %d金"%fee if fee>0 else "绑定";_bind_button.disabled=fee<=0 or CampSession.active or not GameState.items.has(item) or GameState.coins<fee
+	_bind_button.text="绑定 · %d金"%fee if fee>0 else "绑定";_bind_button.disabled=fee<=0 or CampSession.active or not (GameState.items.has(item) or GameState.is_equipped(item)) or GameState.coins<fee
 	_sell_button.tooltip_text="选择可出售的物品" if item.is_empty() else "此物品不可出售" if value<=0 else "出售绑定装备前会再次确认" if BoundEquipment.is_bound(item) else "出售所选物品，获得%d金"%value
-	_bind_button.tooltip_text="营地训练物品不能付费绑定" if CampSession.active else BoundEquipment.description() if BoundEquipment.is_bound(item) else "请先卸下这件装备" if GameState.is_equipped(item) else "仅稀有或传说装备可以付费绑定" if fee<=0 else "金币不足，还差%d金"%(fee-GameState.coins) if GameState.coins<fee else "支付%d金，将这件装备改为绑定装备"%fee
+	_bind_button.tooltip_text="营地训练物品不能付费绑定" if CampSession.active else BoundEquipment.description() if BoundEquipment.is_bound(item) else "仅稀有或传说装备可以付费绑定" if fee<=0 else "金币不足，还差%d金"%(fee-GameState.coins) if GameState.coins<fee else "支付%d金，将这件装备改为绑定装备"%fee
 
 func _build_titlebar() -> Control:
 	var row:=Control.new();var title:=PixelUi.title("旅人的行囊",65)
@@ -337,7 +358,7 @@ func _build_tabs() -> Control:
 			_filter = id
 			var memory: Dictionary = _tab_memory.get(id, {})
 			_selected = memory.get("item", {})
-			if not _selected.is_empty() and not GameState.items.has(_selected): _selected = {}
+			if camp_preparation==null and not _selected.is_empty() and not GameState.items.has(_selected): _selected = {}
 			_selected_skill = StringName(memory.get("skill", &""))
 			_selected_talent = StringName(memory.get("talent", &""))
 			_rebuild()
@@ -388,8 +409,9 @@ func _refresh_tab_counts() -> void:
 			&"stat":
 				text += " Lv%d" % GameState.level
 		_tab_buttons[i].text = text
-		if id in [&"gear",&"relic"]:RewardCategoryWordmark.decorate_button(_tab_buttons[i],_tab_labels[i],38,str(gear_count if id==&"gear" else relic_count))
+		RewardCategoryWordmark.decorate_button(_tab_buttons[i],_tab_labels[i],40,text.trim_prefix(_tab_labels[i]).strip_edges())
 		var active: bool = _tab_ids[i] == _filter
+		_tab_buttons[i].visible=camp_preparation==null or id in [&"gear",&"potion",&"skill",&"stat"]
 		_tab_buttons[i].disabled = false
 		# 页签底图是「创建时算一次」的样式，切换页签必须重新算一遍，否则高亮不会跟着动
 		PixelUi.apply_tab_style(_tab_buttons[i], active)
@@ -408,6 +430,8 @@ func _build_equip_row() -> Control:
 ## ---------------- 刷新内容 ----------------
 
 func _rebuild() -> void:
+	if camp_preparation!=null:
+		camp_content.rebuild();return
 	var focused := get_viewport().gui_get_focus_owner()
 	var token := str(focused.get_meta("focus_token", "")) if focused != null else ""
 	for child in _equip_box.get_children():
@@ -420,6 +444,12 @@ func _rebuild() -> void:
 		_page_box.remove_child(child)
 		child.queue_free()
 
+	var showing_tree := _filter == &"talent"
+	_talent_mount.visible=showing_tree
+	(_shell.get_node("Panel/Content/Body/ItemsScroll") as Control).visible=not showing_tree
+	(_shell.get_node("Panel/Content/Body/Detail") as Control).visible=not showing_tree
+	_sell_button.visible=not showing_tree;_bind_button.visible=not showing_tree
+	if not showing_tree:talent_view.hide_embedded()
 	# 物品页用格子，技能/天赋/属性页用整块页面
 	var is_item_tab := _filter == &"gear" or _filter == &"relic" or _filter == &"potion" or _filter == &"material"
 	_grid.visible = is_item_tab
@@ -442,7 +472,7 @@ func _rebuild() -> void:
 			_:
 				_rebuild_stat_page()
 
-	_rebuild_detail()
+	if not showing_tree:_rebuild_detail()
 	_refresh_counters()
 	_refresh_tab_counts()
 	_wrap_paragraphs(_page_box)
@@ -502,7 +532,7 @@ func _rebuild_item_page() -> void:
 	for item in ordered: _ordered_ids.append(item.get("uid",item.get("id")))
 	for item in ordered:
 		_grid.add_child(_build_item_slot(item))
-	for i in maxi(0, COLS * ROWS - ordered.size()):
+	for i in maxi(0, 24 - ordered.size()):
 		var empty := PixelUi.slot_button(Color(1.0, 1.0, 1.0, 0.55), SLOT_SIZE)
 		empty.disabled = true
 		_grid.add_child(empty)
@@ -541,26 +571,49 @@ func _build_hotbar_slot(index: int) -> Control:
 
 
 
+func _begin_skill_reconfiguration()->void:
+	if CampSession.active or not GameState.run_active or _skill_editing:return
+	_skill_draft=GameState.skill_loadout();_skill_editing=true;_rebuild()
+func _cancel_skill_reconfiguration(refresh:=true)->void:
+	_skill_editing=false;_skill_draft.clear()
+	if refresh and is_open():_rebuild()
+func _confirm_skill_reconfiguration()->void:
+	if not _skill_editing:return
+	var error:=GameState.reconfigure_skills(_skill_draft)
+	if not error.is_empty():ComicMotion.feedback(_shell,error);return
+	_cancel_skill_reconfiguration(false);_rebuild()
+	ComicMotion.feedback(_shell,"技能已重新装配，天赋页面已同步。"+("下次费用%d金币。"%GameState.skill_reset_cost() if GameState.skill_reset_cost()>=0 else "后续费用已超过可支付范围。"))
+func _skill_at(slot:int)->StringName:
+	return StringName(_skill_draft[slot]) if _skill_editing and _skill_draft.size()==4 else GameState.skill_for_slot(slot)
 func _rebuild_skill_page() -> void:
-	_page_box.add_child(PixelUi.label("当前配装  ·  3 个普通技能 + 1 个大招", 18))
-	var equipped := UiFactory.hbox(12)
-	_page_box.add_child(equipped)
+	_page_box.add_child(PixelUi.label(("待确认配装" if _skill_editing else "当前配装")+"  ·  3 个小技能 + 1 个大招", 18))
+	var equipped := UiFactory.hbox(12);_page_box.add_child(equipped)
 	for slot in 4:
-		var id := GameState.skill_for_slot(slot)
-		equipped.add_child(_skill_tile(id, skill_key(slot), id == &""))
-	_page_box.add_child(PixelUi.label(("箭术与自然技能" if Characters.current_id()==&"ilyua" else "法术库")+"  ·  点击图标，在右侧选择装配栏位", 17))
-	var gallery := GridContainer.new()
-	gallery.columns = 4
-	gallery.add_theme_constant_override("h_separation", 12)
-	gallery.add_theme_constant_override("v_separation", 8)
-	_page_box.add_child(gallery)
-	for id: StringName in Skills.order_for():
-		var unlocked := GameState.unlocked_skills.has(id)
-		var name_text := str(Skills.get_skill(id,GameState.combat_mode).name)
-		if not unlocked:
-			name_text += " · %d级" % Skills.unlock_level(id)
-		gallery.add_child(_skill_tile(id, name_text, not unlocked))
-	gallery.tooltip_text = "本局已解锁的法术全部保留；换装保留该法术剩余冷却。"
+		var id := _skill_at(slot)
+		equipped.add_child(_skill_tile(id,skill_key(slot),id==&""))
+	if not CampSession.active:
+		var price:=GameState.skill_reset_cost()
+		if _skill_editing:
+			var same_set:=true
+			for skill:StringName in GameState.skill_loadout():
+				if not _skill_draft.has(skill):same_set=false
+			if same_set:price=0
+		var row:=UiFactory.hbox(10);_page_box.add_child(row)
+		if _skill_editing:
+			var confirm:=PixelUi.compact_button("确认重配 · %d金币"%price,18);confirm.name="SkillResetConfirm"
+			confirm.disabled=price<0 or GameState.coins<price or _skill_draft==GameState.skill_loadout();row.add_child(confirm);confirm.pressed.connect(_confirm_skill_reconfiguration)
+			var refund_preview:=PixelUi.label("确认后展示："+" / ".join(_skill_draft.map(func(skill:StringName)->String:return str(Skills.get_skill(skill).name)))+"\n返还天赋：%d点"%(0 if price==0 else GameState.spent_talent_points()),15,PixelUi.GOLD)
+			refund_preview.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_page_box.add_child(refund_preview)
+			confirm.tooltip_text="配置未改变，无需重置。" if _skill_draft==GameState.skill_loadout() else "金币不足。" if price<0 or GameState.coins<price else "保存成功后扣费、返还全部已投入天赋点；原有技能冷却保留。"
+			var cancel:=PixelUi.compact_button("取消修改",18);row.add_child(cancel);cancel.pressed.connect(_cancel_skill_reconfiguration)
+		else:
+			var reset:=PixelUi.compact_button("重置技能配置 · %d金币"%price if price>=0 else "重置费用超出可支付范围",18);reset.name="SkillResetBegin";reset.disabled=not GameState.run_active;row.add_child(reset);reset.pressed.connect(_begin_skill_reconfiguration)
+			reset.tooltip_text="金币不足，需要%d金币。"%price if GameState.coins<price else "先编辑完整3+1配置；确认时扣费，本局每次费用翻倍。"
+		var hint:=PixelUi.label("本局已重置%d次 · 更换技能返还全部%d点天赋 · 保留冷却\n取消不收费；仅调整技能顺序免费且不退点。"%[GameState.skill_reset_count,GameState.spent_talent_points()],15,PixelUi.MUTED);hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_page_box.add_child(hint)
+	_page_box.add_child(PixelUi.label("技能库 · 点击图标查看"+("，在右侧选择装配栏位" if CampSession.active or _skill_editing else "；调整配装需先重置"),17))
+	var gallery:=GridContainer.new();gallery.columns=4;gallery.add_theme_constant_override("h_separation",12);gallery.add_theme_constant_override("v_separation",8);_page_box.add_child(gallery)
+	for id:StringName in Skills.order_for():gallery.add_child(_skill_tile(id,str(Skills.get_skill(id,GameState.combat_mode).name),not GameState.unlocked_skills.has(id)))
+	gallery.tooltip_text="初始技能直接可用；进阶技能通过委托与角色首领成就解锁。"
 
 func _skill_tile(id: StringName, caption: String, locked: bool) -> Control:
 	var column := UiFactory.vbox(3)
@@ -594,59 +647,39 @@ func _skill_tile(id: StringName, caption: String, locked: bool) -> Control:
 ## ---------------- 天赋页（分叉树）----------------
 
 func _rebuild_talent_page() -> void:
-	_page_box.add_child(PixelUi.label(
-		"可用天赋点：%d　（每升 1 级获得 1 点）" % GameState.talent_points, 18, PixelUi.INK))
-	# 树状图现在独立成窗口（按 T 打开，支持缩放），这里只放入口与前置说明
-	_page_box.add_child(PixelUi.label(
-		"按 [%s] 打开天赋树 · 滚轮缩放、拖拽平移"%KeyBindings.label("talents"), 15, PixelUi.MUTED))
-	# 入口按钮改用主菜单那套「白芯 + 描金花边」的底图：够醒目，也比土黄色更贴合圣洁风
-	var open_button := PixelUi.compact_button("天赋树 [%s]"%KeyBindings.label("talents"), 21)
-	open_button.custom_minimum_size = Vector2(252.0, 50.0)
-	open_button.pressed.connect(func() -> void:
-		# 关掉背包再开天赋树，避免两层界面互相抢输入
-		_finish_close()
-		if get_parent() != null and get_parent().has_method("open_talents"):
-			get_parent().open_talents()
-	)
-	_page_box.add_child(open_button)
-	_page_box.add_child(PixelUi.label(
-		"点亮节点后可查看下一等级与前置条件", 14, PixelUi.MUTED))
-	# 分支进度一览：加点在树窗口里做，这里只让你一眼看到每条线还差多少
-	var summary := UiFactory.vbox(3)
-	summary.add_child(PixelUi.label("分支进度", 17, PixelUi.INK))
-	for entry in talent_groups():
-		var group_id: StringName = entry[0]
-		var spent := 0
-		var total := 0
-		for node in _talent_nodes_of(group_id):
-			spent += GameState.talent_rank(node)
-			total += int(GameState.TALENT_BRANCHES[node]["max_rank"])
-		var row := UiFactory.hbox(10)
-		var name_label := PixelUi.label(str(entry[1]), 15, PixelUi.INK)
-		name_label.custom_minimum_size = Vector2(120.0, 0.0)
-		row.add_child(name_label)
-		row.add_child(PixelUi.label("%d / %d" % [spent, total], 15, Palette.GOLD))
-		summary.add_child(row)
-	_page_box.add_child(summary)
-	for entry in talent_groups():
-		_page_box.add_child(PixelUi.label(str(entry[1]), 18, PixelUi.GOLD))
-		for branch in _talent_nodes_of(entry[0]): _page_box.add_child(_build_talent_row(branch))
+	talent_view.show_embedded()
+
+func open_camp_page(tab:StringName)->void:
+	if tab in [&"gear",&"potion",&"skill",&"talent",&"stat"]:_filter=tab
+	open()
+
+func _fit_camp_content()->void:
+	if camp_preparation==null or not is_open():return
+	var paper:=_shell.get_node("Panel/Content/Body/Detail") as Control
+	paper.size=Vector2(545,635)
+	var scroll:=paper.get_node("DetailScroll") as ScrollContainer
+	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+
+func open_talent_page() -> void:
+	if _filter != &"talent":
+		_tab_memory[_filter]={"item":_selected,"skill":_selected_skill,"scroll":(_shell.get_node("Panel/Content/Body/ItemsScroll") as ScrollContainer).scroll_vertical}
+	_filter=&"talent"
+	if not is_open():open()
+	else:_rebuild()
+	_focus_active_tab.call_deferred()
 
 
 func _talent_nodes_of(group_id: StringName) -> Array[StringName]:
 	var out: Array[StringName] = []
-	for branch: StringName in GameState.TALENT_BRANCHES:
-		if StringName(GameState.TALENT_BRANCHES[branch].get("branch", &"")) == group_id:
-			out.append(branch)
-	out.sort_custom(func(a: StringName, b: StringName) -> bool:
-		return int(GameState.TALENT_BRANCHES[a].get("tier", 0)) < int(GameState.TALENT_BRANCHES[b].get("tier", 0))
-	)
+	for id: StringName in TalentGraph.visible_nodes():
+		if StringName(TalentGraph.node(id).branch) == group_id: out.append(id)
+	out.sort_custom(func(a: StringName, b: StringName) -> bool: return int(TalentGraph.node(a).row) < int(TalentGraph.node(b).row))
 	return out
 
 
 func _build_talent_row(branch: StringName) -> Control:
-	var info: Dictionary = GameState.TALENT_BRANCHES[branch]
-	var rank := GameState.talent_rank(branch)
+	var info: Dictionary = TalentGraph.node(branch)
+	var rank := 1 if TalentGraph.owned(branch, GameState.talents) else 0
 	var max_rank := int(info["max_rank"])
 	var unlocked := GameState.talent_unlocked(branch)
 	var full := rank >= max_rank
@@ -658,7 +691,7 @@ func _build_talent_row(branch: StringName) -> Control:
 	row.add_child(icon)
 
 	# 层级缩进：一眼看出前置关系
-	row.add_child(PixelUi.label("　".repeat(maxi(0, tier - 1)), 16, PixelUi.MUTED))
+	row.add_child(PixelUi.label("", 16, PixelUi.MUTED))
 
 	var text := UiFactory.vbox(0)
 	text.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -693,11 +726,7 @@ func _build_talent_row(branch: StringName) -> Control:
 
 
 func _requirement_text(info: Dictionary) -> String:
-	var requires: Dictionary = info.get("requires", {})
-	var parts: Array[String] = []
-	for need: StringName in requires:
-		parts.append("%s ≥%d" % [str(GameState.TALENT_BRANCHES[need]["name"]), int(requires[need])])
-	return "、".join(parts) if not parts.is_empty() else "无"
+	return TalentGraph.requirement_text(StringName(info.id), GameState.talents)
 
 
 ## ---------------- 属性页 ----------------
@@ -740,6 +769,11 @@ func _rebuild_stat_page() -> void:
 		row.add_child(value_label)
 		_page_box.add_child(row)
 
+	var paths_toggle:=PixelUi.compact_button("本角色构筑思路 ▸",18);_page_box.add_child(paths_toggle)
+	var paths:=UiFactory.vbox(10);_page_box.add_child(paths);paths.hide()
+	for route in BuildPaths.routes():
+		var text:=PixelUi.label(BuildPaths.describe(route),17,PixelUi.MUTED);text.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;paths.add_child(text)
+	paths_toggle.pressed.connect(func()->void:paths.visible=not paths.visible;paths_toggle.text="本角色构筑思路 ▾" if paths.visible else "本角色构筑思路 ▸")
 
 func _build_equip_slot(slot: StringName) -> Control:
 	var item: Dictionary = GameState.equipped(slot)
@@ -791,8 +825,8 @@ func _build_item_slot(item: Dictionary) -> Control:
 	button.tooltip_text = "%s\n%s\n单击查看，双击或 %s 装备" % [str(item["name"]), str(item["desc"]),KeyBindings.label("ui_accept")] if ItemDB.is_equippable(item) else "%s\n%s" % [str(item["name"]), str(item["desc"])]
 	BoundEquipment.badge(button,item)
 	if int(item.get("stack_count",1))>1:
-		var count_label:=PixelUi.label(str(item.stack_count),14,Color.WHITE)
-		count_label.position=Vector2(27,27)
+		var count_label:=PixelUi.label(str(item.stack_count),18,Color.WHITE)
+		count_label.position=Vector2(SLOT_SIZE-39,SLOT_SIZE-26);count_label.size=Vector2(36,24);count_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
 		count_label.mouse_filter=Control.MOUSE_FILTER_IGNORE
 		button.add_child(count_label)
 
@@ -814,7 +848,7 @@ func _icon_for(item: Dictionary) -> AtlasTexture:
 
 func _rebuild_detail() -> void:
 	_populate_detail()
-	if _filter in [&"gear",&"relic",&"potion",&"material"] and not _selected.is_empty():ItemInsight.append_story(_detail_box,_selected,19)
+	if _filter in [&"gear",&"relic",&"potion",&"material"] and not _selected.is_empty():ItemInsight.append_story(_detail_box,_selected,19,true)
 	_fit_details(_detail_box)
 	InteractionSkin.apply_tree(_detail_box,"inventory")
 
@@ -967,7 +1001,7 @@ func _populate_detail() -> void:
 				_detail_box.add_child(row)
 
 	if not ItemDB.is_equippable(item):
-		# 材料（采集来的发光蘑菇）在这里给一个售卖入口 ——
+		# 随身材料仍可主动出售。
 		# 遗物是"拿到就生效"，材料是"拿去换钱"，两者要分清楚。
 		if ItemDB.is_material(item):
 			_detail_box.add_child(PixelUi.label(
@@ -1003,7 +1037,7 @@ func _sell_row(item: Dictionary) -> Control:
 	var price:=ExpeditionData.sale_value(item)
 	row.add_child(PixelUi.label("单份售价 %d 金 · 可在背包直接售卖" % price if price>0 else "首领专属材料 · 保留用于刻印与研究" if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(item.id)) else "不可售卖 · 留给委托或营地兑换",16,PixelUi.MUTED))
 	if ItemDB.is_material(item):
-		row.add_child(PixelUi.label("仓库已有 %d 份%s" % [int(Outpost.data.inventory.get(str(item.id),0))," · 独立蘑菇格，最多999" if str(item.id).begins_with("glow_mushroom_") else " · 撤回后占用仓位"],16,PixelUi.GOLD))
+		row.add_child(PixelUi.label("仓库已有 %d 份%s" % [int(Outpost.data.inventory.get(str(item.id),0))," · 撤回后占用仓位"],16,PixelUi.GOLD))
 		if Outpost.task_reserves().has(str(item.id)):
 			var warning=PixelUi.label("未完成委托需要此材料 · 出售会减少本次携带的委托材料",15,PixelUi.GOLD);warning.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;row.add_child(warning)
 
@@ -1068,12 +1102,14 @@ func _detail_skill() -> void:
 	description.custom_minimum_size.x = 282
 	_detail_box.add_child(description)
 	_detail_box.add_child(PixelUi.label("魔法 %.0f   ·   冷却 %.1f 秒" % [GameState.skill_cost(_selected_skill), GameState.skill_cooldown(_selected_skill)], 16))
-	if not GameState.unlocked_skills.has(_selected_skill):
-		_detail_box.add_child(PixelUi.label("Lv.%d 解锁" % Skills.unlock_level(_selected_skill), 18, PixelUi.MUTED))
+	if not CampSession.active and not _skill_editing:
+		var note:=PixelUi.label("本局沿用出发配装。点击左侧重置技能配置后，可重新选择3个小技能和1个大招。",17,PixelUi.MUTED);note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(note)
 		return
+	if not GameState.unlocked_skills.has(_selected_skill):
+		var locked_note:=PixelUi.label("未解锁 · "+CharacterUnlocks.skill_condition(_selected_skill),17,PixelUi.MUTED);locked_note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(locked_note);return
 	var slots := [3] if Skills.is_ultimate(_selected_skill) else [0, 1, 2]
 	for slot: int in slots:
-		var current := GameState.skill_for_slot(slot)
+		var current := _skill_at(slot)
 		var is_current := current == _selected_skill
 		var button := PixelUi.compact_button("已装配 %s" % skill_key(slot) if is_current else "装配 %s · %s" % [skill_key(slot), str(Skills.get_skill(current,GameState.combat_mode).get("name", "空栏位"))], 16)
 		button.custom_minimum_size.y = 42
@@ -1082,24 +1118,26 @@ func _detail_skill() -> void:
 		button.tooltip_text = "当前：" + str(Skills.get_skill(current,GameState.combat_mode).get("name", "空"))
 		button.pressed.connect(func() -> void:
 			if not _claim_action(): return
-			if GameState.equip_skill(_selected_skill, slot):
-				_rebuild()
-				ComicMotion.feedback(_shell, "%s 已装配到 %s" % [skill.name, skill_key(slot)])
+			if _skill_editing:
+				var changed:=Skills.equip_in_loadout(_skill_draft,_selected_skill,slot)
+				if not changed.is_empty():_skill_draft=changed;_rebuild()
+			elif GameState.equip_skill(_selected_skill,slot):
+				_rebuild();ComicMotion.feedback(_shell,"%s 已装配到 %s"%[skill.name,skill_key(slot)])
 		)
 		_detail_box.add_child(button)
 
 func _detail_talent() -> void:
-	if not GameState.TALENT_BRANCHES.has(_selected_talent):_selected_talent=&""
+	if _selected_talent != &"": _selected_talent = TalentGraph.resolve(_selected_talent, GameState.talents)
 	if _selected_talent == &"":
 		_detail_box.add_child(PixelUi.label("天赋", 22, PixelUi.MUTED))
 		_detail_box.add_child(_parchment_rule())
 		_detail_box.add_child(PixelUi.label("单击天赋「详情」查看，双击加 1 点", 16, PixelUi.MUTED))
-		_detail_box.add_child(PixelUi.label("有前置条件的天赋要先点亮下方前置节点", 15, PixelUi.MUTED))
-		_detail_box.add_child(PixelUi.label("天赋强化对应法术，可跨流派搭配", 15, PixelUi.MUTED))
+		_detail_box.add_child(PixelUi.label("技能根节点免费；三条路线可独立加点", 15, PixelUi.MUTED))
+		_detail_box.add_child(PixelUi.label("仅携带技能的天赋生效，可混合三条路线", 15, PixelUi.MUTED))
 		return
 
-	var info: Dictionary = GameState.TALENT_BRANCHES[_selected_talent]
-	var rank := GameState.talent_rank(_selected_talent)
+	var info: Dictionary = TalentGraph.node(_selected_talent)
+	var rank := 1 if TalentGraph.owned(_selected_talent, GameState.talents) else 0
 	var max_rank := int(info["max_rank"])
 	var head := UiFactory.hbox(10)
 	_detail_box.add_child(head)
@@ -1115,7 +1153,7 @@ func _detail_talent() -> void:
 	desc.custom_minimum_size = Vector2(0.0, 54.0)
 	_detail_box.add_child(desc)
 	_detail_box.add_child(_parchment_rule())
-	var preview := PixelUi.label(str(GameState.preview_talent(_selected_talent).get("text", "")), 15, Color("9ee6ab"))
+	var preview := PixelUi.label(str(GameState.preview_talent_node(_selected_talent).get("text", "")), 15, Color("9ee6ab"))
 	preview.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_detail_box.add_child(preview)
 	var unlocked := GameState.talent_unlocked(_selected_talent)
@@ -1141,7 +1179,7 @@ func _detail_run_summary() -> void:
 		["经验", "%d / %d" % [int(GameState.exp), int(GameState.exp_needed(GameState.level))]],
 		["魔法值", "%d / %d" % [int(GameState.mp), int(GameState.MAX_MP)]],
 		["到达波次", "第 %d 波" % maxi(1, GameState.wave)],
-		["已学技能", "%d 个（大招 %s）" % [
+		["技能库", "%d 个（大招 %s）" % [
 			GameState.unlocked_skills.size(),
 			"已装配" if GameState.ultimate_skill != &"" else "未装配"]],
 		["可用天赋点", str(GameState.talent_points)],
@@ -1223,17 +1261,19 @@ func _on_talent_row_input(event: InputEvent, branch: StringName) -> void:
 
 func _add_talent_point(branch: StringName) -> void:
 	if not _claim_action(): return
-	if not GameState.TALENT_BRANCHES.has(branch): return
+	if TalentGraph.node(branch).is_empty(): return
 	if not GameState.talent_unlocked(branch) or GameState.talent_points <= 0: return
-	if GameState.talent_rank(branch) >= int(GameState.TALENT_BRANCHES[branch].get("max_rank", 0)): return
+	if TalentGraph.owned(branch, GameState.talents): return
 	if GameState.spend_talent_point(branch):
 		AudioManager.play(&"ui_click", -6.0)
 		_rebuild()
-		ComicMotion.feedback(_shell, "%s 升至 %d 级" % [GameState.TALENT_BRANCHES[branch].name, GameState.talent_rank(branch)])
+		ComicMotion.feedback(_shell, "点亮「%s」" % TalentGraph.node(branch).name)
 
 
 func _equip(item: Dictionary) -> void:
 	if not _claim_action(): return
+	if camp_preparation!=null:
+		camp_content.equip_selected();return
 	if GameState.equip(item):
 		AudioManager.play(&"ui_click", -6.0)
 		_selected = item
@@ -1243,6 +1283,8 @@ func _equip(item: Dictionary) -> void:
 
 func _unequip(slot: StringName) -> void:
 	if not _claim_action(): return
+	if camp_preparation!=null:
+		camp_preparation.unequip_slot(slot);_rebuild();return
 	if GameState.unequip(slot):
 		AudioManager.play(&"ui_click", -8.0)
 		_rebuild()

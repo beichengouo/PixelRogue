@@ -9,6 +9,8 @@ func _ready()->void:
 	if "--room-editor" in OS.get_cmdline_user_args():set_process(false);return
 	process_mode=Node.PROCESS_MODE_ALWAYS
 	EventBus.boss_defeated.connect(_boss)
+	EventBus.item_acquired.connect(_observe_low_item)
+	EventBus.equipment_changed.connect(_observe_low_equipment)
 	EventBus.chest_opened.connect(func(_loot:Dictionary)->void:if eligible():add("chests",1))
 	EventBus.player_healed.connect(func(value:float,_hp:float,_maximum:float)->void:if eligible() and Characters.current_id()==&"sylphiette":add("holy_healing",value))
 	call_deferred("_migrate")
@@ -18,6 +20,13 @@ func _migrate()->void:
 	_dirty=true;_save_delay=1
 	for id in Outpost.data.get("workshop",{}).get("unlocked",{}):
 		if bool(Outpost.data.workshop.unlocked[id]):_unique(stats,"research_seen",str(id))
+	# Completed IDs are reliable historical evidence. Do not infer repeat counts.
+	for id in Outpost.data.get("contracts",[]):
+		for contract:Dictionary in ExpeditionData.CONTRACTS:
+			if str(contract.id)!=str(id):continue
+			_unique(stats,"contract_seen",str(id))
+			if bool(contract.get("story",false)):_unique(stats,"story_commissions",str(id))
+	stats.contracts_delivered=maxi(int(stats.get("contracts_delivered",0)),stats.get("contract_seen",[]).size())
 	# Existing bestiary counters predate species achievements. Import once;
 	# future counters below exclude training and summoned/split children.
 	if not bool(stats.get("species_migrated",false)):
@@ -64,7 +73,10 @@ func stage(kind:String,payload:Dictionary={})->Dictionary:
 		"enchant":
 			if eligible():stats.field_enchants=int(stats.get("field_enchants",0))+1
 		"research":_unique(stats,"research_seen",str(payload.get("id","")))
-		"contract":stats.contracts_delivered=int(stats.get("contracts_delivered",0))+1
+		"contract":
+			stats.contracts_delivered=int(stats.get("contracts_delivered",0))+1
+			_unique(stats,"contract_seen",str(payload.get("id","")))
+			if bool(payload.get("story",false)):_unique(stats,"story_commissions",str(payload.get("id","")))
 		"event":
 			if eligible():stats.event_resolutions=int(stats.get("event_resolutions",0))+1
 		"extraction":
@@ -75,6 +87,7 @@ func stage(kind:String,payload:Dictionary={})->Dictionary:
 				if bool(row.get("bound",false)) and bool(row.get("stored",false)):count+=int(row.get("count",0))
 			stats.bound_returned=int(stats.get("bound_returned",0))+count
 			if GameState.chapter_cleared:_unique(stats,"chapters_returned",str(GameState.chapter_id))
+			if bool(payload.get("extreme",false)):stats.extreme_returns=int(stats.get("extreme_returns",0))+1
 	return before
 func finish_stage(before:Dictionary,success:bool)->void:
 	if not success:
@@ -107,6 +120,8 @@ func enemy_defeated(enemy:EnemyBase)->void:
 	if AchievementCatalog.ordinary_names().has(str(enemy.kind)):add("species:"+str(enemy.kind),1)
 func _boss(id:StringName)->void:
 	if not eligible():return
+	var tier:=str({"king":"opening","sephra":"opening","mage":"middle","verena":"middle","tide":"final","nameless":"final"}.get(str(id),""))
+	if not tier.is_empty():best("hero_mastery:"+str(Characters.current_id())+":"+tier,GameState.difficulty)
 	add("bosses",1)
 	if BossRoster.DATA.has(id):add("species:boss:"+str(id),1)
 	var ids:Array=GameState.achievement_run.get("bosses",[])
@@ -116,6 +131,8 @@ func room_cleared(record:Dictionary,growth:int)->void:
 	if not eligible():return
 	var rooms:Array=GameState.achievement_run.get("rooms",[]);var room_id:=str(record.get("id",""));var key:=room_id+"|"+str(record.get("seed",""))
 	if room_id.is_empty() or key in rooms:return
+	_observe_low_equipment()
+	for item:Dictionary in GameState.items:_observe_low_item(item)
 	rooms.append(key);GameState.achievement_run.rooms=rooms;add("rooms",1);best("enrage_best",growth)
 	if RunDifficulty.is_bloodbath(GameState.difficulty):add("bloodbath_rooms",1)
 	if str(record.get("kind",""))=="boss_rush":add("rush",1)
@@ -123,6 +140,22 @@ func room_cleared(record:Dictionary,growth:int)->void:
 	if str(record.get("kind",""))=="trial":add("trial_clears",1)
 func set_equipped()->void:
 	if eligible() and LegendarySets.complete():best("sets",1)
+func _observe_low_item(item:Dictionary)->void:
+	if not eligible() or item.is_empty() or int(item.get("rarity",3))>1:return
+	var key:="low_gear_seen" if ItemDB.is_equippable(item) else "low_relic_seen" if ItemDB.is_relic(item) else ""
+	if key.is_empty():return
+	var stats:Dictionary=SaveService.data.achievement_stats
+	var previous:int=stats.get(key,[]).size()
+	_unique(stats,key,str(item.get("id","")))
+	if stats[key].size()!=previous:_changed()
+func _observe_low_equipment()->void:
+	if not eligible():return
+	var complete:=true
+	for slot:StringName in ItemDB.SLOTS:
+		var item:Dictionary=GameState.equipment.get(slot,{})
+		if item.is_empty() or int(item.get("rarity",3))>1:complete=false
+		_observe_low_item(item)
+	if complete:best("low_gear_ready",1)
 func extracted()->void:
 	add("extractions",1)
 	var heroes:Array=SaveService.data.achievement_stats.get("hero_extractions",[])

@@ -36,7 +36,7 @@ func _ready()->void:
 	var heading:=UiFactory.hbox(12);box.add_child(heading);_title=PixelUi.title("",28);_title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;heading.add_child(_title)
 	var back:=PixelUi.compact_button("返回",20);back.custom_minimum_size=Vector2(105,58 if MobileControls.enabled() else 44);heading.add_child(back);back.pressed.connect(close)
 	_tabs=UiFactory.hbox(8);box.add_child(_tabs)
-	_protect=CheckButton.new();_protect.text="保留委托与目标研究所需材料";_protect.button_pressed=true;_protect.add_theme_font_size_override("font_size",18);_protect.tooltip_text="默认保护所需数量；关闭后可主动消耗。不会使用记忆花或未列入配方的素材。";box.add_child(_protect);_protect.toggled.connect(func(_v:bool)->void:_refresh())
+	_protect=CheckButton.new();_protect.text="保留委托与出征目标所需材料";_protect.button_pressed=true;_protect.add_theme_font_size_override("font_size",18);_protect.tooltip_text="默认保护所需数量；关闭后可主动消耗。不会使用记忆花或未列入配方的素材。";box.add_child(_protect);_protect.toggled.connect(func(_v:bool)->void:_refresh())
 	var tools:=UiFactory.hbox(8);box.add_child(tools)
 	_search=LineEdit.new();_search.placeholder_text="搜索名称或材料";_search.size_flags_horizontal=Control.SIZE_EXPAND_FILL;_search.custom_minimum_size.y=52 if MobileControls.enabled() else 42;tools.add_child(_search);_search.text_changed.connect(func(_value:String)->void:_reset_list())
 	_filter=OptionButton.new();_filter.fit_to_longest_item=false;_filter.custom_minimum_size=Vector2(165,52 if MobileControls.enabled() else 42);tools.add_child(_filter)
@@ -100,10 +100,11 @@ func _refresh()->void:
 	var scroll:int=_positions.get(_page,0);_rendered_page=_page;_epoch+=1;var epoch:=_epoch
 	for child in _body.get_children():_body.remove_child(child);child.queue_free()
 	for button in _tabs.get_children():button.set_meta("interaction_selected",str(button.get_meta("workshop_page"))==_page);InteractionSkin.apply_button(button,"workshop")
-	var known:=MaterialWorkshopCatalog.research(MaterialWorkshop.goal())
+	var known:=WorkshopGoals.entry(MaterialWorkshop.goal())
 	_stock.text=("永久仓库" if _camp else "本局背包 · 不使用仓库材料")+" · 各项显示总量／保留／可用／消耗后剩余。"
 	if not known.is_empty():
-		_stock.text+="\n目标研究："+str(known.name)+" · "+_cost_line(known.needs,str(known.id))
+		_stock.text+="\n追踪目标 · "+str(known.name)
+		_text(_body,WorkshopGoals.describe(),17,PixelUi.GOLD)
 	_material_hint.visible=not _material_id.is_empty();_material_hint.text="相关材料："+str(ExpeditionData.resolve(_material_id).get("name",_material_id))+"  × 清除筛选"
 	_views.clear()
 	var source:Array=MaterialWorkshopCatalog.RESEARCH if _page=="research" else MaterialWorkshopCatalog.ENCHANTS.values() if _page=="enchant" else MaterialWorkshopCatalog.CRAFT if _page=="craft" else MaterialWorkshopCatalog.ALCHEMY
@@ -187,10 +188,15 @@ func _recipe_card(entry:Dictionary)->void:
 	var view:=MaterialWorkshop.preview("craft",id,variant,_camp,_protect.button_pressed,quantity,_field_service())
 	if ItemDB.is_usable(product):
 		var amount:=SpinBox.new();amount.min_value=1;amount.max_value=10;amount.step=1;amount.prefix="制作数量 ";amount.value=quantity;amount.custom_minimum_size.y=52 if MobileControls.enabled() else 44;box.add_child(amount);MobileControls.decorate_number(amount)
-		amount.get_line_edit().set_meta("focus_token","quantity:"+id);amount.value_changed.connect(func(value:float)->void:_quantities[id]=int(value);_refresh())
+		# SpinBox emits before starting its repeat timer; rebuild after the input returns.
+		amount.get_line_edit().set_meta("focus_token","quantity:"+id);amount.value_changed.connect(func(value:float)->void:_quantities[id]=int(value);_queue_refresh())
 		_text(box,"本次产出 %d份 · 当前材料与空间最多支持%d份"%[quantity,int(view.max_quantity)],17,PixelUi.GOLD)
 	_text(box,MaterialWorkshop.cost_text(view.rows,_protect.button_pressed),17,PixelUi.MUTED)
 	_button(box,"制作%d份"%quantity,str(view.error),"craft:"+id,_execute.bind("craft",id,variant))
+	if _camp and ItemDB.is_equippable(product):
+		var target:="craft:"+id
+		_button(box,"取消制作目标" if MaterialWorkshop.goal()==target else "追踪制作这件装备","","goal:"+target,_execute.bind("goal","" if MaterialWorkshop.goal()==target else target,0))
+		if not MaterialWorkshopCatalog.unlocked(str(entry.research)):_text(box,"前置研究 · "+str(MaterialWorkshopCatalog.research(str(entry.research)).name),17,PixelUi.GOLD)
 func _research_card(entry:Dictionary)->void:
 	var done:=MaterialWorkshopCatalog.unlocked(str(entry.id));var icon_path:=""
 	for id in entry.needs:
@@ -224,7 +230,7 @@ func _execute(kind:String,id:String,variant:int)->void:
 		"research":error=MaterialWorkshop.research(id,_protect.button_pressed)
 		"goal":error=MaterialWorkshop.set_goal(id)
 		"enchant":error=MaterialWorkshop.enchant(id,variant,_protect.button_pressed,service)
-	_status.text=error if not error.is_empty() else {"craft":"制作%d份完成，已放入%s。"%[int(_quantities.get(id,1)),"仓库" if _camp else "本局背包"],"research":"研究完成，所有角色均可使用新配方。","goal":"研究目标已更新。","enchant":"刻印已施加，仅本次出征有效。"}.get(kind,"操作完成")
+	_status.text=error if not error.is_empty() else {"craft":"制作%d份完成，已放入%s。"%[int(_quantities.get(id,1)),"仓库" if _camp else "本局背包"],"research":"研究完成，所有角色均可使用新配方。","goal":"出征目标已更新，材料会按现有保留规则保护。","enchant":"刻印已施加，仅本次出征有效。"}.get(kind,"操作完成")
 	AudioManager.play(&"purchase_failed" if not error.is_empty() else &"reward_claim",-10,0);_refresh()
 func _material_list()->void:
 	var stock:Dictionary=Outpost.data.get("inventory",{}) if _camp else MaterialWorkshop.counts(GameState.items);var parts:PackedStringArray=[]

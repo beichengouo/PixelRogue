@@ -9,12 +9,13 @@ const BOSS_MATERIALS:={
 "boss_wax":{"name":"记忆封蜡","rarity":2,"price":0,"boss":"verena","icon":"verena","desc":"千页司书解除控制后遗留的封蜡，保存记忆而不束缚未来。用于回响刻印研究；不可出售。"},
 "boss_star":{"name":"无名星核","rarity":3,"price":0,"boss":"nameless","icon":"nameless","desc":"无名录仪重获自由的星术核心。仅终章首领产出，用于星城高级研究与制作；不可出售或购买。"}}
 const ALCHEMY:=[
-{"id":"alch_health","name":"治疗药剂","product":"potion_health","research":"","variants":[{"forest_sample":2,"star_dust":1},{"wetland_sample":2,"star_dust":1},{"ruin_sample":2,"star_dust":1},{"glow_mushroom_0":2,"star_dust":1}]},
+{"id":"alch_health","name":"治疗药剂","product":"potion_health","research":"","variants":[{"forest_sample":2,"star_dust":1},{"wetland_sample":2,"star_dust":1},{"ruin_sample":2,"star_dust":1}]},
 {"id":"alch_energy","name":"能量药剂","product":"potion_energy","research":"","variants":[{"star_dust":2,"forest_sample":2},{"star_dust":2,"wetland_sample":2},{"star_dust":2,"ruin_sample":2}]},
 {"id":"alch_arcane","name":"秘法药剂","product":"potion_arcane","research":"alch_arcane","variants":[{"storm_crystal":1,"star_dust":2}]},
 {"id":"alch_focus","name":"专注药剂","product":"potion_focus","research":"alch_focus","variants":[{"forest_resin":2,"star_dust":2},{"ruin_ore":1,"star_dust":2}]},
 {"id":"alch_wind","name":"风行药剂","product":"potion_wind","research":"alch_wind","variants":[{"moss_cloth":2,"forest_sample":1},{"ruin_ore":1,"star_dust":2}]},
-{"id":"alch_frost","name":"冰霜药剂","product":"potion_frost","research":"alch_frost","variants":[{"river_pearl":1,"star_dust":2},{"ancient_seal":1,"star_dust":2}]}]
+{"id":"alch_frost","name":"冰霜药剂","product":"potion_frost","research":"alch_frost","variants":[{"river_pearl":1,"star_dust":2},{"ancient_seal":1,"star_dust":2}]},
+{"id":"alch_capacity","name":"星露复生剂","product":"potion_capacity","research":"","variants":[{"river_pearl":1,"forest_resin":2,"star_dust":4},{"ancient_seal":1,"ruin_ore":2,"star_dust":4}]}]
 const ENCHANTS:={
 "ember":{"name":"余烬刻印","slot":"weapon","research":"","icon":"ember","desc":"普攻首次有效直击施加3秒燃烧，每秒造成角色攻击力8%的伤害。重复施加刷新，不与较强燃烧相加。","variants":[{"forest_resin":3,"star_dust":2},{"ruin_ore":2,"star_dust":2}]},
 "moss":{"name":"苔纹护印","slot":"armor","research":"","icon":"moss","desc":"受到实际生命伤害后获得最大生命5%的护盾，持续3秒，冷却8秒。护盾取较强值。","variants":[{"moss_cloth":3,"star_dust":2},{"ruin_sample":3,"star_dust":2}]},

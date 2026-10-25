@@ -17,6 +17,7 @@ static func value(id:String,stat:String,fallback:float)->float:
 	var number:Variant=entry.get(stat,fallback)
 	return float(number) if (number is float or number is int) and is_finite(float(number)) else fallback
 static func player_base(stat:StringName,fallback:float)->float:
+	if stat==&"attack":fallback*=float(Characters.ATTACK_FACTORS.get(Characters.current_id(),1.0))
 	return value("hero:"+str(Characters.current_id()),str(stat),fallback)
 static func apply_enemy(enemy:EnemyBase)->void:
 	var id:="boss:"+str(enemy.boss_id) if enemy is BossBase else "enemy:"+str(enemy.kind)
@@ -44,7 +45,7 @@ static func catalog()->Array[Dictionary]:
 	var result:Array[Dictionary]=[]
 	for id in Characters.DATA:
 		var stats:Dictionary={}
-		for stat in GameState.BASE_STATS:stats[str(stat)]=float(GameState.BASE_STATS[stat])
+		for stat in GameState.BASE_STATS:stats[str(stat)]=float(GameState.BASE_STATS[stat])*(float(Characters.ATTACK_FACTORS.get(id,1.0)) if stat==&"attack" else 1.0)
 		result.append({"id":"hero:"+str(id),"name":"角色 · "+str(Characters.DATA[id].name),"stats":stats})
 	var kinds:Array=[&"walker",&"flyer",&"charger",&"caster",&"bomber",&"guard",&"treant"]
 	kinds.append_array(EnemyCombatPolicy.NEW_KINDS)

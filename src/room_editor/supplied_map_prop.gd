@@ -10,8 +10,11 @@ var _clock := 0.0
 class SuppliedLight extends Node2D:
 	var light_field:RoomLightField
 	var kind:="torch"
-	func _ready()->void:add_to_group("room_environment_lights")
-	func light_config()->Dictionary:return RoomEnvironmentConfig.LIGHTS.get(kind,RoomEnvironmentConfig.LIGHTS.torch).duplicate()
+	var animated_already:=false
+	func _ready()->void:
+		add_to_group("room_environment_lights")
+	func light_config()->Dictionary:
+		var config:Dictionary=RoomEnvironmentConfig.LIGHTS.get(kind,RoomEnvironmentConfig.LIGHTS.torch).duplicate();config.animation_kind=kind;return config
 	func _exit_tree()->void:
 		if light_field!=null:light_field.unregister(self)
 
@@ -28,9 +31,10 @@ func _ready() -> void:
 	set_process(_frames != null)
 	var entry:=SuppliedMapAssets.get_entry(asset_id)
 	if not str(entry.get("light_kind","")).is_empty():
+		if _frames==null:LightModelMotion.attach(_sprite,str(entry.light_kind))
 		for y in footprint.y:
 			for x in footprint.x:
-				var emitter:=SuppliedLight.new();emitter.kind=str(entry.light_kind)
+				var emitter:=SuppliedLight.new();emitter.kind=str(entry.light_kind);emitter.animated_already=_frames!=null
 				emitter.position=Vector2((x+.5)*36-footprint.x*18,(y-footprint.y)*36+18)
 				add_child(emitter)
 

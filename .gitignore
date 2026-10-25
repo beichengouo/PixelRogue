@@ -26,3 +26,7 @@ export_credentials.cfg
 *.pem
 *.key
 
+# Local Python authoring runtime cache
+__pycache__/
+*.py[cod]
+

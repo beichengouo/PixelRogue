@@ -28,7 +28,7 @@ func _ready() -> void:
 	EventBus.rest_started.connect(_on_rest_started)
 	EventBus.rest_ended.connect(_on_rest_ended)
 	# 和商人一样自带一盏灯（酒馆用偏暖偏红的色调，和商店区分开）
-	_npc_light = LightUtil.make_point_light(Color(1.0, 0.72, 0.55), 1.0, 165.0, false)
+	_npc_light = LightUtil.make_point_light(Color(1.0, 0.72, 0.55), 1.0, 165.0, false,"lamp")
 	_npc_light.position = Vector2(0.0, -22.0)
 	add_child(_npc_light)
 	_set_open(false)

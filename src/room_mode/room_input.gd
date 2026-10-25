@@ -54,13 +54,15 @@ static func set_attack_mode(mode:String)->String:
 	return ""
 
 static func auto_aim(actor:RoomPlayer)->Vector2:
-	var best:EnemyBase;var distance:=float(WeaponArt.profile().get("reach",540.0))
-	for node in actor.get_tree().get_nodes_in_group("enemies"):
-		var enemy:=node as EnemyBase
+	var best:EnemyBase;var reach:=float(WeaponArt.profile().get("reach",540.0));var distance:=reach*reach
+	if not is_instance_valid(actor.room):return Vector2.ZERO
+	var origin:=actor.global_position
+	for enemy in actor.room.tactics.enemies(actor.room):
 		if not is_instance_valid(enemy) or enemy._dead or enemy.hp<=0 or enemy.is_queued_for_deletion():continue
-		var candidate:=actor.global_position.distance_to(enemy.global_position)
-		if candidate<distance and actor.room.sight(actor.global_position,enemy.global_position):best=enemy;distance=candidate
-	return (best.global_position-actor.global_position).normalized() if is_instance_valid(best) else Vector2.ZERO
+		var at:=enemy.global_position
+		var candidate:=origin.distance_squared_to(at)
+		if candidate<distance and actor.room.sight(origin,at):best=enemy;distance=candidate
+	return (best.global_position-origin).normalized() if is_instance_valid(best) else Vector2.ZERO
 
 static func pointer_aim(actor: Node2D) -> Vector2:
 	if MobileControls.enabled():return MobileControls.direction()

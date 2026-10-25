@@ -6,7 +6,7 @@
       "desc": "雇佣的怪物与佣兵：生命 +25%、攻击 +20%",
       "flat": {},
       "flavor": "铃舌由两片相互追逐的银叶铸成，清响落下时，独行者的脚步便有了回声。它从不命令谁献出生命，只提醒契约两端的人：有些道路，原本可以一起走完。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
-      "icon": "tex:res://assets/round5/items/summoner_bell.png",
+      "icon": "tex:res://assets/items_v12/icons/summoner_bell.png",
       "id": "summoner_bell",
       "kind": "buff",
       "mult": {},
@@ -22,7 +22,7 @@
       "desc": "雇佣的怪物与佣兵：攻击 +15%、移动速度 +20%",
       "flat": {},
       "flavor": "指环内侧没有主人的姓名，只有一圈尚未合拢的誓文。立约者把最后一笔留给同行之人，因为忠诚不该是一道封死的门，而应是危难之际仍愿作出的选择。回廊保存着它走过的路，也为尚未抵达的明天留着一盏安静的灯。",
-      "icon": "tex:res://assets/round5/items/contract_ring.png",
+      "icon": "tex:res://assets/items_v12/icons/contract_ring.png",
       "id": "contract_ring",
       "kind": "accessory",
       "mult": {},
@@ -40,7 +40,7 @@
         "attack": 6.0
       },
       "flavor": "缺口经过重新锻打，皮绳仍牢牢缠着剑柄。这是旅人踏上长路时最朴素的勇气。",
-      "icon": "tex:res://assets/round5/items/iron_sword.png",
+      "icon": "tex:res://assets/items_v12/icons/iron_sword.png",
       "id": "iron_sword",
       "kind": "buff",
       "mult": {},
@@ -49,29 +49,29 @@
     },
     {
       "cost": 26.0,
-      "desc": "攻击力 +18%",
-      "flat": {},
+      "desc": "攻击力 +6",
+      "flat": {
+        "attack": 6.0
+      },
       "flavor": "细密银砂封在不起眼的石面里，刃口擦过便有晨星般的碎光落下。守夜的人相信，值得托付性命的锋芒，不出自一次辉煌，而来自每次出发前不曾省略的准备。",
-      "icon": "tex:res://assets/round5/items/whetstone.png",
+      "icon": "tex:res://assets/items_v12/icons/whetstone.png",
       "id": "whetstone",
       "kind": "buff",
-      "mult": {
-        "attack": 0.18
-      },
+      "mult": {},
       "name": "磨刀石",
       "rarity": 1.0
     },
     {
       "cost": 20.0,
-      "desc": "移动速度 +12%",
-      "flat": {},
+      "desc": "移动速度 +19",
+      "flat": {
+        "move_speed": 19
+      },
       "flavor": "灰白羽绒藏在靴口，旧皮底轻贴地面。穿上它的人，学会让脚步先于恐惧启程。",
-      "icon": "tex:res://assets/round5/items/feather_boots.png",
+      "icon": "tex:res://assets/items_v12/icons/feather_boots.png",
       "id": "feather_boots",
       "kind": "buff",
-      "mult": {
-        "move_speed": 0.12
-      },
+      "mult": {},
       "name": "轻羽靴",
       "rarity": 0.0
     },
@@ -91,12 +91,12 @@
     },
     {
       "cost": 22.0,
-      "desc": "最大生命 +25",
+      "desc": "生命上限 +25",
       "flat": {
         "max_hp": 25.0
       },
       "flavor": "锤痕一层叠着一层，正中护片却平整如初。无名铁匠把最可靠的祝福留在心前。",
-      "icon": "tex:res://assets/round5/items/guardian_mail.png",
+      "icon": "tex:res://assets/items_v12/icons/guardian_mail.png",
       "id": "guardian_mail",
       "kind": "buff",
       "mult": {},
@@ -105,28 +105,27 @@
     },
     {
       "cost": 30.0,
-      "desc": "最大生命 +45，移动速度 -8%",
+      "desc": "生命上限 +45；移动速度 -13",
       "flat": {
-        "max_hp": 45.0
+        "max_hp": 45.0,
+        "move_speed": -13
       },
       "flavor": "厚革上刻着比人类文字更古老的山纹，铜扣被漫长岁月磨得温润。传承它的人未必拥有巨人的身形，却都懂得在风暴来到时，先替身后的人站稳。",
-      "icon": "tex:res://assets/round5/items/giant_belt.png",
+      "icon": "tex:res://assets/items_v12/icons/giant_belt.png",
       "id": "giant_belt",
       "kind": "buff",
-      "mult": {
-        "move_speed": -0.08
-      },
+      "mult": {},
       "name": "巨人腰带",
       "rarity": 1.0
     },
     {
       "cost": 32.0,
-      "desc": "普攻命中回复 1 点生命（同名来源不重复叠加）",
+      "desc": "普攻命中回复 +1点生命",
       "flat": {
         "lifesteal": 1.0
       },
       "flavor": "暗红纹路蜿蜒穿过木牌，像树根寻回失落的泉水。它记得创伤，却不以创伤为荣耀；真正值得铭刻的，是受伤之后依然没有放下武器的那只手。",
-      "icon": "tex:res://assets/round5/items/blood_charm.png",
+      "icon": "tex:res://assets/items_v12/icons/blood_charm.png",
       "id": "blood_charm",
       "kind": "buff",
       "mult": {},
@@ -135,12 +134,12 @@
     },
     {
       "cost": 28.0,
-      "desc": "受击时反伤 10 点",
+      "desc": "反伤 +10",
       "flat": {
         "thorns": 10.0
       },
       "flavor": "细棘沿着斗篷内衬生长，外侧反而柔软得像暮色。林地守望者把它披给归途上的伙伴，借此告诉黑暗：温柔从来不意味着毫无锋芒。",
-      "icon": "tex:res://assets/round5/items/thorn_cloak.png",
+      "icon": "tex:res://assets/items_v12/icons/thorn_cloak.png",
       "id": "thorn_cloak",
       "kind": "buff",
       "mult": {},
@@ -155,7 +154,7 @@
         "crit_mult": 0.5
       },
       "flavor": "银针划出的窄月几乎没有重量，唯有握在掌心时，才会显出冷冽的轮廓。它不赞美无谓的杀戮，而纪念那些在最短的一瞬里截断灾厄、让旁人得以看见下一个黎明的无名之人。群星不会替旅人承担选择，却会照见那些在黑暗中仍未改变的心。",
-      "icon": "tex:res://assets/round5/items/assassin_mark.png",
+      "icon": "tex:res://assets/items_v12/icons/assassin_mark.png",
       "id": "assassin_mark",
       "kind": "buff",
       "mult": {},
@@ -164,29 +163,33 @@
     },
     {
       "cost": 18.0,
-      "desc": "金币收益 +35%",
+      "desc": "首次清理每个战斗房间时额外获得2金币；重复入房不重复获得。",
       "flat": {},
       "flavor": "钱币两面都磨去了君王的面容，唯有掌心留下的温度，仍被旅人称作好运。",
-      "icon": "tex:res://assets/round5/items/lucky_coin.png",
+      "icon": "tex:res://assets/items_v12/icons/lucky_coin.png",
       "id": "lucky_coin",
       "kind": "buff",
-      "mult": {
-        "coin_gain": 0.35
-      },
+      "mult": {},
       "name": "幸运币",
-      "rarity": 0.0
+      "rarity": 0.0,
+      "mechanics": [
+        {
+          "id": "room_coin",
+          "coins": 2
+        }
+      ]
     },
     {
       "cost": 22.0,
-      "desc": "冲刺冷却 -30%",
-      "flat": {},
+      "desc": "闪避冷却 -1.1秒",
+      "flat": {
+        "dash_cooldown": -1.1
+      },
       "flavor": "靴侧的青色缝线已经褪色，鞋尖却始终朝向前路，像一封尚未寄出的远行书。",
-      "icon": "tex:res://assets/round5/items/gale_boots.png",
+      "icon": "tex:res://assets/items_v12/icons/gale_boots.png",
       "id": "gale_boots",
       "kind": "buff",
-      "mult": {
-        "dash_cooldown": -0.3
-      },
+      "mult": {},
       "name": "疾风之靴",
       "rarity": 0.0
     },
@@ -206,17 +209,16 @@
     },
     {
       "cost": 28.0,
-      "desc": "攻击力 +25%，最大生命 -15",
+      "desc": "生命上限 -15；攻击力 +8.5",
       "flat": {
-        "max_hp": -15.0
+        "max_hp": -15.0,
+        "attack": 8.5
       },
       "flavor": "赤色结晶里凝着一簇难以平息的火，连沉默都显得炽热。它并非献给莽撞者的颂歌，而是献给所有在退无可退之时，仍敢以自身回应命运的人。",
-      "icon": "tex:res://assets/round5/items/berserk_blood.png",
+      "icon": "tex:res://assets/items_v12/icons/berserk_blood.png",
       "id": "berserk_blood",
       "kind": "buff",
-      "mult": {
-        "attack": 0.25
-      },
+      "mult": {},
       "name": "狂暴之血",
       "rarity": 1.0
     },
@@ -228,7 +230,7 @@
         "max_hp": 30.0
       },
       "flavor": "焰羽已经化作余灰，心石里却仍有一线赤金缓缓搏动。旧日的守望者曾把它举向无星的长夜，不求免于焚烧，只求被自己护在身后的人能够平安离开。火光最终熄灭，誓言却没有随之散去。如今每一位接过它的旅人，都能听见那份沉静而炽烈的回答：苦难不值得被赞颂，穿过苦难后仍愿守护的心，才值得被铭记。群星不会替旅人承担选择，却会照见那些在黑暗中仍未改变的心。",
-      "icon": "tex:res://assets/round5/items/phoenix_heart.png",
+      "icon": "tex:res://assets/items_v12/icons/phoenix_heart.png",
       "id": "phoenix_heart",
       "kind": "buff",
       "mult": {},
@@ -242,7 +244,7 @@
         "crit_chance": 0.08
       },
       "flavor": "刃背没有王室的纹章，剑锷上也没有胜者的桂冠，只有一道被反复磨亮的旧刻痕。它曾被用来裁断无法停歇的守护命令，因而承受过许多畏惧与误解。持剑者没有为自己辩解，只把锋刃指向了真正囚禁众人的枷锁。世人记住了判决落下的瞬间，剑却记得那场判决之后，终于能够重新迈出的脚步。真正值得传承的力量，从不止于赢下一场战斗，更在于为何继续前行。",
-      "icon": "tex:res://assets/round5/items/executioner.png",
+      "icon": "tex:res://assets/items_v12/icons/executioner.png",
       "id": "executioner",
       "kind": "buff",
       "mult": {
@@ -253,16 +255,16 @@
     },
     {
       "cost": 30.0,
-      "desc": "攻击 +12%，攻击速度 +10% · 紫晶环刃弹",
-      "flat": {},
+      "desc": "攻击力 +4；攻击速度 +0.16",
+      "flat": {
+        "attack": 4.0,
+        "attack_speed": 0.16
+      },
       "flavor": "杖心嵌着一枚略显浑浊的蓝晶，细碎星纹由握柄一路延伸到顶端。许多伟大的法术，都曾从这样一根朴素木杖开始；第一束微光，也有照亮长夜的资格。",
-      "icon": "tex:res://assets/round5/items/wand_arcane.png",
+      "icon": "tex:res://assets/items_v12/icons/wand_arcane.png",
       "id": "wand_arcane",
       "kind": "weapon",
-      "mult": {
-        "attack": 0.12,
-        "attack_speed": 0.1
-      },
+      "mult": {},
       "name": "秘法魔杖",
       "rarity": 1.0,
       "weapon": {
@@ -285,7 +287,7 @@
         "crit_chance": 0.03
       },
       "flavor": "赤晶与焦木之间封着一圈安静的火，既不躁动，也不肯熄灭。它曾是守夜者引路的灯，后来才成为抵御侵袭的武器。火焰所照见的不是征服，而是黑暗退去后仍然完整的归途。群星不会替旅人承担选择，却会照见那些在黑暗中仍未改变的心。",
-      "icon": "tex:res://assets/round5/items/staff_fire.png",
+      "icon": "tex:res://assets/items_v12/icons/staff_fire.png",
       "id": "staff_fire",
       "kind": "weapon",
       "mult": {
@@ -308,17 +310,16 @@
     },
     {
       "cost": 36.0,
-      "desc": "攻击 +12%，暴击率 +4% · 翠羽箭",
+      "desc": "暴击率 +4%；攻击力 +4",
       "flat": {
-        "crit_chance": 0.04
+        "crit_chance": 0.04,
+        "attack": 4.0
       },
       "flavor": "弓身留着细致的手工刨痕，弦扣被林间露水洗成柔和的银色。它不会替猎手决定何时松弦，只把每一次稳健的呼吸，忠实地化作穿过枝叶的箭。",
-      "icon": "tex:res://assets/round5/items/bow_wood.png",
+      "icon": "tex:res://assets/items_v12/icons/bow_wood.png",
       "id": "bow_wood",
       "kind": "weapon",
-      "mult": {
-        "attack": 0.12
-      },
+      "mult": {},
       "name": "猎手长弓",
       "rarity": 1.0,
       "weapon": {
@@ -339,7 +340,7 @@
       "desc": "攻击 +16%，攻击速度 +12% · 银蓝刃光",
       "flat": {},
       "flavor": "短刃藏在沉默的鞘中，握柄纹路已被指掌磨平。它没有长兵器的声势，却能在最逼仄的险境里为旅人守住最后一点余地。真正精确的锋芒，总懂得等待值得出手的时刻。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。",
-      "icon": "tex:res://assets/round5/items/dagger_iron.png",
+      "icon": "tex:res://assets/items_v12/icons/dagger_iron.png",
       "id": "dagger_iron",
       "kind": "weapon",
       "mult": {
@@ -369,7 +370,7 @@
         "crit_mult": 0.2
       },
       "flavor": "秘金并不比星光更轻，这柄战锤却把沉重铸成了庄严。锤面刻着相互咬合的岩纹，仿佛大地把自己的脊骨交给了凡人。每一道裂痕都来自一次不得不接下的冲击，每一片金屑都曾照亮濒临崩塌的防线。它不要求持有者成为无坚不摧的英雄，只要求那只举起战锤的手，在该守住的地方不再后退。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。愿持有它的人记得来路的重量，也记得自己始终可以选择怎样抵达远方。",
-      "icon": "tex:res://assets/round5/items/warhammer_gold.png",
+      "icon": "tex:res://assets/items_v12/icons/warhammer_gold.png",
       "id": "warhammer_gold",
       "kind": "weapon",
       "mult": {
@@ -393,17 +394,16 @@
     },
     {
       "cost": 32.0,
-      "desc": "最大生命 +50，移动速度 -4%",
+      "desc": "生命上限 +50；移动速度 -6",
       "flat": {
-        "max_hp": 50
+        "max_hp": 50,
+        "move_speed": -6
       },
       "flavor": "深色铁片层层叠合，肩带上还留着手工缝补的痕迹。它没有华贵的纹章，却曾无数次把利刃挡在最重要的位置之外；平凡的坚固，也足以成为一段传奇的开端。",
       "icon": "tex:res://assets/content_v07/legacy/plate_mail.png",
       "id": "plate_mail",
       "kind": "armor",
-      "mult": {
-        "move_speed": -0.04
-      },
+      "mult": {},
       "name": "铁壁胸甲",
       "rarity": 1.0
     },
@@ -424,18 +424,17 @@
     },
     {
       "cost": 30.0,
-      "desc": "最大生命 +25，移动速度 +8%，魔法回复速度 +8%",
+      "desc": "生命上限 +25；移动速度 +13；魔法回复 +0.2/秒",
       "flat": {
-        "max_hp": 25
+        "max_hp": 25,
+        "move_speed": 13,
+        "mp_regen": 0.2
       },
       "flavor": "深蓝布面缀着稀疏银线，展开时仿佛一张仍未绘完的星图。流浪的施法者把家乡的夜空缝在衣角，走得再远，也不会忘记最初为何追逐光明。",
-      "icon": "tex:res://assets/round5/items/mage_robe.png",
+      "icon": "tex:res://assets/items_v12/icons/mage_robe.png",
       "id": "mage_robe",
       "kind": "armor",
-      "mult": {
-        "move_speed": 0.08,
-        "mp_regen": 0.08
-      },
+      "mult": {},
       "name": "游星法袍",
       "rarity": 1.0
     },
@@ -474,7 +473,7 @@
         "max_hp": -10.0
       },
       "flavor": "骨面上残存的暗纹早已失去完整语句，眼窝却仍映出幽微的紫光。人们畏惧它承载的旧诅咒，也有人从那片沉默中读出了另一种警告：不要把无法理解的悲伤，轻易变成束缚后来者的律法。愿持有它的人记得来路的重量，也记得自己始终可以选择怎样抵达远方。",
-      "icon": "tex:res://assets/round5/items/cursed_skull.png",
+      "icon": "tex:res://assets/items_v12/icons/cursed_skull.png",
       "id": "cursed_skull",
       "kind": "accessory",
       "mult": {
@@ -485,17 +484,21 @@
     },
     {
       "cost": 26.0,
-      "desc": "金币收益 +40%",
+      "desc": "首次清理每个战斗房间时额外获得3金币；重复入房不重复获得。",
       "flat": {},
       "flavor": "磨圆的护符像一枚小小的路标，细链上系着来自不同旅途的旧结。它没有替谁选定结局，只提醒持有者：那些看似偶然的相逢，也值得被郑重珍藏。",
-      "icon": "tex:res://assets/round5/items/lucky_charm.png",
+      "icon": "tex:res://assets/items_v12/icons/lucky_charm.png",
       "id": "lucky_charm",
       "kind": "accessory",
-      "mult": {
-        "coin_gain": 0.4
-      },
+      "mult": {},
       "name": "幸运护符",
-      "rarity": 1.0
+      "rarity": 1.0,
+      "mechanics": [
+        {
+          "id": "room_coin",
+          "coins": 3
+        }
+      ]
     },
     {
       "cost": 34.0,
@@ -505,7 +508,7 @@
         "crit_mult": 0.4
       },
       "flavor": "戒面是一枚不肯反射全貌的锐晶，唯有转到恰好的角度，才会亮起锋利的白芒。老练的旅人用它纪念一次准确的判断，而不是一次侥幸；机会从来短暂，准备却可以漫长。回廊保存着它走过的路，也为尚未抵达的明天留着一盏安静的灯。",
-      "icon": "tex:res://assets/round5/items/crit_ring.png",
+      "icon": "tex:res://assets/items_v12/icons/crit_ring.png",
       "id": "crit_ring",
       "kind": "accessory",
       "mult": {},
@@ -520,7 +523,7 @@
         "crit_chance": 0.06
       },
       "flavor": "诸色宝石围成一轮尚未沉落的星环，王冠内侧却没有刻下任何王者的名字。它曾被供奉在空无一人的高座上，象征无人能够拒绝的荣耀；后来，一个旅人把它带回了仍有笑声的灯下。华美因此有了新的意义：不再使众人向某个人俯首，而是提醒佩戴者，真正的尊荣，应当容得下每一颗不愿屈服的心。群星不会替旅人承担选择，却会照见那些在黑暗中仍未改变的心。",
-      "icon": "tex:res://assets/round5/items/gem_crown.png",
+      "icon": "tex:res://assets/items_v12/icons/gem_crown.png",
       "id": "gem_crown",
       "kind": "accessory",
       "mult": {
@@ -606,19 +609,18 @@
       "rarity": 0,
       "cost": 24,
       "flat": {
-        "max_hp": 20
+        "max_hp": 20,
+        "move_speed": 8
       },
-      "mult": {
-        "move_speed": 0.05
-      },
-      "desc": "最大生命 +20，移动速度 +5%",
+      "mult": {},
+      "desc": "生命上限 +20；移动速度 +8",
       "flavor": "软革与旧布拼成轻便护衣，针脚并不齐整，却认真包住了每一处容易受伤的地方。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/traveler_leather.png"
+      "icon": "tex:res://assets/items_v12/icons/traveler_leather.png"
     },
     {
       "id": "watcher_cloth",
@@ -630,14 +632,14 @@
         "max_hp": 30
       },
       "mult": {},
-      "desc": "最大生命 +30",
+      "desc": "生命上限 +30",
       "flavor": "衣领染着淡淡灯烟，袖口经过仔细补缀。漫长守望里留下的暖意，比纹章更可靠。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/watcher_cloth.png"
+      "icon": "tex:res://assets/items_v12/icons/watcher_cloth.png"
     },
     {
       "id": "thorn_vest",
@@ -650,14 +652,14 @@
         "thorns": 10
       },
       "mult": {},
-      "desc": "最大生命 +15，反伤 +10",
+      "desc": "生命上限 +15；反伤 +10",
       "flavor": "硬韧藤丝织入内衬，细小棘纹藏在不起眼的接缝里。林地不总以鲜花回应来者，有时它递出的善意，是让善良的人也拥有保护自己的锋芒。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/thorn_vest.png"
+      "icon": "tex:res://assets/items_v12/icons/thorn_vest.png"
     },
     {
       "id": "feather_coat",
@@ -666,19 +668,18 @@
       "rarity": 1,
       "cost": 28,
       "flat": {
-        "max_hp": 25
+        "max_hp": 25,
+        "move_speed": 14
       },
-      "mult": {
-        "move_speed": 0.09
-      },
-      "desc": "最大生命 +25，移动速度 +9%",
+      "mult": {},
+      "desc": "生命上限 +25；移动速度 +14",
       "flavor": "细羽缝在外套里层，动作间只露出一线轻柔银白。它曾陪伴信使穿过无数阴雨，衣角虽旧，带往远方的消息却从未因风暴而失约。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/feather_coat.png"
+      "icon": "tex:res://assets/items_v12/icons/feather_coat.png"
     },
     {
       "id": "wind_cloak",
@@ -700,7 +701,7 @@
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/wind_cloak.png"
+      "icon": "tex:res://assets/items_v12/icons/wind_cloak.png"
     },
     {
       "id": "starlight_plate",
@@ -724,7 +725,7 @@
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/starlight_plate.png",
+      "icon": "tex:res://assets/items_v12/icons/starlight_plate.png",
       "legendary_fx": "starlight_plate"
     },
     {
@@ -744,7 +745,7 @@
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/eagle_badge.png"
+      "icon": "tex:res://assets/items_v12/icons/eagle_badge.png"
     },
     {
       "id": "journey_bell",
@@ -752,18 +753,18 @@
       "kind": "accessory",
       "rarity": 0,
       "cost": 22,
-      "flat": {},
-      "mult": {
-        "move_speed": 0.06
+      "flat": {
+        "move_speed": 10
       },
-      "desc": "移动速度 +6%",
+      "mult": {},
+      "desc": "移动速度 +10",
       "flavor": "铃身刻着一截弯曲的小路，轻轻摇响时，仿佛有人在灯火另一端回应你的名字。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/journey_bell.png"
+      "icon": "tex:res://assets/items_v12/icons/journey_bell.png"
     },
     {
       "id": "merchant_purse",
@@ -774,17 +775,21 @@
       "flat": {
         "max_hp": 10
       },
-      "mult": {
-        "coin_gain": 0.25
-      },
-      "desc": "最大生命 +10，金币收益 +25%",
+      "mult": {},
+      "desc": "首次清理每个战斗房间时额外获得2金币；重复入房不重复获得。生命上限 +10。",
       "flavor": "袋口的双重绳结保留着旧商路的习惯，内衬缝着一枚不起眼的铜星。它装过货币，也装过一次及时的相助；旅途的富足，从来不只取决于袋中的声响。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/merchant_purse.png"
+      "icon": "tex:res://assets/items_v12/icons/merchant_purse.png",
+      "mechanics": [
+        {
+          "id": "room_coin",
+          "coins": 2
+        }
+      ]
     },
     {
       "id": "guardian_brooch",
@@ -797,14 +802,14 @@
         "thorns": 6
       },
       "mult": {},
-      "desc": "最大生命 +20，反伤 +6",
+      "desc": "生命上限 +20；反伤 +6",
       "flavor": "银枝把一片温润护石托在衣领前，细小裂纹像旧日潮痕。有人把它留给即将出发的友人，没有说出挽留的话，只认真替对方扣好了最后一道别针。",
       "sources": [
         "shop",
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/guardian_brooch.png"
+      "icon": "tex:res://assets/items_v12/icons/guardian_brooch.png"
     },
     {
       "id": "wind_ring",
@@ -824,7 +829,7 @@
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/wind_ring.png"
+      "icon": "tex:res://assets/items_v12/icons/wind_ring.png"
     },
     {
       "id": "morningstar_pendant",
@@ -847,7 +852,7 @@
         "chest",
         "reward"
       ],
-      "icon": "tex:res://assets/round5/items/morningstar_pendant.png",
+      "icon": "tex:res://assets/items_v12/icons/morningstar_pendant.png",
       "legendary_fx": "morningstar_pendant"
     },
     {
@@ -870,13 +875,12 @@
       "kind": "buff",
       "rarity": 0,
       "cost": 22,
-      "desc": "生命上限 +18，移动速度 +4%",
+      "desc": "生命上限 +18；移动速度 +6",
       "flat": {
-        "max_hp": 18
+        "max_hp": 18,
+        "move_speed": 6
       },
-      "mult": {
-        "move_speed": 0.04
-      },
+      "mult": {},
       "flavor": "一片铜叶被旧丝带认真系在胸前，叶脉里残留的绿意，是林地最安静的祝愿。",
       "icon": "tex:res://assets/camp_inventory/relic_leaf_brooch.tres"
     },
@@ -886,11 +890,11 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 26,
-      "desc": "冲刺冷却 −12%",
-      "flat": {},
-      "mult": {
-        "dash_cooldown": -0.12
+      "desc": "闪避冷却 -0.45秒",
+      "flat": {
+        "dash_cooldown": -0.45
       },
+      "mult": {},
       "flavor": "淡红细砂穿过收窄的琉璃，像花瓣在暮色中缓缓归根。它从不替人追回失去的时间，却让每一次重新准备，都多了一份不被慌乱夺走的从容。",
       "icon": "tex:res://assets/camp_inventory/relic_rose_hourglass.tres"
     },
@@ -900,13 +904,12 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 30,
-      "desc": "攻击 +12%，生命上限 +12",
+      "desc": "生命上限 +12；攻击力 +4",
       "flat": {
-        "max_hp": 12
+        "max_hp": 12,
+        "attack": 4.0
       },
-      "mult": {
-        "attack": 0.12
-      },
+      "mult": {},
       "flavor": "残缺灯罩护着一簇安静的星火，提环早已被无数掌心磨亮。它没有记录同行者的功业，只在每个停下歇息的夜里，替他们保留一处可以放心靠近的光。",
       "icon": "tex:res://assets/camp_inventory/relic_star_lantern.tres"
     },
@@ -916,11 +919,11 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 26,
-      "desc": "移动速度 +6%",
-      "flat": {},
-      "mult": {
-        "move_speed": 0.06
+      "desc": "移动速度 +10",
+      "flat": {
+        "move_speed": 10
       },
+      "mult": {},
       "flavor": "羽尖染着淡淡青墨，笔杆仍留着指节长久握持的温度。它写过许多没有抵达终点的旅行日记，却从未把中途停下，误写成一场没有意义的远行。",
       "icon": "tex:res://assets/camp_inventory/relic_swallow_quill.tres"
     },
@@ -1199,14 +1202,14 @@
       "kind": "weapon",
       "rarity": 0,
       "cost": 24,
-      "icon": "tex:res://assets/weapons/reforged/staff_apprentice_icon.png",
+      "icon": "tex:res://assets/items_v12/icons/staff_apprentice.png",
       "flavor": "杖身还带着温和的木纹，顶端的细小晶石，认真回应着施法者尚显生涩的呼唤。",
       "weapon_class": "mage",
-      "mult": {
-        "attack": 0.06
+      "mult": {},
+      "flat": {
+        "attack": 1.5
       },
-      "flat": {},
-      "desc": "攻击 +6% · 翠叶微光弹",
+      "desc": "攻击力 +1.5",
       "weapon": {
         "family": "staff",
         "fx": "staff_apprentice",
@@ -1225,7 +1228,7 @@
       "kind": "weapon",
       "rarity": 3,
       "cost": 46,
-      "icon": "tex:res://assets/weapons/reforged/staff_starorbit_icon.png",
+      "icon": "tex:res://assets/items_v12/icons/staff_starorbit.png",
       "flavor": "双环围绕蓝白彗核缓慢交错，杖身上的星路在岁月中愈加清晰。它曾被用来推算一座城市能够保存多久，却最终见证了所有推算之外的选择。举起它的人不再试图命令每一颗星沿同一轨道运行，而学会让不同的光拥有各自的前路。那片向外展开的星盘，因而既是力量，也是对自由最郑重的承认。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
       "weapon_class": "mage",
       "mult": {
@@ -1254,7 +1257,7 @@
       "kind": "weapon",
       "rarity": 3,
       "cost": 60,
-      "icon": "tex:res://assets/builds_vnext/icons/staff_ember_flower.png",
+      "icon": "tex:res://assets/items_v12/icons/staff_ember_flower.png",
       "flavor": "焦黑花芯包裹着赤金火种，杖端花瓣在每次举起时重新舒展。旧林地曾以烈焰隔绝一场不可挽回的灾厄，却也因此久久不敢再让新芽靠近。后来，有人从灰烬中拾起尚存温度的枝条，把守护与焚毁之间的界限重新握在掌中。花不为灾难盛开，只为证明，即使经历过最深的焦土，生命仍可以选择怎样回应明天。它所承载的光并不属于某个被选中的名字，而属于每一次自由而郑重的决定。",
       "flat": {},
       "mult": {
@@ -1298,7 +1301,7 @@
       "kind": "weapon",
       "rarity": 3,
       "cost": 60,
-      "icon": "tex:res://assets/builds_vnext/icons/staff_star_weave.png",
+      "icon": "tex:res://assets/items_v12/icons/staff_star_weave.png",
       "flavor": "银蓝星线在杖首交错，彼此独立的光点由一段段短线连接成图。它来自失名星城尚未变得沉默的年代，那时，记录的意义仍是让远行者重新找到彼此。后来连线逐渐被误写成锁链，许多光因此失去了方向。如今新的持有者重新举起法杖，让联系回到最初的样子：能够彼此照见，也容许各自离开。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "flat": {},
       "mult": {
@@ -1342,7 +1345,7 @@
       "kind": "weapon",
       "rarity": 3,
       "cost": 60,
-      "icon": "tex:res://assets/builds_vnext/icons/staff_wind_branch.png",
+      "icon": "tex:res://assets/items_v12/icons/staff_wind_branch.png",
       "flavor": "翠枝弯成一轮轻薄的新月，两缕清风始终沿着枝梢相互追逐。它曾被挂在林间最狭窄的出口上，替迟疑的旅人保留一道可以穿过的缝隙。风没有替谁作出决定，也没有承诺前方没有危险，只在身后黑暗逐渐迫近时，轻轻推开了那片沉重的叶。愿每一次主动迈出的脚步，都能换来属于自己的辽阔。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。群星不会替旅人承担选择，却会照见那些在黑暗中仍未改变的心。",
       "flat": {},
       "mult": {
@@ -1386,7 +1389,7 @@
       "kind": "armor",
       "rarity": 3,
       "cost": 60,
-      "icon": "tex:res://assets/builds_vnext/icons/armor_thorn_moon.png",
+      "icon": "tex:res://assets/items_v12/icons/armor_thorn_moon.png",
       "flavor": "暗棘与银月共同铸成护甲的轮廓，柔和月纹包住了最锋利的部分。它记录过许多次防线被击穿的瞬间，却没有把那些失守写成耻辱。因为守护从来不是永不受伤，而是在最后一道屏障碎裂之后，仍肯为了身后之人再次起身。甲胄里响起的余鸣，正是那些未曾放弃的回答。愿持有它的人记得来路的重量，也记得自己始终可以选择怎样抵达远方。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "flat": {
         "max_hp": 50
@@ -1462,8 +1465,8 @@
       "kind": "weapon",
       "rarity": 3,
       "cost": 60,
-      "icon": "tex:res://assets/builds_vnext/icons/staff_dusk_lantern.png",
-      "flavor": "青白光点安静伏在暗紫灯芯里，细小幽火总向天空缓缓飘散。希希芙曾以为只要灯仍亮着，所有同行者都能被留在身边。漫长旅途中，她终于听懂了沉默的另一面：有些相逢值得全力守护，也有些告别需要被温柔允许。如今暮灯既为战线中的伙伴照亮方向，也为走到尽头的契约留下一段没有枷锁的送别。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
+      "icon": "tex:res://assets/items_v12/icons/staff_dusk_lantern.png",
+      "flavor": "黑银杖首的镂空灯座托着紫色幽焰，细铃与晶坠随杖身轻轻摇响。希希芙曾以为只要灯仍亮着，所有同行者都能被留在身边。漫长旅途中，她终于听懂了沉默的另一面：有些相逢值得全力守护，也有些告别需要被温柔允许。如今暮灯既为战线中的伙伴照亮方向，也为走到尽头的契约留下一段没有枷锁的送别。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
       "flat": {},
       "mult": {
         "attack": 0.3,
@@ -1507,7 +1510,7 @@
       "kind": "armor",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/armor_scorch_bloom.png",
+      "icon": "tex:res://assets/items_v12/icons/armor_scorch_bloom.png",
       "flavor": "焦金花纹沿着护衣胸口盛开，针脚间仍有细小红光静静流转。裁衣者没有为它绣上胜利的场景，而留下了一片经过烈焰仍能重新长出的花。勇气不是与毁灭亲近，而是知道自己为何使用火焰。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "flat": {
         "max_hp": 30
@@ -1538,7 +1541,7 @@
       "kind": "accessory",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/accessory_refraction.png",
+      "icon": "tex:res://assets/items_v12/icons/accessory_refraction.png",
       "flavor": "不同角度的光在镜心相遇，又被分成各自清晰的方向。它曾挂在观测台的窗边，帮助守望者寻找几乎被夜色掩去的星。精准并不总意味着更强烈的光，有时只是终于看清，那条早已存在的裂隙。回廊保存着它走过的路，也为尚未抵达的明天留着一盏安静的灯。",
       "flat": {},
       "mult": {
@@ -1598,7 +1601,7 @@
       "kind": "accessory",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/accessory_oath_guard.png",
+      "icon": "tex:res://assets/items_v12/icons/accessory_oath_guard.png",
       "flavor": "金属徽记被反复握过，中心护纹因此比边缘更加明亮。它不为从未遇见考验的誓言作证，只纪念那些已经见过代价，却仍然选择兑现承诺的人。真正坚固的守护，总在行动之后显现。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
       "flat": {},
       "mult": {
@@ -1657,7 +1660,7 @@
       "kind": "armor",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/armor_farewell.png",
+      "icon": "tex:res://assets/items_v12/icons/armor_farewell.png",
       "flavor": "幽暗丝线把一圈暖色灯纹绣在衣襟，像暮色中仍然亮着的窗口。它不是留住谁的网，而是离开之前可以认真披上的最后一层温度。能够好好告别的人，也会更懂得珍惜尚在身旁的伙伴。回廊保存着它走过的路，也为尚未抵达的明天留着一盏安静的灯。",
       "flat": {
         "max_hp": 30
@@ -1689,7 +1692,7 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_ember_seed.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_ember_seed.png",
       "flavor": "小小种壳藏着一线温热，赤色纹路像尚未抵达地面的根。灰烬并不只意味着结束，也可能是另一株生命最初的土壤；它等待的，是有人愿意替那点余温留一条前路。",
       "flat": {},
       "mult": {},
@@ -1715,7 +1718,7 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_star_mirror.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_star_mirror.png",
       "flavor": "破碎镜面只映出一角星空，边缘却被仔细磨得不再伤手。旅人把它留在衣袋中，提醒自己不必拥有完整的过去，也能从尚存的微光里找到继续前行的理由。",
       "flat": {},
       "mult": {},
@@ -1741,14 +1744,15 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_wind_chime.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_wind_chime.png",
       "flavor": "铃身轻得近乎一片薄叶，唯有疾行时才会发出清晰的回响。它从不催促疲惫的人赶路，只把每一次已然作出的决心，交还给仍在前进的脚步。",
       "flat": {},
       "mult": {},
-      "desc": "风刃回旋：风枝散射命中敌人时，当前冲刺的剩余冷却缩短20%；每次冲刺最多触发1次。",
+      "desc": "追风扇：弹幕命中或枝散命中敌人时，当前闪避剩余冷却减少0.7秒；每次闪避最多触发一次。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "mechanics": [
         {
-          "id": "wind_chime"
+          "id": "wind_chime",
+          "cooldown_seconds": 0.7
         }
       ],
       "build_tags": [
@@ -1767,7 +1771,7 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_thorn_shard.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_thorn_shard.png",
       "flavor": "一弯银白甲片被暗棘紧紧包住，裂面仍映着温柔月色。屏障碎裂的瞬间不必只留下恐惧；有人接住了它，也记住了受保护的生命为何值得继续守望。",
       "flat": {},
       "mult": {},
@@ -1793,14 +1797,15 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_companion_knot.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_companion_knot.png",
       "flavor": "两条颜色不同的旧绳在这里打成牢靠的结，绳头却各自留出了余地。立约的人没有承诺永不分别，只约好在同行的时日里，认真回应身旁的脚步。",
       "flat": {},
       "mult": {},
-      "desc": "并肩流转：144范围内至少有2名友方单位时，魔法回复速度提高15%。",
+      "desc": "角色四格内至少有2名友军时，每秒额外回复0.5MP。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "mechanics": [
         {
-          "id": "companion_knot"
+          "id": "companion_knot",
+          "mp_per_second": 0.5
         }
       ],
       "build_tags": [
@@ -1819,7 +1824,7 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_echo_wick.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_echo_wick.png",
       "flavor": "灯芯早已烧短，纤维间却仍留着青白余光。它记得许多只响过一次的名字，也记得名字被温柔呼唤时，那片黑暗如何短暂地让出了位置。",
       "flat": {},
       "mult": {},
@@ -1846,14 +1851,15 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_hunt_needle.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_hunt_needle.png",
       "flavor": "银针细得像一线冬月，柄端系着不易察觉的青线。它纪念猎手耐心等待的时刻：枝叶可以摇动，风声可以嘈杂，真正重要的空隙终会出现。",
       "flat": {},
       "mult": {},
-      "desc": "追猎针：普攻击中减速目标时，对该目标额外造成攻击力12%的伤害；同一目标冷却1秒。",
+      "desc": "普攻命中减速目标，追加4点装备伤害；同一目标冷却1秒。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "mechanics": [
         {
-          "id": "hunt_needle"
+          "id": "hunt_needle",
+          "damage_flat": 4
         }
       ],
       "build_tags": [
@@ -1872,7 +1878,7 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_tide_pearl.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_tide_pearl.png",
       "flavor": "珠中有两道相互追逐的浅蓝水纹，掌心温暖时便缓缓交错。它不试图阻止潮落，只把潮起的方向保存下来，让每一次短暂的空缺都仍有被填满的可能。",
       "flat": {},
       "mult": {},
@@ -1899,14 +1905,15 @@
       "kind": "buff",
       "rarity": 1,
       "cost": 28,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_afterglow_note.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_afterglow_note.png",
       "flavor": "纸页边缘染着灯烟，空白处挤满认真写下的提醒。那不是英雄的战报，而是一位普通旅人替后来者留下的准备；微小的经验，也能成为穿过陌路的庇护。",
       "flat": {},
       "mult": {},
-      "desc": "余辉之盾：首次进入每个尚未清理的普通房间时，获得相当于最大生命10%的护盾，持续8秒；每间房仅触发1次。",
+      "desc": "首次进入每个尚未清理的普通房间时获得30点护盾，持续8秒；每房一次。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "mechanics": [
         {
-          "id": "afterglow_note"
+          "id": "afterglow_note",
+          "shield_flat": 30
         }
       ],
       "build_tags": [
@@ -1925,7 +1932,7 @@
       "kind": "buff",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_breaker_stone.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_breaker_stone.png",
       "flavor": "石心的金色细线恰好穿过最坚硬的一层岩壳，像一道被漫长观察找到的答案。它提醒旅人，面对压倒性的威势不必只懂得正面争强；再宏伟的屏障，也有必须由判断去辨认的接缝。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
       "flat": {},
       "mult": {},
@@ -1951,7 +1958,7 @@
       "kind": "buff",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_patrol_bell.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_patrol_bell.png",
       "flavor": "铜铃一侧刻着脚步，另一侧刻着张开的弓弦，细小风纹把两者连在一起。它属于懂得在移动与出手之间寻找秩序的巡行者。真正从容的战斗，从来不是站在原地等待命运靠近。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "flat": {},
       "mult": {},
@@ -1977,7 +1984,7 @@
       "kind": "buff",
       "rarity": 2,
       "cost": 40,
-      "icon": "tex:res://assets/builds_vnext/icons/relic_watch_button.png",
+      "icon": "tex:res://assets/items_v12/icons/relic_watch_button.png",
       "flavor": "小小纽扣用温润铜线包住护石，看起来像旧外套上最不起眼的一处补缀。缝下它的人没有留下姓名，只在内侧写了一句话：如果你的灯仍有余光，请分给尚在黑暗里的伙伴。群星不会替旅人承担选择，却会照见那些在黑暗中仍未改变的心。",
       "flat": {},
       "mult": {},
@@ -2006,11 +2013,11 @@
       "cost": 22,
       "icon": "tex:res://assets/characters/ilyua/items/bow_vine_short.png",
       "flavor": "浅木弓身保留着细细藤纹，弦上还系着初次练习留下的小结，朴素而可信赖。",
-      "flat": {},
-      "mult": {
-        "attack": 0.08
+      "flat": {
+        "attack": 2.0
       },
-      "desc": "攻击 +8%。伊露雅的轻便藤纹短弓。",
+      "mult": {},
+      "desc": "攻击力 +2",
       "weapon_class": "archer",
       "requires_character": "ilyua",
       "weapon": {
@@ -2071,7 +2078,7 @@
       "rarity": 3,
       "cost": 60,
       "icon": "tex:res://assets/characters/ilyua/items/bow_spring_wind.png",
-      "flavor": "新叶般的翠光缠绕着弓臂，湖蓝弓弦在静止时也像一阵将起的风。伊露雅不再把故乡只当作必须找回的旧名，而把它理解为愿意珍惜的每一段相逢。于是，弓上的藤纹第一次长出了记录之外的新芽。它们不会替她重写已经失去的过去，却陪她在每一次转身与放箭之间，亲手守住仍然能够抵达的明天。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
+      "flavor": "新叶与白花绕着金色藤纹弓臂生长，细韧的深色弓弦在静止时也像一阵将起的风。伊露雅不再把故乡只当作必须找回的旧名，而把它理解为愿意珍惜的每一段相逢。于是，弓上的藤纹第一次长出了记录之外的新芽。它们不会替她重写已经失去的过去，却陪她在每一次转身与放箭之间，亲手守住仍然能够抵达的明天。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "flat": {},
       "mult": {
         "attack": 0.3,
@@ -2119,7 +2126,7 @@
         "mp_regen": 0.12
       },
       "desc": "攻击+30%、攻速+8%、MP回复+12%。普攻首个有效命中积攒一枚6秒圣云律印，最多三枚；三枚时下一个小技能消耗律印，伤害+20%，释放108范围、0.75倍攻击圣云光环，并获得8%生命护盾4秒；冷却3秒。大招不消耗律印。",
-      "flavor": "柔和圣云围绕金纹杖首展开，澄蓝灵珠把不同方向的微光静静照亮。希露媞雅曾以为守护就是替所有人保存同一个完美答案，后来才明白，希望也需要拥有不同的声音。她让祈愿在掌中各自成形，不再以光辉覆盖悲伤，而以清明辨认每一份真实的呼唤。那束温暖的圣光，因此终于学会陪人前行，而非要求人永远留下。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
+      "flavor": "金色杖首以舒展的云焰托起澄蓝灵珠，修长杖身收拢光辉，没有垂链与流苏。希露媞雅曾以为守护就是替所有人保存同一个完美答案，后来才明白，希望也需要拥有不同的声音。她让祈愿在掌中各自成形，不再以光辉覆盖悲伤，而以清明辨认每一份真实的呼唤。那束温暖的圣光，因此终于学会陪人前行，而非要求人永远留下。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "mechanics": [
         {
           "id": "cloud_staff"
@@ -2159,8 +2166,8 @@
         "attack": 0.1,
         "mp_regen": 0.18
       },
-      "desc": "生命+60、攻击+10%、MP回复+18%。成功施放小技能获得最大生命12%的护盾，持续4秒、冷却6秒；护盾实际承伤回复2MP，冷却3秒。圣云护盾可辅助积累祈光，与云冕灵珠联动。",
-      "flavor": "纯白礼衣的衣褶间绣满细密圣云，金线从心前缓缓延伸向袖口。它不属于高台上的宣告，而属于俯身倾听的祭司。希露媞雅把许多没有被说完的祈愿留在这些针脚里，提醒自己守护不是替人拒绝所有伤痛，而是在屏障被触及时，仍能清楚地回应身旁的人。圣光的温暖，由此拥有了可以被依靠的形状。回廊保存着它走过的路，也为尚未抵达的明天留着一盏安静的灯。",
+      "desc": "生命+60、攻击+10%、MP回复+18%。成功施放小技能获得最大生命12%的护盾，持续4秒、冷却6秒；护盾实际承伤回复2MP，冷却3秒。圣云护盾可辅助积累祈光，与永昼灵珠联动。",
+      "flavor": "纯白兜帽与长披帷垂落在深蓝内衬上，细金云纹沿衣缘与袖口舒展。它不属于高台上的宣告，而属于俯身倾听的祭司。希露媞雅把许多没有被说完的祈愿留在这些针脚里，提醒自己守护不是替人拒绝所有伤痛，而是在屏障被触及时，仍能清楚地回应身旁的人。圣光的温暖，由此拥有了可以被依靠的形状。回廊保存着它走过的路，也为尚未抵达的明天留着一盏安静的灯。",
       "mechanics": [
         {
           "id": "cloud_vestment"
@@ -2189,7 +2196,7 @@
         "mp_regen": 0.18
       },
       "desc": "攻击+14%、攻速+10%、MP回复+18%、暴击+4%。普攻首个有效命中暴击回复2MP，冷却1.5秒；6秒内护盾实际承伤累计三次，释放半径72像素、0.45倍攻击的圣辉并回复2MP，冷却3秒；同一时刻承伤每0.25秒至多计一次。",
-      "flavor": "金色圣环没有被塑成闭合的牢笼，细密云纹间始终留着让光通过的空隙。澄蓝宝石映照着一份份不同的祈愿，既不彼此吞没，也不因破碎而被抛弃。希露媞雅把它佩在离心最近的地方，愿每一次承担伤害，都能转化为更清明的守望。所谓永昼，并非世间从此不再有黑夜，而是仍有人愿意在黑夜里认真举灯。它所承载的光并不属于某个被选中的名字，而属于每一次自由而郑重的决定。",
+      "flavor": "金环托住一枚澄蓝宝石，简洁的领扣将白金兜帽的两襟合在喉前。宝石映着一份份不同的祈愿，既不彼此吞没，也不要求拥有同一个答案。希露媞雅把它扣在最接近呼吸的地方，愿每一次承担伤害的决定，都能为仍在路上的人留下一线光。所谓永昼，并不是宣告从此不再有黑夜，而是愿意在黑夜回来时再次点灯。它所守护的光并非某个被选中的名字，而是每一次自由而郑重的决定。",
       "mechanics": [
         {
           "id": "eternal_circlet"
@@ -2217,7 +2224,7 @@
         "mp_regen": 0.18
       },
       "desc": "生命+60、攻击+12%、MP回复+18%。成功施放小技能，为最近三名友军提供其最大生命8%的护盾，持续4秒、冷却5秒；主动契约物被敌方击杀时，自身获得最大生命8%的护盾4秒，冷却4秒；自然到期和切房不触发。",
-      "flavor": "紫黑衣料里藏着一圈青白灯火，展开时像一条安静延伸的归路。希希芙曾把影子织得很密，想要保护每一个不肯放手的名字；后来，她终于愿意让衣角随风敞开。它如今为同行者遮挡逼近的锋芒，也在契约结束时留下温柔的余温。守护与告别不再相互敌对，因为真正被珍重的相逢，从来不需要以囚禁证明重量。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
+      "flavor": "墨黑披帷衬着垂至小腿的酒红礼裙，银线幽灯纹与紫晶契铃沿衣缘垂落；赤足的脚踝系着细金链。希希芙曾把影子织得很密，想要保护每一个不肯放手的名字；后来，她终于愿意让衣角随风敞开。它如今为同行者遮挡逼近的锋芒，也在契约结束时留下温柔的余温。守护与告别不再相互敌对，因为真正被珍重的相逢，从来不需要以囚禁证明重量。那份誓约没有被写在高塔之上，而被留在仍然愿意向前的凡人手中。",
       "mechanics": [
         {
           "id": "dusk_mantle"
@@ -2244,7 +2251,7 @@
         "mp_regen": 0.12
       },
       "desc": "攻击+16%、攻速+12%、MP回复+12%。普攻首个有效命中使当前友军攻速+12%，持续3秒、冷却3秒；友军有效直击在4秒内累计三拍，产生半径54像素、0.35倍角色攻击的幽灯共鸣，冷却2秒；范围攻击及齐射每0.25秒至多计一拍。",
-      "flavor": "五枚小铃各自保存着不同的音色，银链并未将它们固定在同一个方向。希希芙曾仔细聆听每一份契约的回应，才知道齐声并不意味着失去自己的旋律。铃声响起时，那些独立而自由的意志会在战线中短暂相认。它所赞颂的不是谁能召来更多追随者，而是谁愿意在最危险的瞬间，把伙伴的声音认真放在心上。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。",
+      "flavor": "一对契铃系在酒红缎带与银链之间，各自保留着不同的音色。希希芙曾仔细聆听每一份契约的回应，才知道齐声并不意味着失去自己的旋律。铃声响起时，那些独立而自由的意志会在战线中短暂相认。它所赞颂的不是谁能召来更多追随者，而是谁愿意在最危险的瞬间，把伙伴的声音认真放在心上。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。",
       "mechanics": [
         {
           "id": "covenant_bells"
@@ -2273,7 +2280,7 @@
         "move_speed": 0.1
       },
       "desc": "生命+55、攻速+10%、MP回复+12%、移速+10%。闪避结束获得最大生命8%的护盾，持续2秒、冷却5秒；持盾时主普攻首个有效命中累计四次，产生半径54像素、0.45倍攻击的风环并回复2MP，冷却2秒，相邻命中间隔不超过5秒。",
-      "flavor": "白色轻衣上覆着湖蓝护片，金色叶脉顺着动作自然展开。伊露雅把远行后第一次采到的新叶缝在衣襟里，叶色渐淡，脚步却愈加坚定。她不再要求每一次回望都能看见故乡原来的模样，而学会在新的道路上保护自己，也保护愿意与她同行的人。那圈随身而起的风，既是猎手的判断，也是对未来从未松开的信任。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。",
+      "flavor": "白绿相叠的猎衣缀着金色叶脉与白花，棕色皮革束带收住随风展开的衣摆。伊露雅把远行后第一次采到的新叶缝在衣襟里，叶色渐淡，脚步却愈加坚定。她不再要求每一次回望都能看见故乡原来的模样，而学会在新的道路上保护自己，也保护愿意与她同行的人。那圈随身而起的风，既是猎手的判断，也是对未来从未松开的信任。旧日的记载可以残缺，后来者却仍拥有亲手写下下一页的权利。",
       "mechanics": [
         {
           "id": "swallow_return"
@@ -2290,7 +2297,7 @@
     },
     {
       "id": "accessory_moonwind_chime",
-      "name": "风铃月坠",
+      "name": "花叶誓坠",
       "kind": "accessory",
       "rarity": 3,
       "cost": 60,
@@ -2305,7 +2312,7 @@
         "dash_cooldown": -0.12
       },
       "desc": "攻击+16%、MP回复+18%、暴击+8%、基础闪避冷却-12%。普攻首个有效命中暴击，返还当前闪避剩余冷却15%，冷却1秒；闪避结束使4秒内下两次主普攻首个命中追加0.22倍攻击的月风，并各返还0.2秒闪避冷却，冷却5秒。",
-      "flavor": "一弯湖蓝细月托着青银风铃，声响轻得像林叶彼此触碰。它曾被伊露雅藏在兜帽内侧，陪伴那些不愿暴露身份的沉默时刻；如今，她允许铃声在转身时清晰响起。真正的自由并不要求忘记来处，而是在记得一切之后，仍能以自己的名字选择方向。每一次离开原地，都可以是为了更认真地守住眼前的光。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
+      "flavor": "白花与金叶在衣领相扣，轻巧的誓坠贴着猎衣，不以铃声催促前行的人。伊露雅愿意记住同行时说过的话，也为后来改变的心意留下余地。花会再开，叶会转向新的阳光；约定的意义，在于她仍能亲自选择下一段路。每一次离开原处，都不是背离，而是为了更清楚地记住眼前的光。即使漫长岁月抹去了最初的铭文，守护的意义也仍会在新的相逢中被辨认。",
       "mechanics": [
         {
           "id": "moonwind_chime"
@@ -2564,13 +2571,14 @@
       "mult": {},
       "mechanics": [
         {
-          "id": "mist_dew"
+          "id": "mist_dew",
+          "heal_flat": 3
         }
       ],
       "build_tags": [
         "技能循环"
       ],
-      "desc": "自身生命低于50%时，小技能直接命中回复1%最大生命，冷却3秒；真实伤势仍无法恢复。",
+      "desc": "生命低于50%时，小技能直击命中恢复3点生命，冷却3秒；无法恢复生命伤痕。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "flavor": "窄瓶收着一滴安静的林间晨露，轻晃时仿佛又有清雾升起。采集它的人把最珍贵的露水留给后来者，愿那只疲惫的手，在重新举起武器前得到片刻温柔。",
       "sources": [
         "shop",
@@ -2589,13 +2597,14 @@
       "mult": {},
       "mechanics": [
         {
-          "id": "half_star"
+          "id": "half_star",
+          "damage_flat": 3.5
         }
       ],
       "build_tags": [
         "技能循环"
       ],
-      "desc": "基础闪避后5秒内下一次主普攻首个有效命中，回复2MP并追加0.1倍攻击伤害；冷却3秒，不储存。",
+      "desc": "闪避结束后5秒内，下一次主普攻首次有效命中回复2MP并追加3.5点装备伤害，冷却3秒，不叠加。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "flavor": "旧星徽从中间折断，只剩一侧仍有银光。持有它的旅人没有急着寻找另一半，而让这片残缺陪自己继续赶路；未曾完整，也并不意味着不能指引归途。",
       "sources": [
         "shop",
@@ -2639,13 +2648,14 @@
       "mult": {},
       "mechanics": [
         {
-          "id": "broken_verse"
+          "id": "broken_verse",
+          "shield_flat": 9
         }
       ],
       "build_tags": [
         "技能循环"
       ],
-      "desc": "主普攻首个有效命中暴击时，获得3%最大生命护盾2秒，冷却5秒；护盾取较强值。",
+      "desc": "主普攻首次有效命中暴击时获得9点护盾，持续2秒，冷却5秒；护盾取较强值。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "flavor": "纸页上记着一段尚未写完的旋律，断弦被折进了空白处。后来读到它的人没有补上终章，而把新的相逢写在旁边；失去的声音，也可以为尚未响起的歌留出位置。",
       "sources": [
         "shop",
@@ -2664,13 +2674,14 @@
       "mult": {},
       "mechanics": [
         {
-          "id": "leaf_page"
+          "id": "leaf_page",
+          "damage_flat": 6
         }
       ],
       "build_tags": [
         "技能循环"
       ],
-      "desc": "6秒内成功施放三个不同小技能，强化4秒内下一次小技能直击，释放36范围、0.18倍攻击叶辉；冷却4秒。",
+      "desc": "6秒内成功施放三个不同小技能，强化4秒内下一次小技能直击，释放一格范围、6点装备伤害的叶刃，冷却4秒。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "flavor": "一片被压平的长叶守在旧书中间，叶脉像三条相互交错的小路。它记得旅人曾经反复翻阅的疑问，也记得那些答案最终如何在不同的行动之间慢慢连接成形。",
       "sources": [
         "shop",
@@ -3194,13 +3205,14 @@
       "rarity": 1,
       "cost": 28,
       "icon": "tex:res://assets/content_v07/icons/relic_quartz_moth.png",
-      "desc": "MP低于30%时，普攻首个有效命中追加0.20倍攻击伤害并回复1MP，冷却2秒。 同名遗物持有1／2／3件时，数值效果为100%/150%/175%；次数、目标数、范围与冷却不变。",
+      "desc": "MP低于30%时，普攻首次有效命中追加7点装备伤害并回复1MP，冷却2秒。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
       "flavor": "紫晶翅膀像两片被夜色打磨过的星屑，最微弱的光也足以让它振翅。它不等太阳升起才寻找方向，愿这份小小的勇气，也能陪伴那些力量将尽却仍未停步的人。",
       "flat": {},
       "mult": {},
       "mechanics": [
         {
-          "id": "quartz_moth"
+          "id": "quartz_moth",
+          "damage_flat": 7
         }
       ],
       "build_tags": [
@@ -3235,6 +3247,1585 @@
         "shield",
         "defense"
       ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "id": "staff_waylight",
+      "name": "守灯木杖",
+      "kind": "weapon",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 2.0,
+        "mp_regen": 0.1
+      },
+      "mult": {},
+      "desc": "攻击力 +2；魔法回复 +0.1/秒",
+      "flavor": "灯珠虽小，仍能替晚归的人辨认脚边的路。",
+      "build_tags": [
+        "skill",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "sylphiette",
+      "weapon_class": "mage",
+      "weapon": {
+        "family": "staff",
+        "fx": "staff_apprentice",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#ffe6a6"
+      },
+      "icon": "tex:res://assets/content_v08/icons/staff_waylight.png"
+    },
+    {
+      "id": "staff_threadroot",
+      "name": "结枝短杖",
+      "kind": "weapon",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 2.0,
+        "attack_speed": 0.05
+      },
+      "mult": {},
+      "desc": "攻击力 +2；攻击速度 +0.05",
+      "flavor": "细线绕过旧枝的裂隙，为每一次轻声呼唤留出回响。",
+      "build_tags": [
+        "ally",
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "xixifu",
+      "weapon_class": "mage",
+      "weapon": {
+        "family": "staff",
+        "fx": "staff_apprentice",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#c0a5ec"
+      },
+      "icon": "tex:res://assets/content_v08/icons/staff_threadroot.png"
+    },
+    {
+      "id": "bow_reed",
+      "name": "芦苇短弓",
+      "kind": "weapon",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 2.0,
+        "attack_speed": 0.05
+      },
+      "mult": {},
+      "desc": "攻击力 +2；攻击速度 +0.05",
+      "flavor": "苇秆经冬风吹干，松弦时仍保留着水岸的轻响。",
+      "build_tags": [
+        "basic",
+        "rhythm"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "ilyua",
+      "weapon_class": "archer",
+      "weapon": {
+        "family": "bow",
+        "fx": "bow_wood",
+        "speed": 560,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#a9e1ac"
+      },
+      "icon": "tex:res://assets/content_v08/icons/bow_reed.png"
+    },
+    {
+      "id": "bow_hazel",
+      "name": "榛木行弓",
+      "kind": "weapon",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "crit_chance": 0.02,
+        "attack": 2.0
+      },
+      "mult": {},
+      "desc": "暴击率 +2%；攻击力 +2",
+      "flavor": "枝梢还留着一片叶，箭尖已经认准前方的路。",
+      "build_tags": [
+        "basic",
+        "critical"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "ilyua",
+      "weapon_class": "archer",
+      "weapon": {
+        "family": "bow",
+        "fx": "bow_wood",
+        "speed": 560,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#a9e1ac"
+      },
+      "icon": "tex:res://assets/content_v08/icons/bow_hazel.png"
+    },
+    {
+      "id": "armor_padded",
+      "name": "衬棉行衣",
+      "kind": "armor",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 22,
+        "mp_regen": 0.1
+      },
+      "mult": {},
+      "desc": "生命上限 +22；魔法回复 +0.1/秒",
+      "flavor": "粗布下缝着旧棉，温暖总比旅人想象得更结实。",
+      "build_tags": [
+        "survival",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_padded.png"
+    },
+    {
+      "id": "armor_wickcloth",
+      "name": "灯芯布袍",
+      "kind": "armor",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 18,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "生命上限 +18；魔法回复 +0.2/秒",
+      "flavor": "袖口藏着一截干燥灯芯，提醒持有者为自己留一点余力。",
+      "build_tags": [
+        "mana",
+        "skill"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_wickcloth.png"
+    },
+    {
+      "id": "armor_mossleather",
+      "name": "苔纹皮衣",
+      "kind": "armor",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 18,
+        "attack_speed": 0.06
+      },
+      "mult": {},
+      "desc": "生命上限 +18；攻击速度 +0.06",
+      "flavor": "苔纹染进皮面，衣角掠过草丛时几乎没有声音。",
+      "build_tags": [
+        "basic",
+        "survival"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_mossleather.png"
+    },
+    {
+      "id": "armor_riveted",
+      "name": "铆片护衣",
+      "kind": "armor",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 26,
+        "thorns": 2
+      },
+      "mult": {},
+      "desc": "生命上限 +26；反伤 +2",
+      "flavor": "每一枚铆片都经过敲实，替尚不熟练的脚步守住胸前。",
+      "build_tags": [
+        "survival",
+        "retaliation"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_riveted.png"
+    },
+    {
+      "id": "accessory_copperleaf",
+      "name": "铜叶扣",
+      "kind": "accessory",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 1.5,
+        "attack_speed": 0.05
+      },
+      "mult": {},
+      "desc": "攻击力 +1.5；攻击速度 +0.05",
+      "flavor": "铜叶磨去了锋口，仍把出发时的风扣在衣襟。",
+      "build_tags": [
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_copperleaf.png"
+    },
+    {
+      "id": "accessory_smallvial",
+      "name": "清露坠瓶",
+      "kind": "accessory",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 8,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "生命上限 +8；魔法回复 +0.2/秒",
+      "flavor": "一小滴清露封在瓶中，像未被长夜耗尽的耐心。",
+      "build_tags": [
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_smallvial.png"
+    },
+    {
+      "id": "accessory_bonetie",
+      "name": "骨结环",
+      "kind": "accessory",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 1.0,
+        "mp_regen": 0.1
+      },
+      "mult": {},
+      "desc": "攻击力 +1；魔法回复 +0.1/秒",
+      "flavor": "断骨被细线认真系好，留下的只有约定，没有命令。",
+      "build_tags": [
+        "ally",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_bonetie.png"
+    },
+    {
+      "id": "accessory_waxstar",
+      "name": "蜡星徽",
+      "kind": "accessory",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "crit_chance": 0.025,
+        "attack": 1.0
+      },
+      "mult": {},
+      "desc": "暴击率 +2.5%；攻击力 +1",
+      "flavor": "蜡印已不辨姓名，星形的轮廓仍指向归途。",
+      "build_tags": [
+        "critical"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_waxstar.png"
+    },
+    {
+      "id": "staff_dawnbranch",
+      "name": "晨枝祷杖",
+      "kind": "weapon",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 5.5,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "攻击力 +5.5；魔法回复 +0.2/秒",
+      "flavor": "晨辉曾在枯枝上停留一夜。后来人将那道光封入杖心，不求照亮整个世界，只愿每一句尚未说完的祈愿都能被听见。",
+      "build_tags": [
+        "mana",
+        "skill"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "sylphiette",
+      "weapon_class": "mage",
+      "weapon": {
+        "family": "staff",
+        "fx": "wand_arcane",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#ffe6a6"
+      },
+      "icon": "tex:res://assets/content_v08/icons/staff_dawnbranch.png"
+    },
+    {
+      "id": "staff_littlebell",
+      "name": "幽铃短杖",
+      "kind": "weapon",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 5.0,
+        "attack_speed": 0.11
+      },
+      "mult": {},
+      "desc": "攻击力 +5；攻击速度 +0.11",
+      "flavor": "杖端小铃不用风吹便会轻响。那是同行者彼此辨认的暗号，既不催促离去的人，也不让愿意留下的人独自面对黑夜。",
+      "build_tags": [
+        "ally",
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "xixifu",
+      "weapon_class": "mage",
+      "weapon": {
+        "family": "staff",
+        "fx": "wand_arcane",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#c0a5ec"
+      },
+      "icon": "tex:res://assets/content_v08/icons/staff_littlebell.png"
+    },
+    {
+      "id": "bow_raincord",
+      "name": "听雨弦弓",
+      "kind": "weapon",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 6.0,
+        "attack_speed": 0.09
+      },
+      "mult": {},
+      "desc": "攻击力 +6；攻击速度 +0.09",
+      "flavor": "雨滴沿银弦滑落，恰好落在两次呼吸之间。老猎手以它练习耐心，后来者则学会把每一次稳妥出手都当成对旅伴的回答。",
+      "build_tags": [
+        "basic",
+        "rhythm"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "ilyua",
+      "weapon_class": "archer",
+      "weapon": {
+        "family": "bow",
+        "fx": "bow_wood",
+        "speed": 560,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#a9e1ac"
+      },
+      "icon": "tex:res://assets/content_v08/icons/bow_raincord.png"
+    },
+    {
+      "id": "bow_moonbud",
+      "name": "月芽猎弓",
+      "kind": "weapon",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "crit_chance": 0.04,
+        "attack": 6.0
+      },
+      "mult": {},
+      "desc": "暴击率 +4%；攻击力 +6",
+      "flavor": "新芽长在弓背的旧伤上，月光替它描出细细的银边。它不承诺箭箭命中，只将持弓者认真看过的方向，藏进最后一次松弦。",
+      "build_tags": [
+        "critical",
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "requires_character": "ilyua",
+      "weapon_class": "archer",
+      "weapon": {
+        "family": "bow",
+        "fx": "bow_wood",
+        "speed": 560,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#a9e1ac"
+      },
+      "icon": "tex:res://assets/content_v08/icons/bow_moonbud.png"
+    },
+    {
+      "id": "armor_leafquilt",
+      "name": "叶缝猎衣",
+      "kind": "armor",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 30,
+        "attack_speed": 0.09,
+        "move_speed": 5
+      },
+      "mult": {},
+      "desc": "生命上限 +30；攻击速度 +0.09；移动速度 +5",
+      "flavor": "叶脉针脚顺着肩背延伸，柔软衬里却不妨碍拉弓。林地的裁缝相信，护住一个人，也该为她留出转身迎风的余地。",
+      "build_tags": [
+        "basic",
+        "mobility"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_leafquilt.png"
+    },
+    {
+      "id": "armor_riverweave",
+      "name": "溪纹法衣",
+      "kind": "armor",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 30,
+        "mp_regen": 0.4
+      },
+      "mult": {},
+      "desc": "生命上限 +30；魔法回复 +0.4/秒",
+      "flavor": "溪水纹在衣摆层层展开，像一封始终流向下游的信。穿过漫长旱季的人，将尚存的清凉缝在这里，交给下一位远行者。",
+      "build_tags": [
+        "mana",
+        "skill"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_riverweave.png"
+    },
+    {
+      "id": "armor_lamplining",
+      "name": "护灯衬甲",
+      "kind": "armor",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 35,
+        "attack": 1.5,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "生命上限 +35；攻击力 +1.5；魔法回复 +0.2/秒",
+      "flavor": "胸前灯匣隔着银片微微发暖，外面的风却吹不进去。它纪念那些没有站上高塔、仍在街角替归来者守灯的普通人。",
+      "build_tags": [
+        "survival",
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_lamplining.png"
+    },
+    {
+      "id": "armor_bonebraid",
+      "name": "骨编护袍",
+      "kind": "armor",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 32,
+        "attack": 2.0,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "生命上限 +32；攻击力 +2；魔法回复 +0.2/秒",
+      "flavor": "细小骨饰并非战利品，而是被允许留下的记忆。织袍者把每一处结都系得宽松，让身旁的声音永远保有告别的自由。",
+      "build_tags": [
+        "ally",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/armor_bonebraid.png"
+    },
+    {
+      "id": "accessory_shimmerpin",
+      "name": "微光别针",
+      "kind": "accessory",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "crit_chance": 0.03,
+        "attack": 3.5,
+        "mp_regen": 0.1
+      },
+      "mult": {},
+      "desc": "暴击率 +3%；攻击力 +3.5；魔法回复 +0.1/秒",
+      "flavor": "小小棱珠折出一束安静的白光，照见针脚间被珍藏的旧纹。它曾替无名旅人别住破损披风，如今仍愿将勇气留在心口。",
+      "build_tags": [
+        "critical",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_shimmerpin.png"
+    },
+    {
+      "id": "accessory_thornloop",
+      "name": "棘结指环",
+      "kind": "accessory",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "thorns": 5,
+        "attack": 3.5
+      },
+      "mult": {},
+      "desc": "反伤 +5；攻击力 +3.5",
+      "flavor": "银环里的荆棘只朝向外侧，内圈被磨得温润。守庭的人以它提醒后来者，拒绝伤害同样可以是一种不肯退让的温柔。",
+      "build_tags": [
+        "retaliation",
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_thornloop.png"
+    },
+    {
+      "id": "accessory_bluehour",
+      "name": "蓝时沙坠",
+      "kind": "accessory",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 2.5,
+        "mp_regen": 0.4
+      },
+      "mult": {},
+      "desc": "攻击力 +2.5；魔法回复 +0.4/秒",
+      "flavor": "蓝砂一粒粒越过细颈，从不替谁追回过去。它只把每次停顿的余地交回掌心，让下一句咒语能够从容说完。",
+      "build_tags": [
+        "mana",
+        "skill"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_bluehour.png"
+    },
+    {
+      "id": "accessory_leafwhistle",
+      "name": "叶鸣哨",
+      "kind": "accessory",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack_speed": 0.12,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "攻击速度 +0.12；魔法回复 +0.2/秒",
+      "flavor": "哨声短得像一片叶落在肩上，却足够让远处的旅伴抬头。没有谁需要一直走在前面，只要仍认得相互回应的声音。",
+      "build_tags": [
+        "ally",
+        "basic",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "icon": "tex:res://assets/content_v08/icons/accessory_leafwhistle.png"
+    },
+    {
+      "id": "relic_spentmatch",
+      "name": "余温火柴",
+      "kind": "buff",
+      "rarity": 0,
+      "cost": 22,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "spentmatch",
+          "damage_flat": 1.5
+        }
+      ],
+      "build_tags": [
+        "basic",
+        "burn"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "普攻首次有效命中燃烧目标，追加1.5点装备伤害，全局冷却2秒。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
+      "flavor": "火柴已经燃过，微弱余温仍替下一点火星守着位置。",
+      "icon": "tex:res://assets/content_v08/icons/relic_spentmatch.png"
+    },
+    {
+      "id": "relic_dryreed",
+      "name": "空心苇管",
+      "kind": "buff",
+      "rarity": 0,
+      "cost": 22,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "dryreed"
+        }
+      ],
+      "build_tags": [
+        "basic",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "MP低于50%时，普攻首次有效命中回复1MP，全局冷却3秒。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "中空的苇管藏不住江风，却能留住一次长长的呼吸。",
+      "icon": "tex:res://assets/content_v08/icons/relic_dryreed.png"
+    },
+    {
+      "id": "relic_wornbutton",
+      "name": "旧袍纽扣",
+      "kind": "buff",
+      "rarity": 0,
+      "cost": 22,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "wornbutton",
+          "shield_flat": 5
+        }
+      ],
+      "build_tags": [
+        "skill",
+        "shield"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "直接主动技能命中后获得5点护盾，持续3秒，全局冷却8秒。同名机制持有1／2／3件时，数值合计为基础的1／1.5／1.75倍；目标数、次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，不递归触发装备。",
+      "flavor": "旧线绕了四次，终于将破开的衣襟重新拉在一起。",
+      "icon": "tex:res://assets/content_v08/icons/relic_wornbutton.png"
+    },
+    {
+      "id": "relic_smoothpebble",
+      "name": "掌心卵石",
+      "kind": "buff",
+      "rarity": 0,
+      "cost": 22,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "smoothpebble"
+        }
+      ],
+      "build_tags": [
+        "skill",
+        "slow"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "直接主动技能命中使目标减速12%，持续1.5秒，全局冷却4秒；首领减速减半。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "溪水把锋角磨成圆润，仍没有抹掉石心的一线青色。",
+      "icon": "tex:res://assets/content_v08/icons/relic_smoothpebble.png"
+    },
+    {
+      "id": "relic_twinebobbin",
+      "name": "结线木轴",
+      "kind": "buff",
+      "rarity": 0,
+      "cost": 22,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "twinebobbin"
+        }
+      ],
+      "build_tags": [
+        "ally",
+        "mana"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "角色四格内友军有效直击时回复1MP，全局冷却4秒。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "木轴只剩一段线，却刚好足够替旅伴补好袖口。",
+      "icon": "tex:res://assets/content_v08/icons/relic_twinebobbin.png"
+    },
+    {
+      "id": "relic_crackedchime",
+      "name": "裂纹风铃",
+      "kind": "buff",
+      "rarity": 0,
+      "cost": 22,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "crackedchime"
+        }
+      ],
+      "build_tags": [
+        "shield",
+        "dash"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "自身护盾因承伤耗尽时，减少当前基础闪避剩余冷却0.2秒，全局冷却6秒。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "铃身有了裂纹，风经过时仍肯认真响一声。",
+      "icon": "tex:res://assets/content_v08/icons/relic_crackedchime.png"
+    },
+    {
+      "id": "relic_amberbeetle",
+      "name": "琥珀灯甲",
+      "kind": "buff",
+      "rarity": 2,
+      "cost": 40,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "amberbeetle"
+        }
+      ],
+      "build_tags": [
+        "shield",
+        "basic",
+        "slow"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "自身有护盾时，普攻首次有效命中追加0.18倍攻击的装备伤害，并使目标减速15%、持续2秒，冷却2秒；首领减速减半。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "琥珀壳里封着一盏不曾熄灭的灯，六足却仍保持向前攀援的姿态。它曾在废城漫长的寒夜里护住最后一粒火种，如今也把克制的锋芒交给仍愿守望的人。",
+      "icon": "tex:res://assets/content_v08/icons/relic_amberbeetle.png"
+    },
+    {
+      "id": "relic_riverledger",
+      "name": "回澜账页",
+      "kind": "buff",
+      "rarity": 2,
+      "cost": 40,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "riverledger"
+        }
+      ],
+      "build_tags": [
+        "skill",
+        "mana",
+        "shield"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "2秒内直接主动技能命中三名不同敌人，回复5MP并获得最大生命5%的护盾、持续4秒，全局冷却5秒；多段命中同一目标只计一次。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "账页没有记下欠债者的姓名，只画着三道最终汇入同一条河的水纹。旧城的医者用它记住被接回岸上的人，而把每一次索还的权利，留给了永远不会开口的潮水。",
+      "icon": "tex:res://assets/content_v08/icons/relic_riverledger.png"
+    },
+    {
+      "id": "relic_pactspindle",
+      "name": "契语纺锤",
+      "kind": "buff",
+      "rarity": 2,
+      "cost": 40,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "pactspindle"
+        }
+      ],
+      "build_tags": [
+        "ally",
+        "mana",
+        "basic"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "角色四格内友军有效直击，向该目标追加0.25倍角色攻击的装备伤害并回复2MP，全局冷却4秒。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "纺锤在无人牵引时缓慢旋转，细线上藏着许多不同的回答。它从不把伙伴的声音织成命令，只在彼此愿意应声的瞬间，让一段短短的同行拥有更坚韧的形状。",
+      "icon": "tex:res://assets/content_v08/icons/relic_pactspindle.png"
+    },
+    {
+      "id": "relic_sunseal",
+      "name": "黎明封缄",
+      "kind": "buff",
+      "rarity": 3,
+      "cost": 60,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "sunseal"
+        }
+      ],
+      "build_tags": [
+        "basic",
+        "skill",
+        "mana",
+        "area"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "普攻首次有效命中积累晨辉，最多3层，持续10秒。直接主动技能命中时消耗全部层数，每层在目标两格内造成0.18倍攻击的装备伤害并回复2MP，触发冷却4秒；冷却中不积层。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "封缄上没有王室的印记，只有三道朝向黎明的金羽。它曾封住一封无人有勇气寄出的求救信，直到最后一位守夜人拆开蜡印，把其中的名字逐一念给天亮。光终于越过城墙时，人们没有找到那位守夜人的座位，只找到这枚仍然温热的印。后来者将它带上长路，不为证明自己永不疲惫，而为在每一次出手以后，仍留有回应呼唤的余力。",
+      "icon": "tex:res://assets/content_v08/icons/relic_sunseal.png"
+    },
+    {
+      "id": "relic_nightloom",
+      "name": "长夜织星仪",
+      "kind": "buff",
+      "rarity": 3,
+      "cost": 60,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "nightloom"
+        }
+      ],
+      "build_tags": [
+        "ally",
+        "shield",
+        "area"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "角色六格内友军有效直击积累星线，6秒内累计5次后，获得最大生命8%的护盾、持续4秒，并向角色六格内最近两名可见敌人各追加0.35倍攻击的装备伤害，冷却5秒；同一时刻齐射每0.2秒至多计一次。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "失名的工匠曾试图为整座城织一片不会熄灭的夜空，最终只留下这架能被双手捧起的小仪器。它的银轮不再记录命令，而辨认旅伴在黑暗中相互应答的节拍。每一缕星线都来自一次自愿的靠近，每一道光也都愿意为离去的人让路。将它带在身边的人终于明白，守住漫长黑夜的，从来不是某一个人永不衰竭的力量，而是许多声音仍肯彼此回应。",
+      "icon": "tex:res://assets/content_v08/icons/relic_nightloom.png"
+    },
+    {
+      "id": "relic_rootcrown",
+      "name": "万籽归冠",
+      "kind": "buff",
+      "rarity": 3,
+      "cost": 60,
+      "flat": {},
+      "mult": {},
+      "mechanics": [
+        {
+          "id": "rootcrown"
+        }
+      ],
+      "build_tags": [
+        "basic",
+        "burn",
+        "slow",
+        "area"
+      ],
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ],
+      "desc": "5秒内普攻首次有效命中三名不同的燃烧或减速敌人，在第三名目标三格内引发0.75倍攻击的装备伤害并回复6MP，全局冷却5秒；同一支主攻击至多登记一名目标。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "flavor": "根须从破碎冠冕的缝隙长出，将曾经象征统治的黄金缓缓托起。林地没有要求每一粒种子长成同一棵树，也没有要求每一条根记住同一个方向。大火和寒霜经过以后，仍有新芽从旧伤间探出头来。它被交给愿意等待的人，提醒他们，真正能够延续的生命不是永远不变的昨日，而是那些终于拥有机会、亲手选择明天的微小可能。",
+      "icon": "tex:res://assets/content_v08/icons/relic_rootcrown.png"
+    },
+    {
+      "id": "potion_capacity",
+      "name": "星露复生剂",
+      "kind": "potion",
+      "rarity": 2,
+      "cost": 0,
+      "flat": {},
+      "mult": {},
+      "sources": [],
+      "effect": {
+        "kind": "repair_capacity",
+        "ratio": 0.25
+      },
+      "icon": "tex:res://assets/fate_v09/capacity_potion.png",
+      "desc": "修复等同于未受伤痕影响的最大生命25%的生命上限，并恢复等量生命；仅返还实际损失部分。没有生命伤痕时不会消耗。仅能通过局内或营地炼金制作，不在商店和随机奖励中产出。",
+      "flavor": "星露沿着不可愈合的裂隙回流，将曾被命运夺走的余温，一点一点还给仍愿前行的人。"
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/staff_waylight.png",
+      "kind": "weapon",
+      "weapon": {
+        "family": "staff",
+        "fx": "staff_apprentice",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#ffe6a6"
+      },
+      "weapon_class": "mage",
+      "requires_character": "sylphiette",
+      "id": "staff_softlight",
+      "name": "暖灯木杖",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 1.5,
+        "max_mp": 8
+      },
+      "mult": {},
+      "desc": "攻击力 +1.5、魔力上限 +8",
+      "flavor": "艾莉娅试着拿它照看过药箱。光不刺眼，标签上的小字也能看清。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/staff_threadroot.png",
+      "kind": "weapon",
+      "weapon": {
+        "family": "staff",
+        "fx": "staff_apprentice",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#c0a5ec"
+      },
+      "weapon_class": "mage",
+      "requires_character": "xixifu",
+      "id": "staff_labelcord",
+      "name": "结绳短杖",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 1.5,
+        "max_hp": 10
+      },
+      "mult": {},
+      "desc": "攻击力 +1.5、生命上限 +10",
+      "flavor": "希希芙把备用细绳缠在杖柄上：“这是留给同伴的，别又替我起个吓人的名字。”",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/bow_reed.png",
+      "kind": "weapon",
+      "weapon": {
+        "family": "bow",
+        "fx": "bow_wood",
+        "speed": 560,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#a9e1ac"
+      },
+      "weapon_class": "archer",
+      "requires_character": "ilyua",
+      "id": "bow_pathfinder",
+      "name": "试路短弓",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 1.5,
+        "move_speed": 6
+      },
+      "mult": {},
+      "desc": "攻击力 +1.5、移动速度 +6",
+      "flavor": "伊露雅沿着弓背摸了一遍，确认没有倒刺，才把它交给第一次练习的人。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/staff_dawnbranch.png",
+      "kind": "weapon",
+      "weapon": {
+        "family": "staff",
+        "fx": "wand_arcane",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#ffe6a6"
+      },
+      "weapon_class": "mage",
+      "requires_character": "sylphiette",
+      "id": "staff_clearread",
+      "name": "明字灯杖",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 5,
+        "max_mp": 14
+      },
+      "mult": {},
+      "desc": "攻击力 +5、魔力上限 +14",
+      "flavor": "希露媞雅把杖端的光调暗了一点：“这样看书舒服，也不会晃到别人。”",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/staff_littlebell.png",
+      "kind": "weapon",
+      "weapon": {
+        "family": "staff",
+        "fx": "wand_arcane",
+        "speed": 430,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#c0a5ec"
+      },
+      "weapon_class": "mage",
+      "requires_character": "xixifu",
+      "id": "staff_replybell",
+      "name": "应声铃杖",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 4.5,
+        "max_hp": 18
+      },
+      "mult": {},
+      "desc": "攻击力 +4.5、生命上限 +18",
+      "flavor": "铃声响过，希希芙先回了一声“我在”。这次不用任何人猜她想说什么。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/bow_raincord.png",
+      "kind": "weapon",
+      "weapon": {
+        "family": "bow",
+        "fx": "bow_wood",
+        "speed": 560,
+        "reach": 540,
+        "cd": 0.35,
+        "dmg": 1,
+        "shots": 1,
+        "sprite": "same",
+        "color": "#a9e1ac"
+      },
+      "weapon_class": "archer",
+      "requires_character": "ilyua",
+      "id": "bow_eveningwalk",
+      "name": "晚归练弓",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 5,
+        "move_speed": 8
+      },
+      "mult": {},
+      "desc": "攻击力 +5、移动速度 +8",
+      "flavor": "伊露雅把弦重新绷好。晚风正合适，她问你要不要一起把最后一轮练完。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/armor_padded.png",
+      "kind": "armor",
+      "id": "armor_benchpad",
+      "name": "软垫短衣",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 20,
+        "move_speed": 4
+      },
+      "mult": {},
+      "desc": "生命上限 +20、移动速度 +4",
+      "flavor": "跟门口长凳的软垫用的是同一批布。布琳娜坚持说，舒服也是正经优点。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/armor_wickcloth.png",
+      "kind": "armor",
+      "id": "armor_reading",
+      "name": "夜读罩衣",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 16,
+        "max_mp": 10
+      },
+      "mult": {},
+      "desc": "生命上限 +16、魔力上限 +10",
+      "flavor": "袖口收得整齐，翻书不会带倒杯子。口袋里还留着一张没写完的材料清单。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/armor_lamplining.png",
+      "kind": "armor",
+      "id": "armor_supper",
+      "name": "暖席夹衣",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 34,
+        "max_mp": 12
+      },
+      "mult": {},
+      "desc": "生命上限 +34、魔力上限 +12",
+      "flavor": "扣子缝得很牢，衣领挡风。温阮递来时只交代了一句：穿着回来吃饭。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/accessory_copperleaf.png",
+      "kind": "accessory",
+      "id": "accessory_bookclip",
+      "name": "铜叶书夹",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 1,
+        "max_mp": 6
+      },
+      "mult": {},
+      "desc": "攻击力 +1、魔力上限 +6",
+      "flavor": "采样手册上拆下的备用书夹。夹住书角，也夹住了“别用火烤”的新注释。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/accessory_smallvial.png",
+      "kind": "accessory",
+      "id": "accessory_carevial",
+      "name": "随身小药瓶",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 10,
+        "max_mp": 8
+      },
+      "mult": {},
+      "desc": "生命上限 +10、魔力上限 +8",
+      "flavor": "示范药包里留下的小空瓶。艾莉娅在瓶口画了醒目的记号，提醒大家别装混。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/accessory_leafwhistle.png",
+      "kind": "accessory",
+      "id": "accessory_callsign",
+      "name": "约定短哨",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 2,
+        "move_speed": 9
+      },
+      "mult": {},
+      "desc": "攻击力 +2、移动速度 +9",
+      "flavor": "两声短哨表示人在这里。比起复杂暗号，大家更愿意先把这一条记牢。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/items_v12/icons/iron_sword.png",
+      "kind": "buff",
+      "id": "relic_practiceblade",
+      "name": "练习旧剑",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 3,
+        "max_hp": 8
+      },
+      "mult": {},
+      "desc": "攻击力 +3、生命上限 +8",
+      "flavor": "刃口不算锋利，握柄却打磨得很顺手。第一堂课是握稳，下一堂才轮到逞强。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/items_v12/icons/feather_boots.png",
+      "kind": "buff",
+      "id": "relic_returnboots",
+      "name": "归路布靴",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "move_speed": 10,
+        "max_hp": 8
+      },
+      "mult": {},
+      "desc": "移动速度 +10、生命上限 +8",
+      "flavor": "鞋底补过一次，仍然轻便。布琳娜说，能走回家的鞋就值得再修一回。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/items_v12/icons/guardian_mail.png",
+      "kind": "buff",
+      "id": "relic_sparelining",
+      "name": "备用护衬",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 18,
+        "max_mp": 6
+      },
+      "mult": {},
+      "desc": "生命上限 +18、魔力上限 +6",
+      "flavor": "寄物架最下面一格放着的备用衬片。取用登记上写着：先用，回来再说。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v05/items/relic_leaf_page.png",
+      "kind": "buff",
+      "id": "relic_pressedleaf",
+      "name": "夹页叶签",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "attack": 2,
+        "mp_regen": 0.1
+      },
+      "mult": {},
+      "desc": "攻击力 +2、魔力恢复 +0.1/秒",
+      "flavor": "叶片压得很平。旁边的字迹直白得很：这一页还没看完。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/relic_wornbutton.png",
+      "kind": "buff",
+      "id": "relic_bellbutton",
+      "name": "铃带旧扣",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_hp": 12,
+        "move_speed": 5
+      },
+      "mult": {},
+      "desc": "生命上限 +12、移动速度 +5",
+      "flavor": "闻铃换琴带时留下的旧扣。用来扣小袋子正合适，终于不必每天满地找拨片。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/relic_smoothpebble.png",
+      "kind": "buff",
+      "id": "relic_trailstone",
+      "name": "认路小石",
+      "rarity": 0,
+      "cost": 24,
+      "flat": {
+        "max_mp": 10,
+        "move_speed": 5
+      },
+      "mult": {},
+      "desc": "魔力上限 +10、移动速度 +5",
+      "flavor": "圆石上画着一道短线，标记转弯的方向。它不指向命运，只帮人少走错一段路。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/items_v12/icons/whetstone.png",
+      "kind": "buff",
+      "id": "relic_workstone",
+      "name": "修刃磨石",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 4,
+        "max_hp": 14
+      },
+      "mult": {},
+      "desc": "攻击力 +4、生命上限 +14",
+      "flavor": "粗面磨刃，细面收口。布琳娜把顺序写在纸上，怕你为了省事把两步倒过来。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/camp_inventory/relic_star_lantern.tres",
+      "kind": "buff",
+      "id": "relic_lamphome",
+      "name": "守门小灯",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 3,
+        "max_mp": 12
+      },
+      "mult": {},
+      "desc": "攻击力 +3、魔力上限 +12",
+      "flavor": "灯罩上留着指印。值夜的人换了几班，它一直在门边，照着回来的路。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/camp_inventory/relic_swallow_quill.tres",
+      "kind": "buff",
+      "id": "relic_letterquill",
+      "name": "留言羽笔",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "move_speed": 9,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "移动速度 +9、魔力恢复 +0.2/秒",
+      "flavor": "留言布边上挂着的备用笔。闻铃说写错可以划掉，不必把一句话想得太完美。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v05/items/relic_mist_dew.png",
+      "kind": "buff",
+      "id": "relic_dewcheck",
+      "name": "验草露瓶",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 22,
+        "mp_regen": 0.2
+      },
+      "mult": {},
+      "desc": "生命上限 +22、魔力恢复 +0.2/秒",
+      "flavor": "透明小瓶方便查看浸液的颜色。标签只写用途，不再起容易跟汤料混淆的雅名。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/relic_twinebobbin.png",
+      "kind": "buff",
+      "id": "relic_drythread",
+      "name": "补衣线轴",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "max_hp": 22,
+        "move_speed": 7
+      },
+      "mult": {},
+      "desc": "生命上限 +22、移动速度 +7",
+      "flavor": "线头已经穿过针眼。有人替下一个着急出门的人，省了最费眼神的一步。",
+      "sources": [
+        "shop",
+        "chest",
+        "reward"
+      ]
+    },
+    {
+      "icon": "tex:res://assets/content_v08/icons/relic_crackedchime.png",
+      "kind": "buff",
+      "id": "relic_windowchime",
+      "name": "窗边小铃",
+      "rarity": 1,
+      "cost": 32,
+      "flat": {
+        "attack": 3,
+        "mp_regen": 0.3
+      },
+      "mult": {},
+      "desc": "攻击力 +3、魔力恢复 +0.3/秒",
+      "flavor": "裂缝粘好后声音轻了许多。休息角的人说这样正好，不会再把午睡的人惊醒。",
       "sources": [
         "shop",
         "chest",

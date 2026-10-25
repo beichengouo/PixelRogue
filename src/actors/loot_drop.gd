@@ -6,6 +6,8 @@ var _pulse = 0.0
 var _rarity = 0
 var _motion_reduced=false
 var _picking_up:=false
+func drop_glow_color()->Color:return ItemDB.rarity_color(_rarity)
+func drop_glow_radius()->float:return 42.0+_rarity*4
 
 func _ready() -> void:
 	kind = &"loot"
@@ -25,6 +27,8 @@ func refresh_visual() -> void:
 	for item in contents:
 		if int(item.get("rarity",0))>int(display.get("rarity",0)):display=item
 	_rarity=int(display.get("rarity",0))
+	if is_instance_valid(_drop_light):
+		_drop_light.color=ItemDB.rarity_color(_rarity);_drop_light.texture_scale=(42.0+_rarity*4)/64.0;_drop_light.energy=.46
 	var icon = UiFactory.item_icon(display,28)
 	_texture = icon.texture
 	icon.free()
@@ -33,6 +37,7 @@ func refresh_visual() -> void:
 	queue_redraw()
 
 func _animate(delta: float) -> void:
+	_update_drop_glow()
 	var reduced=bool(SaveService.data.get("reduced_motion",false))
 	if reduced and _motion_reduced:return
 	_motion_reduced=reduced

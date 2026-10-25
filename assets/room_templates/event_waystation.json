@@ -1,70 +1,162 @@
 {
-  "format": "pixelrogue.room",
-  "schema_version": 1,
-  "revision": 1,
-  "id": "event_waystation",
-  "name": "落叶旅人驿",
-  "theme": "forest",
-  "room_kinds": [
-    "event"
-  ],
-  "selection_weight": 1,
-  "scene_art": "event_waystation_v01",
-  "base_ground": "floor:grass",
-  "grid": {
-    "size": [
-      23,
-      13
-    ],
-    "cell_px": 36
-  },
-  "layers": {
-    "ground": [],
-    "water": [],
-    "obstacles": [],
-    "decor": [],
-    "entities": [],
-    "markers": []
-  },
-  "ports": [
-    {
-      "id": "north",
-      "side": "north",
-      "at": [
-        11,
-        0
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "east",
-      "side": "east",
-      "at": [
-        22,
-        6
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "south",
-      "side": "south",
-      "at": [
-        11,
-        12
-      ],
-      "approach_width": 3
-    },
-    {
-      "id": "west",
-      "side": "west",
-      "at": [
-        0,
-        6
-      ],
-      "approach_width": 3
-    }
-  ],
-  "tags": [
-    "event"
-  ]
+	"base_ground": "floor:grass",
+	"format": "pixelrogue.room",
+	"grid": {
+		"cell_px": 36.0,
+		"size": [
+			23.0,
+			13.0
+		]
+	},
+	"id": "event_waystation",
+	"layers": {
+		"decor": [],
+		"entities": [],
+		"ground": [],
+		"markers": [],
+		"obstacles": [],
+		"water": []
+	},
+	"name": "落叶旅人驿",
+	"ports": [
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				0.0
+			],
+			"id": "north",
+			"side": "north"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				22.0,
+				6.0
+			],
+			"id": "east",
+			"side": "east"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				11.0,
+				12.0
+			],
+			"id": "south",
+			"side": "south"
+		},
+		{
+			"approach_width": 3.0,
+			"at": [
+				0.0,
+				6.0
+			],
+			"id": "west",
+			"side": "west"
+		}
+	],
+	"revision": 2,
+	"room_kinds": [
+		"event"
+	],
+	"scene_art": "event_waystation_v01",
+	"scene_collision_overrides": {
+		"objects": {
+			"event_relic": [
+				[
+					-100.9,
+					-61.1
+				],
+				[
+					102.6,
+					-63.1
+				],
+				[
+					100.6,
+					-31.5
+				],
+				[
+					71.5,
+					-32.0
+				],
+				[
+					69.5,
+					-12.6
+				],
+				[
+					-72.4,
+					-12.6
+				],
+				[
+					-72.4,
+					-33.0
+				],
+				[
+					-100.9,
+					-34.0
+				]
+			],
+			"lamp_nw": [
+				[
+					-14.835,
+					-12.223
+				],
+				[
+					14.835,
+					-12.223
+				],
+				[
+					9.1,
+					-0.9
+				],
+				[
+					-10.3,
+					-0.9
+				]
+			],
+			"road_sign": [
+				[
+					-14.4,
+					-15.5
+				],
+				[
+					3.4,
+					-14.5
+				],
+				[
+					0.4,
+					-2.2
+				],
+				[
+					-10.8,
+					-2.7
+				]
+			],
+			"traveler_trunk": [
+				[
+					-21.5,
+					-31.1
+				],
+				[
+					30.5,
+					-21.4
+				],
+				[
+					22.4,
+					-2.0
+				],
+				[
+					-29.2,
+					-9.6
+				]
+			]
+		}
+	},
+	"schema_version": 1.0,
+	"selection_weight": 1.0,
+	"tags": [
+		"event"
+	],
+	"theme": "forest"
 }

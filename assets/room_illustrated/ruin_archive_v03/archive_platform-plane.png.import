@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://botot4a4t0c10"
-path="res://.godot/imported/archive_platform-plane.png-c8f66515450ad9caf06e0ce037db8383.ctex"
+path.s3tc="res://.godot/imported/archive_platform-plane.png-c8f66515450ad9caf06e0ce037db8383.s3tc.ctex"
+path.etc2="res://.godot/imported/archive_platform-plane.png-c8f66515450ad9caf06e0ce037db8383.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/ruin_archive_v03/archive_platform-plane.png"
-dest_files=["res://.godot/imported/archive_platform-plane.png-c8f66515450ad9caf06e0ce037db8383.ctex"]
+dest_files=["res://.godot/imported/archive_platform-plane.png-c8f66515450ad9caf06e0ce037db8383.s3tc.ctex", "res://.godot/imported/archive_platform-plane.png-c8f66515450ad9caf06e0ce037db8383.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

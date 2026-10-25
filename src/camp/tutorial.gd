@@ -1,16 +1,66 @@
 class_name CampTutorial
 extends Node2D
 const STEPS := [
-	{"role":"","mode":"auto","pose":"point","text":"欢迎来到星辉回廊。我是伊莉丝。这里的灯会等你归来。让我陪你认识这里，好吗？移动与交互的按键都能在设置里更改。"},
-	{"role":"relations","mode":"interact","pose":"point","text":"先去星灯酒馆吧。温阮会听你说旅途里的事，也会替归来的人留一盏灯。跟着你身旁的箭头，靠近门口后按交互键；看完再返回营地。"},
-	{"role":"shop","mode":"interact","pose":"point","text":"这是姜糖的星灯商铺。这里可以买装备和药剂、兑换材料，也能查看下一批货到来的时间。这里只使用营地金库，买到的东西会进入仓库。进去看一看就好，不必购买。"},
-	{"role":"warehouse","mode":"interact","pose":"thoughtful","text":"回廊仓库替你保存撤回的物资。在这里可以分类查看、出售、保护锁、扩容和管理配装方案。制作与研究台也在仓库里，布琳娜能带你打开。材料可以用来炼金、刻印或研究配方；研究永久保留，刻印只在本次出征有效。局内商店和酒馆也有战地工坊，只使用本局材料。训练时试穿装备不会扣库存；真正出发要在准备台选好携带清单。"},
-	{"role":"contracts","mode":"interact","pose":"point","text":"冒险者工会保存调查与委托记录。有些委托由希尔薇娅、布琳娜和艾莉娅亲自发布，完成后也要找本人交付。头顶金色标识表示有委托，蓝色表示进行中，绿色表示材料已齐。先看看工会的记录吧。"},
-	{"role":"iris","mode":"interact","pose":"thoughtful","text":"这座灯坛是我与你的契约相接的地方。你可以来这里与我交谈、了解旧约和回廊的往事。准备冒险之外，也可以给自己留一点问问题的时间。"},
-	{"role":"result","mode":"interact","pose":"point","text":"旅途记事台会记下上一趟出征的收获和损失。若想知道物资去了哪里，先查看这里；尚未撤回的收获不能当作已经入库的物资。"},
-	{"role":"training","mode":"approach","pose":"point","text":"前面是训练场。稻草人不会反击，攻击后会在头顶显示伤害与DPS。训练告示牌可以临时调整等级、技能和天赋，也能恢复状态、重置冷却。走近看看即可，这次不要求你攻击或打开面板。"},
-	{"role":"prepare","mode":"interact","pose":"thoughtful","text":"准备出发时，在这张桌上选好真实携带的装备、药剂、金币、战斗难度和被动。确认准备不会立刻扣物资；离开大门时才正式提交。进入战斗会按确认购买的初始等级出发，并恢复初始技能；训练配置不会带出去。先查看准备台吧，现在不必出发。"},
-	{"role":"gates","mode":"auto","pose":"proud","text":"准备确认后，四座大门会一起打开。从任何一门走出去，都会开始同一段冒险。中途更改携带清单，需要重新确认。愿你每一次走出去，都记得灯火在等你。"}
+	{
+		"role": "",
+		"mode": "auto",
+		"pose": "point",
+		"text": "这里是星辉回廊，你们现在可以休息和归来的地方。我叫伊莉丝，照看归航灯。你留在这里准备行囊和记录，三位伙伴亲自出征；回来以后，你们再一起核对找到的线索。"
+	},
+	{
+		"role": "relations",
+		"mode": "interact",
+		"pose": "point",
+		"text": "先去酒馆认识大家。温阮准备了热茶，也能帮你找到想交谈的伙伴。跟着箭头走，靠近门口后交互，看看再回来。"
+	},
+	{
+		"role": "shop",
+		"mode": "interact",
+		"pose": "point",
+		"text": "这是姜糖的商铺，出售装备、药剂，也能兑换材料。花的是营地金库里的金币，买到的东西先放进仓库。这次看看就好，不必买。"
+	},
+	{
+		"role": "warehouse",
+		"mode": "interact",
+		"pose": "thoughtful",
+		"text": "成功撤离带回的物资放在仓库。这里能整理、出售和保护物品，也能打开工坊制作与研究。正式出征装备、药剂和技能在营地背包调整，点击出发前不会扣库存。"
+	},
+	{
+		"role": "contracts",
+		"mode": "interact",
+		"pose": "point",
+		"text": "工会里可以查看调查与委托。金色标识是有新委托，蓝色是进行中，绿色是材料齐了；交付时去找发布委托的人。先进去看看。"
+	},
+	{
+		"role": "iris",
+		"mode": "interact",
+		"pose": "thoughtful",
+		"text": "有关于过去的问题，就到灯坛找我。能确认的我会讲清楚，不能确认的会告诉你还缺什么证据。你们想起彼此的片段，也可以在这里一起核对。"
+	},
+	{
+		"role": "result",
+		"mode": "interact",
+		"pose": "thoughtful",
+		"text": "记事台记录上一趟的收获和损失。成功撤离才带回物资，死亡损失本趟尚未入库的东西；以前存在仓库里的不受影响。"
+	},
+	{
+		"role": "training",
+		"mode": "approach",
+		"pose": "point",
+		"text": "这里仅是独立训练场的入口。进去以后可以打桩、试穿、调整临时等级和天赋；回营会恢复正式准备。现在走近看看即可，不必进去。"
+	},
+	{
+		"role": "prepare",
+		"mode": "interact",
+		"pose": "point",
+		"text": "先在营地背包调装备、药剂和技能，再到出发台选目的地与难度。点击出发就提交物资、直接进入冒险，不用再走大门。这里先看看，看完返回即可。"
+	},
+	{
+		"role": "gates",
+		"mode": "auto",
+		"pose": "proud",
+		"text": "设施就介绍到这里。第一趟去苏醒林地查旧路标，核对与你们旧物相似的标记；找到线索后可以先回来，不必一口气走到底。准备好了，到出发台点击出发。"
+	}
 ]
 var world:Node
 var active:=false
@@ -81,7 +131,13 @@ func _introduce()->void:
 	if info.mode=="interact":text+="\n交互键："+KeyBindings.label("interact")+"。"
 	var dialogue:DialogueUI=world.get("dialogue")
 	dialogue.finished.connect(_introduced,CONNECT_ONE_SHOT)
-	dialogue.play_local_lines([{"who":"伊莉丝","text":text,"portrait":CampResidents.ROOT+"iris_"+str(info.pose)+".png"}],"伊莉丝 · 营地引导")
+	var entries:Array=[{"who":"伊莉丝","text":text,"expression":"neutral","portrait":CampResidents.ROOT+"iris_"+str(info.pose)+".png"}]
+	if step==0:
+		entries.append({"who":"","text":"你把黑斗篷拢好。你和希露媞雅、希希芙、伊露雅都记得自己的名字与本领，却想不起个人经历和共同过去。今天发生的事能够记住，不会每天重新忘掉。"})
+		entries.append({"who":"伊莉丝","text":"旧灾难后，不少地方留下了失控的守卫和记录。黑晶会保存、重复声音和动作，内容有时残缺或被拼接。看见熟悉的东西先记下，回来和本人核对。","expression":"thoughtful"})
+		entries.append({"who":"伊莉丝","text":"目前先查苏醒林地的旧路标，那里有与你们旧物相似的标记。归航联系能让我接回仍连着回廊的人，但死亡时遗落的物资带不回来。","expression":"neutral"})
+		entries.append({"who":"伊莉丝","text":"今天先认识大家、整理行囊。移动与交互按键可以在设置里更改，接下来我带你看几个地方。","expression":"happy"})
+	dialogue.play_local_lines(entries,"伊莉丝 · 营地引导")
 func _introduced()->void:
 	if not active:return
 	if STEPS[step].mode=="auto":_queue_advance()

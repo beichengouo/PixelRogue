@@ -1,5 +1,13 @@
 class_name RoomExtraction
 extends ExtractionDirector
+var direct_gate:=false
+func leave_stage_gate()->bool:
+	if not is_current() or state!=IDLE or UIFlow.has_screen() or TransitionLayer.busy or main._navigation_pending or main._room_transfer:return false
+	if not main.stage_gate.available() or not room_is_safe() or not main._reward_offers.is_empty() or not main._reward_pending.is_empty() or not main._story_queue.is_empty() or not main._story_context.is_empty():return false
+	# Cleared terminals use the existing single-submit atomic settlement.
+	direct_gate=true;_epoch+=1;state=SETTLING;main.director.extraction_hold=true
+	main.player.velocity=Vector2.ZERO;main.player.movement_override=Vector2.ZERO
+	completed.emit();return true
 func _render()->void:
 	super._render()
 	var view:=get_viewport().get_visible_rect().size
@@ -19,6 +27,7 @@ func request()->bool:
 		main.hud.show_banner("站稳后合掌呼唤女神",1.5);return false
 	wait_duration=5.0 if room_is_safe() else WAIT_SECONDS
 	wait_profile="safe" if wait_duration==5.0 else "combat"
+	AudioManager.play(&"extraction_call",-12,0)
 	_epoch+=1;state=PRAYING;channel=0;remaining=3;anchor=main.player.global_position+Vector2(0,21)
 	stable=wait_profile=="safe";main.player.set_extraction_pose(&"prayer");main.director.extraction_hold=false
 	_render();Outpost.request_checkpoint();return true
@@ -32,8 +41,14 @@ func room_is_safe()->bool:
 		if enemy is EnemyBase and not enemy._dead and not enemy.is_queued_for_deletion():return false
 	return true
 
+func retry_completion()->void:
+	var from_gate:=direct_gate
+	super.retry_completion()
+	if from_gate:main.hud.show_banner("撤离未保存，物资仍在本局 · 可在阶段星门重试",3)
+
 func begin_reception()->void:
 	state=RECEIVING;reception_elapsed=0
+	AudioManager.play(&"extraction_depart",-8,0)
 	main.director.extraction_hold=true
 	main.clear_hostile_effects()
 	for enemy in main.enemies_root.get_children():
@@ -45,6 +60,7 @@ func begin_reception()->void:
 	Outpost.request_checkpoint()
 
 func cancel(with_cooldown:=true,checkpoint:=true)->void:
+	direct_gate=false
 	var receiving:=state in [RECEIVING,SETTLING]
 	super.cancel(with_cooldown,checkpoint)
 	if receiving and is_instance_valid(main) and is_instance_valid(main.enemies_root):
@@ -62,6 +78,7 @@ func _process(dt:float)->void:
 		else:
 			channel=minf(3,channel+dt);remaining=3-channel
 			if remaining<=0:
+				AudioManager.play(&"extraction_answer",-10,0)
 				state=WAITING;remaining=wait_duration;waiting_elapsed=0;main.player.set_extraction_pose(&"");Outpost.request_checkpoint()
 	elif state==WAITING:
 		remaining=maxf(0,remaining-dt);waiting_elapsed+=dt

@@ -72,12 +72,13 @@ func _process(delta: float) -> void:
 		dusk_deaths.pop_front()
 	if has(&"companion_knot") and is_instance_valid(actor) and actor.hp > 0:
 		var nearby := 0
-		for unit in get_tree().get_nodes_in_group("allies"):
+		for unit in _room_allies():
 			if _live_ally(unit) and unit.global_position.distance_to(actor.global_position) <= 144.0: nearby += 1
-		if nearby >= 2: GameState.add_mp(GameState.total_mp_regen(actor.stats) * 0.15 * scale(&"companion_knot") * delta)
+		if nearby >= 2: GameState.add_mp(fixed_value(&"companion_knot",&"mp_per_second") * delta)
 
 func refresh() -> void:
 	_counts.clear()
+	_parameters.clear()
 	for item in GameState.items:
 		if item is Dictionary and not ItemDB.is_equippable(item): _count_item(item)
 	for slot in ItemDB.SLOTS:
@@ -92,7 +93,13 @@ func _count_item(item: Dictionary) -> void:
 	for effect in item.get("mechanics", []):
 		if not effect is Dictionary: continue
 		var key := StringName(effect.get("id", ""))
-		if key != &"": _counts[key] = int(_counts.get(key, 0)) + 1
+		if key != &"":
+			_counts[key] = int(_counts.get(key, 0)) + 1
+			_parameters[key]=effect
+
+var _parameters:Dictionary={}
+func fixed_value(id:StringName,key:StringName)->float:
+	return float(_parameters.get(id,{}).get(key,0))*scale(id)
 
 func has(key: StringName) -> bool: return int(_counts.get(key, 0)) > 0
 func scale(key: StringName) -> float:
@@ -124,7 +131,7 @@ func on_room_enter(room_id: String, uncleared_normal: bool) -> void:
 	if not room_record.has("delta"): room_record["delta"] = {}
 	if bool(room_record.delta.get("afterglow_note_used", false)): return
 	room_record.delta["afterglow_note_used"] = true
-	grant_player_shield(actor.max_hp * 0.10 * scale(&"afterglow_note"), 8.0)
+	grant_player_shield(fixed_value(&"afterglow_note",&"shield_flat"), 8.0)
 
 func on_dash_end() -> void:
 	legendary.dash_end()
@@ -165,7 +172,7 @@ func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: Roo
 		if refract_charges >= 3: refract_ready = true
 	if projectile.mechanic_tag == &"wind_fan" and has(&"wind_chime") and wind_refunded_serial != wind_dash_serial:
 		wind_refunded_serial = wind_dash_serial
-		actor._dash_cd = maxf(0.0, actor._dash_cd * (1.0 - 0.20 * scale(&"wind_chime")))
+		actor._dash_cd = maxf(0.0, actor._dash_cd - fixed_value(&"wind_chime",&"cooldown_seconds"))
 	if not _live_enemy(enemy): return
 	var a := attack()
 	if has(&"ember_flower"):
@@ -225,7 +232,7 @@ func on_basic_hit(enemy: EnemyBase, receipt: BasicAttackReceipt, projectile: Roo
 			WeaponBuildFX.pulse(actor.get_parent(), nearest.global_position, "dusk_lantern", "proc", 44.0)
 			start(&"dusk_mark", 1.0)
 	if has(&"hunt_needle") and enemy._slow_time > 0.0 and ready(StringName("hunter_%d" % enemy.get_instance_id())):
-		extra_damage(enemy, a * 0.12 * scale(&"hunt_needle"), projectile.global_position)
+		extra_damage(enemy, fixed_value(&"hunt_needle",&"damage_flat"), projectile.global_position)
 		start(StringName("hunter_%d" % enemy.get_instance_id()), 1.0)
 
 func on_basic_fired(direction: Vector2, receipt: BasicAttackReceipt) -> void:
@@ -251,12 +258,12 @@ func on_skill_cast(shield_cast: bool = false,id:StringName=&"") -> float:
 	if has(&"tide_pearl") and ready(&"tide_pearl"): tide_until = clock + 4.0
 	if shield_cast and has(&"watch_button"):
 		var allies: Array = []
-		for ally in get_tree().get_nodes_in_group("allies"):
+		for ally in _room_allies():
 			if _live_ally(ally) and ally.global_position.distance_to(actor.global_position) <= 144.0 and ally.shield_hp <= 0.0: allies.append(ally)
 		allies.sort_custom(func(left: Node, right: Node) -> bool: return left.global_position.distance_squared_to(actor.global_position) < right.global_position.distance_squared_to(actor.global_position))
 		for i in mini(3, allies.size()): grant_ally_shield(allies[i], allies[i].max_hp * 0.08 * scale(&"watch_button"), 4.0)
 	if has(&"contract_chorus"):
-		for ally in get_tree().get_nodes_in_group("allies"):
+		for ally in _room_allies():
 			if _live_ally(ally): ally.equipment_haste_time = 3.0; ally.equipment_haste = 0.15 * scale(&"contract_chorus")
 	return bonus
 
@@ -279,10 +286,12 @@ func on_skill_hit(enemy: EnemyBase, direct: bool = true) -> void:
 		start(&"oath_guard", 4.0)
 
 func on_ally_hit(enemy: EnemyBase, ally: Node2D) -> void:
+	if FateCatalog.active():fate_runtime.ally_hit(ally)
 	if not _live_enemy(enemy) or not _live_ally(ally): return
 	legendary.ally_hit(enemy)
 	expansion.ally_hit(ally)
 	cadence.ally_hit(ally)
+	wayfarer.ally_hit(enemy,ally)
 	if has(&"soul_command") and soul_mark_until > clock and soul_mark != null and soul_mark.get_ref() == enemy and ally.global_position.distance_to(enemy.global_position) <= 144.0:
 		extra_damage(enemy, ally.attack * 0.15 * scale(&"soul_command"), ally.global_position)
 
@@ -294,9 +303,10 @@ func preferred_enemy(ally: Node2D) -> EnemyBase:
 	return target
 
 func on_enemy_damaged(_enemy: EnemyBase, _amount: float, _source: Node, _damage_type: StringName = &"") -> void:
-	pass
+	if _damage_type==&"skill":fate_runtime.skill_hit(_enemy,_source)
 
 func on_enemy_died(enemy: EnemyBase, _source: Node, damage_type: StringName = &"") -> void:
+	fate_runtime.enemy_died(enemy,_source,damage_type)
 	if damage_type!=&"fate":wayfarer.enemy_died(enemy)
 	var burn_source: Node = enemy._burn_source.get_ref() if enemy._burn_source != null else null
 	var propagated:bool = burn_source is DamageContext and burn_source.owner_kind==&"spread_burn"
@@ -357,6 +367,7 @@ func nearest_enemies(origin: Vector2, radius: float, limit: int, excluded: Enemy
 	if limit<=0:return found
 	var roster:Array=actor.room.tactics.enemies(actor.room) if is_instance_valid(actor.room) else get_tree().get_nodes_in_group("enemies")
 	for node in roster:
+		if not is_instance_valid(node):continue
 		var enemy:=node as EnemyBase
 		if enemy!=excluded and _live_enemy(enemy) and origin.distance_squared_to(enemy.global_position)<=radius*radius:candidates.append(enemy)
 	candidates.sort_custom(func(left:EnemyBase,right:EnemyBase)->bool:return left.global_position.distance_squared_to(origin)<right.global_position.distance_squared_to(origin))
@@ -365,12 +376,13 @@ func nearest_enemies(origin: Vector2, radius: float, limit: int, excluded: Enemy
 		if found.size()>=limit:break
 	return found
 
-func grant_player_shield(amount: float, duration: float, timer_policy:StringName=&"stronger") -> void:
+func grant_player_shield(amount: float, duration: float, timer_policy:StringName=&"stronger",talent_owned:bool=false) -> void:
 	if not is_instance_valid(actor) or actor.hp <= 0.0: return
 	var before_time:=actor._shield_time
 	amount*=FateCatalog.shield_factor()
 	if amount>=actor.shield_hp:
 		actor.shield_hp=amount;actor._shield_time=duration
+		actor._shield_talent_revision=GameState.talent_revision if talent_owned else -1
 	if timer_policy==&"refresh":actor._shield_time=duration
 	elif timer_policy==&"extend":actor._shield_time=maxf(before_time,duration)
 
@@ -396,9 +408,9 @@ func _ensure_marker(enemy: Node2D, tag: String, effect: String, tint: Color) -> 
 	marker.z_index = 8
 	enemy.add_child(marker)
 
-func _remove_marker(enemy: Node, tag: String) -> void:
-	if not is_instance_valid(enemy): return
-	var marker := enemy.get_node_or_null("EquipmentMark_" + tag)
+func _remove_marker(enemy, tag: String) -> void:
+	if not is_instance_valid(enemy) or not enemy is Node: return
+	var marker: Node = enemy.get_node_or_null("EquipmentMark_" + tag)
 	if marker != null:
 		enemy.remove_child(marker);marker.queue_free()
 
@@ -414,6 +426,10 @@ func _visual_link(from: Vector2, to: Vector2) -> void:
 	var tween := link.create_tween()
 	tween.tween_property(link, "modulate:a", 0.0, 0.22)
 	tween.tween_callback(link.queue_free)
+
+func _room_allies()->Array:
+	if is_instance_valid(actor) and is_instance_valid(actor.room):return actor.room.tactics.allies(actor.room)
+	return get_tree().get_nodes_in_group("allies") if is_inside_tree() else []
 
 func _live_enemy(enemy: EnemyBase) -> bool:
 	return is_instance_valid(enemy) and not enemy.is_queued_for_deletion() and not enemy._dead

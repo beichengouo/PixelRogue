@@ -17,7 +17,7 @@ static func documents()->Array[Dictionary]:
 		var root:=RoomSceneArtCatalog.ROOT+id;var layers:Array=[];var used:Dictionary={}
 		var canvas:Array=data.get("canvas",[1536,1024])
 		for plane in data.get("planes",[]):
-			var path:=_asset_path(root,str(plane.get("path","")));var label:=str(plane.get("layer","background" if layers.is_empty() else path.get_file()));used[path]=true;layers.append({"name":label,"path":path,"rect":[0,0,canvas[0],canvas[1]],"locked":label=="background","visible":true})
+			var path:=_asset_path(root,str(plane.get("path","")));var label:=str(plane.get("layer","background" if layers.is_empty() else path.get_file()));used[path]=true;layers.append({"name":label+" · "+path.get_file(),"path":path,"rect":plane.get("rect_px",[0,0,canvas[0],canvas[1]]),"locked":label=="background","visible":true})
 		for direction in data.get("gates",{}):
 			var gate:Dictionary=data.gates[direction];var path:=_asset_path(root,str(gate.path));used[path]=true;layers.append({"name":"门 · "+direction,"path":path,"rect":gate.get("rect_px",[0,0,100,100]),"locked":false,"visible":true})
 		for object in data.get("objects",[]):
@@ -49,7 +49,7 @@ static func documents()->Array[Dictionary]:
 		var controls:Array=[]
 		for control:Dictionary in UiArtLayout.defaults.values():
 			if control.kind==kind:controls.append(control.duplicate(true))
-		result.append({"id":kind,"name":"交互界面 · "+{"inventory":"背包","shop":"姜糖商店","tavern":"温阮酒馆"}[kind],"canvas":[1536,1024] if kind=="inventory" else [1280,720],"layers":layers,"controls":controls})
+		result.append({"id":kind,"name":"交互界面 · "+{"inventory":"背包","shop":"姜糖商店","tavern":"温阮酒馆"}[kind],"canvas":[InventoryUI.SHELL_SIZE.x,InventoryUI.SHELL_SIZE.y] if kind=="inventory" else [1280,720],"layers":layers,"controls":controls})
 	var art_root:="res://assets/ui_art";var art_dir:=DirAccess.open(art_root)
 	if art_dir!=null:
 		for folder in art_dir.get_directories():

@@ -23,13 +23,17 @@ var wave_required:=0
 var wave_defeated:=0
 var phase_seen:=1
 var command_serial:=0
+var boss_pattern_revision:=30
+var phase_presenting:=false
+var phase_guard_left:=0.0
+var _phase_ui:BossPhaseUI
 var timeline:Array[Dictionary]=[]
 var _live_warnings:Dictionary={}
 const KING_PATTERNS:=["枯冠剑舞","断骨飞矛","崩坏骨刺","亡骸征召","崩坏王令","枯骨环葬","骸王葬礼"]
 const MAGE_PATTERNS:=["晶刺突生","棱镜折光","碎晶星雨","浮晶环阵","晶镜幻身","晶牢封界","终焉晶爆"]
 const TIDE_PATTERNS:=["深根突袭","腐海孢雨","寄生根群","沧澜横潮","深渊涡眼","逆潮回响","根海绞杀","深海花葬","终潮·深渊归寂"]
 func _ready()->void:
-	add_to_group("bosses");uses_gravity=false;collides_with_world=true;max_phase=int(roster.get("phases",3 if boss_id==&"tide" else 2))
+	add_to_group("bosses");uses_gravity=false;collides_with_world=true;max_phase=BossPhaseRules.thresholds(boss_id).size()-1
 	if owner_tag.is_empty():owner_tag="%s:%s"%[boss_id,str(room.record.get("seed",0))]
 	super._ready();motion_mode=CharacterBody2D.MOTION_MODE_FLOATING
 	var radius:=24.0 if boss_id==&"tide" else 20.0
@@ -39,6 +43,8 @@ func _ready()->void:
 	room.register_unit_body(self,radius);(contact_area.get_child(0).shape as CircleShape2D).radius=radius+6
 func _physics_process(dt:float)->void:
 	if _dead or not is_instance_valid(player):return
+	if phase_presenting:return
+	phase_guard_left=maxf(0,phase_guard_left-dt)
 	advance_slow(dt);_flash=maxf(0,_flash-dt);_contact_cd=maxf(0,_contact_cd-dt);_visual_release_left=maxf(0,_visual_release_left-dt)
 	if _burn_time>0:
 		_burn_time=maxf(0,_burn_time-dt);_burn_tick+=dt
@@ -47,13 +53,12 @@ func _physics_process(dt:float)->void:
 			if _dead:return
 	phase=phase_for_health()
 	if phase!=phase_seen:
-		phase_seen=phase;cancel_attacks(true);recovery=1.5;room_cooldown=1.5
-		Effects.text(_fx(),global_position-Vector2(0,65),"崩坏加深 · 第%d阶段"%phase,body_color,20)
+		phase_seen=phase;_begin_phase_presentation();return
 	_advance_periodic_summons(dt)
 	think(dt)
 	if _slow_time>0:velocity*=1-_slow_strength
 	move_and_slide();_check_contact();_update_visual();queue_redraw()
-func phase_for_health()->int:return mini(max_phase,1+int((1-hp/max_hp)*max_phase))
+func phase_for_health()->int:return BossPhaseRules.phase_at(boss_id,hp/maxf(.001,max_hp))
 func think(dt:float)->void:
 	vulnerability=maxf(0,vulnerability-dt);recovery=maxf(0,recovery-dt);_check_wave_counter();_advance_commands(dt)
 	if recovery>0 or main_pending():velocity=Vector2.ZERO;return
@@ -62,22 +67,22 @@ func think(dt:float)->void:
 		room_nav_cd=.3;var target:=player.global_position
 		if boss_id==&"mage" and target.distance_to(global_position)<160:target=room.nearest_clear(global_position+(global_position-target).normalized()*100,24)
 		room_move=room.path_direction(global_position,target,26)
-	velocity=room_move*move_speed*(.45 if boss_id==&"mage" else .65);_facing=1 if player.global_position.x>global_position.x else -1
+	velocity=room_move*effective_chase_speed()*(.45 if boss_id==&"mage" else .65);_facing=1 if player.global_position.x>global_position.x else -1
 	room_cooldown-=dt
 	if room_cooldown>0:return
 	room_aim=(player.global_position-global_position).normalized();room_target=player.global_position
 	var choices:Array=_available_patterns()
 	pattern=str(choices[room_action%choices.size()]);room_action+=1;attack_id=&"windup"
+	# Do not spend an entire sword sequence slashing empty ground while the
+	# player is shooting from outside melee reach.
+	if boss_id==&"king" and pattern=="枯冠剑舞" and global_position.distance_to(room_target)>185:pattern="断骨飞矛"
 	_boss_fx("cast",global_position,88,.8)
 	match boss_id:
 		&"king":_king_pattern(pattern)
 		&"mage":_mage_pattern(pattern)
 		&"tide":_tide_pattern(pattern)
 	room_cooldown=attack_cd(2.8 if phase==1 else 2.2)
-func _available_patterns()->Array:
-	if boss_id==&"king":return ["断骨飞矛","枯冠剑舞","崩坏骨刺","亡骸征召","断骨飞矛","枯冠剑舞","枯骨环葬"] if phase==1 else KING_PATTERNS
-	if boss_id==&"mage":return MAGE_PATTERNS.slice(0,6) if phase==1 else MAGE_PATTERNS
-	return TIDE_PATTERNS.slice(0,3 if phase==1 else 6 if phase==2 else 9)
+func _available_patterns()->Array:return BossPhaseRules.skills(boss_id,phase)
 func _command(kind:String,delay:float,data:Dictionary={})->void:
 	command_serial+=1;var event:=data.duplicate(true);event.type=kind;event.left=delay;event.key=command_serial
 	if not event.has("at"):event.at=global_position
@@ -95,13 +100,17 @@ func _advance_commands(dt:float)->void:
 		_erase_warning(event);timeline.erase(event);_execute(event)
 	if not main_pending() and attack_id!=&"":attack_id=&"";begin_visual_release(.55);recovery=maxf(recovery,1.3 if boss_id==&"king" else 1.0)
 func _erase_warning(event:Dictionary)->void:
-	var warning:Node=_live_warnings.get(event.key)
+	var warning:Variant=_live_warnings.get(event.key)
 	if is_instance_valid(warning):warning.queue_free()
 	_live_warnings.erase(event.key)
 func _execute(event:Dictionary)->void:
 	var at:Vector2=event.at;var direction:Vector2=event.dir;
-	if not bool(event.get("auxiliary",false)):begin_visual_release(.45)
+	if not bool(event.get("auxiliary",false)) and str(event.type)!="lock_spear":begin_visual_release(.45)
 	match str(event.type):
+		"lock_spear":
+			var aim:Vector2=(player.global_position-global_position).normalized()
+			if aim.is_zero_approx():aim=room_aim
+			_command("spear",.85,{"at":global_position,"dir":aim,"shape":"line","end":global_position+aim*560,"width":10,"split":3,"split_after":1.0,"ratio":1.0,"warning":.85})
 		"fan":_fan(at,direction,int(event.get("count",5)),float(event.get("spread",1)),float(event.get("speed",220)),float(event.get("ratio",.8)),event)
 		"ring":_ring(at,int(event.get("count",18)),float(event.get("speed",170)),float(event.get("ratio",.6)),event.get("gap",direction),float(event.get("opening",1.05)))
 		"circle","line","slash":
@@ -113,30 +122,23 @@ func _execute(event:Dictionary)->void:
 		"construct":_spawn_construct(str(event.get("kind","crystal")),at,float(event.get("life",10)),bool(event.get("orbit",false)))
 		"core_shot":
 			var construct:=_find_construct(int(event.get("construct",0)))
-			if is_instance_valid(construct):_fan(construct.global_position,direction,int(event.get("count",3)),.6,170,.4,{})
+			if is_instance_valid(construct):_fan(construct.global_position,direction,int(event.get("count",3)),.6,150 if self is CityBoss else 170,.35 if self is CityBoss else .4,{})
 		"resonance":_begin_resonance(str(event.get("kind","core")),int(event.get("count",4)))
 		"tracking_crack":_crack(.85,player.global_position-room_aim*90,room_aim,180,phase>=2)
 		"counter":recovery=maxf(recovery,2.5 if wave_broken else 1.8)
 func _strike(event:Dictionary)->void:
-	var at:Vector2=event.at;var direction:Vector2=event.dir;var shape:=str(event.get("shape","circle"));var radius:=float(event.get("radius",60))
-	if shape=="line":
-		var end:Vector2=event.end
-		var stage:="slash" if PixelBossArt.city_boss(boss_id) else "area"
-		var beam:=_boss_fx(stage,(at+end)*.5,96,.65,(end-at).angle())
-		if beam!=null:
-			beam.sprite.scale=Vector2(end.distance_to(at),float(event.get("width",18))*2)/HostileAttackFX.cell_size(str(boss_id),stage)
-	else:_boss_fx("slash" if shape=="fan" else "area",at,radius*2,.65,direction.angle())
+	var at:Vector2=event.at
+	var effect:=HostileAttackFX.strike(_fx(),room,str(boss_id),event,float(event.get("visual_seconds",.65)))
+	if effect!=null:effect.set_meta("boss_owner",get_instance_id())
 	for victim in [player]+get_tree().get_nodes_in_group("allies"):
 		if not is_instance_valid(victim) or victim.hp<=0 or victim.is_queued_for_deletion():continue
-		var delta:Vector2=victim.global_position-at;var hit:=delta.length()<=radius
-		if shape=="fan":hit=hit and (delta.length()<10 or absf(direction.angle_to(delta))<=float(event.get("spread",1))*.5)
-		elif shape=="line":
-			var end:Vector2=event.end-at;var along:=delta.dot(end.normalized());hit=along>=0 and along<=end.length() and absf(delta.cross(end.normalized()))<=float(event.get("width",18))
-		if hit and room.bounds().has_point(victim.global_position) and room.sight(at,victim.global_position):victim.take_damage(attack_damage()*float(event.get("ratio",.9)),at,self)
+		if AttackGeometry.contains(event,victim.global_position) and room.bounds().has_point(victim.global_position) and room.sight(at,victim.global_position):victim.take_damage(attack_damage()*float(event.get("ratio",.9)),at,self)
+
 func _fan(at:Vector2,direction:Vector2,count:int,spread:float,speed_value:float,ratio:float,data:Dictionary)->void:
 	for index in count:_bullet(at,direction.rotated((float(index)/maxi(1,count-1)-.5)*spread),speed_value,ratio,data)
 func _ring(at:Vector2,count:int,speed_value:float,ratio:float,gap:Vector2,opening:float)->void:
-	_boss_fx("radial",at,144,.65)
+	var effect:=HostileAttackFX.radial(_fx(),room,str(boss_id),at,gap,opening)
+	if effect!=null:effect.set_meta("boss_owner",get_instance_id())
 	for index in count:
 		var direction:=Vector2.from_angle(index*TAU/count)
 		if absf(direction.angle_to(gap))>=opening*.5:_bullet(at,direction,speed_value,ratio,{})
@@ -145,11 +147,12 @@ func _bullet(at:Vector2,direction:Vector2,speed_value:float,ratio:float,data:Dic
 	# ownership array also keeps its Array[Projectile] identity.
 	for index in range(_owned_bullets.size()-1,-1,-1):
 		if not is_instance_valid(_owned_bullets[index]) or _owned_bullets[index].is_queued_for_deletion():_owned_bullets.remove_at(index)
-	if _owned_bullets.size()>=96:return
-	var bullet:=BossPatternProjectile.new();bullet.room=room;bullet.is_friendly=false;bullet.damage_owner=&"enemy";bullet.hostile_fx=str(boss_id);bullet.hostile_width=32;bullet.range_limit=1400
+	if _owned_bullets.size()>=bullet_budget():
+		push_error("Boss bullet budget exceeded: %s"%boss_id);return
+	var bullet:=BossPatternProjectile.new();bullet.room=room;bullet.is_friendly=false;bullet.damage_owner=&"enemy";bullet.hostile_fx=str(boss_id);bullet.hostile_width=32;bullet.range_limit=1400;bullet.boss_source_tag=owner_tag
 	bullet.cruel_damage=has_affix(EnemyAffixes.CRUEL)
-	bullet.pattern_family=str(boss_id);bullet.split_count=int(data.get("split",0));bullet.split_after=float(data.get("split_after",1.2));bullet.bounces=int(data.get("bounce",0));bullet.returning=bool(data.get("return",false));bullet.return_after=float(data.get("return_after",1.3));bullet.boss_tag=owner_tag
-	_fx().add_child(bullet);bullet.setup(at+direction*22,direction,attack_damage()*ratio,speed_value,room,player,body_color);bullet.set_meta("boss_owner",get_instance_id());_owned_bullets.append(bullet)
+	bullet.pattern_family=str(boss_id);bullet.split_count=int(data.get("split",0));bullet.split_after=float(data.get("split_after",1.2));bullet.bounces=int(data.get("bounce",0));bullet.returning=bool(data.get("return",false));bullet.return_after=float(data.get("return_after",1.3));bullet.return_pause=float(data.get("pause",.65));bullet.boss_tag=owner_tag
+	_fx().add_child(bullet);bullet.setup(at+direction*22,direction,attack_damage()*ratio,speed_value,room,player,body_color);bullet._life=float(data.get("life",4.0));bullet.set_meta("boss_owner",get_instance_id());_owned_bullets.append(bullet)
 func _legal(at:Vector2,radius:=16.0)->Vector2:return room.nearest_clear(at,radius)
 func _line(delay:float,at:Vector2,end:Vector2,width:=18.0,ratio:=.8)->void:
 	_command("line",delay,{"at":at,"end":end,"dir":(end-at).normalized(),"shape":"line","width":width,"ratio":ratio})
@@ -164,7 +167,9 @@ func _king_pattern(name:String)->void:
 			for index in 2:_command("slash",.85+index*.7,{"shape":"fan","radius":126,"spread":1.5,"dir":room_aim.rotated(.2 if index==0 else -.2),"ratio":.9})
 			_command("fan",2.35,{"shape":"fan","radius":250,"count":7 if phase==2 else 5,"spread":1.15,"ratio":.65})
 		"断骨飞矛":
-			for index in (3 if phase==2 else 2):_command("spear",.85+index*.6,{"shape":"line","end":global_position+room_aim*360,"width":10,"split":3,"split_after":1.0,"ratio":1.0})
+			# Reacquire between throws, then lock each direction for its full
+			# visible warning. Projectiles never bend toward a moving target.
+			for index in (3 if phase==2 else 2):_command("lock_spear",.05+index*.6)
 		"崩坏骨刺":_crack(.9,global_position,room_aim,240,phase==2)
 		"亡骸征召":_command("summon",1.15,{"count":4 if phase==2 else 3,"shape":"circle","radius":55})
 		"崩坏王令":_command("command",.9,{"shape":"circle","radius":70})
@@ -175,7 +180,8 @@ func _king_pattern(name:String)->void:
 func _mage_pattern(name:String)->void:
 	match name:
 		"晶刺突生":
-			_crack(.9,global_position,room_aim,252,phase==2)
+			var distant:=global_position.distance_to(room_target)>240
+			_crack(.9,_legal(room_target-room_aim*90) if distant else global_position,room_aim,180 if distant else 252,phase==2)
 			for index in 2:_command("construct",1.8+index*.2,{"at":_legal(global_position+room_aim.rotated(.7 if index==0 else -.7)*140),"kind":"crystal"})
 		"棱镜折光":
 			var pivot:=_legal(global_position+room_aim*130);_command("construct",.4,{"at":pivot,"kind":"prism"});_line(1.65,global_position,pivot,13,1.0)
@@ -290,9 +296,11 @@ func _check_wave_counter()->void:
 			if construct.resonance and construct.wave_tag==active_wave:any_live=true;break
 	if any_live:return
 	wave_broken=true;vulnerability=3;recovery=maxf(recovery,1.8);Effects.text(_fx(),global_position-Vector2(0,64),"王令破绽" if boss_id==&"king" else "断根反噬" if boss_id==&"tide" else "晶核破绽",Color("e6ffca"),20)
-func take_damage(amount:float,is_crit:=false,from:=Vector2.ZERO,source:Node=null,knockback:=true)->void:super.take_damage(amount*(1.3 if vulnerability>0 else 1.0),is_crit,from,source,knockback)
+func take_damage(amount:float,is_crit:=false,from:=Vector2.ZERO,source:Node=null,knockback:=true)->void:
+	if phase_presenting or phase_guard_left>0:return
+	super.take_damage(amount*(1.3 if vulnerability>0 else 1.0),is_crit,from,source,knockback)
 func _check_contact()->void:
-	if recovery>0 or main_pending():return
+	if recovery>0 or main_pending() or phase_presenting or phase_guard_left>0:return
 	super._check_contact()
 func cancel_attacks(clear_bullets:=true)->void:
 	room_windup=0;timeline.clear()
@@ -300,7 +308,7 @@ func cancel_attacks(clear_bullets:=true)->void:
 		if is_instance_valid(warning):warning.queue_free()
 	_live_warnings.clear()
 	if is_inside_tree():
-		for effect in get_tree().get_nodes_in_group("hostile_attack_fx"):
+		for effect in get_tree().get_nodes_in_group("hostile_attack_fx")+get_tree().get_nodes_in_group("boss_pattern_warnings"):
 			if int(effect.get_meta("boss_owner",0))==get_instance_id():effect.queue_free()
 	super.cancel_attacks(clear_bullets)
 func restore_warning()->void:
@@ -312,12 +320,19 @@ func _boss_fx(stage:String,at:Vector2,width:float,seconds:float,direction:=0.0)-
 	if effect!=null:effect.set_meta("boss_owner",get_instance_id())
 	return effect
 func _update_visual()->void:
+	if visual is AnimatedSprite2D:
+		var frames:=BossStageArt.frames(boss_id,phase)
+		if visual.sprite_frames!=frames:visual.sprite_frames=frames
 	super._update_visual()
 	if visual is AnimatedSprite2D:
-		visual.speed_scale=.75 if visual.animation==&"release" else 1.0
+		if visual.sprite_frames.get_meta("boss_stage_art",false) and str(visual.animation).ends_with("_release"):
+			visual.pause();visual.frame=mini(3,int(clampf(1.0-_visual_release_left/maxf(.001,_visual_release_duration),0,1)*4))
+		else:visual.speed_scale=.75 if visual.animation==&"release" else 1.0
 func boss_visual_animation()->StringName:
 	# Choose once before the shared alignment step. Switching back to idle in
 	# BossBase first also reset the release animation to frame zero every tick.
+	var action:=BossPhaseRules.action(boss_id,pattern,_visual_release_left>0) if (_visual_release_left>0 or main_pending()) else (&"move" if velocity.length()>8 else &"idle")
+	if visual is AnimatedSprite2D and visual.sprite_frames.has_animation(action):return action
 	return &"release" if _visual_release_left>0 else &"windup" if main_pending() else &"move" if velocity.length()>8 else &"idle"
 func visual_locomotion_state()->StringName:return &"walk" if velocity.length()>8 else &"idle"
 func _die()->void:
@@ -332,3 +347,35 @@ func on_minion_death(unit:RoomEnemy)->void:
 func prison_expired(construct:BossConstruct)->void:
 	var direction:Vector2=(player.global_position-construct.global_position).normalized()
 	_command("fan",.85,{"at":construct.global_position,"dir":direction,"count":3,"spread":.7,"speed":170,"ratio":.45,"shape":"fan","radius":200,"auxiliary":true})
+
+func _begin_phase_presentation()->void:
+	cancel_attacks(true);velocity=Vector2.ZERO;recovery=1.5;room_cooldown=1.5
+	# Existing minions remain alive, but no old attack may hit after the cut-in.
+	for unit in get_tree().get_nodes_in_group("enemies"):
+		if unit is RoomEnemy and unit.boss_wave_tag.begins_with(owner_tag):
+			unit.stop_warning();unit._windup=0;unit._rush=0;unit._sickle_followup=0;unit.flame_pending.clear();unit._action_cd=maxf(unit._action_cd,1.2)
+	for shot in get_tree().get_nodes_in_group("room_projectiles"):
+		if shot is RoomProjectile and not shot.is_friendly and shot.boss_source_tag.begins_with(owner_tag):shot.queue_free()
+	for hazard in get_tree().get_nodes_in_group("affix_hazards"):
+		var source:Variant=hazard.source_ref.get_ref() if hazard.source_ref!=null else null
+		if source==self or source is RoomEnemy and source.boss_wave_tag.begins_with(owner_tag):hazard.queue_free()
+	phase_presenting=true
+	_show_phase()
+func _show_phase()->void:
+	if not is_inside_tree() or _dead:return
+	_phase_ui=BossPhaseUI.new();_phase_ui.boss=self;get_parent().add_child(_phase_ui)
+func finish_phase_presentation()->void:
+	phase_presenting=false;phase_guard_left=.6;recovery=.6;room_cooldown=.6;attack_id=&"";_visual_release_left=0
+	if is_instance_valid(player):
+		player._invuln=maxf(player._invuln,.6);player.firing=false;player.movement_override=Vector2.ZERO;player.aim_override=Vector2.ZERO;player.caster.clear_input_buffer();player._mouse_attack_blocked=true
+	_update_visual()
+func _exit_tree()->void:
+	if is_instance_valid(_phase_ui):_phase_ui.finish()
+	super._exit_tree()
+
+func bullet_budget()->int:return int({"sephra":72,"verena":128,"nameless":160}.get(str(boss_id),96))
+func begin_visual_release(duration:float)->void:
+	super.begin_visual_release(duration)
+	if visual is AnimatedSprite2D and visual.sprite_frames.get_meta("boss_stage_art",false):
+		var action:=BossPhaseRules.action(boss_id,pattern,true)
+		if visual.sprite_frames.has_animation(action):visual.play(action);visual.set_frame_and_progress(0,0);visual.speed_scale=4.0/maxf(.05,duration)/8.0

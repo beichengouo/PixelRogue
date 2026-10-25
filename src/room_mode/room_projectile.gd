@@ -17,12 +17,21 @@ var hostile_aim:=Vector2.RIGHT
 var hostile_fx := ""
 var hostile_width := 26.0
 var cruel_damage := false
+var combat_balance_revision:=25
+var boss_source_tag:=""
+var fate_serial:=-1
+var fate_small:=false
 var hostile_effects: Array[Dictionary] = []
 
 func player_debuffs() -> Array[Dictionary]:
 	return [] if is_friendly else hostile_effects
 
 func _build_orb() -> void:
+	if mechanic_tag==&"fate":
+		_weapon_frames=IlyuaFX.frames("precision","flight")
+		if not _weapon_frames.is_empty():
+			_sprite=Sprite2D.new();_sprite.texture=_weapon_frames[0];add_child(_sprite);_frame_timer=1.0/12.0
+			return
 	if not is_friendly and hostile_fx.is_empty():hostile_fx="dusk_acolyte";hostile_width=32
 	if not hostile_fx.is_empty():
 		_weapon_frames=HostileAttackFX.frames(hostile_fx,"flight")
@@ -54,11 +63,12 @@ func _hit_enemy(enemy: EnemyBase) -> bool:
 	var source: Node = self
 	var critical := is_basic_attack and attack_receipt != null and attack_receipt.critical
 	if mechanic_tag == &"equipment": source = DamageContext.equipment(GameState.player)
+	elif mechanic_tag==&"fate":source=DamageContext._context(GameState.player,&"fate")
 	elif mechanic_tag==&"character_proc":source=DamageContext.character_proc(GameState.player)
-	elif damage_owner == &"player" and not is_basic_attack: source = DamageContext.skill(GameState.player)
+	elif damage_owner == &"player" and not is_basic_attack: source = DamageContext.skill_event(GameState.player,fate_serial,fate_small)
 	elif damage_owner == &"ally": source = DamageContext.ally(damage_actor if is_instance_valid(damage_actor) else GameState.player)
 	var amount := damage * skill_damage_multiplier
-	if damage_owner == &"player" and not is_basic_attack and mechanic_tag not in [&"equipment",&"character_proc"] and GameState.player is RoomPlayer:
+	if damage_owner == &"player" and not is_basic_attack and mechanic_tag not in [&"equipment",&"character_proc",&"fate"] and GameState.player is RoomPlayer:
 		amount *= (GameState.player as RoomPlayer).equipment_mechanics.skill_multiplier(enemy)
 	enemy.take_damage(amount, critical, global_position, source)
 	var effective := is_instance_valid(enemy) and (enemy.hp < before or enemy.affix_shield<shield_before)
@@ -66,7 +76,7 @@ func _hit_enemy(enemy: EnemyBase) -> bool:
 		if attack_receipt != null: GameState.player.heal_player(attack_receipt.claim())
 		if GameState.player is RoomPlayer and is_instance_valid((GameState.player as RoomPlayer).equipment_mechanics):
 			(GameState.player as RoomPlayer).equipment_mechanics.on_basic_hit(enemy, attack_receipt, self)
-	elif effective and damage_owner == &"player" and mechanic_tag not in [&"equipment",&"character_proc"] and GameState.player is RoomPlayer:
+	elif effective and damage_owner == &"player" and mechanic_tag not in [&"equipment",&"character_proc",&"fate"] and GameState.player is RoomPlayer:
 		(GameState.player as RoomPlayer).equipment_mechanics.on_skill_hit(enemy, true)
 	elif effective and damage_owner == &"ally" and is_instance_valid(GameState.player) and GameState.player is RoomPlayer and is_instance_valid(damage_actor):
 		(GameState.player as RoomPlayer).equipment_mechanics.on_ally_hit(enemy, damage_actor)
@@ -81,10 +91,13 @@ func _hit_enemy(enemy: EnemyBase) -> bool:
 
 func _apply_art_scale()->void:
 	super._apply_art_scale();hit_radius=9
+	if mechanic_tag==&"fate" and _sprite!=null and not _weapon_frames.is_empty():_sprite.scale=Vector2.ONE*54.0/maxf(1,_weapon_frames[0].get_width())
 	if not hostile_fx.is_empty() and _sprite!=null:_sprite.scale=Vector2.ONE*hostile_width/maxf(1,_weapon_frames[0].get_width())
 	if _collider!=null:(_collider.shape as CircleShape2D).radius=5
 
 func _ready() -> void:
+	if fate_serial<0 and damage_owner==&"player" and not is_basic_attack:
+		fate_serial=int(FateRuntime.state().get("cast_serial",0));fate_small=bool(FateRuntime.state().get("small_cast",false))
 	super._ready()
 	add_to_group("room_projectiles")
 	hit_radius = 9.0
@@ -109,12 +122,16 @@ func _on_body_hit(collider: Object) -> bool:
 		_hit_effect(false); return true
 	return super._on_body_hit(collider)
 
+func _enemy_candidates() -> Array:
+	return room.tactics.enemies(room) if is_instance_valid(room) else super._enemy_candidates()
+
 func _nearest_enemy() -> EnemyBase:
 	var result: EnemyBase
 	var distance := homing_range*homing_range
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in _enemy_candidates():
+		if not is_instance_valid(node):continue
 		var enemy := node as EnemyBase
-		if not is_instance_valid(enemy) or enemy._dead or _hit_ids.has(enemy.get_instance_id()): continue
+		if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or enemy.hp<=0 or _hit_ids.has(enemy.get_instance_id()): continue
 		if basic_tracking:
 			var toward:=enemy.global_position-global_position
 			if toward.is_zero_approx():return enemy
@@ -131,9 +148,10 @@ func _nearest_enemy() -> EnemyBase:
 	return result
 
 func _explode() -> void:
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in _enemy_candidates():
+		if not is_instance_valid(node):continue
 		var enemy := node as EnemyBase
-		if not is_instance_valid(enemy) or enemy._dead or _hit_ids.has(enemy.get_instance_id()): continue
+		if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or enemy.hp<=0 or _hit_ids.has(enemy.get_instance_id()): continue
 		if global_position.distance_to(enemy.global_position)<=explosion_radius and room.sight(global_position,enemy.global_position,ghost):
 			var splash_source: Node = DamageContext.equipment(GameState.player) if mechanic_tag==&"equipment" else DamageContext.basic_splash(GameState.player) if is_basic_attack else DamageContext.skill(GameState.player) if damage_owner==&"player" else DamageContext.ally(damage_actor if is_instance_valid(damage_actor) else GameState.player)
 			enemy.take_damage(damage*explosion_ratio,false,global_position,splash_source)

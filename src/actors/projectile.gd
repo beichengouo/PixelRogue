@@ -146,11 +146,11 @@ func _ready() -> void:
 	if is_friendly:
 		# 范围收得比较小：弹幕是"移动的小光源"，
 		# 一片片大光晕会把夜色的黑吃掉。
-		add_child(LightUtil.make_point_light(color, 1.15, 130.0, false))
+		add_child(LightUtil.make_point_light(color, 1.15, 130.0, false,"arcane"))
 	else:
 		# 敌人的弹幕也给一点微光（偏红）：夜色很浓时，远方射过来的子弹
 		# 至少能看见一条红光，不至于"凭空挨打"。
-		add_child(LightUtil.make_point_light(Color(1.0, 0.42, 0.34), 0.65, 95.0, false))
+		add_child(LightUtil.make_point_light(Color(1.0, 0.42, 0.34), 0.65, 95.0, false,"arcane"))
 
 
 func _build_weapon_effect()->void:
@@ -212,6 +212,9 @@ func _update_orb_color() -> void:
 	if _orb_particles != null: _orb_particles.color = Color(color.r, color.g, color.b, 0.55)
 
 
+func _enemy_candidates() -> Array:
+	return get_tree().get_nodes_in_group("enemies")
+
 func _physics_process(delta: float) -> void:
 	_legendary_trail_clock-=delta
 	if weapon_fx in WeaponBuildFX.LEGENDARY and _legendary_trail_clock<=0:
@@ -255,9 +258,10 @@ func _physics_process(delta: float) -> void:
 	# 兜底：如果出膛那一刻就已经和目标重叠（贴着怪开火），
 	# 物理扫掠不会把「一开始就重叠」算成碰撞，所以这里补一次邻近判定。
 	if is_friendly:
-		for node in get_tree().get_nodes_in_group("enemies"):
+		for node in _enemy_candidates():
+			if not is_instance_valid(node):continue
 			var enemy := node as EnemyBase
-			if enemy == null or not is_instance_valid(enemy):
+			if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or enemy.hp <= 0:
 				continue
 			if global_position.distance_to(enemy.global_position) < hit_radius:
 				if _hit_enemy(enemy):
@@ -316,7 +320,8 @@ func _hit_enemy(enemy: EnemyBase) -> bool:
 func _nearest_enemy() -> EnemyBase:
 	var best: EnemyBase = null
 	var best_d := homing_range * homing_range
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in _enemy_candidates():
+		if not is_instance_valid(node):continue
 		var enemy := node as EnemyBase
 		if enemy == null or not is_instance_valid(enemy) or enemy._dead or _hit_ids.has(enemy.get_instance_id()):
 			continue
@@ -353,7 +358,8 @@ func _hit_effect(hit_target: bool) -> void:
 func _explode() -> void:
 	## 范围伤害：不打刚命中的那只（它已经吃过直击伤害了），避免双倍结算
 	var splash := damage * explosion_ratio
-	for node in get_tree().get_nodes_in_group("enemies"):
+	for node in _enemy_candidates():
+		if not is_instance_valid(node):continue
 		var enemy := node as EnemyBase
 		if enemy == null or not is_instance_valid(enemy):
 			continue

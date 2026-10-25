@@ -45,7 +45,7 @@ func _build_visual() -> void:
 	if PixelBossArt.HEIGHTS.has(boss_id):
 		var anim := AnimatedSprite2D.new()
 		anim.name = "Visual"
-		anim.sprite_frames = PixelBossArt.make_frames(boss_id)
+		anim.sprite_frames = BossStageArt.frames(boss_id,phase)
 		anim.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		anim.material = PixelSpellArt.material()
 		anim.centered = true

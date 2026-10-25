@@ -13,19 +13,20 @@ const BASE:={
 "keys":{"name":"秘藏巡礼","description":"累计开启二十五个宝箱。踏遍遗迹与星庭，让沉眠的珍藏重见天光。","metric":"chests","goal":25,"category":"收集"},
 "chests":{"name":"启封秘藏","description":"累计开启五个宝箱。拨开岁月的封印，寻得遗落在星辉之下的珍藏。","metric":"chests","goal":5,"category":"收集"},
 "extraction":{"name":"星辉归航","description":"成功撤离一次。循女神的接引越过长夜，将未尽的故事带回回廊。","metric":"extractions","goal":1,"category":"探索"},
-"bloodbath":{"name":"浴血之誓","description":"在浴血难度清理一间战斗房间。以不可复原的伤痕为证，守住立于危境的誓言。","metric":"bloodbath_rooms","goal":1,"category":"挑战"},
+"bloodbath":{"name":"浴血之誓","description":"在浴血难度清理一间战斗房间。以浴血的伤痕为证，守住立于危境的誓言。","metric":"bloodbath_rooms","goal":1,"category":"挑战"},
 "legendary_set":{"name":"传承加冕","description":"出征中同时装备任意角色的专属传说三件套。承接完整传承，让沉眠的力量再度苏醒。","metric":"sets","goal":1,"category":"收集"},
 "all_heroes":{"name":"三途同辉","description":"三位角色分别成功撤离。三条命运之路终在星辉回廊相会。","metric":"hero_extractions","goal":3,"category":"探索"},
 "enrage":{"name":"逆怒破阵","description":"清理怪物至少成长三次的战斗房间。直面暴怒累积的威势，以决意终结战局。","metric":"enrage_best","goal":3,"category":"挑战"},
 "holy_healing":{"name":"晨曦长佑","description":"希露媞雅在出征中累计实际恢复一百生命。让克制而温暖的圣光，庇佑漫长的归途。","metric":"holy_healing","goal":100,"category":"战斗"}}
-const ORDINARY_NAMES:={"walker":"骸骨游荡者","flyer":"幽骨浮灵","charger":"兽人冲锋手","caster":"死灵法师","bomber":"烬骨法师","guard":"重装骸骨盾卫","treant":"林地兽人守卫","bell_snail":"铃壳蜗使","glimmer_spider":"荧纱蛛","moss_badger":"棘冠苔獾","bog_crab":"泥沼甲蟹","ruin_sentinel":"星冕残卫","thorn_mantis":"灰棘螳卫","lantern_toad":"沼灯囊蛙","dusk_acolyte":"暮钟侍祭"}
+const ORDINARY_NAMES:={"goblin_scout":"哥布林斥候","goblin_spearman":"哥布林投矛手","goblin_mage":"哥布林法师","walker":"骸骨游荡者","flyer":"幽骨浮灵","charger":"兽人冲锋手","caster":"死灵法师","bomber":"烬骨法师","guard":"重装骸骨盾卫","treant":"林地兽人守卫","glimmer_spider":"荧纱蛛","bog_crab":"泥沼甲蟹","ruin_sentinel":"星冕残卫","thorn_mantis":"灰棘螳卫","lantern_toad":"沼灯囊蛙","dusk_acolyte":"暮钟侍祭"}
 const EXPANSION:={
+"extreme_return":{"name":"越过终星","description":"完成第四阶段三首领连战并成功撤离，将星誓辉印带回回廊。","metric":"extreme_returns","goal":1,"category":"挑战"},
 "fate_first":{"name":"命运初启","description":"在祭坛首次接纳一张命运牌。聆听星幕之后的回声，为未知的道路写下开端。","metric":"fate_claims","goal":1,"category":"探索"},
 "fate_reverse":{"name":"逆星行者","description":"接纳一张逆位命运牌。知晓代价，仍以自己的意志回应群星。","metric":"fate_reverse","goal":1,"category":"挑战"},
 "fate_pair":{"name":"双曜同契","description":"在一次出征中同时持有两张命运牌。让两道不同的星辉共同照亮前路。","metric":"fate_pair","goal":2,"category":"收集"},
 "fate_replace":{"name":"改写星轨","description":"在一次出征中缔结三张命运牌。让不同的星轨共同编织前行的道路。","metric":"fate_replacements","goal":1,"category":"探索"},
 "fate_three":{"name":"三问星穹","description":"在同次出征中完成三次占卜的接纳或放弃。星穹作答，最终的决定仍属于旅人。","metric":"fate_resolved_best","goal":3,"category":"挑战"},
-"fate_archive":{"name":"八象全书","description":"跨出征累计接纳全部八种命运牌，正逆位均可。将八种命运的启示铭入旅途。","metric":"fate_seen","goal":8,"category":"收集"},
+"fate_archive":{"name":"命运藏书","description":"跨出征累计接纳八种不同命运牌，正逆位均可。记录旅途中见过的命运启示。","metric":"fate_seen","goal":8,"category":"收集"},
 "star_paths":{"name":"群星择途","description":"分别选择明炬座、涌泉座与守灯座，成功开始三次正式出征。循不同星光，见证道路的万千可能。","metric":"stars_departed","goal":3,"category":"探索"},
 "star_return":{"name":"携星归航","description":"在带有出发星象且持有命运牌的出征中成功撤离。将星辉与自己的选择一同带回回廊。","metric":"star_returns","goal":1,"category":"探索"},
 "elite_five":{"name":"荆冠破阵","description":"累计清理五间精英房。越过残忍之锋，为险境中的旅人开辟通途。","metric":"elite_clears","goal":5,"category":"挑战"},
@@ -46,6 +47,8 @@ static func ordinary_names()->Dictionary:
 static func _build()->Dictionary:
 	var result:=BASE.duplicate(true)
 	result.merge(EXPANSION,true)
+	result.merge(CampAchievementExpansion.DATA,true)
+	result.merge(CharacterUnlocks.achievement_entries(),true)
 	var names:=ordinary_names()
 	for kind:String in names:
 		for tier in 3:
@@ -62,8 +65,16 @@ static func progress(id:String)->int:
 	var value:Variant=SaveService.data.get("achievement_stats",{}).get(DATA[id].metric,0)
 	if DATA[id].has("contains"):return 1 if value is Array and str(DATA[id].contains) in value else 0
 	return mini(int(DATA[id].goal),value.size() if value is Array else int(value))
+static func unlocked_count()->int:
+	var count:=0
+	for id:String in DATA:
+		if unlocked(id):count+=1
+	return count
 static func unlocked(id:String)->bool:return SaveService.data.get("achievements",{}).has(id)
 static func icon(id:String)->Texture2D:
+	if id.begins_with("slayer_goblin_"):
+		return load(ROOT+"kills_fivehundred.png" if id.ends_with("1000") else ROOT+"kills_hundred.png")
+	id=str(DATA.get(id,{}).get("icon",id))
 	if id=="keys":id="chests" # Keep old unlock IDs while retiring key imagery.
 	var path:=ROOT+("mastery/" if id.begins_with("slayer_") or id.begins_with("boss_slayer_") else "")+id+".png"
 	return load(path) if ResourceLoader.exists(path) else null

@@ -26,14 +26,15 @@ static func default_for(character:StringName)->StringName:
 static func migrate_id(id:StringName)->StringName:
  return &"sylphiette_hymn" if id==&"sylphiette_arcane" else &"sylphiette_grace" if id==&"sylphiette_aoe" else id
 static func selected(character:StringName)->StringName:
- if _selected.has(character):return migrate_id(_selected[character])
+ if _selected.has(character) and CharacterUnlocks.passive_available(migrate_id(_selected[character]),character):return migrate_id(_selected[character])
  var saved:=migrate_id(StringName(StoryState.flags.get("character:%s:passive_selection"%character,"")))
  for entry:Dictionary in for_character(character):
-  if entry.id==saved:
+  if entry.id==saved and CharacterUnlocks.passive_available(saved,character):
    _selected[character]=saved
    return saved
  return default_for(character)
 static func select(character:StringName,id:StringName,persist:=true)->bool:
+ if persist and not CharacterUnlocks.passive_available(id,character):return false
  for entry:Dictionary in for_character(character):
   if entry.id==id:
    _selected[character]=id

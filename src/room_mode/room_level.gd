@@ -8,6 +8,8 @@ signal door_requested(direction: Vector2i)
 		use_editor_obstacles=value
 		if is_node_ready():load_room(record)
 var record: Dictionary = {}
+var prefetching := false
+var prefetch_valid: Callable
 var tactics:=RoomTactics.new()
 var obstacles: Dictionary = {}
 var deep_water:Dictionary={}
@@ -202,7 +204,7 @@ func _load_room_frame(generation:int, owner_ref:WeakRef, transition_epoch:int)->
 
 func _load_room_request_valid(generation:int, owner_ref:WeakRef, transition_epoch:int)->bool:
 	var owner:Variant=owner_ref.get_ref() if owner_ref!=null else null
-	return generation==_load_generation and (owner_ref==null or is_instance_valid(owner) and owner.is_inside_tree()) and (transition_epoch<0 or TransitionLayer.busy and TransitionLayer._epoch==transition_epoch)
+	return (not prefetching or prefetch_valid.is_null() or bool(prefetch_valid.call())) and generation==_load_generation and (owner_ref==null or is_instance_valid(owner) and owner.is_inside_tree()) and (transition_epoch<0 or TransitionLayer.busy and TransitionLayer._epoch==transition_epoch)
 
 func _room_requires_template(data:Dictionary)->bool:
 	if not data.has("terrain_layout"):return true
@@ -301,7 +303,7 @@ func _load_room_begin(data:Dictionary)->Dictionary:
 					var size:Vector2i=RoomTerrainCatalog.SIZES[source-200]
 					for y in size.y:
 						for x in size.x:layout.water.append([at.x+x,at.y+y])
-	return layout
+	return BossArenaPolicy.layout(layout) if BossArenaPolicy.active(data) else layout
 
 func _load_room_props(data:Dictionary,layout:Dictionary,start:int=0,stop:int=-1)->void:
 	var broken: Array = data.get("delta",{}).get("broken",[])
@@ -424,6 +426,7 @@ func _process(dt:float)->void:
 		door_phase=move_toward(door_phase,target,dt/(0.10 if ComicMotion.reduced() else 0.32));queue_redraw()
 
 func _build_service_decor(kind:String)->void:
+	if BossArenaPolicy.active(record):return
 	var authored:Dictionary=record.get("terrain_layout",{})
 	if bool(authored.get("service_layout",false)):
 		for entry in authored.get("service_props",[]):
@@ -805,7 +808,7 @@ func ensure_clear_actors()->void:
 	for group in ["room_player","enemies","allies"]:
 		for unit in get_tree().get_nodes_in_group(group):
 			if not unit is CharacterBody2D or unit.is_queued_for_deletion():continue
-			if unit is EnemyBase and unit.training_target:continue
+			if unit is FateAltar or unit is EnemyBase and unit.training_target:continue
 			if unit.get("room")!=self:continue
 			var radius:float=26.0 if unit is RoomBoss else (float(unit.body_radius()) if unit.has_method("body_radius") else 12.0)
 			var flying:bool=unit.is_flying() if unit.has_method("is_flying") else false
@@ -819,7 +822,7 @@ func load_scene_objects(objects:Array,base_path:String,start:int=0,stop:int=-1)-
 			for child in root.get_children():
 				if child.has_meta("scene_object_id"):
 					root.remove_child(child);child.queue_free()
-		scene_objects=objects.duplicate(true);scene_polygons.clear();scene_occlusion.clear()
+		scene_objects=BossArenaPolicy.objects(objects) if BossArenaPolicy.active(record) else objects.duplicate(true);scene_polygons.clear();scene_occlusion.clear()
 	var broken:Array=record.get("delta",{}).get("scene_broken",[])
 	for index in range(start,scene_objects.size() if stop<0 else mini(stop,scene_objects.size())):
 		var item:Dictionary=scene_objects[index]

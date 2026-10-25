@@ -6,6 +6,7 @@ signal collision_edit(target: String, action: String, index: int, point: Vector2
 var document: Dictionary = {}
 var zoom := 1.0
 var tool := "collision"
+var light_asset_id:="light:moon_lantern:1x1"
 var preview := false
 var visible_layers: Dictionary = {}
 var _textures: Dictionary = {}
@@ -74,7 +75,7 @@ func _draw() -> void:
 			var plane_layer:String=str(plane.get("layer","background" if str(plane.path).get_file()=="background.png" else "water_bridge"))
 			if not visible_layers.get(plane_layer,true):continue
 			var path := RoomSceneArtCatalog.ROOT+str(document.scene_art)+"/"+str(plane.path)
-			if ResourceLoader.exists(path):draw_texture_rect(load(path),frame,false)
+			if ResourceLoader.exists(path):draw_texture_rect(load(path),RoomSceneArtwork.plane_rect(plane,frame,Vector2(float(scene.canvas[0]),float(scene.canvas[1]))),false)
 	if visible_layers.get("background",true):
 		for entry in document.layers.ground:
 			var texture := _texture(str(entry.asset_id))
@@ -114,8 +115,8 @@ func _draw() -> void:
 	var objects: Array[Dictionary] = []
 	for layer in ["decor","obstacles","entities"]:
 		for entry in document.layers[layer]:
-			var view_layer := "buildings" if RoomEditorCatalog.is_service(str(entry.asset_id)) else "objects"
-			if visible_layers.get(view_layer,true):objects.append(entry)
+			var view_layer := "lights" if str(entry.asset_id).begins_with("light:") else ("buildings" if RoomEditorCatalog.is_service(str(entry.asset_id)) else "objects")
+			if visible_layers.get(view_layer,true):objects.append(_display_entry(layer,entry))
 	objects.sort_custom(func(a,b):return (RoomEditorCatalog.service_position(a).y if RoomEditorCatalog.is_service(str(a.asset_id)) else int(a.at[1])*36+18)<(RoomEditorCatalog.service_position(b).y if RoomEditorCatalog.is_service(str(b.asset_id)) else int(b.at[1])*36+18))
 	for entry in objects:
 		var asset := RoomEditorCatalog.get_entry(str(entry.asset_id))
@@ -246,6 +247,13 @@ func _display_entry(layer: String, source: Dictionary) -> Dictionary:
 
 func _handles() -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
+	if tool=="light":
+		if not visible_layers.get("lights",true):return result
+		for entry:Dictionary in document.layers.entities:
+			if not str(entry.asset_id).begins_with("light:"):continue
+			var asset:=RoomEditorCatalog.get_entry(str(entry.asset_id));var extent:=Vector2(asset.size[0],asset.size[1])
+			result.append({"layer":"entities","id":str(entry.id),"center":(Vector2(entry.at[0],entry.at[1])+extent*.5)*36,"at":entry.at.duplicate()})
+		return result
 	if not visible_layers.get("spawns",true):return result
 	for entry in document.layers.markers:
 		if str(entry.asset_id)!="spawn" and not str(entry.asset_id).begins_with("camp:"):continue
@@ -267,20 +275,21 @@ func _get_tooltip(at_position: Vector2) -> String:
 	if preview or document.is_empty():return ""
 	var handle := _handle_at(at_position)
 	if handle.is_empty():return ""
-	return "敌人出生点：拖动黄色标记调整，右键删除。"
+	return "光源装饰：拖动中心点移动，右键删除。" if tool=="light" else "敌人出生点：拖动黄色标记调整，右键删除。"
 
 func _gui_input(event: InputEvent) -> void:
 	if document.is_empty() or preview:return
 	if tool=="collision":
 		if visible_layers.get("collision",true):_collision_input(event)
 		return
-	if tool not in ["spawn","port"]:return
+	if tool not in ["spawn","port","light"]:return
 	if tool=="spawn" and not visible_layers.get("spawns",true):return
 	if tool=="port" and not visible_layers.get("doors",true):return
+	if tool=="light" and not visible_layers.get("lights",true):return
 	if event is InputEventMouseButton and event.button_index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT]:
 		if event.pressed:
 			_drag_hit={};_drag_offset=Vector2i.ZERO
-			if event.button_index==MOUSE_BUTTON_LEFT and tool=="spawn":_drag_hit=_handle_at(event.position)
+			if event.button_index==MOUSE_BUTTON_LEFT and tool in ["spawn","light"]:_drag_hit=_handle_at(event.position)
 			if not _drag_hit.is_empty():
 				_start=_cell(event.position);_current=_start;accept_event();queue_redraw();return
 			_drawing=true;_start=_cell(event.position);_current=_start;_cells=[_start]
@@ -289,7 +298,7 @@ func _gui_input(event: InputEvent) -> void:
 				var hit := _drag_hit;var offset := _cell(event.position)-_start
 				_drag_hit={};_drag_offset=Vector2i.ZERO
 				object_drag.emit(str(hit.layer),str(hit.id),offset);accept_event();queue_redraw();return
-			if _drawing:gesture.emit("erase" if event.button_index==MOUSE_BUTTON_RIGHT and tool=="spawn" else tool,_start,_cell(event.position),_cells.duplicate())
+			if _drawing:gesture.emit(("light_erase" if tool=="light" else "erase") if event.button_index==MOUSE_BUTTON_RIGHT and tool in ["spawn","light"] else tool,_start,_cell(event.position),_cells.duplicate())
 			_drawing=false
 		accept_event();queue_redraw()
 	elif event is InputEventMouseMotion and not _drag_hit.is_empty():

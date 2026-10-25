@@ -5,6 +5,7 @@ signal menu_requested
 signal settings_requested
 signal save_requested
 signal leave_chapter_requested
+signal bot_test_requested
 var _closing := false
 var _exit_tween: Tween
 var _root: Control
@@ -14,6 +15,10 @@ var _panel: PanelContainer
 var _resume: Button
 var _transition: Tween
 var _leave_chapter: Button
+var _bot_test:Button
+
+func configure_bot_test(enabled:bool)->void:
+	_bot_test.visible=enabled
 
 func _ready() -> void:
 	layer = 28
@@ -31,7 +36,8 @@ func open() -> void:
 	_root.visible = true
 	UIFlow.push_screen(self)
 	_status.text = ""
-	_leave_chapter.visible = GameState.chapter_cleared
+	_bot_test.text="停止 Bot" if GameState.gm_pilot_active else "Bot 测试 · B"
+	_leave_chapter.visible = GameState.chapter_cleared or (GameState.run_active and GameState.combat_mode=="rooms" and not CampSession.active)
 	_summary.text = "第 %d 波  /  Lv.%d\n金币 %d\n有效游玩  %s" % [GameState.wave, GameState.level, GameState.coins, GameState.play_time_text()]
 	if _transition != null and _transition.is_valid():
 		_transition.kill()
@@ -112,7 +118,12 @@ func _build() -> void:
 		var button := PixelUi.button(str(entry[0]), 19, 0, 48)
 		button.custom_minimum_size.y = 48
 		button.pressed.connect(entry[1])
-		right.add_child(button)
+		if str(entry[0])=="保存进度":
+			var save_row:=UiFactory.hbox(10);right.add_child(save_row)
+			button.size_flags_horizontal=Control.SIZE_EXPAND_FILL;save_row.add_child(button)
+			_bot_test=PixelUi.button("Bot 测试 · B",18,0,48);_bot_test.name="BotTestButton";_bot_test.custom_minimum_size.y=48;_bot_test.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+			_bot_test.pressed.connect(func()->void:bot_test_requested.emit());save_row.add_child(_bot_test);_bot_test.hide()
+		else:right.add_child(button)
 	_status = PixelUi.label("", 15, Color("9cddb0"))
 	_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	_status.custom_minimum_size.y = 44

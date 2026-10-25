@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btt8j7oylkeel"
-path="res://.godot/imported/background.png-c3003a0cae641b7835334c3e8acf6c84.ctex"
+path.s3tc="res://.godot/imported/background.png-c3003a0cae641b7835334c3e8acf6c84.s3tc.ctex"
+path.etc2="res://.godot/imported/background.png-c3003a0cae641b7835334c3e8acf6c84.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/ruin_archive_v03/background.png"
-dest_files=["res://.godot/imported/background.png-c3003a0cae641b7835334c3e8acf6c84.ctex"]
+dest_files=["res://.godot/imported/background.png-c3003a0cae641b7835334c3e8acf6c84.s3tc.ctex", "res://.godot/imported/background.png-c3003a0cae641b7835334c3e8acf6c84.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

@@ -2,7 +2,7 @@
 class_name RoomLightProp
 extends Node2D
 ## Painted scenery plus a shared light descriptor; no extra additive lamp in daylight.
-@export_enum("torch","lamp","plant","crystal","fire") var kind:="torch"
+@export_enum("torch","lamp","plant","crystal","fire","moon_lantern","ember_brazier","star_bloom") var kind:="torch"
 @export var footprint:=Vector2i.ONE
 @export var radius_override:=0.0
 @export var strength_override:=-1.0
@@ -11,6 +11,8 @@ extends Node2D
 @export var always_on:=true
 @export var dispels_fog:=true
 @export var use_kind_defaults:=true
+@export var animate_light_range:=true
+var _model_motion:LightModelMotion
 var light_field:RoomLightField
 var art:Sprite2D
 var scene_texture:Texture2D
@@ -44,12 +46,14 @@ func _ready() -> void:
 		art.scale=Vector2.ONE*(36.0*maxi(footprint.x,footprint.y)/128.0)
 		art.position.y=footprint.y*18.0-64.0*art.scale.y
 	add_child(art)
-	if not Engine.is_editor_hint():
+	if not Engine.is_editor_hint():_model_motion=LightModelMotion.attach(art,animation_kind())
+	if not Engine.is_editor_hint() and not get_viewport().has_meta("room_prefetch"):
 		add_to_group("room_environment_lights")
 		if light_field!=null:light_field.register(self,light_config())
 
 func light_config() -> Dictionary:
 	var value:Dictionary=RoomEnvironmentConfig.LIGHTS.get(kind,RoomEnvironmentConfig.LIGHTS.torch).duplicate()
+	value.animation_kind=animation_kind()
 	if radius_override>0:value.radius=radius_override
 	if strength_override>=0:value.strength=strength_override
 	if light_color.a>0:value.color=light_color
@@ -65,9 +69,22 @@ func configure(data:Dictionary) -> void:
 	flicker=bool(data.get("flicker",defaults.flicker));always_on=bool(data.get("always_on",defaults.always_on));dispels_fog=bool(data.get("dispels_fog",defaults.dispels_fog))
 	if data.has("color"):light_color=data.color if data.color is Color else Color(str(data.color))
 	use_kind_defaults=false
+	animate_light_range=bool(data.get("range_animation",true))
+	if is_instance_valid(_model_motion):_model_motion.kind=animation_kind()
 	if light_field!=null:light_field.register(self,light_config())
 
 func _exit_tree() -> void:
 	if light_field!=null:light_field.unregister(self)
 
 func source_position()->Vector2:return global_position+light_offset
+
+func animation_kind()->String:
+	var id:=str(get_meta("scene_object_id",""))
+	if "mushroom" in id:return "plant"
+	if "candle" in id:return "torch"
+	return kind if kind in RoomEnvironmentConfig.LIGHT_KINDS else "arcane"
+
+
+func light_motion_sample()->Dictionary:
+	if not animate_light_range or not is_instance_valid(_model_motion):return {"radius":1.0,"energy":1.0}
+	return _model_motion.phase_sample()

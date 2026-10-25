@@ -16,15 +16,17 @@ static func tick(unit:HiredAlly,dt:float)->bool:
 	return true
 static func refresh(unit:HiredAlly,full:=false)->void:
 	if not is_instance_valid(unit.player):return
+	if unit.contract_attack_bonus<0:unit.contract_attack_bonus=GameState.talent_effect(&"contract_might","契约物攻击加成%")/100
+	if unit.contract_hp_bonus<0:unit.contract_hp_bonus=GameState.talent_effect(&"contract_vitality","契约物生命加成%")/100
 	var ratio:=1.0 if full else clampf(unit.hp/maxf(1,unit.max_hp),0,1)
 	var bonus:Dictionary=GameState.ally_bonus()
 	var base_hp:float=unit.monster_base_hp if unit.monster_base_hp>0 else unit.player.max_hp*unit.hp_ratio_base
 	var base_attack:float=unit.monster_base_attack if unit.monster_base_attack>0 else unit.player.stats.get_value(&"attack")*unit.attack_ratio
 	var balance_id:="summon:"+("tree" if unit.guardian and unit.enemy_kind==&"treant" else "procession" if str(unit.art_variant)=="parade_guardian" else "guardian" if str(unit.art_variant)=="gate_guardian" or unit.guardian else "lantern" if not unit.attack_is_melee() else "skeleton")
 	base_hp*=UnitBalance.value(balance_id,"hp_multiplier",1);base_attack*=UnitBalance.value(balance_id,"attack_multiplier",1)
-	unit.max_hp=base_hp*float(bonus.hp)*(1+GameState.talent_effect(&"contract_vitality","契约物生命加成%")/100)
+	unit.max_hp=base_hp*float(bonus.hp)*(1+unit.contract_hp_bonus)
 	unit.hp=unit.max_hp*ratio
-	unit.attack=base_attack*float(bonus.attack)*(1+GameState.talent_effect(&"contract_might","契约物攻击加成%")/100)*(1+unit.rally_attack if unit.rally_time>0 else 1)
+	unit.attack=base_attack*float(bonus.attack)*(1+unit.contract_attack_bonus)*(1+unit.rally_attack if unit.rally_time>0 else 1)
 	unit.move_speed=unit.speed_base*float(bonus.speed)*(1+unit.rally_haste if unit.rally_time>0 else 1)
 	unit.move_speed*=UnitBalance.value(balance_id,"speed_multiplier",1)
 	unit.queue_redraw()
@@ -44,8 +46,9 @@ static func guardian_pulse(unit:HiredAlly,kind:String,at:Vector2)->void:
 	var radius:=90.0 if kind=="roots" else 108.0
 	var row:=0 if kind=="roots" else 1
 	ContractSpellFX.spawn(unit._fx(),at,row,radius*2,.52)
-	for enemy in unit.get_tree().get_nodes_in_group("enemies"):
-		if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead:continue
+	var targets:Array=unit.room.tactics.enemies(unit.room) if unit is RoomAlly and is_instance_valid(unit.room) else unit.get_tree().get_nodes_in_group("enemies")
+	for enemy in targets:
+		if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or enemy.hp<=0:continue
 		if at.distance_to(enemy.global_position)>radius:continue
 		var clear:bool=unit.room.sight(at,enemy.global_position) if unit is SummonedAlly else (not is_instance_valid(unit.level) or unit.level.clear_sight(at,enemy.global_position))
 		if not clear:continue
@@ -53,8 +56,3 @@ static func guardian_pulse(unit:HiredAlly,kind:String,at:Vector2)->void:
 		enemy.take_damage(unit.attack*(.8 if kind=="roots" else 1.6),false,at,unit)
 		if is_instance_valid(unit.player) and unit.player is RoomPlayer and enemy.hp<before:(unit.player as RoomPlayer).equipment_mechanics.on_ally_hit(enemy,unit)
 		if kind=="roots" and not enemy.is_queued_for_deletion():enemy.apply_slow(.25 if enemy is BossBase else .5,2.0)
-static func draw_marker(unit:HiredAlly)->void:
-	unit.draw_set_transform(Vector2(0,14),0,Vector2(1,0.35))
-	unit.draw_arc(Vector2.ZERO,16,0,TAU,24,Color(0.68,0.48,1,0.65),1.5)
-	unit.draw_set_transform(Vector2.ZERO)
-	unit.draw_rect(Rect2(-17,-5,34*clampf(unit.remaining/maxf(1,unit.total_duration),0,1),2),Color("b798e5"))

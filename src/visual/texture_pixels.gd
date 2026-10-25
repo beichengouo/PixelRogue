@@ -4,6 +4,7 @@ extends RefCounted
 static var _sources:Dictionary={}
 static var _bytes:=0
 static var _clock:=0
+static func clear()->void:_sources.clear();_bytes=0;_clock=0
 static func _source(texture:Texture2D)->Image:
 	if texture==null:return null
 	if texture is AtlasTexture:return image(texture)

@@ -26,10 +26,13 @@ static func around(actor:Node2D,style:String,size_value:float=48,seconds:float=.
 	if fx!=null:fx._follow=weakref(actor)
 	return fx
 static func warm()->void:
+	SizedSkillArt.warm()
 	for style in STYLES:
 		if not textures.has(style):textures[style]=load((DETAIL_ROOT if style in DETAILS else ART_ROOT)+style+".png")
 static func paint(canvas:CanvasItem,style:String,rect:Rect2,phase:float,opacity:float=1)->bool:
 	if not STYLES.has(style):return false
+	if style in SizedSkillArt.HOLY and maxf(rect.size.x,rect.size.y)>=120:
+		if SizedSkillArt.paint(canvas,"holy_"+style,rect,phase,opacity):return true
 	if not textures.has(style):textures[style]=load((DETAIL_ROOT if style in DETAILS else ART_ROOT)+style+".png")
 	var texture:=textures[style] as Texture2D
 	if texture==null:return false
@@ -43,7 +46,7 @@ static func spawn(parent:Node,at:Vector2,style:String,size_value:float=48,second
 	# Keep the original world landing point when changing its rendering parent.
 	var player:=parent.get_tree().get_first_node_in_group("room_player") as RoomPlayer
 	if is_instance_valid(player) and is_instance_valid(player.room):parent=player.room
-	var fx:=HolyFX.new();fx.kind=style;fx.radius=size_value;fx.duration=maxf(.08,seconds);fx.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;parent.add_child(fx);fx.global_position=at+(Vector2(0,14) if GROUND_ANCHORS.has(style) or style=="step" else Vector2.ZERO);fx.z_index=0;fx.add_to_group("holy_visuals")
+	var fx:=HolyFX.new();fx.kind=style;fx.radius=size_value;fx.duration=maxf(.08,seconds);fx.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;parent.add_child(fx);fx.global_position=at+(Vector2(0,14) if GROUND_ANCHORS.has(style) or style=="step" else Vector2.ZERO);fx.z_index=0;fx.add_to_group("holy_visuals")
 	var ink:=CanvasItemMaterial.new();ink.light_mode=CanvasItemMaterial.LIGHT_MODE_UNSHADED;fx.material=ink;return fx
 func _process(delta:float)->void:
 	if _follow!=null:
@@ -61,4 +64,5 @@ func _draw()->void:
 		draw_set_transform(Vector2.ZERO,facing.angle());rect=Rect2(-radius,-radius*.5,radius*2,radius)
 	# Telegraphs retain their boundary for their full lifetime, even in low motion.
 	var opacity:=strength if kind=="warning" else strength*(1-smoothstep(.7,1.0,p))
+	if kind in ["court","sanctuary","cloud","prayer","grace"]:opacity*=.65
 	paint(self,kind,rect,.4 if ComicMotion.reduced() else p,opacity)

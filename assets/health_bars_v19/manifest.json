@@ -1,0 +1,137 @@
+{
+  "ally": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "55d88d",
+    "fill": "ally_fill.png",
+    "frame": "ally_frame.png",
+    "track": [
+      84,
+      99,
+      856,
+      57
+    ]
+  },
+  "elite": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "bd47c7",
+    "fill": "elite_fill.png",
+    "frame": "elite_frame.png",
+    "track": [
+      103,
+      108,
+      817,
+      40
+    ]
+  },
+  "enemy": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "d73a4b",
+    "fill": "enemy_fill.png",
+    "frame": "enemy_frame.png",
+    "track": [
+      99,
+      108,
+      826,
+      39
+    ]
+  },
+  "king": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "d93746",
+    "fill": "king_fill.png",
+    "frame": "king_frame.png",
+    "track": [
+      114,
+      109,
+      797,
+      39
+    ]
+  },
+  "mage": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "b55ee8",
+    "fill": "mage_fill.png",
+    "frame": "mage_frame.png",
+    "track": [
+      122,
+      101,
+      779,
+      55
+    ]
+  },
+  "nameless": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "5f9de9",
+    "fill": "nameless_fill.png",
+    "frame": "nameless_frame.png",
+    "track": [
+      138,
+      106,
+      749,
+      44
+    ]
+  },
+  "sephra": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "58b5ed",
+    "fill": "sephra_fill.png",
+    "frame": "sephra_frame.png",
+    "track": [
+      144,
+      110,
+      736,
+      37
+    ]
+  },
+  "tide": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "49d0b4",
+    "fill": "tide_fill.png",
+    "frame": "tide_frame.png",
+    "track": [
+      112,
+      107,
+      792,
+      43
+    ]
+  },
+  "verena": {
+    "canvas": [
+      1024,
+      256
+    ],
+    "color": "dc8d42",
+    "fill": "verena_fill.png",
+    "frame": "verena_frame.png",
+    "track": [
+      139,
+      106,
+      746,
+      44
+    ]
+  }
+}

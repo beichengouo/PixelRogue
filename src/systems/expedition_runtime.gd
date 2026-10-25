@@ -31,12 +31,12 @@ func _process(delta: float) -> void:
 			var category:=GameState.bag_category(node.contents[0])
 			var capacity:= "遗物不占格" if category=="relic" else "%s %d/24"%[{"gear":"装备","potion":"药剂","material":"物资"}.get(category,"物资"),GameState.bag_slots({},category)]
 			text="%s 拾取 %s%s · %s" % [UIFlow.hint(&"interact"),str(node.contents[0].name),"等%d件"%node.contents.size() if node.contents.size()>1 else "",capacity]
-	for group in ["mushrooms","chests"]:
+	for group in ["chests"]:
 		for node in get_tree().get_nodes_in_group(group):
 			var d: float=node.global_position.distance_to(main.player.global_position)
-			if bool(node.get("in_range")) and d < distance and (not bool(node.get("_harvested")) if group=="mushrooms" else not node.is_open):
+			if bool(node.get("in_range")) and d < distance and not node.is_open:
 				distance=d
-				var caption:="采集发光蘑菇" if group=="mushrooms" else "打开宝箱"
+				var caption:="打开宝箱"
 				text="按 %s %s" % [UIFlow.hint(&"interact"),caption]
 	var store=StorefrontInteraction.closest(get_tree(),main.player)
 	if store!=null and store.global_position.distance_to(main.player.global_position)<distance:
@@ -51,10 +51,10 @@ func interact() -> bool:
 	for node in get_tree().get_nodes_in_group("expedition_loot"):
 		var d:float=node.global_position.distance_to(main.player.global_position)
 		if d<85 and d<distance:best=node;distance=d
-	# Respect the closest existing mushroom, chest or operating storefront.
-	for group in ["mushrooms","chests"]:
+	# Respect the closest existing chest or operating storefront.
+	for group in ["chests"]:
 		for node in get_tree().get_nodes_in_group(group):
-			if node.global_position.distance_to(main.player.global_position)<distance and bool(node.get("in_range")) and (not bool(node.get("_harvested")) if group=="mushrooms" else not node.is_open):return false
+			if node.global_position.distance_to(main.player.global_position)<distance and bool(node.get("in_range")) and not node.is_open:return false
 	var store=StorefrontInteraction.closest(get_tree(),main.player)
 	if store!=null and store.global_position.distance_to(main.player.global_position)<distance:return false
 	if best is LootDrop:return best.try_pickup()

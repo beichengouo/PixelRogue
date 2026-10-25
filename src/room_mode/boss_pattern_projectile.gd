@@ -8,6 +8,7 @@ var bounces:=0
 var returning:=false
 var return_after:=1.5
 var pause_left:=0.0
+var return_pause:=.65
 var returned:=false
 var age:=0.0
 func _boss()->RoomBoss:
@@ -24,7 +25,9 @@ func _physics_process(dt:float)->void:
 	var ahead:=global_position+direction*(speed*dt+8)
 	var wall:=not room.projectile_clear(global_position,ahead)
 	if returning and not returned and (age>=return_after or wall):
-		pause_left=.65;BossPatternWarning.create(get_parent(),room,{"at":global_position,"shape":"line","end":_start,"width":9},.65,Color("ff8cb2"));return
+		pause_left=return_pause
+		var warning:=BossPatternWarning.create(get_parent(),room,{"at":global_position,"shape":"line","dir":-direction,"end":global_position-direction*minf(range_limit,360),"width":9},return_pause,Color("ff8cb2"))
+		warning.set_meta("boss_owner",get_meta("boss_owner",0));return
 	if wall and bounces>0:
 		var query:=PhysicsRayQueryParameters2D.create(global_position,ahead,collision_mask,[get_rid()])
 		var hit:=get_world_2d().direct_space_state.intersect_ray(query)

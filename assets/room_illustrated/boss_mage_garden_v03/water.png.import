@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ekfpujitksvj"
-path="res://.godot/imported/water.png-7c9b2ee4b52ea2a0764f32262dba1000.ctex"
+path.s3tc="res://.godot/imported/water.png-7c9b2ee4b52ea2a0764f32262dba1000.s3tc.ctex"
+path.etc2="res://.godot/imported/water.png-7c9b2ee4b52ea2a0764f32262dba1000.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/boss_mage_garden_v03/water.png"
-dest_files=["res://.godot/imported/water.png-7c9b2ee4b52ea2a0764f32262dba1000.ctex"]
+dest_files=["res://.godot/imported/water.png-7c9b2ee4b52ea2a0764f32262dba1000.s3tc.ctex", "res://.godot/imported/water.png-7c9b2ee4b52ea2a0764f32262dba1000.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

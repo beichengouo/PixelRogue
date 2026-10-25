@@ -43,3 +43,16 @@ func drop(items:Array,at:Vector2,impulse=Vector2(0,-230),force_new:=false)->Loot
 	node.velocity=Vector2(rng.randf_range(-100,100),rng.randf_range(-100,100)) if impulse.x==0 else impulse*0.4
 	return node
 
+
+func _award_experience(enemy:EnemyBase)->void:
+	if not main.graph.staged:super._award_experience(enemy);return
+	var record:Dictionary=main.graph.rooms[main.graph.current]
+	var amount:=StageRules.experience(main.graph.stage_index,int(record.get("strength",1)),str(record.kind),enemy is BossBase)
+	GameState.gain_exp(amount)
+
+func complete_stage_bonus()->void:
+	var record:Dictionary=main.graph.rooms[main.graph.current]
+	if not main.graph.staged or not main.graph.boss_rush_completed or bool(record.delta.get("extreme_bonus",false)):return
+	record.delta.extreme_bonus=true
+	var items:=ItemDB.roll_offers(StageRules.EXTREME_BONUS_COUNT,rng,0,&"reward",[],StageRules.EXTREME_BONUS_MIN_RARITY)
+	if not items.is_empty():_burst_items(items,main.level.nearest_clear(main.player.global_position+Vector2(0,36),8))

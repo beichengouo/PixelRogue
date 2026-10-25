@@ -31,6 +31,12 @@ func _desired_position()->Vector2:
 	if is_instance_valid(room):room.fit_to_view(view)
 	var frame:=_background_frame()
 	var reference:=view_reference_size if view_reference_size.x>0 and view_reference_size.y>0 else frame.size
+	# A redraw may extend scenery beyond the old canvas without changing how
+	# much playable space the camera shows. Only explicitly authored scenes opt in.
+	if view_reference_size.is_zero_approx() and is_instance_valid(room) and is_instance_valid(room.illustration) and room.illustration.active():
+		var ratio:Array=room.illustration.data.get("camera_reference_floor_ratio",[])
+		if ratio.size()==2 and float(ratio[0])>0 and float(ratio[1])>0:
+			reference=room.illustration.visual_room_rect().size*Vector2(float(ratio[0]),float(ratio[1]))
 	var factor:=minf(view.x/maxf(1,reference.x*VISIBLE_ROOM_FRACTION),maxf(1,view.y)/maxf(1,reference.y*VISIBLE_ROOM_FRACTION))
 	# Very wide or tall windows still need the whole battle viewport covered.
 	factor=maxf(factor,maxf(view.x/maxf(1,frame.size.x),maxf(1,view.y)/maxf(1,frame.size.y)))

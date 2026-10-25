@@ -4,6 +4,15 @@ signal departure_requested(payload: Dictionary)
 signal resume_requested(snapshot: Dictionary)
 signal back_requested
 signal closed
+signal backpack_requested(tab:StringName)
+var preparation:=CampPreparation.new()
+var departure_blocker:Callable
+var _departure_footer:VBoxContainer
+var _departure_view:CampDepartureOverview
+var _show_departure_options:=false
+var _show_difficulty_info:=false
+var _sendoff:CampFarewellDialogue
+var _backpack_focus:=""
 var world_mode:=false
 var _root: Control
 var _canvas: Control
@@ -12,15 +21,33 @@ var _portrait: TextureRect
 var _status: Label
 var _page = "prepare"
 var _tabs: Array[Button]=[]
-var cart: Array = []
-var chapter_id:StringName=ChapterCatalog.FIRST
-var constellation:=""
+var cart:Array:
+	get:return preparation.loadout
+	set(value):preparation.loadout=value
+var chapter_id:StringName:
+	get:return preparation.chapter_id
+	set(value):preparation.chapter_id=value
+var constellation:String:
+	get:return preparation.constellation
+	set(value):preparation.constellation=value
 var _fate_ui:FateUI
 var _fate_dialogue:DialogueUI
-var combat_mode := "rooms"
-var carried = 0
-var initial_level := 1
-var difficulty := 1
+var _conversation:DialogueUI
+var combat_mode:String:
+	get:return preparation.combat_mode
+	set(value):preparation.combat_mode=value
+var carried:int:
+	get:return preparation.carried
+	set(value):preparation.carried=value
+var initial_level:int:
+	get:return preparation.initial_level
+	set(value):preparation.initial_level=value
+var skill_loadout:Array:
+	get:return preparation.skill_loadout
+	set(value):preparation.skill_loadout=value
+var difficulty:int:
+	get:return preparation.difficulty
+	set(value):preparation.difficulty=value
 var danger:int:
 	get:return RunDifficulty.multiplier(difficulty)-1
 	set(value):difficulty=RunDifficulty.from_legacy_danger(value)
@@ -28,6 +55,8 @@ var _busy = false
 var _npc = "sylphiette"
 var _scene: Dictionary = {}
 var _line = 0
+var _scene_label: Label
+var _scene_input_frame := -1
 var _rarity_filter = -1
 var _farewell = false
 var _scroll: ScrollContainer
@@ -41,12 +70,13 @@ var _feedback=""
 var _shop_timer=0.0
 var _shop_clock:Label
 var _page_cache:Node
-var _prepare_step:=0
 var _show_presets:=false
+var _show_build_paths:=false
 var _loadout_selected:=""
 var _loadout_filter:="all"
 var _loadout_scroll:=0
 var _page_heading:Label
+var _page_back:Button
 var _preset_index=0
 var _preset_name="方案1"
 var _contract_timers:Dictionary={}
@@ -68,7 +98,7 @@ func _ready() -> void:
 	art.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	_root.add_child(art)
 	_root.add_child(UiFactory.dim_layer(0.42))
-	_canvas=StarUi.frame(_root,Vector2(1160,654))
+	_canvas=StarUi.frame(_root,Vector2(1160,720 if MobileControls.enabled() else 654))
 	var row=UiFactory.hbox(24)
 	row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	_canvas.add_child(row)
@@ -101,7 +131,7 @@ func _ready() -> void:
 	panel.add_child(right)
 	var page_header:=UiFactory.hbox(12);right.add_child(page_header)
 	_page_heading=PixelUi.title("",26);_page_heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL;page_header.add_child(_page_heading)
-	var page_back:=PixelUi.compact_button("返回营地" if world_mode else "关闭",18);page_header.add_child(page_back);page_back.pressed.connect(close)
+	_page_back=PixelUi.compact_button("返回营地" if world_mode else "关闭",18);page_header.add_child(_page_back);_page_back.pressed.connect(close)
 	var tabs=UiFactory.hbox(8)
 	right.add_child(tabs)
 	tabs.visible=not world_mode
@@ -118,6 +148,7 @@ func _ready() -> void:
 	scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	scroll.follow_focus=true
 	right.add_child(scroll)
+	_departure_footer=UiFactory.vbox(5);_departure_footer.name="DepartureFooter";right.add_child(_departure_footer);_departure_footer.hide()
 	_body=UiFactory.vbox(10)
 	_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	scroll.add_child(_body)
@@ -165,9 +196,7 @@ func open(result = false) -> void:
 	_scene={}
 	_line=0
 	_page="result" if result else "prepare"
-	cart.clear()
-	carried=0;initial_level=1
-	difficulty=1
+	if not world_mode:preparation.restore_memory()
 	_root.visible=true
 	_scroll.scroll_vertical=0
 	UIFlow.push_screen(self)
@@ -176,6 +205,8 @@ func open(result = false) -> void:
 
 func is_open() -> bool:return _root.visible
 func close() -> void:
+	if is_instance_valid(_sendoff):_sendoff.cancel()
+	if is_instance_valid(_conversation): _conversation.cancel()
 	if is_instance_valid(_workshop):_workshop.close()
 	_visit_return={}
 	var was_open:=is_open()
@@ -199,6 +230,15 @@ func _switch(page: String) -> void:
 
 func _input(event: InputEvent) -> void:
 	if not is_open() or not UIFlow.is_top(self):return
+	if _page == "relations" and not _scene.is_empty() and is_instance_valid(_scene_label):
+		var point := Vector2.INF
+		if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT: point = event.position
+		elif event is InputEventScreenTouch and event.pressed: point = event.position
+		if event.is_action_pressed("ui_accept") or (point.is_finite() and _scene_label.get_global_rect().has_point(point)):
+			# Touch can also emit an emulated mouse event; one gesture advances once.
+			if _scene_input_frame != Engine.get_process_frames():
+				_scene_input_frame = Engine.get_process_frames(); _advance_scene()
+			get_viewport().set_input_as_handled(); return
 	if event.is_action_pressed("ui_cancel") or event.is_action_pressed("pause_menu"):
 		if not _visit_return.is_empty():_return_from_visit();get_viewport().set_input_as_handled();return
 		close()
@@ -230,6 +270,7 @@ func _refresh() -> void:
 	if _page!="relations": _portrait.texture=load(Characters.portrait_path())
 	_left.visible=_page not in ["warehouse","prepare"]
 	_page_heading.text={"prepare":"出发准备","warehouse":"回廊仓库","shop":"姜糖的星灯商铺","contracts":"冒险者工会","relations":"灯下相谈","result":"旅途记事"}.get(_page,"星辉回廊")
+	_page_back.visible=_page!="prepare"
 	for child in _body.get_children():
 		if child==_warehouse and _page=="warehouse":continue
 		_body.remove_child(child)
@@ -239,6 +280,8 @@ func _refresh() -> void:
 		button.set_meta("interaction_selected",str(button.get_meta("camp_page"))==_page);InteractionSkin.apply_button(button,"camp")
 	_status.text="金库 %d 金 · %s\n%s" % [Outpost.gold(),RunDifficulty.title(difficulty),_feedback if not _feedback.is_empty() else "死亡不追回装备与随身金币"]
 	if not _visit_return.is_empty():_button("返回"+str(_visit_return.title),_return_from_visit).set_meta("focus_token","visit_return")
+	for child in _departure_footer.get_children():_departure_footer.remove_child(child);child.queue_free()
+	_departure_footer.visible=_page=="prepare"
 	match _page:
 		"prepare":_prepare()
 		"warehouse":_show_warehouse()
@@ -264,124 +307,49 @@ func _prepare() -> void:
 			resume_requested.emit(saved))
 		_button("放弃本局并准备新出征",func()->void:_confirm.popup_centered())
 		return
-	combat_mode="rooms"
-	var steps:=UiFactory.hbox(12);_body.add_child(steps)
-	for index in 3:
-		var button:=PixelUi.button(["1  角色与目的地","2  携带物资","3  确认出发"][index],19,0,46)
-		button.set_meta("interaction_selected",_prepare_step==index);steps.add_child(button)
-		button.pressed.connect(func()->void:_prepare_step=index;_refresh())
-	_text("%s · 金库 %d 金 · Lv.%d · %s"%[Characters.current_name(),Outpost.gold(),initial_level,RunDifficulty.title(difficulty)],18,PixelUi.GOLD)
-	if not _feedback.is_empty():_text(_feedback,17,PixelUi.GOLD)
-	if _prepare_step==0:_prepare_character()
-	elif _prepare_step==1:_prepare_supplies()
-	else:_prepare_confirmation()
+	_departure_view=CampDepartureOverview.new();_departure_view.camp=self;_departure_view.draft=preparation
+	_body.add_child(_departure_view);_departure_view.mount_footer(_departure_footer)
 
-func _prepare_character()->void:
-	_button("出发星象 · "+str(FateCatalog.STARS.get(constellation,{}).get("name","不选择")),_open_stars)
-	_text("目的地",19,PixelUi.GOLD)
-	var destination:=OptionButton.new();destination.name="ChapterDestination";_compact_option(destination)
-	var chapter_ids:Array=[ChapterCatalog.FIRST,ChapterCatalog.NEXT]
-	for id in chapter_ids:
-		var available:=ChapterCatalog.unlocked(id)
-		destination.add_item(ChapterCatalog.title(id)+(" · 通关苏醒林地后开放" if not available else ""));destination.set_item_disabled(destination.item_count-1,not available)
-	destination.select(maxi(0,chapter_ids.find(chapter_id)));destination.item_selected.connect(func(index:int)->void:chapter_id=chapter_ids[index]);_body.add_child(destination)
-	_text("难度",19,PixelUi.GOLD)
-	var challenge:=OptionButton.new();challenge.name="RunDifficulty";_compact_option(challenge)
-	for option in RunDifficulty.OPTIONS:challenge.add_item(RunDifficulty.description(int(option.id)),int(option.id))
-	challenge.select(clampi(difficulty,1,4)-1);challenge.item_selected.connect(func(index:int)->void:difficulty=challenge.get_item_id(index));_body.add_child(challenge)
-	_passive_options()
-	var row:=UiFactory.hbox(24);_body.add_child(row)
-	var starting:=SpinBox.new();starting.name="InitialLevel";starting.min_value=1;starting.max_value=DepartureLevels.MAXIMUM;starting.allow_greater=false;starting.allow_lesser=false;starting.step=1;starting.prefix="初始等级 ";initial_level=clampi(initial_level,1,DepartureLevels.MAXIMUM);starting.value=initial_level;row.add_child(starting);MobileControls.decorate_number(starting)
-	var tuition:=PixelUi.label("费用 %d 金"%DepartureLevels.cost(initial_level),18);row.add_child(tuition)
-	starting.value_changed.connect(func(value:float)->void:initial_level=clampi(int(value),1,DepartureLevels.MAXIMUM);starting.set_value_no_signal(initial_level);tuition.text="费用 %d 金"%DepartureLevels.cost(initial_level))
-	_text("最高10级；每级依次50、100、150金。仅本局有效，越过大门时才扣费。",16,PixelUi.MUTED)
-	_button("下一步 · 选择携带物资",func()->void:_prepare_step=1;_refresh())
+func bind_preparation(value:CampPreparation)->void:
+	preparation=value
+	if not preparation.changed.is_connected(_preparation_changed):preparation.changed.connect(_preparation_changed)
+func _preparation_changed()->void:
+	if not is_open():return
+	var focus:=get_viewport().gui_get_focus_owner()
+	if focus is LineEdit or focus is SpinBox:
+		if is_instance_valid(_departure_view):_departure_view.refresh_footer()
+	else:_refresh.call_deferred()
+func departure_error()->String:
+	if departure_blocker.is_valid():
+		var blocked:=str(departure_blocker.call())
+		if not blocked.is_empty():return blocked
+	return preparation.error()
+func request_backpack(tab:StringName)->void:
+	var focus:=get_viewport().gui_get_focus_owner()
+	_backpack_focus=str(focus.get_meta("focus_token","")) if focus!=null else ""
+	close();backpack_requested.emit(tab)
 
-func _prepare_supplies()->void:
-	_text("装备每槽1件 · 药剂最多15瓶 · 取用仓库物资不再次收费",18,PixelUi.GOLD)
-	var money:=SpinBox.new();money.name="CarriedGold";money.min_value=0;money.max_value=Outpost.gold();money.step=1;money.prefix="随身金币 ";money.value=carried;money.value_changed.connect(func(value:float)->void:carried=int(value));_body.add_child(money);MobileControls.decorate_number(money)
-	var selected:=UiFactory.hbox(12);_body.add_child(selected)
-	var summary:=PixelUi.label("携带清单 · %d件"%cart.size(),20,PixelUi.GOLD);summary.size_flags_horizontal=Control.SIZE_EXPAND_FILL;selected.add_child(summary)
-	var clear:=PixelUi.compact_button("清空清单",17);clear.disabled=cart.is_empty();selected.add_child(clear);clear.pressed.connect(func()->void:cart.clear();_refresh())
-	_button("配装方案 ▾" if not _show_presets else "收起配装方案 ▴",func()->void:_show_presets=not _show_presets;_refresh())
-	if _show_presets:_presets()
-	var filter:=OptionButton.new();_compact_option(filter);filter.add_item("全部品质")
-	for i in 4:filter.add_item(ItemDB.rarity_name(i))
-	filter.select(_rarity_filter+1);filter.item_selected.connect(func(i:int)->void:_rarity_filter=i-1;_refresh());_body.add_child(filter)
-	var loadout:=CampLoadoutView.new();loadout.name="DepartureLoadout";loadout.loadout=cart;loadout.selected_id=_loadout_selected;loadout.combat_mode=combat_mode;loadout.quality=_rarity_filter;loadout._filter=_loadout_filter;loadout.initial_scroll=_loadout_scroll
-	loadout.selection_changed.connect(func(id:String)->void:_loadout_selected=id)
-	loadout.equip_requested.connect(_add_cart)
-	loadout.remove_requested.connect(func(id:String)->void:cart.erase(id);_refresh())
-	_body.add_child(loadout)
-	_button("前往仓库整理",_visit_page.bind("warehouse"));_button("前往制作与研究",func()->void:_workshop.open_camp())
-	_button("下一步 · 核对出发清单",func()->void:_prepare_step=2;_refresh())
-
-func _preparation_check()->String:
-	var value:=CampPreparation.new();value.constellation=constellation;value.chapter_id=chapter_id;value.loadout=cart;value.carried=carried;value.initial_level=initial_level;value.difficulty=difficulty
-	return value.error()
+func _preparation_check()->String:return departure_error()
 func _resolve_preparation_error(message:String)->void:
-	_feedback=message
-	if message.contains("仓库超量"):_switch("warehouse");_feedback=message;_refresh();return
-	_prepare_step=0 if message.begins_with("初始等级") or message.contains("失名") or message.contains("请选择有效的战斗难度") else 1
-	_refresh()
-func _prepare_confirmation()->void:
-	_text("出发星象 · "+str(FateCatalog.STARS.get(constellation,{}).get("name","不选择")),20,PixelUi.GOLD)
-	_text("角色 · %s\n目的地 · %s\n难度 · %s\n出发等级 · Lv.%d\n同行被动 · %s"%[Characters.current_name(),ChapterCatalog.title(chapter_id),RunDifficulty.title(difficulty),initial_level,str(PassiveDefinitions.for_character(Characters.current_id()).filter(func(p:Dictionary)->bool:return StringName(p.id)==PassiveDefinitions.selected(Characters.current_id()))[0].name)],21)
-	_text("携带物资 · %d件 · 随身金币 %d金\n等级费用 %d金 · 确认不扣费，出门后结余 %d金"%[cart.size(),carried,DepartureLevels.cost(initial_level),Outpost.gold()-carried-DepartureLevels.cost(initial_level)],19,PixelUi.GOLD)
-	for id in cart:
-		var item:=ExpeditionData.resolve(str(id));_text("• "+str(item.name),18,ItemDB.rarity_color(int(item.rarity)))
-	if cart.is_empty():_text("空装出发",18,PixelUi.MUTED)
-	for advice in CampPreparation.advice(cart):_text("准备提醒 · "+advice,17,PixelUi.GOLD)
-	_button("前往仓库整理",_visit_page.bind("warehouse"));_button("前往制作与研究",func()->void:_workshop.open_camp())
-	_prepare_preview()
-	_text("出发后重置训练配置。成功撤离可带回绑定装备，死亡仍会损失带入物品。",17,PixelUi.MUTED)
-	if Outpost.overfull():_text("仓库超量，请先清理或扩容。",18,Palette.UI_DANGER)
-	if maxi(int(Outpost.data.bonds.sylphiette),int(Outpost.data.bonds.iris))>=200:
-		var farewell:=CheckButton.new();farewell.text="出发前听一段专属送行";farewell.button_pressed=_farewell;farewell.toggled.connect(func(value:bool)->void:_farewell=value);_body.add_child(farewell)
-	var error:=_preparation_check()
-	if not error.is_empty():
-		_text(error,18,Palette.UI_DANGER)
-		_button("前往修正准备项目",_resolve_preparation_error.bind(error))
-	var depart:=_button("确认准备 · 开启四座大门" if world_mode else "出发 · 进入初始房间",_depart,not error.is_empty())
-	depart.tooltip_text=error if not error.is_empty() else "仅确认清单；越过大门时重新验证并扣除物资。"
-
-func _add_cart(id: String) -> void:
-	var item=ExpeditionData.resolve(id)
-	if not ItemDB.can_equip(item):return
-	if cart.count(id)>=int(Outpost.data.inventory.get(id,0)):return
-	if ItemDB.is_equippable(item):
-		for old in cart.duplicate():
-			if ItemDB.slot_of(ExpeditionData.resolve(str(old)))==ItemDB.slot_of(item):cart.erase(old)
-	else:
-		var count=0
-		for old in cart:
-			if ItemDB.is_usable(ExpeditionData.resolve(str(old))):count+=1
-		if count>=15:return
-	cart.append(id)
-	_refresh()
+	_feedback=message;_refresh()
 
 func _depart() -> void:
 	if _busy or not is_open():return
-	var error:=_preparation_check()
+	var error:=departure_error()
 	if not error.is_empty():_resolve_preparation_error(error);return
-	if Outpost.overfull():_switch("warehouse");return
-	var cost=carried+DepartureLevels.cost(initial_level)
-	for id in cart:
-		if cart.count(id)>int(Outpost.data.inventory.get(id,0)):_feedback="所选物品库存不足，请重新选择。";_refresh();return
-	if cost>Outpost.gold():
-		_status.text="金币不足，还需要 %d 金。" % (cost-Outpost.gold())
-		return
 	if _farewell:
-		_farewell=false
-		_text("希露媞雅：‘回来的时候，先叫我的名字。’
-伊莉丝：‘灯会亮着。我们会一起等。’",22,PixelUi.GOLD)
-		_button("约好了 · 正式出发",_depart)
+		_farewell=false;_busy=true
+		if not is_instance_valid(_sendoff):
+			_sendoff=CampFarewellDialogue.new();add_child(_sendoff)
+			_sendoff.finished.connect(func()->void:_busy=false;_depart())
+			_sendoff.aborted.connect(func()->void:_busy=false;_refresh())
+		var lines:Dictionary={"sylphiette":"我会照顾好自己，也会记得你留灯的位置。","xixifu":"等我回来，再听听小扣今天想讲什么吧。","ilyua":"风会领我向前。若我愿意回来，就坐在同一扇窗边。"}
+		_sendoff.play_local_lines([{"who":Characters.current_name(),"text":str(lines.get(str(Characters.current_id()),"我会认真选择每一步。"))},{"who":"伊莉丝","text":"归路亮着，但去留始终由你自己回答。"}],"出发送行")
 		return
 	_busy=true
-	cart=cart.filter(func(id:Variant)->bool:return ItemDB.available_in_mode(ExpeditionData.resolve(str(id)),combat_mode))
-	var payload:Dictionary={"chapter_id":str(chapter_id),"departure":{"constellation":constellation,"chapter_id":str(chapter_id),"loadout":cart.duplicate(),"carried":carried,"danger":danger,"difficulty":difficulty,"initial_level":initial_level,"combat_mode":combat_mode},"combat_mode":combat_mode}
-	close()
-	departure_requested.emit(payload)
+	preparation.save_memory()
+	var payload:Dictionary={"chapter_id":str(chapter_id),"departure":{"constellation":constellation,"chapter_id":str(chapter_id),"loadout":cart.duplicate(),"carried":carried,"danger":danger,"difficulty":difficulty,"initial_level":initial_level,"skill_loadout":skill_loadout.duplicate(),"combat_mode":combat_mode},"combat_mode":combat_mode}
+	close();departure_requested.emit(payload)
 
 func _contracts()->void:
 	_contract_timers.clear();_contract_states.clear()
@@ -441,25 +409,24 @@ func _relations() -> void:
 	selector.select(maxi(0,npcs.find(_npc)))
 	selector.item_selected.connect(func(i:int)->void:_npc=str(npcs[i]);_scene={};_refresh())
 	_body.add_child(selector)
-	_portrait.texture=load({"iris":Story.P_GODDESS,"sylphiette":Characters.DATA[Characters.DEFAULT_ID].portraits.stand,"merchant":NpcArt.portrait_path("merchant"),"tavern":NpcArt.portrait_path("tavern")}[_npc])
+	_portrait.texture=DialogueCast.portrait(_npc)
 	var bond=int(Outpost.data.bonds.get(_npc,0))
 	_text("%s · 好感 %d / 500" % [BondRules.NAMES[_npc],bond],21,PixelUi.GOLD)
 	_text(BondRules.range_text(bond),18,PixelUi.GOLD)
+	if _npc in ["sylphiette","xixifu","ilyua"]:
+		_text("与你的关系 · "+str({"friendship":"友情","mutual_interest":"彼此心意","romance":"恋人"}.get(CampStory.relationship(_npc),"友情")),17,PixelUi.MUTED)
 	_text("0–50 初识 · 50–100 相知 · 100–200 信任\n200–300 亲近 · 300–400 默契 · 400–500 羁绊",15,PixelUi.MUTED)
 	_text("完成对应人物委托可增加好感；剧情每次2–5点，每人每日最多8点，超时会扣减。关系不增加永久战斗属性。",16,PixelUi.MUTED)
 	if _npc in ["merchant","tavern"]:_button("查看对方的委托",func()->void:_switch("contracts"))
-	if not _scene.is_empty():
-		var portrait_path = Story.P_GODDESS
-		if _npc=="sylphiette":
-			portrait_path=Characters.DATA[Characters.DEFAULT_ID].dialogue_portraits[["thoughtful","happy","determined"][_line%3]]
-		elif _npc in ["merchant","tavern"]:
-			portrait_path=NpcArt.portrait_path(_npc,["inspect","success","welcome"][_line%3])
-		elif _npc=="iris" and ResourceLoader.exists("res://assets/characters/dialogue/goddess_welcome_pose_v1.png"):
-			portrait_path="res://assets/characters/dialogue/goddess_welcome_pose_v1.png"
-		_portrait.texture=load(portrait_path)
-		_text(str(_scene.lines[_line]),22)
-		_button("继续" if _line<_scene.lines.size()-1 else "记住这个约定",_advance_scene)
-		return
+
+	if _npc=="iris":
+		for memory in CampStory.memories():
+			if not bool(memory.unlocked):continue
+			_button("纪念回响 · "+str(memory.title)+" · "+str(Characters.DATA[StringName(memory.hero)].name),_play_event.bind(memory,true))
+	var daily:=CampStory.daily_event(_npc)
+	if not daily.is_empty():_button("灯下闲谈 · 每日一次",_play_event.bind(daily,false),not CampStory.available(_npc,daily))
+	var invitation:=CampStory.invitation_event(_npc)
+	if not invitation.is_empty():_button(str(invitation.title),_play_event.bind(invitation,false),not CampStory.available(_npc,invitation))
 	for event in CampStory.EVENTS.get(_npc,[]):
 		var seen=Outpost.data.events.has(_npc+":"+str(event.id))
 		_button(str(event.title)+(" · 回看" if seen else ""),_play_event.bind(event,seen),not seen and not CampStory.available(_npc,event))
@@ -467,24 +434,66 @@ func _relations() -> void:
 	if bond>=200:_button("亲近服务 · 开启出发送行",func()->void:_farewell=true;_switch("prepare"))
 
 func _play_event(event: Dictionary, replay: bool) -> void:
-	_scene=event.duplicate(true)
-	_scene["replay"]=replay
-	_line=0
-	_refresh()
+	if _conversation != null and _conversation.is_open(): return
+	_scene = event.duplicate(true)
+	_scene["replay"] = replay
+	_line = 0
+	if _conversation == null:
+		_conversation = DialogueUI.new()
+		add_child(_conversation)
+	var lines := CampStory.dialogue_lines(_scene.get("lines", []))
+	var choices: Array = []
+	for raw: Dictionary in _scene.get("choices", []):
+		var option := raw.duplicate(true)
+		option["disabled"] = not replay and str(raw.get("relation", "")) == "romance" and not CampStory.can_romance(_npc)
+		option["unavailable_reason"] = "需先互相表达心意，且尚未与其他人确认恋爱关系。" if option.disabled else ""
+		option["reply"] = CampStory.dialogue_lines(raw.get("reply", []))
+		choices.append(option)
+	if not _conversation.finished.is_connected(_finish_local_event): _conversation.finished.connect(_finish_local_event, CONNECT_ONE_SHOT)
+	_conversation.play_local_scene({"title":str(event.get("title", "灯下交谈")), "lines":lines, "choices":choices}, _commit_local_event)
+
+func _commit_local_event(option: Dictionary) -> bool:
+	if _scene.is_empty(): return false
+	if bool(_scene.get("replay", false)) or bool(_scene.get("committed", false)): return true
+	if bool(option.get("defer", false)):
+		_scene.committed = true
+		return true
+	if not Outpost.bond_event(_npc, str(_scene.id), int(_scene.gain), bool(_scene.get("gift", false)), str(option.get("relation", ""))): return false
+	_scene.committed = true
+	_scene.resolved = true
+	return true
+
+func _finish_local_event() -> void:
+	_scene = {}
+	if is_open(): _refresh()
 
 func _advance_scene() -> void:
 	if _line<_scene.lines.size()-1:
 		_line+=1
 		_refresh()
 		return
-	if not bool(_scene.get("replay",false)):
-		Outpost.bond_event(_npc,str(_scene.id),int(_scene.gain),bool(_scene.get("gift",false)))
+	if not _scene.get("choices",[]).is_empty() and not bool(_scene.get("resolved",false)): return
+	if not bool(_scene.get("replay",false)) and not bool(_scene.get("committed",false)):
+		if not Outpost.bond_event(_npc,str(_scene.id),int(_scene.gain),bool(_scene.get("gift",false))):
+			_status.text="记录未保存，原好感、物品与关系保持不变。请重试。";return
 	_scene={}
 	_refresh()
+
+func _choose_relation(option:Dictionary)->void:
+	if _scene.is_empty() or bool(_scene.get("resolved",false)):return
+	var replay:=bool(_scene.get("replay",false))
+	var defer_choice:=bool(option.get("defer",false))
+	if not replay and not defer_choice:
+		if not Outpost.bond_event(_npc,str(_scene.id),int(_scene.gain),bool(_scene.get("gift",false)),str(option.get("relation",""))):
+			_status.text="心意尚未记录：条件不满足或保存失败，原状态已保留。";return
+	_scene.resolved=true;_scene.committed=true
+	_scene.lines.append_array(CampStory.dialogue_lines(option.get("reply", [])));_line=_scene.lines.size()-1;_refresh()
 
 func _result() -> void:
 	var r:Dictionary=Outpost.data.get("last_result",{})
 	if r.is_empty():_text(CampStory.INTRO,20);return
+	if str(r.get("clear_tier","")) in ["normal","extreme"]:_text("极限通关" if r.clear_tier=="extreme" else "正常通关",28,PixelUi.GOLD)
+	if int(r.get("exclusive_materials",0))>0:_text("专属战利品 · 星誓辉印 ×%d · 已入库"%int(r.exclusive_materials),20,PixelUi.GOLD)
 	_text("撤回成功" if r.get("outcome","")=="extracted" else "旅途结束 · 未撤收益全部损失",25,PixelUi.GOLD)
 	_text("第%d波 · 本次入库 %d 金 · 出发投入 %d 金" % [int(r.get("wave",0)),int(r.get("gold",0)),int(r.get("spent",0))],18)
 	if r.get("outcome","")=="extracted":
@@ -495,6 +504,11 @@ func _result() -> void:
 		_text("损失随身金币 %d 金；本次出征物品未带回。"%int(r.get("coins",0)),18,Palette.UI_DANGER)
 		for item in r.get("lost_items",[]):_text("遗失 · %s ×%d"%[str(item.name),int(item.count)],17,PixelUi.MUTED)
 	_material_result(r)
+	var progress:=WorkshopGoals.result_text(r.get("goal_progress",{}))
+	if not progress.is_empty():_text(progress,18,PixelUi.GOLD)
+	_text("下一次出征 · "+WorkshopGoals.describe(),17,PixelUi.MUTED)
+	_button("前往研究与制作",func()->void:_workshop.open_camp("craft"))
+	if not str(r.get("memory_unlocked","")).is_empty():_text("新纪念回响 · "+str(r.memory_unlocked)+" · 可在伊莉丝处回看",20,PixelUi.GOLD)
 	_text("战斗难度 · "+RunDifficulty.title(int(r.get("difficulty",1))),17,PixelUi.GOLD)
 	for row in r.get("rows",[]):
 		if ItemDB.is_material(ExpeditionData.resolve(str(row.get("id","")))):continue
@@ -504,7 +518,7 @@ func _result() -> void:
 			item.bound=bool(row.get("bound",false));var icon:=UiFactory.item_icon(item,32);income.add_child(icon);BoundEquipment.badge(icon,item)
 		income.add_child(PixelUi.label("%s ×%d   →   仓库存入" % [row.name,int(row.count)] if bool(row.get("stored",false)) else "%s ×%d   →   %d 金" % [row.name,int(row.count),int(row.gold)],17))
 		_body.add_child(income)
-	_text("绑定装备、材料与蘑菇已存入仓库；未绑定物品自动出售。" if r.get("outcome","")=="extracted" else "金库、人物关系和已知线索保留。",17,PixelUi.MUTED)
+	_text("绑定装备与材料已存入仓库；未绑定物品自动出售。" if r.get("outcome","")=="extracted" else "金库、人物关系和已知线索保留。",17,PixelUi.MUTED)
 	if Outpost.overfull():_text("仓库超量，下一次出发前请清理或扩容。",18,Palette.UI_DANGER)
 	var build:Dictionary=r.get("build",{})
 	if not build.is_empty():
@@ -524,7 +538,7 @@ func _material_result(result:Dictionary)->void:
 	for entry in [["collected","本局收集"],["alchemy","炼金消耗"],["enchant","刻印消耗"],["crafted","炼金产物"],["brought_back","实际带回"],["lost","本局损失"]]:
 		var values:Dictionary=report.get(str(entry[0]),{});var summary:Dictionary={};var parts:PackedStringArray=[]
 		for id in values:
-			var category:="首领素材" if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(id)) else "蘑菇" if str(id).begins_with("glow_mushroom_") else "药剂" if ItemDB.is_usable(ExpeditionData.resolve(str(id))) else "地区样本" if str(id).ends_with("_sample") else "其他材料"
+			var category:="首领素材" if MaterialWorkshopCatalog.BOSS_MATERIALS.has(str(id)) else "旧物记录" if str(id).begins_with("glow_mushroom_") else "药剂" if ItemDB.is_usable(ExpeditionData.resolve(str(id))) else "地区样本" if str(id).ends_with("_sample") else "其他材料"
 			summary[category]=int(summary.get(category,0))+int(values[id])
 		for category in summary:parts.append("%s ×%d"%[str(category),int(summary[category])])
 		if not parts.is_empty():_text(str(entry[1])+" · "+"、".join(parts),18)
@@ -547,12 +561,12 @@ func _material_result(result:Dictionary)->void:
 func _visit_page(page:String)->void:
 	var current:=_body.find_child("DepartureLoadout",true,false) as CampLoadoutView
 	if is_instance_valid(current):_loadout_filter=current._filter;_loadout_scroll=current._grid_scroll.scroll_vertical
-	if _visit_return.is_empty():_visit_return={"page":_page,"scroll":_scroll.scroll_vertical,"title":"出发准备" if _page=="prepare" else "旅途记事","step":_prepare_step}
+	if _visit_return.is_empty():_visit_return={"page":_page,"scroll":_scroll.scroll_vertical,"title":"出发准备" if _page=="prepare" else "旅途记事"}
 	_page=page;_scroll.scroll_vertical=0;_refresh()
 func _return_from_visit()->void:
 	var target:=_visit_return;_visit_return={}
 	if target.is_empty():return
-	_page=str(target.page);_prepare_step=int(target.step);_refresh();_restore_page_focus.call_deferred("",int(target.scroll))
+	_page=str(target.page);_refresh();_restore_page_focus.call_deferred("",int(target.scroll))
 func _focus_page_target(token:String)->void:
 	if not is_inside_tree() or not is_open():return
 	await get_tree().process_frame
@@ -574,43 +588,6 @@ func _show_warehouse()->void:
 	_warehouse.refresh()
 	if _body.get_child_count()==1:_button("返回出发准备 · 金库 %d 金" % Outpost.gold(),_switch.bind("prepare"))
 
-func _presets()->void:
-	_text("配装方案 · 保存与取用不扣金币 · 缺货只提示，不自动购买",16,PixelUi.MUTED)
-	var row=UiFactory.hbox(8);_body.add_child(row)
-	var selector=OptionButton.new();_compact_option(selector);row.add_child(selector)
-	selector.set_meta("focus_token","preset_selector")
-	for i in 3:selector.add_item(str(Outpost.data.get("presets",{}).get(str(i),{}).get("name","方案%d · 未保存" % (i+1))))
-	selector.select(_preset_index)
-	selector.item_selected.connect(func(i:int)->void:
-		_preset_index=i;_preset_name=str(Outpost.data.get("presets",{}).get(str(i),{}).get("name","方案%d" % (i+1)));_refresh())
-	var name_edit=LineEdit.new();name_edit.placeholder_text="方案名称";name_edit.text=_preset_name;name_edit.max_length=20;name_edit.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(name_edit)
-	name_edit.text_changed.connect(func(text:String)->void:_preset_name=text)
-	var actions=UiFactory.hbox(8);_body.add_child(actions)
-	var save=PixelUi.compact_button("保存当前",16);actions.add_child(save)
-	save.set_meta("focus_token","preset_save")
-	save.pressed.connect(func()->void:
-		_feedback="方案已保存；对应库存自动保留" if Outpost.save_preset(_preset_index,_preset_name,cart,carried,danger,difficulty) else "当前清单无效、缺货或保存失败";_refresh())
-	var take=PixelUi.compact_button("取用方案",16);actions.add_child(take);take.disabled=not Outpost.data.get("presets",{}).has(str(_preset_index))
-	take.set_meta("focus_token","preset_take")
-	take.pressed.connect(func()->void:
-		var preset=Outpost.use_preset(_preset_index)
-		if preset.is_empty():return
-		cart=preset.loadout;carried=int(preset.carried);difficulty=int(preset.difficulty)
-		cart=cart.filter(func(id:Variant)->bool:return ItemDB.available_in_mode(ExpeditionData.resolve(str(id)),combat_mode))
-		_feedback="方案已取用" if preset.missing.is_empty() else "缺货，未自动购买："+"、".join(preset.missing)
-		_refresh())
-	var clear=PixelUi.compact_button("删除方案",16);actions.add_child(clear);clear.disabled=take.disabled
-	clear.set_meta("focus_token","preset_delete")
-	clear.pressed.connect(func()->void:_feedback="方案已删除" if Outpost.delete_preset(_preset_index) else "保存失败，方案保留";_refresh())
-func _prepare_preview()->void:
-	var stats=Outpost.preview_loadout(cart)
-	stats.add_flat(&"max_hp",GameState.HP_PER_LEVEL*maxi(0,initial_level-1));stats.add_flat(&"attack",GameState.ATK_PER_LEVEL*maxi(0,initial_level-1))
-	var parts:PackedStringArray=[]
-	for entry in [[&"max_hp","生命"],[&"attack","攻击"],[&"move_speed","移速"],[&"crit_chance","暴击"],[&"crit_mult","暴伤"],[&"dash_cooldown","冲刺冷却"],[&"lifesteal","命中回血"]]:
-		parts.append("%s %s" % [entry[1],ItemInsight.stat_text(entry[0],stats.get_value(entry[0]))])
-	for entry in [[&"thorns","反伤"],[&"coin_gain","金币收益"],[&"attack_speed","攻速"]]:
-		if not is_equal_approx(stats.get_value(entry[0]),float(GameState.BASE_STATS[entry[0]])):parts.append("%s %s" % [entry[1],ItemInsight.stat_text(entry[0],stats.get_value(entry[0]))])
-	_text("出发属性（Lv.%d，无局内遗物/天赋）\n"%initial_level+" · ".join(parts),16,PixelUi.GOLD)
 func _camp_comparison(id:String)->String:
 	var item=ExpeditionData.resolve(id)
 	var candidate=cart.duplicate()
@@ -688,16 +665,6 @@ func _restore_page_focus(token: String, scroll: int) -> void:
 			if str(button.get_meta("camp_page"))==_page:button.grab_focus();break
 	_scroll.scroll_vertical=scroll
 
-func _passive_options()->void:
-	_text("同行之誓 · 出发后不可更改",18,PixelUi.GOLD)
-	var character:=Characters.current_id()
-	for passive:Dictionary in PassiveDefinitions.for_character(character):
-		var chosen:=StringName(passive.id)==PassiveDefinitions.selected(character)
-		var button:=_button(("◆ " if chosen else "◇ ")+str(passive.name),func()->void:PassiveDefinitions.select(character,StringName(passive.id));_refresh())
-		button.tooltip_text=str(passive.desc)
-		button.set_meta("focus_token","passive:"+str(passive.id))
-	_text(str(PassiveDefinitions.for_character(character).filter(func(p:Dictionary)->bool:return StringName(p.id)==PassiveDefinitions.selected(character))[0].desc),16,PixelUi.MUTED)
-
 func open_facility(page:String)->void:
 	if not world_mode or not UIFlow.can_open(self):return
 	_busy=false;_root.show();UIFlow.push_screen(self);_page=page;_scene={};_line=0
@@ -706,13 +673,7 @@ func open_facility(page:String)->void:
 	_refresh()
 
 func _open_stars()->void:
-	if _fate_ui==null:
-		_fate_ui=FateUI.new();add_child(_fate_ui)
-		_fate_ui.constellation_selected.connect(func(id:String)->void:constellation=id;_refresh())
-		_fate_ui.story_requested.connect(_fate_story)
-	if not StoryState.seen(&"fate_observation"):
-		_fate_story(true)
-	else:_fate_ui.open_stars(constellation)
+	_fate_story(false)
 func _fate_story(then_stars:=false)->void:
 	if _fate_dialogue==null:_fate_dialogue=DialogueUI.new();add_child(_fate_dialogue)
 	if then_stars:_fate_dialogue.finished.connect(func()->void:_fate_ui.open_stars(constellation),CONNECT_ONE_SHOT)

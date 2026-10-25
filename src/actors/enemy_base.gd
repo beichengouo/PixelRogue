@@ -39,6 +39,8 @@ var hp := 1.0
 var ilyua_root_left := 0.0
 var max_hp := 1.0
 var damage := 1.0
+var pressure_speed_revision := 1
+var combat_balance_revision := 25
 var move_speed := 1.0
 var coin_value := 1
 var telegraph := 0.0
@@ -130,6 +132,10 @@ func has_affix(id: StringName) -> bool:
 
 func is_elite() -> bool:
 	return not affixes.is_empty()
+
+func health_bar_style()->String:
+	if self is BossBase:return str((self as BossBase).boss_id)
+	return "elite" if is_elite() else "enemy"
 
 
 func _update_affixes(delta: float) -> void:
@@ -235,23 +241,9 @@ func _draw() -> void:
 	if not _show_hp_bar or _dead or hp <= 0.0 or max_hp <= 0.0 or (hp >= max_hp and room_pressure_growth==0):
 		return
 	var width := clampf(body_size.x + 14.0, 26.0, 54.0)
-	var height := 4.0
-	var origin := Vector2(-width * 0.5, -(body_size.y * 0.5 + 16.0))
-	if room_pressure_growth>0:
-		var font:=ThemeDB.fallback_font;var text:=str(room_pressure_growth)
-		var text_width:=font.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,13).x
-		var at:=origin+Vector2(-text_width-4,7)
-		draw_string_outline(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,13,2,Color(0,0,0,.9))
-		draw_string(font,at,text,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("ff4c59"))
-	# 底槽
-	draw_rect(Rect2(origin + Vector2(-1.0, -1.0), Vector2(width + 2.0, height + 2.0)),
-		Color(0.05, 0.06, 0.10, 0.85), true)
-	draw_rect(Rect2(origin, Vector2(width, height)), Color(0.16, 0.19, 0.26), true)
-	# 血量
-	var ratio := clampf(hp / max_hp, 0.0, 1.0)
-	var fill := Palette.ENEMY_HEALTH
-	draw_rect(Rect2(origin, Vector2(width * ratio, height)), fill, true)
-	draw_rect(Rect2(origin, Vector2(width * ratio, 1.0)), fill.lightened(0.35), true)
+	var height := 20.0
+	var origin := Vector2(-width * 0.5, -(body_size.y * 0.5 + 24.0))
+	UnitHealthArt.draw(self,Rect2(origin,Vector2(width,height)),hp/max_hp,health_bar_style(),room_pressure_growth)
 
 
 func navigation_paused() -> bool:
@@ -389,14 +381,17 @@ func _update_visual() -> void:
 		(visual as AnimatedSprite2D).flip_h = _facing < 0
 		if _pixel_enemy_art:_update_pixel_animation(visual as AnimatedSprite2D)
 	var color := Color.WHITE
-	if _flash > 0.0:
-		color = Color.WHITE.lerp(Color(2.2, 2.2, 2.2), float(SaveService.data.get("flash_strength", 1.0)))
+	if visual_impact_active():
+		color = Color.WHITE.lerp(Color(1.35, 1.35, 1.35), float(SaveService.data.get("flash_strength", 1.0)))
 	elif telegraph > 0.01:
 		color = Color(1.0 + 1.6 * telegraph, 1.0 + 0.35 * telegraph, 1.0 + 0.35 * telegraph)
 	elif is_enraged:
 		color = Color(1.45, 0.85, 0.85)
 	visual.modulate = color
 
+
+func visual_impact_active()->bool:
+	return _flash>0 and Time.get_ticks_msec()<int(get_meta("contact_flash_until",0))
 
 func visual_attack_state()->StringName:
 	return &"attack" if _visual_release_left>0.0 else &""
@@ -426,7 +421,7 @@ func begin_visual_release(duration:float)->void:
 func _update_pixel_animation(sprite:AnimatedSprite2D)->void:
 	sprite.flip_h=visual_facing_direction()<0
 	var action:=visual_attack_state()
-	if _flash>0.0:action=&"hurt"
+	if visual_impact_active() and action==&"":action=&"hurt"
 	elif action==&"":action=visual_locomotion_state()
 	if sprite.animation!=action:
 		sprite.play(action)
@@ -471,6 +466,7 @@ func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source:
 		amount = maxf(amount, max_hp * 0.055)
 	var damage_type:=_classify_damage(_source)
 	var before_hp:=hp
+	var before_shield:=affix_shield
 	if affix_shield>0:
 		var absorbed:=minf(affix_shield,amount)
 		affix_shield-=absorbed
@@ -482,13 +478,9 @@ func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source:
 	if applied>0:
 		RunBuildMetrics.hit(self,applied,_source,damage_type,fate_factor)
 		damage_applied.emit(self,applied,_source,damage_type)
-		_notify_equipment("on_enemy_damaged",[self,applied,_source,damage_type])
+	if applied>0 or affix_shield<before_shield:_notify_equipment("on_enemy_damaged",[self,applied+maxf(0,before_shield-affix_shield),_source,damage_type])
 	_flash = HURT_FLASH
-	if _pixel_enemy_art and visual is AnimatedSprite2D:
-		var sprite := visual as AnimatedSprite2D
-		sprite.play(&"hurt")
-		sprite.set_frame_and_progress(0, 0.0)
-		sprite.speed_scale = 1.0
+	if applied>0 or affix_shield<before_shield:Effects.contact_feedback(self,_source,is_crit,damage_type,applied<=0)
 	Effects.damage_number(
 		_fx(),
 		global_position + Vector2(0.0, -26.0),
@@ -496,7 +488,7 @@ func take_damage(amount: float, is_crit := false, from := Vector2.ZERO, _source:
 		is_crit,
 		Palette.UI_ACCENT if is_crit else Palette.UI_TEXT
 	)
-	Effects.hit_spark(_fx(), global_position, body_color, 6)
+	_update_visual()
 	queue_redraw()          # 头顶血条要跟着掉
 
 	if knockback:
@@ -708,3 +700,10 @@ func apply_burn(dps: float, duration: float, source: Node) -> void:
 
 func _room_position_clear(at:Vector2,size:Vector2)->bool:
 	return (level as RoomLevel).body_clear(at,maxf(size.x,size.y)*.5,kind==&"flyer") if level is RoomLevel else true
+
+func effective_chase_speed()->float:
+	# Keep raw temporary multipliers reversible; clamp only ordinary movement.
+	var pressure:float=RoomDirector.PRESSURE_SPEED[clampi(room_pressure_growth,0,5)]
+	var baseline:=base_speed*_speed_scale/maxf(1.0,pressure)
+	if has_affix(EnemyAffixes.HASTE):baseline/=1.25
+	return minf(move_speed,baseline*1.60)

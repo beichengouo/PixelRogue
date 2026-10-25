@@ -35,9 +35,12 @@ func _ready()->void:
 	room.register_unit_body(self,body_radius(),is_flying())
 	_nav_cd=float(get_instance_id()%13)*0.013
 func is_flying()->bool:return kind in [&"flyer",&"crystal_familiar"]
+func approach_action_speed()->float:
+	return move_speed if kind in [&"charger",&"treant",&"moss_badger"] else effective_chase_speed()
 func body_radius()->float:return 12.0
 
 func configure(enemy_kind: StringName) -> void:
+	enemy_kind=EnemyCombatPolicy.active_kind(enemy_kind)
 	var sample := WaveDirector.create_enemy(&"flyer" if enemy_kind==&"crystal_familiar" else enemy_kind)
 	kind=enemy_kind; display_name=sample.display_name; base_hp=sample.base_hp; base_damage=sample.base_damage
 	base_speed=sample.base_speed; base_coins=sample.base_coins; body_color=sample.body_color; body_size=sample.body_size; sprite_name=sample.sprite_name
@@ -78,7 +81,7 @@ func _physics_process(dt: float) -> void:
 	if _slow_time>0: velocity*=1-_slow_strength
 	if _rush<=0 and _windup<=0 and ilyua_root_left<=0:
 		var spread:=room.tactics.separation(room,self)
-		var speed:=move_speed*(1-_slow_strength if _slow_time>0 else 1.0)
+		var speed:=effective_chase_speed()*(1-_slow_strength if _slow_time>0 else 1.0)
 		var candidate:Vector2=velocity+spread*speed*.65
 		if room.segment_clear(global_position,global_position+candidate.normalized()*18,body_radius(),is_flying()):velocity=candidate.limit_length(speed)
 	velocity+=room_push;room_push=room_push.move_toward(Vector2.ZERO,900*dt)
@@ -132,14 +135,14 @@ func think(dt: float) -> void:
 	if is_instance_valid(affix_runtime) and affix_runtime.blocks_action():
 		velocity=Vector2.ZERO;return
 	if _rush>0:
-		_rush-=dt; velocity=_locked_direction*move_speed*3.0; return
+		_rush-=dt; velocity=_locked_direction*approach_action_speed()*3.0; return
 	if _windup>0:
 		_windup-=dt; velocity=Vector2.ZERO
 		if _windup<=0: _release()
 		return
 	_nav_cd-=dt
 	if _nav_cd<=0:
-		_nav_cd=0.22
+		_nav_cd=0.3
 		var goal:=target
 		if ranged:
 			if _firing_goal.is_zero_approx() or target.distance_to(_firing_target)>48 or not room.body_clear(_firing_goal,body_radius(),is_flying()) or not room.projectile_clear(_firing_goal,target) or global_position.distance_to(_firing_goal)<12:
@@ -153,14 +156,15 @@ func think(dt: float) -> void:
 	var visible:=room.projectile_clear(global_position,target) if ranged else room.sight(global_position,target)
 	# A regular melee windup freezes movement. Begin it only when the first
 	# 0.12s rush can enter the 20px contact area around an 11px player body.
-	var melee_reach:=64.0 if kind==&"thorn_mantis" else (150.0 if charging else (100.0 if kind==&"bomber" else minf(150.0,31.0+move_speed*0.30)))
+	# The scout does not rush after its windup; start only inside its knife reach.
+	var melee_reach:=48.0 if kind==&"goblin_scout" else 64.0 if kind==&"thorn_mantis" else (150.0 if charging else (100.0 if kind==&"bomber" else minf(150.0,31.0+effective_chase_speed()*0.30)))
 	var can_strike:=distance<(300.0 if ranged else melee_reach) and visible and (ranged or room.segment_clear(global_position,target,body_radius(),is_flying()))
-	velocity=Vector2.ZERO if can_strike and ((ranged and distance>=125) or (not ranged and not charging and kind!=&"bomber" and distance<=31.0)) else _travel*move_speed
+	velocity=Vector2.ZERO if can_strike and ((ranged and distance>=125) or (not ranged and not charging and kind!=&"bomber" and distance<=31.0)) else _travel*effective_chase_speed()
 	_detour_left=maxf(0,_detour_left-dt)
-	if _detour_left>0 and not can_strike:velocity=_detour*move_speed
+	if _detour_left>0 and not can_strike:velocity=_detour*effective_chase_speed()
 	if _action_cd<=0 and can_strike:
-		_action_cd=attack_cd(3.1 if kind==&"bell_snail" else 2.8 if kind==&"lantern_toad" else (2.6 if kind==&"dusk_acolyte" else (2.4 if ranged else 1.6)))
-		_locked_target=target;_locked_direction=(target-global_position).normalized(); _windup=.8 if kind==&"bell_snail" else .6 if kind==&"glimmer_spider" else 0.65 if charging or kind==&"bomber" else 0.45
+		_action_cd=attack_cd(2.8 if kind==&"goblin_mage" else 2.6 if kind==&"goblin_spearman" else 3.1 if kind==&"bell_snail" else 2.8 if kind==&"lantern_toad" else (2.6 if kind==&"dusk_acolyte" else (2.4 if ranged else 1.6)))
+		_locked_target=target;_locked_direction=(target-global_position).normalized(); _windup=.65 if kind==&"goblin_mage" else .55 if kind==&"goblin_spearman" else .8 if kind==&"bell_snail" else .6 if kind==&"glimmer_spider" else 0.65 if charging or kind==&"bomber" else 0.45
 		warn_attack("circle" if kind==&"bomber" else "arrow",_windup,100)
 		if kind==&"thorn_mantis":HostileAttackFX.pulse(_fx(),global_position+_locked_direction*18,"thorn_mantis","cast",32,_windup,_locked_direction.angle(),room)
 		if kind==&"glimmer_spider":HostileAttackFX.pulse(_fx(),global_position+_locked_direction*16,"glimmer_spider","cast",32,_windup,_locked_direction.angle(),room)
@@ -168,10 +172,10 @@ func think(dt: float) -> void:
 func _track_blockage(dt:float,before:Vector2,commanded:Vector2)->void:
 	if _rush>0 or _windup>0 or commanded.length()<20:
 		_blocked_time=0;return
-	if before.distance_to(global_position)<move_speed*dt*0.12:_blocked_time+=dt
+	if before.distance_to(global_position)<effective_chase_speed()*dt*0.12:_blocked_time+=dt
 	else:_blocked_time=0
-	if _blocked_time<0.4:return
-	_blocked_time=0;_nav_cd=0
+	if _blocked_time<1.0:return
+	_blocked_time=0;_nav_cd=0;_firing_goal=Vector2.ZERO;room.tactics.invalidate_position(self)
 	_detour=room.crowd_detour(global_position,_travel,body_radius(),self,is_flying())
 	_detour_left=0.4 if not _detour.is_zero_approx() else 0.0
 
@@ -192,7 +196,10 @@ func _check_contact()->void:
 
 func _release() -> void:
 	stop_warning(); begin_visual_release(0.25)
-	if kind==&"thorn_mantis":
+	if kind==&"goblin_scout":
+		_goblin_stab()
+		if is_instance_valid(affix_runtime):affix_runtime.on_attack_released(kind,global_position,_locked_direction)
+	elif kind==&"thorn_mantis":
 		begin_visual_release(.5);_sickle_sweep();_sickle_followup=.25
 		if is_instance_valid(affix_runtime):affix_runtime.on_attack_released(kind,global_position,_locked_direction)
 	elif kind in [&"charger",&"treant",&"moss_badger"]:
@@ -219,10 +226,10 @@ func shoot(_aim:Vector2=Vector2.ZERO) -> void:
 	HostileAttackFX.pulse(_fx(),global_position+direction*18,family,"cast",46,.45,direction.angle(),room)
 	for index in count:
 		var aim:=direction.rotated((index-(count-1)*.5)*.17)
-		var bullet:=RoomProjectile.new();bullet.room=room;bullet.is_friendly=false;bullet.damage_owner=&"enemy";bullet.hostile_fx=family;bullet.hostile_width=32;bullet.range_limit=600;bullet.hostile_effects=player_debuffs()
-		bullet.enable_hostile_tracking(aim)
+		var bullet:=RoomProjectile.new();bullet.room=room;bullet.is_friendly=false;bullet.damage_owner=&"enemy";bullet.hostile_fx=family;bullet.hostile_width=32;bullet.range_limit=600;bullet.hostile_effects=player_debuffs();bullet.boss_source_tag=boss_wave_tag
+		if kind!=&"goblin_spearman":bullet.enable_hostile_tracking(aim)
 		bullet.cruel_damage=has_affix(EnemyAffixes.CRUEL)
-		_fx().add_child(bullet);bullet.setup(global_position+aim*18,aim,attack_damage()*(.65 if kind in [&"lantern_toad",&"bell_snail"] else 1.0),230 if kind==&"flyer" else 260,room,player,Color("ff7189"))
+		_fx().add_child(bullet);bullet.setup(global_position+aim*18,aim,attack_damage()*(.65 if kind in [&"lantern_toad",&"bell_snail"] else 1.0),330 if kind==&"goblin_spearman" else 240 if kind==&"goblin_mage" else 230 if kind==&"flyer" else 260,room,player,Color("ff7189"))
 
 func _think_backline(dt:float)->void:
 	var target:=aggro_position();var distance:=global_position.distance_to(target)
@@ -236,7 +243,7 @@ func _think_backline(dt:float)->void:
 		_nav_cd=.3
 		var goal:=room.tactics.attack_position(room,self,attack_target(),true,body_radius(),false)
 		_travel=room.path_direction(global_position,goal,body_radius(),false)
-	velocity=_travel*move_speed if distance<180 or distance>330 or not room.projectile_clear(global_position,target) else Vector2.ZERO
+	velocity=_travel*effective_chase_speed() if distance<180 or distance>330 or not room.projectile_clear(global_position,target) else Vector2.ZERO
 	if _action_cd>0 or distance>360 or not room.sight(global_position,target):return
 	# Retreat before casting where terrain offers space; after three seconds
 	# trapped casters still act rather than waiting forever against a wall.
@@ -272,6 +279,13 @@ func _advance_flames(dt:float)->void:
 func restore_flame_warnings()->void:
 	for event in flame_pending:BossPatternWarning.create(_fx(),room,{"at":event.at,"shape":"circle","radius":48},float(event.left),Color("ff7851"))
 
+func _goblin_stab()->void:
+	for target in [player]+get_tree().get_nodes_in_group("allies"):
+		if not is_instance_valid(target) or target.hp<=0 or (target!=player and target.get("room")!=room):continue
+		var offset:Vector2=target.global_position-global_position
+		if offset.length()>48 or (offset.length()>1 and _locked_direction.dot(offset.normalized())<.5):continue
+		if room.sight(global_position,target.global_position):target.take_damage(attack_damage(),global_position,self)
+
 func _sickle_sweep() -> void:
 	HostileAttackFX.pulse(_fx(),global_position+_locked_direction*26,"thorn_mantis","impact",64,.25,_locked_direction.angle(),room)
 	for target in [player]+get_tree().get_nodes_in_group("allies"):
@@ -282,7 +296,21 @@ func _sickle_sweep() -> void:
 
 func can_see_target() -> bool: return room.sight(global_position,aggro_position())
 func warn_attack(style:String,seconds:float,reach:float)->void:
-	if _warning!=null:_warning.begin(style,seconds,reach,_locked_direction,0)
+	if _warning==null:return
+	_warning.room=room;_warning.fan_spread=1.6;_warning.shot_offsets=[0.0]
+	var form:=style;var distance:=reach
+	if kind in [&"charger",&"treant",&"moss_badger"]:
+		form="charge";distance=move_speed*3*(.22 if kind==&"moss_badger" else .45)
+	elif kind==&"goblin_scout":form="melee";distance=48;_warning.fan_spread=TAU/3
+	elif kind==&"thorn_mantis":form="melee";distance=58;_warning.fan_spread=TAU/3
+	elif kind in [&"caster",&"bomber"]:form="blast";distance=36
+	elif EnemyCombatPolicy.ranged_affix_allowed(kind):
+		form="shot"
+		var count:=2 if kind==&"bell_snail" else 3 if kind in [&"flyer",&"lantern_toad"] else 1
+		_warning.shot_offsets.clear()
+		for index in count:_warning.shot_offsets.append((index-(count-1)*.5)*.17)
+	else:form="charge";distance=approach_action_speed()*3*.12
+	_warning.begin(form,seconds,distance,_locked_direction,-body_size.y*.5-18)
 func _update_visual()->void:
 	super._update_visual()
 	if _windup>0 and _warning!=null:_warning.direction=_locked_direction
@@ -318,7 +346,7 @@ func visual_art_kind()->StringName:return kind
 var _art_direction:=Vector2.RIGHT
 func _update_pixel_animation(sprite:AnimatedSprite2D)->void:
 	var art_id:=visual_art_kind()
-	var action:StringName=&"hurt" if _flash>0 else (&"spawn" if _visual_spawn_left>0 else (&"windup" if _windup>0 else (&"charge" if _rush>0 and kind in [&"charger",&"treant"] else (&"attack" if _visual_release_left>0 else visual_locomotion_state()))))
+	var action:StringName=&"spawn" if _visual_spawn_left>0 else &"windup" if _windup>0 else &"charge" if _rush>0 and kind in [&"charger",&"treant"] else &"attack" if _visual_release_left>0 else &"hurt" if visual_impact_active() else visual_locomotion_state()
 	if _windup>0 or _visual_release_left>0 or _rush>0:_art_direction=_locked_direction
 	elif velocity.length_squared()>64:_art_direction=velocity
 	var wanted:=PixelEnemyArt.directional_action(art_id,action,_art_direction)
@@ -328,7 +356,7 @@ func _update_pixel_animation(sprite:AnimatedSprite2D)->void:
 	if action==&"spawn":
 		sprite.pause();sprite.frame=clampi(int((1-_visual_spawn_left/.55)*sprite.sprite_frames.get_frame_count(wanted)),0,sprite.sprite_frames.get_frame_count(wanted)-1)
 	elif action in [&"windup",&"attack"]:
-		var duration:=.65 if kind in [&"charger",&"treant",&"bomber"] else .45
+		var duration:=.65 if kind in [&"charger",&"treant",&"bomber",&"goblin_mage"] else .55 if kind==&"goblin_spearman" else .45
 		var progress:=clampf(1-_windup/duration,0,1) if action==&"windup" else clampf(1-_visual_release_left/_visual_release_duration,0,1)
 		sprite.pause();sprite.frame=mini(sprite.sprite_frames.get_frame_count(wanted)-1,int(progress*sprite.sprite_frames.get_frame_count(wanted)))
 	else:

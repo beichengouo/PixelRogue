@@ -38,6 +38,19 @@ static func hit_spark(parent: Node, where: Vector2, color: Color, count := 6) ->
 	_burst(parent, where, color, count, 60.0, 200.0, 0.28, 2.0, 4.0)
 
 
+static func contact_feedback(target:EnemyBase,source:Node,critical:bool,kind:StringName,shield_only:=false)->bool:
+	var now:=Time.get_ticks_msec()
+	if now<int(target.get_meta("contact_feedback_until",0)):
+		# The full effect is throttled per target, but every hit still has a tiny contact.
+		hit_spark(target._fx(),target.global_position,target.body_color,1)
+		return false
+	target.set_meta("contact_feedback_until",now+80);target.set_meta("contact_flash_until",now+60)
+	var style:="shield" if shield_only else "contract" if kind==&"ally" else "arrow" if Characters.current_id()==&"ilyua" else "contract" if Characters.current_id()==&"xixifu" else "holy"
+	if CombatContactFX.spawn(target._fx(),target.global_position+Vector2(0,-4),style,critical)==null:
+		hit_spark(target._fx(),target.global_position,target.body_color,1)
+	AudioManager.play(&"shield_hit" if shield_only else &"impact_critical" if critical else &"impact_hit",-14 if critical else -20,0)
+	return true
+
 static func death_burst(parent: Node, where: Vector2, color: Color, count := 14) -> void:
 	_burst(parent, where, color, count, 90.0, 300.0, 0.5, 3.0, 6.0)
 
@@ -114,6 +127,7 @@ static func trail_dot(parent: Node, where: Vector2, color: Color, size := 3.0) -
 	dot.scale_amount_min = size
 	dot.scale_amount_max = size * 1.6
 	dot.color = color
+	dot.finished.connect(dot.queue_free, CONNECT_ONE_SHOT)
 	_attach(parent, dot, where)
 	dot.emitting = true
 

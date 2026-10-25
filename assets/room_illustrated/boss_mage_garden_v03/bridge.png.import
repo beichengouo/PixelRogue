@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ch42yui1nljkb"
-path="res://.godot/imported/bridge.png-c9ba8c433228170f3b1e619686c1e752.ctex"
+path.s3tc="res://.godot/imported/bridge.png-c9ba8c433228170f3b1e619686c1e752.s3tc.ctex"
+path.etc2="res://.godot/imported/bridge.png-c9ba8c433228170f3b1e619686c1e752.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/boss_mage_garden_v03/bridge.png"
-dest_files=["res://.godot/imported/bridge.png-c9ba8c433228170f3b1e619686c1e752.ctex"]
+dest_files=["res://.godot/imported/bridge.png-c9ba8c433228170f3b1e619686c1e752.s3tc.ctex", "res://.godot/imported/bridge.png-c9ba8c433228170f3b1e619686c1e752.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

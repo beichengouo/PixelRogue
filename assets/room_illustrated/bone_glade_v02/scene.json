@@ -2,55 +2,132 @@
   "version": 1,
   "id": "bone_glade_v02",
   "canvas": [
-    1536,
-    1024
+    2816,
+    1792
   ],
   "floor_rect_px": [
-    64,
-    128,
-    1408,
-    795.8260869565217
+    117.33333333333333,
+    224.0,
+    2581.333333333333,
+    1392.695652173913
   ],
   "planes": [
     {
-      "path": "background.png"
+      "path": "detail_v17/background_0_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_0_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_0.png",
+      "layer": "background",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/background_1_1.png",
+      "layer": "background",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_0_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        0,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_0.png",
+      "layer": "walls",
+      "rect_px": [
+        0,
+        896,
+        1408,
+        896
+      ]
+    },
+    {
+      "path": "detail_v17/walls_1_1.png",
+      "layer": "walls",
+      "rect_px": [
+        1408,
+        896,
+        1408,
+        896
+      ]
     }
   ],
   "gates": {
     "north": {
       "path": "door_north.png",
       "rect_px": [
-        640,
-        0,
-        255,
-        145
+        1173.3333333333333,
+        0.0,
+        467.5,
+        253.75
       ]
     },
     "south": {
       "path": "door_south.png",
       "rect_px": [
-        640,
-        837,
-        255,
-        187
+        1173.3333333333333,
+        1464.75,
+        467.5,
+        327.25
       ]
     },
     "west": {
       "path": "door_west.png",
       "rect_px": [
-        0,
-        392,
-        92,
-        177
+        0.0,
+        686.0,
+        168.66666666666666,
+        309.75
       ]
     },
     "east": {
       "path": "door_east.png",
       "rect_px": [
-        1441,
-        392,
-        95,
-        177
+        2641.833333333333,
+        686.0,
+        174.16666666666666,
+        309.75
       ]
     }
   },
@@ -832,5 +909,9 @@
     }
   ],
   "surface_water_polygons_px": [],
-  "source_title": "遗骨草甸"
+  "source_title": "遗骨草甸",
+  "camera_reference_floor_ratio": [
+    1.0909090909090908,
+    1.2867132867132867
+  ]
 }

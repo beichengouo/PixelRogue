@@ -5,6 +5,7 @@ var caster: RoomSkillCaster
 var passive_runtime:PassiveRuntime
 var equipment_mechanics: EquipmentMechanics
 var ilyua_runtime: IlyuaRuntime
+var emotes:HeroEmote
 var holy_runtime:HolyRuntime
 var firing := false
 var movement_override := Vector2.ZERO
@@ -15,11 +16,13 @@ var _dash_collision_layer:=-1
 var _normal_dash_phase:=false
 var _dash_origin:=Vector2.ZERO
 var _mouse_attack_blocked := true
+var _skill_animation_serial := -1
 var _holy_animation_seen:=-1
 var _holy_pose_left:=0.0
 
 func set_extraction_pose(pose: StringName, hide_model := false) -> void:
-	if pose!=&"" and is_instance_valid(caster):caster.clear_input_buffer()
+	if pose!=&"" and is_instance_valid(caster):caster.cancel_cast()
+	if pose!=&"" and is_instance_valid(emotes):emotes.clear()
 	super.set_extraction_pose(pose, hide_model)
 	if pose != &"":
 		_dash_spell_active = false
@@ -44,6 +47,7 @@ func _ready() -> void:
 	caster=RoomSkillCaster.new(); caster.actor=self; caster.room=room; add_child(caster)
 	add_to_group("room_player")
 	MobileControls.bind_actor(self)
+	emotes=HeroEmote.new();emotes.actor=self;add_child(emotes)
 	var cursor:=RoomAimCursor.new();cursor.actor=self;cursor.name="AimCursor";add_child(cursor)
 	UIFlow.stack_changed.connect(func() -> void:
 		if UIFlow.has_screen():_mouse_attack_blocked=true)
@@ -103,10 +107,12 @@ func _physics_process(dt: float) -> void:
 			collision_mask=(_dash_collision_mask&~Layers.UNIT_BODY)|Layers.ENEMY
 		elif _dash_collision_mask>=0:_restore_dash_collision()
 	# Launch from the resolved current position, including walls and dash travel.
+	var fate_from:=global_position
 	move_and_slide()
 	if _normal_dash_phase:
 		var bounds:=room.bounds().grow(-12)
 		position=Vector2(clampf(position.x,bounds.position.x,bounds.end.x),clampf(position.y,bounds.position.y,bounds.end.y))
+	if is_instance_valid(equipment_mechanics):equipment_mechanics.fate_runtime.record_motion(fate_from,global_position,not forest_stepping and not _normal_dash_phase and _hurt_timer<=0 and extraction_pose==&"",_normal_dash_phase)
 	if not pilot and auto_mode and aim_override.is_zero_approx():
 		var automatic:=RoomInput.auto_aim(self);firing=automatic!=Vector2.ZERO
 		if firing:aim_direction=automatic
@@ -114,7 +120,7 @@ func _physics_process(dt: float) -> void:
 		var pointer := RoomInput.pointer_aim(self)
 		if not pointer.is_zero_approx():aim_direction=pointer
 	if absf(aim_direction.x)>0.1:facing=1 if aim_direction.x>0 else -1
-	if firing and _attack_cd<=0 and extraction_pose==&"":
+	if firing and _attack_cd<=0 and extraction_pose==&"" and not caster.busy():
 		var receipt := BasicAttackReceipt.new(self)
 		var roll := Combat.roll_attack(stats,Rng.stream())
 		roll.damage=float(roll.damage)*1.5
@@ -125,7 +131,7 @@ func _physics_process(dt: float) -> void:
 			equipment_mechanics.on_basic_fired(aim_direction,receipt)
 		_attack_cd=(.44 if is_instance_valid(ilyua_runtime) and ilyua_runtime.ultimate_left>0 else .70)/maxf(0.1,stats.get_value(&"attack_speed"))
 		_swing_timer=0.18
-		if is_instance_valid(holy_runtime):_animation_request+=1
+		if is_instance_valid(holy_runtime) or bool(_sprite.sprite_frames.get_meta("handdrawn",false)):_animation_request+=1
 	for slot in 4:
 		if not pilot and Input.is_action_just_pressed(["skill_1","skill_2","skill_3","ultimate"][slot]): caster.request(slot)
 	if not pilot:_try_potions()
@@ -140,7 +146,9 @@ func request_dash() -> void:
 	request_dash_direction(movement if movement != Vector2.ZERO else aim_direction)
 
 func stop_room_travel_motion()->void:
-	if is_instance_valid(caster):caster.clear_input_buffer()
+	if is_instance_valid(equipment_mechanics):equipment_mechanics.fate_runtime.motion_reset()
+	if is_instance_valid(emotes):emotes.clear()
+	if is_instance_valid(caster):caster.cancel_cast()
 	# Transition screens pause physics, so a dash's remaining time otherwise
 	# survives the entire load and resumes at the destination's entrance.
 	_dash_timer=0;_dash_spell_active=false
@@ -159,7 +167,7 @@ func request_attack()->void:
 		if not equipment_mechanics.fire_basic(aim_direction,roll,receipt):fire(aim_direction,float(roll.damage),430,true,receipt)
 		equipment_mechanics.on_basic_fired(aim_direction,receipt)
 	_attack_cd=(.44 if is_instance_valid(ilyua_runtime) and ilyua_runtime.ultimate_left>0 else .70)/maxf(.1,stats.get_value(&"attack_speed"));_swing_timer=.18
-	if is_instance_valid(holy_runtime):_animation_request+=1
+	if is_instance_valid(holy_runtime) or bool(_sprite.sprite_frames.get_meta("handdrawn",false)):_animation_request+=1
 
 func request_dash_direction(direction: Vector2) -> void:
 	if hp <= 0.0 or _dash_cd > 0.0 or direction.is_zero_approx(): return
@@ -167,17 +175,18 @@ func request_dash_direction(direction: Vector2) -> void:
 	_invuln=maxf(_invuln,0.16);_dash_spell_active=true;_dash_spell_fx()
 	if is_instance_valid(ilyua_runtime):ilyua_runtime.on_dash_started()
 
-func take_damage(amount: float, from: Vector2, source: Node = null) -> void:
+func take_damage(amount: float, from: Vector2, source: Node = null, direct_hit := true) -> void:
 	if is_instance_valid(ilyua_runtime) and _invuln>0.0 and (_dash_timer>0.0 or ilyua_runtime.step_left>0) and amount>0.0:
 		ilyua_runtime.on_damage_refused(source)
 	if CampSession.active:return
 	var before_hp:=hp
 	var before_shield:=shield_hp
 	if is_instance_valid(holy_runtime) and _invuln<=0:amount=holy_runtime.protect(amount,source)
-	super.take_damage(amount,from,source)
+	super.take_damage(amount,from,source,direct_hit)
 	if hp<before_hp and hp>0 and is_instance_valid(equipment_mechanics):equipment_mechanics.etching.hurt()
 	if shield_hp<before_shield:
 		AudioManager.play(&"shield_break" if shield_hp<=0 else &"shield_hit",-9 if shield_hp<=0 else -16,0)
+		if shield_hp<=0:CombatContactFX.spawn(get_parent(),global_position,&"shield",true)
 		if is_instance_valid(equipment_mechanics):equipment_mechanics.legendary.shield_absorbed()
 	if is_instance_valid(holy_runtime):
 		if shield_hp<before_shield:holy_runtime.on_shield_absorbed(before_shield-shield_hp)
@@ -208,7 +217,21 @@ func fire(dir: Vector2, amount: float, speed_value: float, basic: bool, receipt:
 
 func _update_animation() -> void:
 	if _sprite==null:return
-	var holy:=is_instance_valid(holy_runtime)
+	if is_instance_valid(caster) and caster.busy() and hp>0 and extraction_pose==&"":
+		var cast_direction := RoomHeroArt.direction_name(caster._cast_direction)
+		var cast_animation := StringName("skill_cast_" + cast_direction)
+		if _sprite.sprite_frames.has_animation(cast_animation):
+			if _sprite.animation != cast_animation or caster._pending_slot>=0 and _skill_animation_serial<0:
+				_sprite.play(cast_animation); _sprite.set_frame_and_progress(0,0); _skill_animation_serial=maxi(0,caster._pending_slot)
+			_sprite.speed_scale = 1.0; _sprite.flip_h = RoomHeroArt.flip_for("skill_cast",cast_direction)
+			RoomHeroArt.align(_sprite); return
+	if hp>0 and extraction_pose==&"" and _hurt_timer>0 and _flash>.14 and _sprite.sprite_frames.has_animation(&"hurt"):
+		if _sprite.animation!=&"hurt":_sprite.play(&"hurt");_sprite.set_frame_and_progress(0,0)
+		_sprite.speed_scale=1;_sprite.flip_h=RoomHeroArt.utility_flip(_sprite.sprite_frames,facing);RoomHeroArt.align(_sprite);return
+	# Painted spellcasters have finite prepare/release/recover clips. Restart
+	# them on an actual shot, including moving shots, rather than looping or
+	# leaving a non-looping movement cast frozen on its final frame.
+	var holy:=is_instance_valid(holy_runtime) or (bool(_sprite.sprite_frames.get_meta("handdrawn",false)) and not is_instance_valid(ilyua_runtime))
 	if holy and _holy_animation_seen!=_animation_request and (_swing_timer>0 or _cast_timer>0):
 		_holy_pose_left=.32/minf(2.5,maxf(1,stats.get_value(&"attack_speed")*.55))
 	var moving:=velocity.length()>20
@@ -217,7 +240,7 @@ func _update_animation() -> void:
 		action=("back_attack" if velocity.normalized().dot(aim_direction)<-0.45 else "move_attack") if moving else "attack"
 	var wanted:=StringName(action+"_"+RoomHeroArt.direction_name(aim_direction))
 	var bow_action:bool=is_instance_valid(ilyua_runtime) and action in ["attack","move_attack","back_attack"]
-	var holy_action:bool=is_instance_valid(holy_runtime) and action in ["attack","move_attack","back_attack"]
+	var holy_action:bool=holy and action in ["attack","move_attack","back_attack"]
 	if hp<=0: wanted=&"death"
 	elif extraction_pose==&"prayer": wanted=&"prayer"
 	elif extraction_pose!=&"": wanted=&"interact"
@@ -239,7 +262,7 @@ func _update_animation() -> void:
 	if holy_action and extraction_pose==&"" and hp>0 and _holy_animation_seen!=_animation_request:
 		_holy_animation_seen=_animation_request;_sprite.play(wanted);_sprite.set_frame_and_progress(0,0)
 	_sprite.speed_scale=minf(2.5,maxf(1,stats.get_value(&"attack_speed")*.55)) if holy_action else maxf(.1,stats.get_value(&"attack_speed")*.5) if bow_action else clampf(velocity.length()/180.0,0.75,1.15) if moving else 1.0
-	_sprite.flip_h=facing<0 if wanted in [&"death",&"interact",&"prayer"] else RoomHeroArt.flip_for(action,RoomHeroArt.direction_name(aim_direction))
+	_sprite.flip_h=RoomHeroArt.utility_flip(_sprite.sprite_frames,facing) if wanted in [&"death",&"interact",&"prayer"] else RoomHeroArt.flip_for(action,RoomHeroArt.direction_name(aim_direction))
 	RoomHeroArt.align(_sprite)
 
 func _draw() -> void:

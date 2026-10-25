@@ -98,13 +98,13 @@ func _apply_layers() -> void:
 		var path := str(sprite.texture.resource_path).get_file()
 		var layer_name := "background" if path=="background.png" else ("doors" if path.begins_with("door_") else "water_bridge")
 		for plane in level.illustration.data.get("planes",[]):
-			if str(plane.path)==path:layer_name=str(plane.get("layer",layer_name))
+			if sprite.texture.resource_path==RoomSceneArtCatalog.ROOT+str(level.illustration.data.id)+"/"+str(plane.path):layer_name=str(plane.get("layer",layer_name))
 		sprite.visible=visible_layers.get(layer_name,true)
 	level.shell_art.visible=visible_layers.get("background",true) and not level.illustration.active()
 	level.props_root.visible=visible_layers.get("objects",true)
 	level.water_root.visible=visible_layers.get("water_bridge",true)
 	for child in level.decor_root.get_children():
-		var layer_name:="buildings" if child is RoomServiceProp else "objects"
+		var layer_name:="lights" if child is RoomLightProp else ("buildings" if child is RoomServiceProp else "objects")
 		for item in level.scene_objects:
 			if str(item.id)==str(child.get_meta("scene_object_id","")):layer_name=str(item.get("layer",layer_name))
 		child.visible=visible_layers.get(layer_name,true)

@@ -6,13 +6,31 @@ var data:Dictionary={}
 var gates:Dictionary={}
 var ground_planes:Array[Sprite2D]=[]
 var background_plane:Sprite2D
+var background_planes:Array[Sprite2D]=[]
+var _painted_light_materials:Array[ShaderMaterial]=[]
+var _painted_light_age:=0.0
+var _painted_light_frame:=-1
+static var _painted_light_anchors:Dictionary={}
 func active()->bool:return not data.is_empty()
 func camera_bounds()->Rect2:
 	# Use the actual rendered background texture, independent of editable
 	# collision bounds, gates and foreground decoration.
-	if is_instance_valid(background_plane):
-		return background_plane.global_transform*background_plane.get_rect()
+	var bounds:=Rect2()
+	var found:=false
+	for plane in background_planes:
+		if not is_instance_valid(plane):continue
+		var rect:Rect2=plane.global_transform*plane.get_rect()
+		bounds=bounds.merge(rect) if found else rect
+		found=true
+	if found:return bounds
 	return global_transform*frame_rect()
+static func plane_rect(plane:Dictionary,frame:Rect2,canvas:Vector2)->Rect2:
+	# Partial native-resolution planes share the same authoring coordinate space.
+	# Legacy full-canvas scenes intentionally need no rect_px metadata.
+	var box:Array=plane.get("rect_px",[])
+	if box.size()!=4 or canvas.x<=0 or canvas.y<=0:return frame
+	var factor:=frame.size/canvas
+	return Rect2(frame.position+Vector2(float(box[0]),float(box[1]))*factor,Vector2(float(box[2]),float(box[3]))*factor)
 func visual_room_rect()->Rect2:
 	var layout:Dictionary=room.record.get("terrain_layout",{})
 	var box:Array=layout.get("visual_room_rect",layout.get("room_rect",[]))
@@ -34,13 +52,16 @@ static func gate_offset(side:String,ports:Array,origin:=Vector2(11,5))->Vector2:
 	return Vector2.ZERO
 func configure(id:String)->void:
 	for child in get_children():remove_child(child);child.queue_free()
-	gates.clear();ground_planes.clear();background_plane=null;data=RoomSceneArtCatalog.definition(id)
+	gates.clear();ground_planes.clear();background_planes.clear();background_plane=null;_painted_light_materials.clear();_painted_light_age=0;_painted_light_frame=-1;data=RoomSceneArtCatalog.definition(id)
 	if not active():return
 	var root:=RoomSceneArtCatalog.ROOT+id+"/"
 	var frame:=frame_rect()
 	for plane in data.get("planes",[]):
-		var sprite:=_sprite(root+str(plane.path),frame)
-		if str(plane.path).ends_with("background.png"):background_plane=sprite
+		var sprite:=_sprite(root+str(plane.path),plane_rect(plane,frame,Vector2(float(data.canvas[0]),float(data.canvas[1]))))
+		if str(plane.get("layer",""))=="background" or str(plane.path).ends_with("background.png"):
+			background_planes.append(sprite)
+			if background_plane==null:background_plane=sprite
+		_configure_painted_light(sprite,plane,id)
 		if str(plane.path)!="water.png":ground_planes.append(sprite)
 	var floor:Array=data.floor_rect_px
 	var scale_value:=visual_room_rect().size/Vector2(float(floor[2]),float(floor[3]))
@@ -62,6 +83,37 @@ func refresh_gates()->void:
 		sprite.modulate.a=1.0-room.door_phase if room.door_directions.has(directions[side]) else 1.0
 func _process(_dt:float)->void:
 	if active():refresh_gates()
+	if Engine.is_editor_hint() or _painted_light_materials.is_empty():return
+	if not ComicMotion.reduced() and not UIFlow.has_screen() and not TransitionLayer.busy and not get_tree().paused:_painted_light_age+=_dt
+	var current:=0 if ComicMotion.reduced() else floori(_painted_light_age*2)%4
+	if current==_painted_light_frame:return
+	_painted_light_frame=current
+	for material:ShaderMaterial in _painted_light_materials:material.set_shader_parameter("model_light_frame",float(current))
 func apply_weather(snow:float,wet:float)->void:
-	for plane in ground_planes:WeatherSurfaceArt.apply(plane,snow,wet,str(plane.texture.resource_path).ends_with("background.png"))
+	for plane in ground_planes:WeatherSurfaceArt.apply(plane,snow,wet,background_planes.has(plane))
 	for gate in gates.values():WeatherSurfaceArt.apply(gate,snow,wet)
+
+func _configure_painted_light(sprite:Sprite2D,plane:Dictionary,id:String)->void:
+	if Engine.is_editor_hint():return
+	if _painted_light_anchors.is_empty():
+		var path:="res://assets/light_models_v16/painted_anchors.json"
+		if not FileAccess.file_exists(path):return
+		_painted_light_anchors=JSON.parse_string(FileAccess.get_file_as_string(path))
+	var profile:Dictionary=_painted_light_anchors.get(id,{})
+	var anchors:Array=profile.get("plane_centers",{}).get(str(plane.path),[])
+	if anchors.is_empty():return
+	var raw:Array=plane.get("rect_px",[0,0,data.canvas[0],data.canvas[1]])
+	var source_rect:=Rect2(float(raw[0]),float(raw[1]),float(raw[2]),float(raw[3]))
+	var ellipses:=PackedVector4Array()
+	for center:Array in anchors:
+		var at:=Vector2(float(center[0]),float(center[1]));var radius:=Vector2(float(center[2]),float(center[3]))
+		if not source_rect.intersects(Rect2(at-radius,radius*2)):continue
+		var uv:Vector2=(at-source_rect.position)/source_rect.size
+		var extent:Vector2=radius/source_rect.size
+		ellipses.append(Vector4(uv.x,uv.y,extent.x,extent.y))
+	if ellipses.is_empty():return
+	var count:=mini(16,ellipses.size());ellipses.resize(16)
+	var material:=WeatherSurfaceArt.make(true)
+	material.set_shader_parameter("model_light_ellipses",ellipses)
+	material.set_shader_parameter("model_light_count",count)
+	sprite.material=material;_painted_light_materials.append(material)

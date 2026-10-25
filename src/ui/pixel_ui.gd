@@ -79,13 +79,11 @@ static func art_menu_button(text: String, kind: String, extent: Vector2) -> Butt
 		var tween := glyph.create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 		tween.tween_property(glyph, "modulate", tint, 0.10)
 		glyph.set_meta("art_tween", tween)
-	for event in [node.mouse_entered, node.mouse_exited, node.focus_entered, node.focus_exited, node.button_down, node.button_up]: event.connect(update)
-	UIFlow.navigation_mode_changed.connect(update)
-	node.tree_exiting.connect(func() -> void:
-		if UIFlow.navigation_mode_changed.is_connected(update): UIFlow.navigation_mode_changed.disconnect(update))
+	var navigation:=NavigationModeBinding.attach(node,update,[glyph])
+	for event in [node.mouse_entered, node.mouse_exited, node.focus_entered, node.focus_exited, node.button_down, node.button_up]: event.connect(navigation.refresh)
 	node.button_down.connect(func() -> void: if not node.disabled: sparks.fire())
 	node.pressed.connect(func() -> void: if not node.disabled: sparks.fire())
-	node.ready.connect(update)
+	node.ready.connect(navigation.refresh)
 	ComicMotion.bind_button(node)
 	return node
 

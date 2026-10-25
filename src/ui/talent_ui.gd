@@ -1,18 +1,18 @@
 class_name TalentUI
 extends CanvasLayer
-## 天赋树独立窗口（按 T 开关）。
+## 技能天赋树：复用在背包天赋页，独立窗口仅作为旧入口兼容。
 ##
 ## 布局：左边是树（可滚轮缩放、拖拽平移，缩放时保持画面中心不动），
 ## 右边是详情面板 —— 单击节点看介绍，双击同一节点投入一点。
 ## 详情面板也保留显式加点按钮，方便键盘与手柄操作。
 ##
-## 四条流派根部在下面；可同时投资不同流派。
+## 每个携带技能有独立根节点及三条路线，集中在同一画布。
 
 ## 同背包：打开时把战斗 HUD 收起来，别和左边的血条/技能格叠在一起。
 signal opened
 signal closed
 
-const ZOOM_MIN := 0.3
+const ZOOM_MIN := 0.25
 const ZOOM_MAX := 2.0
 const ZOOM_STEP := 0.1
 ## 默认缩放（打开时先给个整体视角，想看细节再滚轮放大）
@@ -20,6 +20,8 @@ const DEFAULT_ZOOM := 0.5
 ## 详情面板宽度
 const DETAIL_W := 330.0
 
+var embedded_host: Node
+var _embedded_parent: Control
 var _canvas: Control
 var _transition: Tween
 var _closing := false
@@ -43,9 +45,10 @@ var _view_initialized := false
 var _saved_pan := Vector2i.ZERO
 var _submit_until := 0
 var _view_epoch := 0
-## 按住「加 1 点」自动连点用的状态
 var _add_button: Button = null
-var _hold_time := 0.0
+var _pan_origin:=Vector2.INF
+var _pan_scroll:=Vector2i.ZERO
+var _panning:=false
 
 
 func _ready() -> void:
@@ -60,12 +63,14 @@ func _ready() -> void:
 		_saved_pan = Vector2i.ZERO
 		_view_epoch += 1)
 	EventBus.talents_changed.connect(_refresh)
+	EventBus.skills_changed.connect(func()->void:
+		if is_open():_rebuild_tree())
 	EventBus.coins_changed.connect(func(_coins:int)->void:_refresh())
 	EventBus.level_changed.connect(func(_lv: int, _g: int) -> void: _refresh())
 
 
 func is_open() -> bool:
-	return _root.visible
+	return _root.visible and (embedded_host == null or embedded_host.is_open())
 
 func expedition_snapshot() -> Dictionary:
 	var pan=Vector2i(_scroll.scroll_horizontal,_scroll.scroll_vertical) if is_open() else _saved_pan
@@ -82,9 +87,11 @@ func expedition_restore(data: Dictionary) -> void:
 
 
 func open() -> void:
+	if is_instance_valid(embedded_host):
+		embedded_host.open_talent_page(); return
 	if not UIFlow.can_open(self): return
 	_class_title.text="精灵天赋" if Characters.current_id()==&"ilyua" else ("影契天赋" if Characters.current_id()==&"xixifu" else "圣光天赋")
-	_class_subtitle.text="自由搭配箭术、荆棘、月影与血脉" if Characters.current_id()==&"ilyua" else ("自由搭配四条契约流派" if Characters.current_id()==&"xixifu" else "自由搭配晨曦、圣羽、云庭与祈愿")
+	_class_subtitle.text="初始1点 · 每两级获得1点 · 每个技能独立分叉 · 每树9点"
 	_closing = false
 	if _exit_tween != null and _exit_tween.is_valid(): _exit_tween.kill()
 	_root.visible = true
@@ -96,7 +103,7 @@ func open() -> void:
 	_transition = StarUi.reveal(_canvas)
 	if not _view_initialized:
 		_view_initialized = true
-		_fit_tree.call_deferred()
+		_initial_view.call_deferred()
 	else:
 		_restore_pan.call_deferred(_view_epoch)
 	opened.emit()
@@ -115,17 +122,21 @@ func _upgrade_selected() -> void:
 
 
 func _upgrade_branch(branch: StringName) -> void:
-	if _closing or not UIFlow.is_top(self) or Time.get_ticks_msec() < _submit_until: return
-	if not GameState.TALENT_BRANCHES.has(branch): return
+	if _closing or not _has_input_focus() or Time.get_ticks_msec() < _submit_until: return
+	if TalentGraph.node(branch).is_empty(): return
 	if not GameState.talent_unlocked(branch) or GameState.talent_points <= 0: return
-	if GameState.talent_rank(branch) >= int(GameState.TALENT_BRANCHES[branch].get("max_rank", 0)): return
+	if TalentGraph.owned(branch, GameState.talents): return
 	_submit_until = Time.get_ticks_msec() + 120
 	_selected = branch
 	if GameState.spend_talent_point(branch):
 		AudioManager.play(&"ui_click", -6.0)
-		ComicMotion.feedback(_canvas, "%s 升至 %d 级" % [GameState.TALENT_BRANCHES[branch].name, GameState.talent_rank(branch)])
+		ComicMotion.feedback(_canvas, "点亮「%s」" % TalentGraph.node(branch).name)
 
 func close(immediate := false) -> void:
+	if is_instance_valid(embedded_host):
+		if immediate:embedded_host._finish_close()
+		else:embedded_host.close()
+		return
 	if not is_open(): return
 	_saved_pan = Vector2i(_scroll.scroll_horizontal, _scroll.scroll_vertical)
 	if immediate:
@@ -149,13 +160,24 @@ func _finish_close() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if not UIFlow.is_top(self) or _closing: return
+	if not _has_input_focus() or _closing: return
 	if not _root.visible:
 		return
-	if event.is_action_pressed("talents") or event.is_action_pressed("pause_menu") or event.is_action_pressed("ui_cancel"):
+	if embedded_host == null and (event.is_action_pressed("talents") or event.is_action_pressed("pause_menu") or event.is_action_pressed("ui_cancel")):
 		close()
 		get_viewport().set_input_as_handled()
 		return
+	# Dragging the page must never be mistaken for a talent double click.
+	if event is InputEventMouseButton and event.button_index==MOUSE_BUTTON_LEFT:
+		if event.pressed and _scroll.get_global_rect().has_point(event.position):
+			_pan_origin=event.position;_pan_scroll=Vector2i(_scroll.scroll_horizontal,_scroll.scroll_vertical);_panning=false
+		elif not event.pressed:_pan_origin=Vector2.INF;_panning=false
+	if event is InputEventMouseMotion and _pan_origin.is_finite() and event.button_mask&MOUSE_BUTTON_MASK_LEFT:
+		var offset:Vector2=event.position-_pan_origin
+		if _panning or offset.length()>8:
+			_panning=true;_tree.cancel_pointer_sequence()
+			_scroll.scroll_horizontal=_pan_scroll.x-roundi(offset.x/maxf(.01,_scroll.get_global_transform().get_scale().x));_scroll.scroll_vertical=_pan_scroll.y-roundi(offset.y/maxf(.01,_scroll.get_global_transform().get_scale().y))
+			get_viewport().set_input_as_handled();return
 	# 滚轮缩放：保持画面中心那个点不动（视觉上就是原地放大/缩小）
 	if event is InputEventMouseButton and event.pressed and _scroll.get_global_rect().has_point(get_viewport().get_mouse_position()):
 		var button := (event as InputEventMouseButton).button_index
@@ -211,18 +233,33 @@ func _set_zoom(value: float) -> void:
 func _build() -> void:
 	_root = UiFactory.full_rect()
 	add_child(_root)
-	_root.add_child(UiFactory.dim_layer(0.42))
-	_canvas = StarUi.frame(_root, Vector2(1200, 640))
+	if _embedded_parent != null:
+		_root.reparent(_embedded_parent, false)
+		_root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		_root.clip_contents = true
+		_canvas = UiFactory.full_rect(); _root.add_child(_canvas)
+	else:
+		_root.add_child(UiFactory.dim_layer(0.42))
+		_canvas = StarUi.frame(_root, Vector2(1200, 640))
+	# A scrolling boundary prevents the independent window's intrinsic minimum
+	# height/width from propagating into the manually sized inventory canvas.
+	var viewport := ScrollContainer.new()
+	viewport.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	viewport.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	viewport.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	_canvas.add_child(viewport)
 	var panel := PixelUi.panel()
+	panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	_canvas.add_child(panel)
+	viewport.add_child(panel)
 	var column := UiFactory.vbox(12)
 	panel.add_child(column)
-	var header := UiFactory.hbox(14)
+	var header := HFlowContainer.new()
+	header.add_theme_constant_override("h_separation", 14)
 	column.add_child(header)
 	_class_title=PixelUi.title("圣光天赋",30);header.add_child(_class_title)
-	_class_subtitle=PixelUi.label("自由搭配四条法术流派",15,PixelUi.MUTED);header.add_child(_class_subtitle)
-	header.add_child(UiFactory.spacer())
+	_class_subtitle=PixelUi.label("技能专属天赋树",15,PixelUi.MUTED);header.add_child(_class_subtitle)
 	_points_label = PixelUi.label("", 19, PixelUi.GOLD)
 	header.add_child(_points_label)
 	var close_button := PixelUi.compact_button("关闭  ×", 16)
@@ -231,10 +268,13 @@ func _build() -> void:
 	var reset := PixelUi.compact_button("免费重置" if CampSession.active else "洗点 · 100金币", 15)
 	_reset_button = reset
 	reset.tooltip_text = "营地训练免费调整，不改变正式出征。" if CampSession.active else "消耗100局内金币，退还全部已投入点数；未投入不收费"
-	reset.pressed.connect(GameState.reset_talents)
+	reset.pressed.connect(func()->void:
+		if not GameState.reset_talents():ComicMotion.feedback(_canvas,"洗点未完成：金币不足或保存失败，原加点已保留。"))
 	header.add_child(reset)
-	header.add_child(close_button)
+	if embedded_host == null: header.add_child(close_button)
+	else: close_button.free()
 	var body := UiFactory.hbox(18)
+	body.custom_minimum_size.y = 390
 	body.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	column.add_child(body)
 	var tree_panel := PixelUi.inset_panel(12)
@@ -244,10 +284,11 @@ func _build() -> void:
 	tree_panel.add_child(tree_col)
 	var toolbar := UiFactory.hbox(8)
 	tree_col.add_child(toolbar)
-	_hint_label = PixelUi.label("滚轮缩放 · 滚动条平移", 14, Color("becade"))
+	_hint_label = PixelUi.label("滚轮缩放 · 拖动平移", 14, Color("becade"))
+	_hint_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_hint_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	if MobileControls.enabled():_hint_label.text="手指拖动平移 · ＋ / − 缩放"
 	toolbar.add_child(_hint_label)
-	toolbar.add_child(UiFactory.spacer())
 	for entry in [["−", -ZOOM_STEP], ["+", ZOOM_STEP]]:
 		var step := float(entry[1])
 		var button := PixelUi.compact_button(str(entry[0]), 20)
@@ -276,7 +317,9 @@ func _build() -> void:
 	_tree.node_selected.connect(_on_node_selected)
 	_tree.node_activated.connect(_upgrade_branch)
 	_holder.add_child(_tree)
-	tree_col.add_child(PixelUi.label("单击查看 · 双击加 1 点    灰 未解锁    金 可加点    绿 满级    蓝 已选中", 13, Color("c6d1e1")))
+	var help := PixelUi.label("每节点 1 点 · 双击或空格点亮 · 从起点沿连线延伸 · 分叉可兼修", 13, Color("c6d1e1"))
+	help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	tree_col.add_child(help)
 	var detail := PixelUi.inset_panel(18)
 	detail.custom_minimum_size.x = DETAIL_W
 	body.add_child(detail)
@@ -288,6 +331,12 @@ func _build() -> void:
 	detail_scroll.add_child(_detail_box)
 	_set_zoom(_zoom)
 	InteractionSkin.mount(_root,"talents",panel)
+
+func _initial_view()->void:
+	await get_tree().process_frame
+	if not is_open():return
+	_set_zoom(clampf((_scroll.size.x-18)/_tree_base_size.x,.4,.7))
+	_scroll.scroll_horizontal=0;_scroll.scroll_vertical=0
 
 func _fit_tree() -> void:
 	await get_tree().process_frame
@@ -308,31 +357,29 @@ func _rebuild_tree() -> void:
 	if _tree == null:
 		return
 	_tree.build()
+	if _selected != &"": _selected = TalentGraph.resolve(_selected, GameState.talents)
 	_tree_base_size = Vector2(
 		maxf(_tree.custom_minimum_size.x, 300.0),
 		maxf(_tree.custom_minimum_size.y, 220.0)
 	)
 	# 打开时先自动选中一个节点（优先「现在就能加点」的），右侧面板就不会空着
-	if _selected == &"" or not GameState.TALENT_BRANCHES.has(_selected):
+	if _selected == &"" or not TalentGraph.visible_nodes().has(_selected):
 		_selected = _default_pick()
 	_set_zoom(_zoom)
 	_refresh()
 
 
 func _default_pick() -> StringName:
-	for branch: StringName in GameState.TALENT_BRANCHES:
-		if GameState.talent_unlocked(branch) \
-				and GameState.talent_rank(branch) < int(GameState.TALENT_BRANCHES[branch]["max_rank"]) \
-				and GameState.talent_points > 0:
-			return branch
-	for branch: StringName in GameState.TALENT_BRANCHES:
-		return branch
-	return &""
+	for id: StringName in TalentGraph.visible_nodes():
+		if TalentGraph.unlocked(id, GameState.talents) and not TalentGraph.owned(id, GameState.talents): return id
+	return TalentGraph.visible_nodes().keys()[0] if not TalentGraph.visible_nodes().is_empty() else &""
 
 
 func _on_node_selected(branch: StringName) -> void:
 	_selected = branch
 	_tree.select(branch)
+	var focus_node := _tree.get_node_or_null(NodePath(str(branch))) as Control
+	if focus_node != null and not UIFlow.pointer_active: _scroll.ensure_control_visible(focus_node)
 	_refresh_detail()
 
 
@@ -343,7 +390,7 @@ func _refresh() -> void:
 	if _points_label != null:
 		_points_label.text = "可用天赋点：%d" % GameState.talent_points
 	# 加点后节点状态会变，重建一次树让颜色/等级角标跟上
-	if _root != null and _root.visible:
+	if _root != null and is_open():
 		_tree.selected = _selected
 		_tree.build()
 		_set_zoom(_zoom)
@@ -361,7 +408,7 @@ func _refresh_detail() -> void:
 		_detail_box.remove_child(child)
 		child.queue_free()
 
-	if _selected == &"" or not GameState.TALENT_BRANCHES.has(_selected):
+	if _selected == &"" or not TalentGraph.visible_nodes().has(_selected):
 		_detail_box.add_child(PixelUi.label("天赋介绍", 22, PixelUi.GOLD))
 		var empty_hint := PixelUi.label(
 			"点一下左边的天赋节点，这里会显示它的介绍、前置条件和加点按钮。", 16,
@@ -372,8 +419,8 @@ func _refresh_detail() -> void:
 		_detail_box.add_child(empty_hint)
 		return
 
-	var info: Dictionary = GameState.TALENT_BRANCHES[_selected]
-	var rank := GameState.talent_rank(_selected)
+	var info: Dictionary = TalentGraph.node(_selected)
+	var rank := 1 if TalentGraph.owned(_selected, GameState.talents) else 0
 	var max_rank := int(info["max_rank"])
 	var unlocked := GameState.talent_unlocked(_selected)
 	var full := rank >= max_rank
@@ -385,17 +432,21 @@ func _refresh_detail() -> void:
 	var title_col := UiFactory.vbox(0)
 	title_col.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title_row.add_child(title_col)
-	title_col.add_child(PixelUi.label(str(info["name"]), 21, PixelUi.INK))
-	title_col.add_child(PixelUi.label(
-		"%s　·　%d / %d 级" % [str(info.get("branch_name", _branch_name(info))), rank, max_rank],
-		14, PixelUi.MUTED))
+	var name_label := PixelUi.label(str(info["name"]), 21, PixelUi.INK)
+	name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	title_col.add_child(name_label)
+	var branch_label := PixelUi.label(
+		"%s · %s" % [str(info.branch_name),str(info.route_name)],
+		14, PixelUi.MUTED)
+	branch_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	title_col.add_child(branch_label)
 	_detail_box.add_child(title_row)
 
 	var desc := PixelUi.label(str(info["desc"]), 16, PixelUi.INK)
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc.custom_minimum_size = Vector2(DETAIL_W - 48.0, 0.0)
 	_detail_box.add_child(desc)
-	var preview := PixelUi.label(str(GameState.preview_talent(_selected).get("text", "")), 15, Color("9ee6ab"))
+	var preview := PixelUi.label("该天赋已点亮 %d / %d 个节点 · 本节点消耗 1 点" % [int(GameState.talents.get(info.effect,0)), int(GameState.TALENT_BRANCHES[info.effect].max_rank)], 15, Color("9ee6ab"))
 	preview.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	preview.custom_minimum_size.x = DETAIL_W - 48.0
 	_detail_box.add_child(preview)
@@ -406,11 +457,11 @@ func _refresh_detail() -> void:
 	req.custom_minimum_size = Vector2(DETAIL_W - 48.0, 0.0)
 	_detail_box.add_child(req)
 
-	var state_text := "已满级" if full else ("天赋点不足" if unlocked and GameState.talent_points <= 0 else ("可以加点" if unlocked else "前置未满足"))
+	var state_text := "已点亮" if full else ("天赋点不足" if unlocked and GameState.talent_points <= 0 else ("可以加点" if unlocked else "前置未满足"))
 	_detail_box.add_child(PixelUi.label("状态：%s" % state_text, 15,
 		PixelUi.GOLD if unlocked and not full else PixelUi.MUTED))
 
-	var add := PixelUi.primary("已满级" if full else ("前置未满足" if not unlocked else ("天赋点不足" if GameState.talent_points <= 0 else "投入 1 点")), 19)
+	var add := PixelUi.primary("已点亮" if full else ("前置未满足" if not unlocked else ("天赋点不足" if GameState.talent_points <= 0 else "投入 1 点")), 19)
 	add.custom_minimum_size = Vector2(DETAIL_W - 48.0, 46.0)
 	# 加点按钮就是普通按钮：不加图标（图标已经在上面标题行里了）
 	add.disabled = full or not unlocked or GameState.talent_points <= 0
@@ -427,40 +478,30 @@ func _refresh_detail() -> void:
 			if node != null: node.grab_focus()
 
 
-func _process(delta: float) -> void:
-	_hold_to_add(delta)
-
-
-func _hold_to_add(delta: float) -> void:
-	## 按住「加 1 点」不放就连续加点（0.45 秒后开始，每 0.18 秒加一点），
-	## 免得多级天赋要一层层狂点。
-	if _closing or not UIFlow.is_top(self) or not is_instance_valid(_add_button) or _add_button.disabled or not _root.visible:
-		_hold_time = 0.0
-		return
-	var mouse := get_viewport().get_mouse_position()
-	if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) \
-			or not _add_button.get_global_rect().has_point(mouse):
-		_hold_time = 0.0
-		return
-	_hold_time += delta
-	if _hold_time < 0.45:
-		return
-	_hold_time = 0.18
-	_upgrade_selected()
-
-
 func _branch_name(info: Dictionary) -> String:
 	return str(info.get("branch_name","天赋"))
 
 
 func _requirement_text(info: Dictionary) -> String:
-	var requires: Dictionary = info.get("requires", {})
-	var parts: Array[String] = []
-	for need: StringName in requires:
-		if not GameState.TALENT_BRANCHES.has(need):
-			continue
-		var have := GameState.talent_rank(need)
-		var want := int(requires[need])
-		parts.append("%s ≥%d（当前 %d）" % [str(GameState.TALENT_BRANCHES[need]["name"]), want, have])
-	return "、".join(parts) if not parts.is_empty() else "无（基础天赋）"
+	return TalentGraph.requirement_text(StringName(info.id), GameState.talents)
 
+
+func _has_input_focus() -> bool:
+	if is_instance_valid(embedded_host) and bool(embedded_host.get("_closing")):return false
+	return UIFlow.is_top(embedded_host if is_instance_valid(embedded_host) else self)
+
+func show_embedded() -> void:
+	if not is_instance_valid(embedded_host): return
+	_root.show()
+	_class_title.text = "技能天赋"
+	_class_subtitle.text = "初始1点 · 每两级1点 · 每树9节点"
+	_view_epoch += 1
+	_rebuild_tree()
+	if not _view_initialized:
+		_view_initialized = true; _initial_view.call_deferred()
+	else: _restore_pan.call_deferred(_view_epoch)
+
+func hide_embedded() -> void:
+	if _root == null or not _root.visible: return
+	_saved_pan = Vector2i(_scroll.scroll_horizontal, _scroll.scroll_vertical)
+	_root.hide()

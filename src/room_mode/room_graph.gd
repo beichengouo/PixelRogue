@@ -1,12 +1,23 @@
 class_name RoomGraph
 extends RefCounted
 ## Persistent room graph. Room allocation and boss rolls use an isolated RNG.
-const VERSION := 2
+const VERSION := 3
 const SERVICE_INTERVAL := 6
 const MAX_RETAINED_ROOMS := 10
 const DIRECTIONS := [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]
 const BOSSES := ["king", "mage", "tide"]
 const BOSS_ENTRY_DEADLINES := [10,20,30]
+var staged:=false
+var stage_index:=1
+var stage_seed:=0
+var run_seed:=0
+var stage_terminal:=""
+var stage_boss_cleared:=false
+var normal_clear_eligible:=false
+var optional_stage_entered:=false
+var boss_rush_completed:=false
+var extraction_committed:=false
+var run_failed:=false
 var chapter_id:StringName=ChapterCatalog.FIRST
 func boss_ids()->Array:return ChapterCatalog.bosses(chapter_id)
 var rooms: Dictionary = {}
@@ -34,7 +45,10 @@ static func cell(id: String) -> Vector2i:
 	var parts := id.split(",")
 	return Vector2i(int(parts[0]), int(parts[1]))
 
-func begin(seed_value:int,chapter:StringName=ChapterCatalog.FIRST)->void:
+func begin(seed_value:int,chapter:StringName=ChapterCatalog.FIRST,staged_run:bool=true)->void:
+	staged=staged_run;run_seed=seed_value;stage_index=1
+	stage_seed=0;stage_terminal=""
+	stage_boss_cleared=false;normal_clear_eligible=false;optional_stage_entered=false;boss_rush_completed=false;extraction_committed=false;run_failed=false
 	chapter_id=ChapterCatalog.normalize(chapter)
 	rng.seed = seed_value ^ 0x73f129
 	rooms.clear(); generated.clear(); defeated.clear()
@@ -43,6 +57,8 @@ func begin(seed_value:int,chapter:StringName=ChapterCatalog.FIRST)->void:
 	rush_offered=false
 	_room_serial = 0
 	altar_pacing={"seen":false,"clears":0,"bonus":0,"notice":""}
+	if staged:
+		_build_stage(0);return
 	rooms[current] = _allocate(Vector2i.ZERO, "spawn", "")
 	rooms[current].cleared = true
 	enter(current)
@@ -65,6 +81,7 @@ func _allocate(at: Vector2i, kind: String, boss_id: String) -> Dictionary:
 		"encounter":0, "boss_stats":{}, "delta":{}}
 
 func available_boss() -> String:
+	if staged:return ""
 	if encounters < 9: return ""
 	for i in boss_ids().size():
 		if encounters+1 >= int(BOSS_ENTRY_DEADLINES[i]) and not generated.has(boss_ids()[i]) and (i == 0 or defeated.has(boss_ids()[i-1])):
@@ -75,6 +92,7 @@ static func unfinished_boss(record:Dictionary)->bool:
 	return str(record.get("kind",""))=="boss" and not bool(record.get("cleared",false))
 
 func entry_destination(requested:String)->String:
+	if staged:return requested
 	if requested==current or not rooms.has(requested):return requested
 	for stage in boss_ids().size():
 		var boss_id:String=boss_ids()[stage]
@@ -106,6 +124,13 @@ func enter(id: String) -> Dictionary:
 	assert(rooms.has(id))
 	id=entry_destination(id)
 	current = id
+	if staged:
+		var fresh:=not bool(rooms[id].visited)
+		rooms[id].visited=true
+		if fresh and is_combat(str(rooms[id].kind)):
+			encounters+=1
+			rooms[id].encounter=encounters
+		return {"fresh":fresh,"created":[]}
 	var record: Dictionary = rooms[id]
 	_room_serial += 1; record.retention_order = _room_serial
 	if record.visited:
@@ -155,6 +180,7 @@ func rush_unlocked()->bool:
 func _rush_pending()->bool:
 	return rooms.values().any(func(record:Dictionary)->bool:return record.kind=="boss_rush" and not record.cleared)
 func _roll_kind()->String:
+	if staged:return "elite" if stage_index==4 else "normal"
 	if rush_unlocked() and encounters>=49 and not _rush_pending() and ((not rush_offered) or rng.randf()<.03):return "boss_rush"
 	var weights:=RANDOM_WEIGHTS.duplicate()
 	for index in RANDOM_KINDS.size():
@@ -165,6 +191,7 @@ func _roll_kind()->String:
 		if value<0:return RANDOM_KINDS[index]
 	return "normal"
 func _ensure_rush_offer()->void:
+	if staged:return
 	# Offer a connected, optional room by wave 50. Never redirect an entrance.
 	if rush_offered or not rush_unlocked() or encounters<49 or _rush_pending():return
 	var origins:Array=[current]
@@ -177,6 +204,7 @@ func _ensure_rush_offer()->void:
 			rooms[id]=_allocate(at,"boss_rush","");_connect(origin,id);rush_offered=true;return
 
 func _ensure_frontier() -> Array[String]:
+	if staged:return []
 	# Retained bosses and pruned branches may be disconnected. Only a frontier
 	# reachable through cleared rooms counts as a way forward from this room.
 	if not rooms.has(current) or not bool(rooms[current].cleared):return []
@@ -207,12 +235,19 @@ func clear_current(readings:int=0) -> bool:
 	cleared_count += 1
 	altar_pacing.clears=int(altar_pacing.clears)+1
 	if record.kind == "boss" and not defeated.has(record.boss): defeated.append(record.boss)
+	if staged:
+		if current==stage_terminal:
+			stage_boss_cleared=true
+			if stage_index==3:normal_clear_eligible=true
+			if stage_index==4:boss_rush_completed=true
+		return true
 	var protected:=_ensure_frontier()
 	protected.append_array(_ensure_altar_offer(readings))
 	prune_rooms(protected)
 	return true
 
 func _ensure_altar_offer(readings:int)->Array[String]:
+	if staged:return []
 	var protected:Array[String]=[]
 	if readings>=3 or int(altar_pacing.bonus)>=3 or int(altar_pacing.clears)<(7 if altar_pacing.seen else 4):return protected
 	# Breadth-first through cleared, connected rooms; unopened fights cannot be
@@ -248,6 +283,7 @@ func take_altar_notice()->String:
 	return "命运祭坛已显现 · 打开地图查看入口" if not value.is_empty() and rooms.has(value) else ""
 
 func prune_rooms(protected:Array[String]=[]) -> Array[String]:
+	if staged:return []
 	var removed:Array[String]=[]
 	var oldest:Array=rooms.keys().filter(func(id:Variant)->bool:return str(id)!=current and str(id) not in protected and not unfinished_boss(rooms[id]))
 	oldest.sort_custom(func(a:Variant,b:Variant)->bool:return int(rooms[a].get("retention_order",0))<int(rooms[b].get("retention_order",0)))
@@ -272,6 +308,7 @@ func prune_rooms(protected:Array[String]=[]) -> Array[String]:
 	return removed
 
 func _retire_room(id:String)->void:
+	if staged:return
 	if id==current or not rooms.has(id) or unfinished_boss(rooms[id]):return
 	var record:Dictionary=rooms[id]
 	# An expired, unvisited boss must be eligible to appear again later.
@@ -285,7 +322,7 @@ func neighbour(direction: Vector2i) -> String:
 	return id if rooms[current].doors.has(id) else ""
 
 func snapshot() -> Dictionary:
-	return {"version":VERSION, "chapter_id":str(chapter_id), "rooms":rooms.duplicate(true), "current":current,
+	return {"version":VERSION if staged else 2,"stage":stage_state() if staged else {}, "chapter_id":str(chapter_id), "rooms":rooms.duplicate(true), "current":current,
 		"normal_clears":normal_clears,"cleared":cleared_count, "encounters":encounters, "completed_encounter":completed_encounter, "pity":pity,
 		"generated":generated.duplicate(), "defeated":defeated.duplicate(),
 		"service_batches":service_batches, "next_service":next_service,"room_serial":_room_serial,
@@ -295,7 +332,17 @@ func snapshot() -> Dictionary:
 
 func restore(data: Dictionary) -> bool:
 	var version := int(data.get("version",0))
-	if version not in [1,VERSION] or not data.get("rooms",{}).has(data.get("current","")): return false
+	if version not in [1,2,VERSION] or not data.get("rooms",{}).has(data.get("current","")): return false
+	if version==VERSION:
+		if not data.get("stage",{}) is Dictionary:return false
+		var state:Dictionary=data.get("stage",{})
+		var layout:Dictionary=data.rooms
+		var starts:Array=layout.keys().filter(func(id:Variant)->bool:return str(layout[id].get("kind",""))=="spawn")
+		if starts.size()!=1:return false
+		if not StageMapGenerator.validate({"rooms":layout,"spawn":str(starts[0]),"terminal":str(state.get("terminal",""))},int(state.get("index",0)),layout.size()<(40 if int(state.get("index",0))==4 else 20)).is_empty():return false
+	staged=version==VERSION
+	if staged:_restore_stage(data.get("stage",{}))
+	else:_restore_stage({})
 	chapter_id=ChapterCatalog.normalize(data.get("chapter_id",ChapterCatalog.FIRST))
 	rooms = data.rooms.duplicate(true); current = str(data.current)
 	_room_serial=int(data.get("room_serial",0))
@@ -345,3 +392,59 @@ func _migrate_services() -> void:
 		if is_combat(str(record.kind)) or record.kind == "spawn":
 			var runtime: Dictionary = record.delta.get("runtime",{})
 			runtime.erase("shop"); runtime.erase("tavern")
+
+
+func _build_stage(readings:int)->void:
+	stage_seed=run_seed^((stage_index*73856093)+19349663)
+	var layout:=StageMapGenerator.generate(stage_seed,stage_index,StageRules.DEFAULT_ROOMS,readings,StageRules.RETRIES,completed_encounter)
+	rooms.clear();stage_boss_cleared=false;stage_terminal=str(layout.terminal)
+	rng.seed=stage_seed^0x73f129
+	var terminal_depth:=int(layout.rooms[stage_terminal].depth)
+	for id:String in layout.rooms:
+		var source:Dictionary=layout.rooms[id]
+		var boss_id:=str(boss_ids()[stage_index-1]) if source.kind=="boss" else ""
+		var record:=_allocate(cell(id),str(source.kind),boss_id)
+		record.seed=source.seed;record.doors=source.doors.duplicate();record.depth=int(source.depth);record.stage_index=stage_index
+		record.strength=StageRules.strength(stage_index,int(source.depth),terminal_depth,id==stage_terminal)
+		record.encounter=0
+		rooms[id]=record
+		if source.kind=="boss" and not generated.has(boss_id):generated.append(boss_id)
+	current=str(layout.spawn);rooms[current].visited=true
+
+func can_advance()->bool:
+	return staged and stage_index<4 and stage_boss_cleared and current==stage_terminal and bool(rooms[current].rewarded)
+
+func advance_stage(readings:int=0)->bool:
+	if not can_advance():return false
+	stage_index+=1
+	optional_stage_entered=stage_index==4
+	_build_stage(readings)
+	return true
+
+func visible_rooms()->Array[String]:
+	var visible_ids:Array[String]=[]
+	for id:String in rooms:
+		if not staged or bool(rooms[id].visited) or bool(rooms[id].delta.get("fate_revealed",false)):
+			if id not in visible_ids:visible_ids.append(id)
+			if staged and bool(rooms[id].visited):
+				for adjacent:String in rooms[id].doors:
+					if adjacent not in visible_ids:visible_ids.append(adjacent)
+	return visible_ids
+
+func room_type_revealed(id:String)->bool:
+	if not rooms.has(id):return false
+	if not staged or bool(rooms[id].visited) or bool(rooms[id].delta.get("fate_revealed",false)):return true
+	for adjacent:String in rooms[id].doors:
+		if rooms.has(adjacent) and bool(rooms[adjacent].visited):return true
+	return false
+
+func stage_state()->Dictionary:
+	return {"index":stage_index,"seed":str(stage_seed),"run_seed":str(run_seed),"terminal":stage_terminal,
+		"boss_cleared":stage_boss_cleared,"normal_eligible":normal_clear_eligible,"optional_entered":optional_stage_entered,
+		"rush_completed":boss_rush_completed,"extraction_committed":extraction_committed,"failed":run_failed}
+
+func _restore_stage(state:Dictionary)->void:
+	stage_index=clampi(int(state.get("index",1)),1,4);stage_seed=int(state.get("seed",0));run_seed=int(state.get("run_seed",0))
+	stage_terminal=str(state.get("terminal",""));stage_boss_cleared=bool(state.get("boss_cleared",false))
+	normal_clear_eligible=bool(state.get("normal_eligible",false));optional_stage_entered=bool(state.get("optional_entered",false))
+	boss_rush_completed=bool(state.get("rush_completed",false));extraction_committed=bool(state.get("extraction_committed",false));run_failed=bool(state.get("failed",false))

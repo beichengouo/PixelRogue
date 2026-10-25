@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5o61qvamv2pf"
-path="res://.godot/imported/bridge_long-plane.png-2741edb56186b89afb360ab0c4c534da.ctex"
+path.s3tc="res://.godot/imported/bridge_long-plane.png-2741edb56186b89afb360ab0c4c534da.s3tc.ctex"
+path.etc2="res://.godot/imported/bridge_long-plane.png-2741edb56186b89afb360ab0c4c534da.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/room_illustrated/flower_bend_v02/bridge_long-plane.png"
-dest_files=["res://.godot/imported/bridge_long-plane.png-2741edb56186b89afb360ab0c4c534da.ctex"]
+dest_files=["res://.godot/imported/bridge_long-plane.png-2741edb56186b89afb360ab0c4c534da.s3tc.ctex", "res://.godot/imported/bridge_long-plane.png-2741edb56186b89afb360ab0c4c534da.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

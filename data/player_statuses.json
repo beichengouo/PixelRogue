@@ -291,8 +291,8 @@
       "description": "下一次小技能直击引发叶辉，命中后消耗。"
     },
     "cloud_runes": {
-      "name": "云冕印记",
-      "description": "三枚云冕印记强化下一次小技能；大招不消耗。"
+      "name": "圣云律印",
+      "description": "三枚圣云律印强化下一次小技能；大招不消耗。"
     },
     "cloud_orbs": {
       "name": "永昼灵珠",
@@ -391,34 +391,48 @@
       "description": "护盾实际承伤累计三次后释放圣辉并回复魔力。",
       "runtime_source": "EquipmentMechanics",
       "debuff": false,
-      "icon": "res://assets/legendary_sets_v01/icons/accessory_eternal_ring.png"
+      "icon": "res://assets/legendary_sets_v21/icons/accessory_eternal_ring.png"
     },
     "covenant_beats": {
       "name": "同行和鸣",
       "description": "友军有效直击累计三拍后触发幽灯共鸣。",
       "runtime_source": "EquipmentMechanics",
       "debuff": false,
-      "icon": "res://assets/legendary_sets_v01/icons/accessory_companion_bells.png"
+      "icon": "res://assets/legendary_sets_v21/icons/accessory_companion_bells.png"
     },
     "lakeleaf_stacks": {
       "name": "湖叶回环",
       "description": "持盾普攻累计四次后释放风环并回复魔力。",
       "runtime_source": "EquipmentMechanics",
       "debuff": false,
-      "icon": "res://assets/legendary_sets_v01/icons/armor_lakeleaf_hunt.png"
+      "icon": "res://assets/legendary_sets_v21/icons/armor_lakeleaf_hunt.png"
     },
     "moonwind_echo": {
       "name": "月风余响",
       "description": "接下来的主普攻追加月风伤害并缩短闪避冷却。",
       "runtime_source": "EquipmentMechanics",
       "debuff": false,
-      "icon": "res://assets/legendary_sets_v01/icons/accessory_moonwind_chime.png"
+      "icon": "res://assets/legendary_sets_v21/icons/accessory_moonwind_chime.png"
     },
     "material_tide": {
       "name": "回澜待发",
       "description": "下一次主普攻首次有效命中消耗刻印强化并回复MP；时间结束或卸下饰品后消失。",
       "icon": "res://assets/material_workshop_v01/tide_etch.png",
       "debuff": false
+    },
+    "sunseal": {
+      "name": "晨辉封缄",
+      "description": "普攻首次有效命中积累晨辉，最多3层，持续10秒。直接主动技能命中时消耗全部层数，每层在目标两格内造成0.18倍攻击的装备伤害并回复2MP，触发冷却4秒；冷却中不积层。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "runtime_source": "EquipmentMechanics.wayfarer",
+      "debuff": false,
+      "icon": "res://assets/content_v08/icons/relic_sunseal.png"
+    },
+    "nightloom": {
+      "name": "星线共织",
+      "description": "角色六格内友军有效直击积累星线，6秒内累计5次后，获得最大生命8%的护盾、持续4秒，并向角色六格内最近两名可见敌人各追加0.35倍攻击的装备伤害，冷却5秒；同一时刻齐射每0.2秒至多计一次。 同名遗物持有1／2／3件时，数值为100%／150%／175%；目标数、积累次数、持续时间与冷却不增加。附加伤害不暴击、不吸血，也不触发装备或同类派生。",
+      "runtime_source": "EquipmentMechanics.wayfarer",
+      "debuff": false,
+      "icon": "res://assets/content_v08/icons/relic_nightloom.png"
     }
   },
   "shield_sources": [
