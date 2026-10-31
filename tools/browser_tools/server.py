@@ -195,7 +195,7 @@ def make_handler(service):
                 if action in ['story_scene','save_story']:result=service.story(request)
                 elif action=='alpha':result=service.alpha(request)
                 elif action=='fingerprint':result={'fingerprint':hashlib.sha256(service.asset(request['path']).read_bytes()).hexdigest()}
-                elif action in ['story_bundle','story_catalog','catalog','map','validate','save_map','playtest','art','save_layout','save_units','load_save','grant']:
+                elif action in ['export_codex','story_bundle','story_catalog','catalog','map','validate','save_map','playtest','art','save_layout','save_units','load_save','grant']:
                     result=service.bridge(request)
                     if action=='art':service.art=result
                 else:raise ValueError('未知操作')

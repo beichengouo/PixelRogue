@@ -34,6 +34,26 @@ func _run()->void:
 	get_tree().quit()
 func _dispatch()->Dictionary:
 	match str(request.get("action","")):
+		"export_codex":
+			var entries:Array=[]
+			for item:Dictionary in ItemDB.all():
+				var kind:=str(item.get("kind",""))
+				if kind not in ["weapon","armor","accessory","buff"]:continue
+				var entry:Dictionary=item.duplicate(true)
+				entry["kind"]=kind
+				entry["category"]="relic" if kind=="buff" else "equipment"
+				entry["description"]=str(item.get("desc",""))
+				var texture:=ItemDB.icon_texture(item)
+				if texture==null:return {"error":"物品图标缺失："+str(item.get("id",""))}
+				var image:=texture.get_image()
+				var region:=ItemDB.icon_region(item)
+				if region.size.x>0 and region.size.y>0:image=image.get_region(Rect2i(region))
+				if image.get_width()>256 or image.get_height()>256:
+					var ratio:=256.0/maxf(image.get_width(),image.get_height())
+					image.resize(maxi(1,roundi(image.get_width()*ratio)),maxi(1,roundi(image.get_height()*ratio)),Image.INTERPOLATE_LANCZOS)
+				entry["image"]="data:image/png;base64,"+Marshalls.raw_to_base64(image.save_png_to_buffer())
+				entries.append(entry)
+			return {"format":"pixelrogue-codex","schemaVersion":1,"exportedAt":Time.get_datetime_string_from_system(),"items":entries}
 		"story_catalog":return {"ids":_story_ids(),"metadata":preload("res://tools/browser_tools/story_catalog.gd").metadata()}
 		"story_bundle":
 			var revision:=_stamp("res://data/story_overrides.json")
