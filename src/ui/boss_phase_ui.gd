@@ -23,7 +23,7 @@ func _ready()->void:
 	_skip=PixelUi.compact_button("跳过",16);_skip.pressed.connect(finish);_root.add_child(_skip)
 	_root.resized.connect(_layout);_layout()
 	duration=.6 if ComicMotion.reduced() else 1.5
-	_ghost=AnimatedSprite2D.new();_ghost.process_mode=Node.PROCESS_MODE_ALWAYS;_ghost.sprite_frames=BossStageArt.frames(boss.boss_id,boss.phase);_ghost.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;_ghost.material=PixelSpellArt.material();_ghost.z_index=810;_ghost.z_as_relative=false
+	_ghost=AnimatedSprite2D.new();_ghost.process_mode=Node.PROCESS_MODE_ALWAYS;_ghost.sprite_frames=BossStageArt.frames(boss.boss_id,boss.phase);_ghost.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS;_ghost.z_index=810;_ghost.z_as_relative=false
 	boss.get_parent().add_child(_ghost);_ghost.global_position=boss.global_position
 	_ghost.play(&"transform" if _ghost.sprite_frames.has_animation(&"transform") else &"windup");_ghost.pause();_ghost.flip_h=boss._facing<0
 	if _ghost.sprite_frames.get_meta("boss_stage_art",false):BossStageArt.align(_ghost,boss.boss_id,boss.body_size)
@@ -33,7 +33,7 @@ func _ready()->void:
 	# A burst may skip a threshold. Fade from the form actually displayed,
 	# rather than an intermediate form that the fight never entered.
 	_old_ghost.sprite_frames=(boss.visual as AnimatedSprite2D).sprite_frames if boss.visual is AnimatedSprite2D else BossStageArt.frames(boss.boss_id,maxi(1,boss.phase-1))
-	_old_ghost.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;_old_ghost.material=PixelSpellArt.material();_old_ghost.z_index=811;_old_ghost.z_as_relative=false;boss.get_parent().add_child(_old_ghost);_old_ghost.play(&"idle");_old_ghost.pause();_old_ghost.flip_h=_ghost.flip_h
+	_old_ghost.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS;_old_ghost.z_index=811;_old_ghost.z_as_relative=false;boss.get_parent().add_child(_old_ghost);_old_ghost.play(&"idle");_old_ghost.pause();_old_ghost.flip_h=_ghost.flip_h
 	if _old_ghost.sprite_frames.get_meta("boss_stage_art",false):BossStageArt.align(_old_ghost,boss.boss_id,boss.body_size)
 	else:PixelBossArt.align(_old_ghost,boss.boss_id,boss.body_size)
 	_old_ghost.position+=boss.position

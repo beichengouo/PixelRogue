@@ -87,7 +87,7 @@ func _event_offers()->void:
 	var rng:=RandomNumberGenerator.new();rng.seed=int(record.seed)^0x90472
 	match str(state.event_id):
 		"letter":state.offers=[{"name":"封存信件","desc":"将这份心意留给后来者。获得三份地区材料。","loot":{"kind":"bundle","items":_materials(3)}},{"name":"留下回信","desc":"写下新的祝愿。获得100基础金币，沿用冒险收益倍率。","loot":{"kind":"coins","amount":100}}]
-		"pack":state.offers=[{"name":"整理补给","desc":"带走一瓶能量药剂，使用后回复40MP。","loot":{"kind":"item","item":ExpeditionData.resolve("potion_energy")}},{"name":"收集散物","desc":"收拾仍可使用的材料。获得两份地区材料。","loot":{"kind":"bundle","items":_materials(2)}}]
+		"pack":state.offers=[{"name":"整理补给","desc":"带走一瓶能量药剂，使用后回复40MP。","loot":{"kind":"item","item":ExpeditionData.resolve("potion_energy")}},{"name":"收集散物","desc":"收拾仍可使用的材料。获得两份地区材料。","loot":{"kind":"bundle","items":_materials(2)}},{"name":"研读战术手札","desc":"获得1点本局技能天赋点。","loot":{"kind":"talent_points","amount":1}}]
 		"page":
 			var pool:Array[Dictionary]=[]
 			for item in ItemDB.all():
@@ -102,10 +102,15 @@ func open_event()->void:
 	_event_offers();state.event_started=true;state.event_panel_open=true;panel=RoomEventUI.new();panel.controller=self;add_child(panel);_checkpoint()
 func claim_event(index:int)->bool:
 	if not event_pending() or index<0 or index>=state.offers.size():return false
-	var before:=state.duplicate(true);state.pending.append(state.offers[index].loot.duplicate(true));state.event_resolved=true;state.chosen=index;record.rewarded=true;main.level.doors_open=true
+	var before:=state.duplicate(true);var old_points:=GameState.talent_points
+	var reward:Dictionary=state.offers[index].loot.duplicate(true)
+	if str(reward.get("kind",""))=="talent_points":GameState.award_talent_points(int(reward.get("amount",0)))
+	else:state.pending.append(reward)
+	state.event_resolved=true;state.chosen=index;record.rewarded=true;main.level.doors_open=true
 	var evidence:=AchievementTracker.stage("event")
 	if not _save_transaction():
 		AchievementTracker.finish_stage(evidence,false)
+		GameState.talent_points=old_points;EventBus.talents_changed.emit()
 		record.delta.expansion=before;state=record.delta.expansion;record.rewarded=false;main.level.doors_open=false;return false
 	AchievementTracker.finish_stage(evidence,true)
 	if is_instance_valid(panel):panel.close()

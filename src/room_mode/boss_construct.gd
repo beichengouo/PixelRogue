@@ -15,6 +15,7 @@ var orbit_angle:=0.0
 var orbit_radius:=92.0
 var _boss:RoomBoss
 var _art:Sprite2D
+var _art_age:=0.0
 func _ready()->void:
 	uses_gravity=false;collides_with_world=false;body_size=Vector2(24,28);base_coins=0;loot_origin="boss_construct"
 	super._ready();collision_layer=Layers.BOSS_OBJECT;collision_mask=0;add_to_group("boss_constructs")
@@ -22,10 +23,12 @@ func _ready()->void:
 func _build_body_collider()->void:
 	var shape:=CircleShape2D.new();shape.radius=12;var collider:=CollisionShape2D.new();collider.shape=shape;add_child(collider)
 func _build_visual()->void:
-	_art=Sprite2D.new();_art.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;add_child(_art);visual=_art
-	var frames:=HostileAttackFX.frames(boss_family,"construct")
-	if frames.is_empty():frames=HostileAttackFX.frames(boss_family,"cast")
-	if not frames.is_empty():_art.texture=frames[0];_art.scale=Vector2.ONE*48/HostileAttackFX.cell_size(boss_family,"construct")
+	_art=Sprite2D.new();add_child(_art);visual=_art
+	var stage:="construct"
+	var frames:=HostileAttackFX.frames(boss_family,stage)
+	if frames.is_empty():stage="cast";frames=HostileAttackFX.frames(boss_family,stage)
+	_art.texture_filter=HostileAttackFX.texture_filter_for(boss_family,stage)
+	if not frames.is_empty():_art.texture=frames[0];_art.scale=Vector2.ONE*48/frames[0].get_width()
 	_art.position.y=-12
 	_apply_clone_art()
 func _apply_clone_art()->void:
@@ -53,8 +56,9 @@ func _physics_process(dt:float)->void:
 		shooting_left=3.6 if construct_kind=="bud" else 4.5
 		if _boss.can_construct_fire(self):_boss.warn_construct_shot(self)
 	if _art!=null:
+		_art_age+=dt
 		var frames:=HostileAttackFX.frames(boss_family,"construct")
-		if not frames.is_empty() and construct_kind!="clone":_art.texture=frames[int(lifetime*6)%frames.size()]
+		if not frames.is_empty() and construct_kind!="clone":_art.texture=frames[int(_art_age*6)%frames.size()]
 	queue_redraw()
 func _die()->void:
 	if _dead:return

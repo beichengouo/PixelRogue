@@ -89,7 +89,7 @@ func _select(index:int)->void:
 	if is_instance_valid(_return_focus):_return_focus.grab_focus()
 func _story(index:int,phase:String)->void:
 	_return_focus=get_viewport().gui_get_focus_owner()
-	close(false);_talk(CampCommissionCatalog.story(str(ExpeditionData.CONTRACTS[index].id),phase),_resume)
+	close(false);_talk(CampCommissionCatalog.story(str(ExpeditionData.CONTRACTS[index].id),phase,phase=="finished"),_resume)
 func _resume()->void:
 	_show()
 	var selected:=_body.find_child("Commission_"+str(ExpeditionData.CONTRACTS[_selected].id),true,false) as Control

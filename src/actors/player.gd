@@ -362,10 +362,11 @@ func take_damage(amount: float, from: Vector2, source: Node = null, direct_hit :
 	EventBus.request_screen_shake.emit(3.0)
 	Effects.damage_number(get_parent(), global_position + Vector2(0.0, -34.0), amount, false, Palette.UI_DANGER)
 
-	var push := global_position - from
-	if push.length() < 0.001:
-		push = Vector2(float(-facing), -1.0)
-	velocity = push.normalized() * CONTACT_PUSH
+	if direct_hit:
+		var push := global_position - from
+		if push.length() < 0.001:
+			push = Vector2(float(-facing), -1.0)
+		velocity = push.normalized() * CONTACT_PUSH
 
 	# 荆棘反伤
 	var thorns := Combat.thorns_damage(stats)

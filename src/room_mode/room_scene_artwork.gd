@@ -11,6 +11,8 @@ var _painted_light_materials:Array[ShaderMaterial]=[]
 var _painted_light_age:=0.0
 var _painted_light_frame:=-1
 static var _painted_light_anchors:Dictionary={}
+var scene_life:=RoomSceneLife.new()
+var scene_whole:=RoomSceneWhole.new()
 func active()->bool:return not data.is_empty()
 func camera_bounds()->Rect2:
 	# Use the actual rendered background texture, independent of editable
@@ -52,17 +54,23 @@ static func gate_offset(side:String,ports:Array,origin:=Vector2(11,5))->Vector2:
 	return Vector2.ZERO
 func configure(id:String)->void:
 	for child in get_children():remove_child(child);child.queue_free()
+	scene_life=RoomSceneLife.new()
+	scene_whole=RoomSceneWhole.new()
 	gates.clear();ground_planes.clear();background_planes.clear();background_plane=null;_painted_light_materials.clear();_painted_light_age=0;_painted_light_frame=-1;data=RoomSceneArtCatalog.definition(id)
 	if not active():return
 	var root:=RoomSceneArtCatalog.ROOT+id+"/"
 	var frame:=frame_rect()
-	for plane in data.get("planes",[]):
+	var layer_anchors:Dictionary={}
+	var whole_active:=scene_whole.configure(self,id)
+	for plane in ([] if whole_active else data.get("planes",[])):
 		var sprite:=_sprite(root+str(plane.path),plane_rect(plane,frame,Vector2(float(data.canvas[0]),float(data.canvas[1]))))
+		layer_anchors[str(plane.get("layer","background"))]=sprite
 		if str(plane.get("layer",""))=="background" or str(plane.path).ends_with("background.png"):
 			background_planes.append(sprite)
 			if background_plane==null:background_plane=sprite
 		_configure_painted_light(sprite,plane,id)
 		if str(plane.path)!="water.png":ground_planes.append(sprite)
+	if not whole_active:scene_life.configure(self,id,layer_anchors)
 	var floor:Array=data.floor_rect_px
 	var scale_value:=visual_room_rect().size/Vector2(float(floor[2]),float(floor[3]))
 	for side in data.get("gates",{}):
@@ -83,8 +91,12 @@ func refresh_gates()->void:
 		sprite.modulate.a=1.0-room.door_phase if room.door_directions.has(directions[side]) else 1.0
 func _process(_dt:float)->void:
 	if active():refresh_gates()
-	if Engine.is_editor_hint() or _painted_light_materials.is_empty():return
-	if not ComicMotion.reduced() and not UIFlow.has_screen() and not TransitionLayer.busy and not get_tree().paused:_painted_light_age+=_dt
+	if Engine.is_editor_hint():return
+	var advance:=is_visible_in_tree() and is_instance_valid(room) and not room.prefetching and not ComicMotion.reduced() and not UIFlow.has_screen() and not TransitionLayer.busy and not get_tree().paused
+	scene_life.update(_dt,advance,ComicMotion.reduced())
+	scene_whole.update(_dt,advance,ComicMotion.reduced())
+	if _painted_light_materials.is_empty():return
+	if advance:_painted_light_age+=_dt
 	var current:=0 if ComicMotion.reduced() else floori(_painted_light_age*2)%4
 	if current==_painted_light_frame:return
 	_painted_light_frame=current
@@ -92,15 +104,24 @@ func _process(_dt:float)->void:
 func apply_weather(snow:float,wet:float)->void:
 	for plane in ground_planes:WeatherSurfaceArt.apply(plane,snow,wet,background_planes.has(plane))
 	for gate in gates.values():WeatherSurfaceArt.apply(gate,snow,wet)
+	scene_life.apply_weather(snow,wet)
 
-func _configure_painted_light(sprite:Sprite2D,plane:Dictionary,id:String)->void:
+func _configure_whole_lights(sprite:Sprite2D,id:String)->void:
+	_configure_painted_light(sprite,{"path":""},id)
+	var anchors:Array=[]
+	for values:Array in _painted_light_anchors.get(id,{}).get("plane_centers",{}).values():
+		for value:Array in values:
+			if not anchors.has(value):anchors.append(value)
+	_configure_painted_light(sprite,{"path":"__whole__"},id,anchors)
+
+func _configure_painted_light(sprite:Sprite2D,plane:Dictionary,id:String,override_anchors:Array=[])->void:
 	if Engine.is_editor_hint():return
 	if _painted_light_anchors.is_empty():
 		var path:="res://assets/light_models_v16/painted_anchors.json"
 		if not FileAccess.file_exists(path):return
 		_painted_light_anchors=JSON.parse_string(FileAccess.get_file_as_string(path))
 	var profile:Dictionary=_painted_light_anchors.get(id,{})
-	var anchors:Array=profile.get("plane_centers",{}).get(str(plane.path),[])
+	var anchors:Array=override_anchors if not override_anchors.is_empty() else profile.get("plane_centers",{}).get(str(plane.path),[])
 	if anchors.is_empty():return
 	var raw:Array=plane.get("rect_px",[0,0,data.canvas[0],data.canvas[1]])
 	var source_rect:=Rect2(float(raw[0]),float(raw[1]),float(raw[2]),float(raw[3]))

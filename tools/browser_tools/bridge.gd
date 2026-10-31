@@ -1,8 +1,27 @@
 extends Node
 ## Browser tools use the same codecs, validation and transactions as the game.
 var request: Dictionary
+var _mailbox := ""
+var _working := false
 func _ready()->void:
+	var args:=OS.get_cmdline_user_args()
+	var index:=args.find("--browser-daemon")
+	if index>=0 and index+1<args.size():
+		_mailbox=str(args[index+1]);return
 	call_deferred("_run")
+func _process(_dt:float)->void:
+	if _mailbox.is_empty() or _working or not FileAccess.file_exists(_mailbox):return
+	_working=true
+	var parsed:Variant=JSON.parse_string(FileAccess.get_file_as_string(_mailbox))
+	DirAccess.remove_absolute(_mailbox)
+	var result:Dictionary={"error":"请求格式错误"}
+	if parsed is Dictionary:
+		request=parsed;result=await _dispatch()
+	var output:=FileAccess.open(_mailbox+".result.tmp",FileAccess.WRITE)
+	if output!=null:
+		output.store_string(JSON.stringify(result));output.close()
+		DirAccess.rename_absolute(_mailbox+".result.tmp",_mailbox+".result")
+	_working=false
 func _run()->void:
 	var args:=OS.get_cmdline_user_args();var index:=args.find("--browser-request")
 	if index<0 or index+1>=args.size():get_tree().quit(1);return
@@ -15,7 +34,25 @@ func _run()->void:
 	get_tree().quit()
 func _dispatch()->Dictionary:
 	match str(request.get("action","")):
+		"story_catalog":return {"ids":_story_ids(),"metadata":preload("res://tools/browser_tools/story_catalog.gd").metadata()}
+		"story_bundle":
+			var revision:=_stamp("res://data/story_overrides.json")
+			var variants:Dictionary={}
+			var heroes:Array=[str(request.hero)] if request.has("hero") else ["sylphiette","xixifu","ilyua"]
+			var replays:Array=[bool(request.replay)] if request.has("replay") else [false,true]
+			for hero:String in heroes:
+				for replay:bool in replays:
+					var scenes:Dictionary={}
+					for id:String in _story_ids():
+						var scene:=Story.get_scene(StringName(id),replay,StringName(hero))
+						if not scene.is_empty():scenes[id]=scene
+					variants[hero+("|repeat" if replay else "|first")]=scenes
+			if revision!=_stamp("res://data/story_overrides.json"):return {"error":"导出期间剧情发生变化，请重试。"}
+			return {"revision":revision,"format":"pixelrogue.story-export","version":2,"variants":variants,"metadata":preload("res://tools/browser_tools/story_catalog.gd").metadata(),"scope":"主线两章、命运观察、营地固定关系事件、居民生活委托三阶段对白"}
+		"story_scene":
+			return {"scene":Story.get_scene(StringName(request.id),bool(request.get("replay",false)),StringName(request.hero))}
 		"catalog":
+			UnitBalance.reload();UiArtLayout.reload()
 			var pool:=RoomTemplatePool.new();pool.reload()
 			var templates:Array=[]
 			for doc:Dictionary in pool.templates:
@@ -29,7 +66,7 @@ func _dispatch()->Dictionary:
 			for id in ExpeditionData.MATERIALS:items.append(_item(ExpeditionData.resolve(str(id))))
 			for id in MaterialWorkshopCatalog.BOSS_MATERIALS:items.append(_item(ExpeditionData.resolve(str(id))))
 			for mushroom in 4:items.append(_item(ItemDB.mushroom_item(mushroom)))
-			return {"templates":templates,"units":UnitBalance.catalog(),"balance":UnitBalance.snapshot(),"balance_revision":_stamp(UnitBalance.PATH),"items":items,"user_templates":ProjectSettings.globalize_path(RoomTemplatePool.USER),"save_path":ProjectSettings.globalize_path(SaveService.SAVE_PATH),"lights":RoomEnvironmentConfig.LIGHT_NAMES}
+			return {"legendary_sets":LegendarySets.DATA,"templates":templates,"units":UnitBalance.catalog(),"balance":UnitBalance.snapshot(),"balance_revision":_stamp(UnitBalance.PATH),"items":items,"user_templates":ProjectSettings.globalize_path(RoomTemplatePool.USER),"save_path":ProjectSettings.globalize_path(SaveService.SAVE_PATH),"lights":RoomEnvironmentConfig.LIGHT_NAMES}
 		"map":
 			var doc:Dictionary=request.get("document",{})
 			if doc.is_empty():
@@ -94,6 +131,8 @@ func _dispatch()->Dictionary:
 				if not error.is_empty():return {"error":error}
 			return {"fingerprint":console.fingerprint,"gold":int(console.data.outpost.get("gold",0)),"active":not console.data.get("run",{}).is_empty(),"backup":console.last_backup}
 	return {"error":"未知工具操作"}
+func _story_ids()->Array:
+	return preload("res://tools/browser_tools/story_catalog.gd").ids()
 func _item(item:Dictionary)->Dictionary:
 	return {"id":str(item.get("id","")),"name":str(item.get("name","")),"rarity":int(item.get("rarity",0)),"icon":str(item.get("icon",""))}
 func _stamp(path:String)->String:

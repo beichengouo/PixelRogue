@@ -3,6 +3,30 @@ extends Node
 ## Contracts belong to the player, not the hire roster; their lifetime uses paused game time.
 var actor:Player
 var serial:=0
+var shelter_transfer_ready:=false
+var parade_pulse_pending:=false
+
+func capstone_pulse(at:Vector2,radius:float,ratio:float,source:SummonedAlly)->void:
+	if not is_instance_valid(source) or not is_instance_valid(actor) or not actor is RoomPlayer:return
+	ContractSpellFX.spawn(actor.get_parent(),at,1,radius*2,.38)
+	var hits:=0
+	for enemy in actor.room.tactics.enemies(actor.room):
+		if hits>=6:break
+		if not is_instance_valid(enemy) or enemy.is_queued_for_deletion() or enemy._dead or at.distance_to(enemy.global_position)>radius or not actor.room.sight(at,enemy.global_position):continue
+		var before:float=enemy.hp
+		enemy.take_damage(source.attack*ratio,false,at,DamageContext.ally(source),false)
+		if enemy.hp<before:(actor as RoomPlayer).equipment_mechanics.on_ally_hit(enemy,source);hits+=1
+
+func transfer_shelter()->void:
+	if not shelter_transfer_ready or not PermanentTalents.active(&"night_shelter"):return
+	shelter_transfer_ready=false
+	for unit in companions():unit.capstone_guard_left=maxf(unit.capstone_guard_left,3.0)
+	ContractSpellFX.spawn(actor.get_parent(),actor.global_position,0,128,.35)
+
+func parade_pulse(source:SummonedAlly)->void:
+	if not parade_pulse_pending or not PermanentTalents.active(&"spirit_parade"):return
+	parade_pulse_pending=false
+	capstone_pulse(actor.global_position,126,.7,source)
 
 func companions(guardian_only:=false)->Array:
 	var found:Array=[]
@@ -79,6 +103,8 @@ func cast(slot:int)->bool:
 
 func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Dictionary,cast_bonus:float=1.0,fate_bonus:float=1.0)->void:
 	actor._cast_timer=0.28;actor._cast_pose=&"cast";actor._animation_request+=1
+	var source_skill:=StringName(str(effect.get("source_skill","")))
+	if PermanentTalents.active(source_skill):TalentCapstoneFX.spawn(actor.get_parent(),landing,source_skill,88 if Skills.is_ultimate(source_skill) else 64)
 	var healing:=1+GameState.talent_effect(&"shadow_care","契约治疗加成%")/100
 	match str(effect.kind):
 		"summon":
@@ -90,6 +116,9 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				if i<spots.size():units[i].global_position=spots[i];units[i].velocity=Vector2.ZERO
 				units[i].heal(units[i].max_hp*float(effect.heal)*healing)
 			actor.heal_player(actor.max_hp*float(effect.self_heal)*healing)
+			if PermanentTalents.active(&"homeward_light"):
+				(actor as RoomPlayer).equipment_mechanics.grant_player_shield(actor.max_hp*.08,3,&"extend")
+				for unit in units:unit.shield_hp=maxf(unit.shield_hp,unit.max_hp*.12);unit.shield_time=maxf(unit.shield_time,3.0)
 		"shelter":
 			(actor as RoomPlayer).equipment_mechanics.grant_player_shield(actor.max_hp*float(effect.shield)*(1+GameState.talent_effect(&"shadow_care","夜幕护盾加成%")/100),float(effect.duration)+GameState.talent_effect(&"shelter_duration","护盾额外秒数"),&"refresh");actor._shield_thorns=0
 			for ally in get_tree().get_nodes_in_group("allies"):
@@ -98,6 +127,7 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				ally.shield_hp=maxf(ally.shield_hp,ally.max_hp*float(effect.shield)*(1+GameState.talent_effect(&"shadow_care","夜幕护盾加成%")/100))
 				ally.shield_time=float(effect.duration)+GameState.talent_effect(&"shelter_duration","护盾额外秒数")
 				if ally is SummonedAlly and ally.player==actor:ally.heal(ally.max_hp*float(effect.heal)*healing)
+			shelter_transfer_ready=PermanentTalents.active(&"night_shelter")
 		"shadow_echo":
 			var radius:=float(effect.radius)+GameState.talent_effect(&"shadow_stride","影步额外距离")
 			ContractSpellFX.spawn(actor.get_parent(),actor.global_position,0,radius*2,.4)
@@ -114,6 +144,11 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				unit.rally_time=maxf(unit.rally_time,float(effect.duration))
 				unit.rally_attack=maxf(unit.rally_attack if active_rally else 0.0,float(effect.attack))
 				unit.rally_haste=maxf(unit.rally_haste if active_rally else 0.0,float(effect.haste));unit._refresh_bonus()
+			if PermanentTalents.active(&"shadow_step"):
+				var echoed:=0
+				for unit in companions():
+					if echoed>=6:break
+					capstone_pulse(unit.global_position,72,.22,unit);echoed+=1
 		"rally":
 			var kind:=StringName(effect.get("parade_enemy",parade_kind()))
 			var summon_effect:Dictionary={"enemy":"guard","attack":effect.get("guard_attack",.65),"hp":effect.get("guard_hp",1.2),"speed":effect.get("guard_speed",150.0),"duration":effect.get("guard_duration",30.0),"art_variant":"parade_guardian","source_skill":"spirit_parade"}
@@ -129,6 +164,7 @@ func _release(effect:Dictionary,positions:Array[Vector2],landing:Vector2,base:Di
 				unit.rally_time=float(effect.duration)+GameState.talent_effect(&"parade_duration","夜行额外秒数")
 				unit.rally_attack=float(effect.attack)+GameState.talent_effect(&"parade_power","夜行额外攻击加成%")/100
 				unit.rally_haste=float(effect.haste);unit._refresh_bonus()
+			parade_pulse_pending=PermanentTalents.active(&"spirit_parade")
 	Effects.hit_spark(actor.get_parent(),actor.global_position-Vector2(0,24),Color("c3a0ff"),8)
 	var glow:=PixelSpellFX.spawn(actor.get_parent(),actor.global_position-Vector2(0,12),"star","cast",64,0.35)
 	if is_instance_valid(glow):glow.modulate=Color("c3a0ff")
@@ -141,6 +177,7 @@ func _summon(effect:Dictionary,at:Vector2,base:Dictionary)->void:
 	unit.enemy_kind=StringName(effect.enemy);unit.body_color=Color("c3a0ff");unit.display_name={"walker":"骸灵伙伴","caster":"幽灯伙伴","guard":"骸甲守卫","treant":"树灵守望者"}.get(str(effect.enemy),"契约伙伴")
 	unit.art_variant=str(effect.get("art_variant","ghost_lantern" if str(effect.enemy)=="caster" else ("gate_guardian" if str(effect.enemy)=="guard" else "")));unit.guardian=bool(effect.get("guardian",false));unit.attack_ratio=float(effect.attack);unit.hp_ratio_base=float(effect.hp);unit.speed_base=float(effect.speed)
 	unit.source_skill=StringName(effect.get("source_skill",""))
+	if unit.source_skill==&"shadow_companions" and PermanentTalents.active(&"shadow_companions"):unit.capstone_cover_charge=1
 	unit.contract_attack_bonus=GameState.talent_effect(&"contract_might","契约物攻击加成%")/100
 	unit.contract_hp_bonus=GameState.talent_effect(&"contract_vitality","契约物生命加成%")/100
 	unit.monster_base_attack=float(base.get("attack",0));unit.monster_base_hp=float(base.get("hp",0))

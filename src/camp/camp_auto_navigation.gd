@@ -66,7 +66,11 @@ func _physics_process(dt:float)->void:
 	var target:=target_position()
 	if not target.is_finite():cancel();return
 	var arrived:bool=world.facility_interaction_distance(target_id)<=60 if kind=="facility" else actor.position.distance_to(target)<=60 and world.level.sight(actor.position,target)
-	if arrived:cancel();return
+	if arrived:
+		var enter_training:=kind=="facility" and target_id=="training"
+		cancel()
+		if enter_training:world.call_deferred("interact_facility","training")
+		return
 	_stalled=_stalled+dt if actor.position.distance_to(_last)<.15 else 0.0
 	_last=actor.position;_repath-=dt
 	if _stalled>3:cancel();return

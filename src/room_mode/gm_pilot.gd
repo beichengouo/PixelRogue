@@ -72,13 +72,15 @@ func _process(delta:float)->void:
 	if _last_room!=str(main.graph.current):_last_room=str(main.graph.current);_ignored.clear();_stuck=0;_last_position=actor.global_position;_loot_target=null;_loot_seconds=0;_exit_last_position=Vector2.INF;_exit_stalled=0;_exit_ignored.clear();_exit_target="";_exit_seconds=0;_rest_seconds=0
 	_stuck=_stuck+step if actor.global_position.distance_to(_last_position)<2 and not actor.movement_override.is_zero_approx() else 0
 	_last_position=actor.global_position
-	if _gear_elapsed>=1:_gear_elapsed=0;_equip_upgrades();_develop_character()
-	if _recover_footing():return
-	if main.special_rooms.chase_running():
+	if _gear_elapsed>=1:_gear_elapsed=0;_bind_new_legendary();_equip_upgrades();_develop_character()
+	if _shadow_challenge_pending():
+		actor.cancel_basic_chain();actor.caster.cancel_cast();actor.firing=false
 		_evade_shadow();return
+	if _recover_footing():return
 	var enemies:=actor.equipment_mechanics.nearest_enemies(actor.global_position,1600,100)
 	# A blocked enemy still needs to be approached, even without line of fire.
-	var target:EnemyBase=_priority_summoner()
+	var target:EnemyBase=_altar_threat()
+	if target==null:target=_priority_summoner()
 	if target==null and not enemies.is_empty():target=enemies[0]
 	if target==null:
 		var best:=INF
@@ -124,6 +126,11 @@ func _prepare_departure(step:float)->bool:
 	if actor.hp<actor.max_hp*.65:_use_potion("heal")
 	if GameState.mp<GameState.MAX_MP*.35:_use_potion("mana")
 	var exits:=_frontier_exits()
+	if not exits.is_empty() and str(main.graph.rooms[exits[0]].get("kind",""))=="elite" and actor.permanent_hp_loss()>0:
+		for item in GameState.items:
+			if str(item.get("id",""))=="potion_capacity":
+				_use_potion("repair_capacity")
+				return true
 	if exits.is_empty() or main.graph.rooms[exits[0]].kind!="boss":return false
 	# Rest only on cleared ground, using normal regeneration and cooldowns.
 	# Bound the wait so a mana-suppressing effect cannot halt exploration.
@@ -148,6 +155,28 @@ func _priority_summoner()->EnemyBase:
 		if rank==2:distance*=.5+.5*clampf(unit.hp/maxf(1,unit.max_hp),0,1)
 		if rank>priority or (rank==priority and distance<nearest):selected=unit;nearest=distance;priority=rank
 	return selected
+
+func _altar_threat()->EnemyBase:
+	if str(main.graph.rooms[main.graph.current].get("kind",""))!="altar" or not is_instance_valid(main.fate_altar) or main.fate_altar.hp<=0:return null
+	var selected:EnemyBase;var nearest:=240.0*240.0
+	for unit in main.level.tactics.enemies(main.level):
+		if not is_instance_valid(unit) or unit._dead or unit.hp<=0:continue
+		var distance:float=unit.global_position.distance_squared_to(main.fate_altar.global_position)
+		if distance<nearest:nearest=distance;selected=unit
+	return selected
+
+func _shadow_challenge_pending()->bool:
+	var record:Dictionary=main.graph.rooms.get(main.graph.current,{})
+	if not SpecialRoomController.is_shadow_room(record):return false
+	var chase:Dictionary=main.special_rooms.state.get("chase",{})
+	return not chase.is_empty() and not bool(chase.get("done",false))
+
+func _bind_new_legendary()->void:
+	var owned:Array=GameState.items.duplicate();owned.append_array(GameState.equipment.values())
+	for item:Dictionary in owned:
+		if int(item.get("rarity",0))<3 or not ItemDB.is_equippable(item) or BoundEquipment.is_bound(item):continue
+		var fee:=BoundEquipment.binding_price(item)
+		if fee>0 and GameState.coins>=fee:GameState.bind_inventory_equipment(item)
 
 func _recover_footing()->bool:
 	var actor:RoomPlayer=main.player
@@ -413,6 +442,7 @@ func _frontier_exits()->Array[String]:
 		if entry.id!=graph.current and (service_score>0 or not bool(record.get("visited",true)) or not bool(record.get("cleared",false))):
 			if not str(entry.first) in exits:exits.append(str(entry.first))
 			var score:float=float({"boss":130,"normal":100,"reward":110,"altar":90,"event":80,"shop":55,"tavern":50,"trial":35,"elite":20,"game":10,"boss_rush":5}.get(str(record.get("kind","")),0))-float(entry.depth)*3
+			if str(record.get("kind",""))=="elite" and supplies.capacity_doses_missing()>0:score=-100-float(entry.depth)*3
 			score=maxf(score,service_score-float(entry.depth)*3)
 			scores[str(entry.first)]=maxf(float(scores.get(str(entry.first),-INF)),score)
 			continue
@@ -524,14 +554,14 @@ func _equipment_score(item:Dictionary)->float:
 	return delta+fill+int(item.get("rarity",0))*3+5+(200 if set_piece else 0)
 
 func _develop_character()->void:
-	# Use the exact player APIs: earned points, prerequisites and per-ID cooldowns.
+	# GM allocates only points already earned in this run.
 	while GameState.talent_points>0:
-		var chosen:StringName=&"";var least:=4
+		var chosen:StringName=&""
 		for skill:StringName in GameState.skill_loadout():
-			for route:StringName in [&"link",&"power",&"shape"]:
-				var id:=SkillTalentCatalog.route_id(skill,route)
-				var current:=int(GameState.talents.get(id,0))
-				if current<least and current<3:chosen=id;least=current
+			for route:StringName in SkillTalentCatalog.ROUTES:
+				var branch:=SkillTalentCatalog.route_id(skill,route)
+				if GameState.talent_unlocked(branch):chosen=branch;break
+			if chosen!=&"":break
 		if chosen==&"" or not GameState.spend_talent_point(chosen):break
 	# Departure skills are fixed during a run; GM cannot bypass paid respec.
 	if not CampSession.active:return

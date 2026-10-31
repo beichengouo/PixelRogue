@@ -7,6 +7,8 @@ var equipment_mechanics: EquipmentMechanics
 var ilyua_runtime: IlyuaRuntime
 var emotes:HeroEmote
 var holy_runtime:HolyRuntime
+var basic_chain := XixifuBasicChain.new()
+var _walk_phase := 0.0
 var firing := false
 var movement_override := Vector2.ZERO
 var _dash_vector := Vector2.RIGHT
@@ -21,6 +23,7 @@ var _holy_animation_seen:=-1
 var _holy_pose_left:=0.0
 
 func set_extraction_pose(pose: StringName, hide_model := false) -> void:
+	if pose!=&"":cancel_basic_chain()
 	if pose!=&"" and is_instance_valid(caster):caster.cancel_cast()
 	if pose!=&"" and is_instance_valid(emotes):emotes.clear()
 	super.set_extraction_pose(pose, hide_model)
@@ -62,19 +65,27 @@ func _refresh_legendary_visual()->void:
 	if _sprite==null:return
 	var frames:=RoomHeroArt.make_frames()
 	if _sprite.sprite_frames==frames:return
+	cancel_basic_chain()
+	basic_chain.restore_cooldown(_attack_cd,stats.get_value(&"attack_speed"))
 	var animation:=_sprite.animation;var frame:=_sprite.frame;var progress:=_sprite.frame_progress
 	_sprite.sprite_frames=frames;_sprite.play(animation if frames.has_animation(animation) else &"idle_s");_sprite.set_frame_and_progress(frame%frames.get_frame_count(_sprite.animation),progress);RoomHeroArt.align(_sprite)
 
 func _physics_process(dt: float) -> void:
+	if get_tree().paused or UIFlow.has_screen():return
 	_update_timers(dt)
+	if velocity.length()>20:_walk_phase=fposmod(_walk_phase+dt*7.5*clampf(velocity.length()/180.0,.75,1.15),4.0)
 	_holy_pose_left=maxf(0,_holy_pose_left-dt)
 	_sync_spell_shield()
-	if extraction_controls_locked(): velocity=Vector2.ZERO; _update_visual(dt); return
+	if extraction_controls_locked():
+		if uses_basic_chain():advance_basic_chain(dt,false)
+		velocity=Vector2.ZERO; _update_visual(dt); return
 	var pilot:=GameState.gm_pilot_active and not CampSession.active
 	var movement := movement_override if pilot or movement_override!=Vector2.ZERO else RoomInput.movement()
 	if extraction_pose==&"prayer":
 		if movement!=Vector2.ZERO: extraction_interrupted.emit()
-		else: velocity=Vector2.ZERO; _update_visual(dt); return
+		else:
+			if uses_basic_chain():advance_basic_chain(dt,false)
+			velocity=Vector2.ZERO; _update_visual(dt); return
 	var mouse_mode := RoomInput.using_mouse()
 	var auto_mode:=RoomInput.using_auto()
 	var held := MobileControls.attacking() if MobileControls.enabled() else Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
@@ -120,20 +131,11 @@ func _physics_process(dt: float) -> void:
 		var pointer := RoomInput.pointer_aim(self)
 		if not pointer.is_zero_approx():aim_direction=pointer
 	if absf(aim_direction.x)>0.1:facing=1 if aim_direction.x>0 else -1
-	if firing and _attack_cd<=0 and extraction_pose==&"" and not caster.busy():
-		var receipt := BasicAttackReceipt.new(self)
-		var roll := Combat.roll_attack(stats,Rng.stream())
-		roll.damage=float(roll.damage)*1.5
-		receipt.critical=bool(roll.crit)
-		if is_instance_valid(ilyua_runtime):ilyua_runtime.fire_basic(aim_direction,roll,receipt)
-		else:
-			if not equipment_mechanics.fire_basic(aim_direction,roll,receipt):fire(aim_direction,float(roll.damage),430,true,receipt)
-			equipment_mechanics.on_basic_fired(aim_direction,receipt)
-		_attack_cd=(.44 if is_instance_valid(ilyua_runtime) and ilyua_runtime.ultimate_left>0 else .70)/maxf(0.1,stats.get_value(&"attack_speed"))
-		_swing_timer=0.18
-		if is_instance_valid(holy_runtime) or bool(_sprite.sprite_frames.get_meta("handdrawn",false)):_animation_request+=1
 	for slot in 4:
 		if not pilot and Input.is_action_just_pressed(["skill_1","skill_2","skill_3","ultimate"][slot]): caster.request(slot)
+	if uses_basic_chain():
+		advance_basic_chain(dt,firing)
+	elif firing:request_attack()
 	if not pilot:_try_potions()
 	if forest_stepping and ilyua_runtime.step_left<=0:velocity=movement*stats.get_value(&"move_speed")*movement_slow_multiplier()
 	if _dash_spell_active and _dash_timer<=0:_dash_spell_fx();_dash_spell_active=false;equipment_mechanics.on_dash_end()
@@ -146,6 +148,8 @@ func request_dash() -> void:
 	request_dash_direction(movement if movement != Vector2.ZERO else aim_direction)
 
 func stop_room_travel_motion()->void:
+	cancel_basic_chain()
+	firing=false
 	if is_instance_valid(equipment_mechanics):equipment_mechanics.fate_runtime.motion_reset()
 	if is_instance_valid(emotes):emotes.clear()
 	if is_instance_valid(caster):caster.cancel_cast()
@@ -159,18 +163,55 @@ func stop_room_travel_motion()->void:
 		ilyua_runtime.step_left=0;ilyua_runtime.step_direction=Vector2.ZERO
 	# Dash/skill cooldowns and existing defensive buffs remain unchanged.
 
+func uses_basic_chain()->bool:
+	return _sprite!=null and bool(_sprite.sprite_frames.get_meta("xixifu_chain",false))
+
+func _basic_input_allowed()->bool:
+	return hp>0 and extraction_pose==&"" and not get_tree().paused and not UIFlow.has_screen() and (GameState.run_active or CampSession.active) and not caster.busy() and _dash_timer<=0
+
+func cancel_basic_chain()->void:
+	if uses_basic_chain():_attack_cd=basic_chain.remaining()/maxf(.1,stats.get_value(&"attack_speed"))
+	basic_chain.cancel()
+
+func reset_basic_after_restore()->void:
+	basic_chain.restore_cooldown(_attack_cd,stats.get_value(&"attack_speed"))
+	firing=false;aim_override=Vector2.ZERO;_mouse_attack_blocked=true;_swing_timer=0
+	caster.cancel_cast()
+
+func advance_basic_chain(dt:float,held:bool)->void:
+	if get_tree().paused or UIFlow.has_screen():return
+	if not _basic_input_allowed():basic_chain.cancel()
+	basic_chain.advance(dt,stats.get_value(&"attack_speed"),held and _basic_input_allowed(),aim_direction,_emit_basic)
+	_attack_cd=basic_chain.remaining()/maxf(.1,stats.get_value(&"attack_speed"))
+
 func request_attack()->void:
-	if hp<=0 or _attack_cd>0 or extraction_controls_locked():return
-	var receipt:=BasicAttackReceipt.new(self);var roll:=Combat.roll_attack(stats,Rng.stream());roll.damage=float(roll.damage)*1.5;receipt.critical=bool(roll.crit)
-	if is_instance_valid(ilyua_runtime):ilyua_runtime.fire_basic(aim_direction,roll,receipt)
+	if not _basic_input_allowed():return
+	if uses_basic_chain():basic_chain.request();return
+	if _attack_cd>0:return
+	_emit_basic(1,aim_direction)
+	_attack_cd=(.44 if is_instance_valid(ilyua_runtime) and ilyua_runtime.ultimate_left>0 else .70)/maxf(.1,stats.get_value(&"attack_speed"))
+
+func _emit_basic(stage:int,direction:Vector2)->bool:
+	if not _basic_input_allowed():return false
+	var receipt:=BasicAttackReceipt.new(self)
+	var roll:=Combat.roll_attack(stats,Rng.stream());roll.damage=float(roll.damage)*1.5;receipt.critical=bool(roll.crit)
+	if is_instance_valid(ilyua_runtime):ilyua_runtime.fire_basic(direction,roll,receipt)
 	else:
-		if not equipment_mechanics.fire_basic(aim_direction,roll,receipt):fire(aim_direction,float(roll.damage),430,true,receipt)
-		equipment_mechanics.on_basic_fired(aim_direction,receipt)
-	_attack_cd=(.44 if is_instance_valid(ilyua_runtime) and ilyua_runtime.ultimate_left>0 else .70)/maxf(.1,stats.get_value(&"attack_speed"));_swing_timer=.18
+		var finisher:=uses_basic_chain() and stage==5
+		var equipment_roll:=roll.duplicate()
+		if finisher:equipment_roll.damage=float(roll.damage)*1.5
+		if not equipment_mechanics.fire_basic(direction,equipment_roll,receipt):
+			if finisher:
+				for angle:float in [-10.0,0.0,10.0]:fire(direction.rotated(deg_to_rad(angle)),float(roll.damage)*.5,430,true,receipt)
+			else:fire(direction,float(roll.damage),430,true,receipt)
+		equipment_mechanics.on_basic_fired(direction,receipt)
+	_swing_timer=.18
 	if is_instance_valid(holy_runtime) or bool(_sprite.sprite_frames.get_meta("handdrawn",false)):_animation_request+=1
+	return true
 
 func request_dash_direction(direction: Vector2) -> void:
 	if hp <= 0.0 or _dash_cd > 0.0 or direction.is_zero_approx(): return
+	cancel_basic_chain()
 	_dash_origin=position;_dash_vector=direction.normalized();_dash_timer=0.16;_dash_cd=stats.get_value(&"dash_cooldown")
 	_invuln=maxf(_invuln,0.16);_dash_spell_active=true;_dash_spell_fx()
 	if is_instance_valid(ilyua_runtime):ilyua_runtime.on_dash_started()
@@ -188,6 +229,7 @@ func take_damage(amount: float, from: Vector2, source: Node = null, direct_hit :
 		AudioManager.play(&"shield_break" if shield_hp<=0 else &"shield_hit",-9 if shield_hp<=0 else -16,0)
 		if shield_hp<=0:CombatContactFX.spawn(get_parent(),global_position,&"shield",true)
 		if is_instance_valid(equipment_mechanics):equipment_mechanics.legendary.shield_absorbed()
+		if is_instance_valid(summons):summons.transfer_shelter()
 	if is_instance_valid(holy_runtime):
 		if shield_hp<before_shield:holy_runtime.on_shield_absorbed(before_shield-shield_hp)
 		if hp<before_hp:holy_runtime.on_hurt()
@@ -201,7 +243,7 @@ func fire(dir: Vector2, amount: float, speed_value: float, basic: bool, receipt:
 		var profile:=WeaponArt.profile()
 		bullet.weapon_fx=str(profile.get("fx","wand_arcane"));speed_value=float(profile.get("speed",speed_value));bullet.range_limit=float(profile.get("reach",540))
 		bullet.enable_basic_tracking(dir,global_position+dir*14)
-		if is_instance_valid(equipment_aura):equipment_aura.on_attack()
+		if is_instance_valid(equipment_aura) and (receipt==null or receipt.claim_effect(&"weapon_aura")):equipment_aura.on_attack()
 	bullet.burn_dps=stats.get_value(&"attack")*GameState.talent_effect(&"ignite","点燃每秒攻击力%")/100
 	if GameState.passive_id==&"sylphiette_aoe":
 		bullet.explosion_radius=(72+GameState.talent_rank(&"blast")*12)*(1+GameState.talent_effect(&"chain_blast","爆炸范围加成%")/100)
@@ -217,6 +259,7 @@ func fire(dir: Vector2, amount: float, speed_value: float, basic: bool, receipt:
 
 func _update_animation() -> void:
 	if _sprite==null:return
+	if uses_basic_chain() and _update_chain_animation():return
 	if is_instance_valid(caster) and caster.busy() and hp>0 and extraction_pose==&"":
 		var cast_direction := RoomHeroArt.direction_name(caster._cast_direction)
 		var cast_animation := StringName("skill_cast_" + cast_direction)
@@ -265,6 +308,34 @@ func _update_animation() -> void:
 	_sprite.flip_h=RoomHeroArt.utility_flip(_sprite.sprite_frames,facing) if wanted in [&"death",&"interact",&"prayer"] else RoomHeroArt.flip_for(action,RoomHeroArt.direction_name(aim_direction))
 	RoomHeroArt.align(_sprite)
 
+func _sample_chain_pose(name_value:StringName,elapsed:float,durations:Array,flip:bool)->void:
+	_sprite.play(name_value);_sprite.pause();_sprite.speed_scale=1.0;_sprite.flip_h=flip
+	var left:=elapsed
+	for index in durations.size():
+		var duration:=float(durations[index])
+		if left<duration or index==durations.size()-1:
+			_sprite.set_frame_and_progress(index,clampf(left/duration,0,1));break
+		left-=duration
+	RoomHeroArt.align(_sprite)
+
+func _update_chain_animation()->bool:
+	# Utility clips retain the established animation and mirroring path.
+	if hp<=0 or extraction_pose!=&"" or _hurt_timer>0 and _flash>.14:return false
+	if caster.busy():
+		var elapsed:=RoomSkillCaster.WINDUP_SECONDS-caster._windup_left if caster._pending_slot>=0 else RoomSkillCaster.WINDUP_SECONDS+RoomSkillCaster.RECOVERY_SECONDS-caster._recovery_left
+		var direction:=RoomHeroArt.direction_name(caster._cast_direction)
+		_sample_chain_pose(StringName("skill_cast_"+direction),elapsed,[.08,.24,.05,.05],RoomHeroArt.flip_for("skill_cast",direction));return true
+	if basic_chain.active:
+		var action:=("move_attack" if velocity.length()>20 else "attack")+str(basic_chain.stage+1)
+		var direction:=RoomHeroArt.direction_name(basic_chain.visual_aim(aim_direction))
+		var tail:=float(XixifuBasicChain.DURATIONS[basic_chain.stage])-XixifuBasicChain.RELEASE
+		_sample_chain_pose(StringName(action+"_"+direction),basic_chain.elapsed(),[XixifuBasicChain.RELEASE,tail*.25,tail*.35,tail*.4],RoomHeroArt.flip_for(action,direction));return true
+	var direction:=RoomHeroArt.direction_name(aim_direction)
+	if velocity.length()>20:
+		_sample_chain_pose(StringName("walk_"+direction),_walk_phase,[1,1,1,1],RoomHeroArt.flip_for("walk",direction))
+	else:_sample_chain_pose(StringName("idle_"+direction),0,[1],RoomHeroArt.flip_for("idle",direction))
+	return true
+
 func _draw() -> void:
 	draw_set_transform(Vector2(0,14),0,Vector2(1,0.35)); draw_circle(Vector2.ZERO,10.5,Color(0,0,0,0.25)); draw_set_transform(Vector2.ZERO)
 	if extraction_pose==&"" and not RoomInput.using_mouse() and not RoomInput.using_auto():
@@ -273,6 +344,7 @@ func _draw() -> void:
 		draw_line(at-aim_direction*5,at+aim_direction*5,Color("fce0a1"),1)
 
 func _die()->void:
+	cancel_basic_chain()
 	_sprite.process_mode=Node.PROCESS_MODE_ALWAYS;_update_animation()
 	Effects.death_burst(get_parent(),global_position,Palette.PLAYER_BODY,22)
 	EventBus.player_died.emit();set_physics_process(false)

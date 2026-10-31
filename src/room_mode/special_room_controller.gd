@@ -222,7 +222,7 @@ func play(id:String,stake:int=0,guess:String="")->Dictionary:
 	var matches:=lottery_matches(guess,str(state.answer)) if id=="machine_lottery" else 0
 	if matches<0:return {"error":"请输入完整的八位数字，可保留开头的0。"}
 	if stake>GameState.coins:return {"error":"随身金币不足。"}
-	var before:=state.duplicate(true);var old_coins:=GameState.coins
+	var before:=state.duplicate(true);var old_coins:=GameState.coins;var old_points:=GameState.talent_points
 	var rng:=_rng();var result:={"error":"","message":"","payout":0}
 	GameState.spend_coins(stake);state.used[id]=true
 	if id=="machine_lottery":
@@ -245,11 +245,12 @@ func play(id:String,stake:int=0,guess:String="")->Dictionary:
 			3:
 				GameState.add_coins(500);result.payout=500
 				result.message="获得500金币！"
-			4:result.message="谢谢惠顾，本次没有奖励。"
+			4:GameState.award_talent_points(1);result.message="获得1点本局技能天赋点！";result.talent_points=1
 	state.rng=str(rng.state)
 	if not validation_mode and not SaveService.save_run(GameState.snapshot()):
-		record.delta.special=before;state=record.delta.special;GameState.coins=old_coins
+		record.delta.special=before;state=record.delta.special;GameState.coins=old_coins;GameState.talent_points=old_points
 		EventBus.coins_changed.emit(old_coins)
+		EventBus.talents_changed.emit()
 		return {"error":"保存失败，金币与装置次数已退回，请重试。"}
 	return result
 

@@ -15,7 +15,7 @@ const DATA := {
 		"portrait":"res://assets/characters/sylphiette_holy_v01/portrait.png",
 		"select_portrait":"res://assets/characters/sylphiette_holy_v01/portrait.png",
 		"dialogue_portrait":"res://assets/dialogue_portraits_v21/sylphiette/neutral.png",
-		"portraits":{"stand":"res://assets/characters/sylphiette_holy_v01/portrait.png","thoughtful":"res://assets/characters/sylphiette_holy_v01/thoughtful.png","surprised":"res://assets/characters/sylphiette_holy_v01/surprised.png","determined":"res://assets/characters/sylphiette_holy_v01/determined.png","sad":"res://assets/characters/sylphiette_holy_v01/sad.png"},
+		"portraits":{"stand":"res://assets/characters/sylphiette_holy_v01/portrait.png","thoughtful":"res://assets/characters/sylphiette_holy_v01/thoughtful.png","surprised":"res://assets/characters/sylphiette_holy_v01/surprised.png","sad":"res://assets/characters/sylphiette_holy_v01/sad.png"},
 		"dialogue_portraits":{"neutral":"res://assets/dialogue_portraits_v21/sylphiette/neutral.png","happy":"res://assets/dialogue_portraits_v21/sylphiette/happy.png"},
 		"avatar":"res://assets/characters/sylphiette_holy_v01/avatar.png","icon":"res://assets/characters/sylphiette_holy_v01/avatar.png",
 		"artbook":"res://assets/characters/sylphiette_holy_v01/artbook_v3.png","accent":"f3dda2",
@@ -92,6 +92,7 @@ static func portrait_path(expression := "") -> String:
 	## expression 为空 = 用默认立绘；给了名字就在差分表里找，找不到也回落到默认。
 	var data := current()
 	var set: Dictionary = data.get("portraits", {})
+	if expression == "determined": expression = "thoughtful"
 	if expression != "" and set.has(expression):
 		return str(set[expression])
 	return str(data.get("portrait", ""))

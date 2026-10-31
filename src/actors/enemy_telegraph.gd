@@ -46,9 +46,7 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	if not active: return
 	var progress := clampf(age/duration,0,1)
-	var color := Color("ffb454") if style in ["melee","charge"] else Color("d79cff")
-	if style=="blast": color=Color("ff796b")
-	if style=="root": color=Color("a7df83")
+	var color := Color("ff454f")
 	# 稳定轮廓与填充条，不依靠频闪；关闭法术特效也能辨认危险。
 	draw_rect(Rect2(-19,head_y-3,38,8),Color("201a2d"))
 	draw_rect(Rect2(-17,head_y-1,34,4),color.darkened(0.65))

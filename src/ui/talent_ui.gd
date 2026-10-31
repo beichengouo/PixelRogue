@@ -3,8 +3,8 @@ extends CanvasLayer
 ## 技能天赋树：复用在背包天赋页，独立窗口仅作为旧入口兼容。
 ##
 ## 布局：左边是树（可滚轮缩放、拖拽平移，缩放时保持画面中心不动），
-## 右边是详情面板 —— 单击节点看介绍，双击同一节点投入一点。
-## 详情面板也保留显式加点按钮，方便键盘与手柄操作。
+## 右边是详情面板 —— 单击节点看介绍，双击同一节点购买。
+## 详情面板也保留显式购买按钮，方便键盘与手柄操作。
 ##
 ## 每个携带技能有独立根节点及三条路线，集中在同一画布。
 
@@ -37,6 +37,11 @@ var _center: CenterContainer
 var _holder: Control
 var _tree: TalentTreeView
 var _detail_box: VBoxContainer
+var _tree_panel:Control
+var _detail_panel:Control
+var _stat_panel:VBoxContainer
+var _mode_button:Button
+var _run_view_stats:=true
 var _hint_label: Label
 var _tree_base_size := Vector2(400.0, 300.0)
 var _zoom := DEFAULT_ZOOM
@@ -91,7 +96,8 @@ func open() -> void:
 		embedded_host.open_talent_page(); return
 	if not UIFlow.can_open(self): return
 	_class_title.text="精灵天赋" if Characters.current_id()==&"ilyua" else ("影契天赋" if Characters.current_id()==&"xixifu" else "圣光天赋")
-	_class_subtitle.text="初始1点 · 每两级获得1点 · 每个技能独立分叉 · 每树9点"
+	_class_subtitle.text="营地永久属性 · 局内技能树每树9节点与终点"
+	_run_view_stats=CampSession.active and not CampSession.training_active
 	_closing = false
 	if _exit_tween != null and _exit_tween.is_valid(): _exit_tween.kill()
 	_root.visible = true
@@ -120,11 +126,25 @@ func _restore_pan(epoch: int) -> void:
 func _upgrade_selected() -> void:
 	_upgrade_branch(_selected)
 
+func _request_reset()->void:
+	if not CampSession.active:return
+	if CampSession.training_active:
+		CampSession.clear_talents();_refresh();return
+	var dialog:=ConfirmationDialog.new()
+	dialog.title="重置永久属性"
+	dialog.dialog_text="将清空此角色全部永久属性等级。已消耗的金币和材料不返还。"
+	add_child(dialog)
+	dialog.confirmed.connect(func()->void:
+		if not PermanentStats.reset(Characters.current_id()):ComicMotion.feedback(_canvas,"重置保存失败，原属性已保留。")
+		_refresh())
+	dialog.popup_hide.connect(dialog.queue_free)
+	dialog.popup_centered()
+
 
 func _upgrade_branch(branch: StringName) -> void:
 	if _closing or not _has_input_focus() or Time.get_ticks_msec() < _submit_until: return
 	if TalentGraph.node(branch).is_empty(): return
-	if not GameState.talent_unlocked(branch) or GameState.talent_points <= 0: return
+	if not GameState.talent_unlocked(branch) or (CampSession.active and not CampSession.training_active):return
 	if TalentGraph.owned(branch, GameState.talents): return
 	_submit_until = Time.get_ticks_msec() + 120
 	_selected = branch
@@ -265,12 +285,20 @@ func _build() -> void:
 	var close_button := PixelUi.compact_button("关闭  ×", 16)
 	close_button.tooltip_text = "%s / %s"%[KeyBindings.label("talents"),KeyBindings.label("ui_cancel")]
 	close_button.pressed.connect(close)
-	var reset := PixelUi.compact_button("免费重置" if CampSession.active else "洗点 · 100金币", 15)
+	var reset := PixelUi.compact_button("重置天赋", 15)
 	_reset_button = reset
-	reset.tooltip_text = "营地训练免费调整，不改变正式出征。" if CampSession.active else "消耗100局内金币，退还全部已投入点数；未投入不收费"
-	reset.pressed.connect(func()->void:
-		if not GameState.reset_talents():ComicMotion.feedback(_canvas,"洗点未完成：金币不足或保存失败，原加点已保留。"))
+	reset.tooltip_text = "训练场临时调整" if CampSession.training_active else "营地重置会清空此角色全部永久属性，已付金币和材料不返还。"
+	reset.pressed.connect(_request_reset)
 	header.add_child(reset)
+	_mode_button=PixelUi.compact_button("切换天赋页",15)
+	_mode_button.pressed.connect(func()->void:_run_view_stats=not _run_view_stats;_refresh())
+	header.add_child(_mode_button)
+	var buy_point:=PixelUi.compact_button("1000金币购买1点",15)
+	buy_point.pressed.connect(func()->void:
+		if GameState.buy_talent_point():ComicMotion.feedback(_canvas,"局内天赋点 +1")
+		else:ComicMotion.feedback(_canvas,"金币不足或保存失败"))
+	header.add_child(buy_point)
+	buy_point.set_meta("run_point_purchase",true)
 	if embedded_host == null: header.add_child(close_button)
 	else: close_button.free()
 	var body := UiFactory.hbox(18)
@@ -278,6 +306,7 @@ func _build() -> void:
 	body.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	column.add_child(body)
 	var tree_panel := PixelUi.inset_panel(12)
+	_tree_panel=tree_panel
 	tree_panel.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	body.add_child(tree_panel)
 	var tree_col := UiFactory.vbox(8)
@@ -317,10 +346,11 @@ func _build() -> void:
 	_tree.node_selected.connect(_on_node_selected)
 	_tree.node_activated.connect(_upgrade_branch)
 	_holder.add_child(_tree)
-	var help := PixelUi.label("每节点 1 点 · 双击或空格点亮 · 从起点沿连线延伸 · 分叉可兼修", 13, Color("c6d1e1"))
+	var help := PixelUi.label("局内每3级得1点，也可花1000金币购买 · 三路线各三级后开放终点", 13, Color("c6d1e1"))
 	help.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	tree_col.add_child(help)
 	var detail := PixelUi.inset_panel(18)
+	_detail_panel=detail
 	detail.custom_minimum_size.x = DETAIL_W
 	body.add_child(detail)
 	var detail_scroll := ScrollContainer.new()
@@ -329,6 +359,15 @@ func _build() -> void:
 	_detail_box = UiFactory.vbox(16)
 	_detail_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	detail_scroll.add_child(_detail_box)
+	var stat_scroll:=ScrollContainer.new()
+	stat_scroll.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	stat_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	stat_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	body.add_child(stat_scroll)
+	_stat_panel=UiFactory.vbox(12)
+	_stat_panel.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	stat_scroll.add_child(_stat_panel)
+	stat_scroll.hide()
 	_set_zoom(_zoom)
 	InteractionSkin.mount(_root,"talents",panel)
 
@@ -384,17 +423,60 @@ func _on_node_selected(branch: StringName) -> void:
 
 
 func _refresh() -> void:
+	var show_stat:=_run_view_stats
+	if is_instance_valid(_mode_button):
+		_mode_button.visible=false
+	for child in _mode_button.get_parent().get_children():
+		if child.has_meta("run_point_purchase"):
+			child.visible=not CampSession.active
+			child.disabled=not GameState.run_active or GameState.coins<GameState.TALENT_POINT_PRICE
+	if is_instance_valid(_tree_panel):_tree_panel.visible=not show_stat
+	if is_instance_valid(_detail_panel):_detail_panel.visible=not show_stat
+	if is_instance_valid(_stat_panel):
+		_stat_panel.get_parent().visible=show_stat
+		if show_stat:_refresh_stat_panel()
 	if is_instance_valid(_reset_button):
-		_reset_button.disabled = not GameState.can_reset_talents()
-		_reset_button.text = "无需洗点" if GameState.spent_talent_points()==0 else ("免费重置" if CampSession.active else "洗点 · 100金币")
+		_reset_button.visible=CampSession.active
+		_reset_button.disabled = GameState.spent_talent_points()==0 if CampSession.training_active else PermanentStats.ranks().is_empty()
+		_reset_button.text = "训练清空" if CampSession.training_active else "重置永久属性"
 	if _points_label != null:
-		_points_label.text = "可用天赋点：%d" % GameState.talent_points
+		_points_label.text = "训练预览" if CampSession.training_active else ("营地金币 %d"%Outpost.gold() if CampSession.active else "局内技能点 %d · 随身金币 %d"%[GameState.talent_points,GameState.coins])
 	# 加点后节点状态会变，重建一次树让颜色/等级角标跟上
 	if _root != null and is_open():
 		_tree.selected = _selected
 		_tree.build()
 		_set_zoom(_zoom)
 	_refresh_detail()
+
+func _refresh_stat_panel()->void:
+	for child in _stat_panel.get_children():child.queue_free();_stat_panel.remove_child(child)
+	var headline:=PixelUi.label("永久属性成长 · %s"%("训练预览" if CampSession.training_active else "营地购买"),23,PixelUi.GOLD)
+	_stat_panel.add_child(headline)
+	var help:=PixelUi.label("每项最多8级；只提高角色自身基础属性，不改变技能效果。按角色永久保存。",16,PixelUi.MUTED)
+	help.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_stat_panel.add_child(help)
+	var grid:=GridContainer.new();grid.columns=2;grid.add_theme_constant_override("h_separation",12);grid.add_theme_constant_override("v_separation",12);_stat_panel.add_child(grid)
+	for id:StringName in PermanentStats.ORDER:
+		var info:Dictionary=PermanentStats.DATA[id]
+		var card:=PixelUi.inset_panel(12);card.custom_minimum_size=Vector2(290,120);card.size_flags_horizontal=Control.SIZE_EXPAND_FILL;grid.add_child(card)
+		var content:=UiFactory.vbox(7);card.add_child(content)
+		var rank:=PermanentStats.rank(id)
+		content.add_child(PixelUi.label("%s  %d / %d"%[info.name,rank,PermanentStats.MAX_RANK],19,PixelUi.INK))
+		var description:=PixelUi.label(str(info.description),15,PixelUi.MUTED);description.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;content.add_child(description)
+		var next_rank:=rank+1
+		var price:=PermanentStats.cost(id,next_rank)
+		var cost_text:=PackedStringArray()
+		for material in price.get("materials",{}):cost_text.append("%s ×%d"%[str(ExpeditionData.resolve(str(material)).get("name",material)),int(price.materials[material])])
+		if not price.is_empty():content.add_child(PixelUi.label("费用 %d金币 · %s"%[int(price.gold),"、".join(cost_text)],14,PixelUi.MUTED))
+		var gate:=PermanentStats.gate(id,next_rank)
+		if not str(gate.text).is_empty():content.add_child(PixelUi.label(str(gate.text),13,PixelUi.MUTED if gate.met else Color("ff9e9e")))
+		var button:=PixelUi.compact_button("已满级" if rank>=PermanentStats.MAX_RANK else "购买下一级",15)
+		button.disabled=not CampSession.active or CampSession.training_active or rank>=PermanentStats.MAX_RANK or not gate.met or not PermanentStats.affordable(id,next_rank)
+		button.pressed.connect(_buy_permanent_stat.bind(id));content.add_child(button)
+
+func _buy_permanent_stat(id:StringName)->void:
+	if not _has_input_focus():return
+	if PermanentStats.purchase(id):AudioManager.play(&"ui_click",-6);ComicMotion.feedback(_canvas,"%s +1"%PermanentStats.DATA[id].name);_refresh()
+	else:ComicMotion.feedback(_canvas,"购买失败，资源已保留。")
 
 
 ## ---------------- 右侧详情 ----------------
@@ -446,7 +528,7 @@ func _refresh_detail() -> void:
 	desc.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	desc.custom_minimum_size = Vector2(DETAIL_W - 48.0, 0.0)
 	_detail_box.add_child(desc)
-	var preview := PixelUi.label("该天赋已点亮 %d / %d 个节点 · 本节点消耗 1 点" % [int(GameState.talents.get(info.effect,0)), int(GameState.TALENT_BRANCHES[info.effect].max_rank)], 15, Color("9ee6ab"))
+	var preview := PixelUi.label("本局已点亮 %d / %d · 本节点消耗1点" % [int(GameState.talents.get(info.effect,0)), int(GameState.TALENT_BRANCHES[info.effect].max_rank)], 15, Color("9ee6ab"))
 	preview.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	preview.custom_minimum_size.x = DETAIL_W - 48.0
 	_detail_box.add_child(preview)
@@ -457,14 +539,15 @@ func _refresh_detail() -> void:
 	req.custom_minimum_size = Vector2(DETAIL_W - 48.0, 0.0)
 	_detail_box.add_child(req)
 
-	var state_text := "已点亮" if full else ("天赋点不足" if unlocked and GameState.talent_points <= 0 else ("可以加点" if unlocked else "前置未满足"))
+	var affordable:=GameState.talent_points>0
+	var state_text := "已点亮" if full else "营地仅预览" if CampSession.active and not CampSession.training_active else "可加点" if unlocked and affordable else "点数不足" if unlocked else "前置未满足"
 	_detail_box.add_child(PixelUi.label("状态：%s" % state_text, 15,
 		PixelUi.GOLD if unlocked and not full else PixelUi.MUTED))
 
-	var add := PixelUi.primary("已点亮" if full else ("前置未满足" if not unlocked else ("天赋点不足" if GameState.talent_points <= 0 else "投入 1 点")), 19)
+	var add := PixelUi.primary("已点亮" if full else "营地仅预览" if CampSession.active and not CampSession.training_active else "前置未满足" if not unlocked else "点数不足" if not affordable else "投入1点", 19)
 	add.custom_minimum_size = Vector2(DETAIL_W - 48.0, 46.0)
 	# 加点按钮就是普通按钮：不加图标（图标已经在上面标题行里了）
-	add.disabled = full or not unlocked or GameState.talent_points <= 0
+	add.disabled = full or (CampSession.active and not CampSession.training_active) or not unlocked or not affordable
 	add.tooltip_text=ItemInsight.talent_requirement(_selected)
 	if add.disabled:
 		var reason:=PixelUi.label(add.tooltip_text,16,PixelUi.MUTED);reason.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_detail_box.add_child(reason)
@@ -493,8 +576,9 @@ func _has_input_focus() -> bool:
 func show_embedded() -> void:
 	if not is_instance_valid(embedded_host): return
 	_root.show()
+	_run_view_stats=CampSession.active and not CampSession.training_active
 	_class_title.text = "技能天赋"
-	_class_subtitle.text = "初始1点 · 每两级1点 · 每树9节点"
+	_class_subtitle.text = "营地永久属性 · 局内技能树每树9节点与终点"
 	_view_epoch += 1
 	_rebuild_tree()
 	if not _view_initialized:

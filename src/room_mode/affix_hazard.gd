@@ -92,7 +92,7 @@ func _inside(at:Vector2)->bool:
 func _draw()->void:
 	if not is_instance_valid(room):return
 	if mode==&"grave" and age<0 and not is_in_group("new_affix_warning"):return
-	var color:=Color("ff6d50") if mode in [&"trail",&"grave"] else (Color("a9db73") if mode==&"line" else Color("ffba62"))
+	var color:=Color("ff454f")
 	if mode in [&"ring",&"grave"]:
 		var outer:=144.0 if mode==&"ring" else 72.0
 		for i in 64:

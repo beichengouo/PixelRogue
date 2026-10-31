@@ -192,10 +192,16 @@ func _unhandled_input(event:InputEvent)->void:
 	elif event.is_action_pressed("interact"):
 		var role:=nearest_facility()
 		var npc:=nearest_resident()
-		if npc!=null and (role.is_empty() or player_collision_center().distance_to(level.to_local(npc.global_position))<facility_interaction_distance(role)):resident_panel.open_for(npc)
+		if role=="training":interact_facility(role)
+		elif npc!=null and (role.is_empty() or player_collision_center().distance_to(level.to_local(npc.global_position))<facility_interaction_distance(role)):resident_panel.open_for(npc)
 		else:interact_facility(role)
 	else:return
 	get_viewport().set_input_as_handled()
+func enter_training()->void:
+	if UIFlow.has_screen() or _departing:return
+	if facility_interaction_distance("training")<72:
+		interact_facility("training")
+	else:start_navigation("facility","training")
 func interact_facility(role:String)->void:
 	if UIFlow.has_screen() or role.is_empty():return
 	if role=="training":
@@ -264,9 +270,11 @@ func suspend_for_training()->void:
 	_suspended_layers.clear()
 	for layer_node in find_children("*","CanvasLayer",true,false):
 		if layer_node.visible:_suspended_layers.append(layer_node);layer_node.hide()
+	camera.enabled=false
 	process_mode=Node.PROCESS_MODE_DISABLED;hide();CampSession.end(self)
 func resume_from_training()->void:
 	CampSession.begin(self);process_mode=Node.PROCESS_MODE_PAUSABLE;show()
+	camera.enabled=true;camera.make_current()
 	for layer_node in _suspended_layers:
 		if is_instance_valid(layer_node):layer_node.show()
 	_suspended_layers.clear();preview_preparation();restore_training_skills();reset_training();AudioManager.play_context(&"camp")

@@ -51,6 +51,26 @@ class BrowserToolsTests(unittest.TestCase):
     def test_fingerprint_api(self):
         with self.request({'action':'fingerprint','path':'res://assets/fixture.png'}) as response:value=json.load(response)
         self.assertEqual(value['fingerprint'],hashlib.sha256(self.image.read_bytes()).hexdigest())
+    def test_story_revision_branches_restore(self):
+        (self.project/'data').mkdir()
+        base={'title':'原稿','lines':[{'who':'','text':'正文'}],'choices':[],'next':''}
+        def bridge(r):
+            edits=json.loads((self.project/'data/story_overrides.json').read_text(encoding='utf-8')) if (self.project/'data/story_overrides.json').exists() else {}
+            return {'scene':edits.get(r['id']+'|'+r['hero']+'|first',base) if r['id'] in ['intro_wake','cp_10'] else {}}
+        self.tools.bridge=bridge
+        request={'action':'story_scene','id':'intro_wake','hero':'ilyua','replay':False}
+        loaded=self.tools.story(request)
+        scene={**base,'choices':[{'text':'走下一段','next':'cp_10','reply':[{'text':'好'}],'flags':{'asked':True},'affinity':1}]}
+        save={**request,'action':'save_story','revision':loaded['revision'],'scene':scene}
+        result=self.tools.story(save)
+        self.assertEqual(result['scene']['choices'][0]['next'],'cp_10')
+        with self.assertRaises(ValueError):self.tools.story(save)
+        bad={**save,'revision':result['revision'],'scene':{**scene,'next':'missing_node'}}
+        with self.assertRaises(ValueError):self.tools.story(bad)
+        restored=self.tools.story({**save,'revision':result['revision'],'scene':None})
+        self.assertEqual(restored['scene'],base)
+        self.assertTrue(list((self.tools.work/'story-backups').glob('*.json')))
+
     def test_shutdown(self):
         with self.request({'action':'shutdown'}) as response:value=json.load(response)
         self.assertIn('关闭',value['message'])

@@ -2,8 +2,9 @@ class_name CampSession
 extends RefCounted
 static var active:=false
 static var owner:WeakRef
+static var training_active:=false
 static func begin(world:Node,training:=false)->void:
-	active=true;owner=weakref(world)
+	active=true;owner=weakref(world);training_active=training
 	if GameState.stats==null:GameState.stats=StatBlock.new()
 	GameState.restore({"character":str(Characters.current_id()),"passive_id":str(PassiveDefinitions.selected(Characters.current_id())),"level":1,"wave":1,"talents":{},"unlocked_skills":Skills.order_for().duplicate(),"items":[],"equipment":{}})
 	GameState.run_active=false;GameState.runtime_node=null;GameState.wave=0;GameState.sortie_id="";GameState.active_play_seconds=0
@@ -11,16 +12,21 @@ static func begin(world:Node,training:=false)->void:
 static func end(world:Node)->void:
 	if not active:return
 	if owner!=null and owner.get_ref()!=world:return
-	active=false;owner=null;GameState.run_active=false
+	active=false;owner=null;training_active=false;GameState.training_stat_preview.clear();GameState.run_active=false
 static func refresh_stats()->void:
 	GameState._talents_committed();EventBus.skills_changed.emit()
 static func fill_talents()->void:
 	GameState.talents.clear();GameState.talent_points=0
 	for id in GameState.TALENT_BRANCHES:GameState.talents[id]=int(GameState.TALENT_BRANCHES[id].max_rank)
+	GameState.training_stat_preview.clear()
+	for id in PermanentStats.ORDER:GameState.training_stat_preview[id]=PermanentStats.MAX_RANK
+	GameState._reset_stats()
 	refresh_stats()
 static func clear_talents()->void:
 	GameState.talents.clear();GameState.talent_points=0
 	for data in GameState.TALENT_BRANCHES.values():GameState.talent_points+=int(data.max_rank)
+	GameState.training_stat_preview.clear()
+	GameState._reset_stats()
 	refresh_stats()
 static func set_rank(id:StringName,value:int)->bool:
 	if not GameState.TALENT_BRANCHES.has(id):return false

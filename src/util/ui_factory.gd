@@ -5,10 +5,10 @@ extends RefCounted
 ## 中文字体候选。Godot 自带字体不含汉字，不设置的话所有中文都是方块。
 ## 用 SystemFont 直接调用系统已装字体，不需要把字体文件打包进项目。
 ## 优先用用户素材目录中的全体字体，标题与按钮由 GameFonts 分配：
-##   assets/fonts/AllSeto.ttf
+##   assets/fonts/MaoMaoPengYouTiGaiEr.ttf
 ## 想换字体：把新的 .ttf 丢进 assets/fonts/，改下面 GAME_FONT 一行即可；
 ## 文件不存在时自动回退到系统字体，不会出现方块字。
-const GAME_FONT := "res://assets/fonts/AllSeto.ttf"
+const GAME_FONT := "res://assets/fonts/MaoMaoPengYouTiGaiEr.ttf"
 
 const FONT_CANDIDATES := [
 	"Microsoft YaHei UI",
@@ -218,7 +218,7 @@ static func _tex_button_style(path: String, tint := Color.WHITE) -> StyleBoxText
 
 static func make_theme() -> Theme:
 	var theme := Theme.new()
-	var font: Font = _load_game_font()
+	var font: Font = GameFonts.get_font()
 	theme.default_font = font
 	theme.default_font_size = 23
 	theme.set_stylebox("panel","TooltipPanel",panel_style(Color(0.055,0.09,0.14,0.88),Color.TRANSPARENT,5,0,12))

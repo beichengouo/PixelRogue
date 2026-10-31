@@ -1,39 +1,20 @@
 class_name SkillTalentCatalog
 extends RefCounted
 ## Each route has three separately purchased nodes. Only equipped skills activate effects.
-const VERSION := 1
+const VERSION := 3
 const ROUTES := [&"power", &"shape", &"link"]
 const ROUTE_NAMES := ["本体强化", "机制变化", "战斗联动"]
 const ROMAN := ["Ⅰ", "Ⅱ", "Ⅲ"]
-# skill: power name, shape name, shape parameter, amount per node, legacy mechanics
-const DEFINITIONS := {
-	&"flame_nova": ["晨曦锋芒", "曙光扩散", "radius", 6.0, [&"holy_afterglow", &"holy_brand"]],
-	&"fan_bolts": ["圣羽锋芒", "长歌巡礼", "duration", .5, [&"holy_feather_birth", &"holy_wings"]],
-	&"blink": ["云衣凝辉", "云幕长驻", "duration", .5, [&"holy_veil", &"holy_purity"]],
-	&"meteor": ["天裁威仪", "裁决长鸣", "duration", .5, [&"holy_harmony"]],
-	&"flame_shield": ["钟声荡尘", "远闻圣钟", "radius", 9.0, [&"holy_word"]],
-	&"frost_nova": ["晨露丰泽", "祷庭延绵", "duration", .5, [&"holy_dew"]],
-	&"healing_light": ["流光余烬", "踏光远行", "distance", 12.0, [&"holy_flow"]],
-	&"starfall": ["永昼圣辉", "不落祈愿", "duration", .5, [&"holy_devout", &"holy_chorus"]],
-	&"shadow_companions": ["骸灵契力", "同行长约", "duration", 1.0, [&"contract_might"]],
-	&"ghost_lantern": ["幽灯焰心", "灯火长明", "duration", 1.0, [&"power"]],
-	&"homeward_light": ["归途温光", "归途轻语", "cooldown", .5, [&"shadow_care"]],
-	&"forest_guardian": ["森影威仪", "古木长守", "duration", 1.0, [&"guardian_duration", &"celestial_focus"]],
-	&"gatekeeper": ["骸甲锋刃", "长夜守门", "duration", 1.0, [&"contract_vitality"]],
-	&"night_shelter": ["夜幕厚帷", "夜色留驻", "duration", .5, [&"shelter_duration"]],
-	&"shadow_step": ["影契回响", "群灵远应", "radius", 9.0, [&"shadow_stride", &"arcane_reserve"]],
-	&"spirit_parade": ["夜行共振", "百灵长歌", "duration", .5, [&"parade_power", &"parade_duration", &"contract_duration"]],
-	&"ilyua_wind_arrow": ["贯风锋芒", "长风不息", "duration", .5, [&"ilyua_wind_feathers", &"ilyua_returning_arrow"]],
-	&"ilyua_thorn_seed": ["荆种凝力", "寄生长芽", "duration", .5, [&"ilyua_life_sprout"]],
-	&"ilyua_forest_step": ["叶影利矢", "林影久驻", "duration", .5, [&"ilyua_forest_shadow", &"ilyua_light_body"]],
-	&"ilyua_thousand_winds": ["千风锐势", "猎风长歌", "duration", .5, [&"ilyua_ancient_pact"]],
-	&"ilyua_hunter_mark": ["追猎精研", "猎痕长留", "duration", .5, [&"ilyua_true_shot"]],
-	&"ilyua_vine_trap": ["荆藤绞力", "藤庭延展", "radius", 6.0, [&"ilyua_wild_growth", &"ilyua_nature_resonance"]],
-	&"ilyua_moon_arrows": ["月矢凝辉", "月影长驻", "duration", .5, [&"ilyua_moon_guard"]],
-	&"ilyua_ancient_tree": ["古树灵脉", "森灵长醒", "duration", .5, [&"ilyua_nature_favor", &"ilyua_forest_will"]],
-}
+# Skill route definitions are loaded from data/permanent_talents.json.
 static var _catalogs: Dictionary = {}
 static var _legacy_owners: Dictionary = {}
+
+static func definition(skill:StringName)->Array:
+	var value:Variant=PermanentTalents.skill(skill).get("routes",[])
+	return value if value is Array and value.size()==5 else []
+
+static func capstone_icon(skill:StringName)->String:
+	return "res://assets/talents_v39/icons/%s.png"%skill
 
 static func legacy(character: StringName = &"") -> Dictionary:
 	var hero := Characters.current_id() if character == &"" else character
@@ -50,19 +31,24 @@ static func data(character: StringName = &"") -> Dictionary:
 	var result: Dictionary = {}
 	var old := legacy(hero)
 	for skill: StringName in Skills.order_for(hero):
-		var definition: Array = DEFINITIONS[skill]
+		var definition: Array = definition(skill)
 		var skill_info: Dictionary = Skills.get_skill(skill)
 		for lane in 3:
 			var route: StringName = ROUTES[lane]
 			var id := route_id(skill, route)
 			var name := str(definition[lane]) if lane < 2 else str(old[definition[4][0]].name)
-			var icon := str(skill_info.icon) if lane < 2 else str(old[definition[4][0]].icon)
+			var icon := capstone_icon(skill) if lane < 2 else str(old[definition[4][0]].icon)
 			var descriptions: PackedStringArray = []
 			for rank in range(1, 4): descriptions.append(description(skill, route, rank, hero))
 			result[id] = {"name":name, "max_rank":3, "desc":"\n".join(descriptions),
 				"descriptions":descriptions, "branch":skill, "branch_name":str(skill_info.name),
 				"skill":skill, "route":route, "route_name":ROUTE_NAMES[lane],
 				"tier":lane+1, "icon":icon, "requires":{}}
+		var terminal:=PermanentTalents.terminal_id(skill)
+		result[terminal]={"name":str(skill_info.name)+"·终点", "max_rank":1,
+			"desc":str(PermanentTalents.skill(skill).get("capstone","")),"descriptions":PackedStringArray([str(PermanentTalents.skill(skill).get("capstone",""))]),
+			"branch":skill,"branch_name":str(skill_info.name),"skill":skill,"route":&"terminal","route_name":"满树强化",
+			"tier":2,"icon":capstone_icon(skill),"requires":{},"terminal":true}
 	_catalogs[hero] = result
 	return result
 
@@ -78,7 +64,7 @@ static func description(skill: StringName, route: StringName, rank: int, charact
 		elif skill == &"ilyua_hunter_mark": subject = "本技能精准追射伤害"
 		return "「%s」%s额外提高8%%，本路线累计提高%d%%。仅作用于对应技能，不提高角色基础属性。" % [name, subject, rank*8]
 	if route == &"shape":
-		var def: Array = DEFINITIONS[skill]
+		var def: Array = definition(skill)
 		var amount := float(def[3])
 		var parameter := str(def[2])
 		if parameter == "cooldown": return "「%s」基础冷却缩短%.1f秒，本路线累计缩短%.1f秒；遵守现有冷却下限。" % [name, amount, amount*rank]
@@ -88,7 +74,7 @@ static func description(skill: StringName, route: StringName, rank: int, charact
 		return "「%s」%s增加%.1f秒，本路线累计增加%.1f秒。" % [name, subject, amount, amount*rank]
 	var lines: PackedStringArray = ["携带「%s」时启用以下联动：" % name]
 	var old := legacy(character)
-	for alias: StringName in DEFINITIONS[skill][4]:
+	for alias: StringName in definition(skill)[4]:
 		var info: Dictionary = old[alias]
 		if rank > int(info.max_rank): continue
 		var text := str(info.desc)
@@ -119,7 +105,7 @@ static func legacy_rank(effect: StringName, ranks: Variant = null) -> int:
 	if not _legacy_owners.has(hero):
 		var owners:Dictionary={}
 		for skill:StringName in Skills.order_for(hero):
-			for alias:StringName in DEFINITIONS[skill][4]:owners[alias]=skill
+			for alias:StringName in definition(skill)[4]:owners[StringName(alias)]=skill
 		_legacy_owners[hero]=owners
 	var owner:StringName=_legacy_owners[hero].get(effect,&"")
 	if owner==&"":return 0
@@ -129,8 +115,9 @@ static func power(skill: StringName) -> float:
 	return 1.0 + .08 * route_rank(skill, &"power")
 
 static func shape(skill: StringName, parameter: String) -> float:
-	if not DEFINITIONS.has(skill) or str(DEFINITIONS[skill][2]) != parameter: return 0.0
-	return float(DEFINITIONS[skill][3]) * route_rank(skill, &"shape")
+	var def:=definition(skill)
+	if def.is_empty() or str(def[2]) != parameter: return 0.0
+	return float(def[3]) * route_rank(skill, &"shape")
 
 static func visible_skills() -> Array[StringName]:
 	return Skills.order_for().duplicate() if CampSession.active else GameState.skill_loadout()

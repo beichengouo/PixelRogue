@@ -17,6 +17,15 @@ func ready(id:String)->bool:
 func defer_room(seconds:=15.0)->void:
 	retry[room_key(pilot.main.graph.current)]=Time.get_ticks_msec()+int(seconds*1000)
 
+func capacity_doses_missing()->int:
+	var actor:RoomPlayer=pilot.main.player
+	var repair_per_dose:=actor.stats.get_value(&"max_hp")*float(ExpeditionData.resolve("potion_capacity").get("effect",{}).get("ratio",0.25))
+	if repair_per_dose<=0.0:return 0
+	var required:=ceili(actor.permanent_hp_loss()/repair_per_dose)
+	for item in GameState.items:
+		if str(item.get("id",""))=="potion_capacity":required-=1
+	return maxi(0,required)
+
 func use_buff()->void:
 	if Time.get_ticks_msec()<_buff_at:return
 	_buff_at=Time.get_ticks_msec()+800
@@ -42,8 +51,9 @@ func recipe(service:Node=null)->Dictionary:
 		var entry:=MaterialWorkshopCatalog.recipe(id)
 		if not MaterialWorkshopCatalog.unlocked(str(entry.research)):continue
 		if id=="alch_health" and actor.bloodbath_active():continue
-		if id=="alch_capacity" and actor.permanent_hp_loss()<=0:continue
+		if id=="alch_capacity" and capacity_doses_missing()<=0:continue
 		var target:=2 if id in ["alch_health","alch_energy"] else 1
+		if id=="alch_capacity":target=int(counts.get(str(entry.product),0))+capacity_doses_missing()
 		if int(counts.get(str(entry.product),0))>=target:continue
 		var slots:=0
 		for product_id in counts:

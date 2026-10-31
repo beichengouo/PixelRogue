@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "rank_gold": [80, 160, 320],
+  "rank_material_count": [1, 2, 3],
+  "tiers": {
+    "early": {"achievement": "opening", "difficulty": 2, "clears": 2, "boss_kills": 1, "gold": 900, "boss_material_count": 1},
+    "advanced": {"achievement": "middle", "difficulty": 3, "clears": 5, "boss_kills": 1, "gold": 1800, "boss_material_count": 2},
+    "ultimate": {"achievement": "final", "difficulty": 4, "clears": 3, "boss_kills": 5, "gold": 3500, "boss_material_count": 2, "starbound_sigil": 2}
+  },
+  "skills": {
+    "flame_nova": {"hero":"sylphiette","tier":"early","material":"star_dust","boss":"king","boss_material":"boss_bone","capstone":"主光柱后追击邻近目标的圣纹连柱","routes":["晨曦锋芒","曙光扩散","radius",6.0,["holy_afterglow","holy_brand"]]},
+    "fan_bolts": {"hero":"sylphiette","tier":"early","material":"star_dust","boss":"sephra","boss_material":"boss_gate","capstone":"圣羽重凝时产生一次范围回旋","routes":["圣羽锋芒","长歌巡礼","duration",0.5,["holy_feather_birth","holy_wings"]]},
+    "blink": {"hero":"sylphiette","tier":"early","material":"moss_cloth","boss":"king","boss_material":"boss_bone","capstone":"护盾破裂后留下短时净化云幕","routes":["云衣凝辉","云幕长驻","duration",0.5,["holy_veil","holy_purity"]]},
+    "meteor": {"hero":"sylphiette","tier":"ultimate","material":"ancient_seal","boss":"tide","boss_material":"boss_root","capstone":"终审追加沿预警轨迹推进的裁决波","routes":["天裁威仪","裁决长鸣","duration",0.5,["holy_harmony"]]},
+    "flame_shield": {"hero":"sylphiette","tier":"advanced","material":"star_dust","boss":"mage","boss_material":"boss_crystal","capstone":"回响向受击目标传递第二道钟波","routes":["钟声荡尘","远闻圣钟","radius",9.0,["holy_word"]]},
+    "frost_nova": {"hero":"sylphiette","tier":"advanced","material":"wetland_sample","boss":"verena","boss_material":"boss_wax","capstone":"祷庭结束后留下短时治疗与减速交叠区","routes":["晨露丰泽","祷庭延绵","duration",0.5,["holy_dew"]]},
+    "healing_light": {"hero":"sylphiette","tier":"advanced","material":"star_dust","boss":"mage","boss_material":"boss_crystal","capstone":"圣影连接下一次祈步并触发路径光羽","routes":["流光余烬","踏光远行","distance",12.0,["holy_flow"]]},
+    "starfall": {"hero":"sylphiette","tier":"ultimate","material":"ancient_seal","boss":"nameless","boss_material":"boss_star","capstone":"圣域结束后短暂保留护佑光环","routes":["永昼圣辉","不落祈愿","duration",0.5,["holy_devout","holy_chorus"]]},
+    "shadow_companions": {"hero":"xixifu","tier":"early","material":"forest_sample","boss":"king","boss_material":"boss_bone","capstone":"两名新伙伴获得一次相互掩护动作","routes":["骸灵契力","同行长约","duration",1.0,["contract_might"]]},
+    "ghost_lantern": {"hero":"xixifu","tier":"early","material":"star_dust","boss":"sephra","boss_material":"boss_gate","capstone":"爆炸命中后产生一次低伤害追踪灯火","routes":["幽灯焰心","灯火长明","duration",1.0,["power"]]},
+    "homeward_light": {"hero":"xixifu","tier":"early","material":"memory_gift","boss":"king","boss_material":"boss_bone","capstone":"召回时为伙伴和自己生成短时护盾","routes":["归途温光","归途轻语","cooldown",0.5,["shadow_care"]]},
+    "forest_guardian": {"hero":"xixifu","tier":"ultimate","material":"ancient_seal","boss":"tide","boss_material":"boss_root","capstone":"树灵根须与紫晶爆发形成组合攻击","routes":["森影威仪","古木长守","duration",1.0,["guardian_duration","celestial_focus"]]},
+    "gatekeeper": {"hero":"xixifu","tier":"advanced","material":"ruin_ore","boss":"mage","boss_material":"boss_crystal","capstone":"守卫拦截敌人时释放小范围护卫冲击","routes":["骸甲锋刃","长夜守门","duration",1.0,["contract_vitality"]]},
+    "night_shelter": {"hero":"xixifu","tier":"advanced","material":"moss_cloth","boss":"verena","boss_material":"boss_wax","capstone":"护盾承伤后向伙伴传递一次减伤","routes":["夜幕厚帷","夜色留驻","duration",0.5,["shelter_duration"]]},
+    "shadow_step": {"hero":"xixifu","tier":"advanced","material":"storm_crystal","boss":"mage","boss_material":"boss_crystal","capstone":"影波依次从现存伙伴位置再扩散一次","routes":["影契回响","群灵远应","radius",9.0,["shadow_stride","arcane_reserve"]]},
+    "spirit_parade": {"hero":"xixifu","tier":"ultimate","material":"ancient_seal","boss":"nameless","boss_material":"boss_star","capstone":"夜行队列结束前释放一次集结冲击","routes":["夜行共振","百灵长歌","duration",0.5,["parade_power","parade_duration","contract_duration"]]},
+    "ilyua_wind_arrow": {"hero":"ilyua","tier":"early","material":"storm_crystal","boss":"king","boss_material":"boss_bone","capstone":"穿透后留下可由下一箭引爆的风痕","routes":["贯风锋芒","长风不息","duration",0.5,["ilyua_wind_feathers","ilyua_returning_arrow"]]},
+    "ilyua_thorn_seed": {"hero":"ilyua","tier":"early","material":"forest_sample","boss":"sephra","boss_material":"boss_gate","capstone":"寄生目标死亡时稳定传播一代","routes":["荆种凝力","寄生长芽","duration",0.5,["ilyua_life_sprout"]]},
+    "ilyua_forest_step": {"hero":"ilyua","tier":"early","material":"forest_resin","boss":"king","boss_material":"boss_bone","capstone":"诱饵消失时发射追敌叶矢","routes":["叶影利矢","林影久驻","duration",0.5,["ilyua_forest_shadow","ilyua_light_body"]]},
+    "ilyua_thousand_winds": {"hero":"ilyua","tier":"ultimate","material":"ancient_seal","boss":"tide","boss_material":"boss_root","capstone":"结束时集中释放剩余风势","routes":["千风锐势","猎风长歌","duration",0.5,["ilyua_ancient_pact"]]},
+    "ilyua_hunter_mark": {"hero":"ilyua","tier":"advanced","material":"ruin_sample","boss":"mage","boss_material":"boss_crystal","capstone":"精准追射命中后短暂暴露弱点","routes":["追猎精研","猎痕长留","duration",0.5,["ilyua_true_shot"]]},
+    "ilyua_vine_trap": {"hero":"ilyua","tier":"advanced","material":"forest_resin","boss":"verena","boss_material":"boss_wax","capstone":"束缚结束时追加藤蔓收束","routes":["荆藤绞力","藤庭延展","radius",6.0,["ilyua_wild_growth","ilyua_nature_resonance"]]},
+    "ilyua_moon_arrows": {"hero":"ilyua","tier":"advanced","material":"star_dust","boss":"mage","boss_material":"boss_crystal","capstone":"月矢结束时追击已标记目标","routes":["月矢凝辉","月影长驻","duration",0.5,["ilyua_moon_guard"]]},
+    "ilyua_ancient_tree": {"hero":"ilyua","tier":"ultimate","material":"ancient_seal","boss":"nameless","boss_material":"boss_star","capstone":"树灵领域末段释放治疗与伤害脉冲","routes":["古树灵脉","森灵长醒","duration",0.5,["ilyua_nature_favor","ilyua_forest_will"]]}
+  }
+}

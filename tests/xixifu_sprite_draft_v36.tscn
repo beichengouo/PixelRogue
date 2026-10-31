@@ -1,0 +1,4 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://tests/xixifu_sprite_draft_v36.gd" id="1"]
+[node name="XixifuSpriteDraftV36" type="Node"]
+script = ExtResource("1")

@@ -2,7 +2,7 @@ class_name DialogueCast
 extends RefCounted
 ## Dialogue-only art. Inventory, selection and battle sprites keep their own resources.
 const ROOT := "res://assets/dialogue_portraits_v21/"
-const EXPRESSIONS := ["neutral", "happy", "thoughtful", "surprised", "determined", "sad", "angry"]
+const EXPRESSIONS := ["neutral", "happy", "thoughtful", "surprised", "sad", "angry"]
 const NAMES := {
 	"sylphiette":"希露媞雅", "xixifu":"希希芙", "ilyua":"伊露雅", "iris":"伊莉丝",
 	"merchant":"姜糖", "tavern":"温阮", "surveyor":"希尔薇娅", "carpenter":"布琳娜",
@@ -28,7 +28,7 @@ static func expression(value: String, text := "", legacy_path := "") -> String:
 	if tag.is_empty():
 		for key: String in ["controlled", "relief", "regret", "doubt", "happy", "surprised", "sad", "thoughtful", "proud", "welcome", "warning", "inspect", "shortage", "success"]:
 			if legacy_path.get_file().contains(key): tag = key; break
-	var aliases := {"calm":"neutral", "welcome":"happy", "success":"happy", "relief":"happy", "proud":"happy", "inspect":"thoughtful", "doubt":"thoughtful", "point":"neutral", "warning":"thoughtful", "controlled":"neutral", "regret":"sad", "shortage":"sad"}
+	var aliases := {"determined":"thoughtful", "calm":"neutral", "welcome":"happy", "success":"happy", "relief":"happy", "proud":"happy", "inspect":"thoughtful", "doubt":"thoughtful", "point":"neutral", "warning":"thoughtful", "controlled":"neutral", "regret":"sad", "shortage":"sad"}
 	tag = str(aliases.get(tag, tag))
 	if tag in EXPRESSIONS: return tag
 	# Untagged local conversations select faces by meaning, never by line number.
@@ -43,6 +43,7 @@ static func set_form(id: String, live := true) -> bool:
 
 static func portrait_path(id: String, face := "neutral", live := true) -> String:
 	if not NAMES.has(id): return ""
+	if face=="determined":face="thoughtful"
 	var folder := ROOT + id + ("_set" if set_form(id, live) else "") + "/"
 	var specific := folder + face + ".png"
 	if ResourceLoader.exists(specific): return specific

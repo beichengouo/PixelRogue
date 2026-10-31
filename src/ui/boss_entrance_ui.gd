@@ -147,7 +147,7 @@ func _show_arena()->void:
 	_floor=Sprite2D.new();_floor.texture=_motif.texture;_floor.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	if _floor.texture!=null:_floor.scale=Vector2.ONE*100/maxf(1,_floor.texture.get_width())
 	_floor.position=Vector2(0,body.body_size.y*.5);_floor.modulate.a=.6;_stage.add_child(_floor)
-	_ghost=AnimatedSprite2D.new();_ghost.sprite_frames=BossStageArt.frames(_id,1);_ghost.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;_ghost.material=PixelSpellArt.material();_stage.add_child(_ghost)
+	_ghost=AnimatedSprite2D.new();_ghost.sprite_frames=BossStageArt.frames(_id,1);_ghost.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS;_stage.add_child(_ghost)
 	_ghost.play(&"windup");_ghost.pause();PixelBossArt.align(_ghost,_id,body.body_size)
 	var camera:RoomCamera=host.camera
 	_camera_state={"position":camera.global_position,"offset":camera.offset,"follow":camera._follow_position,"shake":camera.shake_amount,"process":camera.is_processing()};camera.set_process(false);camera.offset=Vector2.ZERO

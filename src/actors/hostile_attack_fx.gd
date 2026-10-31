@@ -3,6 +3,9 @@ extends Node2D
 const ROOT := "res://assets/enemy_expansion_v02/fx/"
 const CELL := 192
 const FAMILIES := ["king","mage","tide","thorn_mantis","lantern_toad","dusk_acolyte"]
+const VECTOR_AREA_BOSSES := ["king","mage","tide","sephra","verena","nameless"]
+const VECTOR_BOSS_STAGES := ["area","slash","radial","flight"]
+const RASTER_BOSS_STAGES := {"king":["cast","impact"],"mage":["cast","impact","construct"],"tide":["cast","impact","construct"],"sephra":["cast","impact"],"verena":["cast","impact"],"nameless":["cast","impact"]}
 static var _frames: Dictionary = {}
 static var _shader: Shader
 static var active_count:=0
@@ -47,9 +50,12 @@ static func frames(family: String, stage: String) -> Array[Texture2D]:
 	if _frames.has(key): return _frames[key]
 	var result: Array[Texture2D] = []
 	var path := "res://assets/combat_revision_v04/fx/"+key+".png"
+	if stage in VECTOR_BOSS_STAGES and family in VECTOR_AREA_BOSSES:path="res://assets/boss_fx_v40/"+key+".png"
 	if family=="goblin_spearman":path=ForestUnitArt.ROOT+"goblin_spearman_flight.png"
-	if family in ["sephra","verena","nameless"]:path="res://assets/chapter2/fx/"+key+".png"
+	if family in ["sephra","verena","nameless"] and not (stage in VECTOR_BOSS_STAGES and family in VECTOR_AREA_BOSSES):path="res://assets/chapter2/fx/"+key+".png"
 	if family in ["bell_snail","glimmer_spider"]:path="res://assets/content_v05/fx/"+key+".png"
+	var raster_path:="res://assets/boss_fx_v42/"+key+".png"
+	if stage in RASTER_BOSS_STAGES.get(family,[]) and ResourceLoader.exists(raster_path):path=raster_path
 	if not ResourceLoader.exists(path):path=ROOT+key+".png"
 	if not ResourceLoader.exists(path): return result
 	var source := load(path) as Texture2D
@@ -61,6 +67,9 @@ static func frames(family: String, stage: String) -> Array[Texture2D]:
 	_frames[key]=result
 	return result
 
+static func texture_filter_for(family:String,stage:String)->CanvasItem.TextureFilter:
+	return CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS if (stage in VECTOR_BOSS_STAGES and family in VECTOR_AREA_BOSSES) or stage in RASTER_BOSS_STAGES.get(family,[]) else CanvasItem.TEXTURE_FILTER_NEAREST
+
 static func pulse(parent: Node, at: Vector2, family: String, stage: String, width: float, seconds := 0.35, direction := 0.0, room: RoomLevel = null) -> HostileAttackFX:
 	if not is_instance_valid(parent): return null
 	# A crowded battle may simplify hit particles, but never hide a teleport cue.
@@ -68,7 +77,7 @@ static func pulse(parent: Node, at: Vector2, family: String, stage: String, widt
 	var textures_value := frames(family,stage)
 	if textures_value.is_empty(): return null
 	var effect := HostileAttackFX.new();effect.textures=textures_value;effect.duration=seconds
-	effect.sprite=Sprite2D.new();effect.sprite.texture=textures_value[0];effect.sprite.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
+	effect.sprite=Sprite2D.new();effect.sprite.texture=textures_value[0];effect.sprite.texture_filter=texture_filter_for(family,stage)
 	effect.sprite.scale=Vector2.ONE*width/textures_value[0].get_width();effect.add_child(effect.sprite)
 	if _shader==null:
 		_shader=Shader.new();_shader.code="shader_type canvas_item; render_mode unshaded; uniform bool clip_arena=false; uniform vec4 arena=vec4(0.0); uniform bool circle=false; uniform float circle_radius=96.0; varying vec2 world_xy; varying vec2 local_xy; void vertex(){ world_xy=(MODEL_MATRIX*vec4(VERTEX,0.0,1.0)).xy; local_xy=VERTEX; } void fragment(){ if(clip_arena && (world_xy.x<arena.x || world_xy.y<arena.y || world_xy.x>arena.z || world_xy.y>arena.w)){ COLOR.a=0.0; } if(circle && length(local_xy)>circle_radius){COLOR.a=0.0;} }"

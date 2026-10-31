@@ -56,6 +56,9 @@ func expire(killed:=false) -> void:
 		for i in leaves_left:
 			var target:=runtime.nearest_enemy(global_position,144)
 			if target!=null:runtime.spawn_arrow(&"leaf",global_position,(target.global_position-global_position).normalized(),.15*damage_factor,false,false,null,target)
+		if PermanentTalents.active(&"ilyua_forest_step"):
+			var target:=runtime.nearest_enemy(global_position,216)
+			if target!=null:runtime.spawn_arrow(&"leaf",global_position,(target.global_position-global_position).normalized(),.4*damage_factor,false,false,null,target)
 	queue_free()
 
 func snapshot() -> Dictionary:

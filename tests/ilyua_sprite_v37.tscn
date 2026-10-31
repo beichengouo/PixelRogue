@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/ilyua_sprite_v37.gd" id="1"]
+
+[node name="IlyuaSpriteV37" type="Node"]
+script = ExtResource("1")

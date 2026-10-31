@@ -228,12 +228,10 @@ func _draw()->void:
 			var p:Vector2=echo_aim*float(i)*4
 			var world:=echo_origin+p
 			if enemy.room.bounds().grow(-4).has_point(world) and enemy.room.projectile_clear(echo_origin,world):
-				draw_rect(Rect2((offset+p).round(),Vector2(2,2)),Color("eaa0ff",0.72))
+				draw_rect(Rect2((offset+p).round(),Vector2(2,2)),Color("ff454f",0.72))
 	if active_id==&"":return
-	var color:=Color("ffbe70")
+	var color:=Color("ff454f")
 	if active_id==EnemyAffixes.MEND_CHANT:color=Color("a8edc0")
-	if active_id==EnemyAffixes.VINE_SNARE:color=Color("b1e686")
-	if active_id==EnemyAffixes.HUNTER_LOCK:color=Color("ff7d7d")
 	var progress:=1.0-stage_left/float(WARNINGS[active_id])
 	draw_rect(Rect2(Vector2(-18,-enemy.body_size.y*.5-24),Vector2(36,5)),Color("261b24"))
 	draw_rect(Rect2(Vector2(-17,-enemy.body_size.y*.5-23),Vector2(34*progress,3)),color)

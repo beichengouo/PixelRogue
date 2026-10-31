@@ -25,7 +25,7 @@ func _ready()->void:
 	collision_layer=0;collision_mask=Layers.WORLD|Layers.DEEP_WATER;motion_mode=CharacterBody2D.MOTION_MODE_FLOATING
 	var shape:=CollisionShape2D.new();var circle:=CircleShape2D.new();circle.radius=9;shape.shape=circle;add_child(shape)
 	_rng.seed=resident_id.hash()^20261013;_rest_left=_rng.randf_range(3,8);_gesture_left=_rng.randf_range(25,40)
-	_sprite=AnimatedSprite2D.new();_sprite.sprite_frames=CampResidentArt.frames(resident_id);_sprite.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;CampResidentArt.align(_sprite,resident_id);add_child(_sprite);_sprite.play(&"idle_south")
+	_sprite=AnimatedSprite2D.new();_sprite.sprite_frames=CampResidentArt.frames(resident_id);_sprite.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;CampResidentArt.align(_sprite,resident_id);add_child(_sprite);_pose(_idle_pose())
 	_badge=Sprite2D.new();_badge.position=Vector2(0,-30);_badge.scale=Vector2.ONE*(14.0/96);_badge.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;_badge.z_index=8;add_child(_badge);refresh_badge()
 	Outpost.changed.connect(refresh_badge)
 func refresh_badge()->void:
@@ -70,7 +70,6 @@ func _choose_goal()->void:
 	_goal=patrol[_patrol_index]
 	_stalled=0
 func _pose(action:StringName)->void:
-	_sprite.flip_h=_facing.x<0
-	if _sprite.animation!=action:_sprite.play(action)
+	CampResidentArt.pose(_sprite,resident_id,action,_facing)
 func _draw()->void:
 	draw_set_transform(Vector2(0,12),0,Vector2(1,.3));draw_circle(Vector2.ZERO,12,Color(0,0,0,.2));draw_set_transform(Vector2.ZERO)

@@ -57,7 +57,7 @@ static func align(sprite:AnimatedSprite2D,id:StringName,body:Vector2) -> void:
 		var stage_factor:float=HEIGHTS[id]/maxf(1,float(sprite.sprite_frames.get_meta("body_height",190)))
 		var cell:=float(sprite.sprite_frames.get_meta("cell",256));var foot:Vector2=sprite.sprite_frames.get_meta("foot",Vector2(128,240))
 		sprite.scale=Vector2.ONE*stage_factor;sprite.position=Vector2(0,body.y*.5)-(foot-Vector2.ONE*cell*.5)*stage_factor
-		sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;return
+		sprite.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS;return
 	var factor:=float(_scale[id])
 	if city_boss(id):
 		sprite.scale=Vector2.ONE*factor;sprite.position=Vector2(0,roundf(body.y*.5-(240-128)*factor));return

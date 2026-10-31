@@ -18,7 +18,7 @@ func _ready()->void:
 	var layout:=RoomTemplateCodec.to_layout(document)
 	level.load_room({"id":"training","kind":"training","biome":"forest","seed":20261024,"cleared":true,"rewarded":true,"doors":[],"delta":{},"terrain_layout":layout})
 	level.doors_open=false
-	preview_preparation();restore_training_skills();_spawn_player();player.position=level.nearest_clear(level.room_rect.get_center()+Vector2(-120,55),12);_spawn_dummy();camera.snap_to_target()
+	preview_preparation();restore_training_skills();_spawn_player();player.position=level.nearest_clear(level.room_rect.get_center()+Vector2(-120,55),12);_spawn_dummy();camera.make_current();camera.snap_to_target()
 	inventory_ui=InventoryUI.new();add_child(inventory_ui);talent_ui=inventory_ui.talent_view
 	training_ui=CampTrainingUI.new();training_ui.world=self;add_child(training_ui)
 	_build_training_hud();AudioManager.play_context(&"camp")

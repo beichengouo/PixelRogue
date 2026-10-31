@@ -764,7 +764,9 @@ static func contracts()->Array:
 		for phase in ["offer","accepted","finished"]:row.erase(phase)
 		result.append(row)
 	return result
-static func story(id:String,phase:String)->Array:
+static func story(id:String,phase:String,replay:=false)->Array:
+	return Story.get_scene(StringName("commission:"+id+":"+phase),replay,Characters.current_id()).get("lines",[]).duplicate(true)
+static func raw_story(id:String,phase:String)->Array:
 	for row:Dictionary in DATA:
 		if str(row.id)==id:return row.get(phase,[]).duplicate(true)
 	return []

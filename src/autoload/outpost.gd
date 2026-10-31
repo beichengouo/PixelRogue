@@ -12,7 +12,7 @@ func _ready() -> void:
 	if "--room-editor" in OS.get_cmdline_user_args():return
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	data = SaveService.data.get("outpost",{}).duplicate(true)
-	var defaults = {"version":VERSION,"gold":0,"danger":0,"inventory":{},"capacity":30,"expansions":0,"shop":{},"shop_seed":Time.get_ticks_usec(),"contracts":[],"bonds":{"sylphiette":0,"iris":0},"events":{},"best":{},"active":{},"last_result":{},"locks":{},"presets":{},"tracked_contract":"","contract_jobs":{},"contract_clock":0,"bond_daily":{}}
+	var defaults = {"version":VERSION,"gold":0,"danger":0,"inventory":{},"capacity":30,"expansions":0,"shop":{},"shop_seed":Time.get_ticks_usec(),"contracts":[],"bonds":{"sylphiette":0,"iris":0},"events":{},"best":{},"active":{},"last_result":{},"locks":{},"presets":{},"tracked_contract":"","contract_jobs":{},"contract_clock":0,"bond_daily":{},"permanent_stats":{},"talent_clears":{}}
 	var migrated = int(data.get("version",0)) < VERSION
 	for key in defaults:
 		if not data.has(key): data[key]=defaults[key]
@@ -248,6 +248,10 @@ func settle_sortie(outcome: String) -> Dictionary:
 	if extreme:
 		var completions:Dictionary=data.get("extreme_clears",{});var chapter:=str(GameState.chapter_id)
 		completions[chapter]=int(completions.get(chapter,0))+1;data.extreme_clears=completions
+	if success and GameState.chapter_cleared:
+		var clears:Dictionary=data.get("talent_clears",{}).duplicate(true)
+		var key:="%s|%s|%d"%[Characters.current_id(),GameState.chapter_id,GameState.difficulty]
+		clears[key]=int(clears.get(key,0))+1;data.talent_clears=clears
 	data.active = {}
 	data.last_result = result
 	SaveService.data.run = {}

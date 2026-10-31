@@ -7,7 +7,7 @@ var duration := 0.7
 var age := 0.0
 var aim := Vector2.RIGHT
 var spread := 0.8
-var tint := Color("ffd166")
+var tint := Color("ff454f")
 var extent := Vector2(46,56)
 var caption := ""
 

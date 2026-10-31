@@ -6,6 +6,7 @@ const DETAILS:=["ring","warning","mark","prayer","grace","bolt"]
 const STYLES:=["pillar","feather","cloud","bell","court","step","judgment","sanctuary","ring","warning","mark","prayer","grace","bolt"]
 ## Normalized center of the ground ellipse, measured in the fixed 256px cells.
 const GROUND_ANCHORS:={"pillar":.672,"cloud":.656,"bell":.703,"court":.508,"judgment":.711,"sanctuary":.594,"ring":.5,"warning":.5,"prayer":151.0/256.0,"grace":.5}
+const OPACITY_BY_STYLE:={"court":.84,"sanctuary":.88,"cloud":.80,"prayer":.82,"grace":.82}
 static func ground_rect(style:String,size_value:float,foot:=Vector2.ZERO)->Rect2:
 	var height:=size_value*(2.7 if style=="pillar" else 2.4 if style=="judgment" else 2.0)
 	if style in DETAILS:
@@ -64,5 +65,5 @@ func _draw()->void:
 		draw_set_transform(Vector2.ZERO,facing.angle());rect=Rect2(-radius,-radius*.5,radius*2,radius)
 	# Telegraphs retain their boundary for their full lifetime, even in low motion.
 	var opacity:=strength if kind=="warning" else strength*(1-smoothstep(.7,1.0,p))
-	if kind in ["court","sanctuary","cloud","prayer","grace"]:opacity*=.65
+	opacity*=float(OPACITY_BY_STYLE.get(kind,1.0))
 	paint(self,kind,rect,.4 if ComicMotion.reduced() else p,opacity)

@@ -99,7 +99,7 @@ func _warn(style: String, at: Vector2, time: float, radius: float, direction := 
 	w.radius=radius
 	w.aim=direction
 	w.spread=spread
-	w.tint=body_color.lightened(0.15)
+	w.tint=Color("ff454f")
 	w.extent=body_size
 	_fx().add_child(w)
 	w.global_position=at.round()

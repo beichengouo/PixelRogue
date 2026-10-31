@@ -27,15 +27,16 @@ class View {
  world(e){return this.pixel(e).map((v,i)=>(v-this.offset[i])/this.scale);}
  fit(rect){const r=this.el.parentNode.getBoundingClientRect();this.scale=Math.min((r.width-45)/rect[2],(r.height-45)/rect[3]);this.offset=[r.width/2-(rect[0]+rect[2]/2)*this.scale,r.height/2-(rect[1]+rect[3]/2)*this.scale];this.draw();}
  image(path,rect,original=false,crop=[]){if(!path)return;const key=path+(original?'#original':'');let image=this.images.get(key);if(!image){image=new Image();image.onload=()=>this.draw();image.src='/asset?path='+encodeURIComponent(path)+'&token='+encodeURIComponent(token)+(original?'&original=1':'');this.images.set(key,image);if(this.images.size>96)this.images.delete(this.images.keys().next().value);}if(image.complete&&image.naturalWidth){if(crop.length===4)this.ctx.drawImage(image,...crop,...rect);else this.ctx.drawImage(image,...rect);}}
- draw(){if(!this.el.isConnected)return;const r=this.el.parentNode.getBoundingClientRect(),d=devicePixelRatio||1;this.el.width=Math.max(1,Math.round(r.width*d));this.el.height=Math.max(1,Math.round(r.height*d));const c=this.ctx;c.scale(d,d);c.translate(...this.offset);c.scale(this.scale,this.scale);c.imageSmoothingEnabled=true;this.paint(c,this);}
- destroy(){this.resize.disconnect();this.images.clear();}
+ draw(){if(this.scheduled)return;this.scheduled=requestAnimationFrame(()=>{this.scheduled=null;this.render();});}
+ render(){if(!this.el.isConnected)return;const r=this.el.parentNode.getBoundingClientRect(),d=devicePixelRatio||1;this.el.width=Math.max(1,Math.round(r.width*d));this.el.height=Math.max(1,Math.round(r.height*d));const c=this.ctx;c.scale(d,d);c.translate(...this.offset);c.scale(this.scale,this.scale);c.imageSmoothingEnabled=true;this.paint(c,this);}
+ destroy(){cancelAnimationFrame(this.scheduled);this.resize.disconnect();this.images.clear();}
 }
 let view;
 function polygon(c,points,color,scale,fill=false){if(!points.length)return;c.beginPath();points.forEach((p,i)=>i?c.lineTo(...p):c.moveTo(...p));c.closePath();c.strokeStyle=color;c.lineWidth=2/scale;if(fill){c.fillStyle=color+'20';c.fill();}c.stroke();}
 function rectPoints(r){return[[r[0],r[1]],[r[0]+r[2],r[1]],[r[0]+r[2],r[1]+r[3]],[r[0],r[1]+r[3]]];}
 function distance(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1]);}
 async function show(next){if(pending)return;if(dirty){if(!confirm('当前修改尚未保存，放弃修改并切换页面？'))return;if(page==='map')map=null;if(page==='art'&&artSavedLayout)art.layout=clone(artSavedLayout);}dirty=false;view?.destroy();view=null;drag=null;paintDrag=null;page=next;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===next));
- if(next==='map')await mapPage();if(next==='art')await artPage();if(next==='units')unitsPage();if(next==='console')consolePage();
+ if(next==='story')await storyPage();if(next==='map')await mapPage();if(next==='art')await artPage();if(next==='units')unitsPage();if(next==='console')consolePage();
 }
 document.querySelectorAll('nav button').forEach(b=>b.onclick=run(()=>show(b.dataset.page)));
 let mapUndo=[],mapRedo=[],selectedShape='',mapMode='collision',drag=null,visibility={};
@@ -118,8 +119,10 @@ function bindMapPointer(){const canvas=$('canvas');canvas.addEventListener('poin
 function download(value,name){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),500);}
 function unitsPage(){balance=clone(catalog.balance);app.innerHTML=`<section class="form card"><h2>单位基础数值</h2><p>只修改基础值，难度、阶段、装备及暴怒继续按原规则计算。新启动的游戏生效。</p><select id="unit">${options(catalog.units.map(u=>[u.id,u.name]),selectedUnit)}</select><div class="fields" id="fields"></div><button id="saveUnits">保存全部数值</button><button id="resetUnit">恢复此单位默认值</button><button id="reloadUnits">重新载入</button></section>`;
  $('unit').onchange=()=>unitFields();button('saveUnits',async()=>{const saved=await api('save_units',{units:balance,revision:catalog.balance_revision});message(saved.message);catalog.balance_revision=saved.revision;catalog.balance=clone(balance);dirty=false;});button('resetUnit',()=>{delete balance[$('unit').value];changed();unitFields();});button('reloadUnits',async()=>{if(dirty&&!confirm('放弃未保存数值？'))return;catalog=await api('catalog');dirty=false;unitsPage();});unitFields();}
-function unitFields(){selectedUnit=$('unit').value;const row=catalog.units.find(u=>u.id===selectedUnit);$('fields').innerHTML='';const names={hp:'基础生命',max_hp:'基础生命',attack:'基础攻击',speed:'基础移速',move_speed:'基础移速',coins:'基础金币',attack_speed:'攻速倍率',mp_regen:'MP回复/秒',dash_cooldown:'闪避冷却/秒',crit_chance:'暴击率',crit_mult:'暴击倍率',lifesteal:'命中回血',thorns:'反伤',coin_gain:'金币倍率',hp_multiplier:'生命继承倍率',attack_multiplier:'攻击继承倍率',speed_multiplier:'移速继承倍率'};for(const [key,value] of Object.entries(row.stats)){let label=document.createElement('label');label.textContent=(names[key]||key)+' · 默认 '+value;let input=document.createElement('input');input.type='number';input.min=0;input.max=10000000;input.step='.01';input.value=balance[row.id]?.[key]??value;input.oninput=()=>{const n=+input.value;if(!Number.isFinite(n)||n<0||n>10000000)return;(balance[row.id]??={})[key]=n;changed();};$('fields').append(label,input);}}
-function consolePage(){app.innerHTML=`<section class="form card"><h2>物资控制台</h2><p>手动指定目标存档后才会写入。请关闭使用该存档的游戏，防止旧数据覆盖；每次发放前在工程外备份，并检查存档是否变化。</p><label>存档 JSON 路径 <input style="flex:1" id="savePath" value="${esc(catalog.save_path)}"></label><button id="loadSave">载入 / 重新载入</button><p id="saveInfo">尚未载入</p><select id="grantKind">${options([['gold','营地金库金币'],['coins','活跃出征随身金币'],['warehouse','物品 → 营地仓库（装备绑定）'],['bag','物品 → 活跃出征背包']])}</select><label>筛选物品 <input id="itemSearch"></label><select id="item" style="width:100%"></select><label>数量 <input type="number" min="1" max="1000000" step="1" value="1" id="amount"></label><button id="grant">预览并发放</button></section>`;saveState=null;$('savePath').oninput=()=>{saveState=null;$('saveInfo').textContent='路径已改变，请重新载入。';};const filter=()=>$('item').innerHTML=options(catalog.items.filter(x=>(x.name+' '+x.id).toLowerCase().includes($('itemSearch').value.toLowerCase())).map(x=>[x.id,x.name+' ['+x.id+']']));filter();$('itemSearch').oninput=filter;
+function unitPortrait(id){let old=$('unitPortrait');if(old)old.remove();let path='',cell=128;if(id.startsWith('boss:')){path='res://assets/boss_portraits_v09/'+id.slice(5)+'.png';cell=0;}else if(id.startsWith('enemy:')){let kind=id.slice(6);if(['moss_badger','bog_crab','ruin_sentinel','thorn_mantis','lantern_toad','dusk_acolyte'].includes(kind))path='res://assets/monsters_vnext/'+kind+'.png';else if(kind==='flyer'||kind==='bomber')path='res://assets/combat_revision_v04/monsters/'+(kind==='flyer'?'ghost':'ember')+'.png';else if(['goblin_scout','goblin_spearman','goblin_mage'].includes(kind))path='res://assets/forest_roster_v28/'+kind+'.png';else if(['bell_snail','glimmer_spider'].includes(kind))path='res://assets/content_v05/monsters/'+kind+'.png';else{let portrait={walker:'monster_skeleton',guard:'monster_skeleton2',charger:'monster_treant',caster:'monster_vampire',treant:'monster_treant'}[kind];if(portrait){path='res://assets/characters/'+portrait+'.png';cell=0;}}}if(!path)return;let canvas=document.createElement('canvas');canvas.id='unitPortrait';canvas.width=192;canvas.height=192;canvas.style.cssText='display:block;width:192px;height:192px;margin:12px auto;border-radius:12px;background:#182334';$('fields').before(canvas);let image=new Image();image.onload=()=>{if(!$('unitPortrait')||$('unit').value!==id)return;let ctx=canvas.getContext('2d');ctx.clearRect(0,0,192,192);ctx.imageSmoothingEnabled=true;if(cell)ctx.drawImage(image,0,0,cell,cell,0,0,192,192);else ctx.drawImage(image,0,0,image.width,image.height,0,0,192,192)};image.src='/asset?path='+encodeURIComponent(path)+'&token='+encodeURIComponent(token);}
+function unitFields(){selectedUnit=$('unit').value;const row=catalog.units.find(u=>u.id===selectedUnit);$('fields').innerHTML='';unitPortrait(row.id);const names={hp:'基础生命',max_hp:'基础生命',attack:'基础攻击',speed:'基础移速',move_speed:'基础移速',coins:'基础金币',attack_speed:'攻速倍率',mp_regen:'MP回复/秒',dash_cooldown:'闪避冷却/秒',crit_chance:'暴击率',crit_mult:'暴击倍率',lifesteal:'命中回血',thorns:'反伤',coin_gain:'金币倍率',hp_multiplier:'生命继承倍率',attack_multiplier:'攻击继承倍率',speed_multiplier:'移速继承倍率'};for(const [key,value] of Object.entries(row.stats)){let label=document.createElement('label');label.textContent=(names[key]||key)+' · 默认 '+value;let input=document.createElement('input');input.type='number';input.min=0;input.max=10000000;input.step='.01';input.value=balance[row.id]?.[key]??value;input.oninput=()=>{const n=+input.value;if(!Number.isFinite(n)||n<0||n>10000000)return;(balance[row.id]??={})[key]=n;changed();};$('fields').append(label,input);}}
+function consolePage(){app.innerHTML=`<section class="form card"><h2>物资控制台</h2><p>手动指定目标存档后才会写入。请关闭使用该存档的游戏，防止旧数据覆盖；每次发放前在工程外备份，并检查存档是否变化。</p><label>存档 JSON 路径 <input style="flex:1" id="savePath" value="${esc(catalog.save_path)}"></label><button id="loadSave">载入 / 重新载入</button><p id="saveInfo">尚未载入</p><select id="grantKind">${options([['gold','营地金库金币'],['coins','活跃出征随身金币'],['warehouse','物品 → 营地仓库（装备绑定）'],['bag','物品 → 活跃出征背包']])}</select><label>筛选物品 <input id="itemSearch"></label><select id="item" style="width:100%"></select><label>数量 <input type="number" min="1" max="1000000" step="1" value="1" id="amount"></label><button id="grant">预览并发放</button><hr><h3>传说套装 → 仓库</h3><select id="setHero">${options([['all','三角色全部套装 · 共9件'],...Object.entries(catalog.legendary_sets||{}).map(([id,set])=>[id,set.name+' · 3件'])])}</select><button id="grantSets">一键发放所选套装 · 每件1份</button></section>`;saveState=null;$('savePath').oninput=()=>{saveState=null;$('saveInfo').textContent='路径已改变，请重新载入。';};const filter=()=>$('item').innerHTML=options(catalog.items.filter(x=>(x.name+' '+x.id).toLowerCase().includes($('itemSearch').value.toLowerCase())).map(x=>[x.id,x.name+' ['+x.id+']']));filter();$('itemSearch').oninput=filter;
+ button('grantSets',()=>{if(!saveState)throw Error('请先载入存档');const path=$('savePath').value,fingerprint=saveState.fingerprint,id=$('setHero').value;confirmBox(`目标：${path}\n仓库发放：${$('setHero').selectedOptions[0].text}\n每件1份；整批一次保存。`,async()=>{saveState=await api('grant',{path,fingerprint,kind:'legendary_sets',id,amount:1});$('saveInfo').textContent='套装已发放至仓库 · 备份：'+saveState.backup;message('传说套装发放完成。');});});
  button('loadSave',async()=>{saveState=await api('load_save',{path:$('savePath').value});$('saveInfo').textContent=`营地金库 ${saveState.gold} 金 · 活跃出征：${saveState.active?'有':'无'}`;message('存档已载入，尚未修改。');});
  button('grant',()=>{if(!saveState)throw Error('请先载入存档');const kind=$('grantKind').value,id=$('item').value,amount=+$('amount').value,path=$('savePath').value;if(!Number.isInteger(amount)||amount<1||amount>1000000)throw Error('数量必须为1—1000000的整数');const fingerprint=saveState.fingerprint;confirmBox(`目标：${path}\n发放至：${$('grantKind').selectedOptions[0].text}\n内容：${kind==='gold'||kind==='coins'?'金币':$('item').selectedOptions[0]?.text}\n数量：${amount}`,async()=>{saveState=await api('grant',{path,fingerprint,kind,id,amount});$('saveInfo').textContent=`营地金库 ${saveState.gold} 金 · 活跃出征：${saveState.active?'有':'无'}`;message('已发放 · 原档备份：'+saveState.backup);});});
 }
@@ -139,5 +142,101 @@ function bindArtPointer(){const canvas=$('canvas');canvas.addEventListener('poin
 function strokeHistory(redo){if(!editCanvas)return;const from=redo?redoStrokes:strokes,to=redo?strokes:redoStrokes;if(!from.length)return;const c=editCanvas.getContext('2d');to.push(c.getImageData(0,0,editCanvas.width,editCanvas.height));c.putImageData(from.pop(),0,0);changed();view.draw();}
 async function saveArt(){if(editCanvas){const layer=art.documents[artDocument].layers[artLayer];const result=await api('alpha',{path:layer.path,fingerprint:artFingerprint,png:editCanvas.toDataURL('image/png')});artFingerprint=result.fingerprint;view.images.delete(layer.path);message(result.message);}const result=await api('save_layout',{layout:art.layout,revision:art.layout_revision});art.layout_revision=result.revision;artSavedLayout=clone(art.layout);dirty=false;message(result.message+' 图层精修需要等待 Godot 完成重新导入。');}
 window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
-window.addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(!(e.ctrlKey||e.metaKey)||!['s','z'].includes(key))return;if(key==='z'&&document.activeElement?.matches('input,textarea'))return;e.preventDefault();run(async()=>{if(key==='s'){if(page==='map')await saveMap();else if(page==='art')await saveArt();else if(page==='units')$('saveUnits').click();}else if(page==='map')mapHistory(e.shiftKey);else if(page==='art')strokeHistory(e.shiftKey);})();});
+window.addEventListener('keydown',e=>{const key=e.key.toLowerCase();if(!(e.ctrlKey||e.metaKey)||!['s','z'].includes(key))return;if(key==='z'&&document.activeElement?.matches('input,textarea'))return;e.preventDefault();run(async()=>{if(key==='s'){if(page==='map')await saveMap();else if(page==='art')await saveArt();else if(page==='units')$('saveUnits').click();else if(page==='story')await saveStory();}else if(page==='map')mapHistory(e.shiftKey);else if(page==='art')strokeHistory(e.shiftKey);})();});
 run(async()=>{if(!token)throw Error('请通过 RoomEditor 启动文件打开本机开发工具');catalog=await api('catalog');await show('map');})();
+
+
+let storyDoc=null, storyRevision='', storyKey=null, storyScenes={},storyMetadata={},storyVisible={},storyCategory='chapter1',storyGroup='';
+async function storyPage(){
+ const data=await api('story_catalog');storyMetadata=data.metadata||{};
+ app.innerHTML=`<aside class="sidebar"><h2>剧情与分支</h2><label>角色<select id="storyHero">${options([['sylphiette','希露媞雅'],['xixifu','希希芙'],['ilyua','伊露雅']])}</select></label><label>演出<select id="storyReplay">${options([['first','首次'],['repeat','重访']])}</select></label><select id="storyId">${options(data.ids.map(id=>[id,id]))}</select><button id="storyLoad">定位节点</button><button id="storyExport">一键导出全部剧情 JSON</button><button id="storyTextExport">导出阅读稿 Markdown</button><p>从左到右查看场景、选项和后续节点。点击场景或分支，在右侧编辑。独立事件分开显示，回环保留连线。导出覆盖三角色首次／重访已保存内容。</p></aside><section class="workspace"><div class="toolbar"><button id="storyZoomOut">缩小</button><button id="storyZoomIn">放大</button><button id="storyReload">重新载入节点图</button></div><div id="storyTree" class="story-tree"></div></section><aside class="story-editor"><h2>节点编辑</h2><div id="storyOverride"></div><label>标题<input id="storyTitle"></label><h3>正文 JSON</h3><textarea id="storyLines" spellcheck="false"></textarea><h3>分支 JSON（最多3项）</h3><textarea id="storyChoices" spellcheck="false"></textarea><label>默认后续<input id="storyNext"></label><p>营地固定关系事件编辑回复与关系选择，不跳转主线节点。正文与分支中的其他原字段继续保留。</p><button id="storySave">保存节点</button><button id="storyReset">恢复此节点原稿</button></aside>`;
+ const classification=document.createElement('div');classification.innerHTML=`<label>分类<select id="storyCategory">${options([['chapter1','第一章 · 苏醒林地'],['chapter2','第二章 · 失名星城'],['camp','营地'],['commissions','委托'],['records','回廊／兼容记录']],storyCategory)}</select></label><label>人物／事件组<select id="storyGroup"></select></label>`;
+ $('storyId').before(classification);
+ $('storyCategory').onchange=run(()=>changeStoryCategory());$('storyGroup').onchange=run(()=>changeStoryGroup());
+ const note=document.createElement('p');note.className='hint';note.textContent='实线：正文／选项跳转。虚线：实际流程的先后或前置条件，不会改写next。清房与Boss节点依实际路线触发，可选节点可能跳过。';$('storyTree').before(note);
+ const trigger=document.createElement('p');trigger.id='storyTrigger';trigger.className='story-trigger';$('storyOverride').after(trigger);
+ button('storyLoad',()=>{const id=$('storyId').value;return selectStory(id).then(()=>document.querySelector('.story-node.selected')?.scrollIntoView({block:'nearest',inline:'center'}));});button('storySave',saveStory);
+ button('storyReset',async()=>{if(!storyKey||!confirm('恢复当前节点原稿？'))return;const r=await api('save_story',{...storyKey,revision:storyRevision,scene:null});storyScenes[storyKey.id]=r.scene;displayStory(r);drawStoryTree();});
+ button('storyReload',()=>reloadStoryTree());
+ $('storyHero').onchange=run(()=>reloadStoryTree());$('storyReplay').onchange=run(()=>reloadStoryTree());
+ button('storyExport',()=>exportStories(false));button('storyTextExport',()=>exportStories(true));
+ let zoom=1;const scale=()=>{const stage=$('storyTree').firstElementChild;if(stage){stage.style.transform=`scale(${zoom})`;stage.style.transformOrigin='0 0';}};
+ button('storyZoomOut',()=>{zoom=Math.max(.3,zoom-.1);scale();});button('storyZoomIn',()=>{zoom=Math.min(1.5,zoom+.1);scale();});
+ for(const id of ['storyTitle','storyLines','storyChoices','storyNext'])$(id).oninput=changed;
+ await reloadStoryTree();
+}
+async function reloadStoryTree(){
+ if(dirty&&!confirm('放弃未保存的节点修改并重新载入？')){if(storyKey){$('storyHero').value=storyKey.hero;$('storyReplay').value=storyKey.replay?'repeat':'first';}return;}
+ const hero=$('storyHero').value,replay=$('storyReplay').value==='repeat';
+ const bundle=await api('story_bundle',{hero,replay});storyScenes=bundle.variants[hero+'|'+(replay?'repeat':'first')]||{};dirty=false;
+ storyMetadata=bundle.metadata||storyMetadata;refreshStoryGroups();await showStoryCategory();
+}
+function refreshStoryGroups(){
+ const groups=[...new Set(Object.keys(storySelection(storyScenes,storyMetadata,storyCategory)).map(id=>storyMetadata[id]?.group).filter(Boolean))];
+ if(!groups.includes(storyGroup))storyGroup='';
+ $('storyGroup').innerHTML=options([['','全部'],...groups.map(g=>[g,g])],storyGroup);$('storyGroup').disabled=!['camp','commissions','records'].includes(storyCategory);
+}
+async function showStoryCategory(){
+ storyVisible=storySelection(storyScenes,storyMetadata,storyCategory,storyGroup);
+ $('storyId').innerHTML=options(Object.entries(storyVisible).map(([id,s])=>[id,(s.title||id)+' ['+id+']']),storyKey?.id);
+ drawStoryTree();await selectStory(storyVisible[storyKey?.id]?storyKey.id:$('storyId').value);
+ if(!Object.keys(storyVisible).length)message('此分类暂无可编辑剧情');
+}
+async function changeStoryCategory(){
+ if(dirty&&!confirm('放弃未保存修改并切换剧情分类？')){$('storyCategory').value=storyCategory;return;}
+ dirty=false;storyCategory=$('storyCategory').value;storyGroup='';refreshStoryGroups();await showStoryCategory();
+}
+async function changeStoryGroup(){
+ if(dirty&&!confirm('放弃未保存修改并切换事件组？')){$('storyGroup').value=storyGroup;return;}
+ dirty=false;storyGroup=$('storyGroup').value;await showStoryCategory();
+}
+function drawStoryTree(){
+ const host=$('storyTree');if(!host)return;host.innerHTML='';
+ storyVisible=storySelection(storyScenes,storyMetadata,storyCategory,storyGroup);
+ const graph=storyLayout(storyVisible,storyMetadata),stage=document.createElement('div');stage.className='story-stage';stage.style.width=graph.width+'px';stage.style.height=graph.height+'px';host.append(stage);
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('width',graph.width);svg.setAttribute('height',graph.height);svg.classList.add('story-links');stage.append(svg);
+ const byKey=new Map(graph.nodes.map(n=>[n.key,n]));
+ for(const edge of graph.edges){const a=byKey.get(edge.from),b=byKey.get(edge.to),path=document.createElementNS(svg.namespaceURI,'path'),x=a.x+270,y=a.y+60;path.setAttribute('d',`M${x},${y} C${x+30},${y} ${b.x-30},${b.y+60} ${b.x},${b.y+60}`);if(edge.kind==='chronology')path.classList.add('chronology');svg.append(path);}
+ for(const node of graph.nodes){const button=document.createElement('button');button.className='story-node '+node.kind+(storyKey?.id===node.id?' selected':'');button.style.left=node.x+'px';button.style.top=node.y+'px';button.dataset.scene=node.id;button.title=node.label+'\n'+(node.trigger||'');const caption=document.createElement('strong');caption.textContent=node.label||'空分支';const sub=document.createElement('span');sub.textContent=node.kind==='choice'?'选项 '+(node.index+1)+(node.ending?' · 本段结束':''):node.id;button.append(caption,sub);if(node.trigger){const timing=document.createElement('small');timing.textContent=node.trigger;button.append(timing);}button.onclick=run(()=>selectStory(node.id,node.kind==='choice'?node.index:null));stage.append(button);}
+}
+async function selectStory(id,index=null){
+ if(!id)return;if(dirty&&!confirm('放弃当前节点未保存修改？'))return;
+ const key={id,hero:$('storyHero').value,replay:$('storyReplay').value==='repeat'};
+ const r=await api('story_scene',key);storyKey=key;$('storyId').value=id;displayStory(r);
+ document.querySelectorAll('.story-node').forEach(b=>b.classList.toggle('selected',b.dataset.scene===id));
+ if(index!==null){$('storyChoices').focus();message('正在编辑 '+id+' 的第'+(index+1)+'个选项');}
+}
+function displayStory(r){
+ storyDoc=r.scene;storyRevision=r.revision;dirty=false;
+ $('storyTitle').value=storyDoc.title||'';$('storyLines').value=JSON.stringify(storyDoc.lines||[],null,2);$('storyChoices').value=JSON.stringify(storyDoc.choices||[],null,2);$('storyNext').value=storyDoc.next||'';
+ $('storyOverride').textContent=storyKey.id+' · '+storyKey.hero+' · '+(storyKey.replay?'重访':'首次')+' · '+(r.overridden?'已使用编辑稿':'原稿');
+ const metadata=storyMetadata[storyKey.id]||{};$('storyTrigger').textContent=(metadata.group||'')+'\n触发时机：'+(metadata.trigger||'未标注');
+ const commission=storyKey.id.startsWith('commission:');$('storyChoices').disabled=commission;$('storyNext').disabled=commission;
+ message('已载入节点；保存前不会改变工程。');
+}
+async function saveStory(){
+ if(!storyKey)return;
+ const scene={...clone(storyDoc),title:$('storyTitle').value,lines:JSON.parse($('storyLines').value),choices:JSON.parse($('storyChoices').value),next:$('storyNext').value.trim()};
+ const r=await api('save_story',{...storyKey,revision:storyRevision,scene});storyScenes[storyKey.id]=r.scene;displayStory(r);drawStoryTree();message(r.message);
+}
+async function exportStories(readable){
+ if(dirty)throw Error('请先保存当前节点，再导出剧情');
+ const bundle=await api('story_bundle');
+ if(!readable){download(bundle,'PixelRogue-story.json');message('已导出全部剧情与分支 JSON');return;}
+ const parts=['# PixelRogue 剧情阅读稿',bundle.scope];
+ for(const [variant,scenes] of Object.entries(bundle.variants)){
+  parts.push('\n# '+variant);
+  for(const [id,scene] of Object.entries(scenes)){
+   parts.push('\n## '+scene.title+' ['+id+']');
+   const metadata=bundle.metadata?.[id];if(metadata)parts.push('分类：'+metadata.group+'\n触发时机：'+metadata.trigger);
+   for(const line of scene.lines||[])parts.push(typeof line==='string'?line:(line.who?line.who+'：':'')+line.text);
+   for(const [i,choice] of (scene.choices||[]).entries()){
+    parts.push('\n### 选项 '+(i+1)+'：'+choice.text+' → '+((Object.prototype.hasOwnProperty.call(choice,'next')?choice.next:scene.next)||'结束'));
+    for(const line of choice.reply||[])parts.push(typeof line==='string'?line:(line.who?line.who+'：':'')+line.text);
+    const effects={...choice};delete effects.text;delete effects.reply;parts.push('分支条件／后果：'+JSON.stringify(effects));
+   }
+   if(scene.next)parts.push('默认后续：'+scene.next);
+  }
+ }
+ const url=URL.createObjectURL(new Blob([parts.join('\n\n')],{type:'text/markdown;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='PixelRogue-story.md';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);message('已导出剧情阅读稿');
+}

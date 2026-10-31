@@ -4,9 +4,10 @@ var room:RoomLevel
 var spec:Dictionary={}
 var age:=0.0
 var duration:=.8
-var tint:=Color("ff776f")
+const ATTACK_RED:=Color("ff454f")
+var tint:=ATTACK_RED
 static func create(parent:Node,level:RoomLevel,data:Dictionary,seconds:float,color:Color)->BossPatternWarning:
-	var warning:=BossPatternWarning.new();warning.room=level;warning.spec=data.duplicate(true);warning.duration=seconds;warning.tint=Color("85ebbd") if bool(data.get("safe_corridor",false)) else color
+	var warning:=BossPatternWarning.new();warning.room=level;warning.spec=data.duplicate(true);warning.duration=seconds;warning.tint=Color("85ebbd") if bool(data.get("safe_corridor",false)) else ATTACK_RED
 	parent.add_child(warning);warning.position=data.get("at",Vector2.ZERO);return warning
 func _ready()->void:
 	AudioManager.play(&"boss_warning",-13,0)

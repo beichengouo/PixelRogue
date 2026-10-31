@@ -309,7 +309,7 @@ class GoddessPass extends Control:
 				path = "res://assets/ui_art/transitions/goddess_profile_v1.png"
 				tint = Color("d87680")
 			"restart":
-				path = HolySkills.ROOT+"profile_v2.png" if Characters.current_id()==&"sylphiette" else Characters.portrait_path("determined")
+				path = HolySkills.ROOT+"profile_v2.png" if Characters.current_id()==&"sylphiette" else Characters.portrait_path("thoughtful")
 				tint = Color("f4ba97")
 			"continue":
 				path = HolySkills.ROOT+"profile_v2.png" if Characters.current_id()==&"sylphiette" else Characters.portrait_path("playful")

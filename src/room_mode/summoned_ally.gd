@@ -28,6 +28,10 @@ var guardian_spell:=""
 var guardian_target:=Vector2.ZERO
 var guardian_room_id:=""
 var guardian_facing:=0
+var capstone_cover_charge:=0
+var capstone_guard_left:=0.0
+var capstone_gate_cooldown:=0.0
+var capstone_roots_left:=0.0
 func body_radius()->float:return 18.0 if guardian else 12.0
 func attack_is_melee()->bool:
 	# Contract lanterns use their own projectile attack, independent of the
@@ -40,6 +44,13 @@ func _physics_process(dt:float)->void:
 	if fate_haste_left>0:
 		var active_dt:=minf(fate_haste_left,dt);fate_haste_left=maxf(0,fate_haste_left-dt);_cooldown=maxf(0,_cooldown-active_dt*.12)
 	_lantern_dodge_left=maxf(0,_lantern_dodge_left-dt)
+	capstone_guard_left=maxf(0,capstone_guard_left-dt)
+	capstone_gate_cooldown=maxf(0,capstone_gate_cooldown-dt)
+	capstone_roots_left=maxf(0,capstone_roots_left-dt)
+	if source_skill==&"gatekeeper" and PermanentTalents.active(&"gatekeeper") and capstone_gate_cooldown<=0 and is_instance_valid(player) and is_instance_valid(player.summons):
+		for enemy in room.tactics.enemies(room):
+			if is_instance_valid(enemy) and not enemy._dead and enemy.global_position.distance_to(player.global_position)<92 and enemy.global_position.distance_to(global_position)<80:
+				capstone_gate_cooldown=4;player.summons.capstone_pulse(global_position,76,.35,self);break
 	if guardian and _tick_guardian(dt):return
 	super._physics_process(dt)
 	if _appearance_left>0 and _sprite.sprite_frames.has_animation(&"spawn"):
@@ -92,6 +103,19 @@ func _release_attack(melee:bool)->void:
 		ball.damage_actor=self
 		_fx().add_child(ball);ball.setup(global_position+attack_direction*16,attack_direction,attack,330,room,null,Color("c7a6ff"))
 	else:super._release_attack(melee)
+
+func take_damage(amount:float,from:=Vector2.ZERO,source:Node=null)->void:
+	var shield_before:=shield_hp
+	if capstone_guard_left>0:amount*=.8
+	if capstone_cover_charge>0 and source_skill==&"shadow_companions" and is_instance_valid(player) and is_instance_valid(player.summons):
+		for partner in player.summons.companions():
+			if partner!=self and partner.source_skill==&"shadow_companions" and partner.capstone_cover_charge>0 and global_position.distance_to(partner.global_position)<=144:
+				capstone_cover_charge=0;partner.capstone_cover_charge=0
+				shield_hp=maxf(shield_hp,max_hp*.12);shield_time=maxf(shield_time,2)
+				player.summons.capstone_pulse(global_position,64,.25,partner)
+				break
+	super.take_damage(amount,from,source)
+	if shield_hp<shield_before and is_instance_valid(player) and is_instance_valid(player.summons):player.summons.transfer_shelter()
 
 func _tick_guardian(dt:float)->bool:
 	var room_id:=str(room.record.get("id",""))

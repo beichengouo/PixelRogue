@@ -107,4 +107,7 @@ static func talent_requirement(branch:StringName)->String:
 	if id == &"": return "天赋不可用"
 	if TalentGraph.owned(id, GameState.talents): return "节点已点亮"
 	if not TalentGraph.unlocked(id, GameState.talents): return "前置未满足：" + TalentGraph.requirement_text(id, GameState.talents)
-	return "天赋点不足：需要1点，当前0点" if GameState.talent_points <= 0 else "投入1点，点亮「%s」" % TalentGraph.node(id).name
+	if CampSession.active and not CampSession.training_active:return "营地仅可查看技能天赋；出征后加点"
+	if CampSession.training_active:return "训练预览：点亮「%s」" % TalentGraph.node(id).name
+	if GameState.talent_points<=0:return "局内天赋点不足；每3级得1点或花1000金币购买"
+	return "点亮「%s」：消耗1点局内天赋点" % TalentGraph.node(id).name

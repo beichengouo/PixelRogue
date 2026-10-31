@@ -9,6 +9,17 @@ func run()->void:
 			GameState.legendary_looks[str(hero)]={"set":form}
 			var art:=HanddrawnHeroArt.frames(form,hero);actor._sprite.sprite_frames=art;RoomHeroArt.align(actor._sprite)
 			check(str(art.get_meta("utility_facing",""))=="w","new utility source facing is explicit")
+			if hero==&"ilyua" and form:
+				check(not actor.uses_basic_chain(),"Ilyua model admission preserves current combat behavior")
+				check(bool(art.get_meta("design_combo_only",false)),"Ilyua design preview is labelled")
+			if hero==&"ilyua" and not form:
+				check(not actor.uses_basic_chain(),"Ilyua model admission preserves current combat behavior")
+				check(bool(art.get_meta("design_combo_only",false)),"Ilyua design preview is labelled")
+			if hero==&"sylphiette":
+				check(not actor.uses_basic_chain(),"Sylphiette art admission preserves current combat rules")
+				check(bool(art.get_meta("design_combo_only",false)),"five-stage preview is explicitly design-only")
+				for stage in range(1,6):
+					check(art.get_frame_count("attack"+str(stage)+"_s")==4 and art.get_frame_count("move_attack"+str(stage)+"_s")==4,"five prayer gesture source clips retained")
 			check(not RoomHeroArt.utility_flip(art,-1) and RoomHeroArt.utility_flip(art,1),"west source faces requested left/right")
 			transition_checks(art)
 			await decoy_checks(hero,art)
@@ -21,7 +32,12 @@ func run()->void:
 					check(is_equal_approx(art.get_animation_speed(name_value),7.5 if action=="walk" else 12.5),"existing animation clock retained "+str(name_value))
 					for index in 4:
 						var texture:AtlasTexture=art.get_frame_texture(name_value,index)
-						check(texture.atlas.resource_path.begins_with("res://assets/heroes_handdrawn_v35/") and texture.region.size==Vector2(448,448),"runtime uses current atlas and cell")
+						var atlas_root:="res://assets/heroes_handdrawn_v35/"
+						if hero==&"xixifu":atlas_root="res://assets/heroes_handdrawn_v37/" if form else "res://assets/heroes_handdrawn_v36/"
+						elif hero==&"sylphiette":atlas_root="res://assets/heroes_handdrawn_v37/sylphiette/"+("set/" if form else "normal/")
+						elif hero==&"ilyua" and form:atlas_root="res://assets/heroes_handdrawn_v37/ilyua/set/"
+						elif hero==&"ilyua" and not form:atlas_root="res://assets/heroes_handdrawn_v37/ilyua/normal/"
+						check(texture.atlas.resource_path.begins_with(atlas_root) and texture.region.size==Vector2(448,448),"runtime uses current atlas and cell")
 						var bounds:Rect2=texture.get_meta("painted_bounds")
 						check(Rect2(0,0,448,448).encloses(bounds) and bounds.has_area(),"authored bounds are valid")
 			for extent:Vector2i in [Vector2i(1280,720),Vector2i(1920,1080),Vector2i(2560,1080),Vector2i(800,1280)]:

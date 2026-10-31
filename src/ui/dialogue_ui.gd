@@ -23,6 +23,7 @@ var _goddess_art: TextureRect
 var _face_art: TextureRect
 var _ribbon: Control
 var _actor_id := ""
+var _narration_line := true
 var _local_transaction := false
 var _local_committed := false
 var _local_commit: Callable
@@ -207,7 +208,9 @@ func _play_lines(lines: Array, mode: String) -> void:
 	else: _show_line(0)
 
 func _show_line(i: int) -> void:
-	var line: Dictionary = _lines[i]
+	_present_line(_lines[i],i)
+
+func _present_line(line:Dictionary,i:int)->void:
 	_full = str(line.get("text", ""))
 	_shown = 0
 	_typing = true
@@ -216,6 +219,7 @@ func _show_line(i: int) -> void:
 	_text_label.visible_characters = 0
 	_text_scroll.scroll_vertical = 0
 	var who := str(line.get("who", ""))
+	_narration_line=who.is_empty()
 	var hero := _review_character if _review and _review_character != &"" else Characters.current_id()
 	_actor_id = DialogueCast.actor(who, hero)
 	var expression := DialogueCast.expression(str(line.get("expression", "")), _full, str(line.get("portrait", "")))
@@ -268,7 +272,7 @@ func _portrait(path: String, player := false) -> Texture2D:
 
 func _process(delta: float) -> void:
 	if not UIFlow.is_top(self) or not is_open() or not _typing: return
-	_shown += delta * CHARS_PER_SEC
+	_shown += delta * (48.0 if _narration_line else CHARS_PER_SEC)
 	_typing = _shown < _full.length()
 	_text_label.visible_characters = int(_shown) if _typing else -1
 
@@ -369,6 +373,14 @@ func _show_choices(choices: Array) -> void:
 	_choosing = not choices.is_empty()
 	_side.visible = _choosing
 	if not _choosing: return
+	var prompt:Dictionary=_scene.get("choice_prompt",{})
+	if prompt.is_empty():
+		var entries:Array=_scene.get("lines",[])
+		for index in range(entries.size()-1,-1,-1):
+			var line:Dictionary=entries[index]
+			if str(line.get("who","")) not in ["","契约者","你"] and str(line.get("text","")).ends_with("？"):
+				prompt=line;break
+	if not prompt.is_empty():_present_line(prompt,maxi(0,_lines.size()-1))
 	_typing = false
 	_text_label.visible_characters = -1
 	_skip_hint.text = "↑ ↓ 选择 · %s 确认"%KeyBindings.label("ui_accept") if not _review else "选择仅预览对应对白，不改变实际分支"
@@ -539,7 +551,7 @@ func _layout() -> void:
 	var extent := _root.size
 	var compact := extent.x < 900.0
 	var margin := clampf(extent.x * .025, 16.0, 64.0)
-	var height := clampf(extent.y * .28, 210.0, 320.0)
+	var height := clampf(extent.y*.42,280.0,460.0) if _narration_line else clampf(extent.y*.28,210.0,320.0)
 	if extent.y < 520: height = extent.y * .46
 	var top := extent.y - height
 	var face_width := clampf(extent.x * .155, 100.0, 230.0)
@@ -550,7 +562,7 @@ func _layout() -> void:
 	var inset := margin + (face_width + 16 if _face_art.visible else 0.0)
 	_bubble.position = Vector2(inset, top + 8)
 	_bubble.size = Vector2(maxf(120, extent.x - inset - margin), height - 18)
-	_text_label.add_theme_font_size_override("font_size", 24 if compact else 28)
+	_text_label.add_theme_font_size_override("font_size",24 if compact else 26 if _narration_line else 28)
 	_name_label.add_theme_font_size_override("font_size", 25 if compact else 28)
 	_chapter.position = Vector2(margin, 18)
 	_chapter.size = Vector2(maxf(100, extent.x - 2 * margin - 190), 32)

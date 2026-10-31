@@ -12,7 +12,7 @@ func _ready()->void:
 func _draw()->void:
 	if field.is_empty() or not is_instance_valid(controller) or controller.state.is_empty():return
 	var at:=Vector2(field.at[0],field.at[1]);var warning:=float(field.age)<0
-	var color:=Color("bc8bff") if field.mode=="rune" else (Color("ff7761") if field.mode=="bone" else Color("bc74b9"))
+	var color:=Color("ff454f")
 	var reduced:=ComicMotion.reduced()
 	var frame:=1 if reduced else clampi(int(maxf(0,float(field.age))*12),0,3)
 	var atlas:=RoomExpansionRules.field_texture(str(field.mode))

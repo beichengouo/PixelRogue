@@ -53,6 +53,8 @@ var _moon_visuals:Array[IlyuaFX]=[]
 var _step_hit_ids:Dictionary={}
 var _field_sequence:=0
 var natural_hits:Dictionary={}
+var capstone_wind_marks:Dictionary={}
+var capstone_moon_fired:=false
 
 func _ready() -> void:
 	if actor == null: actor = get_parent() as RoomPlayer
@@ -94,7 +96,16 @@ func _physics_process(delta: float) -> void:
 	if ultimate_left>0:
 		ultimate_left=maxf(0,ultimate_left-delta)
 		if ultimate_left==0:finish_ultimate()
+	var moon_was_active:=moon_left>0
 	moon_left=maxf(0,moon_left-delta)
+	if moon_was_active and moon_left<=0 and not capstone_moon_fired and PermanentTalents.active(&"ilyua_moon_arrows"):
+		capstone_moon_fired=true
+		var remaining_moons:=0
+		for slot in moon_slots:
+			if slot.kind=="skill" and float(slot.ready)<=clock:remaining_moons+=1
+		for i in mini(remaining_moons,3):
+			var target:=nearest_enemy(actor.global_position,216)
+			if target!=null:spawn_arrow(&"moon",actor.global_position,(target.global_position-actor.global_position).normalized(),.24*float(skill_power.get("ilyua_moon_arrows",1)),false,false,null,target)
 	_update_moons(delta)
 	for key in marked.keys():
 		if float(marked[key].until)<=clock:marked.erase(key)
@@ -237,6 +248,7 @@ func legal_ground(at:Vector2,require_visible:bool)->Vector2:
 
 func _release_skill(id:StringName,target:Vector2,cast_bonus:float,fate_bonus:=1.0)->void:
 	var at:=actor.global_position
+	if PermanentTalents.active(id):TalentCapstoneFX.spawn(actor.get_parent(),target if id in [&"ilyua_vine_trap",&"ilyua_ancient_tree"] else at,id,88 if Skills.is_ultimate(id) else 64)
 	skill_power[str(id)]=SkillTalentCatalog.power(id)
 	var bonus:=cast_bonus*float(skill_power[str(id)])
 	if next_natural_bonus>0 and id in [&"ilyua_thorn_seed",&"ilyua_vine_trap",&"ilyua_ancient_tree"]:bonus*=1+next_natural_bonus;next_natural_bonus=0
@@ -257,6 +269,7 @@ func _release_skill(id:StringName,target:Vector2,cast_bonus:float,fate_bonus:=1.
 			make_field(&"trap",target,float(IlyuaSkills.DATA[id].effect.radius)+SkillTalentCatalog.shape(id,"radius"),6,1,.12*bonus,.8,.35)
 		&"ilyua_moon_arrows":
 			moon_left=8+SkillTalentCatalog.shape(id,"duration")
+			capstone_moon_fired=false
 			for i in range(moon_slots.size()-1,-1,-1):
 				if moon_slots[i].kind=="skill":moon_slots.remove_at(i)
 			for i in 3:moon_slots.append({"kind":"skill","ready":clock,"expires":clock+8+SkillTalentCatalog.shape(id,"duration")})
@@ -374,12 +387,17 @@ func finish_tree(field:IlyuaField)->void:
 			if count>=4:break
 			if plant.distance_to(enemy.global_position)<=72:proc(enemy,.15*field.damage_ratio/float(IlyuaSkills.DATA[&"ilyua_ancient_tree"].effect.pulse_ratio),plant);count+=1
 	IlyuaFX.spawn(actor.get_parent(),field.global_position,"tree_end",field.radius*2,.5)
+	if PermanentTalents.active(&"ilyua_ancient_tree"):
+		actor.heal_player(actor.max_hp*.08)
+		area_proc(field.global_position,field.radius,.55*field.damage_ratio/maxf(.01,float(IlyuaSkills.DATA[&"ilyua_ancient_tree"].effect.pulse_ratio)))
 
 func on_arrow_bounce(arrow:IlyuaArrow)->void:
 	if arrow.is_basic_attack and rank(&"ilyua_returning_arrow")>=2:arrow.redirect_left=1
 
 func arrow_multiplier(arrow:IlyuaArrow,enemy:EnemyBase)->float:
 	var result:=1.0
+	var mark:Dictionary=marked.get(enemy.get_instance_id(),{})
+	if not mark.is_empty() and float(mark.get("weak_until",0))>clock:result*=1.25
 	if arrow.main_arrow and rank(&"ilyua_wild_growth")>=1 and controlled(enemy):result*=1.08
 	if arrow.is_basic_attack and rank(&"ilyua_true_shot")>=1:
 		var record:Dictionary=true_hits.get(enemy.get_instance_id(),{})
@@ -401,6 +419,16 @@ func allow_volley_hit(arrow:IlyuaArrow,enemy:EnemyBase)->bool:
 
 func on_arrow_hit(arrow:IlyuaArrow,enemy:EnemyBase,effective:bool)->void:
 	if not effective or not is_instance_valid(enemy):return
+	if arrow.is_basic_attack and capstone_wind_marks.has(enemy.get_instance_id()):
+		var wind_mark:Dictionary=capstone_wind_marks[enemy.get_instance_id()]
+		if int(wind_mark.get("arrow",0))!=arrow.get_instance_id() and float(wind_mark.get("until",0))>clock:
+			capstone_wind_marks.erase(enemy.get_instance_id())
+			area_proc(enemy.global_position,54,.3,3)
+			IlyuaFX.spawn(actor.get_parent(),enemy.global_position,"wind",108,.3)
+	if arrow.is_basic_attack and arrow.wind_skill_serial>0 and arrow.strong_pierce and PermanentTalents.active(&"ilyua_wind_arrow"):
+		capstone_wind_marks[enemy.get_instance_id()]={"arrow":arrow.get_instance_id(),"until":clock+4}
+	if arrow.arrow_kind==&"precision" and PermanentTalents.active(&"ilyua_hunter_mark") and marked.has(enemy.get_instance_id()):
+		marked[enemy.get_instance_id()]["weak_until"]=clock+3
 	if not arrow.main_arrow and arrow.primary_skill==&"":
 		if arrow.arrow_kind==&"true_pierce" and rank(&"ilyua_true_shot")>=3:
 			var count:=0
@@ -633,6 +661,11 @@ func finish_ultimate()->void:
 	for i in 12:
 		var arrow:=spawn_arrow(&"ultimate_finish",actor.global_position,Vector2.RIGHT.rotated(TAU*i/12),.2*float(skill_power.get("ilyua_thousand_winds",1)),false,false)
 		if arrow!=null:arrow.volley_id=volley;arrow.homing_turn=0
+	if PermanentTalents.active(&"ilyua_thousand_winds"):
+		var targets:=sorted_near(actor.global_position,360)
+		for i in mini(3,targets.size()):
+			var target:EnemyBase=targets[i]
+			spawn_arrow(&"ultimate_finish",actor.global_position,(target.global_position-actor.global_position).normalized(),.45*float(skill_power.get("ilyua_thousand_winds",1)),false,false,null,target)
 	IlyuaFX.spawn(actor.get_parent(),actor.global_position,"ultimate_end",180,.5)
 
 func _on_enemy_damaged(enemy:EnemyBase,amount:float,source:Node,_damage_type:StringName)->void:
@@ -641,6 +674,7 @@ func _on_enemy_damaged(enemy:EnemyBase,amount:float,source:Node,_damage_type:Str
 
 func _on_enemy_died(enemy:EnemyBase,source:Node,_damage_type:StringName)->void:
 	var id:=enemy.get_instance_id();var was_seeded:=seed_marks.has(id)
+	capstone_wind_marks.erase(id)
 	_observed.erase(id)
 	for tree in active_fields(&"tree"):
 		if was_seeded and tree.plant_count<6 and tree.global_position.distance_to(enemy.global_position)<=tree.radius:
@@ -654,7 +688,7 @@ func _on_enemy_died(enemy:EnemyBase,source:Node,_damage_type:StringName)->void:
 			if seed.generation==0:
 				var near:=sorted_near(enemy.global_position,float(IlyuaSkills.DATA[&"ilyua_thorn_seed"].effect.spread_radius),enemy)
 				for i in mini(2,near.size()):
-					if Rng.stream().randf()<.5:attach_seed(near[i],seed.remaining,seed.damage_ratio,1)
+					if PermanentTalents.active(&"ilyua_thorn_seed") or Rng.stream().randf()<.5:attach_seed(near[i],seed.remaining,seed.damage_ratio,1)
 			seed.queue_free()
 	if mature_marks.has(id):
 		var mark:Dictionary=mature_marks[id];mature_marks.erase(id)
@@ -690,6 +724,8 @@ func sorted_near(at:Vector2,radius:float,exclude:EnemyBase=null)->Array[EnemyBas
 	return near
 
 func _tick_marks(delta:float)->void:
+	for id in capstone_wind_marks.keys():
+		if float(capstone_wind_marks[id].until)<=clock or not live(instance_from_id(int(id)) as EnemyBase):capstone_wind_marks.erase(id)
 	for pair:Array in [[mature_marks,false],[sprout_marks,true]]:
 		var table:Dictionary=pair[0]
 		for key in table.keys():
@@ -724,7 +760,7 @@ func on_room_exit()->void:
 		if is_instance_valid(enemy):
 			if enemy.died.is_connected(_on_enemy_died):enemy.died.disconnect(_on_enemy_died)
 			if enemy.damage_applied.is_connected(_on_enemy_damaged):enemy.damage_applied.disconnect(_on_enemy_damaged)
-	for table:Dictionary in [_observed,seed_marks,marked,mature_marks,sprout_marks,true_hits,ultimate_hits,precision_hits,volley_hits]:table.clear()
+	for table:Dictionary in [_observed,seed_marks,marked,mature_marks,sprout_marks,true_hits,ultimate_hits,precision_hits,volley_hits,capstone_wind_marks]:table.clear()
 	step_left=0
 
 func snapshot() -> Dictionary:
@@ -744,10 +780,14 @@ func snapshot() -> Dictionary:
 	var save_hunter: Array = []
 	for mark in marked.values():
 		var enemy: EnemyBase = mark.enemy.get_ref() as EnemyBase if mark.get("enemy") is WeakRef else null
-		if live(enemy): save_hunter.append({"enemy": str(enemy.get_instance_id()), "left": maxf(0.0, float(mark.until) - clock), "hits": mark.hits, "transfers": mark.transfers})
+		if live(enemy): save_hunter.append({"enemy": str(enemy.get_instance_id()), "left": maxf(0.0, float(mark.until) - clock), "weak_left":maxf(0,float(mark.get("weak_until",0))-clock), "hits": mark.hits, "transfers": mark.transfers})
+	var saved_wind_marks:Array=[]
+	for id in capstone_wind_marks:
+		var enemy:EnemyBase=instance_from_id(int(id)) as EnemyBase
+		if live(enemy) and float(capstone_wind_marks[id].until)>clock:saved_wind_marks.append({"enemy":str(id),"left":float(capstone_wind_marks[id].until)-clock})
 	var saved_cooldowns := {}
 	for key in cooldowns: saved_cooldowns[str(key)] = maxf(0.0, float(cooldowns[key]) - clock)
-	return {"talent_revision":talent_revision,"skill_power":skill_power.duplicate(),"skill_fate_serials":skill_fate_serials.duplicate(),"wind_pierce_left":maxf(0,wind_pierce_until-clock),"wind_pierce_serial":wind_pierce_serial,"wind_hit_serial":wind_hit_serial,"clock":clock,"move_time":move_time,"stop_time":stop_time,"step_left":step_left,"step_direction":[step_direction.x,step_direction.y],"moon_slots":moon_slots.duplicate(true),"favor_times":_favor_times.duplicate(),"sprout_marks":_save_marks(sprout_marks),"volley_hits":volley_hits.duplicate(true),"ultimate_left": ultimate_left, "ultimate_pending": ultimate_finish_pending, "wind_stacks": wind_stacks, "wind_grace": wind_grace, "no_fire": no_fire, "moon_charges": moon_charges, "moon_regen": moon_regen, "moon_left": moon_left, "dash_serial": dash_serial, "blessing": blessing, "next_basic_bonus": next_basic_bonus, "next_basic_left": maxf(0.0, next_basic_until - clock), "next_natural_bonus": next_natural_bonus, "light_empower": light_empower, "light_left": maxf(0.0, light_empower_until - clock), "cooldowns": saved_cooldowns, "fields": fields, "decoys": decoys, "arrows": arrows, "forest_marks": save_marks, "hunter_marks": save_hunter, "true_hits": true_hits.duplicate(true), "ultimate_hits": ultimate_hits.duplicate(true), "precision_hits": precision_hits.duplicate(true), "kill_times": _kill_times.duplicate(), "skill_history": _skill_history.duplicate(true)}
+	return {"talent_revision":talent_revision,"skill_power":skill_power.duplicate(),"skill_fate_serials":skill_fate_serials.duplicate(),"wind_pierce_left":maxf(0,wind_pierce_until-clock),"wind_pierce_serial":wind_pierce_serial,"wind_hit_serial":wind_hit_serial,"capstone_wind_marks":saved_wind_marks,"capstone_moon_fired":capstone_moon_fired,"clock":clock,"move_time":move_time,"stop_time":stop_time,"step_left":step_left,"step_direction":[step_direction.x,step_direction.y],"moon_slots":moon_slots.duplicate(true),"favor_times":_favor_times.duplicate(),"sprout_marks":_save_marks(sprout_marks),"volley_hits":volley_hits.duplicate(true),"ultimate_left": ultimate_left, "ultimate_pending": ultimate_finish_pending, "wind_stacks": wind_stacks, "wind_grace": wind_grace, "no_fire": no_fire, "moon_charges": moon_charges, "moon_regen": moon_regen, "moon_left": moon_left, "dash_serial": dash_serial, "blessing": blessing, "next_basic_bonus": next_basic_bonus, "next_basic_left": maxf(0.0, next_basic_until - clock), "next_natural_bonus": next_natural_bonus, "light_empower": light_empower, "light_left": maxf(0.0, light_empower_until - clock), "cooldowns": saved_cooldowns, "fields": fields, "decoys": decoys, "arrows": arrows, "forest_marks": save_marks, "hunter_marks": save_hunter, "true_hits": true_hits.duplicate(true), "ultimate_hits": ultimate_hits.duplicate(true), "precision_hits": precision_hits.duplicate(true), "kill_times": _kill_times.duplicate(), "skill_history": _skill_history.duplicate(true)}
 
 func restore(data: Dictionary, restored_nodes: Dictionary = {}) -> void:
 	on_room_exit()
@@ -769,6 +809,7 @@ func restore(data: Dictionary, restored_nodes: Dictionary = {}) -> void:
 	moon_charges = clampi(int(data.get("moon_charges", 0)), 0, 8)
 	moon_regen = float(data.get("moon_regen", 0.0))
 	moon_left = float(data.get("moon_left", 0.0))
+	capstone_moon_fired=bool(data.get("capstone_moon_fired",false))
 	dash_serial = int(data.get("dash_serial", 0))
 	blessing = clampi(int(data.get("blessing", 0)), 0, 3)
 	next_basic_bonus = float(data.get("next_basic_bonus", 0.0))
@@ -815,7 +856,10 @@ func restore(data: Dictionary, restored_nodes: Dictionary = {}) -> void:
 		if live(enemy): mature_marks[enemy.get_instance_id()] = {"enemy": weakref(enemy), "until": clock + float(entry.get("left", 0.0)), "ratio": float(entry.get("ratio", 0.0)), "generation": int(entry.get("generation", 0)), "tick": float(entry.get("tick", 0.0))}
 	for entry in data.get("hunter_marks", []):
 		var enemy: EnemyBase = restored_nodes.get(str(entry.get("enemy", ""))) as EnemyBase
-		if live(enemy): marked[enemy.get_instance_id()] = {"enemy": weakref(enemy), "until": clock + float(entry.get("left", 0.0)), "hits": int(entry.get("hits", 0)), "transfers": int(entry.get("transfers", 0))}
+		if live(enemy): marked[enemy.get_instance_id()] = {"enemy": weakref(enemy), "until": clock + float(entry.get("left", 0.0)), "weak_until":clock+float(entry.get("weak_left",0)), "hits": int(entry.get("hits", 0)), "transfers": int(entry.get("transfers", 0))}
+	for entry in data.get("capstone_wind_marks",[]):
+		var enemy:EnemyBase=restored_nodes.get(str(entry.get("enemy",""))) as EnemyBase
+		if live(enemy):capstone_wind_marks[enemy.get_instance_id()]={"arrow":0,"until":clock+float(entry.get("left",0))}
 	observe_enemies()
 	_restore_extra(data,restored_nodes)
 	if talent_revision!=GameState.talent_revision:clear_talent_effects()
@@ -881,7 +925,7 @@ func clear_talent_effects()->void:
 	for id in ["ilyua_wind_arrow","ilyua_thousand_winds","ilyua_hunter_mark","ilyua_moon_arrows"]:skill_power[id]=1.0
 	blessing=0;next_basic_bonus=0;next_basic_until=0;next_natural_bonus=0
 	light_empower=false;light_empower_until=0
-	true_hits.clear();_favor_times.clear();_kill_times.clear()
+	true_hits.clear();capstone_wind_marks.clear();_favor_times.clear();_kill_times.clear()
 	for key in ["will_until","phase_until","different"]:_skill_history.erase(key)
 	for index in range(moon_slots.size()-1,-1,-1):
 		if moon_slots[index].kind!="skill":moon_slots.remove_at(index)

@@ -60,19 +60,19 @@ func run() -> void:
 	var old_character := Characters.current_id()
 	var canonical: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/narrative_v11.json"))
 	check(canonical.size() == 19, "all nineteen stable forest/death/echo hooks revised")
-	check(ContractorNarrative.REVISION == 12, "presentation revision independent of game version")
+	check(ContractorNarrative.REVISION == 13, "presentation revision independent of game version")
 	for hero: StringName in HEROES:
 		Characters.set_current(hero)
 		for id: String in canonical:
 			for repeated: bool in [false, true]:
 				var scene := Story.get_scene(StringName(id), repeated, hero)
-				check(int(scene.get("narrative_revision", 0)) == 12, "canonical revision " + str(hero) + "/" + id)
+				check(int(scene.get("narrative_revision", 0)) == ContractorNarrative.REVISION, "canonical revision " + str(hero) + "/" + id)
 				check(scene.get("choices", []).size() <= Story.MAX_CHOICES, "choice count preserved " + id)
 				inspect_lines(scene, str(hero) + "/" + id)
 		for id: StringName in CityStories.IDS:
 			for repeated: bool in [false, true]:
 				var scene := CityStories.scene(id, repeated, hero)
-				check(int(scene.get("narrative_revision", 0)) == 12, "city revision " + str(id))
+				check(int(scene.get("narrative_revision", 0)) == ContractorNarrative.REVISION, "city revision " + str(id))
 				inspect_lines(scene, str(hero) + "/" + str(id))
 		inspect_lines(FateStory.scene(hero), str(hero) + "/fate")
 		inspect_lines(CampStory.EVENTS[str(hero)], str(hero) + "/camp")
@@ -166,7 +166,7 @@ func snapshot_checks() -> void:
 			var before_outpost := Outpost.data.duplicate(true)
 			dialogue.expedition_restore({"scene_id":id, "scene":{"title":"old", "narrative_revision":11}, "lines":[{"who":"", "text":"OBSOLETE_PAYLOAD"}], "offered":[{"text":"OLD_REWARD", "give":"iron_sword"}], "repeat_read_only":true, "mode":"reply"})
 			await frames()
-			check(int(dialogue._scene.get("narrative_revision", 0)) == 12, "old snapshot gets revised canonical presentation " + id)
+			check(int(dialogue._scene.get("narrative_revision", 0)) == ContractorNarrative.REVISION, "old snapshot gets revised canonical presentation " + id)
 			check(not JSON.stringify(dialogue._lines).contains("OBSOLETE_PAYLOAD") and dialogue._offered.is_empty(), "old embedded choices and lines discarded")
 			check(StoryState.flags == before_flags and Outpost.data == before_outpost, "presentation migration never reapplies committed effects")
 			dialogue.cancel()

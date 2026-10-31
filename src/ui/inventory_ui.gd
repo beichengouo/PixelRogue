@@ -76,7 +76,7 @@ func talent_groups()->Array:
 
 const TABS: Array = [
 	[&"gear", "装备"], [&"relic", "遗物"], [&"potion", "药剂"], [&"material", "材料"],
-	[&"skill", "技能"], [&"talent", "天赋"], [&"stat", "属性"],
+	[&"skill", "技能"], [&"stat", "属性"], [&"talent", "天赋"],
 ]
 ## 属性页每条属性前面的图标（取自 Cooked Pixel Icons 里语义最接近的那张）
 const STAT_ICONS := {
@@ -115,7 +115,7 @@ func open() -> void:
 	if not UIFlow.can_open(self): return
 	if _root.visible and not _closing:
 		return
-	if camp_preparation!=null and _filter not in [&"gear",&"potion",&"skill",&"stat"]:_filter=&"gear"
+	if camp_preparation!=null and _filter not in [&"gear",&"potion",&"skill",&"stat",&"talent"]:_filter=&"gear"
 	_closing = false
 	if _close_tween != null and _close_tween.is_valid():
 		_close_tween.kill()
@@ -404,19 +404,34 @@ func _refresh_tab_counts() -> void:
 				text += " %d" % material_count
 			&"skill":
 				text += " %d" % skill_count
-			&"talent":
-				text += " %d" % GameState.talent_points
+			&"talent":pass
 			&"stat":
 				text += " Lv%d" % GameState.level
 		_tab_buttons[i].text = text
 		RewardCategoryWordmark.decorate_button(_tab_buttons[i],_tab_labels[i],40,text.trim_prefix(_tab_labels[i]).strip_edges())
 		var active: bool = _tab_ids[i] == _filter
-		_tab_buttons[i].visible=camp_preparation==null or id in [&"gear",&"potion",&"skill",&"stat"]
+		_tab_buttons[i].visible=camp_preparation==null or id in [&"gear",&"potion",&"skill",&"talent",&"stat"]
 		_tab_buttons[i].disabled = false
 		# 页签底图是「创建时算一次」的样式，切换页签必须重新算一遍，否则高亮不会跟着动
 		PixelUi.apply_tab_style(_tab_buttons[i], active)
 		_tab_buttons[i].set_meta("interaction_selected",active)
 		InteractionSkin.apply_button(_tab_buttons[i],"inventory")
+	_layout_visible_tabs()
+
+func _layout_visible_tabs()->void:
+	var shown:Array[Button]=[]
+	for button in _tab_buttons:
+		if button.visible:shown.append(button)
+	if shown.is_empty():return
+	var width:=176.0
+	var gap:=18.0
+	var used:=shown.size()*width+maxi(0,shown.size()-1)*gap
+	var x:=maxf(0.0,(1340.0-used)*.5)
+	for button in shown:
+		var rect:=Rect2(x,0,width,72)
+		button.set_meta("art_layout_default",rect)
+		UiArtLayout.apply(button)
+		x+=width+gap
 
 
 func _build_equip_row() -> Control:
@@ -430,7 +445,7 @@ func _build_equip_row() -> Control:
 ## ---------------- 刷新内容 ----------------
 
 func _rebuild() -> void:
-	if camp_preparation!=null:
+	if camp_preparation!=null and _filter!=&"talent":
 		camp_content.rebuild();return
 	var focused := get_viewport().gui_get_focus_owner()
 	var token := str(focused.get_meta("focus_token", "")) if focused != null else ""
@@ -602,14 +617,14 @@ func _rebuild_skill_page() -> void:
 		if _skill_editing:
 			var confirm:=PixelUi.compact_button("确认重配 · %d金币"%price,18);confirm.name="SkillResetConfirm"
 			confirm.disabled=price<0 or GameState.coins<price or _skill_draft==GameState.skill_loadout();row.add_child(confirm);confirm.pressed.connect(_confirm_skill_reconfiguration)
-			var refund_preview:=PixelUi.label("确认后展示："+" / ".join(_skill_draft.map(func(skill:StringName)->String:return str(Skills.get_skill(skill).name)))+"\n返还天赋：%d点"%(0 if price==0 else GameState.spent_talent_points()),15,PixelUi.GOLD)
+			var refund_preview:=PixelUi.label("确认后展示："+" / ".join(_skill_draft.map(func(skill:StringName)->String:return str(Skills.get_skill(skill).name)))+"\n永久天赋保留；仅当前携带技能生效。",15,PixelUi.GOLD)
 			refund_preview.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_page_box.add_child(refund_preview)
 			confirm.tooltip_text="配置未改变，无需重置。" if _skill_draft==GameState.skill_loadout() else "金币不足。" if price<0 or GameState.coins<price else "保存成功后扣费、返还全部已投入天赋点；原有技能冷却保留。"
 			var cancel:=PixelUi.compact_button("取消修改",18);row.add_child(cancel);cancel.pressed.connect(_cancel_skill_reconfiguration)
 		else:
 			var reset:=PixelUi.compact_button("重置技能配置 · %d金币"%price if price>=0 else "重置费用超出可支付范围",18);reset.name="SkillResetBegin";reset.disabled=not GameState.run_active;row.add_child(reset);reset.pressed.connect(_begin_skill_reconfiguration)
 			reset.tooltip_text="金币不足，需要%d金币。"%price if GameState.coins<price else "先编辑完整3+1配置；确认时扣费，本局每次费用翻倍。"
-		var hint:=PixelUi.label("本局已重置%d次 · 更换技能返还全部%d点天赋 · 保留冷却\n取消不收费；仅调整技能顺序免费且不退点。"%[GameState.skill_reset_count,GameState.spent_talent_points()],15,PixelUi.MUTED);hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_page_box.add_child(hint)
+		var hint:=PixelUi.label("本局已重配%d次 · 永久天赋保留 · 保留冷却\n取消不收费；仅调整技能顺序免费。"%GameState.skill_reset_count,15,PixelUi.MUTED);hint.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;_page_box.add_child(hint)
 	_page_box.add_child(PixelUi.label("技能库 · 点击图标查看"+("，在右侧选择装配栏位" if CampSession.active or _skill_editing else "；调整配装需先重置"),17))
 	var gallery:=GridContainer.new();gallery.columns=4;gallery.add_theme_constant_override("h_separation",12);gallery.add_theme_constant_override("v_separation",8);_page_box.add_child(gallery)
 	for id:StringName in Skills.order_for():gallery.add_child(_skill_tile(id,str(Skills.get_skill(id,GameState.combat_mode).name),not GameState.unlocked_skills.has(id)))
@@ -702,7 +717,7 @@ func _build_talent_row(branch: StringName) -> Control:
 
 	var plus := PixelUi.compact_button("已满" if full else "加点", 15)
 	plus.custom_minimum_size = Vector2(86.0, 34.0)
-	plus.disabled = full or not unlocked or GameState.talent_points <= 0
+	plus.disabled = full or not unlocked or (CampSession.active and not CampSession.training_active) or GameState.talent_points<=0
 	plus.tooltip_text=ItemInsight.talent_requirement(branch)
 	plus.set_meta("focus_token", "talent_add:" + str(branch))
 	plus.pressed.connect(func() -> void:
@@ -1160,10 +1175,10 @@ func _detail_talent() -> void:
 	_detail_box.add_child(PixelUi.label("前置：%s" % _requirement_text(info), 15,
 		PixelUi.MUTED if unlocked else Color("ff9e9e")))
 	var full := rank >= max_rank
-	var add := PixelUi.compact_button("已满级" if full else ("加点（剩 %d）" % GameState.talent_points), 18)
+	var add := PixelUi.compact_button("已满级" if full else "营地预览" if CampSession.active and not CampSession.training_active else "投入1点", 18)
 	add.custom_minimum_size = Vector2(0.0, 44.0)
 	add.set_meta("focus_token", "talent_detail_add:" + str(_selected_talent))
-	add.disabled = full or not unlocked or GameState.talent_points <= 0
+	add.disabled = full or (CampSession.active and not CampSession.training_active) or not unlocked or GameState.talent_points<=0
 	add.tooltip_text=ItemInsight.talent_requirement(_selected_talent)
 	if add.disabled:_detail_box.add_child(PixelUi.label(add.tooltip_text,16,PixelUi.MUTED))
 	add.pressed.connect(func() -> void: _add_talent_point(_selected_talent))
@@ -1182,7 +1197,7 @@ func _detail_run_summary() -> void:
 		["技能库", "%d 个（大招 %s）" % [
 			GameState.unlocked_skills.size(),
 			"已装配" if GameState.ultimate_skill != &"" else "未装配"]],
-		["可用天赋点", str(GameState.talent_points)],
+		["可用局内技能点", str(GameState.talent_points)],
 	]
 	for entry in rows:
 		var row := UiFactory.hbox(8)
@@ -1262,7 +1277,7 @@ func _on_talent_row_input(event: InputEvent, branch: StringName) -> void:
 func _add_talent_point(branch: StringName) -> void:
 	if not _claim_action(): return
 	if TalentGraph.node(branch).is_empty(): return
-	if not GameState.talent_unlocked(branch) or GameState.talent_points <= 0: return
+	if not GameState.talent_unlocked(branch) or (CampSession.active and not CampSession.training_active) or GameState.talent_points<=0: return
 	if TalentGraph.owned(branch, GameState.talents): return
 	if GameState.spend_talent_point(branch):
 		AudioManager.play(&"ui_click", -6.0)

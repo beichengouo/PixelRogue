@@ -16,7 +16,7 @@ static func profile(id:String)->Dictionary:
 static func skull(level:int)->Texture2D:
  if level<=0:return null
  level=clampi(level,1,RoomDirector.MAX_PRESSURE_LEVEL)
- if not _skulls.has(level):_skulls[level]=load(ROOT+"rage_"+str(level)+".png")
+ if not _skulls.has(level):_skulls[level]=load("res://assets/rage_wordmarks_v40/rage_"+str(level)+".png")
  return _skulls[level]
 static func slot(rect:Rect2,entry:Dictionary)->Rect2:
  var raw:Array=entry.track
@@ -38,5 +38,5 @@ static func draw(canvas:CanvasItem,rect:Rect2,ratio:float,id:="enemy",rage:=0)->
   canvas.draw_texture_rect_region(entry.fill_texture,Rect2(channel.position,Vector2(channel.size.x*value,channel.size.y)),Rect2(0,0,1024*value,48))
  draw_frame(canvas,rect,entry)
  if rage>0:
-  var side:=maxf(16,rect.size.y*.75)
-  canvas.draw_texture_rect(skull(rage),Rect2(Vector2(rect.position.x-side-2,rect.get_center().y-side*.5),Vector2.ONE*side),false)
+  var height:=maxf(42,rect.size.y*1.5);var width:=height*.72
+  canvas.draw_texture_rect(skull(rage),Rect2(Vector2(rect.position.x-width-3,rect.get_center().y-height*.5),Vector2(width,height)),false)

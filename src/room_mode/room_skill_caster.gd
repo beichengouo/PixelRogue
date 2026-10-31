@@ -93,6 +93,7 @@ func cast(slot: int) -> bool:
 	if busy() or not _input_allowed() or not GameState.skill_ready(slot): return false
 	var id := GameState.skill_for_slot(slot)
 	if id == &"": return false
+	actor.cancel_basic_chain()
 	_pending_slot = slot; _pending_skill = id; _windup_left = WINDUP_SECONDS
 	_cast_direction = actor.aim_direction; actor._cast_timer = WINDUP_SECONDS
 	actor._cast_pose = &"skill_cast"; actor._animation_request += 1

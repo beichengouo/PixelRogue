@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/boss_fx_raster_v42.gd" id="1"]
+
+[node name="BossFXRasterV42" type="Node"]
+script = ExtResource("1")

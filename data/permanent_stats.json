@@ -1,0 +1,24 @@
+{
+  "version":1,
+  "gold":[600,1200,2400,4200,6800,10500,16000,26000],
+  "material_count":[3,5,8,12,16,22,30,4],
+  "materials":{
+    "sylphiette":{"vitality":"moss_cloth","might":"star_dust","focus":"star_dust","swiftness":"storm_crystal","tempo":"wetland_sample","precision":"ruin_sample"},
+    "xixifu":{"vitality":"forest_sample","might":"ruin_ore","focus":"memory_gift","swiftness":"storm_crystal","tempo":"forest_resin","precision":"ruin_sample"},
+    "ilyua":{"vitality":"forest_resin","might":"storm_crystal","focus":"forest_sample","swiftness":"storm_crystal","tempo":"forest_resin","precision":"ruin_sample"}
+  },
+  "final_material":{"sylphiette":"boss_star","xixifu":"boss_root","ilyua":"boss_star"},
+  "gates":{
+    "4":{"achievement":"opening","difficulty":2,"clears":2,"boss_kills":1},
+    "6":{"achievement":"middle","difficulty":3,"clears":5,"boss_kills":1},
+    "8":{"achievement":"final","difficulty":4,"clears":3,"boss_kills":5}
+  },
+  "gate_boss":{
+    "vitality":{"4":"king","6":"mage","8":"tide"},
+    "might":{"4":"sephra","6":"verena","8":"nameless"},
+    "focus":{"4":"king","6":"verena","8":"nameless"},
+    "swiftness":{"4":"sephra","6":"mage","8":"tide"},
+    "tempo":{"4":"king","6":"mage","8":"nameless"},
+    "precision":{"4":"sephra","6":"verena","8":"nameless"}
+  }
+}

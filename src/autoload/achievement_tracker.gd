@@ -120,6 +120,7 @@ func enemy_defeated(enemy:EnemyBase)->void:
 	if AchievementCatalog.ordinary_names().has(str(enemy.kind)):add("species:"+str(enemy.kind),1)
 func _boss(id:StringName)->void:
 	if not eligible():return
+	add("hero_boss:%s:%s"%[Characters.current_id(),id],1)
 	var tier:=str({"king":"opening","sephra":"opening","mage":"middle","verena":"middle","tide":"final","nameless":"final"}.get(str(id),""))
 	if not tier.is_empty():best("hero_mastery:"+str(Characters.current_id())+":"+tier,GameState.difficulty)
 	add("bosses",1)

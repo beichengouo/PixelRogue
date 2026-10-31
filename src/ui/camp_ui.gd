@@ -343,7 +343,7 @@ func _depart() -> void:
 			_sendoff=CampFarewellDialogue.new();add_child(_sendoff)
 			_sendoff.finished.connect(func()->void:_busy=false;_depart())
 			_sendoff.aborted.connect(func()->void:_busy=false;_refresh())
-		var lines:Dictionary={"sylphiette":"我会照顾好自己，也会记得你留灯的位置。","xixifu":"等我回来，再听听小扣今天想讲什么吧。","ilyua":"风会领我向前。若我愿意回来，就坐在同一扇窗边。"}
+		var lines:Dictionary={"sylphiette":"我会照顾好自己，也会记得你留灯的位置。","xixifu":"等我回来，再听听小灵今天想讲什么吧。","ilyua":"风会领我向前。若我愿意回来，就坐在同一扇窗边。"}
 		_sendoff.play_local_lines([{"who":Characters.current_name(),"text":str(lines.get(str(Characters.current_id()),"我会认真选择每一步。"))},{"who":"伊莉丝","text":"归路亮着，但去留始终由你自己回答。"}],"出发送行")
 		return
 	_busy=true
@@ -436,6 +436,11 @@ func _relations() -> void:
 func _play_event(event: Dictionary, replay: bool) -> void:
 	if _conversation != null and _conversation.is_open(): return
 	_scene = event.duplicate(true)
+	var edited:=Story.get_scene(StringName("camp:"+_npc+":"+str(event.get("id",""))),replay,Characters.current_id())
+	if not edited.is_empty():
+		# Eligibility and committed effects continue using the canonical event definition.
+		for field in ["title","lines","choices"]:
+			if edited.has(field):_scene[field]=edited[field].duplicate(true) if edited[field] is Array or edited[field] is Dictionary else edited[field]
 	_scene["replay"] = replay
 	_line = 0
 	if _conversation == null:

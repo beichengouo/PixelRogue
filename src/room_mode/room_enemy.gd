@@ -327,7 +327,7 @@ func take_damage(amount:float,is_crit:=false,from:=Vector2.ZERO,source:Node=null
 		_summon_interrupted=true;_windup=0;stop_warning();begin_visual_release(.25)
 	super.take_damage(amount,is_crit,from,source,false)
 	if not _dead and is_instance_valid(affix_runtime) and (hp<before_hp or affix_shield<before_shield) and _classify_damage(source) in [&"basic",&"skill"]:affix_runtime.on_direct_damage()
-	if knockback and not _dead:room_push+=(global_position-from).normalized()*160
+	if knockback and not _dead:room_push=(room_push+(global_position-from).normalized()*160).limit_length(200.0)
 
 func _die()->void:
 	if _dead:return

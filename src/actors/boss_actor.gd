@@ -32,7 +32,7 @@ func configure(id: StringName) -> void:
 	collides_with_world = uses_gravity
 	_minion_kinds = roster.get("minions", [&"walker"])
 	max_phase = 3 if id != BossRoster.KING else 2
-	## Boss 永远带"最高危险度"光环（金红），一眼能从小怪里认出来
+	## 保留 Boss 危险等级供数值与标识使用；脚下精英光环由 EnemyBase 对 Boss 排除。
 	danger = 9
 
 
@@ -46,8 +46,7 @@ func _build_visual() -> void:
 		var anim := AnimatedSprite2D.new()
 		anim.name = "Visual"
 		anim.sprite_frames = BossStageArt.frames(boss_id,phase)
-		anim.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		anim.material = PixelSpellArt.material()
+		anim.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
 		anim.centered = true
 		add_child(anim)
 		anim.play(&"idle")

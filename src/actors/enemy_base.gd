@@ -232,7 +232,7 @@ func _ready() -> void:
 
 func _draw() -> void:
 	## 精英光环：危险度越高颜色越"烫"，一圈柔光 + 一圈描边
-	if danger > 0 and not _dead:
+	if danger > 0 and not _dead and not self is BossBase:
 		var tint := EnemyAffixes.danger_color(danger)
 		var radius := maxf(body_size.x, body_size.y) * 0.78 + 6.0
 		draw_circle(Vector2.ZERO, radius, Color(tint.r, tint.g, tint.b, 0.12))

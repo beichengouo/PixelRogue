@@ -93,7 +93,8 @@ func _fields(node:Object)->Dictionary:
 	# The graph owns room deltas; embedding the room inside its runtime recursively grows saves.
 	fields.erase("room_record");fields.erase("_live_warnings")
 	fields.erase("_restored_pressure_step")
-	if node is RoomPlayer:fields.erase("_mouse_attack_blocked")
+	if node is RoomPlayer:
+		for key:String in ["_mouse_attack_blocked","_walk_phase"]:fields.erase(key)
 	return fields
 
 func _node_record(node:Node)->Dictionary:
@@ -271,6 +272,7 @@ func restore_room(d:Dictionary,with_player:=false)->void:
 		_apply_fields(main.player,d.player.fields)
 		main.player.global_position=Vector2(d.player.at[0],d.player.at[1])
 		main.player.velocity=Vector2(d.player.velocity[0],d.player.velocity[1])
+		main.player.reset_basic_after_restore()
 	if interrupted_phase:
 		main.player._invuln=maxf(main.player._invuln,.6)
 		main.player.firing=false;main.player.movement_override=Vector2.ZERO;main.player.aim_override=Vector2.ZERO;main.player._mouse_attack_blocked=true

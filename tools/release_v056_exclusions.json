@@ -1,0 +1,47 @@
+{
+  "excluded_roots": [
+    "assets/heroes_handdrawn_v01/",
+    "assets/heroes_handdrawn_v34/",
+    "assets/boss_stages_v30/",
+    "assets/boss_stages_v34/",
+    "assets/boss_stages_v40/"
+  ],
+  "excluded_map_files": [
+    "assets/room_illustrated/city_boss_nameless_v01/foreground.png",
+    "assets/room_illustrated/city_boss_sephra_v01/foreground.png",
+    "assets/room_illustrated/city_boss_verena_v01/foreground.png",
+    "assets/room_illustrated/city_eclipse_court_v01/foreground.png",
+    "assets/room_illustrated/city_name_archive_v01/foreground.png",
+    "assets/room_illustrated/city_observatory_v01/foreground.png",
+    "assets/room_illustrated/city_silent_gate_v01/foreground.png",
+    "assets/room_illustrated/city_star_canal_v01/foreground.png",
+    "assets/room_illustrated/city_wax_street_v01/foreground.png",
+    "assets/room_illustrated/flower_bend_v02/bridge_long-plane.png",
+    "assets/room_illustrated/flower_bend_v02/bridge_long.png",
+    "assets/room_illustrated/flower_bend_v02/bridge_short-plane.png",
+    "assets/room_illustrated/flower_bend_v02/bridge_short.png",
+    "assets/room_illustrated/flower_bend_v02/water-contact-mask.png",
+    "assets/room_illustrated/ruin_archive_v03/archive_platform-plane.png",
+    "assets/room_illustrated/ruin_archive_v03/archive_platform.png",
+    "assets/room_illustrated/ruin_archive_v03/broken_columns.png",
+    "assets/room_illustrated/ruin_courtyard_v03/bridge_east-plane.png",
+    "assets/room_illustrated/ruin_courtyard_v03/bridge_east.png",
+    "assets/room_illustrated/ruin_courtyard_v03/bridge_west-plane.png",
+    "assets/room_illustrated/ruin_courtyard_v03/bridge_west.png",
+    "assets/room_illustrated/ruin_courtyard_v03/water-contact-clean.png",
+    "assets/room_illustrated/ruin_courtyard_v03/water-contact-mask.png",
+    "assets/room_illustrated/tavern_veranda_v03/veranda-plane.png",
+    "assets/room_illustrated/tavern_veranda_v03/veranda.png"
+  ],
+  "no_inbound_text_references": true,
+  "current_factories": "heroes V36/V37; BossStageArt V41; V35 kept for availability check; all current maps, gates and palettes retained",
+  "estimated_apk_removed_bytes": {
+    "unreferenced_map_files": 3942016,
+    "assets/boss_stages_v30/": 23958572,
+    "assets/boss_stages_v34/": 51917923,
+    "assets/boss_stages_v40/": 46511958,
+    "assets/heroes_handdrawn_v01/": 47406828,
+    "assets/heroes_handdrawn_v34/": 43677694
+  },
+  "estimated_total_saved": 217414991
+}

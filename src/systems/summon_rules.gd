@@ -12,7 +12,9 @@ static func tick(unit:HiredAlly,dt:float)->bool:
 	if unit.remaining<=0 or unit.hp<=0:dismiss(unit);return false
 	if unit.rally_time>0:
 		unit.rally_time=maxf(0,unit.rally_time-dt);unit._cooldown=maxf(0,unit._cooldown-dt*unit.rally_haste)
-		if unit.rally_time==0:refresh(unit)
+		if unit.rally_time==0:
+			if unit is SummonedAlly and is_instance_valid(unit.player) and is_instance_valid(unit.player.summons):unit.player.summons.parade_pulse(unit)
+			refresh(unit)
 	return true
 static func refresh(unit:HiredAlly,full:=false)->void:
 	if not is_instance_valid(unit.player):return
@@ -56,3 +58,8 @@ static func guardian_pulse(unit:HiredAlly,kind:String,at:Vector2)->void:
 		enemy.take_damage(unit.attack*(.8 if kind=="roots" else 1.6),false,at,unit)
 		if is_instance_valid(unit.player) and unit.player is RoomPlayer and enemy.hp<before:(unit.player as RoomPlayer).equipment_mechanics.on_ally_hit(enemy,unit)
 		if kind=="roots" and not enemy.is_queued_for_deletion():enemy.apply_slow(.25 if enemy is BossBase else .5,2.0)
+	if unit is SummonedAlly and unit.source_skill==&"forest_guardian" and PermanentTalents.active(&"forest_guardian"):
+		if kind=="roots":unit.capstone_roots_left=8.0
+		elif kind=="burst" and unit.capstone_roots_left>0:
+			unit.capstone_roots_left=0
+			if is_instance_valid(unit.player) and is_instance_valid(unit.player.summons):unit.player.summons.capstone_pulse(at,108,.55,unit)

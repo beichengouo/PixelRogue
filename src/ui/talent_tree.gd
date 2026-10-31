@@ -22,7 +22,7 @@ func build() -> void:
 	var graph:=TalentGraph.visible_nodes()
 	for index in skills.size():
 		var skill:StringName=skills[index]
-		var origin:=Vector2((index%2)*700, floori(index/2.0)*660)
+		var origin:=Vector2((index%2)*700, floori(index/2.0)*920)
 		var info:=Skills.get_skill(skill)
 		var root_icon:=UiFactory.texture_icon(str(info.get("icon","")),88)
 		root_icon.position=origin+Vector2(306,16);root_icon.size=Vector2(88,88)
@@ -42,7 +42,7 @@ func build() -> void:
 			_centers[id]=at
 			var button:=_build_node(id,at-Vector2.ONE*NODE_SIZE*.5)
 			add_child(button);_buttons[id]=button
-	custom_minimum_size=Vector2(1400,ceili(skills.size()/2.0)*660)
+	custom_minimum_size=Vector2(1400,ceili(skills.size()/2.0)*920)
 	texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR
 	_wire_focus();_refresh_nodes();set_process(false)
 func _build_node(id: StringName, at: Vector2) -> Button:
@@ -73,14 +73,14 @@ func _build_node(id: StringName, at: Vector2) -> Button:
 func _refresh_nodes() -> void:
 	for skill:StringName in _roots:
 		var active:=SkillTalentCatalog.equipped(skill)
-		_roots[skill].title.text="%s · %d / 9%s" % [Skills.get_skill(skill).name,SkillTalentCatalog.tree_spent(skill),"" if active else " · 未携带"]
+		_roots[skill].title.text="%s · %d / 9%s%s" % [Skills.get_skill(skill).name,SkillTalentCatalog.tree_spent(skill)," · 终点已解锁" if bool(GameState.talents.get(PermanentTalents.terminal_id(skill),false)) else "","" if active else " · 未携带"]
 		_roots[skill].icon.modulate=Color.WHITE if active else Color(.55,.6,.68,.75)
 	for id: StringName in _buttons:
 		var button: Button = _buttons[id]
 		var owned := TalentGraph.owned(id, GameState.talents); var unlocked := TalentGraph.unlocked(id, GameState.talents)
 		var previous := bool(button.get_meta("owned", owned)); button.set_meta("owned", owned); _style_node(button, id)
 		button.tooltip_text = "%s\n%s\n%s" % [TalentGraph.node(id).name, TalentGraph.node(id).desc, ItemInsight.talent_requirement(id)]
-		button.get_node("RankBadge").text = "已点亮" if owned else "1 点" if unlocked else "未解锁"
+		button.get_node("RankBadge").text = "已点亮" if owned else "可购买" if unlocked else "未解锁"
 		button.get_node("TalentIcon").modulate = Color(.46,.50,.57,.68) if not SkillTalentCatalog.equipped(TalentGraph.node(id).skill) else Color.WHITE if owned or unlocked else Color(.42, .48, .57, .64)
 		if owned and not previous: ComicMotion.emphasize(button)
 	queue_redraw()
@@ -92,7 +92,7 @@ func select(id: StringName) -> void:
 	for key: StringName in _buttons: _style_node(_buttons[key], key)
 func _style_node(button: Button, id: StringName) -> void:
 	var owned := TalentGraph.owned(id, GameState.talents); var unlocked := TalentGraph.unlocked(id, GameState.talents)
-	var color := Color("75c9a1") if owned else Color("e5c38a") if unlocked and GameState.talent_points > 0 else Color("556272")
+	var color := Color("75c9a1") if owned else Color("e5c38a") if unlocked and GameState.talent_points>0 and (not CampSession.active or CampSession.training_active) else Color("556272")
 	if id == selected: color = Color("a4e2fa")
 	for state in ["normal", "hover", "pressed", "focus"]:
 		var box := StyleBoxFlat.new(); box.bg_color = Color(.055, .10, .15, .86 if owned else .68)

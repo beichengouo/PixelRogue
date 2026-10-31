@@ -15,6 +15,8 @@ extends RefCounted
 
 ## 她的名字：显示在名牌上，也决定"该亮谁的立绘"
 const MAX_CHOICES := 3
+static var _overrides:Dictionary={}
+static var _override_stamp:Dictionary={}
 const GODDESS := CharacterStories.GODDESS
 const P_GODDESS := "res://assets/characters/goddess_portrait.png"
 
@@ -242,6 +244,58 @@ const SCENES := {
 
 
 static func get_scene(id: StringName, replay := false, character_id:StringName=&"") -> Dictionary:
+	var hero:=character_id if character_id!=&"" else Characters.current_id()
+	var base:=_base_scene(id,replay,hero)
+	var edits:Dictionary=_story_overrides()
+	if not edits.is_empty():
+		var key:=str(id)+"|"+str(hero)+("|repeat" if replay else "|first")
+		if edits is Dictionary and edits.get(key) is Dictionary:
+			var scene:=base.duplicate(true)
+			var revision:Dictionary=edits[key]
+			for field in ["title","lines","choice_prompt"]:
+				if revision.has(field):scene[field]=revision[field].duplicate(true) if revision[field] is Dictionary or revision[field] is Array else revision[field]
+			var existing:Array=scene.get("choices",[]);var rewritten:Array=revision.get("choices",[])
+			if existing.size()==rewritten.size():
+				for index in existing.size():
+					var option:Dictionary=existing[index].duplicate(true)
+					for field in ["text","reply"]:
+						if rewritten[index].has(field):option[field]=rewritten[index][field]
+					existing[index]=option
+				scene.choices=existing
+			return scene
+	return base
+
+static func _story_overrides()->Dictionary:
+	var path:="res://data/story_overrides.json"
+	if not FileAccess.file_exists(path):return {}
+	var file:=FileAccess.open(path,FileAccess.READ)
+	if file==null:return {}
+	var stamp:={"modified":FileAccess.get_modified_time(path),"size":file.get_length()}
+	if stamp!=_override_stamp:
+		var parsed:Variant=JSON.parse_string(file.get_as_text())
+		_overrides=parsed if parsed is Dictionary else {}
+		_override_stamp=stamp
+	return _overrides
+
+static func _base_scene(id: StringName, replay := false, character_id:StringName=&"") -> Dictionary:
+	if str(id).begins_with("commission:"):
+		var parts:=str(id).split(":")
+		if parts.size()!=3 or parts[2] not in ["offer","accepted","finished"]:return {}
+		for row:Dictionary in CampCommissionCatalog.DATA:
+			if str(row.id)==parts[1]:
+				var phase:String={"offer":"洽谈","accepted":"接取成功","finished":"交付完成"}[parts[2]]
+				return {"title":str(row.title)+" · "+phase,"lines":CampCommissionCatalog.raw_story(parts[1],parts[2]),"choices":[],"next":""}
+		return {}
+	if str(id).begins_with("camp:"):
+		var parts:=str(id).split(":")
+		if parts.size()!=3:return {}
+		for event:Dictionary in CampStory.EVENTS.get(parts[1],[]):
+			if str(event.id)==parts[2]:
+				var scene:=event.duplicate(true)
+				scene.lines=CampStory.dialogue_lines(scene.get("lines",[]))
+				return scene
+		return {}
+
 	if id == &"intro_weapon": return {"title":"已移除的装备教学","lines":[],"choices":[],"next":&""}
 	if id==&"fate_observation":return FateStory.scene(character_id,replay)
 	if String(id).begins_with("city_"):return CityStories.scene(id,replay,character_id)

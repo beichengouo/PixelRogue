@@ -53,13 +53,13 @@ func assets()->void:
   var boss:=ProbeBoss.new();boss.boss_id=StringName(id);boss.affixes.assign([EnemyAffixes.CRUEL])
   check(boss.health_bar_style()==id,"BossRush cruel affix retains boss-specific model")
   boss.free()
- var skull_hashes:Dictionary={}
+ var wordmark_hashes:Dictionary={}
  for level in range(1,6):
-  var skull:=UnitHealthArt.skull(level);var image:=skull.get_image();var box:=image.get_used_rect()
-  check(skull.get_size()==Vector2(128,128) and box.position.x>=4 and box.position.y>=4 and box.end.x<=124 and box.end.y<=124,"complete transparent rage skull "+str(level))
-  check(box.size.x>65 and box.size.y>80,"skull fills readable icon canvas "+str(level))
-  skull_hashes[hash(image.get_data())]=true
- check(skull_hashes.size()==5 and UnitHealthArt.skull(0)==null and UnitHealthArt.skull(9)==UnitHealthArt.skull(5),"distinct five-level badges and no zero-level marker")
+  var mark:=UnitHealthArt.skull(level);var image:=mark.get_image();var box:=image.get_used_rect()
+  check(mark.get_width()>=400 and mark.get_height()>=580 and image.detect_alpha()!=Image.ALPHA_NONE,"high-resolution transparent rage wordmark "+str(level))
+  check(box.size.x>350 and box.size.y>550,"wordmark fills readable icon canvas "+str(level))
+  wordmark_hashes[hash(image.get_data())]=true
+ check(wordmark_hashes.size()==5 and UnitHealthArt.skull(0)==null and UnitHealthArt.skull(9)==UnitHealthArt.skull(5),"distinct five-level wordmarks and no zero-level marker")
 func new_enemy()->ProbeEnemy:
  var unit:=ProbeEnemy.new();unit.hp=100;unit.max_hp=100;unit.damage=10;unit.move_speed=20;unit._damage_scale=1;unit._speed_scale=1
  return unit

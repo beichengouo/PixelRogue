@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/camp_npc_art_v37.gd" id="1"]
+
+[node name="CampNpcArtV37" type="Node"]
+script = ExtResource("1")

@@ -2,6 +2,10 @@ class_name HanddrawnHeroArt
 extends RefCounted
 ## High-definition painted animation stays separate from pixel actors and gameplay.
 const ROOT:="res://assets/heroes_handdrawn_v35/"
+const V37_XIXIFU_SET:="res://assets/heroes_handdrawn_v37/xixifu/set/xixifu_set.tres"
+const V37_SYLPHIETTE_SET:="res://assets/heroes_handdrawn_v37/sylphiette/set/sylphiette_set.tres"
+const V37_SYLPHIETTE_NORMAL:="res://assets/heroes_handdrawn_v37/sylphiette/normal/sylphiette_normal.tres"
+const V36_NORMAL:="res://assets/heroes_handdrawn_v36/xixifu/normal/xixifu_normal.tres"
 const DIRECTIONS:=["s","sw","w","nw","n","ne","e","se"]
 const SOURCE:=["s","sw","w","nw","n","nw","w","sw"]
 static var _cache:SpriteFrames
@@ -14,6 +18,14 @@ static func frames(set_form:bool,id:StringName=&"sylphiette")->SpriteFrames:
  var form:="set" if set_form else "normal"
  var form_key:=str(id)+"/"+form
  if _cache!=null and _form==form_key:return _cache
+ if id==&"xixifu":
+  _cache=_authored_frames(V37_XIXIFU_SET if set_form else V36_NORMAL,id,set_form,true);_form=form_key;return _cache
+ if id==&"sylphiette":
+  _cache=_authored_frames(V37_SYLPHIETTE_SET if set_form else V37_SYLPHIETTE_NORMAL,id,set_form,false);_form=form_key;return _cache
+ if id==&"ilyua" and not set_form:
+  _cache=_authored_frames("res://assets/heroes_handdrawn_v37/ilyua/normal/ilyua_normal.tres",id,set_form,false);_form=form_key;return _cache
+ if id==&"ilyua" and set_form:
+  _cache=_authored_frames("res://assets/heroes_handdrawn_v37/ilyua/set/ilyua_set.tres",id,set_form,false);_form=form_key;return _cache
  var path:=ROOT+form_key+"/"
  var profile:Dictionary=JSON.parse_string(FileAccess.get_file_as_string(path+"metadata.json"))
  var result:=SpriteFrames.new();result.remove_animation(&"default")
@@ -46,6 +58,22 @@ static func frames(set_form:bool,id:StringName=&"sylphiette")->SpriteFrames:
   for index in result.get_frame_count(source):result.add_frame(name,result.get_frame_texture(source,index))
  # Keep only the current form cached; living decoys retain their own snapshot.
  _form=form_key;_cache=result;return result
+static func _copy_clip(result:SpriteFrames,name_value:StringName,source:StringName,legacy:=false)->void:
+ result.add_animation(name_value);result.set_animation_loop(name_value,result.get_animation_loop(source))
+ result.set_animation_speed(name_value,12.5 if legacy else result.get_animation_speed(source))
+ for index in result.get_frame_count(source):result.add_frame(name_value,result.get_frame_texture(source,index),1.0 if legacy else result.get_frame_duration(source,index))
+static func _authored_frames(path:String,id:StringName,set_form:bool,chain:bool)->SpriteFrames:
+ var result:SpriteFrames=load(path).duplicate()
+ result.set_meta("handdrawn",true);result.set_meta("redrawn_character",id);result.set_meta("set_form",set_form)
+ result.set_meta("hd_cell",448);result.set_meta("hd_foot",Vector2(224,392));result.set_meta("utility_height",240.0)
+ result.set_meta("utility_facing","w");result.set_meta("xixifu_chain",chain)
+ for direction:String in DIRECTIONS:
+  for action:String in ["attack","move_attack","back_attack"]:
+   _copy_clip(result,StringName(action+"_"+direction),StringName(("attack1" if action=="attack" else "move_attack1")+"_"+direction),true)
+ _copy_clip(result,&"jump",&"walk_s");_copy_clip(result,&"land",&"walk_s")
+ var aliases:={"idle":"idle_w","run":"walk_w","cast":"attack_w","attack":"attack_w","move_attack":"move_attack_w","move_cast":"move_attack_w","dash":"walk_w","fall":"idle_w","double_jump":"jump","brake":"land","victory":"interact","heal":"attack_w","shield":"attack_w","blink_in":"attack_w","blink_out":"attack_w","air_attack":"attack_w","air_cast":"attack_w","block":"hurt"}
+ for key:String in aliases:_copy_clip(result,StringName(key),StringName(aliases[key]))
+ return result
 static func _add(result:SpriteFrames,name:StringName,sheet:Texture2D,row:int,order:Array[int],fps:float,loop:bool,cell:int)->void:
  result.add_animation(name);result.set_animation_speed(name,fps);result.set_animation_loop(name,loop)
  for index in order:

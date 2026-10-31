@@ -67,6 +67,8 @@ var exp := 0.0
 ## 天赋加点：分支 id -> 等级
 var talents: Dictionary = {}
 var talent_points := 0
+var training_stat_preview:Dictionary={}
+const TALENT_POINT_PRICE:=1000
 
 ## ---------------- 魔法值 ----------------
 const MAX_MP := 100.0
@@ -162,9 +164,10 @@ func new_run(seed_value: int = 0) -> void:
 	legendary_looks.clear()
 	achievement_run.clear()
 	talents.clear();talent_revision=0
+	training_stat_preview.clear()
 	level = 1
 	exp = 0.0
-	talent_points = 1
+	talent_points = 0
 	mp = MAX_MP
 	potion_hotbar = [{}, {}, {}]
 	learned_skills.clear()
@@ -228,7 +231,7 @@ func _saved_seconds(value:Variant,fallback:float=0.0)->float:
 	return fallback if is_nan(seconds) or is_inf(seconds) else clampf(seconds,0.0,315360000.0)
 
 
-func talent_budget(for_level:int)->int:return 1+int(maxi(1,for_level)/2)
+func talent_budget(for_level:int)->int:return maxi(0,for_level/3)
 
 func gain_exp(amount: float) -> void:
 	if level >= MAX_LEVEL or amount <= 0.0:
@@ -243,10 +246,9 @@ func gain_exp(amount: float) -> void:
 	if levels_gained <= 0:
 		EventBus.player_stats_changed.emit()
 		return
-	# Initial point is retained; each even level grants another point.
-	# Legacy investments stay, without generating points above the new budget.
+	# Every third level grants one point for this run's skill trees.
 	var earned:=talent_budget(level)-previous_talent_budget
-	talent_points += mini(earned,maxi(0,talent_budget(level)-spent_talent_points()-talent_points))
+	talent_points+=earned
 	_reset_stats()
 	if player != null and is_instance_valid(player):
 		if player.has_method("on_level_up"):
@@ -326,17 +328,13 @@ func reconfigure_skills(value: Array) -> String:
 	if not reorder and price < 0: return "重置费用已超过金币可支付范围。"
 	if not reorder and coins < price: return "金币不足：本次重置需要%d金币，当前%d金币。" % [price,coins]
 	var previous := skill_loadout(); var old_coins := coins; var old_count := skill_reset_count; var old_pending := pending_skills.duplicate()
-	var old_talents:=talents.duplicate(true);var old_points:=talent_points;var old_revision:=talent_revision
 	var same_skills:=true
 	for skill:StringName in previous:
 		if not chosen.has(skill):same_skills=false
-	if not same_skills:
-		talent_points+=spent_talent_points();talents.clear();talent_revision+=1
 	_assign_skill_loadout(chosen)
 	if not same_skills:coins -= price; skill_reset_count += 1
 	if not SaveService.save_run(snapshot()):
 		_assign_skill_loadout(previous); pending_skills.assign(old_pending); coins = old_coins; skill_reset_count = old_count
-		talents=old_talents;talent_points=old_points;talent_revision=old_revision
 		return "保存失败，技能配置与金币均未改变，请重试。"
 	if is_instance_valid(player) and player is RoomPlayer: player.caster.clear_input_buffer()
 	if not same_skills:_talents_committed()
@@ -443,7 +441,7 @@ func _talent_effects(branch: StringName, rank: int) -> Dictionary:
 	if TALENT_BRANCHES.has(branch):
 		var info:Dictionary=TALENT_BRANCHES[branch]
 		if info.route==&"power":return {"对应技能效果加成%":rank*8.0}
-		if info.route==&"shape":return {"对应技能参数增量":float(SkillTalentCatalog.DEFINITIONS[info.skill][3])*rank}
+		if info.route==&"shape":return {"对应技能参数增量":float(SkillTalentCatalog.definition(info.skill)[3])*rank}
 		return {"联动层级":rank,"对应技能魔力消耗减少%":10 if rank>=3 else 0}
 	if HolyTalents.DATA.has(branch):return {"已解锁层级":clampi(rank,0,3)}
 	var ilyua_effect:=IlyuaTalents.effects(branch,rank)
@@ -508,16 +506,36 @@ func preview_talent(branch: StringName) -> Dictionary:
 func spend_talent_point(branch: StringName) -> bool:
 	var node_id := TalentGraph.resolve(branch, talents)
 	var info := TalentGraph.node(node_id)
+	if CampSession.active and not CampSession.training_active:return false
+	if not run_active and not CampSession.training_active:return false
 	if talent_points <= 0 or info.is_empty() or TalentGraph.owned(node_id, talents):
 		return false
 	if not TalentGraph.unlocked(node_id, talents):
 		return false
+	var previous:=talents.duplicate(true);var old_points:=talent_points;var old_revision:=talent_revision
 	talents[info.effect] = int(info.rank)
 	talent_points -= 1
-	_reset_stats()
-	EventBus.talents_changed.emit()
-	EventBus.player_stats_changed.emit()
+	talent_revision+=1
+	if run_active and not SaveService.save_run(snapshot()):
+		talents=previous;talent_points=old_points;talent_revision=old_revision
+		return false
+	_talents_committed()
 	return true
+
+func buy_talent_point()->bool:
+	if not run_active or CampSession.active or coins<TALENT_POINT_PRICE:return false
+	if not SaveService._transition_checkpoint.is_empty():return false
+	var old_coins:=coins;var old_points:=talent_points
+	coins-=TALENT_POINT_PRICE;talent_points+=1
+	if not SaveService.save_run(snapshot()):
+		coins=old_coins;talent_points=old_points;return false
+	EventBus.coins_changed.emit(coins);EventBus.talents_changed.emit()
+	return true
+
+func award_talent_points(amount:int)->void:
+	if amount<=0 or not run_active:return
+	talent_points+=amount
+	EventBus.talents_changed.emit()
 
 
 func talent_unlocked(branch: StringName) -> bool:
@@ -540,18 +558,13 @@ func spent_talent_points() -> int:
 	for rank in talents.values(): count += int(rank)
 	return count
 func can_reset_talents() -> bool:
-	return CampSession.active or spent_talent_points() == 0 or coins >= TALENT_RESET_COST
+	return CampSession.training_active and spent_talent_points()>0
 func reset_talents() -> bool:
-	if not CampSession.active and not SaveService._transition_checkpoint.is_empty():return false
+	if not CampSession.training_active:return false
 	var spent := spent_talent_points()
 	if spent == 0: return true
-	if not CampSession.active and coins < TALENT_RESET_COST:return false
 	var previous:=talents.duplicate(true);var old_points:=talent_points;var old_coins:=coins;var old_revision:=talent_revision
-	if not CampSession.active:coins-=TALENT_RESET_COST
 	talents.clear();talent_points+=spent;talent_revision+=1
-	if not CampSession.active and run_active and not SaveService.save_run(snapshot()):
-		talents=previous;talent_points=old_points;coins=old_coins;talent_revision=old_revision
-		return false
 	_talents_committed()
 	EventBus.coins_changed.emit(coins)
 	return true
@@ -931,6 +944,7 @@ func _apply_progression_to(target: StatBlock, ranks: Variant = null) -> void:
 	var power := talent_effect(&"power", "攻击加成%", ranks) / 6.0
 	if power > 0:
 		target.add_mult(&"attack", 0.06 * float(power))
+	PermanentStats.apply_to(target)
 	# 限时增益
 	for buff in temp_buffs:
 		if StringName(buff["stat"]) != &"lifesteal": target.add_mult(buff["stat"], buff["value"])
@@ -1111,7 +1125,7 @@ func snapshot() -> Dictionary:
 		"kit_version": 2,
 		"map_version": RoomGraph.VERSION,
 		"environment": player.level.environment_snapshot() if is_instance_valid(player) and player.level != null else {},
-		"level": level, "exp": exp, "talent_points": talent_points, "talent_progression":3,
+		"level": level, "exp": exp, "talent_points": talent_points, "talent_progression":4,
 		"talents": talents.duplicate(), "talent_tree_version":SkillTalentCatalog.VERSION,"talent_revision":talent_revision,"mp": mp,
 		"unlocked_skills": unlocked_skills.duplicate(), "learned_skills": learned_skills.duplicate(),
 		"ultimate_skill": String(ultimate_skill), "skill_cooldowns": skill_cooldowns_by_id.duplicate(), "skill_reset_count":skill_reset_count, "skill_loadout_version":1,
@@ -1190,21 +1204,16 @@ func restore(snapshot_data: Dictionary) -> void:
 	items.clear()
 	level = clampi(int(snapshot_data.get("level", 1)), 1, MAX_LEVEL)
 	exp = maxf(0.0, float(snapshot_data.get("exp", 0.0)))
-	var saved_invested:=0
-	for value in snapshot_data.get("talents",{}).values():saved_invested+=maxi(0,int(value))
-	talent_points=maxi(0,int(snapshot_data.get("talent_points",maxi(0,talent_budget(level)-saved_invested))))
+	var current_tree:=int(snapshot_data.get("talent_tree_version",0))==SkillTalentCatalog.VERSION and int(snapshot_data.get("talent_progression",0))==4
+	talent_points=clampi(int(snapshot_data.get("talent_points",0)),0,1000) if current_tree else 0
 	talents.clear()
 	talent_revision=maxi(0,int(snapshot_data.get("talent_revision",0)))
-	var saved_talents:Dictionary=snapshot_data.get("talents",{})
-	if int(snapshot_data.get("talent_tree_version",0))<SkillTalentCatalog.VERSION:
-		# Refund the exact stored budget once; never silently discard legacy investments.
-		for value in saved_talents.values():talent_points+=maxi(0,int(value))
-		talent_revision+=1
-	else:
-		for key in saved_talents:
-			var id:=StringName(key);var rank:=maxi(0,int(saved_talents[key]))
-			if TALENT_BRANCHES.has(id):talents[id]=mini(rank,3);talent_points+=maxi(0,rank-3)
-			else:talent_points+=rank
+	# Legacy in-run skill trees and remaining points are discarded once on migration.
+	if current_tree or CampSession.training_active:
+		for key in snapshot_data.talents:
+			var id:=StringName(key)
+			if TALENT_BRANCHES.has(id):talents[id]=clampi(int(snapshot_data.talents[key]),0,int(TALENT_BRANCHES[id].max_rank))
+	talent_revision+=1
 	mp = clampf(float(snapshot_data.get("mp", MAX_MP)), 0, MAX_MP)
 	temp_buffs.clear()
 	for buff in snapshot_data.get("temp_buffs", []):
@@ -1243,10 +1252,7 @@ func restore(snapshot_data: Dictionary) -> void:
 	var saved_ultimate := StringName(str(snapshot_data.get("ultimate_skill","")))
 	if not unlocked_skills.has(saved_ultimate) or not Skills.is_ultimate(saved_ultimate): saved_ultimate = Skills.default_loadout()[3]
 	equipped.append(saved_ultimate); _assign_skill_loadout(equipped)
-	if not CampSession.active:
-		for id in talents.keys():
-			if not SkillTalentCatalog.equipped(TALENT_BRANCHES[id].skill):
-				talent_points+=int(talents[id]);talents.erase(id)
+	# Purchased ranks stay stored when a skill is not equipped; effect queries gate on loadout.
 	if talent_rank(&"ilyua_forest_shadow")==0:
 		temp_buffs=temp_buffs.filter(func(buff:Dictionary)->bool:return str(buff.get("label",""))!="林影")
 	var saved_cd: Dictionary = snapshot_data.get("skill_cooldowns", {})

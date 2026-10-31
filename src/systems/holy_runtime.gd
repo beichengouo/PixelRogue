@@ -53,6 +53,8 @@ var _sanctuary_open:=false
 var _cast_bonus:=1.0
 var warning_serial:=0
 var _ground_visual:Node2D
+var step_link_until:=0.0
+var step_link_origin:=Vector2.ZERO
 
 func rank(id:StringName)->int:return GameState.talent_rank(id)
 func attack()->float:return actor.stats.get_value(&"attack")
@@ -107,6 +109,8 @@ func _process(delta:float)->void:
 		if _tick_field(field,delta):fields.erase(field)
 	if _cloud_open and (clock>=cloud_until or actor.shield_hp<=0):
 		_cloud_open=false;cloud_until=0;area(actor.global_position,72,.6);HolyFX.around(actor,"cloud",72,.35)
+		if PermanentTalents.active(&"blink"):
+			fields.append({"kind":"cloud_capstone","at":point(actor.global_position),"remaining":2.0,"timer":0.0})
 	if veil_until>0 and (clock>=veil_until or actor.shield_hp<=0):
 		veil_until=0
 		if rank(&"holy_veil")>=3:area(actor.global_position,72,.25)
@@ -115,6 +119,9 @@ func _process(delta:float)->void:
 		if clock>=judgment_until:
 			_judgment_open=false
 			for target in targets(actor.global_position,1000,8):pillar(target.global_position,42,1.26,.45,false,null,0,false,float(skill_power.get("meteor",1)))
+			if PermanentTalents.active(&"meteor"):
+				var along:=actor.aim_direction.normalized()
+				for i in 3:fields.append({"kind":"burst","at":point(actor.global_position+along*(72+i*72)),"delay":.35+i*.12,"elapsed":0.0,"radius":46.0,"ratio":.38})
 		elif ready("judgment_pillars"):
 			start("judgment_pillars",1.2)
 			var chosen:=targets(actor.global_position,1000,2)
@@ -124,10 +131,13 @@ func _process(delta:float)->void:
 	if _sanctuary_open:
 		if clock>=sanctuary_until:
 			_sanctuary_open=false;area(actor.global_position,126,1.04*float(skill_power.get("starfall",1)));shield(.06,3);afterlight_until=clock+3
+			if PermanentTalents.active(&"starfall"):shield(.10,4,true);afterlight_until=clock+4
 		else:
 			if ready("sanctuary_tick"):start("sanctuary_tick",.75);area(actor.global_position,126,.40*float(skill_power.get("starfall",1)));HolyFX.around(actor,"ring",126,.35)
 			if ready("sanctuary_purge"):start("sanctuary_purge",1);purge(actor.global_position,60,2)
 	if _cloud_open and ready("cloud_purge"):start("cloud_purge",.75);purge(actor.global_position,46,1)
+	if PermanentTalents.active(&"starfall") and afterlight_until>clock and ready("sanctuary_afterlight"):
+		start("sanctuary_afterlight",.75);actor.heal_player(actor.max_hp*.01);purge(actor.global_position,90,1);HolyFX.around(actor,"ring",96,.3)
 	_sync_ground_visual()
 	queue_redraw()
 
@@ -177,10 +187,15 @@ func _release(id:StringName,destination:Vector2,empowered:bool,bonus:float,seria
 	skill_power[str(id)]=SkillTalentCatalog.power(id)
 	if id!=&"blink":bonus*=float(skill_power[str(id)])
 	_cast_bonus=bonus;actor._cast_timer=.28;actor._cast_pose=&"cast";actor._animation_request+=1;rhythm_cast=clock
+	if PermanentTalents.active(id):TalentCapstoneFX.spawn(actor.get_parent(),destination if id in [&"flame_nova",&"frost_nova"] else actor.global_position,id,88 if id in [&"meteor",&"starfall"] else 64)
 	HolyFX.around(actor,"cloud",30,.3)
 	match id:
 		&"flame_nova":
 			var near:=targets(destination,90,1);pillar(destination,64+SkillTalentCatalog.shape(id,"radius"),1.77,.55,true,near[0] if not near.is_empty() else null,serial,true,bonus)
+			if PermanentTalents.active(id):
+				for target in targets(destination,180,3):
+					if near.has(target):continue
+					pillar(target.global_position,40,.48,.9,false,target,serial,false,bonus)
 			if empowered:
 				for i in 3:pillar(destination+Vector2.RIGHT.rotated(i*TAU/3)*64,36,.71,.8+i*.18,false,null,serial,false,bonus)
 		&"fan_bolts":
@@ -206,6 +221,12 @@ func _release(id:StringName,destination:Vector2,empowered:bool,bonus:float,seria
 			actor.global_position=end;actor._invuln=maxf(actor._invuln,.18);step_attack_until=clock+4;decoy(origin,3,empowered).damage_factor=bonus
 			var step_fx:=HolyFX.spawn(actor.get_parent(),(origin+end)*.5,"step",maxf(30,origin.distance_to(end)*.6),.5)
 			if step_fx!=null:step_fx.facing=direction
+			if PermanentTalents.active(id):
+				if step_link_until>clock:
+					for i in 3:
+						var path_at:=step_link_origin.lerp(end,float(i+1)/4)
+						for target in targets(path_at,72,1):feather_at(path_at,target,.24,1)
+				step_link_origin=end;step_link_until=clock+8
 		&"meteor":
 			judgment_until=clock+8+SkillTalentCatalog.shape(id,"duration");_judgment_open=true;cooldowns.erase("judgment_pillars");judgment_hits.clear()
 			HolyFX.around(actor,"judgment",84,.7)
@@ -251,6 +272,18 @@ func pillar(origin:Vector2,radius:float,ratio:float,delay:float,direct:bool=fals
 	if warning!=null:warning.warning_id=str(fields[-1].warning_id)
 func _tick_field(field:Dictionary,delta:float)->bool:
 	var origin:=at(field)
+	if field.kind=="cloud_capstone":
+		field.remaining-=delta;field.timer-=delta
+		if field.timer<=0:field.timer+=.5;purge(origin,90,2)
+		return field.remaining<=0
+	if field.kind=="court_after":
+		field.remaining-=delta;field.timer-=delta
+		if field.timer<=0:
+			field.timer+=.5
+			if actor.global_position.distance_to(origin)<=90 and actor.room.sight(origin,actor.global_position):actor.heal_player(actor.max_hp*.008)
+			for target in targets(origin,90):target.apply_slow(.25,.65)
+			HolyFX.spawn(actor.get_parent(),origin,"ring",90,.3)
+		return field.remaining<=0
 	if field.kind=="court":
 		field.remaining-=delta;field.timer-=delta
 		if field.timer<=0:
@@ -260,6 +293,8 @@ func _tick_field(field:Dictionary,delta:float)->bool:
 			HolyFX.spawn(actor.get_parent(),origin,"ring",90,.35)
 		if field.remaining<=0:
 			area(origin,90,.55*float(field.bonus))
+			if PermanentTalents.active(&"frost_nova"):
+				fields.append({"kind":"court_after","at":point(origin),"remaining":2.0,"timer":0.0})
 			if field.enhanced:
 				for target in targets(origin,216,3):feather_at(origin,target,.2,1)
 				if actor.global_position.distance_to(origin)<=90:shield(.08,3);afterlight_until=clock+3
@@ -382,7 +417,11 @@ func _tick_feathers()->void:
 		if target!=null:
 			var origin:=actor.global_position+Vector2(0,14)+Vector2.RIGHT.rotated(clock*2+float(feather.index)*TAU/maxi(1,feathers.size()))*30
 			if not actor.room.body_clear(origin,2) or not actor.room.sight(actor.global_position,origin):origin=actor.global_position
+			var reformed:=bool(feather.get("used",false))
+			feather.used=true
 			feather.ready=clock+2;feather_at(origin,target,.38*float(feather.get("bonus",1)),0,1 if feather.enhanced else 0)
+			if reformed and PermanentTalents.active(&"fan_bolts") and ready("feather_capstone"):
+				start("feather_capstone",2);area(actor.global_position,60,.18)
 func shield(ratio:float,seconds:float,talent_owned:=false)->bool:
 	var value:=actor.max_hp*ratio
 	if value*FateCatalog.shield_factor()<actor.shield_hp:return false
@@ -427,7 +466,12 @@ func push(origin:Vector2,radius:float,distance:float)->void:
 			target.global_position=probe
 func bell(origin:Vector2,ratio:float,serial:int,direct:bool,bonus:float=1)->void:
 	var radius:=108+SkillTalentCatalog.shape(&"flame_shield","radius")
-	area(origin,radius,ratio,serial,direct,&"flame_shield",bonus);push(origin,radius,54);purge(origin,radius,3);HolyFX.spawn(actor.get_parent(),origin,"bell",radius,.55)
+	var echoed_target:EnemyBase=null
+	for target in targets(origin,radius):
+		if hit(target,ratio,origin,serial,direct,&"flame_shield",bonus) and echoed_target==null:echoed_target=target
+	if direct and echoed_target!=null and PermanentTalents.active(&"flame_shield"):
+		fields.append({"kind":"bell","at":point(echoed_target.global_position),"delay":.42,"elapsed":0.0,"ratio":.45,"serial":serial,"bonus":bonus})
+	push(origin,radius,54);purge(origin,radius,3);HolyFX.spawn(actor.get_parent(),origin,"bell",radius,.55)
 	for target in targets(origin,radius):target.apply_slow(.2 if target is BossBase else .3 if target.is_elite() else 1.0,1.2 if target is BossBase or target.is_elite() else .55)
 func decoy(origin:Vector2,seconds:float,empowered:bool)->HolyDecoy:
 	var unit:=HolyDecoy.new();unit.holy=self;unit.remaining=seconds;unit.empowered=empowered;actor.get_tree().get_first_node_in_group("room_fx").add_child(unit);unit.global_position=origin
@@ -436,7 +480,7 @@ func in_field()->bool:
 	if _sanctuary_open:return true
 	return fields.any(func(field:Dictionary)->bool:return field.kind=="court" and actor.global_position.distance_to(at(field))<=90)
 func on_room_exit()->void:
-	marks.clear();songs.clear();judgment_hits.clear();fields.clear();feathers.clear();recent_target="";prayer=0;cloud_until=0;feathers_until=0;judgment_until=0;sanctuary_until=0;_cloud_open=false;_judgment_open=false;_sanctuary_open=false
+	marks.clear();songs.clear();judgment_hits.clear();fields.clear();feathers.clear();recent_target="";prayer=0;cloud_until=0;feathers_until=0;judgment_until=0;sanctuary_until=0;step_link_until=0;_cloud_open=false;_judgment_open=false;_sanctuary_open=false
 	for unit in get_tree().get_nodes_in_group("holy_decoys"):
 		if unit.holy==self:unit.empowered=false;unit.expire()
 ## Ground fields use the room plane; only orbiting feathers and target marks
@@ -449,11 +493,11 @@ func _draw_ground(canvas:Node2D)->void:
 	if grace_until>clock:HolyFX.paint(canvas,"grace",HolyFX.ground_rect("grace",28,origin),phase,intensity)
 	if _cloud_open or actor.shield_hp>0:HolyFX.paint(canvas,"cloud",HolyFX.ground_rect("cloud",39,origin),phase,intensity*.95)
 	if _judgment_open:HolyFX.paint(canvas,"judgment",HolyFX.ground_rect("judgment",22,origin),phase,intensity*.9)
-	if _sanctuary_open:HolyFX.paint(canvas,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.45)
+	if _sanctuary_open:HolyFX.paint(canvas,"sanctuary",HolyFX.ground_rect("sanctuary",126,origin),phase,intensity*.88)
 	for field in fields:
 		if field.kind=="court":
 			var location:=canvas.to_local(at(field))
-			HolyFX.paint(canvas,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.48)
+			HolyFX.paint(canvas,"court",HolyFX.ground_rect("court",90,location+Vector2(0,14)),phase,intensity*.88)
 func _draw()->void:
 	var origin:=Vector2(0,14)
 	var intensity:=clampf(float(SaveService.data.get("spell_fx_strength",1)),0,1)

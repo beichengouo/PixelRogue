@@ -58,7 +58,16 @@ func _warm_textures(record:Dictionary,valid:Callable)->bool:
 	var scene_id:=str(layout.get("scene_art",""))
 	var data:=RoomSceneArtCatalog.definition(scene_id)
 	var paths:Array[String]=[]
-	for plane in data.get("planes",[]):paths.append(RoomSceneArtCatalog.ROOT+scene_id+"/"+str(plane.path))
+	var whole_paths:=RoomSceneWhole.texture_paths(scene_id)
+	var whole_ready:=whole_paths.size()==9
+	for path:String in whole_paths:
+		if not ResourceLoader.exists(path):whole_ready=false
+	if not whole_ready:
+		paths.append_array(RoomSceneLife.texture_paths(scene_id))
+		for plane in data.get("planes",[]):paths.append(RoomSceneArtCatalog.ROOT+scene_id+"/"+str(plane.path))
+	else:
+		for path:String in whole_paths:
+			if ResourceLoader.exists(path):paths.append(path)
 	for gate in data.get("gates",{}).values():paths.append(RoomSceneArtCatalog.ROOT+scene_id+"/"+str(gate.path))
 	for item in layout.get("scene_objects",data.get("objects",[])):
 		var path:=str(item.get("texture",""))

@@ -90,6 +90,6 @@ static func advance(actor: Player, delta: float) -> void:
 	if tick_damage>0.0:
 		if cruel_tick>0:
 			var source:=CruelDamage.TickSource.new();source.cruel_amount=cruel_tick
-			actor.take_damage(tick_damage,actor.global_position,source);source.free()
-		else:actor.take_damage(tick_damage,actor.global_position,null)
+			actor.take_damage(tick_damage,actor.global_position,source,false);source.free()
+		else:actor.take_damage(tick_damage,actor.global_position,null,false)
 		if actor.hp<=0.0:actor._debuffs.clear()

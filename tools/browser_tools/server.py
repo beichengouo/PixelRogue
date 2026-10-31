@@ -17,26 +17,92 @@ class Tools:
         self.work.mkdir(parents=True, exist_ok=True)
         self.token = secrets.token_urlsafe(32)
         self.art = None
+        self.bridge_lock = threading.Lock()
+        self.worker = None
+        self.worker_log = None
+        self.mailbox = self.work / ("worker-"+secrets.token_hex(8)+".json")
         self.environment = os.environ.copy()
 
+    def close(self):
+        if self.worker is not None:
+            self.worker.terminate()
+            try: self.worker.wait(timeout=5)
+            except subprocess.TimeoutExpired: self.worker.kill(); self.worker.wait()
+            self.worker = None
+        if self.worker_log is not None: self.worker_log.close(); self.worker_log = None
+        for suffix in ['', '.result', '.tmp', '.result.tmp']:
+            Path(str(self.mailbox)+suffix).unlink(missing_ok=True)
+
     def bridge(self, request):
-        # A separate Godot instance reads codecs; it never starts a player session.
-        token = secrets.token_hex(10)
-        path = self.work / (token+'.json')
-        path.write_text(json.dumps(request, ensure_ascii=False), encoding='utf-8')
-        try:
-            with LOCK, (self.work/'bridge.log').open('w', encoding='utf-8') as log:
-                run = subprocess.run([self.godot, '--headless', '--path', str(self.project),
+        # Reuse one isolated codec process; serialize only its mailbox operations.
+        with self.bridge_lock:
+            if self.worker is None or self.worker.poll() is not None:
+                self.close()
+                self.worker_log = (self.work/'bridge.log').open('w', encoding='utf-8')
+                self.worker = subprocess.Popen([self.godot, '--headless', '--path', str(self.project),
                     '--scene', 'res://tools/browser_tools/bridge.tscn', '--', '--room-editor',
-                    '--browser-request', str(path)], stdout=log, stderr=subprocess.STDOUT,
-                    timeout=180, env=self.environment, creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
-            result = Path(str(path)+'.result')
-            if not result.exists() or run.returncode:
-                raise ValueError('Godot 数据接口启动失败，请查看 '+str(self.work/'bridge.log'))
-            return json.loads(result.read_text(encoding='utf-8'))
-        finally:
-            path.unlink(missing_ok=True)
-            Path(str(path)+'.result').unlink(missing_ok=True)
+                    '--browser-daemon', str(self.mailbox)], stdout=self.worker_log,
+                    stderr=subprocess.STDOUT, env=self.environment,
+                    creationflags=getattr(subprocess, 'CREATE_NO_WINDOW', 0))
+            result = Path(str(self.mailbox)+'.result')
+            result.unlink(missing_ok=True)
+            temp = Path(str(self.mailbox)+'.tmp')
+            temp.write_text(json.dumps(request, ensure_ascii=False), encoding='utf-8'); temp.replace(self.mailbox)
+            deadline = time.monotonic()+180
+            while not result.exists():
+                if self.worker.poll() is not None or time.monotonic()>deadline:
+                    self.close()
+                    raise ValueError('Godot 数据接口未响应，请查看 '+str(self.work/'bridge.log'))
+                time.sleep(.01)
+            try: return json.loads(result.read_text(encoding='utf-8'))
+            finally: result.unlink(missing_ok=True)
+
+    def story(self, request):
+        if request.get('hero') not in ['sylphiette','xixifu','ilyua'] or not isinstance(request.get('id'),str):
+            raise ValueError('角色或节点无效')
+        path = self.project/'data/story_overrides.json'
+        payload = path.read_bytes() if path.exists() else b'{}'
+        fingerprint = hashlib.sha256(payload).hexdigest()
+        data = json.loads(payload)
+        key = str(request['id'])+'|'+str(request['hero'])+'|'+('repeat' if request.get('replay') else 'first')
+        if request['action']=='save_story':
+            if request.get('revision')!=fingerprint: raise ValueError('剧情已被其他窗口修改，请重新载入')
+            scene = request.get('scene')
+            if scene is None: data.pop(key, None)
+            else:
+                if not isinstance(scene,dict) or not isinstance(scene.get('title'),str) or not isinstance(scene.get('lines'),list): raise ValueError('剧情正文格式无效')
+                choices=scene.get('choices',[])
+                if not isinstance(choices,list) or len(choices)>3: raise ValueError('最多三个分支')
+                for line in scene['lines']:
+                    if not isinstance(line,dict) or not isinstance(line.get('text'),str): raise ValueError('每条正文必须包含text')
+                for choice in choices:
+                    if not isinstance(choice,dict) or not isinstance(choice.get('text'),str): raise ValueError('分支必须包含text')
+                    if not isinstance(choice.get('reply',[]),list): raise ValueError('分支回复必须为数组')
+                    for line in choice.get('reply',[]):
+                        if not isinstance(line,dict) or not isinstance(line.get('text'),str): raise ValueError('回复必须包含text')
+                    if not isinstance(choice.get('flags',{}),dict): raise ValueError('flags必须为对象')
+                    if not isinstance(choice.get('requires',''),str): raise ValueError('requires必须为标记名称')
+                    if not isinstance(choice.get('affinity',0),(int,float)): raise ValueError('好感变化必须为数字')
+                for target in [scene.get('next','')]+[c.get('next','') for c in choices]:
+                    if not isinstance(target,str): raise ValueError('后续节点必须为字符串')
+                    if target and target!=request['id'] and not self.bridge({'action':'story_scene','id':target,'hero':request['hero'],'replay':request.get('replay',False)}).get('scene'):
+                        raise ValueError('后续节点不存在：'+target)
+                if request['id'].startswith('commission:'):
+                    if scene.get('next') or choices:raise ValueError('委托阶段只编辑对白；触发、接取与交付沿用原事务')
+                    scene={k:v for k,v in scene.items() if k in ['title','lines']}
+                if request['id'].startswith('camp:'):
+                    if scene.get('next') or any(c.get('next') for c in choices):raise ValueError('营地关系事件使用回复与关系选择，不支持主线节点跳转')
+                    scene={k:v for k,v in scene.items() if k in ['title','lines','choices']}
+                data[key]=scene
+            with self.bridge_lock:
+                if path.exists() and hashlib.sha256(path.read_bytes()).hexdigest()!=fingerprint: raise ValueError('剧情已变化，请重新载入')
+                archive=self.work/'story-backups';archive.mkdir(exist_ok=True)
+                backup=archive/(fingerprint+'.json')
+                if not backup.exists():backup.write_bytes(payload)
+                temp=path.with_suffix('.json.writing');temp.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8');temp.replace(path)
+            fingerprint=hashlib.sha256(path.read_bytes()).hexdigest()
+        scene=self.bridge({'action':'story_scene','id':request['id'],'hero':request['hero'],'replay':request.get('replay',False)}).get('scene',{})
+        return {'scene':scene,'revision':fingerprint,'overridden':key in data,'message':'剧情已保存，新打开的演出生效。'}
 
     def asset(self, value):
         if not isinstance(value, str) or not value.startswith('res://assets/'):
@@ -97,8 +163,8 @@ def make_handler(service):
         def do_GET(self):
             if not self.local():self.reply({'error':'仅限本机'},403);return
             parsed=urlparse(self.path)
-            if parsed.path=='/health':self.reply({'project':str(service.project)});return
-            if parsed.path in ['/','/app.js','/style.css']:
+            if parsed.path=='/health':self.reply({'project':str(service.project),'protocol':4});return
+            if parsed.path in ['/','/app.js','/story_graph.js','/style.css']:
                 name={'/':'index.html'}.get(parsed.path,parsed.path[1:])
                 mime={'html':'text/html; charset=utf-8','js':'text/javascript; charset=utf-8','css':'text/css; charset=utf-8'}[name.split('.')[-1]]
                 self.reply((Path(__file__).parent/name).read_bytes(),content_type=mime);return
@@ -126,9 +192,10 @@ def make_handler(service):
                 action=request.get('action')
                 if action=='shutdown':
                     self.reply({'message':'开发服务已关闭'});threading.Thread(target=self.server.shutdown,daemon=True).start();return
-                if action=='alpha':result=service.alpha(request)
+                if action in ['story_scene','save_story']:result=service.story(request)
+                elif action=='alpha':result=service.alpha(request)
                 elif action=='fingerprint':result={'fingerprint':hashlib.sha256(service.asset(request['path']).read_bytes()).hexdigest()}
-                elif action in ['catalog','map','validate','save_map','playtest','art','save_layout','save_units','load_save','grant']:
+                elif action in ['story_bundle','story_catalog','catalog','map','validate','save_map','playtest','art','save_layout','save_units','load_save','grant']:
                     result=service.bridge(request)
                     if action=='art':service.art=result
                 else:raise ValueError('未知操作')
@@ -152,7 +219,7 @@ def main():
             prior=json.loads(state.read_text(encoding='utf-8'));url=prior['url'];parsed=urlparse(url)
             if parsed.hostname!='127.0.0.1':raise ValueError('invalid loopback session')
             with urlopen(f'http://127.0.0.1:{parsed.port}/health',timeout=1) as response:health=json.load(response)
-            if Path(health['project']).resolve()==service.project:
+            if Path(health['project']).resolve()==service.project and health.get('protocol')==4:
                 webbrowser.open(url);return
         except (ValueError,OSError,KeyError):pass
     server=ThreadingHTTPServer(('127.0.0.1',args.port),make_handler(service))
@@ -161,6 +228,6 @@ def main():
     if not args.no_open:webbrowser.open(url)
     print(url,flush=True)
     try:server.serve_forever()
-    finally:server.server_close()
+    finally:server.server_close();service.close()
 
 if __name__=='__main__':main()

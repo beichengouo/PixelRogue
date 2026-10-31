@@ -55,6 +55,10 @@ func _physics_process(delta: float) -> void:
 		runtime.field_tick(self)
 	if remaining<=0:
 		if kind==&"tree":runtime.finish_tree(self)
+		if kind==&"trap" and PermanentTalents.active(&"ilyua_vine_trap"):
+			runtime.area_proc(global_position,radius,.45,6)
+			for enemy in runtime.enemies_in(global_position,radius):runtime.root_enemy(enemy,.6)
+			IlyuaFX.spawn(runtime.actor.get_parent(),global_position,"trap",radius*2,.35)
 		if kind==&"seed" and owner_enemy!=null:
 			var owner:EnemyBase=owner_enemy.get_ref() as EnemyBase
 			if is_instance_valid(owner):runtime.seed_marks.erase(owner.get_instance_id())

@@ -3,7 +3,7 @@ extends CanvasLayer
 ## 顶部 HUD 的中心区域，避开左侧属性与右侧地图。
 const BAR_W := 720.0
 const BAR_H := 30.0
-const HUD_HEIGHT := 116.0
+const HUD_HEIGHT := 190.0
 const LEFT_RESERVE := 360.0
 const RIGHT_RESERVE := 200.0
 var _root: Control
@@ -97,7 +97,7 @@ func _build() -> void:
 	_bar = BossVitalBar.new().setup(Palette.ENEMY_HEALTH, BAR_H, 0)
 	_bar.custom_minimum_size.x = 0
 	var health_row:=UiFactory.hbox(5);column.add_child(health_row)
-	_pressure_icon=TextureRect.new();_pressure_icon.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;_pressure_icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;_pressure_icon.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;_pressure_icon.custom_minimum_size=Vector2(28,28);_pressure_icon.mouse_filter=Control.MOUSE_FILTER_IGNORE;_pressure_icon.hide();health_row.add_child(_pressure_icon)
+	_pressure_icon=TextureRect.new();_pressure_icon.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;_pressure_icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;_pressure_icon.texture_filter=CanvasItem.TEXTURE_FILTER_LINEAR;_pressure_icon.custom_minimum_size=Vector2(110,76);_pressure_icon.mouse_filter=Control.MOUSE_FILTER_IGNORE;_pressure_icon.hide();health_row.add_child(_pressure_icon)
 	_bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL;health_row.add_child(_bar)
 
 func _fit_layout() -> void:

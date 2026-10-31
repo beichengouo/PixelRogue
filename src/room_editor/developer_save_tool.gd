@@ -16,6 +16,17 @@ func preview(kind:String,id:String,amount:int)->Dictionary:
 	if amount<=0 or amount>1000000:return {"error":"数量必须在1至1000000之间。"}
 	var draft:=data.duplicate(true)
 	if kind=="gold":draft.outpost.gold=int(draft.outpost.get("gold",0))+amount
+	elif kind=="legendary_sets":
+		var heroes:Array=[StringName(id)] if id!="all" else LegendarySets.DATA.keys()
+		if heroes.is_empty():return {"error":"没有传说套装。"}
+		if not draft.outpost.get("inventory") is Dictionary:draft.outpost.inventory={}
+		for hero in heroes:
+			if not LegendarySets.DATA.has(hero):return {"error":"未知套装角色。"}
+			for slot in ["weapon","armor","accessory"]:
+				var item_id:=str(LegendarySets.DATA[hero][slot])
+				var item:=ExpeditionData.resolve(item_id)
+				if item.is_empty() or not ItemDB.is_equippable(item):return {"error":"套装物品无效，未发放任何物品。"}
+				draft.outpost.inventory[item_id]=int(draft.outpost.inventory.get(item_id,0))+amount
 	elif kind=="keys":return {"error":"钥匙机制已移除。"}
 	elif kind=="coins":
 		if not draft.get("run") is Dictionary or draft.run.is_empty():return {"error":"该存档没有可继续的出征；随身金币仅能发给活跃出征。"}
