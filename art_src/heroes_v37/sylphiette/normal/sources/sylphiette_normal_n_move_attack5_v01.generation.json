@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_n_move_attack5_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_move_attack5_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-2a690678-3bd8-4ff6-a9a5-148453b518b6.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_n_move_attack5_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise local animation edit. Image1 is the edit TARGET with FOUR walking poses. Preserve image1's exact four skulls, hair, body, waist, robe shape, shoes, and ALL FOUR walking leg poses and their alternation. Do NOT shrink or enlarge or replace the body. Change ONLY the two arms, their sleeves and held staff to perform the matching FOUR gestures of image2, basic prayer stage 5, in reading order. Image2 supplies arm gesture ONLY, never legs or body proportions. Exactly TWO arms and TWO hands, both connected naturally under sleeves. Anatomical RIGHT hand ALWAYS holds one gold cloud-blue staff; anatomical LEFT hand the free palm. From this strict BACK view the staff hand is on image RIGHT. When raising the LEFT palm, replace its old hanging sleeve/hand rather than leaving a duplicate near the hip. Do not move a hand across the back hair in an impossible detached position; frontal palm can be hidden by the body, natural occlusion is correct. Quiet precise prayer, no club swing. Keep direct rear view, NO front face or eyes. SILVER hair, avoid whiteblue recoloring. Preserve the existing four walking phases, including feet passing below the body and opposite leading foot, no leg planting during attack or side-to-side rocking.\nAll FOUR complete isolated figures in 2x2 equal cells. Recompose all four equally into MORE empty margin if necessary; hair, staff tips and shoes must be fully inside each cell with 8percent transparent padding, no crop. Truly transparent background. No effects, glow, projectile, shadows, floor, other beings, text, numbers, watermark, grid or border. Same soft nonpixel painted game sprite as image1, no extra details.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_walk_v01.png",
+      "sha256": "d89dc2f72f931d89e9b5573a41c219425b7faa8c9d8654d42a2b2e5793a08609"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_attack5_v01.png",
+      "sha256": "85beca78674332fc024e5d01bc1df7b86f8bcf50ecf767352b20ca68e9b6cb7f"
+    }
+  ],
+  "sha256": "982657f5a6c2161a3757f6693e598d8fb73f7648dec37e6da90c80ae006b7241",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1224,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      21,
+      1224,
+      1254
+    ],
+    "8": [
+      191,
+      39,
+      1094,
+      1203
+    ],
+    "32": [
+      192,
+      40,
+      1094,
+      1202
+    ],
+    "128": [
+      192,
+      40,
+      1093,
+      1201
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Three hands in frames1/3: resting left hand remained while extra palm grew on staff side; fifth-stage arm motion missing."
+}

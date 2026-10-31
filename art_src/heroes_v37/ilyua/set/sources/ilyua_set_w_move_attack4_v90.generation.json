@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_w_move_attack4_v90",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack4_v90.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-67118410-043e-4290-8036-46ce8f6c2624.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_move_attack4_v90.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY arms/hands and bow action in supplied four-frame sprite sheet. Preserve the FOUR existing heads, hair, facial angles, skull size, torso, waist and especially the FOUR DISTINCT LEG POSES EXACTLY. Do not redraw or change anything below waist. Keep opposite contacting legs and narrow passing feet under pelvis, no repeated wide strides. Fourth steady aimed shot: bow upright, top-left preparation with arrow, top-right stable full draw with right fingers closed at cheek, bottom-left open-hand release, bottom-right lower bow slightly and relax right arm. All four face SAME original direction; arrow aimed original facing (lower-left for three-quarter front, screen-left for profile). One arrow while fingers closed on string, NO arrow after release, string straight between bow tips after release. Exactly two connected arms/hands, anatomical LEFT hand holds same ornate bow throughout. Keep flower legendary outfit/boots and ONE quiver. Same skull size in every frame, no bob/tilt/zoom. True transparent RGBA, four complete figures in 2x2 equal cells with12percent margins. No text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_move_attack3_v81.png",
+      "sha256": "b32072546dac8ff36ac1b2b5c33dbf93595300ae8c080261ba22183cfa8bbd78"
+    }
+  ],
+  "sha256": "32bc2bd11a7e948d1bab80765cb8b801f08f978e4b526ec4a3225904ea5162e6",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1236,
+      1254
+    ],
+    "8": [
+      87,
+      25,
+      1224,
+      1233
+    ],
+    "32": [
+      87,
+      25,
+      1223,
+      1233
+    ],
+    "128": [
+      88,
+      26,
+      1223,
+      1233
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,65 @@
+{
+  "asset": "sylphiette_normal_w_walk_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_walk_v03.png",
+  "sha256": "8e7e760d149ca933077b3b5c839a611ce62c74a9f5e34468331b0bde598c2e39",
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "mode": "RGBA",
+  "contains_design_labels": false,
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": false,
+  "frames_generated_with_builtin": true,
+  "generation_path": "lossless_grid_assembly_of_four_authored_single_frames",
+  "frame_sources": [
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_walk_f0_single_v02.png",
+      "source_sha256": "d8bcaa280cef234a1f637fe653f6f2bab8814efac929fd4a61e32ae6b13ee942",
+      "source_metadata_sha256": "42af8392b219bc16582a1e5c98844b3e1df1ffa21ab9d74f81bddc6177a6cd6c",
+      "assembly_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_walk_f1_single_v01.png",
+      "source_sha256": "d9ef20c3a32d3ea8f334e0b52e37cdf55b7b150598cf31908fbba85c8f98229c",
+      "source_metadata_sha256": "7b331900e2c91672a1ea5d19373d8371b9a8b21916503930c9330e69638e2e1c",
+      "assembly_offset": [
+        1254,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_walk_f2_single_v02.png",
+      "source_sha256": "7ceaf1f270305f30d612e702810ea4ad63f5f3ca28df797ec26f70640920e892",
+      "source_metadata_sha256": "9884ccfc9545f1ddcaf70052649aa2d3e889548785fe7d1a723006b0d77df7fd",
+      "assembly_offset": [
+        0,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_walk_f3_single_v01.png",
+      "source_sha256": "5ae3fbe6f915289af89421a37da7db07baf96f51b7fdd653c3d05ae20c9d0239",
+      "source_metadata_sha256": "869bfe38286638ef5040b00ed41ae4cb1efe497399778044588c21a8db31c634",
+      "assembly_offset": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "assembly_policy": "same authored canvas, integer placement only; no scaling, painting, warping or in-between synthesis",
+  "primary_visual_review": "authored singles inspected; full-clip calibration and transition review pending"
+}

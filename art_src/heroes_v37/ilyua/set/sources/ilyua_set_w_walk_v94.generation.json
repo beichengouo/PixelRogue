@@ -1,0 +1,77 @@
+{
+  "asset": "ilyua_set_w_walk_v94",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v94.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-e319931e-ce2b-4b03-9567-754023df7881.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_walk_v94.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Fix slightly elongated neck/chest proportions of the FOUR walking sprites in image1 to precisely match the canonical SINGLE elf in image2. Preserve the FOUR heads' exact current matching sizes, outlines and left-facing viewpoint. Redraw only their neck/shoulder/chest and waist contour so the distance from chin to flower collar and chin to brown waist belt is compact and exactly proportional to image2; the current upper body is slightly too long. Restore image2's exact chest flower/leaf/ivory panels, goldvine sleeve and belt details. Do not enlarge or shrink heads, do not scale whole bodies, no posing twist. Keep four original alternating walking leg/boot poses from image1, same leg lengths and grounded feet; connect pelvis naturally to corrected compact upper body. Maintain steady equal pelvis heights and upright head across all four poses. Keep one bow low in anatomical left hand and right arm relaxed, exactly two arms/hands; no arrows. Bare long sage hair, white-flower goldleaf ornament, pointed ears, green leaf shortdress with ivory goldvine drapes, one screen-right quiver, floral brown boots faithful to image2. Same full character scale in four equal2x2 cells. True transparent RGBA with ample margins, no opaque backdrop/gradient, text/grid, effects, shadows or floor. Preserve original walking motion; only correct the upper-body anatomy to match idle, all four heads remain identical.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v93.png",
+      "sha256": "6d27e6bde2d1e7fb1f37b28c2177350947815920432fc6b80a71fb2cb1e7cadd"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "563ede89bb0a887968767b15a900078f13674449961088cf72013d4c9d0c6d2a",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1242,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1242,
+      1254
+    ],
+    "8": [
+      187,
+      17,
+      1190,
+      1225
+    ],
+    "32": [
+      187,
+      17,
+      1189,
+      1225
+    ],
+    "128": [
+      188,
+      18,
+      1189,
+      1224
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Measured third-frame head tilt -4.156 degrees exceeds original 4 degree walk limit; gait identity also requires explicit opposing legs."
+}

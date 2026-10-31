@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_w_attack1_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-cc09ccc6-dcf3-4316-b667-f614ba45ead9.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_w_attack1_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair image1 sprite sheet. Preserve its four distinct attack gestures and image2 exact character design, silhouette, camera angle and outfit. Four equal cells, one character per cell. Make every full head, hair, hood, hands, staff, dress and feet completely visible with generous transparent margins in each cell; leave at least 12 percent clear space at all edges and center gutters. Keep head and body exactly same size and proportions across all four frames, stable feet, no stretching or swaying. Exactly two arms and one intact staff in same hand, no hand swaps. No labels, numbers, frame borders, effects, background, floor or shadows. Transparent alpha, refined nonpixel illustration.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_attack1_v01.png",
+      "sha256": "af26136b9fd2aaae1ce52832ceff99d49ada8207c47f40ec91842b6db7f5bdad"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    }
+  ],
+  "sha256": "0d11e784022de21a3664a6a63c18859b2dcf74c92ad452314864a019b4743e8a",
+  "dimensions": [
+    1284,
+    1225
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1281,
+    1225
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      23,
+      1281,
+      1225
+    ],
+    "8": [
+      58,
+      30,
+      1267,
+      1190
+    ],
+    "32": [
+      58,
+      30,
+      1266,
+      1190
+    ],
+    "128": [
+      58,
+      30,
+      1265,
+      1190
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

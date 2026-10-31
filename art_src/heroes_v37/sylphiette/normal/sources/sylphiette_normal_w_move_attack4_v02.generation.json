@@ -1,0 +1,65 @@
+{
+  "asset": "sylphiette_normal_w_move_attack4_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_move_attack4_v02.png",
+  "sha256": "2355374f3abe9285684226f158a871d5ca3512e4a26c9e278ceefc4c8b6af1b8",
+  "direction": "w",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "mode": "RGBA",
+  "contains_design_labels": false,
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": false,
+  "frames_generated_with_builtin": true,
+  "generation_path": "lossless_grid_assembly_of_four_authored_single_frames",
+  "frame_sources": [
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_move_attack4_f0_single_v01.png",
+      "source_sha256": "dc708720211265f8b4197c032d45f125c07efce10a8adbeaf767bab7d0031327",
+      "source_metadata_sha256": "fb194d1ebdcf3df43542b6695daf65b9f21337da0379cdd6868730787cae2192",
+      "assembly_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_move_attack4_f1_single_v01.png",
+      "source_sha256": "e3e1cf905caab395a4edbfcb79ca38766c4ae50d919adf9edd16e88685100e87",
+      "source_metadata_sha256": "c35c62ef16dff352f1b2a9c1d498f06189596756492e3a652e66c5569383d04d",
+      "assembly_offset": [
+        1254,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_move_attack4_f2_single_v01.png",
+      "source_sha256": "fb32b071a0a7c5cd06067883ceaaf92ed2c5a38738697b3c580f9fc03383dd14",
+      "source_metadata_sha256": "098402cdf00e40225c97593c03abbfc7f9af2207b591ce16c6956205628134c1",
+      "assembly_offset": [
+        0,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_move_attack4_f3_single_v01.png",
+      "source_sha256": "b53678e74175142770ef473c659e7db53997ce57001339c513179f9f042aa2da",
+      "source_metadata_sha256": "5bcc324c7ef122a3e7e120dbd40e256d5ee1d334a9e97ff275bb1312b30a515b",
+      "assembly_offset": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "assembly_policy": "same authored canvas, integer placement only; no scaling, painting, warping or in-between synthesis",
+  "primary_visual_review": "authored singles inspected; full-clip calibration and transition review pending"
+}

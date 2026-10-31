@@ -1,0 +1,72 @@
+{
+  "asset": "sylphiette_normal_sw_walk_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_sw_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-e9b95b58-fe8c-4e43-8c29-8dd8c74f83c0.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_sw_walk_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Correct ONLY the leg/foot walking poses in this transparent four-frame sheet. Keep the exact same character, head/body size, silver hair, white/gold robe, blue eyes and golden staff, same front-left three-quarter camera in all cells. Four consecutive walking frames in reading order: left contact, right leg PASSING directly beneath hips, right contact, left leg PASSING directly beneath hips. The bottom-left contact MUST be the opposite leg to top-left; clearly draw the far leg forward instead of repeating the near leg forward. Passing poses must have the feet close together at the body midline. Keep torso and head upright without sideways swaying, exactly two hands and two feet per character. All hair, toes and staff complete with clear transparent margins in equal 2x2 cells. No text, numbers, grid, effects, background or shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_sw_walk_v01.png",
+      "sha256": "9e64ab738bdba181edc9fbc17111801684caa4a2975fa1addbd48f8e05e4dc47"
+    }
+  ],
+  "sha256": "5b6cb28969e974150213b905ce5ad6d982190148ec75a16195c9617804023872",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    53,
+    14,
+    1390,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      53,
+      14,
+      1390,
+      1086
+    ],
+    "8": [
+      267,
+      19,
+      1265,
+      1055
+    ],
+    "32": [
+      267,
+      20,
+      1264,
+      1055
+    ],
+    "128": [
+      268,
+      21,
+      1264,
+      1054
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,85 @@
+{
+  "asset": "sylphiette_normal_s_walk_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-8f0c84f4-48aa-4b14-ae19-eb4cf4281f19.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise game animation correction. IMAGE1 is target transparent 2x2 sprite SOURCE of Sylphiette. Preserve exact head, upper body, robes, hair, viewing angle, staff, identity, outfit and size in all cells. Fix ONLY legs/feet and nearby lower hem in BOTTOM TWO cells. Current lower row repeats the upper row same-side stepping. A full cycle must alternate anatomical legs: TOP LEFT viewer-LEFT foot planted forward, viewer-RIGHT foot behind; TOP RIGHT viewer-RIGHT knee passing under pelvis with heel lifted. BOTTOM LEFT must instead viewer-RIGHT foot planted FORWARD/downscreen and viewer-LEFT foot behind/up, two shoes clearly visible. BOTTOM RIGHT must viewer-LEFT knee passing UNDER pelvis/close to stationary RIGHT leg; RIGHT shoe planted, LEFT shoe lifted with its sole aimed slightly toward camera. Image2 is ONLY correct lower-leg phase reference, DO NOT copy its costume/person/staff. Do not mirror whole character to swap legs! RIGHT staff hand stays viewer-left, LEFT empty. Keep compact short legs; mild natural walking step, no high-knee marching, do not raise skirt high, keep cloth covering knees with only ankles/shoes visible where possible. Stable upright torso and skull, no side sway/rotation. All full figures complete inside equal 2x2 cells with generous transparent margins, no cropped hair/feet/staff. Same refined soft nonpixel miniature style. Pure transparent backdrop, NO lettering/numbers/labels/grid/shadows/effects/background.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_walk_v01.png",
+      "sha256": "cd959861e8a3d5e20dc7a6812716dcb816502e827790fe8a6dd325d645f482d0"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_s_walk.png",
+      "sha256": "716d954ba294abf0e04292d27fd1df6f84094776e1e012f2024756a2507f3588"
+    }
+  ],
+  "sha256": "0ebba5a724f41cf74e9d3779dd4f038f653c2f827ef3d8db2b404b3933bbebf8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    27,
+    1224,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    27,
+    1224,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      27,
+      1224,
+      1254
+    ],
+    "8": [
+      138,
+      40,
+      1139,
+      1213
+    ],
+    "32": [
+      139,
+      40,
+      1139,
+      1212
+    ],
+    "128": [
+      139,
+      41,
+      1138,
+      1212
+    ]
+  },
+  "reason": "lower row repeats same-side leg; superseded by v04"
+}

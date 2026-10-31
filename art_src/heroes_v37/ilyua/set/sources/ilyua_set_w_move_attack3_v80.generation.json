@@ -1,0 +1,77 @@
+{
+  "asset": "ilyua_set_w_move_attack3_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack3_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-374443f3-6a47-467a-93c3-8dcbb209f946.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_move_attack3_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit image1 ONLY by changing its outfit and weapon to image2 legendary form. Image1 is exact four-pose skeletal/footstep/camera target; image2 is only clothing, exposed hair and ornate flower bow reference. Replace hood with long exposed sage-green hair and pointed elf ears; use green leaf-panel dress, ivory gold-vine drapes, flower gold-leaf boots, ONE quiver same hip as image2. Preserve ALL FOUR original legs/feet EXACTLY, especially opposite contact and narrow passing feet under pelvis, no repeated wide stride. Keep same four upper-body attack phases, skull size and short body proportions. Bow in anatomical LEFT hand and right hand pulls/releases string, exactly two connected arms/hands. One arrow only while right fingers draw string; NO arrow once fingers open in release. Do not aim sideways from target facing. 2x2 equal cells, four complete figures with15percent empty margin around hair, bow tips and feet. True transparent RGBA, nonpixel painted miniature anime sprites. No text/labels/grid/effects/shadows.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_move_attack3_v80.png",
+      "sha256": "83ff6840d91b9b950c379937d370492f6344d4d28f20b3a5e0ef480482e647c4"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "cd52c97175a7587283ad84d8959132792f8776d6bc8355a8e2293b1712800e00",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1207,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1207,
+      1254
+    ],
+    "8": [
+      104,
+      30,
+      1204,
+      1234
+    ],
+    "32": [
+      105,
+      30,
+      1203,
+      1233
+    ],
+    "128": [
+      106,
+      31,
+      1203,
+      1233
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "reason": "top-right open fingers with arrow nocked; close drawing grip to keep intended full-draw phase"
+}

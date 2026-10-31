@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack1_passing_a_single_v02",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack1_passing_a_single_v02.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-eaf13536-c196-40a3-9290-f3aa1e2033d5.png",
+  "sha256": "9d5abbf956de2755d28b3a97fcd2c9f5f6dd45ff4eb9eebf4c80ad62e93d96c8",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack1_passing_b_single_v01.png",
+      "sha256": "7fedba12a5aeb1387bc11c39f80502f3e799da4ab96b0291e96b9b383968530a"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\sylphiette_normal_sw_move_attack1_frame1.png",
+      "sha256": "93d250cc3d73cd07de354dd9c4b84a3ceb8b69e6f6a3f4139182a228cc59a2c0"
+    }
+  ],
+  "prompt": "ONE transparent game sprite. Image 1 is the exact body size, head size, hair, canvas position and narrow passing foot pose to preserve unchanged. Change ONLY the two arm gestures to match image 2: staff held forward horizontally, free hand cupped near chest. Same single complete character. Keep image1 exact scale and body dimensions, do not enlarge or shorten the figure. Exactly two hands attached to their sleeves, no remaining side hand. Same white/gold robe, silver hair, blue eyes and golden staff. Entire hair, staff and shoes within transparent margins, no text, background, effects or shadow.",
+  "contains_design_labels": false
+}

@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack2_f3_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack2_f3_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-71f4b2a6-dad1-4c35-97c5-6ec31b9f9b3d.png",
+  "sha256": "1116da85935554be768c58d34a1b5e2a215b18a83fcc1a74fdfd1190949cd2b6",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_sw_move_attack1_f3_single_v01.png",
+      "sha256": "f259daf69905cb484ac50020bf95c33b2edc33d6f78090f50a69121bdabd0dd3"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\sylphiette_normal_sw_attack2_frame3.png",
+      "sha256": "62c9000b0fc2abc125271f0393483b97a668b1a2e83a2c535ff80ebdb7cb0303"
+    }
+  ],
+  "prompt": "Edit ONE isolated game sprite. Image 1 is the exact character body, head size, hair, clothes, walking legs and canvas placement to preserve. Change ONLY the two arms and staff gesture to match image 2 pose for attack 2, frame 4. Image 2 is gesture reference ONLY; do not copy its smaller head or body scale. Keep image1 exact full-size head, face, torso, body lengths and foot phase, no enlargement or shrinking. One staff held by one hand, one free gesture hand with its sleeve moving together; exactly two arms/two hands, no residual old hand at the side or chest. Silver hair, blue eyes, white-gold robe, same front-left camera. Keep full hair, staff and shoes inside the canvas with clear margins. One full figure on transparent background, no text, numbers, effects, shadows or background.",
+  "contains_design_labels": false
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_normal_nw_walk_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_nw_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-78fd57d7-6bfc-442f-a870-71906eeb8c8a.png",
+  "built_in_imagegen": true,
+  "prompt": "Create exactly SQUARE1024x1024 transparent production2x2 FOUR-frame sprite source. Input1 is exact same character, Input2 walking leg phase only. IMPORTANT output canvas must be square, equal four quadrants with huge margins at least12 percent cell height. No text or dividers. Use case: identity-preserve / game animation. IMAGE1 is PRIMARY EXACT character identity/costume/body geometry and viewing direction reference, an idle sprite. IMAGE2 supplies ONLY the four clear foot/knee WALKING PHASES and 2x2 layout in the same view; do NOT copy Xixifu character, her face, clothes, hair, staff or boots. Create exactly FOUR full-body sprites of image1 character in equal 2x2 cells, pure transparent background. Face NORTHWEST rear-left facing away up-left, no eyes in ALL four cells, never rotate toward viewer or rock side-to-side. Hold exact skull/head size and neck/shoulder/waist height steady in all frames; same compact short torso/limbs as image1, do not stretch body. Soft nonpixel hand-painted compact miniature, clean colored outlines, restrained cel shading matching image1. Read order top-left,top-right,bottom-left,bottom-right: left foot forward/right back; right foot passing directly UNDER pelvis close to planted left leg with knee bent; right foot forward/left back; left foot passing directly UNDER pelvis close to planted right leg with knee bent. BOTH intermediate passing poses must be genuinely drawn, not just repeated endpoint stances. Keep head and torso vertical stable, a little knee bend/pelvis bob only; no upperbody sway or tilt as movement substitute. Cloth hem follows steps slightly but exact same garment construction per frame. Face/hair/weapon model fixed, not a different person between poses. No motion blur or smearing. Maintain full feet/crown/bow or staff/hair inside EACH cell with at least10% transparent vertical margin and15% horizontal margins; if necessary fit all figures uniformly smaller within their cells, do NOT shrink one head or shorten legs. Equal scale/body origin and grounded sole anchor in all cells. No physical floor or drop shadow. NO text/numbers/labels/dividers/grid/guidelines/border/watermark/background/effects/extra creatures or figures. Sylphiette keeps gold staff in anatomical RIGHT hand, LEFT empty; silver hair/blue eyes. Normal NO hood/crown, gold cloud hairclip on anatomical LEFT temple, white gold robe pale blue lining, CLOUD-CURL staff top with blue orb.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_nw_idle_v01.png",
+      "sha256": "83f0fc60e9c8062056e750f8f5cd9fee8fe2e6a1a1796db1e4a68200aef2ba63"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_nw_walk.png",
+      "sha256": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f"
+    }
+  ],
+  "sha256": "fc56e46ee38699813357969740fcb6df22a3350563235e9917cb909e0d835939",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1230,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    17,
+    1230,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      17,
+      1230,
+      1254
+    ],
+    "8": [
+      202,
+      55,
+      1120,
+      1194
+    ],
+    "32": [
+      203,
+      55,
+      1120,
+      1194
+    ],
+    "128": [
+      203,
+      55,
+      1119,
+      1194
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "sylphiette_normal_s_move_attack3_v09",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack3_v09.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-e6a9ffd5-e030-418a-ab40-ab5831ba97d4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack3_v09.png",
+  "built_in_imagegen": true,
+  "prompt": "Fix the four poses in this transparent 2x2 sheet, reading top-left, top-right, bottom-left, bottom-right as chronological frames. Preserve exact character, two arms, two hands, staff, proportions and alternating feet of this sheet. Animate a single continuous spell: first frame free arm low, second frame free arm halfway lifted, third frame free arm fully extended, fourth frame free arm lowering halfway. The single free hand must always be attached to its sleeve; no second free hand or third arm. Left hand holds staff throughout. Keep feet exactly as they are. Complete figures in equal cells with clear margins, transparent background, no labels, text or grid.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v08.png",
+      "sha256": "b7541b5b1556a2bd5dbd3724a856f283b8a2cf9deeef8b2e562bc1782070b753"
+    }
+  ],
+  "sha256": "57f823cfba5617aa132e9f33f418194016e0c4d3fa46603f8739589dfe3ed7f1",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    16,
+    1214,
+    1236
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      16,
+      1214,
+      1236
+    ],
+    "8": [
+      113,
+      22,
+      1162,
+      1205
+    ],
+    "32": [
+      114,
+      22,
+      1162,
+      1205
+    ],
+    "128": [
+      115,
+      22,
+      1161,
+      1205
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

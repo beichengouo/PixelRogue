@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_normal_s_skill_cast_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_skill_cast_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-340ad2d0-94d9-4d35-bdda-b1424c10e262.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / game sprite animation. Image1 is EDIT TARGET clean transparent four-frame walk SOURCE, preserve its pure alpha transparency and 2x2 placement; no halos or backdrop painting. Image2 is exact SAME character idle costume/anatomy and camera. Change walking legs to stable planted neutral feet, and redraw arms for the gestures. Create clean production2x2 FOUR-frame full-body skill-gesture source on true transparent canvas. ALL figures face SOUTH/direct front facing downscreen without changing face direction between frames. Same rigid skull size/face proportions, compact short body, stable upright torso and two planted feet with common sole baseline, no walking or side sway. Keep costume and hair physically coherent, no hood/hair clipping, same head/shoulder/waist and short legs in each frame, no growing in active pose. Soft nonpixel handpainted miniature, refined colored outlines, restrained readable cel shading, not realistic. Exactly TWO arms/TWO hands per figure (only physically occluded parts may be hidden), exactly ONE complete prop. ERASE original resting arms/hands and original entire weapon before redrawing the new arms and prop pose; do not add extra limb/ghost hand/old shaft beneath robe. All four distinct gestures form one coherent calm continuous magical skill sequence, NOT four unrelated poses. No projectiles, targets, creatures, impacts, glow, spell effects; character-body gesture only. Full body/prop/hair/toes entirely within owncell with min10%height/15%width EMPTY transparent room; no cut tips, no crosscell overlaps. NO text/numbers/labels/grid/lines/borders/shadows/floor/background/watermarks. This is unlabelled production source, not a concept sheet. SAME SYLPHIETTE silverhaired blueeyed priestess, staff always anatomical RIGHT hand, LEFT free. Four calm ritual phases reading order: 1 right hand lifts staff slightly from ready, left palm begins rising from waist; 2 right staff held upright a little forward along facing direction, left palm opens near chest; 3 left open palm presses gently forward along facing direction, right staff inclines forward slightly with blueorb near head height; 4 left hand returns toward chest and right staff returns upright ready. No projectile/effects/halo, just hands/arms motion. Maintain goldstaff construction exactly: normal CLOUD-CURL top, legendary OPEN CRESCENT gold prongs blueorb. Never show cloud-scroll top on legendary. ",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_walk_v04.png",
+      "sha256": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_idle_v01.png",
+      "sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    }
+  ],
+  "sha256": "b683596fc06ea4d47c2d31ecdc4807a7df8a492ce3a8152e8248e8115903ba8f",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    3,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    3,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      3,
+      1240,
+      1254
+    ],
+    "8": [
+      116,
+      43,
+      1149,
+      1209
+    ],
+    "32": [
+      116,
+      43,
+      1149,
+      1209
+    ],
+    "128": [
+      117,
+      44,
+      1148,
+      1209
+    ]
+  }
+}

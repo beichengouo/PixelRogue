@@ -1,0 +1,80 @@
+{
+  "asset": "sylphiette_normal_utility_prayer_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_utility_prayer_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-ec179056-08e8-465d-8d41-da8924bb4f56.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise anatomy repair of four-frame transparent game sprite source, preserve exact character identity/costume/body proportions/facing/gestures and2x2 layout. FIX: All4 poses incorrectly acquired white/gold cloth on head. COMPLETELY REMOVE WHITE HEAD CLOTH/HOOD from all4. Replace only hood area with her continuous natural silverhair shaped as original normal reference, goldflower hairclip remains. This NORMAL outfit has NO hat, NO hood, NO veil. Exposed full silvercrown hair all4. Preserve exact4 calm prayer gestures, cloudscroll staff, face identity.. Do not move correct limbs or shrink skull/body, no new hands/arms/prop. Keep all4 fullbody complete within clear transparent margins. TRUE TRANSPARENT alpha, same painterly colored line and shading. No numbers/text/labels/grid/dividers/marks/motionstrokes/effects/background/halos/shadows/floor.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_utility_prayer_v01.png",
+      "sha256": "99ceae79e9c58bff82f768821b6ba4828e6735e7e6646ee94ac740f93c78a7cc"
+    }
+  ],
+  "sha256": "ac3a304243a8bc362c0ea33680b5d2bb105c69ae17bed53240d3f35d6dde4e0a",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "utility",
+  "action": "prayer",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    23,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      23,
+      1240,
+      1254
+    ],
+    "8": [
+      160,
+      37,
+      1182,
+      1234
+    ],
+    "32": [
+      161,
+      38,
+      1181,
+      1233
+    ],
+    "128": [
+      161,
+      38,
+      1181,
+      1232
+    ]
+  }
+}

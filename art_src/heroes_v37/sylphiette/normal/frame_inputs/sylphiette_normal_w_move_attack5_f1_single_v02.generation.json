@@ -1,0 +1,27 @@
+{
+  "asset": "sylphiette_normal_w_move_attack5_f1_single_v02",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_w_move_attack5_f1_single_v02.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-c2f10d4f-365b-4501-9538-c1579e84b9ca.png",
+  "sha256": "3abace1457311640fe4356beaadb8dd24da4a585b92a621090cc944d096a9dc4",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_move_attack5_f1_single_v01.png",
+      "sha256": "21a035ec6a39ae6d917e9d664a3d25566f631b933c4b7f7b8de577ef8caf492c"
+    }
+  ],
+  "prompt": "对单个完整游戏精灵做局部动作修正：保持头部、脸、头发、身体、白金蓝裙、腿脚行走姿势、画布位置和比例全部原样，只替换两只手臂与袖子的动作。右手把金色云纹蓝宝珠法杖明确举高到脸前，杖尖最高与头顶接近，右肘抬起、杖身竖直，构成最后一击的明显蓄势。左掌在胸前收拢等待释放。每人只有两只手，删除原垂下的旧手或袖口，不增加手臂。两脚继续维持原来的过脚步态，不改成站立。完整发梢杖尖脚不裁切，透明留白，无文字序号、光效、背景或阴影。精细非像素手绘。",
+  "contains_design_labels": false
+}

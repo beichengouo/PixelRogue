@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_n_attack1_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-310f1b1a-274b-43c7-900b-d2f53aa6d1e0.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_n_attack1_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Correct image1 four poses while keeping the exact back view, matching the hair, body, outfit and proportions of image2. One complete staff held in anatomical RIGHT hand, which is on viewer right in this back view, throughout all four cells. Exactly TWO anatomically connected arms; free left arm originates at the left shoulder and remains outside or in front of hair, never crosses behind the hair. No extra or detached hand, sleeve or staff. Four distinct consecutive ready, anticipation, release, recovery gestures, feet stationary. Whole character and staff fully within each cell, ample transparent margins. Four full-body animation frames in 2x2 equal cells, transparent background; no labels, text, marks, effects, shadow or panel borders. Match illustration style precisely.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_attack1_v01.png",
+      "sha256": "85dc5d6e2f499270a60abe9813b9575b8397879c9d1d7675125823a7cb4c664a"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_idle_v01.png",
+      "sha256": "11cf8bc083313498a42303614acdba6cc5a4b54367728a9fcba683707553a6f2"
+    }
+  ],
+  "sha256": "9337568c2f67e2aca2c4fb4c2877debf38fa33055315354351817aaa05660610",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    13,
+    1296,
+    1199
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      13,
+      1296,
+      1199
+    ],
+    "8": [
+      110,
+      55,
+      1224,
+      1145
+    ],
+    "32": [
+      110,
+      56,
+      1224,
+      1145
+    ],
+    "128": [
+      111,
+      56,
+      1223,
+      1144
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

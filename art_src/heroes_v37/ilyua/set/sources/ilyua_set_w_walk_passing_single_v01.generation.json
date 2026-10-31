@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_w_walk_passing_single_v01",
+  "kind": "single_frame_source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_passing_single_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-229b49ba-9921-4fe2-8070-b95a7c33b1c8.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_walk_passing_single_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit only the TWO LEGS below the skirt of the supplied SINGLE full-body LEFT-facing elf into ONE walking pose. Near leg now supports vertically directly under pelvis, foreground boot flat on ground. FAR leg swings forward toward SCREEN LEFT with knee bent and boot visibly lifted ahead of support shin, do not tuck lifted boot behind the trailing calf. Keep reference's original HEAD, skull outline, blue eye, pointed ear, crown, flower/leaf ornament, all hair above waist, neck, shoulders, chest, torso, belt, quiver, low bow and BOTH original relaxed arms/hands EXACTLY unchanged. Do not redraw head or chest decorations, do not rescale any part, turn, tilt, nod, crouch, stretch body or add head bob. Same native canvas size and head size as supplied. Preserve hip/pelvis height and exact original head-to-belt ratio. Allow only lower leaf-skirt/ivory-drape small motion where legs pass. One bow low in anatomical left hand; right arm hangs relaxed. No arrows. Exactly two legs and two arms, complete floral brown boots. Bare long sage hair, whiteflower goldleaf ornament, green leaf shortdress ivory goldvine sidepanels, screen-right brown quiver, faithful source costume. ONE complete figure centered, same native image scale and canvas as reference, generous transparent margins, genuine RGBA transparency, no text, labels, grid, gradients, floor, shadow or FX. This is one native animation input, not a sheet. Preserve ALL upper-body drawing and change only the specified gait legs.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "917cc3d87806be766e92a4c4a40ac04497f66fb8b122c6e62e4e7202325165f7",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk_passing_single",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "native_single_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    29,
+    1218,
+    1178
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      29,
+      1218,
+      1178
+    ],
+    "8": [
+      306,
+      169,
+      1008,
+      1175
+    ],
+    "32": [
+      306,
+      169,
+      1006,
+      1175
+    ],
+    "128": [
+      307,
+      170,
+      1006,
+      1175
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

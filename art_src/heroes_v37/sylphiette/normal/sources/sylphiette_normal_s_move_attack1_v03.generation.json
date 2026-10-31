@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack1_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack1_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-09668923-3661-4f3c-b599-be0ac0183a66.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack1_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Animate image1 exact front-facing character and four leg phases using image2 four corresponding staff and free-arm attack gestures. Preserve identical face, hair, body dimensions and clothing throughout. Exactly TWO hands: right hand on viewer left holds one staff; left free hand on viewer right moves with its sleeve to match gestures. When free hand raises, remove original lowered hand and sleeve; no extra hand on chest, side or waist. Preserve actual alternate foot contacts and central passing phases in image1, avoid frozen repeated gait. Four distinct preparation, action, release and recovery poses, complete figures and staff within equal 2x2 cells with transparent margins. No text, numbers, panel lines, backgrounds, shadow or effects. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v07.png",
+      "sha256": "b36a1bd09e906cf3ab6578e48e4fb530a950926bb62a8c3fc7546aee0513327f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_attack1_v01.png",
+      "sha256": "a29e82fd943af28a9c78b14dc6e555c798e61ea63b2a5eb35d3ed145588a6cca"
+    }
+  ],
+  "sha256": "eaface8ebf31e8c43b7d9832ba124f4d3304210c0d5eb2f53df7f79372f31c05",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    13,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      13,
+      1236,
+      1254
+    ],
+    "8": [
+      110,
+      18,
+      1181,
+      1203
+    ],
+    "32": [
+      110,
+      19,
+      1181,
+      1202
+    ],
+    "128": [
+      111,
+      20,
+      1180,
+      1202
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "No clear midline passing step; moving pose repeats."
+}

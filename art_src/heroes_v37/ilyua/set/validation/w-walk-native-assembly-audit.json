@@ -1,0 +1,28 @@
+{
+  "asset": "ilyua_set_w_walk_v95",
+  "source_sha256": "fcf593de9db26de27ca916cd09204728a913a137e32ddce83e9a608a90748189",
+  "native_rgba_reconstruction": true,
+  "sources": [
+    {
+      "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_contact_single_v01.png",
+      "sha256": "afbdbb134dc4f78f970ae5e6fa754834f4598978780548ffc031e6ef7f669b70",
+      "native_rgba_bytes_equal": true
+    },
+    {
+      "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_passing_single_v01.png",
+      "sha256": "917cc3d87806be766e92a4c4a40ac04497f66fb8b122c6e62e4e7202325165f7",
+      "native_rgba_bytes_equal": true
+    },
+    {
+      "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_opposite_single_v01.png",
+      "sha256": "82c8d5607e9f81c27c887b4cae7e5aea88938272625f2113502c79e4f81584ed",
+      "native_rgba_bytes_equal": true
+    },
+    {
+      "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_return_single_v01.png",
+      "sha256": "8465dae7299131545e4b53e8d7cfc515c97345ac9c1b37cb11164edb9ccf7896",
+      "native_rgba_bytes_equal": true
+    }
+  ],
+  "source_pixels_modified": false
+}

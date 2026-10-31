@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_s_move_attack3_v07",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack3_v07.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-94d007c8-ac32-4fbc-9e47-514660b233f8.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack3_v07.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair the four sprites in image1. Preserve four different step phases and free-hand action positions, with only two hands and two arms in every frame. Match image2 exact character face, skull, hair, stable head-to-body proportions across all four: the head must remain precisely the SAME size and angle in all cells; do not enlarge or shrink lower-row figures. Do not add hands, chest hands, or duplicate sleeves. One staff held in anatomical right hand. Full body, staff and hair visible within each equal 2x2 cell with transparent margins. No labels, text, numbers, border, backgrounds, shadows or glow. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v06.png",
+      "sha256": "d655034a07d9d2ef277a5a2f1facd98b047eb49457bbbbf436d4c1a8ab447ad5"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_idle_v01.png",
+      "sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    }
+  ],
+  "sha256": "b36a1bd09e906cf3ab6578e48e4fb530a950926bb62a8c3fc7546aee0513327f",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1236,
+      1254
+    ],
+    "8": [
+      119,
+      23,
+      1158,
+      1195
+    ],
+    "32": [
+      119,
+      23,
+      1158,
+      1195
+    ],
+    "128": [
+      120,
+      24,
+      1158,
+      1194
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

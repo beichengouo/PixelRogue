@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_w_walk_v92",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v92.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-cc051943-b4c3-4c44-850e-4b50a8c0f2d8.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_walk_v92.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Correct only inconsistent HEAD DRAWING in this FOUR-pose left-facing walk sprite. Use the TOP-LEFT head as the one exact master identity and native size. Repaint the head in top-right, bottom-left and bottom-right so all FOUR have exactly the same skull width/height, cheek, nose, eye, pointed ear, forehead, crown and flower positions in a rigid identical LEFT-facing viewpoint. No head enlargement, shrinking, nodding, tilt or turning across the four poses; the fourth head must not grow. Keep each original entire body, neck/shoulders, torso, skirt/drapes, quiver, low bow arms, both hands, and especially all FOUR distinct original walking leg/boot arrangements unchanged. This is a precise identity consistency redraw, not whole-figure resizing. Never rescale or warp the body or legs. Keep one constant head-to-torso ratio, identical hair crown shape from top-left, long loose hair can only move below shoulders. Bare sage hair, single white flower golden leaves ornament, blue eye, pointed ears, leaf green short dress ivory goldvine drapes, brown floral boots. Left hand ONE full low floral golden wood bow, right hand relaxed. No arrow. Exactly two arms/two legs, original alternating contact/passing/opposite contact/opposite passing gait remains. Four complete sprites in equal2x2 cells, genuine transparent RGBA, generous empty margins around hair/bow/boots. No words, labels, grid, gradient backdrop, shadows, floor or FX. Paint only the corrected consistent heads into the existing four walk poses.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v91.png",
+      "sha256": "9b4f5de2f4d4e32cd001eb692b8b8fce3fdf256931edb9dc5de8b3fb6cb22a23"
+    }
+  ],
+  "sha256": "26a4ae33dfb339b8702848112b0aa3cfc987459bb3fe970b9a06aa6fc829e695",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1236,
+    1238
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      17,
+      1236,
+      1238
+    ],
+    "8": [
+      168,
+      28,
+      1210,
+      1236
+    ],
+    "32": [
+      169,
+      28,
+      1210,
+      1236
+    ],
+    "128": [
+      169,
+      29,
+      1209,
+      1235
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Head-size gate passes, but independent walk torso registration is missing; full canonical upper-body redraw required."
+}

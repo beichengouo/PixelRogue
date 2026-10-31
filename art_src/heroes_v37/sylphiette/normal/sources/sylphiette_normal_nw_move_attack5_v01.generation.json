@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_nw_move_attack5_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_nw_move_attack5_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-598549ce-cbf6-40e5-bade-735ba30624f1.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_nw_move_attack5_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "精确修改图1的四帧行走精灵，只替换上臂、袖子、手和法杖的动作，使它们对应图2第5段祷术的四个连续姿势。图1的四个人物头部尺寸、银发、身体比例、白金蓝裙、腿脚的四相步态和画布位置保持不变。图2仅参考手臂和法杖姿势，绝不能复制它的站立双腿。固定后侧左斜视角，脸朝左上远处，不转向镜头，不露正面眼睛。\n每个人严格只有两条手臂、两只手、一根法杖：右手始终握原金色蓝宝珠云纹杖，左手做空掌祷术。移动左手必须连同左袖一起移动，并删除旧垂手和旧袖，不能留下第三只手。手臂从正确肩膀连接，可被头发和躯干自然遮挡，不允许凭空长在后背。动作温和精确，终段可明确抬杖蓄势再向前压杖；不敲棍，不画弹幕或特效。\n四相步态必须保留：迈出、脚从身体正下方经过、另一腿迈出、另一腿过脚。不能变成四个同前脚的跨步或四个站立动作，身体和头不要左右摆动。2x2四个等大单元，每个完整人物四周至少8%透明留白，完整长发、杖尖、双鞋不裁切，不跨格。透明背景，精细非像素手绘。禁止文字、序号、网格、边框、阴影、地面、光效、额外生物。",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_nw_walk_v02.png",
+      "sha256": "fc56e46ee38699813357969740fcb6df22a3350563235e9917cb909e0d835939"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_nw_attack5_v01.png",
+      "sha256": "b1f15261d6e43b4c74241e66b2e9972f83754118c389b1fd9b3e31f526a66644"
+    }
+  ],
+  "sha256": "960811b5c4a77985572c01c8e1c6835b3dd53f404e909fdc4f0c45586c08a162",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1230,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1230,
+      1254
+    ],
+    "8": [
+      72,
+      25,
+      1160,
+      1198
+    ],
+    "32": [
+      73,
+      26,
+      1160,
+      1198
+    ],
+    "128": [
+      73,
+      26,
+      1159,
+      1197
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

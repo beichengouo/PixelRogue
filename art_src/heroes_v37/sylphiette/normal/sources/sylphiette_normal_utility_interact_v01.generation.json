@@ -1,0 +1,81 @@
+{
+  "asset": "sylphiette_normal_utility_interact_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_utility_interact_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-93c114d3-4d0d-4034-8a9c-03e86a0d8a26.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game animation. Image1 is SAME exact character identity/body/costume/prop/camera reference, NOT a four-pose chart. Create ONE production2x2 source of exactly FOUR distinct consecutive action frames reading order on TRUE TRANSPARENT RGBA background. Soft nonpixel miniature painterly cel finish as reference, precise colored outline. Same rigid skull size and compact torso/short limb lengths across all4 frames, head never grows/shrinks. Strict WEST/left side profile, no turn toward viewer. Draw entire body/prop/hair/feet within own equal cell with generous12%transparent room on all sides. NO text/numbers/labels/grid/borders/guides/shadows/floor/background/glow/particles/effects. EXACTLY TWO arms/TWO hands and one intact prop per figure; remove old resting hands and whole prop before redrawing changed position, no third idle hand or ghost shaft. Sylphiette same silverhaired blueeyed priestess, same whitegold flatshoes; staff anatomical RIGHT hand always, LEFT hand empty. Normal nohood, cloudscroll goldstaff; legendary hood UP/navylining, sapphirecollar, staff open goldcrescent blueorb, never cloudscroll. Silverhair beneath hoodrim never throughhood. Four friendly interaction/reach phases: 1 free hand raises from waist toward chest, staff held upright in original hand; 2 free arm reaches forward LEFT along facing direction palmup chestheight; 3 fingers curl lightly as if accepting a small unseen token while empty, elbow begins bending; 4 free hand returns near waist, relaxedready. No visible token/extra prop, feet planted, shoulders/torso stable. No duplicated idle hand.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    }
+  ],
+  "sha256": "c12615e6d38d1ccd5ae77654a3be5fbe317df5d27fa9517e7e5c07962439ba48",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "interact",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    21,
+    18,
+    1208,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    21,
+    18,
+    1208,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      21,
+      18,
+      1208,
+      1254
+    ],
+    "8": [
+      156,
+      21,
+      1155,
+      1234
+    ],
+    "32": [
+      156,
+      21,
+      1155,
+      1234
+    ],
+    "128": [
+      157,
+      22,
+      1154,
+      1233
+    ]
+  },
+  "reason": "third waist hand frame2; superseded by v02"
+}

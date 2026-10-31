@@ -1,0 +1,27 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack5_f1_single_v03",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack5_f1_single_v03.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-545ac875-ccaf-4e91-98fd-82bb05194041.png",
+  "sha256": "66e5d56354f8f31451e98fc696de7fec7ec1f6ac9b217a0476f8996ce69b03f0",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack5_f1_single_v02.png",
+      "sha256": "691ec96f8185842d38a3350b780d9351b1b993a89b315cde707bf43a1125f7a1"
+    }
+  ],
+  "prompt": "局部修复这一个游戏精灵的三只手错误。画面左上方已经有一只正确的右手握法杖，必须完整保留这只持杖手及其手臂。胸前现在错误地画成双手合十，请彻底删除胸前这两只合十的手、两条旧手腕和多余蓝袖口，重新画成且仅画成一只左手：左掌五指明确分开，手心朝画面左前方，单独抬在胸前，绝不合十。只有一条左前臂从角色左肩（画面右侧肩膀）沿原宽袖连续连接到这只左手，胸前只留一个袖口和一个手腕。整个人物总共严格两只手：右手握杖，左手单掌张开。不要再画第二只胸前手或第三只手臂。头部、脸、发型、银发蓝眼、服装结构和身体比例、过脚步态、双脚、法杖高度、完整画布位置和透明底全部保持不变。完整发梢杖尖与鞋，不裁切，无文字序号背景阴影光效，维持精细非像素手绘。",
+  "contains_design_labels": false
+}

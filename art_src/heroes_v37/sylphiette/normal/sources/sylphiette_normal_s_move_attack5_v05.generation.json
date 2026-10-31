@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_s_move_attack5_v05",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack5_v05.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-057e6385-3809-4ede-80fd-8fabd8fb4dec.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack5_v05.png",
+  "built_in_imagegen": true,
+  "prompt": "Transparent 2x2 game sprite sheet. Image 1 gives the exact character body proportions and walking legs. Image 2 gives the four chronological arm/staff gestures for attack 5. Draw image1 exact character doing image2 gestures, with image1 walking legs. Identical head size, face, silver hair, white/gold robe and body in every cell. Four foot phases: LEFT foot forward, ankles close together under hips as passing, RIGHT foot forward, ankles close together under hips as passing. Free arm and its sleeve move TOGETHER to the corresponding gesture in image2. Exactly TWO ARMS and TWO HANDS: one hand grips the single staff, the only other hand gestures. REMOVE the old lowered hand when the free hand moves upward; never leave an extra side hand. Keep image2 preparation -> release -> follow-through -> recovery in reading order, not two repeated gestures. Full figures including hair, staff and toes with generous margins inside equal 2x2 cells. No words, numbering, labels, grid, effects or background.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v09.png",
+      "sha256": "57f823cfba5617aa132e9f33f418194016e0c4d3fa46603f8739589dfe3ed7f1"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_attack5_v01.png",
+      "sha256": "645ee7a0f1348a0dab480e5a6bf56cc71542b656d98c656346bd4dd969280605"
+    }
+  ],
+  "sha256": "469fd0383f52916b2aeb1312c3d8f6896b4b6ab73745ab31c4e4555a13a25dd8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1238,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      9,
+      1238,
+      1254
+    ],
+    "8": [
+      104,
+      11,
+      1175,
+      1202
+    ],
+    "32": [
+      105,
+      11,
+      1175,
+      1202
+    ],
+    "128": [
+      105,
+      12,
+      1175,
+      1202
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

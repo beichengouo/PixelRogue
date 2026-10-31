@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_s_move_attack4_v05",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack4_v05.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-81c72049-7368-45e5-9853-5dbb7bc72e00.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack4_v05.png",
+  "built_in_imagegen": true,
+  "prompt": "Correct ONLY head/body proportions in image 1 to match image 2 exact character model. All four faces, head sizes, hair silhouette and torso dimensions must be identical to the top-left figure; do not shrink heads during raised staff gestures. Preserve existing four chronological casting gestures, two arms and two hands, alternate walking contact and feet-passing phases, white/gold robe and staff. Keep full figures in equal 2x2 cells with generous transparent margins around hair, staff and toes. No extra lower side hand when the free hand is raised, no third arm, no words, numbers, backgrounds or effects.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack4_v04.png",
+      "sha256": "1244167689969a505b5f232ddd9dd92eb58534b0f16ef69ca9e8d64cf33504a9"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_idle_v01.png",
+      "sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    }
+  ],
+  "sha256": "ff48fcbbbd13ad4b3cd91d5564d7d96f07b09ea0f942543c5ba1383119f87963",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1234,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      17,
+      1234,
+      1254
+    ],
+    "8": [
+      97,
+      27,
+      1183,
+      1214
+    ],
+    "32": [
+      97,
+      28,
+      1183,
+      1214
+    ],
+    "128": [
+      98,
+      29,
+      1182,
+      1213
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

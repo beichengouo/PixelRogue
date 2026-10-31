@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_set_n_move_attack5_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_n_move_attack5_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-ac0f7197-53d0-45fd-ac0e-8dd30f4dfb4f.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_n_move_attack5_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "精确修改图1的四帧传说装行走精灵，只改变两只手臂、袖口和唯一法杖的姿势，让四帧依次匹配图2对应的四个祷术手势。图1为主体：它的兜帽、脸或后脑尺寸、银发、白金长礼裙、深蓝内衬、领扣、身体、腿脚四相步态、视角、人物尺寸与画布位置全部保持不变。图2只参考手臂动作，不参考普通装衣服、短裙、武器头部或站立双脚。\n必须维持图1同一支金色新月包蓝宝珠法杖，四帧杖头完全一致，不能变回普通装云纹杖或复制第二根杖。右手握唯一法杖，左手单掌祷术，严格两条手臂、两只手。移动左手连同左袖替换旧垂手，不残留腰边第三只手；绝不双掌合十再持杖。手和手臂要从正确肩膀连续连接，允许被长发、兜帽及身体自然遮挡，不从后背长出手。\n完整保留图1四相步态：迈出、过脚、另一腿迈出、另一腿过脚。身体头部不左右摇摆，不变成站着施法。长裙下摆仍到小腿位置，不变成普通装短裙，不露大腿，不抬裙；允许只看见交替鞋子。保持背向或后侧向，不能露正面眼睛。完整发梢、兜帽、举杖尖端、两只鞋子均不裁切，所有四个人物都有足够透明边距。2x2四个等大单元，无文字序号边框、特效、影子、背景。保持原精细非像素手绘风格。",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_n_walk_v01.png",
+      "sha256": "bc11cd02510179ef022b176df50e641ca9e5b2513004987dd8b040f5b89ae258"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_move_attack5_v03.png",
+      "sha256": "bfc1964eb122555cb6e26cda50114478f517551889a12c4f013464617a97e7a8"
+    }
+  ],
+  "sha256": "3a23e14071048b38a2893378e1e439d2a974dba9abd94d935fd818349fbd9fcb",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1236,
+      1254
+    ],
+    "8": [
+      154,
+      61,
+      1101,
+      1196
+    ],
+    "32": [
+      154,
+      61,
+      1101,
+      1196
+    ],
+    "128": [
+      155,
+      62,
+      1100,
+      1195
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "右下人物有三只手：腰边垂下的左手、头发右侧凭空冒出的左掌、右手持杖。删除旧腰边垂手及旧袖口，删除后背右侧悬空的手掌，重画左手从画面左肩自然收回画面左胸前，允许被头发遮挡，右手仍在画面右侧握杖。右上人物右手举杖至接近头顶蓄势、左掌在画面左肩前竖起；左下人物右手向前轻压法杖、左掌仍在画面左侧推出。四帧杖头均为唯一金色新月包蓝宝珠，绝不再画云纹。"
+}

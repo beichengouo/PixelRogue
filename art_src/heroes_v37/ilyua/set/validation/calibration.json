@@ -1,0 +1,5621 @@
+{
+  "hero": "ilyua",
+  "form": "set",
+  "diagnostic_only": true,
+  "runtime_integrated": false,
+  "visual_approved": false,
+  "complete": false,
+  "idle_bridges": [
+    {
+      "direction": "s",
+      "pass": true,
+      "source_sha256": "5fc547b2f14a92c504db2fe29b956f487971b127fbfb3fd408771b17e20a17f3",
+      "normal_sha256": "a865c71ce6e444a64378d4c5606469e00e613c107d6f0c7ca9b8aabd99c58fa6",
+      "factor": 0.23054637602121547,
+      "head_inliers": 11,
+      "normal_bridge_angle": -0.10492888169368653,
+      "normal_head_bridge_foot_residual_before_grounding": 6,
+      "bounds": [
+        127,
+        158,
+        301,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "sw",
+      "pass": true,
+      "source_sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d",
+      "normal_sha256": "9e80af68baddba15d3b36f3b16a9c088b1256bd4a2550976ae6bdef9361c6625",
+      "factor": 0.2124017498321273,
+      "head_inliers": 13,
+      "normal_bridge_angle": 0.007836105256322405,
+      "normal_head_bridge_foot_residual_before_grounding": -6,
+      "bounds": [
+        162,
+        169,
+        308,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "w",
+      "pass": true,
+      "source_sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9",
+      "normal_sha256": "c92f672f8de8112af44e8f69b9e27f3123c587eefaa27c9b28a690e4ebd97da6",
+      "factor": 0.23420029806911236,
+      "head_inliers": 8,
+      "normal_bridge_angle": -2.3120920522141497,
+      "normal_head_bridge_foot_residual_before_grounding": 2,
+      "bounds": [
+        156,
+        157,
+        309,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "nw",
+      "pass": true,
+      "source_sha256": "fa221fb6e491b7bb9255418cb091ad0de65c32bcecbbb8bbdbee447008fd2264",
+      "normal_sha256": "f3a27d1872a1093b9fe88be7da12138894d92610c1ab684aa60e1e8f4f6041c6",
+      "factor": 0.23032629558541268,
+      "head_inliers": 0,
+      "cross_outfit_skull_feature_match": false,
+      "method": "source-hashed manual occluded-body visual alignment; covered skull not verified by features",
+      "manual_body_review_sha256": "b327c21d79a227c2bcbd51a5d03a883ef958ce8abf70396b2c5a9b2a617dc091",
+      "bounds": [
+        162,
+        152,
+        309,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "n",
+      "pass": true,
+      "source_sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8",
+      "normal_sha256": "af3acf3499cb014f6a495c9db9ea1ce447351e229f594d167fb463537327e2b4",
+      "factor": 0.24390243902439024,
+      "head_inliers": 0,
+      "cross_outfit_skull_feature_match": false,
+      "method": "source-hashed manual occluded-body visual alignment; covered skull not verified by features",
+      "manual_body_review_sha256": "b327c21d79a227c2bcbd51a5d03a883ef958ce8abf70396b2c5a9b2a617dc091",
+      "bounds": [
+        148,
+        152,
+        294,
+        392
+      ],
+      "foot_deviation": 0
+    }
+  ],
+  "passed_clips": 64,
+  "failed_clips": 0,
+  "results": [
+    {
+      "asset": "ilyua_set_n_attack1_v81",
+      "source_sha256": "3865e63b4b8d2982c36c97f7087229362dad19b5c13a9ca2372571639a5b6cb9",
+      "direction": "n",
+      "action": "attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4363345940055782,
+          "offset": [
+            -63.59598894817074,
+            -3.7294073337462024
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.7889718354228707,
+          "head_angle": -3.679921034709791,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4363345940055782,
+          "offset": [
+            -55.67029106326221,
+            -5.1034501238567245
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.777957935688588,
+          "head_angle": -3.214627601639853,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4363345940055782,
+          "offset": [
+            -63.64178020198172,
+            -2.0241222846798976
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.793674769733741,
+          "head_angle": -2.308143771703508,
+          "foot_deviation": -2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4363345940055782,
+          "offset": [
+            -55.85685022865855,
+            -1.5534742401867518
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 1.7887623559561907,
+          "head_angle": -2.0084746750299485,
+          "foot_deviation": -1,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          158,
+          152,
+          298,
+          388
+        ],
+        [
+          159,
+          152,
+          298,
+          387
+        ],
+        [
+          156,
+          152,
+          323,
+          390
+        ],
+        [
+          155,
+          152,
+          299,
+          391
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_attack2_v81",
+      "source_sha256": "8cb6495b6ffc86f1fedcae63725a5fb5b0d3e8c758d86a88aeadf58798c4ea50",
+      "direction": "n",
+      "action": "attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.44699276130537813,
+          "offset": [
+            -93.39955995141007,
+            -14.43482487376145
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.8326703213520503,
+          "head_angle": -1.2084578990018418,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44699276130537813,
+          "offset": [
+            -64.74776700647867,
+            -15.670288085937514
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.7861425614864554,
+          "head_angle": -1.678690850331429,
+          "foot_deviation": -6,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44699276130537813,
+          "offset": [
+            -94.5605528296494,
+            -12.533765839367394
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.7629696604271559,
+          "head_angle": 0.35696395090763416,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44699276130537813,
+          "offset": [
+            -64.9510587366616,
+            -12.205307379001539
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.8515292889551256,
+          "head_angle": 1.8665312145574766,
+          "foot_deviation": -7,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          146,
+          125,
+          298,
+          387
+        ],
+        [
+          157,
+          124,
+          299,
+          386
+        ],
+        [
+          151,
+          128,
+          312,
+          384
+        ],
+        [
+          143,
+          150,
+          299,
+          385
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_attack3_v81",
+      "source_sha256": "79d903b4af6ba918e3fe8f1a63c93d2ee0eebe3fd5d0833750650bcea3f3dcc8",
+      "direction": "n",
+      "action": "attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.47374971743532773,
+          "offset": [
+            -103.4888350323933,
+            -36.40510670731709
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.9423738414848437,
+          "head_angle": -0.18045067205247298,
+          "foot_deviation": 0,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.47374971743532773,
+          "offset": [
+            -66.18301614900916,
+            -36.0707159274962
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.98571771828261,
+          "head_angle": 0.07246844785652576,
+          "foot_deviation": 1,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.47374971743532773,
+          "offset": [
+            -101.87771532012196,
+            -18.56255805783157
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.9321236695636066,
+          "head_angle": 1.8386022768121852,
+          "foot_deviation": 6,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.47374971743532773,
+          "offset": [
+            -65.42772842035062,
+            -19.29311166158538
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.8943964859417448,
+          "head_angle": 0.004547789456352438,
+          "foot_deviation": 5,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          150,
+          129,
+          298,
+          392
+        ],
+        [
+          156,
+          124,
+          297,
+          393
+        ],
+        [
+          151,
+          130,
+          303,
+          398
+        ],
+        [
+          137,
+          152,
+          301,
+          397
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_attack4_v81",
+      "source_sha256": "217e3da5552946fd85482440a053683831420e5dd8fdf0f463848d5c9eb51de7",
+      "direction": "n",
+      "action": "attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4098759221390794,
+          "offset": [
+            -65.69229349275916,
+            0.2587414253048621
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.6804912807702257,
+          "head_angle": 1.030426553420259,
+          "foot_deviation": -19,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4098759221390794,
+          "offset": [
+            -51.59211544874239,
+            0.41073385099083737
+          ],
+          "head_inliers": 34,
+          "head_registration_scale": 1.6989115675076771,
+          "head_angle": 0.7341266072445924,
+          "foot_deviation": -19,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4098759221390794,
+          "offset": [
+            -65.05112661966464,
+            4.586193549923763
+          ],
+          "head_inliers": 36,
+          "head_registration_scale": 1.6688817095757649,
+          "head_angle": 1.1388153143918303,
+          "foot_deviation": -19,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4098759221390794,
+          "offset": [
+            -51.786251905487816,
+            5.429781285727877
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.6715135317541783,
+          "head_angle": -1.418464907836091,
+          "foot_deviation": -17,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          149,
+          132,
+          296,
+          373
+        ],
+        [
+          150,
+          134,
+          297,
+          373
+        ],
+        [
+          148,
+          138,
+          298,
+          373
+        ],
+        [
+          140,
+          153,
+          299,
+          375
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_attack5_v82",
+      "source_sha256": "730a4a863f6bf470382560fe33e4013261c833502b74a19637c257b3395f9650",
+      "direction": "n",
+      "action": "attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.5486615271871992,
+          "offset": [
+            -155.96531416730184,
+            -82.49934796589179
+          ],
+          "head_inliers": 11,
+          "head_registration_scale": 2.2495122614675167,
+          "head_angle": 5.30984472621924,
+          "foot_deviation": 2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.5486615271871992,
+          "offset": [
+            -131.15279630335368,
+            -82.67137034346419
+          ],
+          "head_inliers": 10,
+          "head_registration_scale": 2.369502421253036,
+          "head_angle": 5.912516647677594,
+          "foot_deviation": 3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.5486615271871992,
+          "offset": [
+            -163.9563643292683,
+            -64.53453547780109
+          ],
+          "head_inliers": 10,
+          "head_registration_scale": 2.2399075173170075,
+          "head_angle": -1.0622619158595226,
+          "foot_deviation": 2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.5486615271871992,
+          "offset": [
+            -136.172119140625,
+            -64.37694568168828
+          ],
+          "head_inliers": 8,
+          "head_registration_scale": 2.1517633766361755,
+          "head_angle": -1.635720783316455,
+          "foot_deviation": 3,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          154,
+          125,
+          304,
+          394
+        ],
+        [
+          155,
+          124,
+          307,
+          395
+        ],
+        [
+          149,
+          121,
+          327,
+          394
+        ],
+        [
+          135,
+          153,
+          304,
+          395
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_move_attack1_v80",
+      "source_sha256": "8b7e37401baac4596c1372bf672f7fe3065ed84075e41dd21d39c1819439cbec",
+      "direction": "n",
+      "action": "move_attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.42617481114627664,
+          "offset": [
+            -57.23088557545733,
+            2.524999106802575
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 1.7473167256997342,
+          "head_angle": -4.529811733131512,
+          "foot_deviation": -3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42617481114627664,
+          "offset": [
+            -49.06310141958843,
+            1.5219905201981518
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 1.7011427493083562,
+          "head_angle": -0.03947219156879821,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42617481114627664,
+          "offset": [
+            -56.45922256097562,
+            3.0960723132621766
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 1.730065236100156,
+          "head_angle": 0.3360815954149362,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42617481114627664,
+          "offset": [
+            -49.645257717225626,
+            3.650792563833825
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.7154064970219358,
+          "head_angle": -0.2961425183023642,
+          "foot_deviation": -6,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          158,
+          151,
+          297,
+          389
+        ],
+        [
+          158,
+          152,
+          296,
+          388
+        ],
+        [
+          154,
+          151,
+          327,
+          387
+        ],
+        [
+          155,
+          152,
+          297,
+          386
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_move_attack2_v80",
+      "source_sha256": "e36d924aff147b22c50330c44a8fa6ca6f747b953b26f7c40bb234567e2e08f6",
+      "direction": "n",
+      "action": "move_attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4347837062641861,
+          "offset": [
+            -90.70028760956556,
+            -9.02329905440169
+          ],
+          "head_inliers": 30,
+          "head_registration_scale": 1.782613195683163,
+          "head_angle": -1.8760579187021726,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4347837062641861,
+          "offset": [
+            -60.54759551257624,
+            -9.307804758955808
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.7747943277214135,
+          "head_angle": -0.7433828383806833,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4347837062641861,
+          "offset": [
+            -90.36428163109757,
+            -7.428800257240873
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.752294602167317,
+          "head_angle": 0.26632261840279714,
+          "foot_deviation": -13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4347837062641861,
+          "offset": [
+            -65.78694264481709,
+            -7.6236066120427
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.756359196295029,
+          "head_angle": 1.4150168892061195,
+          "foot_deviation": -15,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          147,
+          124,
+          297,
+          383
+        ],
+        [
+          155,
+          125,
+          296,
+          385
+        ],
+        [
+          149,
+          127,
+          311,
+          379
+        ],
+        [
+          150,
+          127,
+          298,
+          377
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_move_attack3_v80",
+      "source_sha256": "088a074e5f2b459e0f6ab43c1806065cd80b6a979769e1f1b77d663ef4269d8b",
+      "direction": "n",
+      "action": "move_attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4644369188012194,
+          "offset": [
+            -97.36617520960367,
+            -31.2936505573552
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.9041913670849995,
+          "head_angle": 1.1352499713683726,
+          "foot_deviation": 0,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4644369188012194,
+          "offset": [
+            -63.49309260670733,
+            -31.982231326219527
+          ],
+          "head_inliers": 17,
+          "head_registration_scale": 1.8734841764114094,
+          "head_angle": 0.9032831787843941,
+          "foot_deviation": 0,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4644369188012194,
+          "offset": [
+            -97.93585651676831,
+            -15.97535221751145
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 1.9364755770481512,
+          "head_angle": -2.8138392748123,
+          "foot_deviation": 0,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4644369188012194,
+          "offset": [
+            -63.376991830221044,
+            -18.226380883193613
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.957902948804375,
+          "head_angle": 2.1489066406584567,
+          "foot_deviation": 0,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          151,
+          127,
+          300,
+          392
+        ],
+        [
+          157,
+          124,
+          301,
+          392
+        ],
+        [
+          152,
+          133,
+          300,
+          392
+        ],
+        [
+          149,
+          139,
+          301,
+          392
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_move_attack4_v80",
+      "source_sha256": "36fbdeeccb54a87f25e8f677158417d0f6f50cc8ad7b630ff9f0dd6a5b20df56",
+      "direction": "n",
+      "action": "move_attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.434507839643537,
+          "offset": [
+            -88.92540015243904,
+            -6.795471191406264
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.7814821425385017,
+          "head_angle": 1.622689557103334,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.434507839643537,
+          "offset": [
+            -54.81216653963416,
+            -6.6232255144817245
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.806523982913834,
+          "head_angle": 1.593043239537207,
+          "foot_deviation": -6,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.434507839643537,
+          "offset": [
+            -88.46867854420734,
+            -5.509899604611299
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.8212342975455673,
+          "head_angle": 0.4362054197175893,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.434507839643537,
+          "offset": [
+            -53.98277319931404,
+            -4.84287466653965
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 1.7470299630951134,
+          "head_angle": -2.000125026684397,
+          "foot_deviation": -10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          145,
+          131,
+          298,
+          385
+        ],
+        [
+          145,
+          131,
+          298,
+          386
+        ],
+        [
+          146,
+          134,
+          303,
+          382
+        ],
+        [
+          134,
+          152,
+          299,
+          382
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_move_attack5_v82",
+      "source_sha256": "6d8ac6ac86a07eacc7c871815592ba17271d543e6c79496205bbf8e5b0c3fced",
+      "direction": "n",
+      "action": "move_attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4354662176195523,
+          "offset": [
+            -89.95549495045734,
+            -6.502413121665413
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.7854114922401645,
+          "head_angle": 1.39489128035584,
+          "foot_deviation": -6,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4354662176195523,
+          "offset": [
+            -55.65192096989331,
+            -6.932882169397885
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.7247337719762028,
+          "head_angle": 1.7138088202104578,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4354662176195523,
+          "offset": [
+            -89.586738400343,
+            -5.289637123666175
+          ],
+          "head_inliers": 14,
+          "head_registration_scale": 1.7002081375510383,
+          "head_angle": -2.0650395904472676,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4354662176195523,
+          "offset": [
+            -55.888886242378064,
+            -5.283459174923799
+          ],
+          "head_inliers": 19,
+          "head_registration_scale": 1.7498799302890053,
+          "head_angle": -2.585566697186918,
+          "foot_deviation": -10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          144,
+          131,
+          299,
+          386
+        ],
+        [
+          143,
+          131,
+          300,
+          387
+        ],
+        [
+          144,
+          135,
+          303,
+          384
+        ],
+        [
+          134,
+          152,
+          300,
+          382
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_skill_cast_v80",
+      "source_sha256": "8e6e79bfdf0d450c88a5177116f5da49027e7490a611892770c94b73f5781e63",
+      "direction": "n",
+      "action": "skill_cast",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.42496997944648734,
+          "offset": [
+            -92.94261504382624,
+            -4.534557807736299
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.7423769157305982,
+          "head_angle": 1.1727646174703006,
+          "foot_deviation": -20,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42496997944648734,
+          "offset": [
+            -43.911644912347576,
+            -3.6104259956173976
+          ],
+          "head_inliers": 25,
+          "head_registration_scale": 1.7702372757345983,
+          "head_angle": -2.339677134491034,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42496997944648734,
+          "offset": [
+            -95.14512076028964,
+            -1.4636334675114497
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.7091352181094712,
+          "head_angle": 1.2759887979346534,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42496997944648734,
+          "offset": [
+            -52.45835318216464,
+            -1.755761123285076
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.6857926701741441,
+          "head_angle": 1.5388763843075626,
+          "foot_deviation": -18,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          149,
+          135,
+          297,
+          372
+        ],
+        [
+          150,
+          137,
+          299,
+          374
+        ],
+        [
+          148,
+          135,
+          314,
+          374
+        ],
+        [
+          148,
+          136,
+          301,
+          374
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_n_walk_v02",
+      "source_sha256": "9cf0387df1d549f93e283e2441ea4e181a2dd4c9702f6de0f1eb37b15a6be819",
+      "direction": "n",
+      "action": "walk",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4576169557997273,
+          "offset": [
+            -98.03702600990854,
+            -14.181461985518308
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.8762295187788818,
+          "head_angle": -1.0713661266841163,
+          "foot_deviation": 14,
+          "torso_residual": [
+            -2.7275569438934326,
+            3.6665456295013428
+          ]
+        },
+        {
+          "scale": 0.4576169557997273,
+          "offset": [
+            -41.30264505525916,
+            -15.22861685403965
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.884358639651739,
+          "head_angle": -0.7577190981809305,
+          "foot_deviation": 9,
+          "torso_residual": [
+            -0.14389410614967346,
+            3.256746768951416
+          ]
+        },
+        {
+          "scale": 0.4576169557997273,
+          "offset": [
+            -104.32998880525916,
+            -8.212164157774403
+          ],
+          "head_inliers": 14,
+          "head_registration_scale": 1.8453721529063531,
+          "head_angle": -0.11160557266690396,
+          "foot_deviation": 4,
+          "torso_residual": [
+            2.0819835662841797,
+            2.517305850982666
+          ]
+        },
+        {
+          "scale": 0.4576169557997273,
+          "offset": [
+            -48.3703077362805,
+            -7.447267113662363
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.86370950209098,
+          "head_angle": -1.4800742506077618,
+          "foot_deviation": 13,
+          "torso_residual": [
+            -1.6148414611816406,
+            0.5340055227279663
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          147,
+          152,
+          298,
+          406
+        ],
+        [
+          147,
+          152,
+          296,
+          401
+        ],
+        [
+          143,
+          151,
+          295,
+          396
+        ],
+        [
+          145,
+          151,
+          299,
+          405
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_attack1_v01",
+      "source_sha256": "16907ff6868e828c575e7601831c42d6b0cd564f669e7b3d41f16fe59d0d9a7c",
+      "direction": "nw",
+      "action": "attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.47554164083561595,
+          "offset": [
+            -155.14223229816463,
+            0.12190723968327788
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 2.064643290627966,
+          "head_angle": -2.0360308420896667,
+          "foot_deviation": 9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.47554164083561595,
+          "offset": [
+            -101.0631110544626,
+            -0.18871836012478482
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 2.0294848459688346,
+          "head_angle": -0.3835921409750573,
+          "foot_deviation": 9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.47554164083561595,
+          "offset": [
+            -155.98631687859887,
+            2.744694510256693
+          ],
+          "head_inliers": 30,
+          "head_registration_scale": 2.04492055706075,
+          "head_angle": -0.7336386196137529,
+          "foot_deviation": 9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.47554164083561595,
+          "offset": [
+            -108.49805062380041,
+            3.2458341455733937
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 2.02943663058924,
+          "head_angle": -0.7626985599791227,
+          "foot_deviation": 10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          134,
+          153,
+          316,
+          401
+        ],
+        [
+          128,
+          153,
+          325,
+          401
+        ],
+        [
+          116,
+          152,
+          331,
+          401
+        ],
+        [
+          131,
+          153,
+          320,
+          402
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_attack2_v02",
+      "source_sha256": "ed1d045bc2672aed1870ef7e9f50d475042e7fed5ca7bf6191eac89868459b71",
+      "direction": "nw",
+      "action": "attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.43676516949630556,
+          "offset": [
+            -83.84460378928746,
+            -15.572396364413413
+          ],
+          "head_inliers": 36,
+          "head_registration_scale": 1.8962887775631265,
+          "head_angle": 1.7236402357393175,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43676516949630556,
+          "offset": [
+            -75.13801958373324,
+            -15.293211484824882
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.8873725692860652,
+          "head_angle": 0.500763633142406,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43676516949630556,
+          "offset": [
+            -88.87215278610847,
+            -10.850194187859909
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.9244797327934757,
+          "head_angle": 1.1962875028413058,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43676516949630556,
+          "offset": [
+            -77.2078494256838,
+            -10.116183758697241
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.968153526431832,
+          "head_angle": 0.639517011245223,
+          "foot_deviation": -10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          124,
+          133,
+          318,
+          380
+        ],
+        [
+          104,
+          134,
+          318,
+          381
+        ],
+        [
+          120,
+          134,
+          316,
+          381
+        ],
+        [
+          119,
+          134,
+          318,
+          382
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_attack3_v01",
+      "source_sha256": "bc8ef5cbb8c40125efdd81ef1cbac466fd56ddd6a5af4fdbaf5bd5664709d186",
+      "direction": "nw",
+      "action": "attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4174716269582231,
+          "offset": [
+            -82.98603946737047,
+            -0.2730241947577028
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.8125226470436184,
+          "head_angle": 4.9956952646223725,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4174716269582231,
+          "offset": [
+            -75.07340900911711,
+            -4.11561019223851
+          ],
+          "head_inliers": 41,
+          "head_registration_scale": 1.7394516467002137,
+          "head_angle": 3.48125252340519,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4174716269582231,
+          "offset": [
+            -84.76025765505041,
+            0.5334271158229136
+          ],
+          "head_inliers": 36,
+          "head_registration_scale": 1.7701615482262945,
+          "head_angle": 2.0487345900732272,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4174716269582231,
+          "offset": [
+            -75.28084887835895,
+            -0.5386641899592384
+          ],
+          "head_inliers": 45,
+          "head_registration_scale": 1.7904776922854966,
+          "head_angle": 2.868342737699541,
+          "foot_deviation": -9,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          115,
+          136,
+          310,
+          388
+        ],
+        [
+          107,
+          132,
+          308,
+          385
+        ],
+        [
+          117,
+          132,
+          314,
+          382
+        ],
+        [
+          113,
+          129,
+          306,
+          383
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_attack4_v02",
+      "source_sha256": "f7f890e92930aef778f817fe52593ee0ba31aa758e6d7494eb12f1722bb8ff1f",
+      "direction": "nw",
+      "action": "attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.46342038957091136,
+          "offset": [
+            -128.63064100737768,
+            -29.32791178697819
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 2.012016858053707,
+          "head_angle": -0.8162628544894799,
+          "foot_deviation": 2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.46342038957091136,
+          "offset": [
+            -116.89666619181864,
+            -29.60574709842853
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 2.0001364199463607,
+          "head_angle": -1.0321440362598717,
+          "foot_deviation": 3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.46342038957091136,
+          "offset": [
+            -129.1214480116363,
+            -27.138174221749065
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 2.0096918822360266,
+          "head_angle": -1.446086608880716,
+          "foot_deviation": 1,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.46342038957091136,
+          "offset": [
+            -120.18410171245205,
+            -26.892819922624785
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 1.9637118091685115,
+          "head_angle": -1.140153050919234,
+          "foot_deviation": 4,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          107,
+          128,
+          306,
+          394
+        ],
+        [
+          103,
+          128,
+          304,
+          395
+        ],
+        [
+          115,
+          126,
+          306,
+          393
+        ],
+        [
+          105,
+          126,
+          305,
+          396
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_attack5_v01",
+      "source_sha256": "bcb860039facdac6189cd92c6442bf5a66d2863794009d80106dbbbae57f5a62",
+      "direction": "nw",
+      "action": "attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.44160627850759643,
+          "offset": [
+            -112.94459647912672,
+            -26.20535553622843
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.9173072591871478,
+          "head_angle": 1.9381772296773188,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44160627850759643,
+          "offset": [
+            -87.68945312500003,
+            -26.139142349448203
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 1.9339546903879978,
+          "head_angle": -0.6310845918694611,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44160627850759643,
+          "offset": [
+            -112.94490575515837,
+            -18.80028921994964
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.882516804112963,
+          "head_angle": 5.722685684596373,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44160627850759643,
+          "offset": [
+            -83.52297077435223,
+            -20.670242397432848
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.975705566620318,
+          "head_angle": 1.6795163728323044,
+          "foot_deviation": -9,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          97,
+          115,
+          308,
+          388
+        ],
+        [
+          93,
+          116,
+          311,
+          388
+        ],
+        [
+          111,
+          119,
+          315,
+          384
+        ],
+        [
+          108,
+          150,
+          318,
+          383
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_move_attack1_v80",
+      "source_sha256": "1c6b541dc8b23d07600dd9ac5bae76280faef6a21ce27b20ef9d44c5162bd74f",
+      "direction": "nw",
+      "action": "move_attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.43062553155142264,
+          "offset": [
+            -82.99625963441702,
+            -17.707314753029056
+          ],
+          "head_inliers": 34,
+          "head_registration_scale": 1.8696325161524265,
+          "head_angle": 0.3411003950761704,
+          "foot_deviation": -17,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43062553155142264,
+          "offset": [
+            -90.53226217610367,
+            -17.43835004048707
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.9123417303422476,
+          "head_angle": 0.5849161833124086,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43062553155142264,
+          "offset": [
+            -82.97563654630521,
+            -14.573526159129104
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.8748475378613854,
+          "head_angle": 0.1709428097811066,
+          "foot_deviation": -17,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43062553155142264,
+          "offset": [
+            -86.15287139365407,
+            -14.407402756118067
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.8510804029259236,
+          "head_angle": -1.1530563853322102,
+          "foot_deviation": -18,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          124,
+          152,
+          307,
+          375
+        ],
+        [
+          99,
+          131,
+          301,
+          374
+        ],
+        [
+          124,
+          142,
+          312,
+          375
+        ],
+        [
+          125,
+          151,
+          302,
+          374
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_move_attack2_v80",
+      "source_sha256": "d3679ffd23da020877ac3f2957883a33a8a8ff0181eab7646cbc591614e23837",
+      "direction": "nw",
+      "action": "move_attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4203081338373882,
+          "offset": [
+            -57.72210986234408,
+            -9.423405447756743
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.8248378144106603,
+          "head_angle": -4.838225968700364,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4203081338373882,
+          "offset": [
+            -57.93040726967373,
+            -10.093142694337837
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.8885255249487993,
+          "head_angle": -4.077673214420233,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4203081338373882,
+          "offset": [
+            -63.999850985184764,
+            -8.53725229801466
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.841205246919156,
+          "head_angle": -3.331902118761539,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4203081338373882,
+          "offset": [
+            -57.664682926463556,
+            -8.685472836192442
+          ],
+          "head_inliers": 25,
+          "head_registration_scale": 1.812027906129824,
+          "head_angle": -5.1689490057271925,
+          "foot_deviation": -19,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          124,
+          131,
+          319,
+          374
+        ],
+        [
+          120,
+          132,
+          318,
+          374
+        ],
+        [
+          129,
+          126,
+          307,
+          376
+        ],
+        [
+          134,
+          124,
+          315,
+          373
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_move_attack3_v80",
+      "source_sha256": "534cd13dc359b25d0bcd7245e592ca7abdea4076480cb51b36eec16725a5f789",
+      "direction": "nw",
+      "action": "move_attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3971599916545715,
+          "offset": [
+            -67.91631178023036,
+            3.7720954294625493
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 1.7243362971002645,
+          "head_angle": -4.19625384587316,
+          "foot_deviation": -22,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3971599916545715,
+          "offset": [
+            -60.734008554762504,
+            2.020208377069313
+          ],
+          "head_inliers": 30,
+          "head_registration_scale": 1.8160217908770284,
+          "head_angle": -4.665109682785463,
+          "foot_deviation": -23,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3971599916545715,
+          "offset": [
+            -69.03721246701059,
+            1.28211409848846
+          ],
+          "head_inliers": 19,
+          "head_registration_scale": 1.790456099048311,
+          "head_angle": -4.379017002243822,
+          "foot_deviation": -27,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3971599916545715,
+          "offset": [
+            -63.46000967190502,
+            0.10683003313937078
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.7809884541869905,
+          "head_angle": -2.490781905544998,
+          "foot_deviation": -28,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          123,
+          142,
+          296,
+          370
+        ],
+        [
+          115,
+          144,
+          294,
+          369
+        ],
+        [
+          130,
+          134,
+          292,
+          365
+        ],
+        [
+          138,
+          130,
+          296,
+          364
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_move_attack4_v80",
+      "source_sha256": "d93dc7cfe18e8c39abbd3810cbfc64827c9464aa60c6934a1cedfe4b2181efc2",
+      "direction": "nw",
+      "action": "move_attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4184222901315203,
+          "offset": [
+            -67.46973124850051,
+            -10.098470676883423
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.8166501096543506,
+          "head_angle": -1.0652542985854057,
+          "foot_deviation": -19,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4184222901315203,
+          "offset": [
+            -76.29755165846932,
+            -9.93652250029993
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.8460235053211096,
+          "head_angle": -1.0246782601279687,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4184222901315203,
+          "offset": [
+            -68.6407487104127,
+            -0.7490000074976244
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.798658807867566,
+          "head_angle": -1.2165053499277465,
+          "foot_deviation": -19,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4184222901315203,
+          "offset": [
+            -75.9177888075816,
+            -0.5029990403071274
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.8007650606730912,
+          "head_angle": -0.38511407574125245,
+          "foot_deviation": -18,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          117,
+          138,
+          292,
+          373
+        ],
+        [
+          113,
+          140,
+          304,
+          374
+        ],
+        [
+          134,
+          139,
+          298,
+          373
+        ],
+        [
+          133,
+          139,
+          299,
+          374
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_move_attack5_v81",
+      "source_sha256": "8f006671008dca0143cdf54b0ab9fc7d397f9ca3fd8ecb6f466396b411bf08e0",
+      "direction": "nw",
+      "action": "move_attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.45011457323363574,
+          "offset": [
+            -115.39482178202978,
+            -27.091867165007223
+          ],
+          "head_inliers": 11,
+          "head_registration_scale": 1.9542474387893685,
+          "head_angle": -1.6862412395644377,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.45011457323363574,
+          "offset": [
+            -109.33514837751923,
+            -26.416787877879106
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 1.9621526831195615,
+          "head_angle": 1.664790425872353,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.45011457323363574,
+          "offset": [
+            -115.65233625239927,
+            -29.360210045285534
+          ],
+          "head_inliers": 13,
+          "head_registration_scale": 1.9169860288688694,
+          "head_angle": -2.326104129028027,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.45011457323363574,
+          "offset": [
+            -110.33686532809503,
+            -28.52201576745444
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 2.0224964649843087,
+          "head_angle": -0.8423813154789873,
+          "foot_deviation": -13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          86,
+          125,
+          304,
+          383
+        ],
+        [
+          91,
+          124,
+          306,
+          385
+        ],
+        [
+          101,
+          119,
+          301,
+          381
+        ],
+        [
+          113,
+          150,
+          299,
+          379
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_skill_cast_v01",
+      "source_sha256": "91db1252a1d1c5a0afe9913955011bd71f23f433dac67e2d43406ba68f5778b7",
+      "direction": "nw",
+      "action": "skill_cast",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.40218930456058805,
+          "offset": [
+            -45.397305362284094,
+            17.909735447156883
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.746171897300553,
+          "head_angle": 4.073546282779769,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40218930456058805,
+          "offset": [
+            -47.04136051463534,
+            9.3686701505518
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.8081798804615468,
+          "head_angle": -0.6536429851760481,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40218930456058805,
+          "offset": [
+            -73.43753561360367,
+            19.174421372660724
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.808547134975152,
+          "head_angle": 0.26323275415153413,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40218930456058805,
+          "offset": [
+            -44.520395348488506,
+            18.074846674064275
+          ],
+          "head_inliers": 25,
+          "head_registration_scale": 1.8318693923280251,
+          "head_angle": 3.487093595608953,
+          "foot_deviation": -15,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          147,
+          153,
+          314,
+          385
+        ],
+        [
+          135,
+          143,
+          314,
+          377
+        ],
+        [
+          130,
+          149,
+          303,
+          376
+        ],
+        [
+          151,
+          150,
+          309,
+          377
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_nw_walk_v01",
+      "source_sha256": "c73983ebed8c9076178b0413ac4cf079edf9b93cc214241fff791c76a0392ce7",
+      "direction": "nw",
+      "action": "walk",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.45213483749541256,
+          "offset": [
+            -59.66170080060468,
+            -11.509851847408854
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.9630187527925829,
+          "head_angle": -1.485726013988783,
+          "foot_deviation": 10,
+          "torso_residual": [
+            -3.0,
+            3.938264846801758
+          ],
+          "rigid_clip_translation": [
+            0.9395861625671387,
+            0
+          ]
+        },
+        {
+          "scale": 0.45213483749541256,
+          "offset": [
+            -28.88870753345016,
+            -11.411361489323442
+          ],
+          "head_inliers": 39,
+          "head_registration_scale": 1.92003241645832,
+          "head_angle": -1.9099318792685782,
+          "foot_deviation": 11,
+          "torso_residual": [
+            -1.2622060775756836,
+            0.3774573504924774
+          ],
+          "rigid_clip_translation": [
+            0.9395861625671387,
+            0
+          ]
+        },
+        {
+          "scale": 0.45213483749541256,
+          "offset": [
+            -70.63574223234652,
+            1.737164576085629
+          ],
+          "head_inliers": 40,
+          "head_registration_scale": 1.956648578137665,
+          "head_angle": -1.7615961506641595,
+          "foot_deviation": 8,
+          "torso_residual": [
+            0.2949705719947815,
+            0.9399250149726868
+          ],
+          "rigid_clip_translation": [
+            0.9395861625671387,
+            0
+          ]
+        },
+        {
+          "scale": 0.45213483749541256,
+          "offset": [
+            -30.25323338517761,
+            -0.07168549814062075
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.9223205522604596,
+          "head_angle": -1.869065912839141,
+          "foot_deviation": 14,
+          "torso_residual": [
+            -0.9921519756317139,
+            0.1351676881313324
+          ],
+          "rigid_clip_translation": [
+            0.9395861625671387,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          165,
+          154,
+          322,
+          402
+        ],
+        [
+          168,
+          153,
+          326,
+          403
+        ],
+        [
+          165,
+          152,
+          325,
+          400
+        ],
+        [
+          166,
+          152,
+          329,
+          406
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_attack1_v81",
+      "source_sha256": "365514ecc553bfb13b1e5133dccab27a0acdc0c9c3b4c80cef49785af08af27d",
+      "direction": "s",
+      "action": "attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.39895020759303174,
+          "offset": [
+            -47.054725646972656,
+            15.770282745361328
+          ],
+          "head_inliers": 43,
+          "head_registration_scale": 1.7304553403880845,
+          "head_angle": 0.5069322070035159,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.39895020759303174,
+          "offset": [
+            -35.20145034790039,
+            15.608123779296875
+          ],
+          "head_inliers": 40,
+          "head_registration_scale": 1.7234751883734678,
+          "head_angle": 0.47105225933356815,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.39895020759303174,
+          "offset": [
+            -50.36408996582031,
+            21.22927474975586
+          ],
+          "head_inliers": 34,
+          "head_registration_scale": 1.6597272134885566,
+          "head_angle": -0.6281326291021508,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.39895020759303174,
+          "offset": [
+            -34.83545684814453,
+            19.477298736572266
+          ],
+          "head_inliers": 36,
+          "head_registration_scale": 1.6628829930071012,
+          "head_angle": 2.0554016500153502,
+          "foot_deviation": -8,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          116,
+          156,
+          312,
+          387
+        ],
+        [
+          114,
+          156,
+          321,
+          387
+        ],
+        [
+          115,
+          156,
+          311,
+          387
+        ],
+        [
+          118,
+          155,
+          322,
+          384
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_attack2_v80",
+      "source_sha256": "a7e781a14800dfb0a6dd5fb43e1b4b1b9d4e910330e3efe5cc81ffc8d6ab7343",
+      "direction": "s",
+      "action": "attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4360069747553703,
+          "offset": [
+            -66.4586410522461,
+            -13.904667854309082
+          ],
+          "head_inliers": 54,
+          "head_registration_scale": 1.8911898867377894,
+          "head_angle": -0.4038457497497737,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4360069747553703,
+          "offset": [
+            -63.639739990234375,
+            -13.851871490478516
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.918997205137382,
+          "head_angle": -2.0949442733676924,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4360069747553703,
+          "offset": [
+            -65.49057006835938,
+            -11.120079040527344
+          ],
+          "head_inliers": 40,
+          "head_registration_scale": 1.8558283494625734,
+          "head_angle": -0.8865034530169118,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4360069747553703,
+          "offset": [
+            -64.36918640136719,
+            -10.541566848754883
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.8593290687226574,
+          "head_angle": 0.9914943822647841,
+          "foot_deviation": -10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          115,
+          158,
+          316,
+          381
+        ],
+        [
+          120,
+          159,
+          320,
+          382
+        ],
+        [
+          116,
+          158,
+          316,
+          382
+        ],
+        [
+          115,
+          158,
+          321,
+          382
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_attack3_v92",
+      "source_sha256": "a725fd04a5a5a850c8a40db13c516474ed400e72b294f650ef6d3f4c1ecbcd30",
+      "direction": "s",
+      "action": "attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3811905529670977,
+          "offset": [
+            -33.57318115234375,
+            11.325119018554688
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.6534224460419171,
+          "head_angle": -0.7342053741760015,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3811905529670977,
+          "offset": [
+            -29.007633209228516,
+            11.55642318725586
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.676904173899056,
+          "head_angle": -2.7322941155968645,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3811905529670977,
+          "offset": [
+            -33.67071533203125,
+            21.744171142578125
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.6419945790177604,
+          "head_angle": -0.6081199892497413,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3811905529670977,
+          "offset": [
+            -29.18349838256836,
+            21.949783325195312
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.6580837693563861,
+          "head_angle": -2.29174534410712,
+          "foot_deviation": -16,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          112,
+          158,
+          319,
+          377
+        ],
+        [
+          112,
+          158,
+          319,
+          377
+        ],
+        [
+          111,
+          158,
+          319,
+          376
+        ],
+        [
+          112,
+          158,
+          319,
+          376
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_attack4_v81",
+      "source_sha256": "a96d8d0b85d6014c413d67326b7eda1b9033fe1a5aafafce2dc51b6178bf4b07",
+      "direction": "s",
+      "action": "attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.40768864024847656,
+          "offset": [
+            -56.6651496887207,
+            12.603225708007812
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.768358485109998,
+          "head_angle": 0.3083371992405436,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40768864024847656,
+          "offset": [
+            -36.521484375,
+            12.435832977294922
+          ],
+          "head_inliers": 37,
+          "head_registration_scale": 1.7249409135764682,
+          "head_angle": 1.0900811991660002,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40768864024847656,
+          "offset": [
+            -56.27562713623047,
+            13.544731140136719
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.7767041571094007,
+          "head_angle": 0.9298989769922278,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40768864024847656,
+          "offset": [
+            -36.941036224365234,
+            14.152786254882812
+          ],
+          "head_inliers": 43,
+          "head_registration_scale": 1.6825422311028573,
+          "head_angle": 0.7715977024901755,
+          "foot_deviation": -2,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          102,
+          155,
+          323,
+          388
+        ],
+        [
+          97,
+          156,
+          322,
+          388
+        ],
+        [
+          102,
+          155,
+          320,
+          387
+        ],
+        [
+          98,
+          156,
+          323,
+          390
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_attack5_v80",
+      "source_sha256": "6f22686faf2f1a3d5a555ac2afbea109d3d25c8feae36923d0448f3692327a46",
+      "direction": "s",
+      "action": "attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.36137168912699996,
+          "offset": [
+            -26.076602935791016,
+            32.188446044921875
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.567457686230321,
+          "head_angle": -0.9205419226261944,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.36137168912699996,
+          "offset": [
+            -8.459381103515625,
+            29.825607299804688
+          ],
+          "head_inliers": 40,
+          "head_registration_scale": 1.5398256242943171,
+          "head_angle": -0.04061884084503614,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.36137168912699996,
+          "offset": [
+            -28.671409606933594,
+            34.893096923828125
+          ],
+          "head_inliers": 34,
+          "head_registration_scale": 1.535459436249831,
+          "head_angle": -0.5974377043733355,
+          "foot_deviation": -22,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.36137168912699996,
+          "offset": [
+            -9.075897216796875,
+            31.82677459716797
+          ],
+          "head_inliers": 25,
+          "head_registration_scale": 1.5209093781435596,
+          "head_angle": 0.8744593219667001,
+          "foot_deviation": -25,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          107,
+          157,
+          314,
+          377
+        ],
+        [
+          117,
+          156,
+          320,
+          374
+        ],
+        [
+          109,
+          157,
+          316,
+          370
+        ],
+        [
+          128,
+          156,
+          319,
+          367
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_move_attack1_v80",
+      "source_sha256": "0d608b8e8205e85060893e830f7c0db6b48c4d23e84e87edda0acb56f8bdc42a",
+      "direction": "s",
+      "action": "move_attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3997223761461535,
+          "offset": [
+            -39.34870910644531,
+            18.03191375732422
+          ],
+          "head_inliers": 34,
+          "head_registration_scale": 1.7338046385486017,
+          "head_angle": 0.6230070268270909,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3997223761461535,
+          "offset": [
+            -38.27830123901367,
+            17.604698181152344
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.7204326668624732,
+          "head_angle": 0.7502419665467543,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3997223761461535,
+          "offset": [
+            -39.75472640991211,
+            18.096778869628906
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.7364980484377772,
+          "head_angle": 1.1879258701793394,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3997223761461535,
+          "offset": [
+            -39.6812744140625,
+            18.317691802978516
+          ],
+          "head_inliers": 50,
+          "head_registration_scale": 1.7299341853001957,
+          "head_angle": 1.0190928141119462,
+          "foot_deviation": -6,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          110,
+          157,
+          317,
+          385
+        ],
+        [
+          111,
+          157,
+          318,
+          384
+        ],
+        [
+          109,
+          157,
+          317,
+          383
+        ],
+        [
+          109,
+          157,
+          316,
+          386
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_move_attack2_v80",
+      "source_sha256": "78794ffca3a22c39f01a8a68f5a639393dca7cf1ba0e7bb2a890c6887e8bb520",
+      "direction": "s",
+      "action": "move_attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4443934849797907,
+          "offset": [
+            -68.1373519897461,
+            -1.6409778594970703
+          ],
+          "head_inliers": 64,
+          "head_registration_scale": 1.9275665601392775,
+          "head_angle": 0.4760116027931431,
+          "foot_deviation": 8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4443934849797907,
+          "offset": [
+            -63.525901794433594,
+            -1.9524402618408203
+          ],
+          "head_inliers": 64,
+          "head_registration_scale": 1.9277808966642265,
+          "head_angle": 1.6092190249812015,
+          "foot_deviation": 10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4443934849797907,
+          "offset": [
+            -71.41082763671875,
+            -1.364980697631836
+          ],
+          "head_inliers": 49,
+          "head_registration_scale": 1.9167079993397662,
+          "head_angle": 1.3460327693347085,
+          "foot_deviation": 5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4443934849797907,
+          "offset": [
+            -63.30717468261719,
+            -1.7644824981689453
+          ],
+          "head_inliers": 52,
+          "head_registration_scale": 1.8974999772092707,
+          "head_angle": 2.0831370060444594,
+          "foot_deviation": 7,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          107,
+          159,
+          321,
+          400
+        ],
+        [
+          115,
+          158,
+          323,
+          402
+        ],
+        [
+          105,
+          158,
+          317,
+          397
+        ],
+        [
+          115,
+          158,
+          324,
+          399
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_move_attack3_v80",
+      "source_sha256": "917b99ce9b5b98b9cede8a833160532744093e86abfd85eab78062b9d770b9fe",
+      "direction": "s",
+      "action": "move_attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3937253331451228,
+          "offset": [
+            -41.507965087890625,
+            12.940067291259766
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.7077923320247341,
+          "head_angle": -3.350502625091492,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3937253331451228,
+          "offset": [
+            -47.37462615966797,
+            12.831478118896484
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.7479577275211977,
+          "head_angle": -2.514889664883036,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3937253331451228,
+          "offset": [
+            -39.19855880737305,
+            18.62145233154297
+          ],
+          "head_inliers": 39,
+          "head_registration_scale": 1.7564799554037922,
+          "head_angle": -1.7984553983251792,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3937253331451228,
+          "offset": [
+            -45.68043899536133,
+            18.331073760986328
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.7359821927752754,
+          "head_angle": -0.7358782036634548,
+          "foot_deviation": -13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          120,
+          161,
+          310,
+          376
+        ],
+        [
+          121,
+          162,
+          306,
+          377
+        ],
+        [
+          123,
+          161,
+          312,
+          376
+        ],
+        [
+          123,
+          161,
+          310,
+          379
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_move_attack4_v80",
+      "source_sha256": "61ac27fa9f7d1286a8ee48d3ca6f1d5d327857cc5c88729a898e657ebfdb2edc",
+      "direction": "s",
+      "action": "move_attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.43383060603251206,
+          "offset": [
+            -61.996986389160156,
+            -5.869098663330078
+          ],
+          "head_inliers": 48,
+          "head_registration_scale": 1.881749839314715,
+          "head_angle": -0.2239431028787708,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43383060603251206,
+          "offset": [
+            -57.605796813964844,
+            -6.022483825683594
+          ],
+          "head_inliers": 49,
+          "head_registration_scale": 1.8850718765222751,
+          "head_angle": 0.21038724199751527,
+          "foot_deviation": -5,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43383060603251206,
+          "offset": [
+            -62.78862762451172,
+            3.929431915283203
+          ],
+          "head_inliers": 42,
+          "head_registration_scale": 1.8602081651621947,
+          "head_angle": 0.7967937592752462,
+          "foot_deviation": -1,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43383060603251206,
+          "offset": [
+            -58.67692947387695,
+            3.573883056640625
+          ],
+          "head_inliers": 46,
+          "head_registration_scale": 1.8426863129336464,
+          "head_angle": 0.6143798873130695,
+          "foot_deviation": -2,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          114,
+          158,
+          331,
+          384
+        ],
+        [
+          115,
+          158,
+          332,
+          387
+        ],
+        [
+          111,
+          157,
+          331,
+          391
+        ],
+        [
+          114,
+          157,
+          333,
+          390
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_move_attack5_v80",
+      "source_sha256": "918f74906d9eea76ce00e547cdd0334ea4ebcc3a51a0c0b83777992e55b6cd4d",
+      "direction": "s",
+      "action": "move_attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.40109321583923035,
+          "offset": [
+            -50.48988723754883,
+            8.836456298828125
+          ],
+          "head_inliers": 36,
+          "head_registration_scale": 1.7397506860065357,
+          "head_angle": -1.8871971161438172,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40109321583923035,
+          "offset": [
+            -41.96804428100586,
+            7.029516220092773
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.698513637090699,
+          "head_angle": -3.001587291149928,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40109321583923035,
+          "offset": [
+            -48.3790283203125,
+            11.637237548828125
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 1.783563711550334,
+          "head_angle": -2.8090198444971897,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40109321583923035,
+          "offset": [
+            -45.680213928222656,
+            12.84829330444336
+          ],
+          "head_inliers": 30,
+          "head_registration_scale": 1.6804576000292875,
+          "head_angle": -3.0679293695687346,
+          "foot_deviation": -10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          109,
+          162,
+          311,
+          380
+        ],
+        [
+          111,
+          162,
+          310,
+          381
+        ],
+        [
+          108,
+          160,
+          315,
+          381
+        ],
+        [
+          109,
+          162,
+          313,
+          382
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_skill_cast_v01",
+      "source_sha256": "d37ee69b89862cf9d89a9b34fb676f24d4d178273fa03b2f23e3770e004cfde4",
+      "direction": "s",
+      "action": "skill_cast",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3759499094996524,
+          "offset": [
+            -42.615638732910156,
+            28.284374237060547
+          ],
+          "head_inliers": 37,
+          "head_registration_scale": 1.6306910392079055,
+          "head_angle": -4.287480524934982,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3759499094996524,
+          "offset": [
+            -13.738815307617188,
+            25.665328979492188
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.6275967233006094,
+          "head_angle": -1.7623219278084363,
+          "foot_deviation": -17,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3759499094996524,
+          "offset": [
+            -42.920806884765625,
+            33.90275573730469
+          ],
+          "head_inliers": 44,
+          "head_registration_scale": 1.5932976236177119,
+          "head_angle": -1.2708737108945094,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3759499094996524,
+          "offset": [
+            -12.457489013671875,
+            33.3032341003418
+          ],
+          "head_inliers": 63,
+          "head_registration_scale": 1.602649576470353,
+          "head_angle": -2.6890751359726193,
+          "foot_deviation": -17,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          133,
+          159,
+          290,
+          377
+        ],
+        [
+          138,
+          158,
+          299,
+          375
+        ],
+        [
+          139,
+          157,
+          302,
+          376
+        ],
+        [
+          140,
+          157,
+          305,
+          375
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_s_walk_v01",
+      "source_sha256": "a96ba57b71c071d53943a77a60ff8fa204d0c4d73e59e80d4baf87de00ecb46c",
+      "direction": "s",
+      "action": "walk",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.39210407834660577,
+          "offset": [
+            -55.46808624267578,
+            17.410964965820312
+          ],
+          "head_inliers": 80,
+          "head_registration_scale": 1.7007601035139384,
+          "head_angle": 0.006512039138668499,
+          "foot_deviation": -5,
+          "torso_residual": [
+            0.20923517644405365,
+            2.5370302200317383
+          ]
+        },
+        {
+          "scale": 0.39210407834660577,
+          "offset": [
+            -16.037094116210938,
+            17.462345123291016
+          ],
+          "head_inliers": 81,
+          "head_registration_scale": 1.704728009949879,
+          "head_angle": 0.4802617275207173,
+          "foot_deviation": -12,
+          "torso_residual": [
+            -0.12844404578208923,
+            2.414334297180176
+          ]
+        },
+        {
+          "scale": 0.39210407834660577,
+          "offset": [
+            -56.34373092651367,
+            28.198932647705078
+          ],
+          "head_inliers": 68,
+          "head_registration_scale": 1.6922453029754054,
+          "head_angle": 0.10584829870220358,
+          "foot_deviation": -8,
+          "torso_residual": [
+            0.25922393798828125,
+            1.9528616666793823
+          ]
+        },
+        {
+          "scale": 0.39210407834660577,
+          "offset": [
+            -16.253406524658203,
+            28.12887191772461
+          ],
+          "head_inliers": 70,
+          "head_registration_scale": 1.7111033450925706,
+          "head_angle": 0.29822643840111085,
+          "foot_deviation": -8,
+          "torso_residual": [
+            -0.5632443428039551,
+            2.5515730381011963
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          126,
+          157,
+          295,
+          387
+        ],
+        [
+          126,
+          157,
+          296,
+          380
+        ],
+        [
+          126,
+          157,
+          297,
+          384
+        ],
+        [
+          125,
+          157,
+          296,
+          384
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_attack1_v01",
+      "source_sha256": "6114206b73e03da4d1b42439fa14c5ce57234f535ebb730004a8226dbed4fe99",
+      "direction": "sw",
+      "action": "attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.42662860795363494,
+          "offset": [
+            -169.46533203125,
+            49.388492584228516
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 2.0085927177663216,
+          "head_angle": -2.007494281132609,
+          "foot_deviation": -17,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42662860795363494,
+          "offset": [
+            -110.63904571533203,
+            49.28339767456055
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.93188483953112,
+          "head_angle": -0.8933265696487559,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42662860795363494,
+          "offset": [
+            -165.43392944335938,
+            54.42961120605469
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.908442536530411,
+          "head_angle": -4.014378261268408,
+          "foot_deviation": -14,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.42662860795363494,
+          "offset": [
+            -121.84689331054688,
+            53.91031265258789
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.9357642405231201,
+          "head_angle": -3.5703389749079064,
+          "foot_deviation": -14,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          118,
+          170,
+          304,
+          375
+        ],
+        [
+          105,
+          170,
+          308,
+          376
+        ],
+        [
+          113,
+          171,
+          312,
+          378
+        ],
+        [
+          97,
+          170,
+          302,
+          378
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_attack2_v81",
+      "source_sha256": "364621e4b301aef9528709cb83d6d4140788b32cbc03571921c2f9d17e30880d",
+      "direction": "sw",
+      "action": "attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4300646767563707,
+          "offset": [
+            -172.8358154296875,
+            47.75425338745117
+          ],
+          "head_inliers": 19,
+          "head_registration_scale": 2.0247699329043867,
+          "head_angle": -2.010207896847888,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4300646767563707,
+          "offset": [
+            -113.53621673583984,
+            48.22994613647461
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 1.9639820108908885,
+          "head_angle": -0.6270266803350265,
+          "foot_deviation": -14,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4300646767563707,
+          "offset": [
+            -169.99642944335938,
+            53.526512145996094
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 1.9965974850274748,
+          "head_angle": -6.083175076211271,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4300646767563707,
+          "offset": [
+            -116.75904083251953,
+            52.12641143798828
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.9159188994186478,
+          "head_angle": -2.2660351531712974,
+          "foot_deviation": -13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          103,
+          166,
+          306,
+          376
+        ],
+        [
+          100,
+          170,
+          308,
+          378
+        ],
+        [
+          107,
+          160,
+          313,
+          381
+        ],
+        [
+          103,
+          155,
+          308,
+          379
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_attack3_v01",
+      "source_sha256": "3f5732c3198c425133939bb174437eba7f8fa6b031602b3608f5da52f95509b0",
+      "direction": "sw",
+      "action": "attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.44147981526292374,
+          "offset": [
+            -177.5332794189453,
+            47.05595016479492
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 2.0785130801033858,
+          "head_angle": -2.821673133525032,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44147981526292374,
+          "offset": [
+            -124.66072082519531,
+            44.282928466796875
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.9885158379804555,
+          "head_angle": 0.6119189534461347,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44147981526292374,
+          "offset": [
+            -177.61209106445312,
+            50.699371337890625
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 2.085075446124882,
+          "head_angle": -4.900633853397422,
+          "foot_deviation": -6,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.44147981526292374,
+          "offset": [
+            -124.76380920410156,
+            48.39142608642578
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 2.011694931192934,
+          "head_angle": -4.327314408785624,
+          "foot_deviation": -9,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          98,
+          169,
+          314,
+          385
+        ],
+        [
+          98,
+          167,
+          318,
+          383
+        ],
+        [
+          111,
+          169,
+          330,
+          386
+        ],
+        [
+          107,
+          167,
+          319,
+          383
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_attack4_v91",
+      "source_sha256": "5a933ca7ec582b9cde35173c986ee95cdfa7f63ee8c78c35e95956cb574b9ff0",
+      "direction": "sw",
+      "action": "attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.43036875680994674,
+          "offset": [
+            -170.19361877441406,
+            51.56479263305664
+          ],
+          "head_inliers": 14,
+          "head_registration_scale": 2.0262015597804193,
+          "head_angle": -3.7355987160338033,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43036875680994674,
+          "offset": [
+            -128.46969604492188,
+            51.00433349609375
+          ],
+          "head_inliers": 14,
+          "head_registration_scale": 2.005333800213434,
+          "head_angle": -3.249359240450619,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43036875680994674,
+          "offset": [
+            -170.07069396972656,
+            53.95582962036133
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 2.0142783361491254,
+          "head_angle": -1.93598185029613,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.43036875680994674,
+          "offset": [
+            -128.2698974609375,
+            53.27134323120117
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 2.0507443696605976,
+          "head_angle": -4.897849341451468,
+          "foot_deviation": -11,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          79,
+          166,
+          313,
+          382
+        ],
+        [
+          82,
+          165,
+          317,
+          382
+        ],
+        [
+          105,
+          166,
+          326,
+          382
+        ],
+        [
+          99,
+          164,
+          315,
+          381
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_attack5_v01",
+      "source_sha256": "e2059a1543ab92492d41978e2f669567d35c3c1b5975390106d8e4f8c8530add",
+      "direction": "sw",
+      "action": "attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4240532907368525,
+          "offset": [
+            -161.91036987304688,
+            57.447052001953125
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.9964679720011955,
+          "head_angle": -4.844863015760023,
+          "foot_deviation": -14,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4240532907368525,
+          "offset": [
+            -104.67268371582031,
+            58.39781951904297
+          ],
+          "head_inliers": 19,
+          "head_registration_scale": 1.9496508073273893,
+          "head_angle": -6.23324717673726,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4240532907368525,
+          "offset": [
+            -166.78668212890625,
+            64.14271545410156
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.9315763856404802,
+          "head_angle": -4.373817887888806,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4240532907368525,
+          "offset": [
+            -103.85302734375,
+            60.87278366088867
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.8782431140825169,
+          "head_angle": -5.174324818947662,
+          "foot_deviation": -10,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          111,
+          170,
+          301,
+          378
+        ],
+        [
+          98,
+          169,
+          300,
+          381
+        ],
+        [
+          118,
+          164,
+          313,
+          385
+        ],
+        [
+          119,
+          169,
+          314,
+          382
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_move_attack1_v96",
+      "source_sha256": "cd1d2f7e0b884da3b43b2e99343cae76f34f184719f80dc7cfa0087f40f69e50",
+      "direction": "sw",
+      "action": "move_attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4111946799131942,
+          "offset": [
+            -91.16707611083984,
+            40.213356018066406
+          ],
+          "head_inliers": 13,
+          "head_registration_scale": 1.9359288717639274,
+          "head_angle": -5.267639658882291,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4111946799131942,
+          "offset": [
+            -91.5645751953125,
+            40.26508331298828
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 1.923798172384126,
+          "head_angle": -4.449518565955447,
+          "foot_deviation": -13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4111946799131942,
+          "offset": [
+            -90.3573989868164,
+            47.10357666015625
+          ],
+          "head_inliers": 11,
+          "head_registration_scale": 1.8969576877084828,
+          "head_angle": -2.3319755698073723,
+          "foot_deviation": -20,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4111946799131942,
+          "offset": [
+            -91.43218994140625,
+            47.164581298828125
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.9031093908607433,
+          "head_angle": -3.3660249921576235,
+          "foot_deviation": -20,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          141,
+          170,
+          297,
+          376
+        ],
+        [
+          123,
+          169,
+          303,
+          379
+        ],
+        [
+          133,
+          169,
+          311,
+          372
+        ],
+        [
+          131,
+          168,
+          300,
+          372
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_move_attack2_v96",
+      "source_sha256": "55be9f7a2b1bdc8fe725276e7b4eae70a5d20128cd4843432a4438674f9fed79",
+      "direction": "sw",
+      "action": "move_attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4195808034675183,
+          "offset": [
+            -97.35470581054688,
+            36.123558044433594
+          ],
+          "head_inliers": 16,
+          "head_registration_scale": 1.975411237426885,
+          "head_angle": -4.283011061292681,
+          "foot_deviation": -14,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4195808034675183,
+          "offset": [
+            -99.14146423339844,
+            36.85383224487305
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 1.901254008613968,
+          "head_angle": -3.5035977735251187,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4195808034675183,
+          "offset": [
+            -96.12611389160156,
+            43.75090026855469
+          ],
+          "head_inliers": 9,
+          "head_registration_scale": 1.931975257369726,
+          "head_angle": -2.1203003211815146,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4195808034675183,
+          "offset": [
+            -98.80796813964844,
+            44.97034454345703
+          ],
+          "head_inliers": 13,
+          "head_registration_scale": 1.9453455251196263,
+          "head_angle": -4.264175873850416,
+          "foot_deviation": -14,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          130,
+          168,
+          306,
+          378
+        ],
+        [
+          119,
+          167,
+          304,
+          381
+        ],
+        [
+          133,
+          168,
+          315,
+          376
+        ],
+        [
+          132,
+          169,
+          304,
+          378
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_move_attack3_v95",
+      "source_sha256": "5787b13058edb55bacabb946533d4a837572aa1057c73d166e9a90b3889d8323",
+      "direction": "sw",
+      "action": "move_attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.423325810195677,
+          "offset": [
+            -99.8114013671875,
+            34.360923767089844
+          ],
+          "head_inliers": 17,
+          "head_registration_scale": 1.9930429505889404,
+          "head_angle": -4.401462472542751,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.423325810195677,
+          "offset": [
+            -100.08009338378906,
+            35.16870880126953
+          ],
+          "head_inliers": 17,
+          "head_registration_scale": 1.9207280500765114,
+          "head_angle": -2.717708650261126,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.423325810195677,
+          "offset": [
+            -99.27326965332031,
+            41.867855072021484
+          ],
+          "head_inliers": 11,
+          "head_registration_scale": 1.9821154950803568,
+          "head_angle": -4.3716087211151,
+          "foot_deviation": -15,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.423325810195677,
+          "offset": [
+            -100.3212890625,
+            42.29888916015625
+          ],
+          "head_inliers": 12,
+          "head_registration_scale": 1.886626483249681,
+          "head_angle": -3.2962639931191475,
+          "foot_deviation": -15,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          161,
+          168,
+          302,
+          380
+        ],
+        [
+          120,
+          168,
+          304,
+          383
+        ],
+        [
+          133,
+          168,
+          315,
+          377
+        ],
+        [
+          133,
+          167,
+          304,
+          377
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_move_attack4_v97",
+      "source_sha256": "56f182864c1b58fb864787f8453472bf34dd601666cfbf1fd76f327550836563",
+      "direction": "sw",
+      "action": "move_attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4058419701795698,
+          "offset": [
+            -87.00942993164062,
+            42.15091323852539
+          ],
+          "head_inliers": 9,
+          "head_registration_scale": 1.910727997769928,
+          "head_angle": -3.929170057045061,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4058419701795698,
+          "offset": [
+            -88.30584716796875,
+            43.110260009765625
+          ],
+          "head_inliers": 9,
+          "head_registration_scale": 1.892654811113039,
+          "head_angle": -4.122714877716201,
+          "foot_deviation": -14,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4058419701795698,
+          "offset": [
+            -86.44010162353516,
+            49.45280456542969
+          ],
+          "head_inliers": 10,
+          "head_registration_scale": 1.8869443458630835,
+          "head_angle": -3.2984754530629665,
+          "foot_deviation": -21,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4058419701795698,
+          "offset": [
+            -88.44699096679688,
+            49.60403823852539
+          ],
+          "head_inliers": 12,
+          "head_registration_scale": 1.8735576126624383,
+          "head_angle": -2.9638556848212954,
+          "foot_deviation": -20,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          133,
+          168,
+          304,
+          374
+        ],
+        [
+          121,
+          169,
+          303,
+          378
+        ],
+        [
+          134,
+          170,
+          311,
+          371
+        ],
+        [
+          134,
+          169,
+          303,
+          372
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_move_attack5_v96",
+      "source_sha256": "c404dbcc529c83e8472089f7ea596a444bcdbbc1b22d64f1968ba3a39928b6e8",
+      "direction": "sw",
+      "action": "move_attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.41330144868608326,
+          "offset": [
+            -97.00692749023438,
+            39.58027267456055
+          ],
+          "head_inliers": 13,
+          "head_registration_scale": 1.9458476637444746,
+          "head_angle": -3.276985179965675,
+          "foot_deviation": -16,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.41330144868608326,
+          "offset": [
+            -94.72093200683594,
+            39.134544372558594
+          ],
+          "head_inliers": 14,
+          "head_registration_scale": 1.8443649499878891,
+          "head_angle": -2.8968721535028688,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.41330144868608326,
+          "offset": [
+            -95.14141845703125,
+            45.7255973815918
+          ],
+          "head_inliers": 9,
+          "head_registration_scale": 1.9832408478188825,
+          "head_angle": -3.66713366458856,
+          "foot_deviation": -18,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.41330144868608326,
+          "offset": [
+            -93.61308288574219,
+            44.88260269165039
+          ],
+          "head_inliers": 14,
+          "head_registration_scale": 1.8960447186511262,
+          "head_angle": -2.797804319692528,
+          "foot_deviation": -19,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          128,
+          166,
+          303,
+          376
+        ],
+        [
+          119,
+          165,
+          303,
+          380
+        ],
+        [
+          132,
+          168,
+          314,
+          374
+        ],
+        [
+          132,
+          167,
+          302,
+          373
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_skill_cast_v01",
+      "source_sha256": "e9997904539423e795e1390c588182e8f9d5b06675df98820c1192b99a208c68",
+      "direction": "sw",
+      "action": "skill_cast",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.4353813869653069,
+          "offset": [
+            -131.26321411132812,
+            39.7015380859375
+          ],
+          "head_inliers": 45,
+          "head_registration_scale": 2.0498013190070825,
+          "head_angle": -1.2255281656346038,
+          "foot_deviation": -2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4353813869653069,
+          "offset": [
+            -64.29899597167969,
+            37.665409088134766
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 2.0325043122392397,
+          "head_angle": 2.618812283034123,
+          "foot_deviation": -3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4353813869653069,
+          "offset": [
+            -138.63775634765625,
+            42.29426956176758
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 2.0233896234382014,
+          "head_angle": -3.219037275501139,
+          "foot_deviation": -7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4353813869653069,
+          "offset": [
+            -64.8775405883789,
+            41.26264572143555
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 2.103341667098734,
+          "head_angle": 0.49683267037735546,
+          "foot_deviation": -3,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          158,
+          170,
+          305,
+          390
+        ],
+        [
+          140,
+          168,
+          296,
+          389
+        ],
+        [
+          138,
+          169,
+          300,
+          385
+        ],
+        [
+          160,
+          168,
+          304,
+          389
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_sw_walk_v97",
+      "source_sha256": "83ad27db255a7c0d7fb53150c6104fca6934ec3a0d521abd02b5cca5681c2566",
+      "direction": "sw",
+      "action": "walk",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.21222902955195186,
+          "offset": [
+            -45.962684631347656,
+            8.101696014404297
+          ],
+          "head_inliers": 109,
+          "head_registration_scale": 0.9991868227059713,
+          "head_angle": -0.03618236698874796,
+          "foot_deviation": 0,
+          "torso_residual": [
+            -0.014986353926360607,
+            0.06253820657730103
+          ]
+        },
+        {
+          "scale": 0.21222902955195186,
+          "offset": [
+            -45.97513198852539,
+            8.14549446105957
+          ],
+          "head_inliers": 106,
+          "head_registration_scale": 0.9983316681925415,
+          "head_angle": -0.05695521099130189,
+          "foot_deviation": 0,
+          "torso_residual": [
+            -0.004744814243167639,
+            0.09354155510663986
+          ]
+        },
+        {
+          "scale": 0.21222902955195186,
+          "offset": [
+            -46.01276397705078,
+            8.124914169311523
+          ],
+          "head_inliers": 112,
+          "head_registration_scale": 0.9981800127999525,
+          "head_angle": 0.0008605365504557768,
+          "foot_deviation": 4,
+          "torso_residual": [
+            0.005483760964125395,
+            0.054720934480428696
+          ]
+        },
+        {
+          "scale": 0.21222902955195186,
+          "offset": [
+            -45.97593307495117,
+            8.133146286010742
+          ],
+          "head_inliers": 106,
+          "head_registration_scale": 0.9990137360944816,
+          "head_angle": -0.0194622766395629,
+          "foot_deviation": -3,
+          "torso_residual": [
+            0.029778247699141502,
+            0.033719297498464584
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          161,
+          169,
+          308,
+          392
+        ],
+        [
+          161,
+          169,
+          308,
+          392
+        ],
+        [
+          160,
+          169,
+          308,
+          396
+        ],
+        [
+          161,
+          169,
+          308,
+          389
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_utility_death_v01",
+      "source_sha256": "ecdda8465ad201bdcebc82e5c23cdeec69d6aa270d19e6288436a1fc0eaa3fbe",
+      "direction": "utility",
+      "action": "death",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3525399491053239,
+          "offset": [
+            -46.750680912888754,
+            93.75120305689597
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 1.5052924868664752,
+          "head_angle": -1.001664813667754,
+          "foot_deviation": 0,
+          "torso_residual": null,
+          "registration": "upright bridge scale, authored collapse, floor contact"
+        },
+        {
+          "scale": 0.3525399491053239,
+          "offset": [
+            -46.750680912888754,
+            96.21898270063326
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 1.422045106048784,
+          "head_angle": -0.012702664972683674,
+          "foot_deviation": 0,
+          "torso_residual": null,
+          "registration": "upright bridge scale, authored collapse, floor contact"
+        },
+        {
+          "scale": 0.3525399491053239,
+          "offset": [
+            -46.750680912888754,
+            134.9983771022189
+          ],
+          "head_inliers": 12,
+          "head_registration_scale": 1.441132607546423,
+          "head_angle": 10.251142107514235,
+          "foot_deviation": 0,
+          "torso_residual": null,
+          "registration": "upright bridge scale, authored collapse, floor contact"
+        },
+        {
+          "scale": 0.3525399491053239,
+          "offset": [
+            -46.750680912888754,
+            135.3509170513242
+          ],
+          "head_inliers": 0,
+          "head_registration_scale": null,
+          "head_angle": null,
+          "foot_deviation": 0,
+          "torso_residual": null,
+          "registration": "upright bridge scale, authored collapse, floor contact"
+        }
+      ],
+      "bounds": [
+        [
+          152,
+          190,
+          331,
+          392
+        ],
+        [
+          117,
+          234,
+          329,
+          392
+        ],
+        [
+          123,
+          251,
+          355,
+          392
+        ],
+        [
+          93,
+          293,
+          342,
+          392
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_utility_hurt_v80",
+      "source_sha256": "7d6d1d3283170d9593a6f2e6400e063d3b941767481f6e91b07f0a5c771f8018",
+      "direction": "utility",
+      "action": "hurt",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.39114988303847836,
+          "offset": [
+            -37.794307708740234,
+            15.392936706542969
+          ],
+          "head_inliers": 48,
+          "head_registration_scale": 1.6701510897439178,
+          "head_angle": -0.22239893644449213,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.39114988303847836,
+          "offset": [
+            -16.576332092285156,
+            14.555831909179688
+          ],
+          "head_inliers": 47,
+          "head_registration_scale": 1.6752236267672498,
+          "head_angle": 1.2702755227248475,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.39114988303847836,
+          "offset": [
+            -37.372642517089844,
+            29.518062591552734
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.6971877282774264,
+          "head_angle": 0.4580888767876378,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.39114988303847836,
+          "offset": [
+            -19.100589752197266,
+            28.37433624267578
+          ],
+          "head_inliers": 41,
+          "head_registration_scale": 1.6233954203617837,
+          "head_angle": 0.19008210523155472,
+          "foot_deviation": -11,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          158,
+          157,
+          310,
+          382
+        ],
+        [
+          158,
+          157,
+          309,
+          381
+        ],
+        [
+          158,
+          158,
+          311,
+          382
+        ],
+        [
+          157,
+          156,
+          310,
+          381
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_utility_interact_v91",
+      "source_sha256": "748e46953198ea1082cee0501b7be501bd0a64e249f6eb5ee411bcbc236cb214",
+      "direction": "utility",
+      "action": "interact",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3840634231853896,
+          "offset": [
+            -33.181095123291016,
+            18.140380859375
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.6398929734583545,
+          "head_angle": -0.43380433679286595,
+          "foot_deviation": -13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3840634231853896,
+          "offset": [
+            -12.189334869384766,
+            18.130619049072266
+          ],
+          "head_inliers": 34,
+          "head_registration_scale": 1.6805170433437686,
+          "head_angle": 1.5479507628998066,
+          "foot_deviation": -13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3840634231853896,
+          "offset": [
+            -33.14714813232422,
+            32.57037353515625
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.6438176148871075,
+          "head_angle": 1.0471740470357285,
+          "foot_deviation": -13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3840634231853896,
+          "offset": [
+            -14.885726928710938,
+            31.040538787841797
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.6131192771144949,
+          "head_angle": 0.04275864995922339,
+          "foot_deviation": -13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          159,
+          158,
+          309,
+          379
+        ],
+        [
+          160,
+          158,
+          310,
+          379
+        ],
+        [
+          159,
+          158,
+          310,
+          379
+        ],
+        [
+          158,
+          157,
+          309,
+          379
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_utility_prayer_v90",
+      "source_sha256": "aec13f57a461e9e50936bd0e4d47bade74f5c634c1a33cb0f4b9947040241996",
+      "direction": "utility",
+      "action": "prayer",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3874224374139281,
+          "offset": [
+            -35.058143615722656,
+            16.979312896728516
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.654235458315258,
+          "head_angle": -0.5328080323012343,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3874224374139281,
+          "offset": [
+            -14.308887481689453,
+            16.14012908935547
+          ],
+          "head_inliers": 37,
+          "head_registration_scale": 1.681014870528261,
+          "head_angle": 0.8739177022410248,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3874224374139281,
+          "offset": [
+            -35.36338806152344,
+            30.46990203857422
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.6646714811916707,
+          "head_angle": 1.7643608418132004,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3874224374139281,
+          "offset": [
+            -17.71419906616211,
+            29.1966552734375
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.6330594412084358,
+          "head_angle": -0.3093879976643395,
+          "foot_deviation": -12,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          158,
+          158,
+          310,
+          381
+        ],
+        [
+          159,
+          158,
+          311,
+          380
+        ],
+        [
+          158,
+          158,
+          311,
+          380
+        ],
+        [
+          156,
+          157,
+          310,
+          380
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_attack1_v01",
+      "source_sha256": "3e21f872cbf526a0d25379a36d930add00491af3df5a3a2b7b663dc3a6452de0",
+      "direction": "w",
+      "action": "attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.38399020345337853,
+          "offset": [
+            -51.626686096191406,
+            32.99374008178711
+          ],
+          "head_inliers": 54,
+          "head_registration_scale": 1.6395803362302437,
+          "head_angle": 3.0143183866746868,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38399020345337853,
+          "offset": [
+            -36.37617874145508,
+            31.658172607421875
+          ],
+          "head_inliers": 47,
+          "head_registration_scale": 1.5649858344955068,
+          "head_angle": 1.268896774451749,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38399020345337853,
+          "offset": [
+            -53.80158615112305,
+            36.282135009765625
+          ],
+          "head_inliers": 46,
+          "head_registration_scale": 1.597067591593593,
+          "head_angle": 1.863166027840005,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38399020345337853,
+          "offset": [
+            -34.50872802734375,
+            34.682640075683594
+          ],
+          "head_inliers": 48,
+          "head_registration_scale": 1.5890537750513647,
+          "head_angle": 4.133626640122797,
+          "foot_deviation": -13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          138,
+          157,
+          320,
+          383
+        ],
+        [
+          109,
+          156,
+          315,
+          382
+        ],
+        [
+          126,
+          157,
+          322,
+          380
+        ],
+        [
+          114,
+          157,
+          320,
+          379
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_attack2_v92",
+      "source_sha256": "7d76b6b138a6e1c4a6abb613bdc9514cda27bc81c1198e637424799e5fc24687",
+      "direction": "w",
+      "action": "attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.38418008626326616,
+          "offset": [
+            -51.510231018066406,
+            32.53255081176758
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.640391107230337,
+          "head_angle": 3.1111650175312966,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38418008626326616,
+          "offset": [
+            -36.215023040771484,
+            30.5966796875
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.5546014870237548,
+          "head_angle": 1.7162906018745383,
+          "foot_deviation": -10,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38418008626326616,
+          "offset": [
+            -54.113162994384766,
+            36.65467071533203
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.5757565801749636,
+          "head_angle": 1.689768554473072,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38418008626326616,
+          "offset": [
+            -35.05715560913086,
+            33.89746856689453
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.5778519141632776,
+          "head_angle": 4.369774459467831,
+          "foot_deviation": -13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          110,
+          157,
+          321,
+          384
+        ],
+        [
+          109,
+          155,
+          317,
+          382
+        ],
+        [
+          124,
+          157,
+          323,
+          381
+        ],
+        [
+          122,
+          155,
+          320,
+          379
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_attack3_v92",
+      "source_sha256": "55fbbf099089a272607ac48c402825775a2c63a9330cbdb76ecf274c4a5aaf9a",
+      "direction": "w",
+      "action": "attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3827426426625756,
+          "offset": [
+            -50.842735290527344,
+            33.64229965209961
+          ],
+          "head_inliers": 39,
+          "head_registration_scale": 1.6342534395478374,
+          "head_angle": 3.151720896030705,
+          "foot_deviation": -9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3827426426625756,
+          "offset": [
+            -35.57335662841797,
+            31.630020141601562
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.5516257769802932,
+          "head_angle": 1.1733123617041477,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3827426426625756,
+          "offset": [
+            -53.849632263183594,
+            36.758758544921875
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.5731026160092432,
+          "head_angle": 1.571711610974426,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3827426426625756,
+          "offset": [
+            -34.03800582885742,
+            35.56287384033203
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.5894339675805047,
+          "head_angle": 3.9696766203746288,
+          "foot_deviation": -12,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          104,
+          157,
+          320,
+          383
+        ],
+        [
+          104,
+          155,
+          318,
+          381
+        ],
+        [
+          120,
+          157,
+          321,
+          381
+        ],
+        [
+          121,
+          156,
+          320,
+          380
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_attack4_v92",
+      "source_sha256": "aa55fffb46c9b8cccb5855739b065ec34a50c70573c4cd4ac0399f02fca5894c",
+      "direction": "w",
+      "action": "attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.38762860972153185,
+          "offset": [
+            -56.85044860839844,
+            31.31574249267578
+          ],
+          "head_inliers": 40,
+          "head_registration_scale": 1.6551157830172483,
+          "head_angle": 3.0305244902962274,
+          "foot_deviation": -6,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38762860972153185,
+          "offset": [
+            -38.53668212890625,
+            29.468170166015625
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.5737029331992418,
+          "head_angle": 1.6475056922563445,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38762860972153185,
+          "offset": [
+            -56.14405822753906,
+            35.1959228515625
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.5963023681138713,
+          "head_angle": 2.25117464613774,
+          "foot_deviation": -8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.38762860972153185,
+          "offset": [
+            -38.61937713623047,
+            33.712158203125
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.5855104778062121,
+          "head_angle": 6.183436309016316,
+          "foot_deviation": -9,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          96,
+          157,
+          321,
+          386
+        ],
+        [
+          108,
+          155,
+          317,
+          384
+        ],
+        [
+          115,
+          157,
+          325,
+          384
+        ],
+        [
+          120,
+          155,
+          321,
+          383
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_attack5_v01",
+      "source_sha256": "ce458142dcd0366a19830ba003b7f59537ad4043ff0894a8187fb72a7e3e8f74",
+      "direction": "w",
+      "action": "attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.37768865263717677,
+          "offset": [
+            -49.95484924316406,
+            17.031959533691406
+          ],
+          "head_inliers": 35,
+          "head_registration_scale": 1.6126736633175467,
+          "head_angle": -0.2851010038690074,
+          "foot_deviation": -20,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.37768865263717677,
+          "offset": [
+            -44.25216293334961,
+            16.56505584716797
+          ],
+          "head_inliers": 30,
+          "head_registration_scale": 1.5871278116945287,
+          "head_angle": 0.5226129885118094,
+          "foot_deviation": -21,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.37768865263717677,
+          "offset": [
+            -52.4111213684082,
+            22.647937774658203
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 1.580527985089742,
+          "head_angle": 0.34956885353365647,
+          "foot_deviation": -20,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.37768865263717677,
+          "offset": [
+            -33.789310455322266,
+            21.40203094482422
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.5819167751393515,
+          "head_angle": -1.9929161208230688,
+          "foot_deviation": -20,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          105,
+          138,
+          307,
+          372
+        ],
+        [
+          106,
+          137,
+          308,
+          371
+        ],
+        [
+          131,
+          139,
+          318,
+          372
+        ],
+        [
+          141,
+          156,
+          310,
+          372
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_move_attack1_v81",
+      "source_sha256": "fb04cca8efdfd41ff70a7bbd15b54b5c8f8caa1bd411e1bd21a4b96ed0688044",
+      "direction": "w",
+      "action": "move_attack1",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3714607977525065,
+          "offset": [
+            -35.327308654785156,
+            30.228282928466797
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.5860816609331927,
+          "head_angle": -2.607401089932797,
+          "foot_deviation": -11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3714607977525065,
+          "offset": [
+            -21.472183227539062,
+            30.08246612548828
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.5984252569608404,
+          "head_angle": -0.5513374034902029,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3714607977525065,
+          "offset": [
+            -41.22016906738281,
+            34.406761169433594
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.630292570335921,
+          "head_angle": -3.5220644252816595,
+          "foot_deviation": -14,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3714607977525065,
+          "offset": [
+            -30.020065307617188,
+            32.819175720214844
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.506753632713643,
+          "head_angle": 0.21707660725572533,
+          "foot_deviation": -16,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          135,
+          158,
+          320,
+          381
+        ],
+        [
+          113,
+          150,
+          325,
+          380
+        ],
+        [
+          131,
+          156,
+          328,
+          378
+        ],
+        [
+          132,
+          155,
+          318,
+          376
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_move_attack2_v90",
+      "source_sha256": "170d28db36407a5f0c8e012b50e245b4e8adfdfc6a8b8c7a128316828d056ed1",
+      "direction": "w",
+      "action": "move_attack2",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3614515199516158,
+          "offset": [
+            -31.395790100097656,
+            34.83378601074219
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.543343552214232,
+          "head_angle": -3.362187224047868,
+          "foot_deviation": -22,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3614515199516158,
+          "offset": [
+            -15.625720977783203,
+            32.29950714111328
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.559056046884993,
+          "head_angle": 0.6627067642871503,
+          "foot_deviation": -22,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3614515199516158,
+          "offset": [
+            -35.20917892456055,
+            38.3743896484375
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.5970563762873908,
+          "head_angle": -3.7867312507780224,
+          "foot_deviation": -23,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3614515199516158,
+          "offset": [
+            -11.691230773925781,
+            39.79911804199219
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.5679333701949643,
+          "head_angle": -4.428072662295562,
+          "foot_deviation": -19,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          120,
+          158,
+          308,
+          370
+        ],
+        [
+          115,
+          155,
+          309,
+          370
+        ],
+        [
+          131,
+          157,
+          318,
+          369
+        ],
+        [
+          141,
+          158,
+          310,
+          373
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_move_attack3_v81",
+      "source_sha256": "b32072546dac8ff36ac1b2b5c33dbf93595300ae8c080261ba22183cfa8bbd78",
+      "direction": "w",
+      "action": "move_attack3",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.36740689712827945,
+          "offset": [
+            -35.27336120605469,
+            31.828811645507812
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.5687721158230887,
+          "head_angle": 0.678201290207563,
+          "foot_deviation": -19,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.36740689712827945,
+          "offset": [
+            -17.82912826538086,
+            29.544525146484375
+          ],
+          "head_inliers": 29,
+          "head_registration_scale": 1.56279797064946,
+          "head_angle": 1.214579993121775,
+          "foot_deviation": -20,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.36740689712827945,
+          "offset": [
+            -39.82388687133789,
+            35.65105438232422
+          ],
+          "head_inliers": 27,
+          "head_registration_scale": 1.5554322619412397,
+          "head_angle": -0.7608125913970849,
+          "foot_deviation": -21,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.36740689712827945,
+          "offset": [
+            -15.102375030517578,
+            36.67869567871094
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.5596639655777296,
+          "head_angle": -1.2400378291793643,
+          "foot_deviation": -17,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          119,
+          158,
+          309,
+          373
+        ],
+        [
+          116,
+          156,
+          310,
+          372
+        ],
+        [
+          131,
+          157,
+          319,
+          371
+        ],
+        [
+          143,
+          157,
+          309,
+          375
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_move_attack4_v90",
+      "source_sha256": "32bc2bd11a7e948d1bab80765cb8b801f08f978e4b526ec4a3225904ea5162e6",
+      "direction": "w",
+      "action": "move_attack4",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3519349589451155,
+          "offset": [
+            -22.92319107055664,
+            38.87782287597656
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.5027092699995614,
+          "head_angle": 0.5159659398898964,
+          "foot_deviation": -26,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3519349589451155,
+          "offset": [
+            -11.259151458740234,
+            36.16156768798828
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.5630324442638293,
+          "head_angle": 1.3876925993170068,
+          "foot_deviation": -28,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3519349589451155,
+          "offset": [
+            -28.46697235107422,
+            41.29643249511719
+          ],
+          "head_inliers": 22,
+          "head_registration_scale": 1.5348354710627856,
+          "head_angle": -0.17348940484383998,
+          "foot_deviation": -27,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3519349589451155,
+          "offset": [
+            -7.7955780029296875,
+            44.62969970703125
+          ],
+          "head_inliers": 24,
+          "head_registration_scale": 1.5787451298822888,
+          "head_angle": -3.928706053281676,
+          "foot_deviation": -24,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          118,
+          159,
+          307,
+          366
+        ],
+        [
+          112,
+          155,
+          309,
+          364
+        ],
+        [
+          120,
+          156,
+          316,
+          365
+        ],
+        [
+          140,
+          160,
+          311,
+          368
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_move_attack5_v90",
+      "source_sha256": "bb36ba15f5e8c18abf5b894381843b412f89c8daafd1225e033b32fee954f2cd",
+      "direction": "w",
+      "action": "move_attack5",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.3553898850277241,
+          "offset": [
+            -26.34885025024414,
+            36.649383544921875
+          ],
+          "head_inliers": 21,
+          "head_registration_scale": 1.5174612840281219,
+          "head_angle": 0.2280751341522926,
+          "foot_deviation": -25,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3553898850277241,
+          "offset": [
+            -12.381912231445312,
+            34.875450134277344
+          ],
+          "head_inliers": 20,
+          "head_registration_scale": 1.5530999462923551,
+          "head_angle": 1.1969541446856689,
+          "foot_deviation": -24,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3553898850277241,
+          "offset": [
+            -31.089801788330078,
+            41.03233337402344
+          ],
+          "head_inliers": 25,
+          "head_registration_scale": 1.5893712591177969,
+          "head_angle": -3.3890633851924545,
+          "foot_deviation": -25,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3553898850277241,
+          "offset": [
+            -8.052742004394531,
+            41.881996154785156
+          ],
+          "head_inliers": 28,
+          "head_registration_scale": 1.566977263569177,
+          "head_angle": -4.327680684509059,
+          "foot_deviation": -22,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          121,
+          158,
+          307,
+          367
+        ],
+        [
+          117,
+          157,
+          306,
+          368
+        ],
+        [
+          132,
+          157,
+          317,
+          367
+        ],
+        [
+          144,
+          157,
+          306,
+          370
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_skill_cast_v01",
+      "source_sha256": "e12625b26e30971de81a8a776d447111d7c14ae372b35f8ac8a88f1e267c7bd7",
+      "direction": "w",
+      "action": "skill_cast",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.37435027460144676,
+          "offset": [
+            -27.52225112915039,
+            32.138916015625
+          ],
+          "head_inliers": 48,
+          "head_registration_scale": 1.598419291895932,
+          "head_angle": 1.2361003078485129,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.37435027460144676,
+          "offset": [
+            -15.331134796142578,
+            31.70148468017578
+          ],
+          "head_inliers": 44,
+          "head_registration_scale": 1.6014941108679266,
+          "head_angle": 0.6393416792373512,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.37435027460144676,
+          "offset": [
+            -32.47742462158203,
+            33.00764083862305
+          ],
+          "head_inliers": 33,
+          "head_registration_scale": 1.6112667705394734,
+          "head_angle": -0.574329433566478,
+          "foot_deviation": -13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.37435027460144676,
+          "offset": [
+            -14.977813720703125,
+            33.75344467163086
+          ],
+          "head_inliers": 52,
+          "head_registration_scale": 1.5796830540312254,
+          "head_angle": 0.20449166401879923,
+          "foot_deviation": -11,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          161,
+          157,
+          313,
+          380
+        ],
+        [
+          128,
+          157,
+          310,
+          380
+        ],
+        [
+          131,
+          156,
+          320,
+          379
+        ],
+        [
+          165,
+          157,
+          314,
+          381
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    },
+    {
+      "asset": "ilyua_set_w_walk_v95",
+      "source_sha256": "fcf593de9db26de27ca916cd09204728a913a137e32ddce83e9a608a90748189",
+      "direction": "w",
+      "action": "walk",
+      "pass": true,
+      "runtime_integrated": false,
+      "frames": [
+        {
+          "scale": 0.2341213580472421,
+          "offset": [
+            -72.74227905273438,
+            -29.322315216064453
+          ],
+          "head_inliers": 110,
+          "head_registration_scale": 0.9996629379957196,
+          "head_angle": 0.014878474146661139,
+          "foot_deviation": 3,
+          "torso_residual": [
+            0.022242167964577675,
+            0.08449450135231018
+          ]
+        },
+        {
+          "scale": 0.2341213580472421,
+          "offset": [
+            -72.78826141357422,
+            -29.26445198059082
+          ],
+          "head_inliers": 108,
+          "head_registration_scale": 0.9990185254463444,
+          "head_angle": -0.021950086703075574,
+          "foot_deviation": 1,
+          "torso_residual": [
+            -0.025101058185100555,
+            0.233657106757164
+          ]
+        },
+        {
+          "scale": 0.2341213580472421,
+          "offset": [
+            -72.774658203125,
+            -29.317028045654297
+          ],
+          "head_inliers": 122,
+          "head_registration_scale": 0.99765288564775,
+          "head_angle": 0.03189558778543725,
+          "foot_deviation": 3,
+          "torso_residual": [
+            -0.07448838651180267,
+            0.11730027198791504
+          ]
+        },
+        {
+          "scale": 0.2341213580472421,
+          "offset": [
+            -72.8144760131836,
+            -29.253273010253906
+          ],
+          "head_inliers": 127,
+          "head_registration_scale": 0.9974293538742455,
+          "head_angle": -0.03820764496938251,
+          "foot_deviation": 1,
+          "torso_residual": [
+            -0.03690827637910843,
+            0.17434942722320557
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          156,
+          157,
+          309,
+          395
+        ],
+        [
+          146,
+          157,
+          310,
+          393
+        ],
+        [
+          156,
+          157,
+          309,
+          395
+        ],
+        [
+          148,
+          157,
+          308,
+          393
+        ]
+      ],
+      "method": "direct measured neutral head bridge; one fixed scale per clip, rigid translations only"
+    }
+  ]
+}

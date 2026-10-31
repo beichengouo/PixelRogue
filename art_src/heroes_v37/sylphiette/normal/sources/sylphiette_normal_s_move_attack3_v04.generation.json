@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack3_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack3_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-54589853-06db-49d5-9dc9-97553d3ab471.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack3_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit reference1 four-frame transparent animation sheet. Keep exact character, body, face, head size, clothing, staff and the two-arm poses. Exactly TWO hands in each frame: one grips staff, the only free hand is raised OR lowered, never both; no extra chest hands or arms. Change walking leg poses only: frame1 left contact, frame2 midline passing like reference2, frame3 opposite leg contact, frame4 the other leg passes at body center. Both legs anatomically connected, passing feet close to center not kicks. Stable upright torso. Four full figures in 2x2 equal cells, full staff and hair visible, generous transparent margins; no text, numbers, backgrounds, effects, shadows or borders. Same nonpixel game art.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v03.png",
+      "sha256": "4a1c3e60c5cf7e6acc0eef0a9a6933a01c802bdf62520be13128238d9f2f74f2"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_s_passing_reference_v01.png",
+      "sha256": "bb1ead2e0b5a24d03ffc169b4f2cb9afef791a875fa14aa86524b22eaa3c9b08"
+    }
+  ],
+  "sha256": "43024aa565318baf15d8578ffc543a1e553e8e3550900ed40868bd6f120cf1e0",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    4,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      4,
+      1236,
+      1254
+    ],
+    "8": [
+      113,
+      23,
+      1145,
+      1207
+    ],
+    "32": [
+      113,
+      23,
+      1145,
+      1207
+    ],
+    "128": [
+      114,
+      24,
+      1144,
+      1207
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Two hands only but same leg leads all four frames; opposite contact and genuine passing are absent."
+}

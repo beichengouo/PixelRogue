@@ -1,0 +1,80 @@
+{
+  "asset": "sylphiette_normal_n_skill_cast_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_skill_cast_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-9ab4eb67-d641-485b-a2dd-8a174a0b8146.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise repair of this transparent FOUR-frame2x2 game sprite SOURCE. Keep identical Sylphiette silverhaired priestess NORMAL outfit, compact skull/body proportions, true BACK facing away no eyes, rightstaff/leftemptyhand four consecutive gestures and feet planted. Fix top-right pose stafftip clipped by top canvas: redraw complete cloud-curl tip and place whole four-frame composition further inside expanded transparent margins. Each full figure INCLUDING entire stafftip needs12% empty clear space inside its owncell on all sides. Same exact scale for all4, no shortening staff or body, no tiny releaseframe. Use arms slightly lower if needed. No text/numbers/grid/borders/shadows/effects/glow/background. TRUE ALPHA transparency. Allfour fullbody distinct poses, exactly2arms/2hands/onegoldstaff, no added symbols.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_skill_cast_v01.png",
+      "sha256": "9381fdc64e95390588897d30163b27b0d530fe5b506bbd228ef382f76993b32f"
+    }
+  ],
+  "sha256": "a0232ce0f0534f5045452055f4ceda658b97e3cab38615668d6704951956097c",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    39,
+    0,
+    1224,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    1,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    39,
+    0,
+    1224,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      39,
+      0,
+      1224,
+      1254
+    ],
+    "8": [
+      142,
+      15,
+      1149,
+      1216
+    ],
+    "32": [
+      143,
+      15,
+      1149,
+      1214
+    ],
+    "128": [
+      143,
+      15,
+      1148,
+      1214
+    ]
+  }
+}

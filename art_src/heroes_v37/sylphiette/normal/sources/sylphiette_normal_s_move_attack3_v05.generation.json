@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack3_v05",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack3_v05.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-739d356b-c69e-402d-af98-e8f30fc6a958.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack3_v05.png",
+  "built_in_imagegen": true,
+  "prompt": "Draw a new FOUR-frame 2x2 animation sheet of the exact front-facing character in references. Preserve character, identical head size, torso, outfit, and magic gestures of image1. Precisely two arms: viewer-left hand grasps staff, viewer-right hand is the only free hand; remove the old hanging hand when raising the free arm, no third hand. Different feet positions in every frame: TOP LEFT anatomical RIGHT leg, viewer-left shoe, extended forward with viewer-right shoe behind; TOP RIGHT viewer-right shoe passes close directly under pelvis alongside planted viewer-left shoe; BOTTOM LEFT anatomical LEFT leg, viewer-right shoe, extended forward and viewer-left shoe behind; BOTTOM RIGHT viewer-left shoe passes directly under pelvis alongside viewer-right support. The leading foot MUST change side between upper-left and lower-left. No repeated identical feet or long kicks. Keep upper body still. Complete staff, hair and both shoes, generous transparent margins in equal 2x2 cells. No numbers, labels, text, borders, background, effects or shadows. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v03.png",
+      "sha256": "4a1c3e60c5cf7e6acc0eef0a9a6933a01c802bdf62520be13128238d9f2f74f2"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_walk_v04.png",
+      "sha256": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5"
+    }
+  ],
+  "sha256": "89d3b38da04c885de5aa1115479de4230d387ff9e8406878e9a05eb6c9e60f72",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1240,
+      1254
+    ],
+    "8": [
+      130,
+      25,
+      1150,
+      1191
+    ],
+    "32": [
+      130,
+      26,
+      1150,
+      1190
+    ],
+    "128": [
+      131,
+      26,
+      1149,
+      1190
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Only two hands but all four upper-body attack gestures repeat, so no continuous release/recovery."
+}

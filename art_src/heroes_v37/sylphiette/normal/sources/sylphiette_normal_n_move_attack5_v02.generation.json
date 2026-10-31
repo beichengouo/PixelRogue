@@ -1,0 +1,73 @@
+{
+  "asset": "sylphiette_normal_n_move_attack5_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_move_attack5_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-8d03138d-34df-41bc-a1b7-993efd0638a2.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_n_move_attack5_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "修复这张四帧2x2游戏精灵表的人体问题，保持相同背面视角、每帧头部尺寸、银发、白金蓝裙、身体比例、四帧行走腿部及画布位置不变。每个人只允许两只手：画面右侧一只右手握唯一法杖，画面左侧一只左手做祷术动作。必须删除右肩旁、后背头发旁凭空冒出的额外空手。左手绝对不能跨到画面右侧。当左手抬起，必须连同左袖一起移动并删除原腰边垂下的左手和旧袖口，不得残留第三只手。第一帧左手在画面左侧从腰边抬起，第二帧左手在画面左侧肩边结印，第三帧左手在画面左侧向前推出，第四帧左手收回画面左侧胸前（允许被头发遮挡）。第五段的右手法杖动作：第一帧从肩旁开始举杖；第二帧明确举至头顶高度蓄势；第三帧向角色正前方（画面上方）压杖释放；第四帧放低到原准备姿势。不要四帧都握杖站着。每个动作的两条手臂都要从正确肩膀连续连接，允许被长发自然遮挡。透明背景，完整四个单独人物、发梢杖尖双脚不裁切，保留足够边距，不新增文字序号、特效、阴影或背景。精细非像素手绘。",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_move_attack5_v01.png",
+      "sha256": "982657f5a6c2161a3757f6693e598d8fb73f7648dec37e6da90c80ae006b7241"
+    }
+  ],
+  "sha256": "34ec089d3ccfb10c006648bedf745b67b487cc06c09db9e9d57bb3ea93d5a2ea",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1232,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1232,
+      1254
+    ],
+    "8": [
+      138,
+      0,
+      1113,
+      1205
+    ],
+    "32": [
+      139,
+      1,
+      1112,
+      1205
+    ],
+    "128": [
+      139,
+      1,
+      1111,
+      1204
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Raised staff tip clipped by canvas top; keep complete two-hand structure but outpaint and provide margin."
+}

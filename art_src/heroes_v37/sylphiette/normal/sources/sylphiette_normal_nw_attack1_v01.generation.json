@@ -1,0 +1,72 @@
+{
+  "asset": "sylphiette_normal_nw_attack1_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_nw_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-7c5b0d38-6543-444a-985f-ce82187aa224.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_nw_attack1_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, NORTHWEST rear-left facing up-left away, NO eyes/frontface camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage1 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. SYLPHIETTE silverhaired blueeyed normal priestess, NOhood/NOhat/NOveil, exposed silverhair crown with smallgoldflowerclip, whitegold layeredritualrobe/lightbluelining, smallflatwhitegoldshoes. Gold CLOUD-CURL blueorb staff ALWAYS anatomical RIGHT hand, LEFT freepalm. No switchhands or secondstaff. Quiet precise prayer order, not Xixifu horizontal clubswings. EXACT FOUR PHASES in readingorder: 1 staff lowready and leftpalm rising from waist; 2 rightstaff lifts short straight forward at chestheight, leftpalm cups upward near chest; 3 rightwrist gives a precise tiny downwardpoint, leftpalm opens up, releasegesture; 4 rightstaff stays forward slightly and leftpalm begins turning outward to linkstage2.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_nw_idle_v01.png",
+      "sha256": "83f0fc60e9c8062056e750f8f5cd9fee8fe2e6a1a1796db1e4a68200aef2ba63"
+    }
+  ],
+  "sha256": "0fa50bc3a9ece1d3f9c90741961de45284e0175ca0d5ad33a063743d26f1beaa",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    11,
+    1253,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      11,
+      1253,
+      1254
+    ],
+    "8": [
+      91,
+      22,
+      1216,
+      1230
+    ],
+    "32": [
+      91,
+      22,
+      1215,
+      1229
+    ],
+    "128": [
+      92,
+      22,
+      1214,
+      1229
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,77 @@
+{
+  "asset": "ilyua_set_w_walk_v93",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v93.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-0a4dcd9f-3550-4eac-9d67-66edbf934d01.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_walk_v93.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Create FOUR walking frames from the SINGLE canonical elf in IMAGE1. Repeat image1's EXACT same head, hair, shoulders, torso, belt, quiver, two low relaxed arms and bow identically in all FOUR frames. Preserve every upper-body leaf/flower/goldvine ornament and chest/belt drawing from image1, do not redesign or simplify torso. Image2 is LEG MOTION ONLY reference: ignore image2 head and torso. Draw only new leg/boot arrangements below the original belt into a clear LEFT-facing four-phase walk: 1 near leg forward heel contact, far leg back toe; 2 near leg under pelvis support, far knee swings forward; 3 near leg behind while FAR leg forward contact; 4 far leg under pelvis support, near knee swings forward. Show actual alternation, not four same-leading-leg strides. Keep SAME pelvis height, SAME skull dimensions/tilt, SAME shoulder-to-belt length; head upright with no bob/turn/nod. Upper body from image1 remains a rigid identical master drawing in all cells, especially exact flower-and-leaf chest and brown belt. Exactly two attached arms and two legs. Left hand carries ONE bow low vertically as in image1; right hand hangs relaxed as in image1, no aiming/arrow anywhere. Four complete figures in equal2x2 cells, same native figure scale in each. Generous10% transparent empty margins around hair bow boots. Genuine RGBA transparent, no background gradients, text, labels, grid, floor, shadow, effects. Nonpixel cel-painted miniature sprite. Keep original loose sage hair and white-flower goldleaf ornament, green leaf dress ivory goldvine drapes and floral boots. ONLY walking legs and lower skirt motion change; absolutely preserve image1 head and upper body.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v92.png",
+      "sha256": "26a4ae33dfb339b8702848112b0aa3cfc987459bb3fe970b9a06aa6fc829e695"
+    }
+  ],
+  "sha256": "6d27e6bde2d1e7fb1f37b28c2177350947815920432fc6b80a71fb2cb1e7cadd",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1251,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      9,
+      1251,
+      1254
+    ],
+    "8": [
+      191,
+      20,
+      1180,
+      1224
+    ],
+    "32": [
+      191,
+      20,
+      1180,
+      1224
+    ],
+    "128": [
+      192,
+      21,
+      1180,
+      1224
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Measured head/torso residual Y 6.83..11.51px cannot share original 3px/5px stable-root bounds; redraw required."
+}

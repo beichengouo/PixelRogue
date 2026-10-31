@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_normal_w_move_attack2_f0_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_w_move_attack2_f0_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-c1629150-550c-483c-a014-c1dc877775c0.png",
+  "sha256": "54c6f637b5c08bb918b6e7585812dc97d60a7217920e4dd5593b301d8b3f5f47",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\frame_inputs\\sylphiette_normal_w_walk_f0_single_v02.png",
+      "sha256": "d8bcaa280cef234a1f637fe653f6f2bab8814efac929fd4a61e32ae6b13ee942"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\sylphiette_normal_w_attack2_frame0.png",
+      "sha256": "017f4c16cbabed3126e3fc8fb7819e981c018ffea621040e421f4f4da0dfe047"
+    }
+  ],
+  "prompt": "Edit ONE single fullbody game sprite. Image1 is the exact head, skull size, body, legs, shoes, gait phase, clothes and canvas placement to preserve. Image2 is ONLY an arm and staff gesture reference for prayer stage 2, frame 1. Replace both existing arm/sleeve poses with the matching gesture in image2; do not leave a former hanging sleeve or third hand. Exactly TWO hands on two arms joined to shoulders. One RIGHT hand holds the single gold blueorb cloud staff, LEFT hand is the free prayer gesture. Keep image1 exact head size and face; no overall enlargement or shrink, unchanged torso and legs. Preserve its exact foot positions and which leg crosses in front, do not straighten or replant the walking legs. Silverhair, whitegold robe/lightblue lining/whitegold shoes. Fixed strict leftprofile, no body swivel or rocking. The full sprite, all hair, staff tip and toes must fit inside the SAME square canvas with clear transparent margins. No numbers, words, labels, guide lines, shadows, effects, projectile or backdrop. Precise soft nonpixel painted miniature game sprite.",
+  "contains_design_labels": false
+}

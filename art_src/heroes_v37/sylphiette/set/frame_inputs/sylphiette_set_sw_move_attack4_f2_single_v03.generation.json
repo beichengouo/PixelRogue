@@ -1,0 +1,27 @@
+{
+  "asset": "sylphiette_set_sw_move_attack4_f2_single_v03",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/set/frame_inputs/sylphiette_set_sw_move_attack4_f2_single_v03.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-91c5878e-ce9d-43e6-8021-a4d59d59882a.png",
+  "sha256": "49a0355f8e6dfff175eed1bbec1d3b0818f56c339c9856789e9cb201a49ab332",
+  "dimensions": [
+    1470,
+    1070
+  ],
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/frame_inputs/sylphiette_set_sw_move_attack4_f0_single_v02.png",
+      "sha256": "c7feee61ac60c8f7287d68a1014c589e066d95ed585e7fcc7bc28d2e2139abba"
+    }
+  ],
+  "prompt": "Use case: precise-object-edit. Edit this ONE single full-body game sprite. Preserve the original head, face, hood, hair crown, torso, waist height and their EXACT native pixel scale and position. The head must not be larger or smaller; retain the original character size, with empty margins. Keep the output canvas at 1470x1070. Move only her left free arm FORWARD toward screen left, palm outward to release a spell. Change the legs to OPPOSITE foot contact: the screen-right foot moves forward and stays on ground, the screen-left foot lifts its heel behind, so the legs exchange their front/back positions. This MUST be visually different from the supplied pose, not a duplicate stance. Keep silver hair, blue eyes, white gold nun hood with navy lining, white/gold calf-length robe and the exact gold crescent blue-orb staff. Exactly TWO arms/two hands, right hand always grips the staff, left hand the only free hand, no old hanging hand or extra sleeve. Keep torso upright and head level, same facing diagonal screen-left front. Do not rotate, resize or redesign the head/body. No effect, shadow, floor, text, number or label. Genuine transparent alpha background, crisp refined nonpixel hand-painted anime game art. Entire hair, hood, staff tip and shoes inside canvas with margins.",
+  "contains_design_labels": false
+}

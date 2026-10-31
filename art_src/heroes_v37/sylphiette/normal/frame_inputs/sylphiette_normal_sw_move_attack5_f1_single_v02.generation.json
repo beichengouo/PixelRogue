@@ -1,0 +1,28 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack5_f1_single_v02",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack5_f1_single_v02.png",
+  "status": "needs_redraw",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-fbb4ef07-8186-4360-9e6a-27552659eb70.png",
+  "sha256": "691ec96f8185842d38a3350b780d9351b1b993a89b315cde707bf43a1125f7a1",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack5_f1_single_v01.png",
+      "sha256": "919d61770f1444298ca44db0387d22e97c05fd5cb47c768d9021b7b53cb3e341"
+    }
+  ],
+  "prompt": "精确修改单个游戏精灵的两只手臂动作：右手明显抬肘把唯一的金色云纹蓝珠法杖竖直举到脸前，杖尖最高接近头顶，不高出画布；左掌在胸前收拢，做祷术终段的蓄势姿态。保持原图头部、脸、银发、视角、躯干、白金蓝衣服和裙长、腿脚过脚步态、人物尺寸与画布位置完全一致。只能移动正确肩膀连接的两只手和袖子，必须替换旧动作，禁止留下第三只手或旧袖口。不要重画身体、转身或重新站稳，保留原来的行走过脚动作。整个发梢杖尖和双脚完整，透明背景且四周留白，不画文字序号、背景、阴影、弹幕或光效。精细非像素手绘。",
+  "contains_design_labels": false,
+  "review_reason": "User confirmed three hands: staff hand plus two prayer hands at chest; excluded from runtime."
+}

@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack1_f0_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack1_f0_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-91cafc5b-9238-4df9-ad6a-6f541ac235d9.png",
+  "sha256": "022e24957727d6a6d98a35d8584492e456641978c903cdffcb16f864b8c77723",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_sw_idle_v01.png",
+      "sha256": "aac6c058be6b8e2a0d6dd5cf17466d50c781bbbf23cee45b6f22d6d0349e79eb"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\sylphiette_normal_sw_move_attack1_frame0.png",
+      "sha256": "5036b7c74cfe0c98fd103d2b3a487333ffb225775d3c8efaf2247f5814fce090"
+    }
+  ],
+  "prompt": "Draw ONE full isolated game sprite. Image 1 defines the exact model, head size, skull, neck, waist, leg lengths, clothes, hair, viewing angle and CANVAS SCALE. Keep the figure as large and in the same canvas position as image1, with its exact head/body proportions. Image 2 is POSE ONLY: use its arm/staff gesture, not its smaller figure scale. Leg pose: left leg forward, right leg back in a clear walking contact stance. Keep silver hair, blue eyes, white-gold robe, gold-blue staff and complete shoes. Two anatomically attached legs, two feet, two arms and TWO hands only. No leftover side hand when free hand raises; move the sleeve with its arm. Same front-left three-quarter facing as image1, no head rotation or lateral sway. Complete hair, staff and shoes with generous transparent margins, no words, numbers, grid, background or effects.",
+  "contains_design_labels": false
+}

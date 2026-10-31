@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_set_nw_walk_f1_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/set/frame_inputs/sylphiette_set_nw_walk_f1_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-9aebfa53-c890-42b6-b111-afa53904846e.png",
+  "sha256": "c3303a8a0eb4ef5b054b6b9a54c65f8edd5069991cec8c0428895987acd89daf",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\set_uniform_nw_walk_body1.png",
+      "sha256": "a57b44234c2cb9b04a3bd829f4380b0773aa07375f56f1c955f0943b0c0fb006"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\set_uniform_nw_walk_pose1.png",
+      "sha256": "0b4af24d4496dd44059a581fda0f087ddcfb8c62677485eb4cb42d6a6f962229"
+    }
+  ],
+  "prompt": "只对图1这一个传说装精灵作局部步行动作编辑，头、兜帽、脸、头发、躯干、腰线、法杖及持杖的两手、画布位置、尺寸完全保持原样。只改变双腿和鞋到这一行走阶段：左腿支撑，右脚从骨盆正下方经过。图2只作腿脚姿势参考，不复制其普通衣服或身体。保持躯干重心和头部横坐标完全不动、肩膀水平，落地支撑鞋的底部始终处于原脚底高度。长裙到小腿，允许只看到鞋子交替，不抬裙、不露大腿。完整单个人物、杖尖发梢双鞋不裁切，透明背景，精细非像素手绘，无文字序号阴影背景特效。",
+  "contains_design_labels": false
+}

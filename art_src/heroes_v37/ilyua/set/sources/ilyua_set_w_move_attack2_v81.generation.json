@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_w_move_attack2_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack2_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-d84b5adc-3197-418a-8815-527fe876ddbe.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_move_attack2_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise local edit of supplied 2x2 sprite sheet: change ONLY TOP RIGHT frame right hand and arrow. In top right the right fingers must be CLOSED pinching the drawn bowstring at cheek level, with exactly ONE nocked straight arrow whose feather end is at those fingers and metal arrowhead points screen LEFT beyond bow grip. Keep shaft horizontal aimed left; fit full arrowhead inside cell with margin. Keep pulled V-shaped bowstring attached to right fingers and both bow tips. Preserve all other pixels/poses visually, especially all four heads, body sizes, alternating leg poses, costume, ornate flower bow and single quiver. Bottom-left open-hand release remains NO arrow and straight relaxed bowstring; bottom-right recovery has no nocked arrow. Exactly two connected arms/hands. True transparent RGBA, 2x2 cells, no text/effects/shadows.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_move_attack2_v80.png",
+      "sha256": "361d308164fc532fd08e61f2798f06e644fe9c523c4492b6610feaa19972a9b9"
+    }
+  ],
+  "sha256": "dc9ea382b945319d8c1ab97b684f9f623580d345b35aae9615f4d1ec44737758",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    8,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      8,
+      1254,
+      1254
+    ],
+    "8": [
+      65,
+      10,
+      1250,
+      1238
+    ],
+    "32": [
+      65,
+      11,
+      1249,
+      1238
+    ],
+    "128": [
+      66,
+      12,
+      1248,
+      1237
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "reason": "local arm repair changed top-right passing pose to repeated wide stride; restore narrow passing leg pose"
+}

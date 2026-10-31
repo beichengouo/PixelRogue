@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack3_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack3_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-108b62ba-2df7-4e70-b6a0-4e88cdefd9e7.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack3_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a precise 2x2 four-frame transparent sprite sheet. Reference image1 supplies exact four walking leg phases and front-facing character proportions. Reference image2 supplies corresponding attack arm gestures for this specific strike. Combine image1 sequential leg phases with image2 arm gestures, frame by frame in reading order: right foot contact, passing beneath pelvis, left foot contact, passing beneath pelvis. Both feet anatomically visible and distinct; do not repeat the same leading foot. Upper body stays stable with identical head size, face, hair, clothing, and staff. One staff continuously held in same right hand; exactly two connected arms. All four whole bodies and weapons inside their own equal cell with wide empty transparent margins; no numbers, labels, panels, shadows or effects. Nonpixel game illustration identical to references.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_walk_v04.png",
+      "sha256": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_attack3_v01.png",
+      "sha256": "6679fca2863a1d87eb69d20ea319567e174fc243009b87dcdf7e3ce393832a8b"
+    }
+  ],
+  "sha256": "dcf3c5b5713fbdaab3c1425d03f66c689c29d0fbe70998c0abb291db91a4a556",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1230,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1230,
+      1254
+    ],
+    "8": [
+      114,
+      34,
+      1165,
+      1211
+    ],
+    "32": [
+      114,
+      34,
+      1165,
+      1211
+    ],
+    "128": [
+      115,
+      35,
+      1165,
+      1210
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Extra arm in multiple frames; failed anatomy review."
+}

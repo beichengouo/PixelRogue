@@ -1,0 +1,88 @@
+{
+  "asset": "sylphiette_normal_n_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-e44d2bbc-7bdd-4719-8ede-99c5b7042d4b.png",
+  "built_in_imagegen": true,
+  "prompt": "Production single-frame PixelRogue game SPRITE SOURCE. Image1 is primary compact body/skull geometry and mild 15-degree top-down game view reference; image2 is exact Sylphiette NORMAL costume/identity reference only. Exactly ONE intact full-body sprite, standing stable ready neutral, facing NORTH direct BACK facing up/away; absolutely no face/nose/eyes; back hair and robe, symmetrical shoulders/hips. Match image1 compact approx2.7-heads-tall body, short torso/arms/legs, broad head and little feet; no lengthening legs. Soft nonpixel hand-painted anime miniature, clean colored outline, 2-3tone soft cel shading, broad readable shapes matching image1 rather than microdetail. Adult holy priestess Sylphiette, SILVER-WHITE long gently wavy hair, BLUE eyes, gentle composed expression; small gold cloud hairclip at anatomical LEFT temple (viewer-right front, viewer-left back), do not relocate or mirror clip, one small tassel only. Normal costume NO hood, NO crown: white traveling ceremonial robe thin gold cloud embroidery/pale coolblue lining, practical bell sleeves and layered skirt above white/gold flat shoes. One small gold-bordered round blue sapphire waist clasp. Anatomical RIGHT hand (viewer-left front, viewer-right back) holds proportionate gold cloudcurl staff with BLUE orb; anatomical LEFT hand relaxed empty at side. No change in hand between views. One true-transparent square canvas intended1024x1024: crown/soles at12%/88%height, full hair/robe/feet/staff inside middle70%width and generous transparent margins. NO TEXT, NUMBERS, LABELS, DIVIDERS, guide lines, frame, watermark, shadows, floor, glow effects, background, duplicate figures. Do not copy turnaround white background or its labels. One production sprite, no action movement or floating hair. Reference image3 is this SAME hero front sprite: preserve exact same costume and compact anatomy while changing only viewing angle. Every extremity must fit with transparent margin.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_n_idle.png",
+      "sha256": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\sylphiette_normal_turnaround_v01.png",
+      "sha256": "d42e4a73af7eb0e9c4baa803ee0c5f6ad91c129508bfd99d00f5d152ef9c552e"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_idle_v01.png",
+      "sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    }
+  ],
+  "sha256": "11cf8bc083313498a42303614acdba6cc5a4b54367728a9fcba683707553a6f2",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1234,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    21,
+    1234,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      21,
+      1234,
+      1254
+    ],
+    "8": [
+      324,
+      170,
+      950,
+      1154
+    ],
+    "32": [
+      324,
+      171,
+      949,
+      1154
+    ],
+    "128": [
+      325,
+      172,
+      949,
+      1153
+    ]
+  }
+}

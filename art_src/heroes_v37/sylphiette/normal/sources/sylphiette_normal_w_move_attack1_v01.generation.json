@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_w_move_attack1_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_move_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-dc171026-c717-4f7f-93f5-e2783aede625.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_w_move_attack1_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Create FOUR consecutive full-body movement-and-prayer animation frames of the same miniature Sylphiette, in an equal-cell 2x2 transparent sprite sheet. Image1 is the master identity/body proportions/costume/weapon reference. Image2 supplies ONLY the four successive arm and staff gestures for stage 1. Use the identical strict LEFT profile camera and master body in all four cells. Keep exact head size, torso and leg lengths, robe structure, hair length and gold/blue details. Do NOT duplicate an old lowered hand after posing her arm. Exactly TWO arms and TWO hands connected to the shoulders, one gold cloud-blue staff in her anatomical RIGHT hand, free LEFT palm. The LEFT sleeve must move WITH the gesture hand; erase its former resting position. No extra waist hand, floating hand, second staff, gloves or halos.\nIMPORTANT she is WALKING during every gesture. Four ordered gait frames: 1 anatomical LEFT leg forward/right leg behind, 2 LEFT supporting vertically and RIGHT foot passes directly under the pelvis with knee softly bent, 3 anatomical RIGHT leg forward/LEFT behind (REVERSE frame1, do not repeat its front leg), 4 RIGHT supporting vertically and LEFT foot passes under pelvis. Make the opposite legs distinguishable by their continuous attachment under the skirt, not a duplicate same foot moving sideways. Hem stays just above shoes so feet remain readable. Head and torso stay stable and face the same direction, no sideways rocking or crouch. Hands perform the corresponding gesture from image2 in reading order, while feet continue this gait. Do not draw four planted poses or four same-leading-leg poses.\nRefined nonpixel soft cel-painted game sprite matching image1, clean outline, no added detail. All hair, staff tip and both shoes fully inside each separate cell with at least 8 percent transparent margin. No effects, shadows, motion trails, projectiles, aura, floor or other creatures. Truly transparent background, no text, labels, numbers, borders or dividers. Four separate complete sprites, no overlap. End arm pose links next attack stage; this is one segment of a continuous five-stage prayer sequence.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_attack1_v01.png",
+      "sha256": "af26136b9fd2aaae1ce52832ceff99d49ada8207c47f40ec91842b6db7f5bdad"
+    }
+  ],
+  "sha256": "90a7bb6fc54dc04419a2cb054ebd23fe3845d2826029ef61cb9eb9bdce9700ce",
+  "dimensions": [
+    1284,
+    1225
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    16,
+    1284,
+    1225
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      16,
+      1284,
+      1225
+    ],
+    "8": [
+      49,
+      22,
+      1284,
+      1193
+    ],
+    "32": [
+      50,
+      22,
+      1284,
+      1192
+    ],
+    "128": [
+      50,
+      23,
+      1284,
+      1192
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Hair clipped at right canvas edge; repetitive same-leading leg; not a valid full walk cycle."
+}

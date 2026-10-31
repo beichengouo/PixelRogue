@@ -1,0 +1,85 @@
+{
+  "asset": "sylphiette_normal_s_walk_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_walk_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-37655ecf-09c3-4624-9023-d507ae0ab893.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve wardrobe edit. IMAGE1 is PRIMARY edit target four walking poses of Sylphiette LEGENDARY. Preserve its EXACT four body/head/limb poses, same cell placement/skull scale and complete alternating FEET: top-left viewer-left foot forward, bottom-left viewer-RIGHT foot forward, top-right left shoe raised/bottom-right right shoe raised, with two distinct passing phases. Do NOT reset or repeat lower row legs. IMAGE2 is NORMAL COSTUME reference ONLY. Change clothing/headwear/staff to image2: remove hood entirely, silver hair with gold cloud clip at viewer-right anatomical left temple, ivory white/gold robe with pale BLUE lining instead of navy, no throat blue clasp but simple gold knot, keep single blue waist clasp. Staff held anatomical RIGHT/viewer-left: replace open crescent with NORMAL CLOUD-CURL gold head surrounding blue orb. Preserve same short compact body, no limb/body growth. Keep fixed mild topdown direct SOUTH frontal game camera, head/torso stable, clean nonpixel hand-painted miniature like refs. Robe lower hem physically follows existing feet, no high raised skirt. Exactly4 full-body sprites in equal2x2 transparent cells, no text/numbers/guides/lines/shadow/floor/effects/background, all hair/shoes/staff entirely inside each cell with safe transparent margins.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_s_walk_v02.png",
+      "sha256": "fa8c9d502bd5355922d446be75dc49a61f35daba7bd8ee6b0fc924d95b1d8e99"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_idle_v01.png",
+      "sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    }
+  ],
+  "sha256": "fa5d1abca978b1b5f8b60c91e2ed0925352220bcc42624cc8f12058cade7b09b",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1236,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    21,
+    1236,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      21,
+      1236,
+      1254
+    ],
+    "8": [
+      120,
+      38,
+      1161,
+      1205
+    ],
+    "32": [
+      120,
+      39,
+      1160,
+      1205
+    ],
+    "128": [
+      121,
+      39,
+      1160,
+      1205
+    ]
+  },
+  "reason": "head scale drift6.35 percent; superseded by v04"
+}

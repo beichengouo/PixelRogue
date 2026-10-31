@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_w_move_attack2_v83",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack2_v83.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-e47a2cd2-1aab-4027-8a4c-ee3b7c2ddd37.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_move_attack2_v83.png",
+  "built_in_imagegen": true,
+  "prompt": "Tiny local edit ONLY inside TOP RIGHT drawing-hand and missing arrow of image1. Close right fingers at cheek around bowstring and add one nocked arrow aimed LEFT, metal arrowhead beyond bow grip and feather end at drawing fingers. Image2 shows exact hand-arrow relationship only. Keep existing pulled V bowstring in TOP RIGHT. Preserve image1 all heads/skulls and faces EXACTLY equal size, all four body shapes and especially FOUR LEG POSES. Do NOT redraw or change anything below waist. TOP RIGHT MUST stay narrow passing foot under pelvis, rear knee bent and boot just behind. Other three cells remain exactly image1, including top-left existing nocked arrow, bottom-left open release with NO arrow and straight string, bottom-right recovery with NO arrow. Two arms/hands each. All tips complete inside own 2x2 cells, true transparent RGBA. No text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack2_v80.png",
+      "sha256": "361d308164fc532fd08e61f2798f06e644fe9c523c4492b6610feaa19972a9b9"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_move_attack2_v80.png",
+      "sha256": "e31868d57dec61e93f9a3094be3d1319974dfc39bd30b54703f5cc5c901d50d7"
+    }
+  ],
+  "sha256": "ad13b268196adcd61aaf8a9dcfb5f2897c0f1f0ae7967107e1c0b2e2be7daf66",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    8,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      8,
+      1254,
+      1254
+    ],
+    "8": [
+      64,
+      10,
+      1242,
+      1239
+    ],
+    "32": [
+      64,
+      11,
+      1242,
+      1239
+    ],
+    "128": [
+      65,
+      11,
+      1242,
+      1238
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

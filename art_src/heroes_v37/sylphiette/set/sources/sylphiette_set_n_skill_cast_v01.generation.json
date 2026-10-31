@@ -1,0 +1,85 @@
+{
+  "asset": "sylphiette_set_n_skill_cast_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_n_skill_cast_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-b8ddf930-f5fa-4b8c-952b-7bd2d6639a14.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe edit of four game animation frames. IMAGE1 edit target: same Sylphiette normal4 distinct consecutive ritual skill poses in2x2. IMAGE2 only outfit/hair/prop construction reference for same woman same direction. Change only clothing to image2 whitegold nunlike ceremonial hood UP/navy lining, sapphire throat fastener, modest ivorygold broad robe/navy sleeve lining/skirt and same small flat shoes; replace cloud-scroll staff with image2 golden open-crescent framing blueorb staff, same RIGHT hand same hand positions. NO crown/tiara. Silver hair emerges only BELOW hood back rim not through hood top/sides. Preserve image1 exact4 distinct arm gestures and planted feet, identical compact skull/body dimensions across all4, camera/facing, feet baseline; no walking or sideways sway, no taller/elongated release. Exactly2hands/2arms and1staff each, erase old entire staff/old hands before replacement, no floating wrist or oldshaft. Nonpixel handpainted compact game miniature, same refined colored lines and restrained cel tones. Four full bodies2x2 equal cells true transparent, each top/side/bottom generous10%clear room, all stafftips/hood/hair/toes fullyinside owncell; don't copy tight framing. No text/numbers/labels/grid/dividers/background/glow/effects/shadows/floor/extra creatures. No artificial backdrop. Preserve distinct4 gestures, do not repeat idle.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_skill_cast_v02.png",
+      "sha256": "a0232ce0f0534f5045452055f4ceda658b97e3cab38615668d6704951956097c"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_n_idle_v01.png",
+      "sha256": "788c5511102f4e78b891c002493b032ba7d2e54d39e196372b76016324df91d4"
+    }
+  ],
+  "sha256": "756541bf28b75344ad859062599d0be1b1c49acee65b2efce4cf26786dda5cd3",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1206,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    0,
+    1206,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      0,
+      1206,
+      1254
+    ],
+    "8": [
+      143,
+      8,
+      1154,
+      1217
+    ],
+    "32": [
+      143,
+      8,
+      1154,
+      1215
+    ],
+    "128": [
+      144,
+      9,
+      1153,
+      1214
+    ]
+  },
+  "reason": "crescent staff tip touches canvas top; superseded by v02"
+}

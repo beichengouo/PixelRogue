@@ -1,0 +1,72 @@
+{
+  "asset": "sylphiette_normal_w_attack3_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_attack3_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-8e1f5245-dec3-4615-adb7-90484a0c6ccf.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_w_attack3_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, WEST strict leftPROFILE facing left camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage3 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. SYLPHIETTE silverhaired blueeyed normal priestess, NOhood/NOhat/NOveil, exposed silverhair crown with smallgoldflowerclip, whitegold layeredritualrobe/lightbluelining, smallflatwhitegoldshoes. Gold CLOUD-CURL blueorb staff ALWAYS anatomical RIGHT hand, LEFT freepalm. No switchhands or secondstaff. Quiet precise prayer order, not Xixifu horizontal clubswings. EXACT FOUR PHASES in readingorder: 1 staff begins returning centerline and leftpalm starts inwardsemicircle; 2 rightstaff upright by shoulder and leftpalm traces across chest toward center; 3 leftpalm opens toward target from center and rightwrist gently turnsstaff, releasegesture; 4 leftpalm rises beside staff close to sternum, ready to fix a sealstage4.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    }
+  ],
+  "sha256": "7473d44dec9586cb83a1f43b29e26acf662d1eac7b9b7837d5533dc71befb0bd",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    24,
+    1199,
+    1232
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      24,
+      1199,
+      1232
+    ],
+    "8": [
+      142,
+      27,
+      1195,
+      1211
+    ],
+    "32": [
+      143,
+      27,
+      1194,
+      1211
+    ],
+    "128": [
+      143,
+      28,
+      1194,
+      1210
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "sylphiette_normal_utility_prayer_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_utility_prayer_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-fb35f712-f905-4a65-a739-5f31f53b5131.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game animation. Image1 is SAME exact character identity/body/costume/prop/camera reference, NOT a four-pose chart. Create ONE production2x2 source of exactly FOUR distinct consecutive action frames reading order on TRUE TRANSPARENT RGBA background. Soft nonpixel miniature painterly cel finish as reference, precise colored outline. Same rigid skull size and compact torso/short limb lengths across all4 frames, head never grows/shrinks. Strict WEST/left side profile, no turn toward viewer. Draw entire body/prop/hair/feet within own equal cell with generous12%transparent room on all sides. NO text/numbers/labels/grid/borders/guides/shadows/floor/background/glow/particles/effects. EXACTLY TWO arms/TWO hands and one intact prop per figure; remove old resting hands and whole prop before redrawing changed position, no third idle hand or ghost shaft. Sylphiette same silverhaired blueeyed priestess, same whitegold flatshoes; staff anatomical RIGHT hand always, LEFT hand empty. Normal nohood, cloudscroll goldstaff; legendary hood UP/navylining, sapphirecollar, staff open goldcrescent blueorb, never cloudscroll. Silverhair beneath hoodrim never throughhood. Four calm prayer phases: 1 stands upright, staff held low beside her, free palm moves up from waist toward sternum; 2 eyes softly closed, free palm rests over heart and chin lowers slightly; 3 small respectful upper-torso bow with free hand still heart, knees soft but not kneeling; 4 returns to upright prayer-ready, eyes opening. Same skull scale, not deep body fold, feet planted. Prop stays one same hand. Distinct head/hand changes but stable body ratio.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    }
+  ],
+  "sha256": "99ceae79e9c58bff82f768821b6ba4828e6735e7e6646ee94ac740f93c78a7cc",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "prayer",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1234,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    0,
+    1234,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      0,
+      1234,
+      1254
+    ],
+    "8": [
+      162,
+      33,
+      1160,
+      1231
+    ],
+    "32": [
+      163,
+      34,
+      1160,
+      1231
+    ],
+    "128": [
+      163,
+      34,
+      1159,
+      1230
+    ]
+  },
+  "reason": "invented hood on normal outfit; superseded by v02"
+}

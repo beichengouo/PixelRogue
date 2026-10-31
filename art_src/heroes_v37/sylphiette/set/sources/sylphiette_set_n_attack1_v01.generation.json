@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_set_n_attack1_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_n_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-d1c9aef5-d714-4080-b42f-5d61524ad739.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_n_attack1_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe-only edit of image1's FOUR DISTINCT continuous attack poses. Image2 is legendary outfit reference ONLY. Preserve image1's EXACT skull/face, skeleton, body lengths, viewing direction, all4 authored hand/arm poses, foot stance and staff aim. DO NOT copy image2 resting hands, no extra waist fist. Change only clothing and staff design: WHITE/GOLD raised nun-style hood with DARK NAVY lining, complete smooth hood framing face without clipping hair, modest hooded capelet, whitegold calf-length layered ritual dress with deeper navy inner sleeves, blue sapphire throat clasp, whitegold flat shoes; same silverhair BLUEEYES. Staff changes from cloud-curl head to image2's GOLD CRESCENT enclosing blueorb, ONE whole staff in anatomical RIGHT hand as original. Anatomical LEFT is the only free hand, no swap. ExactlyTWO arms/hands. Keep compact normal body proportions, same torso/leg lengths beneath outfit. No crown/halo, no whitehair turned blond. Four consecutive ready/lead/release/followthrough poses remain DISTINCT; do not replace action with four resting copies. All four heads identical native size, no squat/stretch/sway. Full hair/hood/staff/shoes inside own cell with generous transparent margin, 2x2 equal cells. Pure alpha, no numbers, text, labels, borders, panel lines, shadows, background, glow, marks or effects. Refined nonpixel cel game illustration. Preserve direct back facing, with hood naturally covering hair and anatomically consistent staff hand.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_attack1_v02.png",
+      "sha256": "9337568c2f67e2aca2c4fb4c2877debf38fa33055315354351817aaa05660610"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_n_idle_v01.png",
+      "sha256": "788c5511102f4e78b891c002493b032ba7d2e54d39e196372b76016324df91d4"
+    }
+  ],
+  "sha256": "37ce63ba4af7e0160b6ecc7b068c58468be787827eaa969a71226357e0c1678d",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1311,
+    1199
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1311,
+      1199
+    ],
+    "8": [
+      100,
+      48,
+      1271,
+      1163
+    ],
+    "32": [
+      101,
+      48,
+      1271,
+      1163
+    ],
+    "128": [
+      102,
+      49,
+      1271,
+      1162
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

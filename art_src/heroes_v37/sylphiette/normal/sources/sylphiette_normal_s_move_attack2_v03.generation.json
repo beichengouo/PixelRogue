@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_normal_s_move_attack2_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack2_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-0d2a62e2-c919-4cf7-9ff8-b3021cb35cca.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack2_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Animate image1 exact front-facing character and four leg phases using image2 four corresponding staff and free-arm attack gestures. Preserve identical face, hair, body dimensions and clothing throughout. Exactly TWO hands: right hand on viewer left holds one staff; left free hand on viewer right moves with its sleeve to match gestures. When free hand raises, remove original lowered hand and sleeve; no extra hand on chest, side or waist. Preserve actual alternate foot contacts and central passing phases in image1, avoid frozen repeated gait. Four distinct preparation, action, release and recovery poses, complete figures and staff within equal 2x2 cells with transparent margins. No text, numbers, panel lines, backgrounds, shadow or effects. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v07.png",
+      "sha256": "b36a1bd09e906cf3ab6578e48e4fb530a950926bb62a8c3fc7546aee0513327f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_attack2_v01.png",
+      "sha256": "400b4298aa1c85d5fffae2f0d437ad10b0cfa492fa5c3b31bca8291f3bba425e"
+    }
+  ],
+  "sha256": "6d849a1f87e72ede8389c5102d777ac3fd6309a14f0e07169d9c58b9daf7a7a8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    11,
+    1234,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      11,
+      1234,
+      1254
+    ],
+    "8": [
+      14,
+      13,
+      1219,
+      1204
+    ],
+    "32": [
+      14,
+      13,
+      1218,
+      1204
+    ],
+    "128": [
+      15,
+      14,
+      1218,
+      1204
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

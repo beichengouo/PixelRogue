@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_normal_s_walk_v04",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_walk_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-716ba31d-aef1-4932-8920-022af86f4f8b.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise sprite consistency edit, IMAGE1 target. Keep its FOUR distinct alternating walking phases, all feet/knees/skirts/staff/body poses EXACTLY. Correct only scale consistency: bottom-left and bottom-right skull/hair masses grew about6 percent relative to top-left; reduce those LOWER figures UNIFORMLY about6 percent to match EXACT same skull/head/hair width and height as top-left. Top-right likewise match top-left head. Do NOT resize head alone or stretch legs: the entire small body in each pose keeps its own proportions, rendered at one shared animation scale. Then center each full figure safely in its quadrant. The four head shapes should look like the same exact rigid skull, not different sizes. Preserve original face proportions, silver hair/gold cloud hairclip, blue eyes, white gold normal robe pale-blue lining, normal cloud-scroll blue orb staff in RIGHT hand (viewer-left), all four alternating FOOT poses and clear lifted passing feet. Image2 is this same normal idle identity. Keep direct FRONT SOUTH camera, stable vertical torso, no turning/sway, refined soft nonpixel hand-painted miniature. True transparent2x2 canvas, each complete figure inside safe margins. No words/numbers/labels/grid/background/shadows/effects. Do not repeat lower-row legs from upper row, do not crop or elongate.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_walk_v03.png",
+      "sha256": "fa5d1abca978b1b5f8b60c91e2ed0925352220bcc42624cc8f12058cade7b09b"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_idle_v01.png",
+      "sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    }
+  ],
+  "sha256": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1238,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1238,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1238,
+      1254
+    ],
+    "8": [
+      117,
+      36,
+      1148,
+      1208
+    ],
+    "32": [
+      117,
+      38,
+      1148,
+      1208
+    ],
+    "128": [
+      118,
+      38,
+      1147,
+      1207
+    ]
+  }
+}

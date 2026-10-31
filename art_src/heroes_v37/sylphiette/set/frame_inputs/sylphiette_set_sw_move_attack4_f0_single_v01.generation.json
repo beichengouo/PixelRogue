@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_set_sw_move_attack4_f0_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/set/frame_inputs/sylphiette_set_sw_move_attack4_f0_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-62b1d03b-8013-464e-a117-416121b0f53b.png",
+  "sha256": "2f42d6009ab416032420b27032148758c2c78dbb1fe7b731c8ac8805496eda43",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\set_uniform_sw_move_attack4_body0.png",
+      "sha256": "2523747a1f45790c4df8e97ae7815d2c59f5d80f2a33f4ba39d303962607943a"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\set_uniform_sw_move_attack4_pose0.png",
+      "sha256": "c518b6859b03ec9d0cdbe95178c31ab8927c84dbdd5ba31179d7d281a76a2357"
+    }
+  ],
+  "prompt": "只画一个完整的传说希露媞雅游戏精灵，精确局部编辑图1。图1是唯一的身体与画布基准：头部大小、脸、兜帽、银发、躯干、腰线、服装结构、长裙长度、腿脚、视角、人物像素大小与画布位置全部严格保持。图2仅参考这一帧两条手臂、袖口及握杖的方向，绝不复制它的普通服装、短裙、脸、身体或云纹杖头。仅修改图1手臂与袖子去做图2祷术姿势。右手始终握图1唯一法杖，左手是唯一空手。抬起左手时完全删除其原来的腰边垂手、旧袖口与旧手腕，用新的左臂和袖子连续连接左肩。全身严格只有两条手臂和两只手，不双掌合十，不长出后背悬空手，不遗留旧拳头。保留图1蓝眼银发白金深蓝修女兜帽礼服，不加冠冕。法杖头完全沿用图1，不复制图2的武器头部。衣裙下摆到小腿，只露小腿和鞋，不抬裙露大腿。完整长发、杖尖、兜帽及鞋子都在透明画布内且有充足边距。精细非像素手绘，不添加序号、文字、影子、背景、弹幕或光效。保持图1原有这一步腿脚的位置和前后关系，身体头部不摇摆；手臂施法时仍在行走，不能重新站稳。",
+  "contains_design_labels": false
+}

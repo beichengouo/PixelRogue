@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack4_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack4_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-08c93dcb-0d93-4e7d-89c3-4512f571af00.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack4_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair reference 1 four-frame walking attack. Remove the duplicate chest hand and its entire extra sleeve and arm from every frame. CRITICAL: exactly TWO connected arms and hands per frame, her right hand grips one single staff, her left hand alone performs the gesture. No other hand, sleeve, arm or limb anywhere on chest or waist. Keep the four alternating left and right foot walking phases from reference 2, retain front view, identical face, hair, clothing, stable head size and body. Four separate whole figures in equal 2x2 cells, generous empty margins, alpha transparency. No labels, numbers, text, borders or background. Nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack4_v01.png",
+      "sha256": "a0ee3d4b807fd9eb479f72ab34d46a5c09495635b2acb28f1deb81718d02fff6"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_walk_v04.png",
+      "sha256": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5"
+    }
+  ],
+  "sha256": "f30e54b5f662552e92b8a086ba8d2d311b737834c6e4cfe8aa51cc56729595fd",
+  "dimensions": [
+    1261,
+    1247
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1247,
+    1247
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      21,
+      1247,
+      1247
+    ],
+    "8": [
+      87,
+      28,
+      1196,
+      1221
+    ],
+    "32": [
+      88,
+      29,
+      1196,
+      1221
+    ],
+    "128": [
+      88,
+      30,
+      1195,
+      1220
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "User requires midline passing poses; four frames repeat two foot positions without a clear passing phase."
+}

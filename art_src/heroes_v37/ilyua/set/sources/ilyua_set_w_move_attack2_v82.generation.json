@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_w_move_attack2_v82",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack2_v82.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-5f5abcad-657a-48e9-b986-aaf0b0664372.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_move_attack2_v82.png",
+  "built_in_imagegen": true,
+  "prompt": "Local leg repair of image1 ONLY. Preserve all four heads, upper bodies, arms, bowstrings, arrows and clothing exactly as image1. The TOP RIGHT pose has wrongly copied the wide leg stride from top left. Change ONLY TOP RIGHT below the waist to the NARROW PASSING step in image2 TOP RIGHT: front foot directly under pelvis, rear knee flexed and foot lifted just behind it. Retain legendary flower boots and leaf skirt of image1 while reproducing image2 leg skeleton. Do not change other three cells, do not repeat the top-left wide stride. Bottom right stays narrow opposite passing; top-left/bottom-left wide steps alternate front/back legs. Four complete figures, same scale, 2x2 equal cells, actual transparent background, no text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack2_v81.png",
+      "sha256": "dc9ea382b945319d8c1ab97b684f9f623580d345b35aae9615f4d1ec44737758"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack2_v80.png",
+      "sha256": "361d308164fc532fd08e61f2798f06e644fe9c523c4492b6610feaa19972a9b9"
+    }
+  ],
+  "sha256": "f7c5698848d80c00ea3b6de4a9e3ed6a8fbe15c433d0230eea258ea23761f776",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    4,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      4,
+      1254,
+      1254
+    ],
+    "8": [
+      64,
+      10,
+      1250,
+      1239
+    ],
+    "32": [
+      64,
+      10,
+      1249,
+      1239
+    ],
+    "128": [
+      65,
+      11,
+      1249,
+      1239
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

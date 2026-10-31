@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_normal_w_walk_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_walk_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-40804128-3b55-4350-a48e-6b906b6be9a6.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / game animation. IMAGE1 is PRIMARY EXACT character identity/costume/body geometry and viewing direction reference, an idle sprite. IMAGE2 supplies ONLY the four clear foot/knee WALKING PHASES and 2x2 layout in the same view; do NOT copy Xixifu character, her face, clothes, hair, staff or boots. Create exactly FOUR full-body sprites of image1 character in equal 2x2 cells, pure transparent background. Face WEST strict left profile only one eye in ALL four cells, never rotate toward viewer or rock side-to-side. Hold exact skull/head size and neck/shoulder/waist height steady in all frames; same compact short torso/limbs as image1, do not stretch body. Soft nonpixel hand-painted compact miniature, clean colored outlines, restrained cel shading matching image1. Read order top-left,top-right,bottom-left,bottom-right: left foot forward/right back; right foot passing directly UNDER pelvis close to planted left leg with knee bent; right foot forward/left back; left foot passing directly UNDER pelvis close to planted right leg with knee bent. BOTH intermediate passing poses must be genuinely drawn, not just repeated endpoint stances. Keep head and torso vertical stable, a little knee bend/pelvis bob only; no upperbody sway or tilt as movement substitute. Cloth hem follows steps slightly but exact same garment construction per frame. Face/hair/weapon model fixed, not a different person between poses. No motion blur or smearing. Maintain full feet/crown/bow or staff/hair inside EACH cell with at least10% transparent vertical margin and15% horizontal margins; if necessary fit all figures uniformly smaller within their cells, do NOT shrink one head or shorten legs. Equal scale/body origin and grounded sole anchor in all cells. No physical floor or drop shadow. NO text/numbers/labels/dividers/grid/guidelines/border/watermark/background/effects/extra creatures or figures. Sylphiette keeps gold staff in anatomical RIGHT hand, LEFT empty; silver hair/blue eyes. Normal NO hood/crown, gold cloud hairclip on anatomical LEFT temple, white gold robe pale blue lining, CLOUD-CURL staff top with blue orb.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_walk.png",
+      "sha256": "b350e0e8b05a14e65d76b496dd883fbaeb09f5edabb3bbdf0264be00a43c4383"
+    }
+  ],
+  "sha256": "76f4abd87cd100ab3bba5cc4a72e4b16d647f43c5657334d24abd7700d83172e",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1238,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    9,
+    1238,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      9,
+      1238,
+      1254
+    ],
+    "8": [
+      167,
+      42,
+      1151,
+      1210
+    ],
+    "32": [
+      167,
+      44,
+      1150,
+      1209
+    ],
+    "128": [
+      168,
+      44,
+      1150,
+      1209
+    ]
+  }
+}

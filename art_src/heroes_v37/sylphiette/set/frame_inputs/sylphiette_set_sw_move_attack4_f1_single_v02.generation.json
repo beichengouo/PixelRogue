@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_set_sw_move_attack4_f1_single_v02",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/set/frame_inputs/sylphiette_set_sw_move_attack4_f1_single_v02.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-d03068a7-4b89-4ab8-8561-f4a50f382642.png",
+  "sha256": "87bd78ca616c7ed3f44f358616a0f4f46e11a8c0c2936a854fb80ae929a9da33",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_sw_move_attack4_f0_single_v02.png",
+      "sha256": "c7feee61ac60c8f7287d68a1014c589e066d95ed585e7fcc7bc28d2e2139abba"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_sw_move_attack4_f1_single_v01.png",
+      "sha256": "3db03fad3cf5222519dfeb1d2e88d944b5a84fc1529112967f4ad13ccb09e019"
+    }
+  ],
+  "prompt": "对图1作非常局部的动作编辑，严格保留图1头部和脸的原生像素大小、兜帽大小、身体和腰线、人物在透明画布里的位置及占比，既不放大填满画布，也不缩小。图2只给这一帧双腿、鞋和两只手臂的姿势参考，不能复制图2的人物大小、头、身体比例、服装或武器样式。将图1改为图2的手臂与腿脚姿势，头部与躯干不动、不旋转，支撑脚底保持原图1的高度。只绘制一个完整角色，银发蓝眼、白金深蓝修女兜帽长礼服和同一支新月蓝珠法杖不变。严格两条手臂与两只手：右手始终持杖，左手是唯一空手，移动左臂时彻底移除原来垂手、旧袖口和多余手腕；不能双掌合十。保留迈出或过脚的步态，不改成站立，裙摆到小腿。完整发梢、兜帽、举杖尖、鞋子及透明边距；无文字、序号、特效、背景、地面、阴影，精细非像素手绘。",
+  "contains_design_labels": false
+}

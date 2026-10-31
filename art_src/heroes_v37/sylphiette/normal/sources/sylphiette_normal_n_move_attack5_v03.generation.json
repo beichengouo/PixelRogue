@@ -1,0 +1,72 @@
+{
+  "asset": "sylphiette_normal_n_move_attack5_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_n_move_attack5_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-b1ede05e-0957-4e68-b8af-8a338635ecb4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_n_move_attack5_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "修复四帧精灵表的裁切：右上人物举起的法杖顶部已被画布切断，请完整重绘缺失的金色云纹杖尖，并给四个完整人物各自四周增加明显透明留白，尤其上方留白。重新安排为2x2等大单元，所有人物必须等比例保持相同头身尺寸，不要局部缩放或改变身体比例。可以让四个人物一起在更大透明画布中占据更小比例，为高举杖尖留足空间。保持这四个已有动作、腿脚步态、衣服、头发、两只手、唯一法杖。末帧的左手收回画面左侧胸前，可被长发遮挡；右手持杖保持画面右侧，禁止多手。透明底，无文字序号特效阴影背景。",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_n_move_attack5_v02.png",
+      "sha256": "34ec089d3ccfb10c006648bedf745b67b487cc06c09db9e9d57bb3ea93d5a2ea"
+    }
+  ],
+  "sha256": "bfc1964eb122555cb6e26cda50114478f517551889a12c4f013464617a97e7a8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1230,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1230,
+      1254
+    ],
+    "8": [
+      167,
+      40,
+      1105,
+      1214
+    ],
+    "32": [
+      167,
+      40,
+      1105,
+      1213
+    ],
+    "128": [
+      168,
+      41,
+      1104,
+      1213
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

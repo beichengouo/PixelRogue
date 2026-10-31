@@ -1,0 +1,27 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack1_passing_a_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_sw_move_attack1_passing_a_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-be1f2004-6728-4d83-9372-8301e3c95604.png",
+  "sha256": "a3f8a090589120f4d86a6c60242504551d14f10a0a86d10f188d1e3e188a8727",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\single-frame-references\\sylphiette_normal_sw_move_attack1_frame1.png",
+      "sha256": "93d250cc3d73cd07de354dd9c4b84a3ceb8b69e6f6a3f4139182a228cc59a2c0"
+    }
+  ],
+  "prompt": "Edit this ONE isolated game sprite. Keep the character at the same size, position and camera angle in the same transparent canvas. Preserve the exact head, face, silver hair, shoulders, torso, robe, two arms/hands and staff gesture. Change ONLY legs and shoes: draw a NARROW passing stance: the supporting leg and planted shoe are directly under the pelvis, the other knee bends with its shoe lifted next to that calf; both ankles almost touch at the body midline. Two anatomically attached legs and two shoes only. Keep the robe near the knees so the foot motion can be seen; no extra hand or arm. One full figure, all hair/staff/feet fully within transparent margins. No text, number, background, effects or shadows. Do not enlarge the sprite or crop the canvas.",
+  "contains_design_labels": false
+}

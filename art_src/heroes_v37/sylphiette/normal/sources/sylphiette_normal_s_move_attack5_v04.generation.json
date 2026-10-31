@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack5_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack5_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-00ab6fa2-4082-4269-9097-cf6fd3a3c81e.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack5_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a clean 2x2 animation sheet of the exact front-facing character in reference 1, with the fifth attack gesture of reference 2. Keep the same head size, hair, staff, clothing and body proportions in all four frames. EXACTLY TWO ARMS AND TWO HANDS per frame: one hand grips the staff, the other is the only free hand, connected to its own sleeve; remove the old lowered hand whenever that arm moves. Show a genuine walk cycle: frame 1 left foot forward, frame 2 feet passing together beneath body, frame 3 right foot forward, frame 4 feet passing together beneath body. Distinct staff attack preparation, release, follow-through and recovery; no extra limbs. Four complete figures and complete staffs, centered in equal 2x2 cells with generous transparent margins. No text, numbering, effects, shadows or grid. Match the refined nonpixel game sprite reference.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v07.png",
+      "sha256": "b36a1bd09e906cf3ab6578e48e4fb530a950926bb62a8c3fc7546aee0513327f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_attack5_v01.png",
+      "sha256": "645ee7a0f1348a0dab480e5a6bf56cc71542b656d98c656346bd4dd969280605"
+    }
+  ],
+  "sha256": "990165b29f268885322fdb05811c9193ff57fbd39f8bffa382166aec0c4cbae8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1226,
+    1238
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1226,
+      1238
+    ],
+    "8": [
+      108,
+      24,
+      1153,
+      1202
+    ],
+    "32": [
+      108,
+      24,
+      1153,
+      1202
+    ],
+    "128": [
+      109,
+      24,
+      1152,
+      1201
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Two hands, but the same foot leads in both stride frames and the staff reverses abruptly, breaking gait and attack continuity."
+}

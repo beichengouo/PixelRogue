@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_w_walk_v91",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_walk_v91.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-9ce4edba-a2de-48ac-8804-507a81507bbf.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_walk_v91.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise ARMS-ONLY edit of the supplied FOUR walking poses into an ordinary walk holding bow LOW. Keep the ORIGINAL FOUR HEADS/skull shapes at exactly identical native sizes, hair crowns, flower ornament, ears, facial viewpoint, neck, torso, waist, costume, quiver and especially ALL FOUR ORIGINAL ALTERNATING LEGS/BOOT POSES EXACTLY. Change only two arms/hands and the bow from aiming to calm lowered carrying posture: anatomical LEFT hand keeps one full floral gold-leaf wooden bow vertically low near front hip, RIGHT hand hangs relaxed beside torso. Replace the old raised arm/sleeve/hand, do not leave duplicates. All4 frames have same quiet lowered arm pose while original legs continue walking. Strict LEFT PROFILE throughout, no turning face/torso, no head nod/sway or skull/costume scaling. Preserve original limb lengths and four gait phases (contact, narrow passing under pelvis, opposite contact, opposite passing), NEVER four same-leading-leg strides or four planted feet. NO arrow anywhere: remove shafts, heads, feathers, nocks and trailing lines; keep one intact bow and its one string between tips. No squat/crouch or twisting when lowering bow. Four COMPLETE isolated figures in2x2 equal cells with generous10% transparent margin around full hair, bow tips and boots, no crop or overlap. True RGBA transparent nonpixel cel-painted sprite, no text/grid/FX/shadows/floor. Make ONLY the arm/weapon carrying-pose change, keep each head and each walking leg exactly as supplied.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack3_v81.png",
+      "sha256": "b32072546dac8ff36ac1b2b5c33dbf93595300ae8c080261ba22183cfa8bbd78"
+    }
+  ],
+  "sha256": "9b4f5de2f4d4e32cd001eb692b8b8fce3fdf256931edb9dc5de8b3fb6cb22a23",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    20,
+    1226,
+    1238
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      20,
+      1226,
+      1238
+    ],
+    "8": [
+      170,
+      27,
+      1209,
+      1235
+    ],
+    "32": [
+      170,
+      28,
+      1209,
+      1234
+    ],
+    "128": [
+      171,
+      29,
+      1209,
+      1234
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Measured head scales 1.53678..1.60835 exceed original 3.5% walk gate; head redraw required."
+}

@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_sw_move_attack2_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_sw_move_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-daf3b556-adce-48f6-bc21-50fb006b9315.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_sw_move_attack2_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a transparent 2x2 game sprite animation. Image 1 is the exact character and four walking foot phases; image 2 supplies ONLY the four chronological arm gestures for attack 2. Use image 1 identical head/body dimensions and same front-left three-quarter view in EVERY frame. Keep image1 silver hair, blue eyes, white gold robe, gold-blue staff. Draw image2 arm/staff preparation -> release -> follow-through -> recovery, while retaining genuine alternate left contact / narrow passing / right contact / narrow passing walking feet. Exactly two arms and TWO hands: staff grip and one free gesture hand; when free hand moves, its whole sleeve follows and its old lowered hand disappears. No remnant waist hand. All head sizes and torso lengths identical throughout. Four complete figures, full hair, both feet and full staff, widely separated within equal 2x2 cells with ample transparent margins. No labels, text, numbering, background, effects or grid.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_sw_walk_v02.png",
+      "sha256": "5b6cb28969e974150213b905ce5ad6d982190148ec75a16195c9617804023872"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_sw_attack2_v01.png",
+      "sha256": "6a43ee8749eddfe3b6a8dbc46f839b673d71ca741bcc521e440e5afb980d19df"
+    }
+  ],
+  "sha256": "640dd6ca12efe493df2199aec98ac05025245af4d5b3341776fc72d30ccb7541",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1445,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1445,
+      1086
+    ],
+    "8": [
+      98,
+      24,
+      1374,
+      1060
+    ],
+    "32": [
+      98,
+      24,
+      1374,
+      1060
+    ],
+    "128": [
+      99,
+      25,
+      1373,
+      1059
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Four poses repeat a leading-leg stride without convincing narrow passing phases; rejected by primary visual review. Head pass does not validate gait."
+}

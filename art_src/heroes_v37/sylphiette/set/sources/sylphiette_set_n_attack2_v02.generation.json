@@ -1,0 +1,65 @@
+{
+  "asset": "sylphiette_set_n_attack2_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_n_attack2_v02.png",
+  "sha256": "30552ccbeb21c7e79bd55cbd7c40438b6f52ac66cb0c4b136546ce347b75a361",
+  "direction": "n",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "mode": "RGBA",
+  "contains_design_labels": false,
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": false,
+  "frames_generated_with_builtin": true,
+  "generation_path": "lossless_grid_assembly_of_four_authored_single_frames",
+  "frame_sources": [
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_n_attack2_f0_single_v01.png",
+      "source_sha256": "0394d1ea53e1f22b0ee4045daef8c81a7984b6c2d26f43d30344ff587ed6e7c2",
+      "source_metadata_sha256": "63bc47ab1a04a8d40b059c90b3a241cf678f46ea9e3e3d63a039221e2164e161",
+      "assembly_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_n_attack2_f1_single_v01.png",
+      "source_sha256": "efe82551de2db4d470a6548c0c31041bf4aba5a801c9c60a65a5e622cb0c8aa4",
+      "source_metadata_sha256": "2e3a1dd880191ac702a3ac21d325c8ca9574f9df77a174d5dff976dccae9d05f",
+      "assembly_offset": [
+        1254,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_n_attack2_f2_single_v01.png",
+      "source_sha256": "c8166dca57dea47be6f101306b2431010171510214fd82f3170dbda9cbf06822",
+      "source_metadata_sha256": "83ea5807194e593c75a3b5603a4c4269d055e743f607704a257b495e4c224990",
+      "assembly_offset": [
+        0,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_n_attack2_f3_single_v01.png",
+      "source_sha256": "39976679c5997fcac40b075ca7d26b29f4eb761b8555cf35b009f8ea3cdc5341",
+      "source_metadata_sha256": "608e2a39635e961ff2f77a2cea104879971d0527bd11efec63e392db468ede68",
+      "assembly_offset": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "assembly_policy": "same authored canvas, integer placement only; no scaling, painting, warping or in-between synthesis",
+  "primary_visual_review": "authored singles inspected; full-clip calibration and transition review pending"
+}

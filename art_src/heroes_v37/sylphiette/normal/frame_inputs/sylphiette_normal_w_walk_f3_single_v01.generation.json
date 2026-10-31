@@ -1,0 +1,27 @@
+{
+  "asset": "sylphiette_normal_w_walk_f3_single_v01",
+  "kind": "source_frame",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "path": "art_src/heroes_v37/sylphiette/normal/frame_inputs/sylphiette_normal_w_walk_f3_single_v01.png",
+  "status": "authored_single_pending_group_validation",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-898c187e-11c6-4626-b263-25468317839e.png",
+  "sha256": "5ae3fbe6f915289af89421a37da7db07baf96f51b7fdd653c3d05ae20c9d0239",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_w_idle_v01.png",
+      "sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    }
+  ],
+  "prompt": "Precise local edit of ONE character sprite. Keep this exact silverhaired priestess head, skull size, face, hair, torso, clothes, arms, held staff, camera and image placement unchanged. Change ONLY legs/feet and minimally the lower hem for ONE walking gait phase: OPPOSITE PASSING: far RIGHT leg stands vertically beneath hip, near LEFT knee swings forward with near shoe passing directly alongside the supporting ankle beneath the body. Close shoes, one foot lifted. Keep legs attached anatomically under the skirt, shoes white gold. No torso tilt, no change in body height or limb lengths, no facial variation. Strict left profile. Two hands only, one staff. Entire sprite and all hair ends inside the SAME canvas with generous transparent margin. One isolated full figure, true transparency, no shadow/background/text/numbers/effects. Precise nonpixel cel-painted game sprite. Preserve upper body literally as much as possible; do not reinterpret it into a new character.",
+  "contains_design_labels": false
+}

@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_normal_s_move_attack3_v08",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/normal/sources/sylphiette_normal_s_move_attack3_v08.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-c25c2860-6ee6-46e5-9a46-055978849c60.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_normal_s_move_attack3_v08.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit the four-frame animation sheet in image 1. Preserve character, face, scale, hair, robe, staff and arm animation exactly. Correct ONLY walking feet and legs so four sequential frames are: left foot forward, feet cross directly under body in passing position as image 2, right foot forward, feet cross directly under body in passing position. Clearly show both alternating legs, coherent knees and two feet. Every frame has exactly two hands, one gripping staff and one on the single other arm. When hand extends outward there must be no dangling hand. Keep complete figures in equal 2x2 cells, transparent background, no text or labels.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v07.png",
+      "sha256": "b36a1bd09e906cf3ab6578e48e4fb530a950926bb62a8c3fc7546aee0513327f"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_s_passing_reference_v01.png",
+      "sha256": "bb1ead2e0b5a24d03ffc169b4f2cb9afef791a875fa14aa86524b22eaa3c9b08"
+    }
+  ],
+  "sha256": "b7541b5b1556a2bd5dbd3724a856f283b8a2cf9deeef8b2e562bc1782070b753",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1244,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1244,
+      1254
+    ],
+    "8": [
+      116,
+      23,
+      1160,
+      1205
+    ],
+    "32": [
+      117,
+      23,
+      1160,
+      1204
+    ],
+    "128": [
+      118,
+      24,
+      1159,
+      1204
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Two hands and alternating legs, but the casting arm alternates lowered/extended twice, causing a discontinuous attack motion."
+}
