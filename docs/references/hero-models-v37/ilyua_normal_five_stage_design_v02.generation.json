@@ -1,0 +1,30 @@
+{
+  "asset": "ilyua_normal_five_stage_design_v02",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/ilyua_normal_five_stage_design_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-ea5c6fdb-e340-4685-af11-4e3a019798a7.png",
+  "built_in_imagegen": true,
+  "prompt": "A nonviolent animation-concept board showing FIVE calm bow-form exercise poses of an ADULT female elf athlete, alone on plain white, no target, no opponent, no impact, no injury, NO FLYING ARROWS and no magical projectiles. This is a game animation movement study. Use exactly the character and ivory hooded outfit of reference 1, and the compact soft cel-painted nonpixel rendering/body proportions of reference 2. She is an adult stylized fantasy elf, pale sage-green hair, lake-blue eyes, white hood up, practical white and green cloak, brown guards and small flat brown boots. Same body, head size, outfit and proportions in every pose, no stretching into taller figure.\n1536x1024 landscape concept sheet. Five full-body figures in 3 top panels and 2 bottom panels, labeled only 1,2,3,4,5. Every figure faces left with the same viewpoint and same floor baseline per row. Bow stays in anatomical LEFT hand, RIGHT hand performs the finger/string form. Her torso is relaxed and vertically centered with feet stably grounded. Focus on readable hand/arm paths as one continuous movement exercise:\n1. bow low at lower chest, left elbow slightly bent, right hand relaxed near chest after returning from a previous motion;\n2. bow lifted toward shoulder height, right fingers travel toward cheek, restrained short draw posture;\n3. bow tilted slightly toward upper-left, right fingers still at cheek, elbows rise gently without a body spin;\n4. bow returns upright, left arm extended comfortably forward, right fingers at face, taut string forming a clear V from tips to drawing fingers, stable full-draw demonstration with no arrow;\n5. string relaxed, left hand steadies upright bow while right fingers softly return backward just behind cheek, a small natural follow-through, ready to return to pose 1.\nOnly bow, string, person and clothing; no arrows are needed anywhere in this board. Show distinct positions, not five identical standing poses. Hair remains inside hood except face locks, no hair through fabric. Complete head, hood, bow tips, hands and boots inside each panel with generous margin. No scene, effects, extra creatures or words beyond numbers 1-5. The purpose is a peaceful adult character motion reference.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_normal_turnaround_v01.png",
+      "sha256": "e662c01c51c9aaf7aa5896e4dd69a64990ce6e30372742ce3a4d6052d54e98a0"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    }
+  ],
+  "sha256": "de58f445abcee0bd9f30deb4e2188fae5d212a7979055817be957c3b95a03a67",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

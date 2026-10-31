@@ -1,0 +1,31 @@
+{
+  "asset": "sylphiette_normal_five_stage_design_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/sylphiette_normal_five_stage_design_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-e31be7e0-b14a-45a0-86f4-955c474fe342.png",
+  "built_in_imagegen": true,
+  "prompt": "A peaceful five-pose ceremonial movement / animation reference board for Sylphiette, an ADULT holy priestess character in compact stylized nonpixel hand-painted anime game proportions. Reference 1 is her exact NEW normal costume, silver-white softly wavy hair, blue eyes, modest white-gold cloud-trimmed robe, sapphire waist clasp, small white flat shoes and small gold cloud-orb staff. Reference 2 supplies shared compact approximately 2.7-heads-tall body and soft cel-painted rendering only. Keep her exact same head/face/body construction in every panel; no hood or crown in this normal outfit.\nDraw exactly FIVE numbered full-body key poses on WHITE, 1536x1024 landscape sheet: three poses on top row and two below, each has a stable common baseline within its row, complete head and staff with generous margins. View all figures from same LEFT-FACING side/three-quarter angle. These poses are a continuous elegant prayer-gesture sequence, no opposing person or target, no impacts, no harm. Staff remains in anatomical RIGHT hand for all five poses; anatomical LEFT hand does the open-palm gestures. Keep the trunk vertically stable, feet planted without bouncing, gentle restrained posture.\n1. A small right-wrist forward tap of upright staff, left palm rests at chest height as if gathering a small point of warm light. This is the opening cue.\n2. Following the previous wrist arc, right hand takes the staff to a restrained diagonal forward-left angle, while LEFT palm opens outward to guide the point of light. Clear hand shape and sleeve overlap.\n3. Right hand draws staff back to body centerline upright; LEFT hand curves inward in a compact half-circle prayer gesture. Distinct transition of arms, no exaggerated hip turn.\n4. Calm stable stance, right hand steadies staff at body center while LEFT open hand extends to shape a small simple geometric prayer seal in front. Subtle thin seal outline only, not a giant beam or fan of lights. Both arms arranged coherently while right hand still grips staff.\n5. After the raised-staff cue, right hand finishes a deliberate short forward-and-down settling motion with staff held slightly forward, LEFT palm pushes outward clearly, then ready to return. A small single luminous seal at palm is optional. This sequence is dignified light-guiding magic, NOT rapid repeated identical wand flicks and NOT three-projectile fan shots.\nShow five distinct but connected arm positions, same anatomy, hair, face, robe and staff. No loose staff floating away from hand, no extra limbs, no multi-panel head-size changes. No large magic effects masking the motion, no environment, no wings, no added creatures, no pixel art or realistic tall proportions, no camera angle changes. Labels only 1-5. This is a DESIGN GUIDE, not a finished runtime frame sheet.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/sylphiette_normal_turnaround_v01.png",
+      "sha256": "d42e4a73af7eb0e9c4baa803ee0c5f6ad91c129508bfd99d00f5d152ef9c552e"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    }
+  ],
+  "sha256": "a9e44231e6027afdbe2e1b0216db72936f8439fa57a1603c0e86fcac22d57f04",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true,
+  "reason": "stage4 swapped staff hand and grew body; superseded by v02"
+}

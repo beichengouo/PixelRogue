@@ -1,0 +1,249 @@
+[gd_resource type="SpriteFrames" load_steps=46 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/walk_n.png" id="1"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/idle_s.png" id="2"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/idle_w.png" id="3"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/idle_n.png" id="4"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/idle_sw.png" id="5"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/idle_nw.png" id="6"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/walk_nw.png" id="7"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/walk_s.png" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/walk_sw.png" id="9"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/rest.png" id="10"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/talk.png" id="11"]
+
+[ext_resource type="Texture2D" path="res://assets/camp_npcs_handdrawn_v37/surveyor/walk_w.png" id="12"]
+
+[sub_resource type="AtlasTexture" id="walk_n_0"]
+atlas = ExtResource("1")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(153,136,144,256)
+
+[sub_resource type="AtlasTexture" id="walk_n_1"]
+atlas = ExtResource("1")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(151,136,145,256)
+
+[sub_resource type="AtlasTexture" id="walk_n_2"]
+atlas = ExtResource("1")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(151,139,146,253)
+
+[sub_resource type="AtlasTexture" id="walk_n_3"]
+atlas = ExtResource("1")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(153,135,145,257)
+
+[sub_resource type="AtlasTexture" id="idle_s_0"]
+atlas = ExtResource("2")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(156,152,132,240)
+
+[sub_resource type="AtlasTexture" id="idle_w_0"]
+atlas = ExtResource("3")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(179,152,110,240)
+
+[sub_resource type="AtlasTexture" id="idle_n_0"]
+atlas = ExtResource("4")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(157,152,133,240)
+
+[sub_resource type="AtlasTexture" id="idle_sw_0"]
+atlas = ExtResource("5")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(154,152,139,240)
+
+[sub_resource type="AtlasTexture" id="idle_nw_0"]
+atlas = ExtResource("6")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,152,128,240)
+
+[sub_resource type="AtlasTexture" id="walk_nw_0"]
+atlas = ExtResource("7")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,155,128,237)
+
+[sub_resource type="AtlasTexture" id="walk_nw_1"]
+atlas = ExtResource("7")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,150,128,242)
+
+[sub_resource type="AtlasTexture" id="walk_nw_2"]
+atlas = ExtResource("7")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,149,128,243)
+
+[sub_resource type="AtlasTexture" id="walk_nw_3"]
+atlas = ExtResource("7")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,151,128,241)
+
+[sub_resource type="AtlasTexture" id="walk_s_0"]
+atlas = ExtResource("8")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(151,157,142,235)
+
+[sub_resource type="AtlasTexture" id="walk_s_1"]
+atlas = ExtResource("8")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(150,157,138,235)
+
+[sub_resource type="AtlasTexture" id="walk_s_2"]
+atlas = ExtResource("8")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(150,161,145,231)
+
+[sub_resource type="AtlasTexture" id="walk_s_3"]
+atlas = ExtResource("8")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(151,160,138,232)
+
+[sub_resource type="AtlasTexture" id="walk_sw_0"]
+atlas = ExtResource("9")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(153,148,140,244)
+
+[sub_resource type="AtlasTexture" id="walk_sw_1"]
+atlas = ExtResource("9")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(154,148,140,244)
+
+[sub_resource type="AtlasTexture" id="walk_sw_2"]
+atlas = ExtResource("9")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(154,147,140,245)
+
+[sub_resource type="AtlasTexture" id="walk_sw_3"]
+atlas = ExtResource("9")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(154,147,140,245)
+
+[sub_resource type="AtlasTexture" id="rest_0"]
+atlas = ExtResource("10")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(155,139,136,253)
+
+[sub_resource type="AtlasTexture" id="rest_1"]
+atlas = ExtResource("10")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(155,139,135,253)
+
+[sub_resource type="AtlasTexture" id="rest_2"]
+atlas = ExtResource("10")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(153,140,137,252)
+
+[sub_resource type="AtlasTexture" id="rest_3"]
+atlas = ExtResource("10")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(154,140,139,252)
+
+[sub_resource type="AtlasTexture" id="talk_0"]
+atlas = ExtResource("11")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(152,150,146,242)
+
+[sub_resource type="AtlasTexture" id="talk_1"]
+atlas = ExtResource("11")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(153,151,147,241)
+
+[sub_resource type="AtlasTexture" id="talk_2"]
+atlas = ExtResource("11")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(147,148,153,244)
+
+[sub_resource type="AtlasTexture" id="talk_3"]
+atlas = ExtResource("11")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(152,149,148,243)
+
+[sub_resource type="AtlasTexture" id="walk_w_0"]
+atlas = ExtResource("12")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(175,151,114,241)
+
+[sub_resource type="AtlasTexture" id="walk_w_1"]
+atlas = ExtResource("12")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(179,148,110,244)
+
+[sub_resource type="AtlasTexture" id="walk_w_2"]
+atlas = ExtResource("12")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(178,150,111,242)
+
+[sub_resource type="AtlasTexture" id="walk_w_3"]
+atlas = ExtResource("12")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(178,151,111,241)
+
+[resource]
+animations = [{"name":&"idle_s","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_s_0")}]},
+{"name":&"walk_s","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_s_0")},{"duration":1.0,"texture":SubResource("walk_s_1")},{"duration":1.0,"texture":SubResource("walk_s_2")},{"duration":1.0,"texture":SubResource("walk_s_3")}]},
+{"name":&"idle_sw","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_sw_0")}]},
+{"name":&"walk_sw","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_sw_0")},{"duration":1.0,"texture":SubResource("walk_sw_1")},{"duration":1.0,"texture":SubResource("walk_sw_2")},{"duration":1.0,"texture":SubResource("walk_sw_3")}]},
+{"name":&"idle_w","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_w_0")}]},
+{"name":&"walk_w","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_w_0")},{"duration":1.0,"texture":SubResource("walk_w_1")},{"duration":1.0,"texture":SubResource("walk_w_2")},{"duration":1.0,"texture":SubResource("walk_w_3")}]},
+{"name":&"idle_nw","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_nw_0")}]},
+{"name":&"walk_nw","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_nw_0")},{"duration":1.0,"texture":SubResource("walk_nw_1")},{"duration":1.0,"texture":SubResource("walk_nw_2")},{"duration":1.0,"texture":SubResource("walk_nw_3")}]},
+{"name":&"idle_n","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_n_0")}]},
+{"name":&"walk_n","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_n_0")},{"duration":1.0,"texture":SubResource("walk_n_1")},{"duration":1.0,"texture":SubResource("walk_n_2")},{"duration":1.0,"texture":SubResource("walk_n_3")}]},
+{"name":&"idle_ne","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_nw_0")}]},
+{"name":&"walk_ne","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_nw_0")},{"duration":1.0,"texture":SubResource("walk_nw_1")},{"duration":1.0,"texture":SubResource("walk_nw_2")},{"duration":1.0,"texture":SubResource("walk_nw_3")}]},
+{"name":&"idle_e","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_w_0")}]},
+{"name":&"walk_e","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_w_0")},{"duration":1.0,"texture":SubResource("walk_w_1")},{"duration":1.0,"texture":SubResource("walk_w_2")},{"duration":1.0,"texture":SubResource("walk_w_3")}]},
+{"name":&"idle_se","speed":0.75,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_sw_0")}]},
+{"name":&"walk_se","speed":8.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_sw_0")},{"duration":1.0,"texture":SubResource("walk_sw_1")},{"duration":1.0,"texture":SubResource("walk_sw_2")},{"duration":1.0,"texture":SubResource("walk_sw_3")}]},
+{"name":&"rest","speed":1.25,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("rest_0")},{"duration":1.0,"texture":SubResource("rest_1")},{"duration":1.0,"texture":SubResource("rest_2")},{"duration":1.0,"texture":SubResource("rest_3")}]},
+{"name":&"talk","speed":5.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("talk_0")},{"duration":1.0,"texture":SubResource("talk_1")},{"duration":1.0,"texture":SubResource("talk_2")},{"duration":1.0,"texture":SubResource("talk_3")}]}]
+metadata/handdrawn = true
+metadata/resident_id = &"surveyor"
+metadata/hd_cell = 448
+metadata/hd_foot = Vector2(224,392)
+metadata/core_height = 240.0
+metadata/utility_facing = "sw"

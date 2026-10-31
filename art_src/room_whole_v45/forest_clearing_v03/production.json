@@ -1,0 +1,21 @@
+{
+  "method": "single imagegen master with controlled local warp, full frame bake split by original wall mask for weather",
+  "full_frames_source": "E:\\CodexWorkspace\\PixelRogue\\work\\map-whole-v45\\frames",
+  "pixel_exact_split": true,
+  "size": [
+    1672,
+    941
+  ],
+  "files": {
+    "animation.json": "8c835d5327bdd12e5dff508e2758f2f134a2d190ff404f635892ec9189862bfa",
+    "ground_00.png": "c94c6c42ff8c06c672317358492b49b84f88c59f5a15bc1d677c8205d743083c",
+    "ground_01.png": "f3ba199e66fa757b0f4b1c76c2430f7969bae90a3786de34611db8ac99066ed7",
+    "ground_02.png": "c6da5988c8cb6fc809a667eba6799de4abe1490ee7c7c976de57363b58ea5b53",
+    "ground_03.png": "299a7a989c37d730c65d902e42be0034c919b1af95a9925a6f31cf859a52ec41",
+    "ground_04.png": "eccb6455956e39d79c2eaf71618dbfe52a88d2c925b2225cf789fb5c9d8baeb1",
+    "ground_05.png": "6dddd418175cdf389c530420e9e0c8399c424ca11cf69f867318d69569e28c88",
+    "ground_06.png": "1c355a3cf1b387a3daf9058995f8ff52bc14d4c3df9febac4954bad7217dc2e0",
+    "ground_07.png": "d3cc8e92fe673834f62de0c716a82063567b8acf406eaae6d942e678831b7d63",
+    "walls.png": "7f838d16b8bd89512f001fc09a232527c248ca4b8bc6d8ffde4fd595ba43a644"
+  }
+}

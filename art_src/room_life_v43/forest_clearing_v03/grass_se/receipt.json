@@ -1,0 +1,278 @@
+{
+  "id": "grass_se",
+  "kind": "grass",
+  "rect_px": [
+    2497,
+    1657,
+    256,
+    256
+  ],
+  "layer": "background",
+  "phase": 5,
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\references\\grass_se.png",
+  "repair": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\grass_se_repair.png",
+  "animation": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\grass_se_animation.png",
+  "repair_inner": [
+    18,
+    32,
+    247,
+    246
+  ],
+  "target_anchor": [
+    120,
+    125
+  ],
+  "plant_size": [
+    184,
+    170
+  ],
+  "generation_prompts": {
+    "repair": "Fine detailed pixel art exactly matching the supplied crop, same light and color palette. Production asset, no stylistic change. Edit the supplied square game map crop. Remove ONLY the central broad pointed-leaf rosette grass tuft. Fill only its footprint with same tiny mottled yellow-green meadow grass. Preserve surrounding pixels and all border landmarks. No extra decoration, no new plants or shadows. Return one opaque square repair tile, same composition and perspective as the crop.",
+    "animation": "Fine detailed pixel art exactly matching the supplied crop, same light and color palette. Production asset, no stylistic change. Use the supplied crop as direct visual reference. Draw ONLY the central broad pointed-leaf rosette grass tuft isolated on genuine transparent background. Exactly EIGHT frames in a regular FOUR-column TWO-row sprite sheet; each cell square and identical in size. Aim 2048x1024. Fixed plant attachment at precisely the same point in every cell. Same silhouette, same leaf/flower count, same size, same illumination. Very small breeze loop: neutral, slight right, right peak, slight right, neutral, slight left, left peak, slight left, returns continuously to neutral. Leaf tip displacement 3-5 percent of plant height; roots/branch attachment remain fixed. Plant fits central 60 percent of each cell with generous transparent margins. No earth, stone, wall, cast shadow, background, guide grid, text, checkerboard or glow. Never let sprites touch or cross cell borders."
+  },
+  "anchors": [
+    [
+      230.00176366843033,
+      193.83068783068782
+    ],
+    [
+      233.34854771784234,
+      193.86721991701245
+    ],
+    [
+      236.50310559006212,
+      191.01863354037266
+    ],
+    [
+      231.64229249011856,
+      194.4802371541502
+    ],
+    [
+      230.03130755064456,
+      192.71454880294658
+    ],
+    [
+      219.1596638655462,
+      190.7591036414566
+    ],
+    [
+      219.2987804878049,
+      188.8628048780488
+    ],
+    [
+      217.69647696476966,
+      189.35230352303523
+    ]
+  ],
+  "generation": "built-in image_gen",
+  "source_sheet_size": [
+    1774,
+    887
+  ],
+  "scale_down_only": 0.467005076142132,
+  "frame_size": [
+    256,
+    256
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "source_bounds": [
+        36,
+        91,
+        417,
+        394
+      ],
+      "source_anchor": [
+        230.00176366843033,
+        193.83068783068782
+      ],
+      "translation": [
+        13,
+        34
+      ],
+      "bounds": [
+        27,
+        50,
+        216,
+        223
+      ],
+      "rgba_sha256": "d8eaf77957125593ec0ae36a6bf5b5d2b3b8f42299204f205b98d98ecc700d34"
+    },
+    {
+      "index": 1,
+      "source_bounds": [
+        32,
+        91,
+        420,
+        394
+      ],
+      "source_anchor": [
+        233.34854771784234,
+        193.86721991701245
+      ],
+      "translation": [
+        11,
+        34
+      ],
+      "bounds": [
+        11,
+        53,
+        212,
+        241
+      ],
+      "rgba_sha256": "902aecf717d59600c290bf9b463efc9e7ee6f2fc39daa098c82fcbb3361fa348"
+    },
+    {
+      "index": 2,
+      "source_bounds": [
+        32,
+        90,
+        426,
+        394
+      ],
+      "source_anchor": [
+        236.50310559006212,
+        191.01863354037266
+      ],
+      "translation": [
+        10,
+        36
+      ],
+      "bounds": [
+        10,
+        48,
+        214,
+        233
+      ],
+      "rgba_sha256": "40c6a2a6bab2ec052c4015d6cac7bfc8d245cc919bf4a6af6cfe76298bfc2624"
+    },
+    {
+      "index": 3,
+      "source_bounds": [
+        32,
+        91,
+        418,
+        394
+      ],
+      "source_anchor": [
+        231.64229249011856,
+        194.4802371541502
+      ],
+      "translation": [
+        12,
+        34
+      ],
+      "bounds": [
+        13,
+        60,
+        211,
+        231
+      ],
+      "rgba_sha256": "e1eadf7547acfde749bb62ac588bfb3d3ebe4cd08d6dca0baf46e95293f4592e"
+    },
+    {
+      "index": 4,
+      "source_bounds": [
+        35,
+        88,
+        416,
+        393
+      ],
+      "source_anchor": [
+        230.03130755064456,
+        192.71454880294658
+      ],
+      "translation": [
+        13,
+        35
+      ],
+      "bounds": [
+        26,
+        52,
+        217,
+        221
+      ],
+      "rgba_sha256": "2be8d8a2fcc17b1957c00225f62aa68f591bcdf4dadb2ef5017fe6075d32b942"
+    },
+    {
+      "index": 5,
+      "source_bounds": [
+        27,
+        88,
+        415,
+        393
+      ],
+      "source_anchor": [
+        219.1596638655462,
+        190.7591036414566
+      ],
+      "translation": [
+        18,
+        36
+      ],
+      "bounds": [
+        28,
+        40,
+        218,
+        222
+      ],
+      "rgba_sha256": "c25034cb3d2803ce080599f9a0ed5db61ed024007a6921afb86d491e129ea443"
+    },
+    {
+      "index": 6,
+      "source_bounds": [
+        25,
+        88,
+        415,
+        393
+      ],
+      "source_anchor": [
+        219.2987804878049,
+        188.8628048780488
+      ],
+      "translation": [
+        18,
+        37
+      ],
+      "bounds": [
+        18,
+        37,
+        225,
+        223
+      ],
+      "rgba_sha256": "7abe9062353d674cdf9b9ff93d93affc23c98a7756f529d3728d3225e48b3e8d"
+    },
+    {
+      "index": 7,
+      "source_bounds": [
+        29,
+        88,
+        411,
+        393
+      ],
+      "source_anchor": [
+        217.69647696476966,
+        189.35230352303523
+      ],
+      "translation": [
+        18,
+        37
+      ],
+      "bounds": [
+        18,
+        51,
+        218,
+        223
+      ],
+      "rgba_sha256": "279960c2c49510a49961df5f166bcec2d54d65a7d54de1ca720c58cb480d171a"
+    }
+  ],
+  "source_hashes": {
+    "reference": "dd4f49e3d54b8fdd60f06d58677ab717b4c40cfdeb63bbc2985f62056db4b2b5",
+    "repair": "8e2e007ceba07e2096df16f067652ca2058a89d926540ee8a692562fe4245c35",
+    "animation": "3c64804ab71fa01a5bc14649b5b0d5b54eae9f3699c2cb81e95a1bbc104de817"
+  },
+  "repair_hash": "9071598355e6c370368200fe077a1e93b55046749eeb0622825d5f5920834a27",
+  "atlas_hash": "1adf05224c6030526d286f86248e966237ddae69498c6328653bd9e60942850f"
+}

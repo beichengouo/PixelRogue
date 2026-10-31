@@ -1,0 +1,6651 @@
+{
+  "status": "normal_runtime_integrated_qa_passed",
+  "style_approved": true,
+  "source_files": 69,
+  "expected_source_files": 69,
+  "pending_source_files": [],
+  "authored_source_frames": 261,
+  "calibrated_source_frames": 261,
+  "draft_frame_positions": 261,
+  "source_groups_passed": 64,
+  "calibration_pending_source_files": [],
+  "calibration_pass_is_visual_approval": false,
+  "groups_need_review": [],
+  "visual_rejected_clips": [],
+  "visual_approval": false,
+  "release_ready": false,
+  "packed_clip_sheets": 69,
+  "resource_animations": 124,
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "runtime_integrated": true,
+  "combat_chain_implemented": true,
+  "version": "0.55",
+  "image_generation_blocked_until": null,
+  "source_sha256": {
+    "xixifu_normal_s_idle.png": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42",
+    "xixifu_normal_s_walk.png": "716d954ba294abf0e04292d27fd1df6f84094776e1e012f2024756a2507f3588",
+    "xixifu_normal_s_attack1.png": "a7a18edb68b1b38eda95247624f178a2248a74c7cfb8110b58d8a9b2354ba1c0",
+    "xixifu_normal_s_attack2.png": "06695688c3dc1e1a03acd2955d04564cdf4555a19a25271f0403486997259693",
+    "xixifu_normal_s_attack3.png": "2659527b3e4417d183cd6fba5712bfc9d37e3ef45203f3643a2205d8e17cd06d",
+    "xixifu_normal_s_attack4.png": "29992c2dff243beac77f007a0eacd2eed368a10a889d5f2db633fc91f589e07d",
+    "xixifu_normal_s_attack5.png": "906cce7a08ba10a56f14224594b168ece6e10d219a555503a56a5a26b2812b43",
+    "xixifu_normal_s_skill_cast.png": "34bac1b4f4f4fd3dc364ac93192173afe08848b812328c9b5bb26ce3223fa38d",
+    "xixifu_normal_s_move_attack1.png": "eb13b454da648266059078e587de1dc3925b2cb2757fc4d86b5aa67669130745",
+    "xixifu_normal_s_move_attack2.png": "a2361f488f16993d27681c25c8f0f89d30c6cf18a4965a79773d445b04512de3",
+    "xixifu_normal_s_move_attack3.png": "bcda82d0da2fa05ab0bd7000da7643358908cdaf22e4905c96477e59aa0717d0",
+    "xixifu_normal_s_move_attack4.png": "f3a0c1e5f0792dc7e97ff08d30429086be815ad0a7c5a6ff91d7a91e2f93b406",
+    "xixifu_normal_s_move_attack5.png": "87155ae7b1514c4744fe5d897a2d0faf672220c59cad0f8dd984eecd5d5e4030",
+    "xixifu_normal_sw_idle.png": "de69888641eae6e9cb17ec255da0e705a31bac277b4f7d76d298ff7df31fa6b4",
+    "xixifu_normal_sw_walk.png": "179429f6210a3aba108843fb19df6171708e3e2d77f7994d7516d074b3a9706a",
+    "xixifu_normal_sw_attack1.png": "7e64bee7310eba72f0e15bdf61392348ef1e6db47d57b55aac0340ad850f912c",
+    "xixifu_normal_sw_attack2.png": "57f7c6244ca75268bd875d78a8745a71410333d1f05d346330de098324ce888f",
+    "xixifu_normal_sw_attack3.png": "7cebc287b770a027fc362d46514e54d9c03d564bdbe6d80c5f8cf39e81459089",
+    "xixifu_normal_sw_attack4.png": "b34d07357923b9308fd2a677f8ce9ddd0742654825b4d329eeb95974c0e21df8",
+    "xixifu_normal_sw_attack5.png": "07581263a01deab5a75be148da711a583db4214bd863f4f8e870b2099a9d8c0e",
+    "xixifu_normal_sw_skill_cast.png": "f4d17afd7b8d90ac739072a2dbd500b6f93351d2af1ec9b715045fc0e9e24b5f",
+    "xixifu_normal_sw_move_attack1.png": "141ce380e2e444a2082a800f131c5628691f341252e7d544adef2edd6f6f4dcf",
+    "xixifu_normal_sw_move_attack2.png": "6e27eeb87d6b68fdb2923c79b3a50eb2ebd6b025588f7b8af368c0cb200e5e46",
+    "xixifu_normal_sw_move_attack3.png": "d13668c56f72f0f5fb0d04386bd7ed23aa3f64b127a07c439aa4fc30961521ca",
+    "xixifu_normal_sw_move_attack4.png": "bc5ebbd1eecb97d1c91be8ce5c320243befc2320380cf6799c73236546943837",
+    "xixifu_normal_sw_move_attack5.png": "c6fc9e9938bf6f3e56b421c69c70a8e383e4a496579d275dc4513950444a83a9",
+    "xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "xixifu_normal_w_walk.png": "b350e0e8b05a14e65d76b496dd883fbaeb09f5edabb3bbdf0264be00a43c4383",
+    "xixifu_normal_w_attack1.png": "176cca1d10cda3a28ca03c6394dd608ecb3b40427329816e98ab3c3866f72489",
+    "xixifu_normal_w_attack2.png": "717e43253a2a20ca584206faaa7db249d684f82252f6dae0f6d43273146c5efc",
+    "xixifu_normal_w_attack3.png": "b418baa2292f409b8e1df99d6b56ab01cf35e04f8092dcf09a62bedc64d163c4",
+    "xixifu_normal_w_attack4.png": "597336b59407f29eb55a77f87076acc281790f28e09c0012e9523288587a63e6",
+    "xixifu_normal_w_attack5.png": "c926ef5f46384ac129ee612bfa9a6def30e173d0e4551949970641210d955b86",
+    "xixifu_normal_w_skill_cast.png": "78bbdff2e93b3f3ba630d0c82b876c2ef24133bf472d68b3378eb660d1cdd98f",
+    "xixifu_normal_w_move_attack1.png": "5d6245f183b090edec4f6cf9b1fd3806a763ca12b7f494fb525a5b3d1e76ac7d",
+    "xixifu_normal_w_move_attack2.png": "f55e4b05faa481748ea6401ec12b1598ea8db24485ea8bfd625b0b246784bdd5",
+    "xixifu_normal_w_move_attack3.png": "e2dced3e36eb0362f370899c2208cf014186f31af254d324d2516a9731d439cf",
+    "xixifu_normal_w_move_attack4.png": "90eb9993aa51f6873a53f4cdb10a34a177a14231ad6a65ded93565f5ecb28533",
+    "xixifu_normal_w_move_attack5.png": "15f5aa212855fd0facdfbb0e04b978b0286d3a6968204b461ad17fa2a95f1eeb",
+    "xixifu_normal_nw_idle.png": "6cce60c6eecb320db5b848bcc80325bd82253ccac0809717264672432b9a2e58",
+    "xixifu_normal_nw_walk.png": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f",
+    "xixifu_normal_nw_attack1.png": "db75efe083badba6050d13e3116b676e68d28d87ba2720fca30448703e2de83a",
+    "xixifu_normal_nw_attack2.png": "e0646a496dfd6f53939dc853797eb58c933402989f7a275870c4de1dd2999f57",
+    "xixifu_normal_nw_attack3.png": "79431d633887888ba00f0e254b5afb3d4c9595aaa1bf4d546ffe057edfe58afd",
+    "xixifu_normal_nw_attack4.png": "8c9670509c025225ebad39d1a421b1aac070781cb216d74a5c34ae97a2649670",
+    "xixifu_normal_nw_attack5.png": "1d7b2bd93112b0f967078b58124d899a579edbc010e309e8e436d6240b28d8b4",
+    "xixifu_normal_nw_skill_cast.png": "b154a260a5dd47bb4828ac6418bbef6cb33bf595370ac4131c90cd52465efe1e",
+    "xixifu_normal_nw_move_attack1.png": "d64f71f8c9cc1ba943c79122724ad62574975e03a7871506c37b74f8a0ab3668",
+    "xixifu_normal_nw_move_attack2.png": "73fc5a37456589d98ea6507da86a401953b066c056a4426fa581a5f1732dd6ad",
+    "xixifu_normal_nw_move_attack3.png": "d3df1a1317d0f3b148241cbbe7c642d67f6f2390ad1a03e7d7cc739cd0cf60c0",
+    "xixifu_normal_nw_move_attack4.png": "f2848e82befe850f24fa61f096b76ef9bd9df4615bc5a23723d29af3a2bb7c7a",
+    "xixifu_normal_nw_move_attack5.png": "7fd82770bb85b7263f4a5646dc39ea68600a5b90e58cb0c07ab3f52dfb073602",
+    "xixifu_normal_n_idle.png": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27",
+    "xixifu_normal_n_walk.png": "d29fb0965de4c2b14951136d2d1a949885ee4ea5ef3f908706abc06e2e311da1",
+    "xixifu_normal_n_attack1.png": "a0449f5ee6b88e3ce725e86b2c3277857462b99c4ac28165752dc2bc68b78e8f",
+    "xixifu_normal_n_attack2.png": "00c3c76afd4fe2261725b3ea7382d64b6d52488e6c857d286af4059ec66a8824",
+    "xixifu_normal_n_attack3.png": "90e57460480d258ae67b380b542c3c7c16fefb2005564cf5f2bd865c6dc74428",
+    "xixifu_normal_n_attack4.png": "da54d87a10afcf640bd32b7887ec8017f125c786e37b675ef7a36ec4ac3e8cfd",
+    "xixifu_normal_n_attack5.png": "164e98f88b4298aba639364fdd14ee8c6105dd6ce4b69b631e3de13fe62ef7e0",
+    "xixifu_normal_n_skill_cast.png": "253ba85220441d2d6eaec2fdc9a8a03a92930281c59bccde10bea131bd81c173",
+    "xixifu_normal_n_move_attack1.png": "12b9324b39bb5a5050c1b23831480454f1c813b63f85b13d0126fd3993cc7795",
+    "xixifu_normal_n_move_attack2.png": "115d5fa996f03ce64c72cb41e216657d84c196d987de93c7916305c8af0d4073",
+    "xixifu_normal_n_move_attack3.png": "13b59e71f67f008592e64b3becc612912686befd689e435daea4a07fe7d12561",
+    "xixifu_normal_n_move_attack4.png": "f6101575a37a41b79f81c4b4669ce9ef686a2c6279eadc6c8db6650655765adb",
+    "xixifu_normal_n_move_attack5.png": "b36dc0077e1a7b9914c3e7866959dd112750680991b2fbf67ef73f27329a7c2c",
+    "xixifu_normal_utility_prayer.png": "cad6c045e9014073f7f1583654b34dd3402b1bcfdba51516b9cca94fe7122991",
+    "xixifu_normal_utility_hurt.png": "1d7e254316439545ae1231105a271351f0e8e3ea1f944226a4c18accbb0d1864",
+    "xixifu_normal_utility_death.png": "948ca39d90e9fc02d8b8af6b6d7344aea6d4b7d834b537436ff1c4030ddf2979",
+    "xixifu_normal_utility_interact.png": "e9aaf448fc369183994edd4426812b52cb2f23a927d6bcdcac288257d152ea21"
+  },
+  "clips": {
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            152,
+            166,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42",
+      "direction": "s",
+      "action": "idle",
+      "fixed_clip_scale": null
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            152,
+            148,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "de69888641eae6e9cb17ec255da0e705a31bac277b4f7d76d298ff7df31fa6b4",
+      "direction": "sw",
+      "action": "idle",
+      "fixed_clip_scale": null
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            152,
+            135,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+      "direction": "w",
+      "action": "idle",
+      "fixed_clip_scale": null
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            152,
+            141,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "6cce60c6eecb320db5b848bcc80325bd82253ccac0809717264672432b9a2e58",
+      "direction": "nw",
+      "action": "idle",
+      "fixed_clip_scale": null
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            152,
+            144,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27",
+      "direction": "n",
+      "action": "idle",
+      "fixed_clip_scale": null
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            159,
+            167,
+            233
+          ],
+          "whole_frame_ground_translation_y": 7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            146,
+            157,
+            166,
+            235
+          ],
+          "whole_frame_ground_translation_y": 5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            161,
+            171,
+            231
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            162,
+            171,
+            230
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "716d954ba294abf0e04292d27fd1df6f84094776e1e012f2024756a2507f3588",
+      "direction": "s",
+      "action": "walk",
+      "fixed_clip_scale": 0.4128948721640956
+    },
+    "attack1_s": {
+      "file": "attack1_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            158,
+            186,
+            234
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            158,
+            193,
+            234
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            161,
+            203,
+            231
+          ],
+          "whole_frame_ground_translation_y": 17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            144,
+            201,
+            248
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "a7a18edb68b1b38eda95247624f178a2248a74c7cfb8110b58d8a9b2354ba1c0",
+      "direction": "s",
+      "action": "attack1",
+      "fixed_clip_scale": 0.4021288802739376
+    },
+    "attack2_s": {
+      "file": "attack2_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            143,
+            191,
+            249
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            144,
+            193,
+            248
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            118,
+            210,
+            274
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            110,
+            122,
+            219,
+            270
+          ],
+          "whole_frame_ground_translation_y": 3,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "06695688c3dc1e1a03acd2955d04564cdf4555a19a25271f0403486997259693",
+      "direction": "s",
+      "action": "attack2",
+      "fixed_clip_scale": 0.4289334690067925
+    },
+    "attack3_s": {
+      "file": "attack3_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            144,
+            185,
+            248
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            145,
+            184,
+            247
+          ],
+          "whole_frame_ground_translation_y": -5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            107,
+            128,
+            214,
+            264
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            127,
+            185,
+            265
+          ],
+          "whole_frame_ground_translation_y": 5,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "2659527b3e4417d183cd6fba5712bfc9d37e3ef45203f3643a2205d8e17cd06d",
+      "direction": "s",
+      "action": "attack3",
+      "fixed_clip_scale": 0.42996341124501136
+    },
+    "attack4_s": {
+      "file": "attack4_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            126,
+            196,
+            266
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            151,
+            189,
+            241
+          ],
+          "whole_frame_ground_translation_y": 7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            161,
+            200,
+            231
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            161,
+            209,
+            231
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "29992c2dff243beac77f007a0eacd2eed368a10a889d5f2db633fc91f589e07d",
+      "direction": "s",
+      "action": "attack4",
+      "fixed_clip_scale": 0.41701093073945816
+    },
+    "attack5_s": {
+      "file": "attack5_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            152,
+            203,
+            240
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            152,
+            203,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            149,
+            216,
+            243
+          ],
+          "whole_frame_ground_translation_y": 1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            154,
+            195,
+            238
+          ],
+          "whole_frame_ground_translation_y": 1,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "906cce7a08ba10a56f14224594b168ece6e10d219a555503a56a5a26b2812b43",
+      "direction": "s",
+      "action": "attack5",
+      "fixed_clip_scale": 0.4197967687367395
+    },
+    "skill_cast_s": {
+      "file": "skill_cast_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            149,
+            179,
+            243
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            149,
+            181,
+            243
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            103,
+            150,
+            217,
+            242
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            151,
+            181,
+            241
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "34bac1b4f4f4fd3dc364ac93192173afe08848b812328c9b5bb26ce3223fa38d",
+      "direction": "s",
+      "action": "skill_cast",
+      "fixed_clip_scale": 0.41919394617948214
+    },
+    "move_attack1_s": {
+      "file": "move_attack1_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            163,
+            172,
+            229
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            163,
+            188,
+            229
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            172,
+            184,
+            220
+          ],
+          "whole_frame_ground_translation_y": 19,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            167,
+            179,
+            225
+          ],
+          "whole_frame_ground_translation_y": 21,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "eb13b454da648266059078e587de1dc3925b2cb2757fc4d86b5aa67669130745",
+      "direction": "s",
+      "action": "move_attack1",
+      "fixed_clip_scale": 0.3939662974836886
+    },
+    "move_attack2_s": {
+      "file": "move_attack2_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            157,
+            173,
+            235
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            158,
+            173,
+            234
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            162,
+            214,
+            230
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            155,
+            215,
+            237
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "a2361f488f16993d27681c25c8f0f89d30c6cf18a4965a79773d445b04512de3",
+      "direction": "s",
+      "action": "move_attack2",
+      "fixed_clip_scale": 0.41470811733439916
+    },
+    "move_attack3_s": {
+      "file": "move_attack3_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            158,
+            173,
+            234
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            145,
+            156,
+            170,
+            236
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            139,
+            185,
+            253
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            145,
+            144,
+            173,
+            248
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "bcda82d0da2fa05ab0bd7000da7643358908cdaf22e4905c96477e59aa0717d0",
+      "direction": "s",
+      "action": "move_attack3",
+      "fixed_clip_scale": 0.4167997936844709
+    },
+    "move_attack4_s": {
+      "file": "move_attack4_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            126,
+            190,
+            266
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            158,
+            185,
+            234
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            158,
+            187,
+            234
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            160,
+            204,
+            232
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "f3a0c1e5f0792dc7e97ff08d30429086be815ad0a7c5a6ff91d7a91e2f93b406",
+      "direction": "s",
+      "action": "move_attack4",
+      "fixed_clip_scale": 0.4155943209790651
+    },
+    "move_attack5_s": {
+      "file": "move_attack5_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            157,
+            195,
+            235
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            159,
+            203,
+            233
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            160,
+            194,
+            232
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            159,
+            186,
+            233
+          ],
+          "whole_frame_ground_translation_y": 7,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "87155ae7b1514c4744fe5d897a2d0faf672220c59cad0f8dd984eecd5d5e4030",
+      "direction": "s",
+      "action": "move_attack5",
+      "fixed_clip_scale": 0.4074921325460146
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            156,
+            157,
+            236
+          ],
+          "whole_frame_ground_translation_y": 3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            156,
+            157,
+            236
+          ],
+          "whole_frame_ground_translation_y": 3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            154,
+            159,
+            238
+          ],
+          "whole_frame_ground_translation_y": 1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            156,
+            158,
+            236
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "179429f6210a3aba108843fb19df6171708e3e2d77f7994d7516d074b3a9706a",
+      "direction": "sw",
+      "action": "walk",
+      "fixed_clip_scale": 0.4556516480872339
+    },
+    "attack1_sw": {
+      "file": "attack1_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            146,
+            178,
+            246
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            85,
+            149,
+            256,
+            243
+          ],
+          "whole_frame_ground_translation_y": 1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            154,
+            241,
+            238
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            154,
+            241,
+            238
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "7e64bee7310eba72f0e15bdf61392348ef1e6db47d57b55aac0340ad850f912c",
+      "direction": "sw",
+      "action": "attack1",
+      "fixed_clip_scale": 0.4236197618364293
+    },
+    "attack2_sw": {
+      "file": "attack2_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            144,
+            236,
+            248
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            81,
+            145,
+            286,
+            247
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            103,
+            130,
+            262,
+            262
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            122,
+            248,
+            270
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "57f7c6244ca75268bd875d78a8745a71410333d1f05d346330de098324ce888f",
+      "direction": "sw",
+      "action": "attack2",
+      "fixed_clip_scale": 0.5541361595401979
+    },
+    "attack3_sw": {
+      "file": "attack3_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            58,
+            155,
+            322,
+            237
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            68,
+            156,
+            314,
+            236
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            90,
+            116,
+            289,
+            276
+          ],
+          "whole_frame_ground_translation_y": 7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            123,
+            255,
+            269
+          ],
+          "whole_frame_ground_translation_y": 18,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "7cebc287b770a027fc362d46514e54d9c03d564bdbe6d80c5f8cf39e81459089",
+      "direction": "sw",
+      "action": "attack3",
+      "fixed_clip_scale": 0.5328387466304109
+    },
+    "attack4_sw": {
+      "file": "attack4_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            68,
+            95,
+            309,
+            297
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            87,
+            109,
+            284,
+            283
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            75,
+            108,
+            309,
+            284
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            42,
+            142,
+            351,
+            250
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "b34d07357923b9308fd2a677f8ce9ddd0742654825b4d329eeb95974c0e21df8",
+      "direction": "sw",
+      "action": "attack4",
+      "fixed_clip_scale": 0.5565390824029017
+    },
+    "attack5_sw": {
+      "file": "attack5_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            69,
+            146,
+            296,
+            246
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            42,
+            164,
+            348,
+            228
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            152,
+            256,
+            240
+          ],
+          "whole_frame_ground_translation_y": 2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            140,
+            187,
+            252
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "07581263a01deab5a75be148da711a583db4214bd863f4f8e870b2099a9d8c0e",
+      "direction": "sw",
+      "action": "attack5",
+      "fixed_clip_scale": 0.5096927500711734
+    },
+    "skill_cast_sw": {
+      "file": "skill_cast_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            160,
+            153,
+            232
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            160,
+            178,
+            232
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            165,
+            203,
+            227
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            163,
+            161,
+            229
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "f4d17afd7b8d90ac739072a2dbd500b6f93351d2af1ec9b715045fc0e9e24b5f",
+      "direction": "sw",
+      "action": "skill_cast",
+      "fixed_clip_scale": 0.3755830465183251
+    },
+    "move_attack1_sw": {
+      "file": "move_attack1_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            163,
+            189,
+            229
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            162,
+            219,
+            230
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            169,
+            195,
+            223
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            167,
+            189,
+            225
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "141ce380e2e444a2082a800f131c5628691f341252e7d544adef2edd6f6f4dcf",
+      "direction": "sw",
+      "action": "move_attack1",
+      "fixed_clip_scale": 0.4356107931061616
+    },
+    "move_attack2_sw": {
+      "file": "move_attack2_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            160,
+            191,
+            232
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            110,
+            160,
+            221,
+            232
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            167,
+            197,
+            225
+          ],
+          "whole_frame_ground_translation_y": 14,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            164,
+            191,
+            228
+          ],
+          "whole_frame_ground_translation_y": 15,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "6e27eeb87d6b68fdb2923c79b3a50eb2ebd6b025588f7b8af368c0cb200e5e46",
+      "direction": "sw",
+      "action": "move_attack2",
+      "fixed_clip_scale": 0.44233359889565854
+    },
+    "move_attack3_sw": {
+      "file": "move_attack3_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            82,
+            166,
+            253,
+            226
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            92,
+            165,
+            243,
+            227
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            171,
+            198,
+            221
+          ],
+          "whole_frame_ground_translation_y": 18,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            145,
+            155,
+            188,
+            237
+          ],
+          "whole_frame_ground_translation_y": 18,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "d13668c56f72f0f5fb0d04386bd7ed23aa3f64b127a07c439aa4fc30961521ca",
+      "direction": "sw",
+      "action": "move_attack3",
+      "fixed_clip_scale": 0.43429101872587245
+    },
+    "move_attack4_sw": {
+      "file": "move_attack4_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            161,
+            229,
+            231
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            162,
+            209,
+            230
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            168,
+            225,
+            224
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            94,
+            169,
+            249,
+            223
+          ],
+          "whole_frame_ground_translation_y": 15,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "bc5ebbd1eecb97d1c91be8ce5c320243befc2320380cf6799c73236546943837",
+      "direction": "sw",
+      "action": "move_attack4",
+      "fixed_clip_scale": 0.4362975689148562
+    },
+    "move_attack5_sw": {
+      "file": "move_attack5_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            166,
+            198,
+            226
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            78,
+            166,
+            255,
+            226
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            169,
+            202,
+            223
+          ],
+          "whole_frame_ground_translation_y": 17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            170,
+            196,
+            222
+          ],
+          "whole_frame_ground_translation_y": 18,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "c6fc9e9938bf6f3e56b421c69c70a8e383e4a496579d275dc4513950444a83a9",
+      "direction": "sw",
+      "action": "move_attack5",
+      "fixed_clip_scale": 0.43181988052784337
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            164,
+            160,
+            228
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            161,
+            156,
+            231
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            161,
+            172,
+            231
+          ],
+          "whole_frame_ground_translation_y": 7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            159,
+            155,
+            233
+          ],
+          "whole_frame_ground_translation_y": 5,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "b350e0e8b05a14e65d76b496dd883fbaeb09f5edabb3bbdf0264be00a43c4383",
+      "direction": "w",
+      "action": "walk",
+      "fixed_clip_scale": 0.37751911309418856
+    },
+    "attack1_w": {
+      "file": "attack1_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            160,
+            154,
+            232
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            82,
+            161,
+            236,
+            231
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            165,
+            220,
+            227
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            162,
+            225,
+            230
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "176cca1d10cda3a28ca03c6394dd608ecb3b40427329816e98ab3c3866f72489",
+      "direction": "w",
+      "action": "attack1",
+      "fixed_clip_scale": 0.39903790679355094
+    },
+    "attack2_w": {
+      "file": "attack2_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            153,
+            204,
+            239
+          ],
+          "whole_frame_ground_translation_y": 3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            143,
+            247,
+            249
+          ],
+          "whole_frame_ground_translation_y": 2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            85,
+            155,
+            256,
+            237
+          ],
+          "whole_frame_ground_translation_y": 3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            76,
+            146,
+            258,
+            246
+          ],
+          "whole_frame_ground_translation_y": 2,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "717e43253a2a20ca584206faaa7db249d684f82252f6dae0f6d43273146c5efc",
+      "direction": "w",
+      "action": "attack2",
+      "fixed_clip_scale": 0.42464379977682337
+    },
+    "attack3_w": {
+      "file": "attack3_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            172,
+            229,
+            220
+          ],
+          "whole_frame_ground_translation_y": 17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            75,
+            172,
+            255,
+            220
+          ],
+          "whole_frame_ground_translation_y": 17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            91,
+            144,
+            241,
+            248
+          ],
+          "whole_frame_ground_translation_y": 14,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            138,
+            202,
+            254
+          ],
+          "whole_frame_ground_translation_y": 19,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "b418baa2292f409b8e1df99d6b56ab01cf35e04f8092dcf09a62bedc64d163c4",
+      "direction": "w",
+      "action": "attack3",
+      "fixed_clip_scale": 0.42539154391637185
+    },
+    "attack4_w": {
+      "file": "attack4_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            97,
+            139,
+            239,
+            253
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            166,
+            240,
+            226
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            89,
+            164,
+            247,
+            228
+          ],
+          "whole_frame_ground_translation_y": 20,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            66,
+            174,
+            264,
+            218
+          ],
+          "whole_frame_ground_translation_y": 19,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "597336b59407f29eb55a77f87076acc281790f28e09c0012e9523288587a63e6",
+      "direction": "w",
+      "action": "attack4",
+      "fixed_clip_scale": 0.42588569851693525
+    },
+    "attack5_w": {
+      "file": "attack5_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            153,
+            235,
+            239
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            54,
+            172,
+            279,
+            220
+          ],
+          "whole_frame_ground_translation_y": 15,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            94,
+            170,
+            248,
+            222
+          ],
+          "whole_frame_ground_translation_y": 15,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            166,
+            164,
+            169,
+            228
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "c926ef5f46384ac129ee612bfa9a6def30e173d0e4551949970641210d955b86",
+      "direction": "w",
+      "action": "attack5",
+      "fixed_clip_scale": 0.43778618331242397
+    },
+    "skill_cast_w": {
+      "file": "skill_cast_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            157,
+            153,
+            235
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            157,
+            188,
+            235
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            164,
+            218,
+            228
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            163,
+            158,
+            229
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "78bbdff2e93b3f3ba630d0c82b876c2ef24133bf472d68b3378eb660d1cdd98f",
+      "direction": "w",
+      "action": "skill_cast",
+      "fixed_clip_scale": 0.378982852519119
+    },
+    "move_attack1_w": {
+      "file": "move_attack1_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            161,
+            175,
+            231
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            93,
+            158,
+            238,
+            234
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            167,
+            217,
+            225
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            167,
+            214,
+            225
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "5d6245f183b090edec4f6cf9b1fd3806a763ca12b7f494fb525a5b3d1e76ac7d",
+      "direction": "w",
+      "action": "move_attack1",
+      "fixed_clip_scale": 0.37794553085673677
+    },
+    "move_attack2_w": {
+      "file": "move_attack2_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            167,
+            172,
+            225
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            158,
+            232,
+            234
+          ],
+          "whole_frame_ground_translation_y": 14,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            178,
+            235,
+            214
+          ],
+          "whole_frame_ground_translation_y": 22,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            171,
+            230,
+            221
+          ],
+          "whole_frame_ground_translation_y": 22,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "f55e4b05faa481748ea6401ec12b1598ea8db24485ea8bfd625b0b246784bdd5",
+      "direction": "w",
+      "action": "move_attack2",
+      "fixed_clip_scale": 0.4245529062416821
+    },
+    "move_attack3_w": {
+      "file": "move_attack3_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            148,
+            262,
+            244
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            54,
+            148,
+            297,
+            244
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            151,
+            257,
+            241
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            133,
+            251,
+            259
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "e2dced3e36eb0362f370899c2208cf014186f31af254d324d2516a9731d439cf",
+      "direction": "w",
+      "action": "move_attack3",
+      "fixed_clip_scale": 0.45905681183650304
+    },
+    "move_attack4_w": {
+      "file": "move_attack4_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            131,
+            299,
+            261
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            76,
+            141,
+            315,
+            251
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            80,
+            129,
+            319,
+            263
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            85,
+            125,
+            317,
+            267
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "90eb9993aa51f6873a53f4cdb10a34a177a14231ad6a65ded93565f5ecb28533",
+      "direction": "w",
+      "action": "move_attack4",
+      "fixed_clip_scale": 0.5635439952279782
+    },
+    "move_attack5_w": {
+      "file": "move_attack5_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            162,
+            264,
+            230
+          ],
+          "whole_frame_ground_translation_y": 17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            36,
+            173,
+            330,
+            219
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            169,
+            283,
+            223
+          ],
+          "whole_frame_ground_translation_y": 20,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            148,
+            173,
+            233,
+            219
+          ],
+          "whole_frame_ground_translation_y": 19,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "15f5aa212855fd0facdfbb0e04b978b0286d3a6968204b461ad17fa2a95f1eeb",
+      "direction": "w",
+      "action": "move_attack5",
+      "fixed_clip_scale": 0.4868149373331605
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            146,
+            148,
+            246
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            147,
+            148,
+            245
+          ],
+          "whole_frame_ground_translation_y": -5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            146,
+            153,
+            246
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            150,
+            153,
+            242
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f",
+      "direction": "nw",
+      "action": "walk",
+      "fixed_clip_scale": 0.4429669146831486
+    },
+    "attack1_nw": {
+      "file": "attack1_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            139,
+            170,
+            253
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            140,
+            244,
+            252
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            91,
+            146,
+            261,
+            246
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            110,
+            139,
+            239,
+            253
+          ],
+          "whole_frame_ground_translation_y": -4,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "db75efe083badba6050d13e3116b676e68d28d87ba2720fca30448703e2de83a",
+      "direction": "nw",
+      "action": "attack1",
+      "fixed_clip_scale": 0.5148286126073538
+    },
+    "attack2_nw": {
+      "file": "attack2_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            163,
+            167,
+            229
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            166,
+            224,
+            226
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            91,
+            163,
+            253,
+            229
+          ],
+          "whole_frame_ground_translation_y": 17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            172,
+            255,
+            220
+          ],
+          "whole_frame_ground_translation_y": 19,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "e0646a496dfd6f53939dc853797eb58c933402989f7a275870c4de1dd2999f57",
+      "direction": "nw",
+      "action": "attack2",
+      "fixed_clip_scale": 0.46097286748115834
+    },
+    "attack3_nw": {
+      "file": "attack3_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            161,
+            198,
+            231
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            161,
+            237,
+            231
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            148,
+            221,
+            244
+          ],
+          "whole_frame_ground_translation_y": 22,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            129,
+            204,
+            263
+          ],
+          "whole_frame_ground_translation_y": 21,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "79431d633887888ba00f0e254b5afb3d4c9595aaa1bf4d546ffe057edfe58afd",
+      "direction": "nw",
+      "action": "attack3",
+      "fixed_clip_scale": 0.4934384972033049
+    },
+    "attack4_nw": {
+      "file": "attack4_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            125,
+            231,
+            267
+          ],
+          "whole_frame_ground_translation_y": -5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            106,
+            129,
+            242,
+            263
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            128,
+            239,
+            264
+          ],
+          "whole_frame_ground_translation_y": 6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            99,
+            128,
+            254,
+            264
+          ],
+          "whole_frame_ground_translation_y": 7,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "8c9670509c025225ebad39d1a421b1aac070781cb216d74a5c34ae97a2649670",
+      "direction": "nw",
+      "action": "attack4",
+      "fixed_clip_scale": 0.5219506153022575
+    },
+    "attack5_nw": {
+      "file": "attack5_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            103,
+            136,
+            254,
+            256
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            90,
+            148,
+            275,
+            244
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            97,
+            128,
+            278,
+            264
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            149,
+            200,
+            244
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "1d7b2bd93112b0f967078b58124d899a579edbc010e309e8e436d6240b28d8b4",
+      "direction": "nw",
+      "action": "attack5",
+      "fixed_clip_scale": 0.5282522310626897
+    },
+    "skill_cast_nw": {
+      "file": "skill_cast_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            142,
+            149,
+            250
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            142,
+            174,
+            250
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            141,
+            215,
+            251
+          ],
+          "whole_frame_ground_translation_y": -12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            142,
+            150,
+            250
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "b154a260a5dd47bb4828ac6418bbef6cb33bf595370ac4131c90cd52465efe1e",
+      "direction": "nw",
+      "action": "skill_cast",
+      "fixed_clip_scale": 0.43777280310231065
+    },
+    "move_attack1_nw": {
+      "file": "move_attack1_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            166,
+            142,
+            156,
+            250
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            145,
+            208,
+            247
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            141,
+            219,
+            251
+          ],
+          "whole_frame_ground_translation_y": -12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            137,
+            209,
+            255
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "d64f71f8c9cc1ba943c79122724ad62574975e03a7871506c37b74f8a0ab3668",
+      "direction": "nw",
+      "action": "move_attack1",
+      "fixed_clip_scale": 0.44503922666241175
+    },
+    "move_attack2_nw": {
+      "file": "move_attack2_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            144,
+            162,
+            248
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            147,
+            215,
+            245
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            146,
+            215,
+            246
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            149,
+            219,
+            243
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "73fc5a37456589d98ea6507da86a401953b066c056a4426fa581a5f1732dd6ad",
+      "direction": "nw",
+      "action": "move_attack2",
+      "fixed_clip_scale": 0.4323728640309221
+    },
+    "move_attack3_nw": {
+      "file": "move_attack3_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            150,
+            225,
+            242
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            96,
+            153,
+            238,
+            239
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            148,
+            217,
+            244
+          ],
+          "whole_frame_ground_translation_y": 4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            143,
+            200,
+            249
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "d3df1a1317d0f3b148241cbbe7c642d67f6f2390ad1a03e7d7cc739cd0cf60c0",
+      "direction": "nw",
+      "action": "move_attack3",
+      "fixed_clip_scale": 0.4314778014996066
+    },
+    "move_attack4_nw": {
+      "file": "move_attack4_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            129,
+            254,
+            263
+          ],
+          "whole_frame_ground_translation_y": -17,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            134,
+            246,
+            258
+          ],
+          "whole_frame_ground_translation_y": -15,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            136,
+            257,
+            256
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            107,
+            137,
+            253,
+            255
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "f2848e82befe850f24fa61f096b76ef9bd9df4615bc5a23723d29af3a2bb7c7a",
+      "direction": "nw",
+      "action": "move_attack4",
+      "fixed_clip_scale": 0.5462047069889256
+    },
+    "move_attack5_nw": {
+      "file": "move_attack5_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            106,
+            132,
+            254,
+            260
+          ],
+          "whole_frame_ground_translation_y": -13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            90,
+            139,
+            275,
+            253
+          ],
+          "whole_frame_ground_translation_y": -13,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            135,
+            255,
+            257
+          ],
+          "whole_frame_ground_translation_y": -4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            146,
+            230,
+            246
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "7fd82770bb85b7263f4a5646dc39ea68600a5b90e58cb0c07ab3f52dfb073602",
+      "direction": "nw",
+      "action": "move_attack5",
+      "fixed_clip_scale": 0.5364339164189456
+    },
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            146,
+            150,
+            246
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            152,
+            151,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            149,
+            153,
+            243
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            152,
+            151,
+            240
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "d29fb0965de4c2b14951136d2d1a949885ee4ea5ef3f908706abc06e2e311da1",
+      "direction": "n",
+      "action": "walk",
+      "fixed_clip_scale": 0.44837183787566903
+    },
+    "attack1_n": {
+      "file": "attack1_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            146,
+            154,
+            246
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            146,
+            180,
+            246
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            140,
+            196,
+            252
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            135,
+            190,
+            257
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "a0449f5ee6b88e3ce725e86b2c3277857462b99c4ac28165752dc2bc68b78e8f",
+      "direction": "n",
+      "action": "attack1",
+      "fixed_clip_scale": 0.5284831038920815
+    },
+    "attack2_n": {
+      "file": "attack2_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            144,
+            171,
+            248
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            137,
+            171,
+            255
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            115,
+            131,
+            201,
+            261
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            113,
+            129,
+            187,
+            263
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "00c3c76afd4fe2261725b3ea7382d64b6d52488e6c857d286af4059ec66a8824",
+      "direction": "n",
+      "action": "attack2",
+      "fixed_clip_scale": 0.5349797890032261
+    },
+    "attack3_n": {
+      "file": "attack3_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            150,
+            189,
+            242
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            163,
+            185,
+            229
+          ],
+          "whole_frame_ground_translation_y": 11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            136,
+            167,
+            256
+          ],
+          "whole_frame_ground_translation_y": 14,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            125,
+            162,
+            267
+          ],
+          "whole_frame_ground_translation_y": 13,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "90e57460480d258ae67b380b542c3c7c16fefb2005564cf5f2bd865c6dc74428",
+      "direction": "n",
+      "action": "attack3",
+      "fixed_clip_scale": 0.499861361807277
+    },
+    "attack4_n": {
+      "file": "attack4_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            130,
+            205,
+            262
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            129,
+            178,
+            263
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            118,
+            184,
+            274
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            115,
+            190,
+            277
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "da54d87a10afcf640bd32b7887ec8017f125c786e37b675ef7a36ec4ac3e8cfd",
+      "direction": "n",
+      "action": "attack4",
+      "fixed_clip_scale": 0.5269517329897827
+    },
+    "attack5_n": {
+      "file": "attack5_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            90,
+            200,
+            302
+          ],
+          "whole_frame_ground_translation_y": -20,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            107,
+            112,
+            228,
+            280
+          ],
+          "whole_frame_ground_translation_y": -19,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            101,
+            198,
+            291
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            125,
+            187,
+            267
+          ],
+          "whole_frame_ground_translation_y": -25,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "164e98f88b4298aba639364fdd14ee8c6105dd6ce4b69b631e3de13fe62ef7e0",
+      "direction": "n",
+      "action": "attack5",
+      "fixed_clip_scale": 0.6104943253688484
+    },
+    "skill_cast_n": {
+      "file": "skill_cast_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            147,
+            161,
+            245
+          ],
+          "whole_frame_ground_translation_y": -5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            147,
+            193,
+            245
+          ],
+          "whole_frame_ground_translation_y": -5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            133,
+            200,
+            259
+          ],
+          "whole_frame_ground_translation_y": -6,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            143,
+            163,
+            249
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "253ba85220441d2d6eaec2fdc9a8a03a92930281c59bccde10bea131bd81c173",
+      "direction": "n",
+      "action": "skill_cast",
+      "fixed_clip_scale": 0.430850401337114
+    },
+    "move_attack1_n": {
+      "file": "move_attack1_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            145,
+            155,
+            247
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            149,
+            205,
+            243
+          ],
+          "whole_frame_ground_translation_y": -4,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            148,
+            211,
+            244
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            130,
+            197,
+            262
+          ],
+          "whole_frame_ground_translation_y": -2,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "12b9324b39bb5a5050c1b23831480454f1c813b63f85b13d0126fd3993cc7795",
+      "direction": "n",
+      "action": "move_attack1",
+      "fixed_clip_scale": 0.5157056553966748
+    },
+    "move_attack2_n": {
+      "file": "move_attack2_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            129,
+            188,
+            263
+          ],
+          "whole_frame_ground_translation_y": -14,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            142,
+            242,
+            250
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            132,
+            204,
+            260
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            135,
+            252,
+            257
+          ],
+          "whole_frame_ground_translation_y": -10,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "115d5fa996f03ce64c72cb41e216657d84c196d987de93c7916305c8af0d4073",
+      "direction": "n",
+      "action": "move_attack2",
+      "fixed_clip_scale": 0.5254575847010586
+    },
+    "move_attack3_n": {
+      "file": "move_attack3_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            140,
+            205,
+            252
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            144,
+            270,
+            248
+          ],
+          "whole_frame_ground_translation_y": -7,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            136,
+            239,
+            256
+          ],
+          "whole_frame_ground_translation_y": -5,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            126,
+            235,
+            266
+          ],
+          "whole_frame_ground_translation_y": -3,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "13b59e71f67f008592e64b3becc612912686befd689e435daea4a07fe7d12561",
+      "direction": "n",
+      "action": "move_attack3",
+      "fixed_clip_scale": 0.5181535766975456
+    },
+    "move_attack4_n": {
+      "file": "move_attack4_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            137,
+            211,
+            255
+          ],
+          "whole_frame_ground_translation_y": -14,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            140,
+            283,
+            252
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            129,
+            241,
+            263
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            110,
+            237,
+            282
+          ],
+          "whole_frame_ground_translation_y": -8,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "f6101575a37a41b79f81c4b4669ce9ef686a2c6279eadc6c8db6650655765adb",
+      "direction": "n",
+      "action": "move_attack4",
+      "fixed_clip_scale": 0.5262914278325576
+    },
+    "move_attack5_n": {
+      "file": "move_attack5_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            129,
+            209,
+            263
+          ],
+          "whole_frame_ground_translation_y": -15,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            139,
+            263,
+            253
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            127,
+            215,
+            265
+          ],
+          "whole_frame_ground_translation_y": -11,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            142,
+            168,
+            250
+          ],
+          "whole_frame_ground_translation_y": -9,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "b36dc0077e1a7b9914c3e7866959dd112750680991b2fbf67ef73f27329a7c2c",
+      "direction": "n",
+      "action": "move_attack5",
+      "fixed_clip_scale": 0.5260636864888965
+    },
+    "prayer": {
+      "file": "prayer.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            168,
+            139,
+            224
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            169,
+            142,
+            223
+          ],
+          "whole_frame_ground_translation_y": 20,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            170,
+            173,
+            147,
+            219
+          ],
+          "whole_frame_ground_translation_y": 22,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            173,
+            140,
+            219
+          ],
+          "whole_frame_ground_translation_y": 22,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "cad6c045e9014073f7f1583654b34dd3402b1bcfdba51516b9cca94fe7122991",
+      "direction": "w",
+      "action": "prayer",
+      "fixed_clip_scale": 0.36888874173929037
+    },
+    "hurt": {
+      "file": "hurt.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            163,
+            168,
+            229
+          ],
+          "whole_frame_ground_translation_y": 12,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            180,
+            168,
+            212
+          ],
+          "whole_frame_ground_translation_y": 34,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            168,
+            166,
+            224
+          ],
+          "whole_frame_ground_translation_y": 16,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            167,
+            154,
+            225
+          ],
+          "whole_frame_ground_translation_y": 15,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "1d7e254316439545ae1231105a271351f0e8e3ea1f944226a4c18accbb0d1864",
+      "direction": "w",
+      "action": "hurt",
+      "fixed_clip_scale": 0.41601024119525076
+    },
+    "death": {
+      "file": "death.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            150,
+            153,
+            242
+          ],
+          "whole_frame_ground_translation_y": -1,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            206,
+            162,
+            186
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            298,
+            214,
+            94
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            309,
+            203,
+            83
+          ],
+          "whole_frame_ground_translation_y": 0,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "948ca39d90e9fc02d8b8af6b6d7344aea6d4b7d834b537436ff1c4030ddf2979",
+      "direction": "w",
+      "action": "death",
+      "fixed_clip_scale": 0.3598064902208113
+    },
+    "interact": {
+      "file": "interact.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            160,
+            144,
+            232
+          ],
+          "whole_frame_ground_translation_y": 8,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            160,
+            145,
+            232
+          ],
+          "whole_frame_ground_translation_y": 9,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            162,
+            157,
+            230
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            161,
+            146,
+            231
+          ],
+          "whole_frame_ground_translation_y": 10,
+          "foot_y": 392
+        }
+      ],
+      "source_sha256": "e9aaf448fc369183994edd4426812b52cb2f23a927d6bcdcac288257d152ea21",
+      "direction": "w",
+      "action": "interact",
+      "fixed_clip_scale": 0.3989444714823693
+    }
+  },
+  "animations": [
+    {
+      "name": "idle_s",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "walk_s",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "attack1_s",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack2_s",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack3_s",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack4_s",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack5_s",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "skill_cast_s",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack1_s",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack2_s",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack3_s",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack4_s",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack5_s",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "combo_cycle_s",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "move_combo_cycle_s",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "idle_sw",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "walk_sw",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "attack1_sw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack2_sw",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack3_sw",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack4_sw",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack5_sw",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "skill_cast_sw",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack1_sw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack2_sw",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack3_sw",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack4_sw",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack5_sw",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "combo_cycle_sw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "move_combo_cycle_sw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "idle_w",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "walk_w",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "attack1_w",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack2_w",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack3_w",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack4_w",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack5_w",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "skill_cast_w",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack1_w",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack2_w",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack3_w",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack4_w",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack5_w",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "combo_cycle_w",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "move_combo_cycle_w",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "idle_nw",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "walk_nw",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "attack1_nw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack2_nw",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack3_nw",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack4_nw",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack5_nw",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "skill_cast_nw",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack1_nw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack2_nw",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack3_nw",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack4_nw",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack5_nw",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "combo_cycle_nw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "move_combo_cycle_nw",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "idle_n",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "walk_n",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "attack1_n",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack2_n",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack3_n",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack4_n",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "attack5_n",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "skill_cast_n",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack1_n",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack2_n",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack3_n",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack4_n",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "move_attack5_n",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "combo_cycle_n",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "move_combo_cycle_n",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "idle_ne",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "walk_ne",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "attack1_ne",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack2_ne",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack3_ne",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack4_ne",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack5_ne",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "skill_cast_ne",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack1_ne",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack2_ne",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack3_ne",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack4_ne",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack5_ne",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "combo_cycle_ne",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "move_combo_cycle_ne",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "idle_e",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "walk_e",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "attack1_e",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack2_e",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack3_e",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack4_e",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack5_e",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "skill_cast_e",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack1_e",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack2_e",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack3_e",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack4_e",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack5_e",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "combo_cycle_e",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "move_combo_cycle_e",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "idle_se",
+      "durations": [
+        1.0
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "walk_se",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 7.5,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "attack1_se",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack2_se",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack3_se",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack4_se",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "attack5_se",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "skill_cast_se",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack1_se",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack2_se",
+      "durations": [
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack3_se",
+      "durations": [
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack4_se",
+      "durations": [
+        0.18,
+        0.18,
+        0.252,
+        0.288
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "move_attack5_se",
+      "durations": [
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": false,
+      "mirror": true
+    },
+    {
+      "name": "combo_cycle_se",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "move_combo_cycle_se",
+      "durations": [
+        0.18,
+        0.05500000000000001,
+        0.077,
+        0.08800000000000002,
+        0.18,
+        0.09250000000000001,
+        0.1295,
+        0.14800000000000002,
+        0.18,
+        0.13,
+        0.182,
+        0.20800000000000002,
+        0.18,
+        0.18,
+        0.252,
+        0.288,
+        0.18,
+        0.28,
+        0.392,
+        0.44800000000000006
+      ],
+      "fps": 1.0,
+      "loop": true,
+      "mirror": true
+    },
+    {
+      "name": "prayer",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 8,
+      "loop": true,
+      "mirror": false
+    },
+    {
+      "name": "hurt",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "death",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 5,
+      "loop": false,
+      "mirror": false
+    },
+    {
+      "name": "interact",
+      "durations": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fps": 12.5,
+      "loop": false,
+      "mirror": false
+    }
+  ],
+  "checks": 783,
+  "grounding": "fixed whole-clip scale; full-frame translation to same floor, authored head crouch retained; no pixel warping or per-frame scaling. Floor grounding does not prove matching limb lengths or idle/action anatomy.",
+  "art_sources_complete": true,
+  "primary_visual_review_passed": true,
+  "user_sprite_approval": false,
+  "independent_upper_lower_phase_blending": false,
+  "runtime_cadence": {
+    "revision": 2,
+    "reason": "user_requested_more_readable_attack_intervals",
+    "cycle_seconds": 4.8,
+    "release_times": [
+      0.24,
+      0.84,
+      1.59,
+      2.49,
+      3.59
+    ],
+    "segments": [
+      0.6,
+      0.75,
+      0.9,
+      1.1,
+      1.45
+    ],
+    "damage_budget": 5.5,
+    "damage_compensated": false,
+    "source_draft_timing_is_historical": true
+  },
+  "validation": "tests/xixifu_chain_v36.tscn",
+  "latest_state": "docs/CODEX_HANDOFF.md#29.8"
+}

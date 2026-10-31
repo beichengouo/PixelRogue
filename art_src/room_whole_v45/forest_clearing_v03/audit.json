@@ -1,0 +1,200 @@
+{
+  "status": "native_resolution_style_and_motion_trial_not_runtime_admitted",
+  "method": "one imagegen master, deterministic local inverse warp baked to eight full images",
+  "native_size": [
+    1672,
+    941
+  ],
+  "requested_size": [
+    2560,
+    1440
+  ],
+  "upscaled": false,
+  "fps": 6,
+  "frame_count": 8,
+  "regions": [
+    [
+      400,
+      207,
+      40,
+      35
+    ],
+    [
+      490,
+      273,
+      44,
+      35
+    ],
+    [
+      574,
+      214,
+      32,
+      30
+    ],
+    [
+      654,
+      201,
+      33,
+      29
+    ],
+    [
+      624,
+      351,
+      32,
+      29
+    ],
+    [
+      579,
+      376,
+      29,
+      25
+    ],
+    [
+      391,
+      289,
+      31,
+      27
+    ],
+    [
+      378,
+      641,
+      36,
+      29
+    ],
+    [
+      402,
+      534,
+      34,
+      28
+    ],
+    [
+      589,
+      748,
+      36,
+      26
+    ],
+    [
+      857,
+      542,
+      39,
+      31
+    ],
+    [
+      1047,
+      735,
+      34,
+      29
+    ],
+    [
+      1105,
+      622,
+      41,
+      34
+    ],
+    [
+      1211,
+      624,
+      31,
+      27
+    ],
+    [
+      1312,
+      705,
+      39,
+      32
+    ],
+    [
+      1293,
+      576,
+      35,
+      29
+    ],
+    [
+      1303,
+      391,
+      37,
+      30
+    ],
+    [
+      1281,
+      306,
+      38,
+      32
+    ],
+    [
+      1248,
+      245,
+      39,
+      32
+    ],
+    [
+      1171,
+      358,
+      32,
+      29
+    ],
+    [
+      1074,
+      508,
+      39,
+      30
+    ],
+    [
+      947,
+      220,
+      38,
+      31
+    ],
+    [
+      982,
+      443,
+      35,
+      29
+    ],
+    [
+      816,
+      289,
+      30,
+      27
+    ],
+    [
+      745,
+      410,
+      34,
+      26
+    ]
+  ],
+  "maximum_displacement_px": 1.8964756727218628,
+  "moving_support_fraction": 0.0526805190446893,
+  "unchanged_outside_support": true,
+  "frame_8_equals_frame_0": true,
+  "unique_frames": 8,
+  "adjacent_mean_absolute_rgb_difference_including_wrap": [
+    0.29920534841112056,
+    0.2799083315960658,
+    0.2729308720066033,
+    0.2912382819186891,
+    0.2982223092268397,
+    0.27881406491787386,
+    0.27229888797929513,
+    0.2923488619626547
+  ],
+  "pixel_sha256": [
+    "e2622486621326270e5bc2895edc7f51f28c0c410aeb8a793cdac1bb0c537299",
+    "5a1ce0f24e197cae1f4b534c855c65d828db0b4abffb9ae439748b4d6d4e19de",
+    "47a0844a6b618dc43b3bc4f9fc22956f996908138d0e0b2c0bc1685d8743ce3a",
+    "98d49820bdfce66f91782b23c1e77e625b3a3fead31b1c187fc760983abd39a0",
+    "1c318f9e8acab918c9c82e7f5a3f78afda2a13093c42c784e870014a26b4c62b",
+    "e886273642bd25f9529bd3c8e3df97967c6fae1973d545f95112b93563e84882",
+    "67f2ea1c434ee993643040c6e6dc8b3b4af34c082fa232608ae8e807be8b1929",
+    "24853558fb63daf6aa388dea5c086004502e448c5f8442d51b27f280f3f27b84"
+  ],
+  "master_file_sha256": "0570aa85a3538a1f4dca6339d36995a5b76d24d52bb1ac61bc67ebf8c2953a2a",
+  "rgba8_estimated_MiB": 48.014892578125,
+  "limitations": [
+    "native output is below requested 2K",
+    "AI master preserves overall layout but is not proven pixel registered to original gameplay",
+    "elliptical crowns include some adjacent grass; these are local deformations, not articulated leaf animation",
+    "no formal-game replacement or GL performance validation"
+  ]
+}

@@ -1,0 +1,278 @@
+{
+  "id": "grass_east",
+  "kind": "grass",
+  "rect_px": [
+    3052,
+    838,
+    256,
+    256
+  ],
+  "layer": "background",
+  "phase": 1,
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\references\\grass_east.png",
+  "repair": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\grass_east_repair.png",
+  "animation": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\grass_east_animation_v3.png",
+  "repair_inner": [
+    50,
+    60,
+    254,
+    242
+  ],
+  "target_anchor": [
+    139,
+    133
+  ],
+  "plant_size": [
+    180,
+    155
+  ],
+  "generation_prompts": {
+    "repair": "Fine detailed pixel art exactly matching the supplied crop, same light and color palette. Production asset, no stylistic change. Edit the supplied square game map crop. Remove ONLY the central large pointed-leaf rosette grass tuft, excluding the separate white flower at the upper left. Fill only its footprint with same tiny mottled yellow-green meadow grass; preserve separate upper-left white flower. Preserve surrounding pixels and all border landmarks. No extra decoration, no new plants or shadows. Return one opaque square repair tile, same composition and perspective as the crop.",
+    "animation": "Create a NEW production sprite sheet from this original pixel-art map crop. EIGHT successive time frames of the SAME stationary central leafy rosette grass tuft, NOT facing directions. The tiny secondary yellow bud remains to the LEFT of the main central buds in every frame. No mirroring, no rotation, no zoom or leaf arrangement change. Four columns, two rows, equal square cells. Fine pixel art and colors exactly from the reference. Frame cycle only flexes the outer leaf tips by 0%,1%,2%,1%,0%,-1%,-2%,-1% of plant width; root and central buds motionless. Generous transparent padding, each plant fits central 60% of its cell. Isolate only the central rosette: no grass ground, separate upper-left daisy, shadow, text, grid, checkerboard or glow."
+  },
+  "anchors": [
+    [
+      220.3235294117647,
+      208.13970588235293
+    ],
+    [
+      219.27697841726618,
+      208.0503597122302
+    ],
+    [
+      219.48373983739836,
+      207.0040650406504
+    ],
+    [
+      219.3698113207547,
+      208.02641509433963
+    ],
+    [
+      219.4470989761092,
+      196.8122866894198
+    ],
+    [
+      219.05944055944056,
+      196.62937062937064
+    ],
+    [
+      219.1007462686567,
+      196.86567164179104
+    ],
+    [
+      219.15358361774744,
+      196.38907849829351
+    ]
+  ],
+  "generation": "built-in image_gen",
+  "source_sheet_size": [
+    1774,
+    887
+  ],
+  "scale_down_only": 0.4639175257731959,
+  "frame_size": [
+    256,
+    256
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "source_bounds": [
+        35,
+        111,
+        410,
+        378
+      ],
+      "source_anchor": [
+        220.3235294117647,
+        208.13970588235293
+      ],
+      "translation": [
+        37,
+        36
+      ],
+      "bounds": [
+        50,
+        46,
+        243,
+        242
+      ],
+      "rgba_sha256": "c81d572eaef7f747099212c67e6638d77d6823fbd891fdc7d30a198b3575350d"
+    },
+    {
+      "index": 1,
+      "source_bounds": [
+        38,
+        108,
+        413,
+        378
+      ],
+      "source_anchor": [
+        219.27697841726618,
+        208.0503597122302
+      ],
+      "translation": [
+        37,
+        36
+      ],
+      "bounds": [
+        37,
+        48,
+        243,
+        242
+      ],
+      "rgba_sha256": "6a5a7e616c32be197159591ce6a8c873ed87e0d6701f01c97bab5d937dfa5a30"
+    },
+    {
+      "index": 2,
+      "source_bounds": [
+        29,
+        108,
+        417,
+        378
+      ],
+      "source_anchor": [
+        219.48373983739836,
+        207.0040650406504
+      ],
+      "translation": [
+        37,
+        37
+      ],
+      "bounds": [
+        37,
+        46,
+        243,
+        243
+      ],
+      "rgba_sha256": "db0306b3d6022dcf03625261084a25436cdfdda419ff715177d979b61855e3d8"
+    },
+    {
+      "index": 3,
+      "source_bounds": [
+        38,
+        111,
+        409,
+        378
+      ],
+      "source_anchor": [
+        219.3698113207547,
+        208.02641509433963
+      ],
+      "translation": [
+        37,
+        36
+      ],
+      "bounds": [
+        37,
+        45,
+        234,
+        242
+      ],
+      "rgba_sha256": "f0574e4953b1185202466ff14d223e755646b7ce07bc7989bc680508931f6feb"
+    },
+    {
+      "index": 4,
+      "source_bounds": [
+        36,
+        99,
+        410,
+        366
+      ],
+      "source_anchor": [
+        219.4470989761092,
+        196.8122866894198
+      ],
+      "translation": [
+        37,
+        42
+      ],
+      "bounds": [
+        46,
+        42,
+        243,
+        241
+      ],
+      "rgba_sha256": "f5870ef7b1331b9b5464e4d2a81de732aba0d09ea796ad52b6557fbd63c17aa0"
+    },
+    {
+      "index": 5,
+      "source_bounds": [
+        45,
+        100,
+        405,
+        366
+      ],
+      "source_anchor": [
+        219.05944055944056,
+        196.62937062937064
+      ],
+      "translation": [
+        37,
+        42
+      ],
+      "bounds": [
+        37,
+        42,
+        243,
+        241
+      ],
+      "rgba_sha256": "931a209d8043c35f9e6a826d696b4e4ceb57f222bed8f70a33ab27921fce1c21"
+    },
+    {
+      "index": 6,
+      "source_bounds": [
+        47,
+        101,
+        400,
+        366
+      ],
+      "source_anchor": [
+        219.1007462686567,
+        196.86567164179104
+      ],
+      "translation": [
+        37,
+        42
+      ],
+      "bounds": [
+        37,
+        42,
+        243,
+        240
+      ],
+      "rgba_sha256": "ae910937cc2c1ac470a80e498e821a99aeb9a1fc5e9c9d7b6ee8f6ba1829252d"
+    },
+    {
+      "index": 7,
+      "source_bounds": [
+        42,
+        99,
+        404,
+        366
+      ],
+      "source_anchor": [
+        219.15358361774744,
+        196.38907849829351
+      ],
+      "translation": [
+        37,
+        42
+      ],
+      "bounds": [
+        37,
+        42,
+        237,
+        248
+      ],
+      "rgba_sha256": "2666f874ce95f4459bd18362bdbffa033a0dbe5e31c1acef3974d77c08958815"
+    }
+  ],
+  "source_hashes": {
+    "reference": "97cd641516e1c53c2c8bf5dbf4c590b174c9fb71515be0993b28a0684fa7e6d6",
+    "repair": "b4c2ba43351261f51151f6a5d87cb2b53fb579ebe838cc5452d2f4e117c1d21f",
+    "animation": "7037b0a4628b1c63a6910df78c0631d2f814574019330d522a8575599dd225bc"
+  },
+  "repair_hash": "d58736ebf84e1e442dce687cc876fb0f6a67b3c633852e21567c758dbad5d41f",
+  "atlas_hash": "d9f56ac4c7a669c70b2007246de27828ce0840b803c4607319acb17f5aac93b4"
+}

@@ -1,0 +1,29 @@
+{
+  "asset": "ilyua_normal_s_aim_reference_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/ilyua_normal_s_aim_reference_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-fff6aa62-e7aa-48ec-a057-be072d55d29c.png",
+  "built_in_imagegen": true,
+  "prompt": "Identity-preserve SAME Ilyua game miniature, sage hair/blue eyes/ivory goldvine hoodUP, brownboots/quiverRIGHT hip same compact skull/body. SINGLE FULLBODY frontal battle pose aimed directly toward viewer/SOUTH downscreen. We look slightly down from game camera. Her wooden bow must be held HORIZONTALLY across lowerchest, bowlimbs sweep LEFT and RIGHT, both tips near same screenheight. Left hand bowgrip is extended TOWARD CAMERA centered justbelow collar; right hand draws string BACK toward sternum centered justunder chin, not spread horizontally side-to-side. Arrow aim is TOWARD VIEWER into picture depth/slightly downscreen, very foreshortened arrowtip directly below bowgrip, NOT a horizontal right/left arrow. She looks directly toward viewer with both eyes, shoulderslevel/front. Hands overlap at center with near leftbowhand lower, far rightstringhand upper. Correct anatomically twoarms/twohands, not3. Bow NOT upright on viewer-right: horizontal cross-screen shortbow, the arc is beneath hands and string across upperbow. Compact neutral upright torso, feet planted. Generous allside clear12%room, transparent RGBA. Same precise nonpixel celpaint lines/shading. No text/numbers/labels/grid/borders/shadows/glow/effects/background. One full figure only.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "6d9c0936ca1f40b4b8faa387bb4629121bb263535f18d9029a05bb0cf8e6b6dc",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": false
+}

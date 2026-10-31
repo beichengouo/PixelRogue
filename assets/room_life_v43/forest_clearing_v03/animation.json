@@ -1,0 +1,203 @@
+{
+  "version": 1,
+  "enabled": false,
+  "scene_id": "forest_clearing_v03",
+  "canvas": [
+    4608,
+    2592
+  ],
+  "patches": [
+    {
+      "id": "grass_nw",
+      "rect_px": [
+        1483,
+        478,
+        256,
+        256
+      ],
+      "layer": "background",
+      "repair": "grass_nw_repair.png",
+      "atlas": "grass_nw_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 0,
+      "anchor_px": [
+        112,
+        130
+      ]
+    },
+    {
+      "id": "grass_midwest",
+      "rect_px": [
+        1693,
+        871,
+        256,
+        256
+      ],
+      "layer": "background",
+      "repair": "grass_midwest_repair.png",
+      "atlas": "grass_midwest_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 3,
+      "anchor_px": [
+        125,
+        120
+      ]
+    },
+    {
+      "id": "grass_se",
+      "rect_px": [
+        2497,
+        1657,
+        256,
+        256
+      ],
+      "layer": "background",
+      "repair": "grass_se_repair.png",
+      "atlas": "grass_se_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 5,
+      "anchor_px": [
+        120,
+        125
+      ]
+    },
+    {
+      "id": "grass_east",
+      "rect_px": [
+        3052,
+        838,
+        256,
+        256
+      ],
+      "layer": "background",
+      "repair": "grass_east_repair.png",
+      "atlas": "grass_east_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 1,
+      "anchor_px": [
+        139,
+        133
+      ]
+    },
+    {
+      "id": "flowers_west",
+      "rect_px": [
+        1188,
+        576,
+        384,
+        384
+      ],
+      "layer": "background",
+      "repair": "flowers_west_repair.png",
+      "atlas": "flowers_west_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        384,
+        384
+      ],
+      "fps": 6,
+      "phase": 2,
+      "anchor_px": [
+        194,
+        198
+      ]
+    },
+    {
+      "id": "flowers_east",
+      "rect_px": [
+        2827,
+        1237,
+        256,
+        256
+      ],
+      "layer": "background",
+      "repair": "flowers_east_repair.png",
+      "atlas": "flowers_east_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 6,
+      "anchor_px": [
+        120,
+        135
+      ]
+    },
+    {
+      "id": "vine_left",
+      "rect_px": [
+        892,
+        97,
+        256,
+        256
+      ],
+      "layer": "walls",
+      "repair": "vine_left_repair.png",
+      "atlas": "vine_left_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 4,
+      "anchor_px": [
+        152,
+        112
+      ]
+    },
+    {
+      "id": "vine_right",
+      "rect_px": [
+        3409,
+        100,
+        256,
+        256
+      ],
+      "layer": "walls",
+      "repair": "vine_right_repair.png",
+      "atlas": "vine_right_atlas.png",
+      "frames": 8,
+      "columns": 4,
+      "frame_size": [
+        256,
+        256
+      ],
+      "fps": 6,
+      "phase": 7,
+      "anchor_px": [
+        140,
+        112
+      ]
+    }
+  ]
+}

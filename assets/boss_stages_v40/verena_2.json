@@ -1,0 +1,155 @@
+{
+  "revision": 40,
+  "cell": 960,
+  "foot": [
+    480,
+    888
+  ],
+  "body_height": 759.833,
+  "source_pose_count": 4,
+  "animation_kind": "held_four_key_poses",
+  "poses": {
+    "idle": {
+      "index": 0,
+      "source_sha256": "d115151133a181b63b91e4ce19c963a373ae226cb5f4ce246bfd9686bdcc47e7",
+      "source_canvas": [
+        1294,
+        1216
+      ],
+      "trim": [
+        1,
+        4,
+        1294,
+        1212
+      ],
+      "painted_bounds": [
+        73,
+        128,
+        887,
+        888
+      ]
+    },
+    "move": {
+      "index": 1,
+      "source_sha256": "22c492858be1b01c1697a78fab6345c5d81f736754dcf98a0f68ad37aa948795",
+      "source_canvas": [
+        1293,
+        1216
+      ],
+      "trim": [
+        18,
+        63,
+        1278,
+        1168
+      ],
+      "painted_bounds": [
+        83,
+        193,
+        876,
+        888
+      ]
+    },
+    "windup": {
+      "index": 2,
+      "source_sha256": "20dcd97631995e58c0bf92209d93b97066711e1e146db2736199c67ae1e5d273",
+      "source_canvas": [
+        1199,
+        1312
+      ],
+      "trim": [
+        1,
+        5,
+        1199,
+        1279
+      ],
+      "painted_bounds": [
+        103,
+        86,
+        857,
+        888
+      ]
+    },
+    "release": {
+      "index": 3,
+      "source_sha256": "3babd2d344667c36858228b928ea26561923e3b40e4d7527e5af51b895d1d810",
+      "source_canvas": [
+        1222,
+        1287
+      ],
+      "trim": [
+        4,
+        2,
+        1221,
+        1286
+      ],
+      "painted_bounds": [
+        97,
+        80,
+        863,
+        888
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "fps": 5,
+      "slots": 4
+    },
+    "move": {
+      "fps": 7,
+      "slots": 4
+    },
+    "transform": {
+      "fps": 8,
+      "slots": 8
+    },
+    "skill_0_windup": {
+      "fps": 6,
+      "slots": 4
+    },
+    "skill_0_release": {
+      "fps": 8,
+      "slots": 4
+    },
+    "skill_1_windup": {
+      "fps": 6,
+      "slots": 4
+    },
+    "skill_1_release": {
+      "fps": 8,
+      "slots": 4
+    },
+    "skill_2_windup": {
+      "fps": 6,
+      "slots": 4
+    },
+    "skill_2_release": {
+      "fps": 8,
+      "slots": 4
+    },
+    "skill_3_windup": {
+      "fps": 6,
+      "slots": 4
+    },
+    "skill_3_release": {
+      "fps": 8,
+      "slots": 4
+    },
+    "skill_4_windup": {
+      "fps": 6,
+      "slots": 4
+    },
+    "skill_4_release": {
+      "fps": 8,
+      "slots": 4
+    },
+    "windup": {
+      "fps": 6,
+      "slots": 4
+    },
+    "release": {
+      "fps": 8,
+      "slots": 4
+    }
+  }
+}

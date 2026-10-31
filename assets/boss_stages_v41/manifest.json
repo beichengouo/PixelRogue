@@ -1,0 +1,210 @@
+{
+  "revision": 41,
+  "candidate_only": false,
+  "runtime_loader_switched": true,
+  "stage_count": 14,
+  "required_skill_transitions": 74,
+  "covered_skill_transitions": 74,
+  "stages": [
+    {
+      "stage": "king_1",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "pending": [],
+      "pose_count": 9,
+      "atlas_sha256": "9882616da0f74642131157442ee5fc401bd214ba79f627c2281b17957a25ad67",
+      "metadata_sha256": "5b1f454e1171d912674278a4cc2d4731d053e204dadaefd6884aa4b3ad932ced"
+    },
+    {
+      "stage": "king_2",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pending": [],
+      "pose_count": 11,
+      "atlas_sha256": "b27e5e630e7d3fe676419e85baf32ec9a61119d361ac7d3ea0e1a2f77eca7a5d",
+      "metadata_sha256": "87c2ca3b5659caa40ff5fe73b5600ae068ee51fe923af4c0dc7ad29198d02f4a"
+    },
+    {
+      "stage": "mage_1",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pending": [],
+      "pose_count": 10,
+      "atlas_sha256": "e26c7f59db99d2cd2d2c1860e86ffc43730b96ab5967232810c9e7c1d04a558b",
+      "metadata_sha256": "10cc46ad7ecee869017875d0f57551864449b0b0726c177c1c7037c6a78693e3"
+    },
+    {
+      "stage": "mage_2",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pending": [],
+      "pose_count": 11,
+      "atlas_sha256": "aa48dbafb8d8487ce1e54e5704b440258781d6d83cea45f2edade60d6dc2a703",
+      "metadata_sha256": "cec7d98db9363550be31cbffaef1175abc55d9fb5c1cdbb8826f84fa4970118d"
+    },
+    {
+      "stage": "tide_1",
+      "covered": [
+        0,
+        1,
+        2
+      ],
+      "pending": [],
+      "pose_count": 7,
+      "atlas_sha256": "9427b08331a1ea6fa93a36d9bdd88be756e20a3511db1c8beb1ac88f71b5fb9a",
+      "metadata_sha256": "a6fa7c5e68f1d2c642d8c0e9d05f80f77ef21945641240519d17877917cdd5fb"
+    },
+    {
+      "stage": "tide_2",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "pending": [],
+      "pose_count": 10,
+      "atlas_sha256": "2deceab533c74361c4b51b98e2ae1eb79e4f071632fe9c7073fcae6d69a7da32",
+      "metadata_sha256": "3742730b4cbb63ddd1bd6ed590cf0dd203ee2ae6b4b09610d2d12d57e3fdee7d"
+    },
+    {
+      "stage": "tide_3",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "pending": [],
+      "pose_count": 13,
+      "atlas_sha256": "8e7079b5f880810fc33fca200c85739601a1bbf6560cb63c51016bbbd4c6b20b",
+      "metadata_sha256": "777d3c32ea9834ebb7387c94ec4bb85e6504243229f6a01b06700fc6eceb09d5"
+    },
+    {
+      "stage": "sephra_1",
+      "covered": [
+        0,
+        1,
+        2
+      ],
+      "pending": [],
+      "pose_count": 7,
+      "atlas_sha256": "00e712d719455915afbe58ed175731fbe50c26680d92adb38772d38ffb3695e2",
+      "metadata_sha256": "c1dbd039e8cb8c826201d72c1dcf776eccf2f367ccffb33a792c3e564012a634"
+    },
+    {
+      "stage": "sephra_2",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pending": [],
+      "pose_count": 9,
+      "atlas_sha256": "706e29e98891117c8726b1f77a2d4e49dc948593713827c9a4bc9c5dcee574e5",
+      "metadata_sha256": "09a065ad33d4b208d32907e5214f401583d0ac7ab3d200bf6a1203231664fc71"
+    },
+    {
+      "stage": "verena_1",
+      "covered": [
+        0,
+        1,
+        2
+      ],
+      "pending": [],
+      "pose_count": 7,
+      "atlas_sha256": "d5d0a0a4abcd7905e269ba29ee41bda57bcd96bac3cf84f80da24e685e9ce6ea",
+      "metadata_sha256": "b5ce52e4051a8156759dd557bc4a081457021b1ace5c4d9e441cd65ea985173a"
+    },
+    {
+      "stage": "verena_2",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pending": [],
+      "pose_count": 9,
+      "atlas_sha256": "217cb21c22864ee3731172ea1863f4003ffdca0247dca0f97572ea6fdcf3c797",
+      "metadata_sha256": "ca41241e9df7bebc1fe697e67c8dbc04bf4752c481b6ff48f3531efa03518d37"
+    },
+    {
+      "stage": "nameless_1",
+      "covered": [
+        0,
+        1,
+        2
+      ],
+      "pending": [],
+      "pose_count": 7,
+      "atlas_sha256": "dbfaed3c3c91c42a933472f9f323141f061a1a34c24bda69e77b36fc1735d7e7",
+      "metadata_sha256": "0210acf5733286353e5c7b6ddfff3b7e1e75e2555cd5db9e9b0e3df989f4bec6"
+    },
+    {
+      "stage": "nameless_2",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "pending": [],
+      "pose_count": 9,
+      "atlas_sha256": "c70962ad8a9c3abd815e58a24052c47f9af6645393a7b013e30f4b7b47dba760",
+      "metadata_sha256": "81a73eb387bf2dd9ca2d9cb2631321a0516c01aa318cf89038333ef37a9c26dc"
+    },
+    {
+      "stage": "nameless_3",
+      "covered": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "pending": [],
+      "pose_count": 11,
+      "atlas_sha256": "1fc7189f1022a241dcddafdb934e0048e7d889254c2b4037f9bb29fa5b16ee8b",
+      "metadata_sha256": "c3329643c29541fd767c6206ddd8f8d6423376fd304f9ed31ce96909d6cd1f36"
+    }
+  ]
+}

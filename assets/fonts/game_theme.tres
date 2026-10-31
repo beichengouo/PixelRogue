@@ -1,5 +1,11 @@
-[gd_resource type="Theme" load_steps=3 format=3]
-[ext_resource type="FontFile" path="res://assets/fonts/AllSeto.ttf" id="1"]
+[gd_resource type="Theme" load_steps=6 format=3]
+[ext_resource type="FontFile" path="res://assets/fonts/MaoMaoPengYouTiGaiEr.ttf" id="1"]
+[ext_resource type="FontFile" path="res://assets/fonts/AllSeto.ttf" id="2"]
+[sub_resource type="SystemFont" id="SongFallback"]
+font_names = PackedStringArray("SimSun", "宋体", "NSimSun")
+[sub_resource type="FontVariation" id="GameWithFallback"]
+base_font = ExtResource("1")
+fallbacks = Array[Font]([SubResource("SongFallback"), ExtResource("2")])
 [sub_resource type="StyleBoxFlat" id="TooltipGlass"]
 content_margin_left = 12.0
 content_margin_top = 10.0
@@ -11,7 +17,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_left = 5
 corner_radius_bottom_right = 5
 [resource]
-default_font = ExtResource("1")
+default_font = SubResource("GameWithFallback")
 default_font_size = 20
 
 TooltipPanel/styles/panel = SubResource("TooltipGlass")

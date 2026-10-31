@@ -1,0 +1,26 @@
+{
+  "asset": "sylphiette_normal_five_stage_design_v02",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/sylphiette_normal_five_stage_design_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-da0ab2d7-4c97-47d1-a087-87c871f49b69.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit this peaceful ceremonial animation DESIGN BOARD. Correct ONLY key pose number 4 (bottom-left panel). Preserve panels 1,2,3,5, numbering, white canvas, entire layout, character identity, hairstyle, dress, proportions, staff design and colors.\nPose 4 currently swaps the staff into the wrong hand and grows the body taller. Replace its anatomical construction with exactly the SAME BODY and head scale as pose 1, translated to the lower row common baseline. Keep crown-to-chin, torso length, feet and head size equal to pose 1; no stretched dress/body.\nMost important: the staff must remain in her anatomical RIGHT hand, the SAME arm/hand seen holding the upright staff on the forward-left side in pose 1 and pose 3. The RIGHT forearm and staff remain forward on VIEWER-LEFT of her body, not switched to the far hand. Keep the staff upright and gripped clearly by that same right hand. Her anatomical LEFT hand is EMPTY, with an open palm gently extending forward at chest height to shape one small soft prayer seal. It may reach slightly across the chest but must not grab the staff, and arms must not knot or clip into each other. Both hands remain visible and belong to clearly connected arms, no third arm. The same LEFT-facing 3/4 view and torso orientation as pose 1, stable grounded feet.\nThe point of corrected pose 4 is a calm settled two-arm light-guiding gesture, right hand stabilizing her staff and LEFT empty palm forming the seal. Not a different mirrored person. Keep all five full bodies complete inside margins; no added effects obscuring hands. This remains a numbered concept reference board, never a crop-ready sprite sheet.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/sylphiette_normal_five_stage_design_v01.png",
+      "sha256": "a9e44231e6027afdbe2e1b0216db72936f8439fa57a1603c0e86fcac22d57f04"
+    }
+  ],
+  "sha256": "6340d94fc6ae922476bddf0d12a2be49a8eee53a2ceccb4a30580c44f0da1e6a",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

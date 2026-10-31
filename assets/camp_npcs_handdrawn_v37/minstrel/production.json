@@ -1,0 +1,783 @@
+{
+  "resident_id": "minstrel",
+  "clip_count": 12,
+  "source_frames": 33,
+  "source_images": 9,
+  "animation_count": 18,
+  "clips": {
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            124,
+            169,
+            268
+          ],
+          "foot_y": 392,
+          "translation_y": -26
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            128,
+            173,
+            264
+          ],
+          "foot_y": 392,
+          "translation_y": -24
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            127,
+            178,
+            265
+          ],
+          "foot_y": 392,
+          "translation_y": -22
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            131,
+            175,
+            261
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        }
+      ],
+      "source_asset": "minstrel_n_walk_v01",
+      "source_sha256": "541bdd95bb2c63c65f0f34e9272c8c471c718448e8d431b00cb4ffbba1cc21c2",
+      "source_frame": null
+    },
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            151,
+            136,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "minstrel_neutral_cardinal_v01",
+      "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+      "source_frame": 0
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            177,
+            152,
+            126,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "minstrel_neutral_cardinal_v01",
+      "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+      "source_frame": 1
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            151,
+            123,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "minstrel_neutral_cardinal_v01",
+      "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+      "source_frame": 2
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            152,
+            164,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "minstrel_neutral_diagonal_v01",
+      "source_sha256": "1afe065a0a1f245cc2125ba4525d9a8db2c29d8ec0026798941eb316d5ca9dee",
+      "source_frame": 0
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            151,
+            147,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "minstrel_neutral_diagonal_v01",
+      "source_sha256": "1afe065a0a1f245cc2125ba4525d9a8db2c29d8ec0026798941eb316d5ca9dee",
+      "source_frame": 1
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            155,
+            166,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            157,
+            165,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            165,
+            174,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            146,
+            160,
+            169,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        }
+      ],
+      "source_asset": "minstrel_nw_walk_v01",
+      "source_sha256": "3a41b00dc49a087eb00ef03efca81930e0c72dda6475ef20c42a90be2703aaf2",
+      "source_frame": null
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            170,
+            149,
+            222
+          ],
+          "foot_y": 392,
+          "translation_y": 17
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            148,
+            174,
+            145,
+            218
+          ],
+          "foot_y": 392,
+          "translation_y": 21
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            174,
+            151,
+            218
+          ],
+          "foot_y": 392,
+          "translation_y": 21
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            173,
+            148,
+            219
+          ],
+          "foot_y": 392,
+          "translation_y": 20
+        }
+      ],
+      "source_asset": "minstrel_s_walk_v01",
+      "source_sha256": "95a105ce0ff652f7343f694e6c5225224ebea0a064965b632bb3231c10c39470",
+      "source_frame": null
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            157,
+            176,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            155,
+            179,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            162,
+            186,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            163,
+            179,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        }
+      ],
+      "source_asset": "minstrel_sw_walk_v02",
+      "source_sha256": "fe5237c7e465b5e641057d0d61a55d04ab000d1c73ffa39e222a141ae168d55e",
+      "source_frame": null
+    },
+    "rest": {
+      "file": "rest.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            154,
+            178,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            154,
+            176,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            155,
+            178,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            154,
+            167,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        }
+      ],
+      "source_asset": "minstrel_utility_rest_v01",
+      "source_sha256": "6f6f262f83369108bb3f52af2c174e480e2a35f4893a33032f5ec7ddd61a2cc4",
+      "source_frame": null
+    },
+    "talk": {
+      "file": "talk.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            155,
+            165,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            155,
+            164,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            154,
+            165,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            154,
+            165,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        }
+      ],
+      "source_asset": "minstrel_utility_talk_v01",
+      "source_sha256": "f6da9f7a33d63c10c858cd82371fc0aceb35e5f0a5e5579cf8533ece23a04fbe",
+      "source_frame": null
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            171,
+            149,
+            156,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            176,
+            149,
+            155,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            173,
+            154,
+            154,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            176,
+            152,
+            155,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        }
+      ],
+      "source_asset": "minstrel_w_walk_v01",
+      "source_sha256": "627f7746ce278992a0032cf8ce23a8b776cd8c4159a7601b2ccd078bf9e2b9e8",
+      "source_frame": null
+    }
+  },
+  "source_sha256": {
+    "minstrel_n_walk_v01": "541bdd95bb2c63c65f0f34e9272c8c471c718448e8d431b00cb4ffbba1cc21c2",
+    "minstrel_neutral_cardinal_v01": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+    "minstrel_neutral_diagonal_v01": "1afe065a0a1f245cc2125ba4525d9a8db2c29d8ec0026798941eb316d5ca9dee",
+    "minstrel_nw_walk_v01": "3a41b00dc49a087eb00ef03efca81930e0c72dda6475ef20c42a90be2703aaf2",
+    "minstrel_s_walk_v01": "95a105ce0ff652f7343f694e6c5225224ebea0a064965b632bb3231c10c39470",
+    "minstrel_sw_walk_v02": "fe5237c7e465b5e641057d0d61a55d04ab000d1c73ffa39e222a141ae168d55e",
+    "minstrel_utility_rest_v01": "6f6f262f83369108bb3f52af2c174e480e2a35f4893a33032f5ec7ddd61a2cc4",
+    "minstrel_utility_talk_v01": "f6da9f7a33d63c10c858cd82371fc0aceb35e5f0a5e5579cf8533ece23a04fbe",
+    "minstrel_w_walk_v01": "627f7746ce278992a0032cf8ce23a8b776cd8c4159a7601b2ccd078bf9e2b9e8"
+  },
+  "source_metadata": {
+    "minstrel_n_walk_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_n_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "n",
+      "metadata_sha256": "6f211e866f3d3ed5e45e1c311b580a27c39693f77e4601cc747ea839b7edc7dc",
+      "native_inputs": []
+    },
+    "minstrel_neutral_cardinal_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_neutral_cardinal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        3,
+        1
+      ],
+      "directions": [
+        "s",
+        "w",
+        "n"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "7a86d670a1bbfad745f02ff3263df801c7f2d1cfba27dced0a4d534a9a0e6b31",
+      "native_inputs": []
+    },
+    "minstrel_neutral_diagonal_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_neutral_diagonal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        2,
+        1
+      ],
+      "directions": [
+        "sw",
+        "nw"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "4e49a02dda26713a5e5fddc373c2853263dada87dc48083b86158263a25af1bb",
+      "native_inputs": []
+    },
+    "minstrel_nw_walk_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_nw_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "nw",
+      "metadata_sha256": "2a476233b6bd4388037c2b69dbfe883ff1d603aaab294683d096580f5e56bbca",
+      "native_inputs": []
+    },
+    "minstrel_s_walk_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_s_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "s",
+      "metadata_sha256": "0ce86e79903a2d1f700ed719e020612a34c61190c27011d35cabd9e41341ebd2",
+      "native_inputs": []
+    },
+    "minstrel_sw_walk_v02": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_sw_walk_v02.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "sw",
+      "metadata_sha256": "d79e23a9f4c0aedad3d3c0cb6b85e6e1b90fd01f49672cee601398871b4d1487",
+      "native_inputs": []
+    },
+    "minstrel_utility_rest_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_utility_rest_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "rest",
+      "direction": "utility",
+      "metadata_sha256": "64552dc98e341040fc5fb7fb298a00a4958334f4f3a821f148f9b988a6724674",
+      "native_inputs": []
+    },
+    "minstrel_utility_talk_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_utility_talk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "talk",
+      "direction": "utility",
+      "metadata_sha256": "58eff427e075e510da92fd6053ff473f808abdca67001f99fba3e6bc4cfe38f2",
+      "native_inputs": []
+    },
+    "minstrel_w_walk_v01": {
+      "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_w_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "w",
+      "metadata_sha256": "c9f3ca51460780df23086e95779cd421cd6cbaeb6c1db80c80d325246404132c",
+      "native_inputs": []
+    }
+  },
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "world_height": 32,
+  "world_floor_y": 12,
+  "status": "admitted_runtime",
+  "runtime_integrated": true,
+  "manual_review_sha256": "b5f05bd0d1049fae392f75f7c935713053db92f9e06158df7accc9b633be0657",
+  "calibration_sha256": "34ad71febc826434436b343bf71737d742bd12492e7608819c78914cac31022c",
+  "game_version": "0.55"
+}

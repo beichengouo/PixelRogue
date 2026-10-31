@@ -1,0 +1,30 @@
+{
+  "asset": "ilyua_normal_turnaround_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/ilyua_normal_turnaround_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-144cf73f-11ae-463b-8baf-6da91b4ada98.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / stylized-concept. Make a production anime hand-painted game character turnaround for Ilyua in her NORMAL hooded forest scout outfit. Image 1 is PRIMARY STYLE AND PROPORTION reference: exact compact approximately 2.7-heads-tall body construction of the approved Xixifu, large head, short trunk, short limbs, tiny hands and feet. Ilyua must use the same scale/body height/head volume as that reference, not the tall body of image 2. Image 2 is Ilyua identity and normal CLOTHING reference ONLY.\nDraw a NEW three-view sheet on clean white background, 1536x1024 landscape, three evenly spaced FRONT / LEFT PROFILE facing left / BACK views, neutral resting pose, all full body at exactly same scale and common baseline, subtle crown/chin/waist/sole guide lines. Small rounded anime features, soft shaded clean nonpixel painterly game linework exactly like image 1, NOT pixel art or a realistic fashion illustration. Do not add another character.\nIlyua is an ADULT elf shown in stylized game proportions, pale skin, long pale sage-green hair, clear LAKE-BLUE eyes, quietly alert and practical. Her distinctive NORMAL outfit: ivory-white hood worn UP with modest gold leaf trim and muted sage-green inner lining; pointed ears are HIDDEN INSIDE the hood in this normal form, no ears sticking through the fabric. Face-framing green locks fall naturally through the FRONT FACE OPENING to chest. All rear hair is properly contained UNDER the hood and white outer traveling robe, do not thread hair through hood or back fabric. Small ivory white forest cloak/long practical oversmock over sage skirt/short underlayer; dark brown belt and small quiver at right hip, brown leather wrist guards, short brown boots with simple lacing. Restrained leaf stitching, not excessive jewelry. She carries a small golden-vine WOODEN SHORT BOW in anatomical LEFT hand, bowstring and grip clearly readable; her RIGHT hand is relaxed, intended to draw the string in combat. Arrows remain in a small hip quiver. Normal hooded form must clearly differ from unhooded flower-and-leaf legendary outfit.\nMatch the anatomy, scale, low center of gravity, head size and rendering of reference 1. Outfit must have stable readable silhouette for tiny game use, simplified from image 2 with no excess lace. Show all three sides honestly, accurate bow and quiver, no staff, no sword. Keep crown, all bow tips, hair ends and feet completely within margins. No glow, no floating effects, no environment, no long legs, no high heels, no translucent clothing, no ornament clutter. Hair/hood have physically correct overlap in side and back.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v35/ilyua_normal_turnaround.png",
+      "sha256": "a51fe2660b9c7c3c901114f2e3a55d400c31c6f0f64b49bfefcf04c64279510a"
+    }
+  ],
+  "sha256": "e662c01c51c9aaf7aa5896e4dd69a64990ce6e30372742ce3a4d6052d54e98a0",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

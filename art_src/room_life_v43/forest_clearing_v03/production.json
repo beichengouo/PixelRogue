@@ -1,0 +1,575 @@
+{
+  "scene": "forest_clearing_v03",
+  "sets": 8,
+  "frames": 64,
+  "fps": 6,
+  "generation": "built-in image_gen",
+  "original_planes_sha256": {
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_0_0.png": "1fe8ead9f929bbc1f8aedc473c420a5963db81cc7098306bbbb24aef80df91c9",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_0_1.png": "1e617e54df1c037a0b0ebb2b3721c9e466c1d0254bf70e53fed974b085886fbb",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_0_2.png": "8bc20fe89569c533125f4e6a88a73dc57be885a33b834e665718ecb7bc4737d5",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_1_0.png": "838d05ac98353ac5512579511ac4eeb6306f1e6adba5ffe0f317e6f940ada8ea",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_1_1.png": "53ea0020d8fd3a073cfe43840a32a2934d94a027e85ba1f4f44b431e10300829",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_1_2.png": "5775ca548a086e4ffa26ec90799c6312e987a13041b8a777bdbcf2d7e55764a4",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_2_0.png": "d9ee5d1308b248cf6dec6dbaad0462444ba45ee0d81ff5b482dfecb360293f5f",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_2_1.png": "8db41699df4f06b0c0d505fcb412757fbfe048d3d5ed05ce210f7fb571c63a08",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\background_2_2.png": "4d0ca4e611a74ffec9b76e0ee5da8c2f5fccba3de31c0283cf0a71c893814378",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_0_0.png": "fb80b68b2fefd660b2a00f27a22e52c2f9c53a750a36d2da3054bf3228b63f00",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_0_1.png": "824d35965aaf980bdec98e56e425c1779718d1ad4f033e26c4cac4c09b471465",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_0_2.png": "bbc450b90396bfede37c5f9111460f725087a2f6c89b5ef5c2cc482ead01929c",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_1_0.png": "8f01da5b2fa30d0a450f81bbfbfc6354024a499663558226bc11fe6aca1434d4",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_1_2.png": "b4bc8467195b03bce79e763b8070b36e96eba9a61c75b84b7046ecbec558e0ec",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_2_0.png": "94a50354caba04fc8aa126bd28ac4fff9e8422596ff1694e9d1629d4057c30d2",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_2_1.png": "e57a00571591bca00bf29bd19efcab8077c87aad8e6e087f276d83f5508e6a1a",
+    "assets\\room_illustrated\\forest_clearing_v03\\detail_tiles\\walls_2_2.png": "6085003173f8c4513e4d6b92ae6dc9e2b0265bb64cd30c3a1cdc2262636d4dc2"
+  },
+  "original_scene_sha256": "34e03c5e8fdfca33c78a99c0faac3e3181ef22755669490976d19718de46de13",
+  "original_template_sha256": "49b9a6bee991ebf9fcec38552b0cab6f3ef2d4e7e151807987970f7206760055",
+  "rgba_texture_bytes": 21823488,
+  "rgba_texture_mib": 20.8125,
+  "verification": "All source crops still exactly match original map pixels; no upscaling; 64 frame hashes and registered anchors verified; transparent repair boundaries.",
+  "limitations": [
+    "New plants have slightly crisper outlines and more regular leaves than the original painted plants.",
+    "Source-sheet review and consumer tests do not replace the user's in-game visual acceptance.",
+    "Tiny sub-threshold alpha edge noise from generated source art is retained."
+  ],
+  "patches": [
+    {
+      "id": "grass_nw",
+      "rect_px": [
+        1483,
+        478,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "background",
+      "phase": 0,
+      "atlas_sha256": "2836e098d7c54700c2801db91453cad8cbeabe3c7276cb0bfc165ae98b40213a",
+      "repair_sha256": "81749e41a167cceffa2b4f481dd8c0c856ca67ee3e6d435e6c2cfcb618bc8988",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.29265244559360326
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 1,
+          "registration_error_source_px": 0.3544922101071961
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 1,
+          "registration_error_source_px": 0.43106131341424714
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 1,
+          "registration_error_source_px": 0.22112753147234798
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.47915217042231006
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.25210084033614066
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.3521684535883338
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.2664176781823926
+        }
+      ]
+    },
+    {
+      "id": "grass_midwest",
+      "rect_px": [
+        1693,
+        871,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "background",
+      "phase": 3,
+      "atlas_sha256": "2a8b82871a01e1df8a6d6d98f69c07e2513d9264e3d743d81b40a7cc8d65bc82",
+      "repair_sha256": "389fdbc8d67ad71ee2731fe14f26f54db7eca53ec63a1fcaff1c5f0eac62cef4",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4339811536913345
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.43987800556277534
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4210607700633915
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4535809018567676
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.19056535080875392
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.21780920010893112
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.06936741419499981
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.23734952050602942
+        }
+      ]
+    },
+    {
+      "id": "grass_se",
+      "rect_px": [
+        2497,
+        1657,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "background",
+      "phase": 5,
+      "atlas_sha256": "1adf05224c6030526d286f86248e966237ddae69498c6328653bd9e60942850f",
+      "repair_sha256": "9071598355e6c370368200fe077a1e93b55046749eeb0622825d5f5920834a27",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.48008487094782026
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.46302420119215526
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4481508339376461
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.1781264420858264
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.42578829776294924
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.3486755108134645
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4136436795840126
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.42848692446315795
+        }
+      ]
+    },
+    {
+      "id": "grass_east",
+      "rect_px": [
+        3052,
+        838,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "background",
+      "phase": 1,
+      "atlas_sha256": "d9f56ac4c7a669c70b2007246de27828ce0840b803c4607319acb17f5aac93b4",
+      "repair_sha256": "d58736ebf84e1e442dce687cc876fb0f6a67b3c633852e21567c758dbad5d41f",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.44034263189811895
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4817918860787813
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.17764646718632093
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.492900213966152
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.3046690827205225
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.37448633840386947
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.35532389598398595
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.3308117237253896
+        }
+      ]
+    },
+    {
+      "id": "flowers_west",
+      "rect_px": [
+        1188,
+        576,
+        384,
+        384
+      ],
+      "frame_size": [
+        384,
+        384
+      ],
+      "layer": "background",
+      "phase": 2,
+      "atlas_sha256": "f58ccf3c95174ff2951bde7d7304340a132e313f36cf6a9e8297cd2fc3efc92d",
+      "repair_sha256": "f53a36dc875aa945f5a2feefeaa386c9526a1af8d2aa16a3593a5985a8aae7c2",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.2642696305605625
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.383995084862903
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4828067137979417
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4274810139573333
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.40508218113166095
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4770322170645329
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.3059457925358231
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.22513372026858747
+        }
+      ]
+    },
+    {
+      "id": "flowers_east",
+      "rect_px": [
+        2827,
+        1237,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "background",
+      "phase": 6,
+      "atlas_sha256": "7405b9c0f8a4f7e20fadd354c98dbed4f9db0c41bf45a33755b1545b467ce954",
+      "repair_sha256": "0923cbf067bc9f63fb6675bd00f8339489bdc9a35baed138f88537e21921ab87",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.18066264917317199
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.38210022868810256
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4123713108147484
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.3015092840830107
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4200332809466545
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.48942403853828864
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4844052769888094
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4836365377250047
+        }
+      ]
+    },
+    {
+      "id": "vine_left",
+      "rect_px": [
+        892,
+        97,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "walls",
+      "phase": 4,
+      "atlas_sha256": "14f9c186c22c3f15203e9a2820bb194a53d11797d8ae3f7389cba7f930e174e2",
+      "repair_sha256": "f3879a903b34ce9c339b570a62aea146c6c629212e5f63ad356e32086ea3ff0a",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4900000000000091
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4900000000000091
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4900000000000091
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.4900000000000091
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.42583333333332973
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.42583333333332973
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.42583333333332973
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.42583333333332973
+        }
+      ]
+    },
+    {
+      "id": "vine_right",
+      "rect_px": [
+        3409,
+        100,
+        256,
+        256
+      ],
+      "frame_size": [
+        256,
+        256
+      ],
+      "layer": "walls",
+      "phase": 7,
+      "atlas_sha256": "ecc8cff1e5ef64ac6ac93ed72bc347e9243169090af507795cf81835bb0bf9b9",
+      "repair_sha256": "1f39a5f7801c8e2e7c9b8f783a588053355fc9c2c29c657ecc5ac447082e4bd7",
+      "frames": [
+        {
+          "index": 0,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.12575079872203787
+        },
+        {
+          "index": 1,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.12575079872203787
+        },
+        {
+          "index": 2,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.12575079872203787
+        },
+        {
+          "index": 3,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.12575079872203787
+        },
+        {
+          "index": 4,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.19303514376996134
+        },
+        {
+          "index": 5,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.19303514376996134
+        },
+        {
+          "index": 6,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.19303514376996134
+        },
+        {
+          "index": 7,
+          "alpha_edge_max": 0,
+          "registration_error_source_px": 0.19303514376996134
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "date": "2026-10-30",
+    "status": "initial_room_pilot_integrated_pending_user_visual_acceptance",
+    "pilot_checks": 41,
+    "pilot_failures": 0,
+    "formal_checks": 166,
+    "formal_failures": 0,
+    "navigation_checks": 9,
+    "navigation_failures": 0,
+    "gl_checks": 4,
+    "gl_failures": 0,
+    "performance": {
+      "animated_draw_calls_median": 124.0,
+      "animated_p95_ms": 2.818,
+      "animated_process_p95_ms": 3.688,
+      "blocks": [
+        {
+          "animated": false,
+          "draw_calls_median": 114.0,
+          "p95_ms": 2.807,
+          "process_p95_ms": 3.634
+        },
+        {
+          "animated": true,
+          "draw_calls_median": 124.0,
+          "p95_ms": 2.722,
+          "process_p95_ms": 3.331
+        },
+        {
+          "animated": true,
+          "draw_calls_median": 124.0,
+          "p95_ms": 2.916,
+          "process_p95_ms": 3.688
+        },
+        {
+          "animated": false,
+          "draw_calls_median": 114.0,
+          "p95_ms": 2.54,
+          "process_p95_ms": 3.223
+        }
+      ],
+      "checks": 4,
+      "failures": 0,
+      "logical": [
+        1280,
+        720
+      ],
+      "p95_delta_ms": 0.109,
+      "physical": [
+        2560,
+        1440
+      ],
+      "renderer": "NVIDIA GeForce RTX 4060 Ti",
+      "samples_per_mode": 1200,
+      "scope": "Isolated actual initial room, eight local patches, no enemies; not a crowded-combat performance claim.",
+      "sequence": "static,animated,animated,static",
+      "static_draw_calls_median": 114.0,
+      "static_p95_ms": 2.709,
+      "static_process_p95_ms": 3.634
+    },
+    "matching_qa_files": 40,
+    "sha_mismatches": 0,
+    "source_review": "All 8 sheets and composited patches inspected. Two low-reasoning GPT-6.1 Terra agents reviewed final grass/flower/vine art. Slightly crisper outlines and more regular leaves remain. No screenshots or recordings generated.",
+    "scope": "First chapter initial forest_clearing only. Other maps and camp remain static. User will try local animation first; whole-map animation only if local result is unsatisfactory."
+  }
+}

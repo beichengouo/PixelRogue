@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: style-transfer. Repaint the supplied complete top-down forest-clearing map in unmistakably NON-PIXEL hand-painted fantasy RPG background style. This is a stronger style correction: remove the original tiny pixel-dither stippling, jagged pixel steps and repetitive hatched grass texture completely. Use flowing fine brushstrokes, smoothly shaded sculptural leaves, soft natural grass clumps, painterly stone and subtle ambient occlusion. Highly polished digital gouache game background, crisp smooth contours without black outline, not watercolor wash, not blurry, not pixel art. Preserve the exact existing whole-map composition, orthographic camera, all wall boundaries and four openings, diagonal gravel trail, plant and tree placement and palette. Do not add objects or change path/wall geometry. One single full scene, native 2560x1440 if possible. No grid, UI, labels, border or panels. The only intended change is rendering style and texture; make that change clearly visible.",
+  "reference": "master_draft_v1.png",
+  "generated_source": "C:/Users/Administrator/.codex/generated_images/01a18cb6-ff93-7bc1-94f4-acd7d6618ae1/exec-f3fe4c99-f61c-4a55-9375-d998e7361b1e.png",
+  "native_size": [
+    1672,
+    941
+  ],
+  "master": "master_native.png",
+  "method": "fixed final mother image; local controlled deformation baked into full frame images",
+  "style_review_pending": true
+}

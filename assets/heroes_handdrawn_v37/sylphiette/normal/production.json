@@ -1,0 +1,4751 @@
+{
+  "hero": "sylphiette",
+  "form": "normal",
+  "clips": {
+    "attack1_n": {
+      "file": "attack1_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            145,
+            174,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            106,
+            145,
+            240,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            99,
+            144,
+            292,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            144,
+            183,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_attack1_v02",
+      "source_sha256": "9337568c2f67e2aca2c4fb4c2877debf38fa33055315354351817aaa05660610"
+    },
+    "attack2_n": {
+      "file": "attack2_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            155,
+            224,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            155,
+            205,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            113,
+            160,
+            249,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            162,
+            175,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_attack2_v01",
+      "source_sha256": "5ab0efcb3b1b85e1a1ba0e6661726e8a0b3bc5a0d44b40e0d45d57e578a01fca"
+    },
+    "attack3_n": {
+      "file": "attack3_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            142,
+            183,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            106,
+            142,
+            200,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            90,
+            140,
+            220,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            140,
+            190,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_attack3_v02",
+      "source_sha256": "13f275dc5752a0b0f56abe60f714291eaa9a1884ac7e81b99dd3c86814b9fc89"
+    },
+    "attack4_n": {
+      "file": "attack4_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            145,
+            162,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            143,
+            164,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            144,
+            196,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            123,
+            217,
+            269
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_attack4_v01",
+      "source_sha256": "5c01db4e8e0744b808280dd163d622e02a3b4a7e551a12116d3ca79d250c321c"
+    },
+    "attack5_n": {
+      "file": "attack5_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            157,
+            155,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            158,
+            159,
+            234
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            161,
+            211,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            159,
+            167,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_attack5_v01",
+      "source_sha256": "85beca78674332fc024e5d01bc1df7b86f8bcf50ecf767352b20ca68e9b6cb7f"
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            152,
+            153,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_idle_v01",
+      "source_sha256": "11cf8bc083313498a42303614acdba6cc5a4b54367728a9fcba683707553a6f2"
+    },
+    "move_attack1_n": {
+      "file": "move_attack1_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            139,
+            164,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            107,
+            143,
+            230,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            92,
+            138,
+            286,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            143,
+            164,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_move_attack1_v01",
+      "source_sha256": "d945d6f9c4e3cfd8c3d1e8857bc34a090c7626ac82436358f4b531b0435dd933"
+    },
+    "move_attack2_n": {
+      "file": "move_attack2_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            142,
+            218,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            143,
+            210,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            136,
+            240,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            141,
+            216,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_move_attack2_v01",
+      "source_sha256": "050de133490bed2d6c1bdff5feaf5336646b994a63f4cbc90a2e6c56982619fc"
+    },
+    "move_attack3_n": {
+      "file": "move_attack3_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            138,
+            168,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            110,
+            136,
+            194,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            138,
+            204,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            137,
+            171,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_move_attack3_v01",
+      "source_sha256": "7537d52c5e5a1df93ee9c8e6fcb01863fff07d89292a2deb02097916a0ec65d2"
+    },
+    "move_attack4_n": {
+      "file": "move_attack4_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            137,
+            169,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            141,
+            167,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            134,
+            191,
+            258
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            133,
+            207,
+            259
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_move_attack4_v01",
+      "source_sha256": "309eb547d1ad9f438102688569ab4dd87ba80a7d6012e26980138fe11ea90da7"
+    },
+    "move_attack5_n": {
+      "file": "move_attack5_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            122,
+            198,
+            270
+          ],
+          "foot_y": 392,
+          "translation_y": -25
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            105,
+            186,
+            287
+          ],
+          "foot_y": 392,
+          "translation_y": -21
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            100,
+            201,
+            292
+          ],
+          "foot_y": 392,
+          "translation_y": -23
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            127,
+            180,
+            265
+          ],
+          "foot_y": 392,
+          "translation_y": -24
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_move_attack5_v03",
+      "source_sha256": "bfc1964eb122555cb6e26cda50114478f517551889a12c4f013464617a97e7a8"
+    },
+    "skill_cast_n": {
+      "file": "skill_cast_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            142,
+            193,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            117,
+            176,
+            275
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            132,
+            236,
+            260
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            143,
+            180,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_skill_cast_v02",
+      "source_sha256": "a0232ce0f0534f5045452055f4ceda658b97e3cab38615668d6704951956097c"
+    },
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            138,
+            163,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            142,
+            160,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            140,
+            162,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            142,
+            161,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        }
+      ],
+      "source_asset": "sylphiette_normal_n_walk_v01",
+      "source_sha256": "d89dc2f72f931d89e9b5573a41c219425b7faa8c9d8654d42a2b2e5793a08609"
+    },
+    "attack1_nw": {
+      "file": "attack1_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            148,
+            186,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            149,
+            202,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            115,
+            149,
+            208,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            148,
+            202,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_attack1_v01",
+      "source_sha256": "0fa50bc3a9ece1d3f9c90741961de45284e0175ca0d5ad33a063743d26f1beaa"
+    },
+    "attack2_nw": {
+      "file": "attack2_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            93,
+            157,
+            229,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            97,
+            144,
+            227,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            86,
+            139,
+            241,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            157,
+            186,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_attack2_v01",
+      "source_sha256": "1d7be02728b76370589c83c91d49b93f819bce60d925c0b94cc3eed06051c4f1"
+    },
+    "attack3_nw": {
+      "file": "attack3_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            161,
+            187,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            148,
+            161,
+            171,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            160,
+            194,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            159,
+            173,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_attack3_v01",
+      "source_sha256": "75369483cbf278ed308f4057ed40c9bd17bdbebc1f7876c8ba24c75196979b73"
+    },
+    "attack4_nw": {
+      "file": "attack4_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            161,
+            177,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            161,
+            172,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            163,
+            200,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            151,
+            192,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_attack4_v01",
+      "source_sha256": "5d63063641409271d95583a81e0bc62c141c0fed3fc12279d9de5337ed92cea4"
+    },
+    "attack5_nw": {
+      "file": "attack5_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            152,
+            181,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            137,
+            184,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            64,
+            155,
+            278,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            152,
+            197,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_attack5_v01",
+      "source_sha256": "b1f15261d6e43b4c74241e66b2e9972f83754118c389b1fd9b3e31f526a66644"
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            152,
+            152,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_idle_v01",
+      "source_sha256": "83f0fc60e9c8062056e750f8f5cd9fee8fe2e6a1a1796db1e4a68200aef2ba63"
+    },
+    "move_attack1_nw": {
+      "file": "move_attack1_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            136,
+            173,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            140,
+            198,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            142,
+            220,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            139,
+            212,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_move_attack1_v01",
+      "source_sha256": "dbe54725d22fc5fb7a09c88a5476962f8113906e2d75746bd98bae928702a760"
+    },
+    "move_attack2_nw": {
+      "file": "move_attack2_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            130,
+            216,
+            263
+          ],
+          "foot_y": 392,
+          "translation_y": -19
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            96,
+            124,
+            232,
+            268
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            139,
+            222,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            135,
+            192,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_move_attack2_v01",
+      "source_sha256": "b6b85ef9b1c2aad4b5dce24aa8646ce49aef3ad94a3c2ee8fdf5fea3e5810a23"
+    },
+    "move_attack3_nw": {
+      "file": "move_attack3_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            131,
+            180,
+            261
+          ],
+          "foot_y": 392,
+          "translation_y": -19
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            136,
+            185,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            139,
+            201,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            136,
+            190,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_move_attack3_v01",
+      "source_sha256": "a719a9abf4f327a972b816e6be085e6c067159becaef59a1bd31902c2519ec7c"
+    },
+    "move_attack4_nw": {
+      "file": "move_attack4_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            129,
+            174,
+            263
+          ],
+          "foot_y": 392,
+          "translation_y": -21
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            135,
+            172,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            136,
+            194,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            134,
+            181,
+            258
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_move_attack4_v01",
+      "source_sha256": "24c4e34a1e4e099102fbac177c2a3f4d12067e457778cfbb8abd4891dc475a0f"
+    },
+    "move_attack5_nw": {
+      "file": "move_attack5_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            130,
+            177,
+            262
+          ],
+          "foot_y": 392,
+          "translation_y": -20
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            145,
+            120,
+            185,
+            272
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            137,
+            239,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            134,
+            177,
+            258
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_move_attack5_v01",
+      "source_sha256": "960811b5c4a77985572c01c8e1c6835b3dd53f404e909fdc4f0c45586c08a162"
+    },
+    "skill_cast_nw": {
+      "file": "skill_cast_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            148,
+            143,
+            177,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            143,
+            189,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            146,
+            201,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            141,
+            175,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_skill_cast_v01",
+      "source_sha256": "535b7909a01de5ef102348e5fdb2a4e9e3a2ab67786477c246eba684b1cf1955"
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            163,
+            130,
+            161,
+            262
+          ],
+          "foot_y": 392,
+          "translation_y": -21
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            134,
+            158,
+            258
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            163,
+            136,
+            165,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            135,
+            165,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        }
+      ],
+      "source_asset": "sylphiette_normal_nw_walk_v02",
+      "source_sha256": "fc56e46ee38699813357969740fcb6df22a3350563235e9917cb909e0d835939"
+    },
+    "attack1_s": {
+      "file": "attack1_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            147,
+            199,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            147,
+            188,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            147,
+            186,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            146,
+            193,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_attack1_v01",
+      "source_sha256": "a29e82fd943af28a9c78b14dc6e555c798e61ea63b2a5eb35d3ed145588a6cca"
+    },
+    "attack2_s": {
+      "file": "attack2_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            154,
+            197,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            157,
+            231,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            72,
+            152,
+            267,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            150,
+            200,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_attack2_v01",
+      "source_sha256": "400b4298aa1c85d5fffae2f0d437ad10b0cfa492fa5c3b31bca8291f3bba425e"
+    },
+    "attack3_s": {
+      "file": "attack3_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            165,
+            181,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            165,
+            182,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            163,
+            188,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            163,
+            186,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_attack3_v01",
+      "source_sha256": "6679fca2863a1d87eb69d20ea319567e174fc243009b87dcdf7e3ce393832a8b"
+    },
+    "attack4_s": {
+      "file": "attack4_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            155,
+            188,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            155,
+            188,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            153,
+            200,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            144,
+            207,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_attack4_v01",
+      "source_sha256": "52e4fbfe66b11e2a533ee194fef630513e829e34cd1947da5df0224dafa9a472"
+    },
+    "attack5_s": {
+      "file": "attack5_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            155,
+            187,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            137,
+            186,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            154,
+            208,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            154,
+            198,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_attack5_v01",
+      "source_sha256": "645ee7a0f1348a0dab480e5a6bf56cc71542b656d98c656346bd4dd969280605"
+    },
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            152,
+            179,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_idle_v01",
+      "source_sha256": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05"
+    },
+    "move_attack1_s": {
+      "file": "move_attack1_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            148,
+            220,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            152,
+            215,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            148,
+            225,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            151,
+            230,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_move_attack1_v04",
+      "source_sha256": "932d7cc70f2234df010379cff5b14d3b3a92023b67573c38c0fc8ac84a0ead9e"
+    },
+    "move_attack2_s": {
+      "file": "move_attack2_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            142,
+            219,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            144,
+            230,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            71,
+            144,
+            283,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            144,
+            218,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_move_attack2_v03",
+      "source_sha256": "6d849a1f87e72ede8389c5102d777ac3fd6309a14f0e07169d9c58b9daf7a7a8"
+    },
+    "move_attack3_s": {
+      "file": "move_attack3_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            147,
+            214,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            147,
+            213,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            146,
+            219,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            149,
+            219,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_move_attack3_v09",
+      "source_sha256": "57f823cfba5617aa132e9f33f418194016e0c4d3fa46603f8739589dfe3ed7f1"
+    },
+    "move_attack4_s": {
+      "file": "move_attack4_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            149,
+            223,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            149,
+            224,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            147,
+            225,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            138,
+            224,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_move_attack4_v05",
+      "source_sha256": "ff48fcbbbd13ad4b3cd91d5564d7d96f07b09ea0f942543c5ba1383119f87963"
+    },
+    "move_attack5_s": {
+      "file": "move_attack5_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            153,
+            212,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            128,
+            211,
+            264
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            150,
+            220,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            148,
+            220,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_move_attack5_v06",
+      "source_sha256": "cccfd1faaee738d41c5f78e642dc3c90e8ddfad37e77b00adb93fb396ffab688"
+    },
+    "skill_cast_s": {
+      "file": "skill_cast_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            159,
+            202,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            159,
+            201,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            162,
+            203,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            162,
+            201,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_skill_cast_v01",
+      "source_sha256": "b683596fc06ea4d47c2d31ecdc4807a7df8a492ce3a8152e8248e8115903ba8f"
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            157,
+            197,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            158,
+            199,
+            234
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            163,
+            198,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            163,
+            198,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        }
+      ],
+      "source_asset": "sylphiette_normal_s_walk_v04",
+      "source_sha256": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5"
+    },
+    "attack1_sw": {
+      "file": "attack1_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            162,
+            211,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            94,
+            161,
+            228,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            93,
+            164,
+            229,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 15
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            164,
+            232,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 15
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_attack1_v01",
+      "source_sha256": "78727db6a2607b8bcbf3a45ba8b34906572858b9c34d0a575d516edf6e0f1bf1"
+    },
+    "attack2_sw": {
+      "file": "attack2_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            160,
+            251,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            94,
+            166,
+            237,
+            226
+          ],
+          "foot_y": 392,
+          "translation_y": 15
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            82,
+            164,
+            255,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 15
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            164,
+            186,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 17
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_attack2_v01",
+      "source_sha256": "6a43ee8749eddfe3b6a8dbc46f839b673d71ca741bcc521e440e5afb980d19df"
+    },
+    "attack3_sw": {
+      "file": "attack3_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            144,
+            220,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            144,
+            194,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            142,
+            195,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            142,
+            194,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_attack3_v01",
+      "source_sha256": "63f25310296bdb2d252353959254eb77a9a855cf4903c57e49a2659ed213c961"
+    },
+    "attack4_sw": {
+      "file": "attack4_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            152,
+            185,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            153,
+            186,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            153,
+            188,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            147,
+            207,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_attack4_v01",
+      "source_sha256": "8e15a87c41e0eedb912e6bdc3b5fdeef752897f52e05d6b76318149eac057451"
+    },
+    "attack5_sw": {
+      "file": "attack5_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            158,
+            192,
+            234
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            159,
+            192,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            65,
+            164,
+            278,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            160,
+            197,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_attack5_v01",
+      "source_sha256": "87c56146ad002d4d9d0b5086167d8cbe70f67349d446b23d54e823f387f060f4"
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            152,
+            177,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_idle_v01",
+      "source_sha256": "aac6c058be6b8e2a0d6dd5cf17466d50c781bbbf23cee45b6f22d6d0349e79eb"
+    },
+    "move_attack1_sw": {
+      "file": "move_attack1_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            93,
+            154,
+            256,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            153,
+            253,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            81,
+            155,
+            264,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            149,
+            243,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_move_attack1_v02",
+      "source_sha256": "02716d64cc14dd3c1ac5749dcb2434592a15e9f046644d3d3fd3b994727b2bae"
+    },
+    "move_attack2_sw": {
+      "file": "move_attack2_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            85,
+            155,
+            266,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            92,
+            153,
+            249,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            89,
+            155,
+            254,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            148,
+            197,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_move_attack2_v02",
+      "source_sha256": "e3825e6e4f92c59b3ea965ebed4db1bc33bff380538b02b1809494a76d7ee55d"
+    },
+    "move_attack3_sw": {
+      "file": "move_attack3_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            153,
+            239,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            152,
+            203,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            154,
+            218,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            148,
+            200,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_move_attack3_v02",
+      "source_sha256": "50923f91e5e7b3ba33ac184a45fc63a7b860cdda01186b07f563db01fd84aea1"
+    },
+    "move_attack4_sw": {
+      "file": "move_attack4_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            154,
+            209,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            151,
+            207,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            153,
+            210,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            128,
+            239,
+            264
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_move_attack4_v02",
+      "source_sha256": "46bb67a1481dc7b877c7cd18d734005c1cc7bf6e11c4a75392fcaed61621d979"
+    },
+    "move_attack5_sw": {
+      "file": "move_attack5_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            154,
+            221,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            142,
+            208,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            81,
+            154,
+            264,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            147,
+            203,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_move_attack5_v04",
+      "source_sha256": "054a09b674d5ea2b8c9758a1dbac499bba94b0bd4c23887b5b639d33ff09b2af"
+    },
+    "skill_cast_sw": {
+      "file": "skill_cast_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            155,
+            207,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            155,
+            200,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            156,
+            212,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            156,
+            201,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_skill_cast_v01",
+      "source_sha256": "8b27baf9e2e7e3b031b3cc2285e78280a00c9dd680923c3237ea5d3003438f9a"
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            153,
+            191,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            152,
+            192,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            156,
+            195,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            155,
+            196,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        }
+      ],
+      "source_asset": "sylphiette_normal_sw_walk_v02",
+      "source_sha256": "5b6cb28969e974150213b905ce5ad6d982190148ec75a16195c9617804023872"
+    },
+    "death": {
+      "file": "death.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            180,
+            198,
+            212
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            84,
+            215,
+            223,
+            177
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            86,
+            233,
+            280,
+            159
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            61,
+            281,
+            300,
+            111
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_utility_death_v01",
+      "source_sha256": "b762b45344954693be626a247a1fc0158c0263067a421fd27e5097a879135ff9"
+    },
+    "hurt": {
+      "file": "hurt.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            148,
+            170,
+            189,
+            222
+          ],
+          "foot_y": 392,
+          "translation_y": 19
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            105,
+            184,
+            207,
+            208
+          ],
+          "foot_y": 392,
+          "translation_y": 31
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            166,
+            177,
+            226
+          ],
+          "foot_y": 392,
+          "translation_y": 14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            164,
+            166,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        }
+      ],
+      "source_asset": "sylphiette_normal_utility_hurt_v01",
+      "source_sha256": "0f8b76e3d32a977dcf2008419228cbed0943ec30e930ba8b5d3b5684be1a61b7"
+    },
+    "interact": {
+      "file": "interact.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            151,
+            169,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            151,
+            198,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            150,
+            171,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            150,
+            167,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "sylphiette_normal_utility_interact_v02",
+      "source_sha256": "bc48982fa30de09bf0197c254b18f69cd99ceb836ae6a099cc2c5106c709e101"
+    },
+    "prayer": {
+      "file": "prayer.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            172,
+            162,
+            220
+          ],
+          "foot_y": 392,
+          "translation_y": 16
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            173,
+            162,
+            219
+          ],
+          "foot_y": 392,
+          "translation_y": 17
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            171,
+            180,
+            175,
+            212
+          ],
+          "foot_y": 392,
+          "translation_y": 28
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            174,
+            163,
+            218
+          ],
+          "foot_y": 392,
+          "translation_y": 17
+        }
+      ],
+      "source_asset": "sylphiette_normal_utility_prayer_v02",
+      "source_sha256": "ac3a304243a8bc362c0ea33680b5d2bb105c69ae17bed53240d3f35d6dde4e0a"
+    },
+    "attack1_w": {
+      "file": "attack1_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            142,
+            176,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            63,
+            147,
+            263,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            72,
+            148,
+            259,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            62,
+            148,
+            264,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_attack1_v02",
+      "source_sha256": "0d11e784022de21a3664a6a63c18859b2dcf74c92ad452314864a019b4743e8a"
+    },
+    "attack2_w": {
+      "file": "attack2_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            84,
+            162,
+            246,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            161,
+            231,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            157,
+            235,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            162,
+            194,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_attack2_v01",
+      "source_sha256": "f29a5fa16fbb447e45199e8ba2c298f6c08a28cfb433df340b2523c57000c03d"
+    },
+    "attack3_w": {
+      "file": "attack3_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            159,
+            194,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            159,
+            169,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            157,
+            189,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            156,
+            170,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_attack3_v01",
+      "source_sha256": "7473d44dec9586cb83a1f43b29e26acf662d1eac7b9b7837d5533dc71befb0bd"
+    },
+    "attack4_w": {
+      "file": "attack4_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            159,
+            169,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            160,
+            171,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            162,
+            179,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            162,
+            185,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_attack4_v01",
+      "source_sha256": "1ca5d334d062bffc013d4a340d1ccfd40b95cb17560aaa29065551798b236ec8"
+    },
+    "attack5_w": {
+      "file": "attack5_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            162,
+            166,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            162,
+            183,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            84,
+            165,
+            254,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            165,
+            175,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_attack5_v01",
+      "source_sha256": "dbb655c959366023c7a6351e6b8abe7b74435e6a4e524a82384ec83dbabfa346"
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            152,
+            161,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_idle_v01",
+      "source_sha256": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab"
+    },
+    "move_attack1_w": {
+      "file": "move_attack1_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            152,
+            191,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            150,
+            231,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            87,
+            150,
+            233,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            86,
+            150,
+            234,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_move_attack1_v02",
+      "source_sha256": "a7f2a84f89020c4eb8d8adaf9f84b17ce00c82be0bd79826bc87a41effee7695"
+    },
+    "move_attack2_w": {
+      "file": "move_attack2_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            86,
+            159,
+            244,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            157,
+            228,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            155,
+            203,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            155,
+            161,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_move_attack2_v02",
+      "source_sha256": "b3678808aca7bed3c5e8c949163894c880501a931fa9afaa1932bd981822a02e"
+    },
+    "move_attack3_w": {
+      "file": "move_attack3_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            145,
+            152,
+            174,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            150,
+            162,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            150,
+            162,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            150,
+            163,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_move_attack3_v02",
+      "source_sha256": "ba8d2a7f2197e68cb17c4c4ff37319e3d4e6dca819b3be19007c3f5ff03be6e6"
+    },
+    "move_attack4_w": {
+      "file": "move_attack4_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            152,
+            162,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            150,
+            162,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            150,
+            161,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            150,
+            178,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_move_attack4_v02",
+      "source_sha256": "2355374f3abe9285684226f158a871d5ca3512e4a26c9e278ceefc4c8b6af1b8"
+    },
+    "move_attack5_w": {
+      "file": "move_attack5_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            152,
+            163,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            119,
+            171,
+            273
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            88,
+            151,
+            248,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            150,
+            163,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_move_attack5_v03",
+      "source_sha256": "0fa8aab81d0042773506a03b6e5faa39530366a0676699c2b0845ebc041a4900"
+    },
+    "skill_cast_w": {
+      "file": "skill_cast_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            158,
+            199,
+            234
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            158,
+            201,
+            234
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            161,
+            224,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            160,
+            198,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_skill_cast_v01",
+      "source_sha256": "66e88e004f96cd468b446a09fc9f20b2973f786c06d5139cd5a37bfb7de9f27f"
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            152,
+            162,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            151,
+            162,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            150,
+            162,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            149,
+            162,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "sylphiette_normal_w_walk_v03",
+      "source_sha256": "8e7e760d149ca933077b3b5c839a611ce62c74a9f5e34468331b0bde598c2e39"
+    }
+  },
+  "source_sha256": {
+    "sylphiette_normal_n_attack1_v02": "9337568c2f67e2aca2c4fb4c2877debf38fa33055315354351817aaa05660610",
+    "sylphiette_normal_n_attack2_v01": "5ab0efcb3b1b85e1a1ba0e6661726e8a0b3bc5a0d44b40e0d45d57e578a01fca",
+    "sylphiette_normal_n_attack3_v02": "13f275dc5752a0b0f56abe60f714291eaa9a1884ac7e81b99dd3c86814b9fc89",
+    "sylphiette_normal_n_attack4_v01": "5c01db4e8e0744b808280dd163d622e02a3b4a7e551a12116d3ca79d250c321c",
+    "sylphiette_normal_n_attack5_v01": "85beca78674332fc024e5d01bc1df7b86f8bcf50ecf767352b20ca68e9b6cb7f",
+    "sylphiette_normal_n_idle_v01": "11cf8bc083313498a42303614acdba6cc5a4b54367728a9fcba683707553a6f2",
+    "sylphiette_normal_n_move_attack1_v01": "d945d6f9c4e3cfd8c3d1e8857bc34a090c7626ac82436358f4b531b0435dd933",
+    "sylphiette_normal_n_move_attack2_v01": "050de133490bed2d6c1bdff5feaf5336646b994a63f4cbc90a2e6c56982619fc",
+    "sylphiette_normal_n_move_attack3_v01": "7537d52c5e5a1df93ee9c8e6fcb01863fff07d89292a2deb02097916a0ec65d2",
+    "sylphiette_normal_n_move_attack4_v01": "309eb547d1ad9f438102688569ab4dd87ba80a7d6012e26980138fe11ea90da7",
+    "sylphiette_normal_n_move_attack5_v03": "bfc1964eb122555cb6e26cda50114478f517551889a12c4f013464617a97e7a8",
+    "sylphiette_normal_n_skill_cast_v02": "a0232ce0f0534f5045452055f4ceda658b97e3cab38615668d6704951956097c",
+    "sylphiette_normal_n_walk_v01": "d89dc2f72f931d89e9b5573a41c219425b7faa8c9d8654d42a2b2e5793a08609",
+    "sylphiette_normal_nw_attack1_v01": "0fa50bc3a9ece1d3f9c90741961de45284e0175ca0d5ad33a063743d26f1beaa",
+    "sylphiette_normal_nw_attack2_v01": "1d7be02728b76370589c83c91d49b93f819bce60d925c0b94cc3eed06051c4f1",
+    "sylphiette_normal_nw_attack3_v01": "75369483cbf278ed308f4057ed40c9bd17bdbebc1f7876c8ba24c75196979b73",
+    "sylphiette_normal_nw_attack4_v01": "5d63063641409271d95583a81e0bc62c141c0fed3fc12279d9de5337ed92cea4",
+    "sylphiette_normal_nw_attack5_v01": "b1f15261d6e43b4c74241e66b2e9972f83754118c389b1fd9b3e31f526a66644",
+    "sylphiette_normal_nw_idle_v01": "83f0fc60e9c8062056e750f8f5cd9fee8fe2e6a1a1796db1e4a68200aef2ba63",
+    "sylphiette_normal_nw_move_attack1_v01": "dbe54725d22fc5fb7a09c88a5476962f8113906e2d75746bd98bae928702a760",
+    "sylphiette_normal_nw_move_attack2_v01": "b6b85ef9b1c2aad4b5dce24aa8646ce49aef3ad94a3c2ee8fdf5fea3e5810a23",
+    "sylphiette_normal_nw_move_attack3_v01": "a719a9abf4f327a972b816e6be085e6c067159becaef59a1bd31902c2519ec7c",
+    "sylphiette_normal_nw_move_attack4_v01": "24c4e34a1e4e099102fbac177c2a3f4d12067e457778cfbb8abd4891dc475a0f",
+    "sylphiette_normal_nw_move_attack5_v01": "960811b5c4a77985572c01c8e1c6835b3dd53f404e909fdc4f0c45586c08a162",
+    "sylphiette_normal_nw_skill_cast_v01": "535b7909a01de5ef102348e5fdb2a4e9e3a2ab67786477c246eba684b1cf1955",
+    "sylphiette_normal_nw_walk_v02": "fc56e46ee38699813357969740fcb6df22a3350563235e9917cb909e0d835939",
+    "sylphiette_normal_s_attack1_v01": "a29e82fd943af28a9c78b14dc6e555c798e61ea63b2a5eb35d3ed145588a6cca",
+    "sylphiette_normal_s_attack2_v01": "400b4298aa1c85d5fffae2f0d437ad10b0cfa492fa5c3b31bca8291f3bba425e",
+    "sylphiette_normal_s_attack3_v01": "6679fca2863a1d87eb69d20ea319567e174fc243009b87dcdf7e3ce393832a8b",
+    "sylphiette_normal_s_attack4_v01": "52e4fbfe66b11e2a533ee194fef630513e829e34cd1947da5df0224dafa9a472",
+    "sylphiette_normal_s_attack5_v01": "645ee7a0f1348a0dab480e5a6bf56cc71542b656d98c656346bd4dd969280605",
+    "sylphiette_normal_s_idle_v01": "2a7fdf9905b5a00eced4bbf28ad90b0531979cb3989727eaad2c52044d6a2a05",
+    "sylphiette_normal_s_move_attack1_v04": "932d7cc70f2234df010379cff5b14d3b3a92023b67573c38c0fc8ac84a0ead9e",
+    "sylphiette_normal_s_move_attack2_v03": "6d849a1f87e72ede8389c5102d777ac3fd6309a14f0e07169d9c58b9daf7a7a8",
+    "sylphiette_normal_s_move_attack3_v09": "57f823cfba5617aa132e9f33f418194016e0c4d3fa46603f8739589dfe3ed7f1",
+    "sylphiette_normal_s_move_attack4_v05": "ff48fcbbbd13ad4b3cd91d5564d7d96f07b09ea0f942543c5ba1383119f87963",
+    "sylphiette_normal_s_move_attack5_v06": "cccfd1faaee738d41c5f78e642dc3c90e8ddfad37e77b00adb93fb396ffab688",
+    "sylphiette_normal_s_skill_cast_v01": "b683596fc06ea4d47c2d31ecdc4807a7df8a492ce3a8152e8248e8115903ba8f",
+    "sylphiette_normal_s_walk_v04": "8f6ecc09c8e2704072b850c6fa608abaa8af9f410dbcdb93abb50a9ced7e63c5",
+    "sylphiette_normal_sw_attack1_v01": "78727db6a2607b8bcbf3a45ba8b34906572858b9c34d0a575d516edf6e0f1bf1",
+    "sylphiette_normal_sw_attack2_v01": "6a43ee8749eddfe3b6a8dbc46f839b673d71ca741bcc521e440e5afb980d19df",
+    "sylphiette_normal_sw_attack3_v01": "63f25310296bdb2d252353959254eb77a9a855cf4903c57e49a2659ed213c961",
+    "sylphiette_normal_sw_attack4_v01": "8e15a87c41e0eedb912e6bdc3b5fdeef752897f52e05d6b76318149eac057451",
+    "sylphiette_normal_sw_attack5_v01": "87c56146ad002d4d9d0b5086167d8cbe70f67349d446b23d54e823f387f060f4",
+    "sylphiette_normal_sw_idle_v01": "aac6c058be6b8e2a0d6dd5cf17466d50c781bbbf23cee45b6f22d6d0349e79eb",
+    "sylphiette_normal_sw_move_attack1_v02": "02716d64cc14dd3c1ac5749dcb2434592a15e9f046644d3d3fd3b994727b2bae",
+    "sylphiette_normal_sw_move_attack2_v02": "e3825e6e4f92c59b3ea965ebed4db1bc33bff380538b02b1809494a76d7ee55d",
+    "sylphiette_normal_sw_move_attack3_v02": "50923f91e5e7b3ba33ac184a45fc63a7b860cdda01186b07f563db01fd84aea1",
+    "sylphiette_normal_sw_move_attack4_v02": "46bb67a1481dc7b877c7cd18d734005c1cc7bf6e11c4a75392fcaed61621d979",
+    "sylphiette_normal_sw_move_attack5_v04": "054a09b674d5ea2b8c9758a1dbac499bba94b0bd4c23887b5b639d33ff09b2af",
+    "sylphiette_normal_sw_skill_cast_v01": "8b27baf9e2e7e3b031b3cc2285e78280a00c9dd680923c3237ea5d3003438f9a",
+    "sylphiette_normal_sw_walk_v02": "5b6cb28969e974150213b905ce5ad6d982190148ec75a16195c9617804023872",
+    "sylphiette_normal_utility_death_v01": "b762b45344954693be626a247a1fc0158c0263067a421fd27e5097a879135ff9",
+    "sylphiette_normal_utility_hurt_v01": "0f8b76e3d32a977dcf2008419228cbed0943ec30e930ba8b5d3b5684be1a61b7",
+    "sylphiette_normal_utility_interact_v02": "bc48982fa30de09bf0197c254b18f69cd99ceb836ae6a099cc2c5106c709e101",
+    "sylphiette_normal_utility_prayer_v02": "ac3a304243a8bc362c0ea33680b5d2bb105c69ae17bed53240d3f35d6dde4e0a",
+    "sylphiette_normal_w_attack1_v02": "0d11e784022de21a3664a6a63c18859b2dcf74c92ad452314864a019b4743e8a",
+    "sylphiette_normal_w_attack2_v01": "f29a5fa16fbb447e45199e8ba2c298f6c08a28cfb433df340b2523c57000c03d",
+    "sylphiette_normal_w_attack3_v01": "7473d44dec9586cb83a1f43b29e26acf662d1eac7b9b7837d5533dc71befb0bd",
+    "sylphiette_normal_w_attack4_v01": "1ca5d334d062bffc013d4a340d1ccfd40b95cb17560aaa29065551798b236ec8",
+    "sylphiette_normal_w_attack5_v01": "dbb655c959366023c7a6351e6b8abe7b74435e6a4e524a82384ec83dbabfa346",
+    "sylphiette_normal_w_idle_v01": "1a1ffe8153b6cbdfe95bc7eab58ff877d9019d060f8ee4eb7866c2cb4f47b0ab",
+    "sylphiette_normal_w_move_attack1_v02": "a7f2a84f89020c4eb8d8adaf9f84b17ce00c82be0bd79826bc87a41effee7695",
+    "sylphiette_normal_w_move_attack2_v02": "b3678808aca7bed3c5e8c949163894c880501a931fa9afaa1932bd981822a02e",
+    "sylphiette_normal_w_move_attack3_v02": "ba8d2a7f2197e68cb17c4c4ff37319e3d4e6dca819b3be19007c3f5ff03be6e6",
+    "sylphiette_normal_w_move_attack4_v02": "2355374f3abe9285684226f158a871d5ca3512e4a26c9e278ceefc4c8b6af1b8",
+    "sylphiette_normal_w_move_attack5_v03": "0fa8aab81d0042773506a03b6e5faa39530366a0676699c2b0845ebc041a4900",
+    "sylphiette_normal_w_skill_cast_v01": "66e88e004f96cd468b446a09fc9f20b2973f786c06d5139cd5a37bfb7de9f27f",
+    "sylphiette_normal_w_walk_v03": "8e7e760d149ca933077b3b5c839a611ce62c74a9f5e34468331b0bde598c2e39"
+  },
+  "source_frames": 261,
+  "clip_count": 69,
+  "animations": 124,
+  "manual_visual_review_sha256": "dda214d01831b480438b18fe53914516d537585f3db30de634f56ec00863df0e",
+  "calibration_sha256": "27e7b28dcb0f4a9b21e7a3eb1995667be8591ac8e7dacc776d539e5f777acba8",
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "version": "0.55",
+  "combat_scope": "visual model admission only; existing Sylphiette attack behavior unchanged; five-stage design clips retained without enabling Xixifu chain"
+}

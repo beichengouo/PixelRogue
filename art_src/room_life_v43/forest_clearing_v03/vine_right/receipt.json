@@ -1,0 +1,278 @@
+{
+  "id": "vine_right",
+  "kind": "vine",
+  "rect_px": [
+    3409,
+    100,
+    256,
+    256
+  ],
+  "layer": "walls",
+  "phase": 7,
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\references\\vine_right.png",
+  "repair": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\vine_right_repair.png",
+  "animation": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\vine_right_animation.png",
+  "repair_inner": [
+    112,
+    102,
+    190,
+    197
+  ],
+  "target_anchor": [
+    140,
+    112
+  ],
+  "plant_size": [
+    78,
+    91
+  ],
+  "generation_prompts": {
+    "repair": "Fine detailed pixel art exactly matching the supplied crop, same light and color palette. Production asset, no stylistic change. Edit the supplied square game map crop. Remove ONLY the small central hanging vine sprig near the middle of the stone wall, excluding leaves touching the crop edges. Fill only its footprint with same aged mossy stone wall, matching the existing masonry seams exactly; preserve the wall, dark tree branch, and all peripheral foliage. Preserve surrounding pixels and all border landmarks. No extra decoration, no new plants or shadows. Return one opaque square repair tile, same composition and perspective as the crop.",
+    "animation": "Fine detailed pixel art exactly matching the supplied crop, same light and color palette. Production asset, no stylistic change. Use the supplied crop as direct visual reference. Draw ONLY the small central hanging vine sprig near the middle of the stone wall, excluding leaves touching the crop edges isolated on genuine transparent background. Exactly EIGHT frames in a regular FOUR-column TWO-row sprite sheet; each cell square and identical in size. Aim 2048x1024. Fixed plant attachment at precisely the same point in every cell. Same silhouette, same leaf/flower count, same size, same illumination. Very small breeze loop: neutral, slight right, right peak, slight right, neutral, slight left, left peak, slight left, returns continuously to neutral. Leaf tip displacement 2-3 percent of plant height; roots/branch attachment remain fixed. Plant fits central 60 percent of each cell with generous transparent margins. No earth, stone, wall, cast shadow, background, guide grid, text, checkerboard or glow. Never let sprites touch or cross cell borders."
+  },
+  "anchors": [
+    [
+      208.67999999999998,
+      119.88000000000001
+    ],
+    [
+      208.20999999999998,
+      119.88000000000001
+    ],
+    [
+      208.20999999999998,
+      119.88000000000001
+    ],
+    [
+      208.67999999999998,
+      119.88000000000001
+    ],
+    [
+      208.67999999999998,
+      119.61000000000001
+    ],
+    [
+      208.20999999999998,
+      119.61000000000001
+    ],
+    [
+      208.20999999999998,
+      119.61000000000001
+    ],
+    [
+      208.67999999999998,
+      119.61000000000001
+    ]
+  ],
+  "generation": "built-in image_gen",
+  "source_sheet_size": [
+    1774,
+    887
+  ],
+  "scale_down_only": 0.24920127795527156,
+  "frame_size": [
+    256,
+    256
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "source_bounds": [
+        71,
+        111,
+        360,
+        391
+      ],
+      "source_anchor": [
+        208.67999999999998,
+        119.88000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        84,
+        199,
+        193
+      ],
+      "rgba_sha256": "92e3a5cf6041f33ea144e5265283bd4191e8913ff74872aa2264046c324b4067"
+    },
+    {
+      "index": 1,
+      "source_bounds": [
+        92,
+        111,
+        395,
+        391
+      ],
+      "source_anchor": [
+        208.20999999999998,
+        119.88000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        82,
+        198,
+        193
+      ],
+      "rgba_sha256": "974c87e1cc52c8de78563b22761073bc7d11b3a6db0e1c81df1b7c471e966800"
+    },
+    {
+      "index": 2,
+      "source_bounds": [
+        94,
+        111,
+        407,
+        391
+      ],
+      "source_anchor": [
+        208.20999999999998,
+        119.88000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        83,
+        198,
+        193
+      ],
+      "rgba_sha256": "658e86ee1b00c32fa244512b4f58614b07ad407c8288ba6e206315fd55edc027"
+    },
+    {
+      "index": 3,
+      "source_bounds": [
+        97,
+        111,
+        397,
+        391
+      ],
+      "source_anchor": [
+        208.67999999999998,
+        119.88000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        82,
+        199,
+        193
+      ],
+      "rgba_sha256": "209892199335c006a015f24f9b70a53595e1d44e9074349d25b599fa4521e123"
+    },
+    {
+      "index": 4,
+      "source_bounds": [
+        71,
+        108,
+        360,
+        390
+      ],
+      "source_anchor": [
+        208.67999999999998,
+        119.61000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        82,
+        199,
+        189
+      ],
+      "rgba_sha256": "7bd83548ae6c0be854553ef5c6ef119d0d7ed1ba8fa40baddd9253e7e4910998"
+    },
+    {
+      "index": 5,
+      "source_bounds": [
+        84,
+        109,
+        358,
+        390
+      ],
+      "source_anchor": [
+        208.20999999999998,
+        119.61000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        82,
+        198,
+        191
+      ],
+      "rgba_sha256": "763b4739945dede8a3393787ce006a788fec78cac80c5ea5792be75c359b6ad9"
+    },
+    {
+      "index": 6,
+      "source_bounds": [
+        61,
+        108,
+        362,
+        390
+      ],
+      "source_anchor": [
+        208.20999999999998,
+        119.61000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        82,
+        198,
+        190
+      ],
+      "rgba_sha256": "ea3a44c60962f346abb90b9eb5db5370c1a72723779f1d165395437ed85911c7"
+    },
+    {
+      "index": 7,
+      "source_bounds": [
+        90,
+        108,
+        379,
+        390
+      ],
+      "source_anchor": [
+        208.67999999999998,
+        119.61000000000001
+      ],
+      "translation": [
+        88,
+        82
+      ],
+      "bounds": [
+        88,
+        82,
+        199,
+        189
+      ],
+      "rgba_sha256": "dadae178f3c2b1d4175135c6374a3a69cd43941dcb008d6cfc96c766f7f6a99b"
+    }
+  ],
+  "source_hashes": {
+    "reference": "0267c080f56a0992b76b29dd7dd1c948b2c1671cc767818e15dc933d21aa8043",
+    "repair": "de4a08e67794eb3c1d5d5e2a9a70a3426cdc1dfcbc2e3d4e3f977d0a873f40ee",
+    "animation": "c55512b2d5450c4404f13340fcb94e01de3fac736245206760c595f3c70c13e6"
+  },
+  "repair_hash": "1f39a5f7801c8e2e7c9b8f783a588053355fc9c2c29c657ecc5ac447082e4bd7",
+  "atlas_hash": "ecc8cff1e5ef64ac6ac93ed72bc347e9243169090af507795cf81835bb0bf9b9"
+}

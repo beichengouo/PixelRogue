@@ -1,0 +1,278 @@
+{
+  "id": "vine_left",
+  "kind": "vine",
+  "rect_px": [
+    892,
+    97,
+    256,
+    256
+  ],
+  "layer": "walls",
+  "phase": 4,
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\references\\vine_left.png",
+  "repair": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\vine_left_repair.png",
+  "animation": "E:\\CodexWorkspace\\PixelRogue\\work\\map-life-v43\\vine_left_animation_v3.png",
+  "repair_inner": [
+    126,
+    103,
+    207,
+    193
+  ],
+  "target_anchor": [
+    152,
+    112
+  ],
+  "plant_size": [
+    77,
+    93
+  ],
+  "generation_prompts": {
+    "repair": "Fine detailed pixel art exactly matching the supplied crop, same light and color palette. Production asset, no stylistic change. Edit the supplied square game map crop. Remove ONLY the small central hanging vine sprig near the middle of the stone wall, excluding leaves touching the crop edges. Fill only its footprint with same aged mossy stone wall, matching the existing masonry seams exactly; preserve the wall, dark tree branch, and all peripheral foliage. Preserve surrounding pixels and all border landmarks. No extra decoration, no new plants or shadows. Return one opaque square repair tile, same composition and perspective as the crop.",
+    "animation": "Create a NEW production sprite sheet from this original map crop. Eight consecutive time frames of one STATIONARY plant gently breathing in place, NOT eight facing directions and NOT a rotating object. One hanging vine sprig with a dark upper twig permanently extending to the left, exactly as in the reference. The twig stays in the same orientation. All eight frames share the same anatomical layout, no mirror-image poses anywhere. Use an eight-phase subtle leaf flex cycle, 0%,1%,2%,1%,0%,-1%,-2%,-1% displacement of LEAF TIPS ONLY, unchanged attachment point. Match the fine pixel art, species, colors, brightness and overhead perspective exactly. Four equal columns, two equal rows, transparent background; empty margins 25 percent of every cell. Isolate only the plant, no grass, stone, earth or ground shadow. Native sheet 2048x1024; no lines or text. Frame six and seven must retain the exact same flower/bud/twig side as frame one; this is essential."
+  },
+  "anchors": [
+    [
+      62.160000000000004,
+      124.32000000000001
+    ],
+    [
+      62.02,
+      124.32000000000001
+    ],
+    [
+      62.02,
+      124.32000000000001
+    ],
+    [
+      62.160000000000004,
+      124.32000000000001
+    ],
+    [
+      62.160000000000004,
+      124.04
+    ],
+    [
+      62.02,
+      124.04
+    ],
+    [
+      62.02,
+      124.04
+    ],
+    [
+      62.160000000000004,
+      124.04
+    ]
+  ],
+  "generation": "built-in image_gen",
+  "source_sheet_size": [
+    1774,
+    887
+  ],
+  "scale_down_only": 0.22916666666666666,
+  "frame_size": [
+    256,
+    256
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "source_bounds": [
+        59,
+        86,
+        394,
+        374
+      ],
+      "source_anchor": [
+        62.160000000000004,
+        124.32000000000001
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        141,
+        84,
+        240,
+        186
+      ],
+      "rgba_sha256": "e37f59f79eb7118e9bec3a00284c42fcb5fc3db9f08a75ce1d1f50392da547a3"
+    },
+    {
+      "index": 1,
+      "source_bounds": [
+        58,
+        86,
+        394,
+        374
+      ],
+      "source_anchor": [
+        62.02,
+        124.32000000000001
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        84,
+        240,
+        186
+      ],
+      "rgba_sha256": "c385fedd008ec3caa4be9791fe441d3e3beddb37781c16b829868f4ba0c7571e"
+    },
+    {
+      "index": 2,
+      "source_bounds": [
+        58,
+        86,
+        394,
+        374
+      ],
+      "source_anchor": [
+        62.02,
+        124.32000000000001
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        87,
+        240,
+        186
+      ],
+      "rgba_sha256": "756b60fd9dcd776bcbdba76a69966386aea34a81620f053d6b0585628c36314b"
+    },
+    {
+      "index": 3,
+      "source_bounds": [
+        59,
+        86,
+        393,
+        374
+      ],
+      "source_anchor": [
+        62.160000000000004,
+        124.32000000000001
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        88,
+        238,
+        186
+      ],
+      "rgba_sha256": "db05c76e13c660eefcb28004a930184f307cb3f5222764a77aa9ecfe4eb6f87a"
+    },
+    {
+      "index": 4,
+      "source_bounds": [
+        58,
+        86,
+        394,
+        374
+      ],
+      "source_anchor": [
+        62.160000000000004,
+        124.04
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        84,
+        240,
+        182
+      ],
+      "rgba_sha256": "557a837a14e5b55f26e6d54abff85d8a1b6861e0368e23cffd6f770082d2022d"
+    },
+    {
+      "index": 5,
+      "source_bounds": [
+        58,
+        87,
+        387,
+        374
+      ],
+      "source_anchor": [
+        62.02,
+        124.04
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        84,
+        240,
+        184
+      ],
+      "rgba_sha256": "e7b60c05d652de3b89570e8d26c8079e5bdf7d7200797acbd9a669261aea1d92"
+    },
+    {
+      "index": 6,
+      "source_bounds": [
+        58,
+        86,
+        387,
+        375
+      ],
+      "source_anchor": [
+        62.02,
+        124.04
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        84,
+        240,
+        184
+      ],
+      "rgba_sha256": "e180bd209aaf275945b630a03180966050c54e3141f481cb836ae7c886fe20d0"
+    },
+    {
+      "index": 7,
+      "source_bounds": [
+        59,
+        87,
+        386,
+        374
+      ],
+      "source_anchor": [
+        62.160000000000004,
+        124.04
+      ],
+      "translation": [
+        138,
+        84
+      ],
+      "bounds": [
+        138,
+        84,
+        234,
+        184
+      ],
+      "rgba_sha256": "6d0d6a106f47348873f6eafe10a6fbff5bc78e75fde0b299a3f379fb59fa6296"
+    }
+  ],
+  "source_hashes": {
+    "reference": "346b24bd4367e4fab007677d47235cf14849f3403950bde5437d4cae611fa0b1",
+    "repair": "f1ad81e80febbdf75e026557a353eb50116a16f4b2c86d9a4d649195d250469e",
+    "animation": "1beb452049907cf4e40ef68facfa733abf73adb8527123c0a8ddc6801b623b6a"
+  },
+  "repair_hash": "f3879a903b34ce9c339b570a62aea146c6c629212e5f63ad356e32086ea3ff0a",
+  "atlas_hash": "14f9c186c22c3f15203e9a2820bb194a53d11797d8ae3f7389cba7f930e174e2"
+}

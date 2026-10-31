@@ -1,0 +1,26 @@
+{
+  "asset": "ilyua_set_turnaround_v02",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/ilyua_set_turnaround_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-8bf7b942-6f36-487d-ae98-401ad72253c0.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit this turnaround sheet with ONE precise correction only: Ilyua is a RIGHT-HANDED archer who HOLDS THE BOW IN HER ANATOMICAL LEFT HAND and draws with her anatomical RIGHT hand. The present front and back figures have the bow in the wrong anatomical hand. In FRONT view (leftmost figure), move the COMPLETE bow and bow-gripping forearm to the VIEWER'S RIGHT side, which is Ilyua's LEFT. Relax the other hand naturally at the viewer-left side, fingers empty. In BACK view (rightmost figure), move the COMPLETE bow to the VIEWER'S LEFT side, which is again Ilyua's anatomical LEFT, with the other hand relaxed empty. For the left-facing SIDE profile (middle figure), preserve a physically coherent left-arm bow hold on the far arm and keep the near RIGHT drawing hand relaxed and empty. Check that the quiver stays on her RIGHT HIP in all views.\nDo NOT mirror any whole figure, because that would move the white flower hair ornament, quiver and other asymmetric clothing to the wrong side. Re-draw only necessary forearm, hands, bow and overlapping fabric while preserving exactly the existing head, face, lake-blue eyes, pale green hair, 2.7-head body proportions, flower-leaf legendary costume, feet, view directions, white background, scale, guides and labels. No outfit redesign. All three views must depict one consistent left-hand bow grip. No staff, no extra weapon, no magical effects. Keep the entire bow inside the canvas.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_set_turnaround_v01.png",
+      "sha256": "07ea0341a813bf4481e013fc446d0099f399a79953a0bd0ccbfa5a78b42241e5"
+    }
+  ],
+  "sha256": "de80e0aea08910cdbcf08044f0c4d3e6ec47c24071b963960fbb003d4c1cad37",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

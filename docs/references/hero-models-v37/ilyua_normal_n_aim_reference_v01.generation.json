@@ -1,0 +1,29 @@
+{
+  "asset": "ilyua_normal_n_aim_reference_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/ilyua_normal_n_aim_reference_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-90c5c853-794f-41c2-a24d-7b50135ebb69.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Draw ONE single FULL BODY 2D overhead-game sprite reference of Ilyua seen from DIRECTLY BEHIND as she shoots a bow AWAY FROM VIEWER toward UP SCREEN. Image1 is same exact character and rear-view costume reference. Crucial bow perspective: the plane of bow is FACING THE VIEWER from the back of the character, the wooden bow spans HORIZONTALLY left-to-right across screen in front of her distant chest, left fist at bow center extended away, right hand drawing string behind at chin. Bowstring forms a shallow V toward viewer (behind body). Her arrow shaft points directly away from viewer, so FORESHORTEN the arrow to a tiny sliver at the central grip, with NO visible long horizontal arrow shaft and no arrow pointing left/right. We see BACK of her white hood and robe, sage hair below hood, no eyes/face/front bangs. Exactly 2 anatomical arms/hands, left gripping bow, right drawing string. Preserve small body proportions, hood-up, sage hair, gold-vine ivory robe, brown boots, quiver on right hip. Entire hood, bow tips, feet visible with generous clear margin. True transparent background. NO text, numbers, diagrams, lines, borders, effects, projectile, shadows, ground, other figures, watermark. Soft nonpixel painted mini game style. Single image not grid.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    }
+  ],
+  "sha256": "0159edbd474e82078c41fe28012cb509eb0db2b8f410f4e4626ff8311644448b",
+  "dimensions": [
+    1218,
+    1292
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": false
+}

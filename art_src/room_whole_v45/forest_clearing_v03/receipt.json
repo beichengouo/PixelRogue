@@ -1,0 +1,13 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: style-transfer. Edit target: supplied full top-down game map, forest clearing. Create ONE complete hand-painted master background, ideally native 2560x1440 landscape 16:9. Convert pixel art into refined non-pixel fantasy game environment illustration: smooth fine brushwork, delicate individually painted leaves and daisies, natural stone material, gentle warm morning light, rich green palette, crisp readable small-scale textures, no pixel grid, no blur. Preserve exact orthographic camera, framing, wall locations, all four entrance locations and dimensions, diagonal lower-left to upper-right gravel trail footprint, walkable clearing, outside trees, decorative banners and gold ornaments. Do not add buildings, rivers, characters, text, UI or new objects. Do not move boundaries, enlarge plants or crop scene. All architecture and trail geometry must remain aligned with reference. This is a static neutral-wind master for later controlled vegetation animation; foliage rests naturally. Single whole image, no panels, no sprite sheet. Prioritize fidelity of layout and polished hand-painted style.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/map-life-v43/references/composite_native.png",
+  "generated_source": "C:/Users/Administrator/.codex/generated_images/01a18cb6-ff93-7bc1-94f4-acd7d6618ae1/exec-743d2561-5229-406e-a55a-c1c8b55df807.png",
+  "native_size": [
+    1672,
+    941
+  ],
+  "master": "master_native.png",
+  "motion_method": "deterministic local inverse warp; not independently hand drawn frames",
+  "runtime_admitted": false
+}

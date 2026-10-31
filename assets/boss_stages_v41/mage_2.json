@@ -1,0 +1,542 @@
+{
+  "revision": 41,
+  "base_revision": 40,
+  "cell": 960,
+  "columns": 8,
+  "rows": 2,
+  "foot": [
+    480,
+    888
+  ],
+  "body_height": 635.819,
+  "source_pose_count": 11,
+  "animation_kind": "skill_mid_key_poses_complete",
+  "skill_transition_coverage": {
+    "required": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "covered": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "pending": [],
+    "complete": true
+  },
+  "poses": {
+    "idle": {
+      "index": 0,
+      "column": 0,
+      "row": 0,
+      "source_sha256": "3f83917f2eb5342666f97a292e60fcd6049476e1a191df631ec6fb7c0b2e60dd",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        199,
+        129,
+        921,
+        981
+      ],
+      "trim": [
+        197,
+        127,
+        1122,
+        1112
+      ],
+      "painted_bounds": [
+        181,
+        252,
+        778,
+        888
+      ]
+    },
+    "move": {
+      "index": 1,
+      "column": 1,
+      "row": 0,
+      "source_sha256": "b3ab26b2a79bb96299a7753c7953392d3acbf84134ec52431dd9968bab89de4a",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        28,
+        9,
+        1255,
+        1181
+      ],
+      "trim": [
+        26,
+        7,
+        1285,
+        1192
+      ],
+      "painted_bounds": [
+        73,
+        122,
+        887,
+        888
+      ]
+    },
+    "windup": {
+      "index": 2,
+      "column": 2,
+      "row": 0,
+      "source_sha256": "eb74674c68bda81d3caab1250d368549049a774a84f7c879eb4e6d230206a31c",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        65,
+        7,
+        1201,
+        1189
+      ],
+      "trim": [
+        63,
+        5,
+        1268,
+        1198
+      ],
+      "painted_bounds": [
+        90,
+        117,
+        869,
+        888
+      ]
+    },
+    "release": {
+      "index": 3,
+      "column": 3,
+      "row": 0,
+      "source_sha256": "07fbb90a9c7b19049f77755cbfe5e7a1b65ef0dd33a4979626e903aa3d77b97f",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        40,
+        7,
+        1238,
+        1185
+      ],
+      "trim": [
+        38,
+        5,
+        1280,
+        1194
+      ],
+      "painted_bounds": [
+        78,
+        120,
+        881,
+        888
+      ]
+    },
+    "skill_0_mid": {
+      "index": 4,
+      "column": 4,
+      "row": 0,
+      "source_sha256": "4af0e15a1d6dd62e75556bd0544868b163971f470b830bfc69a64e62f4c54a13",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        81,
+        69,
+        1176,
+        1070
+      ],
+      "trim": [
+        79,
+        67,
+        1259,
+        1141
+      ],
+      "painted_bounds": [
+        98,
+        194,
+        861,
+        888
+      ]
+    },
+    "skill_1_mid": {
+      "index": 5,
+      "column": 5,
+      "row": 0,
+      "source_sha256": "376a15b623c4031a67233c73644e8384a941133187029746b07c94a7d7ae45e1",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        74,
+        88,
+        1201,
+        1037
+      ],
+      "trim": [
+        72,
+        86,
+        1277,
+        1127
+      ],
+      "painted_bounds": [
+        90,
+        216,
+        869,
+        888
+      ]
+    },
+    "skill_2_mid": {
+      "index": 6,
+      "column": 6,
+      "row": 0,
+      "source_sha256": "f95bc2ac57b76c314eed58253f1c39dbfa706541964b365ec9bbd434f117776d",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        127,
+        39,
+        1088,
+        1127
+      ],
+      "trim": [
+        125,
+        37,
+        1217,
+        1168
+      ],
+      "painted_bounds": [
+        127,
+        157,
+        832,
+        888
+      ]
+    },
+    "skill_3_mid": {
+      "index": 7,
+      "column": 7,
+      "row": 0,
+      "source_sha256": "640355b5e57c47c182578137ccf2fca868ca94a88370c5831dee78a9b6e5cabc",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        113,
+        22,
+        1088,
+        1133
+      ],
+      "trim": [
+        111,
+        20,
+        1203,
+        1157
+      ],
+      "painted_bounds": [
+        127,
+        153,
+        832,
+        888
+      ]
+    },
+    "skill_4_mid": {
+      "index": 8,
+      "column": 0,
+      "row": 1,
+      "source_sha256": "d98c45b83564058137ae8e378a398d9fc6869e6f599560db9026d03f01b8e125",
+      "source_canvas": [
+        1245,
+        1263
+      ],
+      "source_used": [
+        40,
+        22,
+        1175,
+        1196
+      ],
+      "trim": [
+        38,
+        20,
+        1217,
+        1220
+      ],
+      "painted_bounds": [
+        99,
+        113,
+        861,
+        888
+      ]
+    },
+    "skill_5_mid": {
+      "index": 9,
+      "column": 1,
+      "row": 1,
+      "source_sha256": "2fa093cfe71ec88cb51a424153f3cf5372229eb8cf329d9c78313e1f542e45df",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        82,
+        92,
+        1166,
+        1026
+      ],
+      "trim": [
+        80,
+        90,
+        1250,
+        1120
+      ],
+      "painted_bounds": [
+        102,
+        223,
+        858,
+        888
+      ]
+    },
+    "skill_6_mid": {
+      "index": 10,
+      "column": 2,
+      "row": 1,
+      "source_sha256": "d10dcef28160944a168e8f4efafc85f3cfa8a7fa4c4771dd75e344f0bed8e384",
+      "source_canvas": [
+        1310,
+        1200
+      ],
+      "source_used": [
+        82,
+        45,
+        1153,
+        1105
+      ],
+      "trim": [
+        80,
+        43,
+        1237,
+        1152
+      ],
+      "painted_bounds": [
+        106,
+        172,
+        854,
+        888
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "fps": 5,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "idle",
+        "idle",
+        "idle"
+      ]
+    },
+    "move": {
+      "fps": 7,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "move",
+        "move",
+        "move"
+      ]
+    },
+    "transform": {
+      "fps": 8,
+      "slots": 8,
+      "pose_sequence": [
+        "idle",
+        "idle",
+        "windup",
+        "windup",
+        "release",
+        "release",
+        "idle",
+        "idle"
+      ]
+    },
+    "skill_0_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_0_mid",
+        "skill_0_mid"
+      ]
+    },
+    "skill_0_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_0_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "skill_1_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_1_mid",
+        "skill_1_mid"
+      ]
+    },
+    "skill_1_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_1_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "skill_2_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_2_mid",
+        "skill_2_mid"
+      ]
+    },
+    "skill_2_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_2_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "skill_3_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_3_mid",
+        "skill_3_mid"
+      ]
+    },
+    "skill_3_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_3_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "skill_4_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_4_mid",
+        "skill_4_mid"
+      ]
+    },
+    "skill_4_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_4_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "skill_5_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_5_mid",
+        "skill_5_mid"
+      ]
+    },
+    "skill_5_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_5_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "skill_6_windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "skill_6_mid",
+        "skill_6_mid"
+      ]
+    },
+    "skill_6_release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "skill_6_mid",
+        "release",
+        "release",
+        "idle"
+      ]
+    },
+    "windup": {
+      "fps": 6,
+      "slots": 4,
+      "pose_sequence": [
+        "idle",
+        "windup",
+        "windup",
+        "windup"
+      ]
+    },
+    "release": {
+      "fps": 8,
+      "slots": 4,
+      "pose_sequence": [
+        "windup",
+        "release",
+        "release",
+        "release"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "enabled": false,
+  "canvas": [
+    4608,
+    2592
+  ],
+  "frame_size": [
+    1672,
+    941
+  ],
+  "fps": 6,
+  "frames": [
+    "ground_00.png",
+    "ground_01.png",
+    "ground_02.png",
+    "ground_03.png",
+    "ground_04.png",
+    "ground_05.png",
+    "ground_06.png",
+    "ground_07.png"
+  ],
+  "walls": "walls.png"
+}

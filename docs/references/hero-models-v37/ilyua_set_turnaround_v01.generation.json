@@ -1,0 +1,39 @@
+{
+  "asset": "ilyua_set_turnaround_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/ilyua_set_turnaround_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-e3ed2f2d-3f95-441b-b85d-9b8d6e949d87.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / stylized-concept. Production turnaround for Ilyua's LEGENDARY forest-flower hunting outfit in PixelRogue. Image 1 is PRIMARY STYLE AND COMPACT ANATOMY reference, approximately 2.7 heads tall, same large head and short torso/limbs as approved Xixifu. Image 2 is the NEW Ilyua normal turnaround: preserve that EXACT SAME ILYUA face, lake-blue eyes, sage green hair color, underlying body, head height, shoulders, waist, hands and feet. Legendary outfit MUST NOT make her body taller or legs longer. Image 3 supplies legendary CLOTHING identity and image 4 portrait supplies color/material only, do not copy their tall illustration proportions.\nDraw ONE white-background 1536x1024 production sheet, three evenly spaced orthographic FRONT / LEFT PROFILE facing left / BACK views, neutral relaxed standing, all full body same scale/baseline. Small clean view labels and subtle crown/chin/waist/sole alignment guides only. Soft clean nonpixel cel-painted anime game-sprite style matching image 1 exactly; not realistic, not pixelated.\nIlyua: adult elf in compact stylized game anatomy, pale skin, clear lake-blue irises, long pale sage-green hair, composed alert face. Legendary look is UNHOODED, revealing natural pointed ears. Her long green hair flows normally down the back, with one restrained white flower and gold leaf hair ornament. White-and-leaf-green fitted practical hunting tunic, layered leaf-shaped skirt panels and split ivory cloak tails with fine gold vine borders, covered modest bodice, leaf-green short underlayer, small brown belt/quiver, brown-and-gold forearm guards, compact mid-calf brown leather boots with gold leaf accents and flat usable soles. Simple WHITE FLOWER + GOLD LEAF collar pendant, clearly readable. Use a few flowers at collar and shoulder/hip, not hundreds of tiny ornaments. She holds a short ornate GOLDEN VINE WOODEN BOW in anatomical LEFT hand, right drawing hand free. Side and back keep same hip-quiver and shoulder decorations, no extra bow/staff. Follow the actual clothing silhouette in image 3 but compact it to SAME BODY as image 2.\nLarge head, short game-sprite legs, identical proportions in all views, no dress stretching to create a taller person. Keep complete hair tips, bow, ears, boots and skirt inside generous canvas margins. No magical glow, no wind blast, no floating leaves or creatures, no environment, no other characters, no crown, no hood on this legendary form, no giant high heels, no hair clipping through fabric.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_normal_turnaround_v01.png",
+      "sha256": "e662c01c51c9aaf7aa5896e4dd69a64990ce6e30372742ce3a4d6052d54e98a0"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v35/ilyua_set_turnaround.png",
+      "sha256": "b6aa236276e7e4dc78895739877456f3ca0150633e157964413264d4c227c152"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/legendary_sets_v21/ilyua/portrait_set.png",
+      "sha256": "892818fccd0e104bd90fa6c0fb929eab3c78fb158b73292205c56cb46db1b3c2"
+    }
+  ],
+  "sha256": "07ea0341a813bf4481e013fc446d0099f399a79953a0bd0ccbfa5a78b42241e5",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true,
+  "reason": "bow hand reversed; superseded by v02"
+}
