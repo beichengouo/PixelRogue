@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_sw_attack3_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_attack3_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17bf1-89ac-7c70-bf6a-7d9cd2be44f7\\exec-86ec8c97-b19f-4f9b-9d51-4f3683f73237.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a clean animation sheet using image1 only for four sequential archery poses and image2 as exact identity, body proportions, outfit and character style. Three-quarter view aiming towards lower left; left hand holds single bow, right hand draws and releases string. Keep both feet grounded and body/head precisely identical size in all four cells, no lean or scale variation. Four genuinely different sequential preparation, draw, release, recovery poses with matching head and clothing, full body and bow inside each cell, generous transparent margins. Exactly four equal 2x2 cells. Completely transparent alpha outside figures; NO gradient, glow, dark backdrop, ground, text, labels, borders, numbers, shadows, particles or additional characters. High quality refined nonpixel game sprites.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack3_v02.png",
+      "sha256": "acdf0ab752de14217d8907ee1fbee95c416045bbb6dee64ff1e62f9882a466f3"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_idle_v01.png",
+      "sha256": "e95f8b569e0392f260a708a56519c69ade8d39a43f05c45ed3847017d038ee90"
+    }
+  ],
+  "sha256": "225fc4317a65b18e235c167c0356a92745f0fdd44f7dafa6efbaa2c962610a59",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    55,
+    0,
+    1518,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    2,
+    3,
+    0,
+    0
+  ],
+  "review_reason": "Flying arrow and solid content touches canvas.",
+  "alpha_bounds_raw": [
+    55,
+    0,
+    1518,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      55,
+      0,
+      1518,
+      1024
+    ],
+    "8": [
+      58,
+      7,
+      1318,
+      1022
+    ],
+    "32": [
+      59,
+      7,
+      1318,
+      1021
+    ],
+    "128": [
+      59,
+      7,
+      1317,
+      1021
+    ]
+  }
+}

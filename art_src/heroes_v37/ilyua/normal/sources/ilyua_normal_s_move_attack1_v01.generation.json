@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_s_move_attack1_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-01cd7f28-3535-4f47-817b-45bba57dd763.png",
+  "built_in_imagegen": true,
+  "prompt": "Make a transparent 2x2 four-frame game sprite animation. From image1 preserve the exact four sequential alternating walking phases: left foot forward, right foot passes under pelvis, right foot forward, left foot passes under pelvis. From image2 use corresponding front-facing archery arm and bow poses, bow horizontally oriented and arrow foreshortened toward viewer, never pointing sideways. Exact same face, head size, hood, hairstyle and costume in every frame; upright stable torso. One bow held by left hand, right hand draws the string. No loose projectile. Four whole figures and full bow fully inside their separate equal cells with very wide transparent margins. No text, numbers, labels, border, effects or shadows. Refined nonpixel game art.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_walk_v01.png",
+      "sha256": "95abc0c54c57ab7bad2fbc74cb40818d46440536091fa48116ecc50345a18b4d"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_attack1_v02.png",
+      "sha256": "218169bd0612f0c8ac82f0ded4c9d51d0932895d2f00b6317c828800d8107817"
+    }
+  ],
+  "sha256": "0e60ae5386f3d6ab73f1166a975144879b9f6b6d280cb02c1f67e490b57a6f72",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    18,
+    1216,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Four frames repeat same bow pose; no attack anticipation, release, or recovery.",
+  "alpha_bounds_raw": [
+    0,
+    18,
+    1216,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      18,
+      1216,
+      1254
+    ],
+    "8": [
+      146,
+      22,
+      1147,
+      1233
+    ],
+    "32": [
+      146,
+      22,
+      1147,
+      1233
+    ],
+    "128": [
+      147,
+      23,
+      1146,
+      1232
+    ]
+  }
+}

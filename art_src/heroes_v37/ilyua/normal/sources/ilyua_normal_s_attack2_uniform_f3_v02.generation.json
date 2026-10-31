@@ -1,0 +1,16 @@
+{
+  "asset": "ilyua_normal_s_attack2_uniform_f3_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "8a28a9546da8368a7847e112978227c85a9a83cd88882c97adaf9a854ab1b963",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-dbb39b9c-c81b-4599-98e0-2a5bf07dfcb5.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f1_v01.png",
+      "sha256": "e91591b1a671e2abd463fab585c76e4930988d6dbafb24a71aff8b7c1fbc3024"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_s_attack1_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-20775be6-ef45-4e22-b966-0d7f4ca0ad90.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve clean four-frame gameSOURCE. Image1 exact CORRECT SOUTH shooting geometry and same Ilyua identity, not an image to repeat4times. Image2 exact idle proportions/costume. Four DISTINCT consecutive stage1 attack frames reading order2x2 true transparent. Character shoots SOUTH/DOWNscreen DIRECTLY TOWARD VIEWER; preserve image1 HORIZONTAL bow construction acrossscreen, NOT verticalbow pointing right. Leftbowgrip projects towardcamera at center/lowerchest; rightstringhand behind at sternum/chin, hands centered oneaboveanother in depth; arrow ifnocked veryforeshortened points DOWNscreen at viewer, NEVER long right/left horizontalarrow. Facialview stays FRONT both eyes/levelshoulders, stable upright torso. Same compact skull size/torso/shortleg lengths all4 and idle, don'tgrowdeepdraw. Feetplanted. Exactly2arms/2hands/onebow, no ghosthand. Same sagehair/blueeyes ivorygoldvineHOODUP sageinnerrobe, brownbelt/quiverRIGHT hip/shortboots, smallcurvedwoodbow anatomicalLEFThand always and RIGHTstringhand. Single bowfeathertassel asidle, notextraweapons. Soft refined nonpixel handpainted miniature celshading. All4 fullbody/hood/bowtips/feet fit their owncell with generous10%emptytransparent room, no tips cut or crosscells. NO numbers/text/labels/grid/borders/shadows/floor/glow/effects/particles/background/creatures/projectile arrows flying. Four stages within this clip: 1 lowready horizontalbow nearwaist, rightfingers touching string nearbelt; 2 shortlowdraw bowgrip lowerchest/nearlefthand pointing toward viewer, rightstringfingers draw toward sternum; 3 release, rightfingers open near collar/string straight, bow stays lowhorizontal; 4 leftbowgrip lifts slightly toward chest to prepare stage2, rightfingers approach string.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\ilyua_normal_s_aim_reference_v01.png",
+      "sha256": "6d9c0936ca1f40b4b8faa387bb4629121bb263535f18d9029a05bb0cf8e6b6dc"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "218169bd0612f0c8ac82f0ded4c9d51d0932895d2f00b6317c828800d8107817",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1226,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1226,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1226,
+      1254
+    ],
+    "8": [
+      101,
+      17,
+      1179,
+      1240
+    ],
+    "32": [
+      101,
+      17,
+      1179,
+      1240
+    ],
+    "128": [
+      101,
+      17,
+      1178,
+      1239
+    ]
+  }
+}

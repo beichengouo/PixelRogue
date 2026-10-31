@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_w_attack3_adjust_pack_v02",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_attack3_adjust_pack_v02.png",
+  "sha256": "231e3189f3defdce43c7f4844c614901bd7e62c5b9584e35786395c7923eaf74",
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_w_adjust_ready_single_v02": "f230416a46b7f57adef8f2ef9262cbb0e8ffdd1bd616c9391f5f1d66c8fc3bd7",
+    "ilyua_normal_w_adjust_draw_single_v02": "06c0a68be62ff123e0cdc3ca19bd34dfeeae6a0c4ae7d9c3a08608a5200a253d",
+    "ilyua_normal_w_adjust_release_single_v02": "6d9635af9de862fb6a65b2a3a0b999b51f740ce234b29baa79cdb933a058659a",
+    "ilyua_normal_w_adjust_recovery_single_v02": "ba851ee5e9b9f8c53a3c5da40766ebd151b5393d5f8b51cffa584790931d0f6c"
+  },
+  "reference_idle_sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.23152548907967452,
+      "offset": [
+        -74.23878418441433,
+        -25.90999553787512
+      ],
+      "head_inliers": 50,
+      "head_registration_scale": 0.9965242925804324,
+      "head_angle": 0.5172479731895048,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.23152548907967452,
+      "offset": [
+        -67.26137747307598,
+        -25.833286222622217
+      ],
+      "head_inliers": 64,
+      "head_registration_scale": 0.9983251976835934,
+      "head_angle": -0.00541760764808266,
+      "foot_deviation": -1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.23152548907967452,
+      "offset": [
+        -67.34704176246369,
+        -25.822501966360115
+      ],
+      "head_inliers": 69,
+      "head_registration_scale": 0.9981166091572702,
+      "head_angle": 0.10439661216291873,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.23152548907967452,
+      "offset": [
+        -67.53449354882623,
+        -25.83282535696999
+      ],
+      "head_inliers": 56,
+      "head_registration_scale": 1.0006849780174072,
+      "head_angle": -0.04288188785773983,
+      "foot_deviation": 1,
+      "torso_residual": null
+    }
+  ],
+  "visual_review": "Side profile arrow aim left, two hands, bowstring, recovery. Confirm angle and motion distinct from adjacent actions in full five-shot runtime candidate."
+}

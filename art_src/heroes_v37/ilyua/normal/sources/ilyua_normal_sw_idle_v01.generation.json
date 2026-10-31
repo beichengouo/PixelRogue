@@ -1,0 +1,88 @@
+{
+  "asset": "ilyua_normal_sw_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-bb5f008e-2192-4924-a710-5b592821b474.png",
+  "built_in_imagegen": true,
+  "prompt": "Production single-frame game SPRITE SOURCE for PixelRogue. Use source reference 1 for exact compact body/face/skull geometry and mild 15-degree top-down game viewing elevation; this is the SAME small body construction as the currently running V36 Xixifu. Do not grow torso/legs or shrink head. Use reference 2 for the requested hero's costume and identity. Additional sprite reference, if supplied, fixes the same costume details across views. Soft nonpixel hand-painted miniature, clean dark colored outlines, restrained 2-3tone cel shading, broad hair/fabric masses, no microtexture or 3D realism.\nEXACTLY ONE full-body neutral stable ready/idle sprite on a SQUARE true transparent canvas, intended1024x1024. Crown and soles near12%/88% height, all extremities/hair/weapon centered within middle65%width with generous EMPTY TRANSPARENT margins. No character movement, no wind, no floating hair, no glowing effects. Stable neutral standing, small feet slightly apart, free hand relaxed. NO WORDS, NO LETTERS, NO NUMBERS, NO LABELS, NO GUIDELINES, NO DIVIDERS, NO BORDER, NO WATERMARK, NO SHADOW, NO FLOOR, NO BACKGROUND. Do not copy the three-view sheet's white background, labels, guide lines or its other figures. A real production sprite source must contain one intact isolated figure only.\nILYUA NORMAL: an adult elf in compact stylized game anatomy, pale skin, sage pale-GREEN hair, LAKE-BLUE eyes, calm alert face. Ivory WHITE HOOD UP, gold leaf trim and sage-green lining. Ears concealed INSIDE hood, no pointed ears breaking fabric. Face locks emerge through front face opening to chest, ALL REAR HAIR tucked UNDER hood and white traveling robe, not protruding through back fabric. Modest ivory practical oversmock/cloak with muted-green short underlayer, brown belt/small hip quiver, brown guards and short flat brown laced boots. In anatomical LEFT hand a small wooden vine SHORT BOW with visible taut string; RIGHT drawing hand relaxed empty. Do not give her a staff or copy reference1's black hair/black clothes.\nDirection SOUTHWEST: FRONT-LEFT THREE-QUARTER facing down-left on screen, both eyes visible with far eye narrower, front/side torso. Shoulders/hips/toes all point down-left; do not show strict profile or rear. Keep anatomical weapon hand unchanged.\nOne calm adult elf figure; ears remain hidden inside hood, rear hair contained. Same bow hand as frontal source. Entire hood, fingers, boots and bow tips fully within transparent margins.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_sw_idle.png",
+      "sha256": "de69888641eae6e9cb17ec255da0e705a31bac277b4f7d76d298ff7df31fa6b4"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_normal_turnaround_v01.png",
+      "sha256": "e662c01c51c9aaf7aa5896e4dd69a64990ce6e30372742ce3a4d6052d54e98a0"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "e95f8b569e0392f260a708a56519c69ade8d39a43f05c45ed3847017d038ee90",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    25,
+    69,
+    1218,
+    1234
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    25,
+    69,
+    1218,
+    1234
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      25,
+      69,
+      1218,
+      1234
+    ],
+    "8": [
+      365,
+      141,
+      961,
+      1173
+    ],
+    "32": [
+      365,
+      142,
+      959,
+      1172
+    ],
+    "128": [
+      366,
+      142,
+      958,
+      1172
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_set_n_move_attack3_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_move_attack3_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-5d417d93-bf5e-42f7-ac95-06a0ec9b8ff4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_move_attack3_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise LOWER-BODY animation edit of IMAGE1, the FOUR legendary Ilyua north-facing archery frames, attack stage3. Keep image1's original FOUR heads, identical native skull size, exposed sage-gray long hair, pointed ears, flower-gold-leaf ornament at image RIGHT, all FOUR upper-body arm/bow gestures, belt, shoulder structure and costume appearance exactly. Image2 supplies ONLY four alternating walking leg poses and boot spacing; NEVER copy its ivory hood, cape, normal bow, bare boots, hands or upper body. Image3 is only the legendary outfit/body-proportion reference. NO HOOD, hat or new hair volume. Legendary layered green leaf skirt with ivory gold-vine side panels, brown belt, floral leaf-trimmed boots, ONE quiver on image-right waist; same structure and limb lengths as image1/image3.\nReplace ONLY stationary legs and skirt overlap below belt with four consecutive walking phases corresponding to image2 in reading order: 1 left leg contact/right behind; 2 narrow passing feet directly beneath pelvis with right knee bending; 3 opposite right-leg contact/left behind (reverse which leg is forward); 4 narrow passing with opposite left knee bending. Do not change limb length or squat/crouch. Keep head/torso stable in all cells; preserve the planted body's proportions, no enlarging movement figures. The alternating boots remain fully visible below green leaf skirt. This is moving archery throughout, no stationary feet.\nSTRICT BACK view, looks/aims UP away from viewer, no face/eyes/front chest. Preserve image1's upper-body archery sequence: anatomical LEFT hand (screen left) holds ONE continuous gold-leaf floral wooden bow, RIGHT hand draws/releases. Bow/string/arrow are in FRONT of head/body and naturally occluded by back hair, never draw arrow/string across visible back. Release/open-finger phases have NO arrow head/shaft/nock/fletching, no flying projectile. Exactly TWO arms and TWO hands, natural shoulder connection; do not add duplicates when skirt changes.\nFOUR COMPLETE isolated figures in equal2x2 cells, same uniform native scale, each whole figure and bow within cell with at least8% transparent margins on all sides. No clipping, overlapping, text/numbers/grid/dividers, effects, shadows, floor or other creatures. Truly transparent RGBA, refined nonpixel cel-painted game sprite matching image1. This edit changes locomotion only; preserve exact head, costume identity, shoulder/waist height and four existing archery poses.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_n_attack3_v81.png",
+      "sha256": "79d903b4af6ba918e3fe8f1a63c93d2ee0eebe3fd5d0833750650bcea3f3dcc8"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_n_move_attack3_v81.png",
+      "sha256": "d23988d8baa01b56d0bf4ad26f2986f777e44b9819b954d3fdaab9c204a71613"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_n_idle_v02.png",
+      "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8"
+    }
+  ],
+  "sha256": "088a074e5f2b459e0f6ab43c1806065cd80b6a979769e1f1b77d663ef4269d8b",
+  "dimensions": [
+    1265,
+    1244
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1253,
+    1244
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      17,
+      1253,
+      1244
+    ],
+    "8": [
+      219,
+      24,
+      1102,
+      1194
+    ],
+    "32": [
+      219,
+      24,
+      1101,
+      1194
+    ],
+    "128": [
+      220,
+      25,
+      1101,
+      1193
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

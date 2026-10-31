@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_w_adjust_recovery_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "c230e476ed5bf36bc1c091be7bb7e0a9151cf386b39ab648a5c0f755c353f801",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-134771f2-2ec5-418f-b7ac-e2daf4de98de.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_release_single_v01.png",
+  "prompt": "Side shot recovery, lower bow and right hand, same figure, transparent.",
+  "review_reason": "Needs full sequence and registration review."
+}

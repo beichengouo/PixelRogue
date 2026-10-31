@@ -1,0 +1,15 @@
+{
+  "asset": "ilyua_normal_utility_prayer_f1_single_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "1fe021a2f55f06cc86b5846ba4b877070135a8cfd9d956e3847ecdc3a8e9676b",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-c33b6066-de31-445b-8884-63fc88c6e4b5.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    }
+  ]
+}

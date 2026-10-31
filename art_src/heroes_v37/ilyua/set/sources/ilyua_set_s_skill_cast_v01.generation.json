@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_s_skill_cast_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_skill_cast_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-d68a521b-a2e4-45ff-89b3-cab64284279d.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe edit of the existing four-frame game sprite SOURCE. IMAGE1 is PRIMARY EDIT TARGET: Ilyua NORMAL four skill gestures. IMAGE2 is LEGENDARY costume reference ONLY, same direction. Preserve image1 exact four arm/hand and planted leg poses, skull size, compact body proportions, camera, 2x2 placement and PURE ALPHA transparency. Change ONLY costume/hair/held bow to image2. Same adult elf sage-green hair and blue eyes, compact short limbs, no taller torso/long legs. Legendary NO HOOD; natural pointed ears visible, flowing sage hair outside outfit. Whiteflower/goldleaf HAIR ORNAMENT at anatomical RIGHT temple: viewer-left FRONT/viewer-right BACK. Whiteflower/goldleaf COLLAR PENDANT, green/ivory layered LEAF hunting tunic, ivory split cape with thin gold vine borders, brown belt/quiver on RIGHT hip, flat brown/gold little boots with flower embellishment/guards. One short gold vine wooden BOW in same anatomical LEFT hand, RIGHT hand performs four exact string/finger gestures from image1. Replace original entire bow rather than adding second bow. EXACTLY2arms/2hands per figure; no old idle hand or duplicate wrist. No change gesture or leg position, NO WALKING now, feet planted with same baseline; stable head/torso. Same soft nonpixel hand-painted miniature finish. Exactly4 full-body figures equal2x2 transparent cells, all hair/ears/bow/boots fit with generous margins. NO text/numbers/labels/guides/dividers/border/shadows/floor/background/glow/effects/extra creatures. Never copy white design board background. No new arrows/projectiles needed, peaceful empty bow form.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_skill_cast_v03.png",
+      "sha256": "8078bfa69486542938c1b13950000dac799565c65226ae5c97e9ea73450ea589"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_s_idle_v02.png",
+      "sha256": "5fc547b2f14a92c504db2fe29b956f487971b127fbfb3fd408771b17e20a17f3"
+    }
+  ],
+  "sha256": "d37ee69b89862cf9d89a9b34fb676f24d4d178273fa03b2f23e3770e004cfde4",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1236,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    9,
+    1236,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      9,
+      1236,
+      1254
+    ],
+    "8": [
+      153,
+      35,
+      1157,
+      1224
+    ],
+    "32": [
+      153,
+      36,
+      1157,
+      1223
+    ],
+    "128": [
+      154,
+      36,
+      1156,
+      1223
+    ]
+  }
+}

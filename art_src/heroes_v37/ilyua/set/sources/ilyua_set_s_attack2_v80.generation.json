@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_s_attack2_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack2_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-ef6bcba5-f3ea-45f4-8f81-5bdcf9ff3dec.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_s_attack2_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite outfit variant. Image1 is the EDIT TARGET and defines the EXACT four consecutive poses, skeletal proportions, skull size, camera direction, foot positions, bow hand roles and frame order. Image2 is legendary outfit and weapon reference ONLY; do not copy its stationary pose. Redraw all four original poses wearing image2 outfit: exposed long sage-green hair, pointed elf ears, no hood, white flowers and gold leaves at hair and collar, green leaf-panel tunic dress, ivory side drapes with gold vine border, brown belt and exactly ONE quiver on the same hip and screen side as image2, never two quivers, brown gold leaf/flower boots, ornate golden wood recurved bow with white flowers and leaves. The same elf face, blue eyes, short limbs and body proportions across all four frames, matching the body from image1. Bow always held by anatomical LEFT hand, right hand pulls/releases bowstring. Preserve actual drawn bowstring/V shape and straight string release phases, only one nocked arrow during drawing, no detached flying arrow. EXACTLY TWO ARMS AND TWO HANDS connected to torso, do not retain old idle arms/hands when relocating them. No ghost sleeve, extra finger clusters or duplicated shaft. No dramatic twisting or head bob. Retain all four distinct action poses, feet planted unless utility action intentionally changes posture. Exact 2x2 equally sized cells, genuine transparent RGBA, four COMPLETE figures. Every hair tip, bow tip, string, elbow and shoe must be fully inside its cell with generous empty margins at least 10% cell size. Same head and torso size in all frames, do not enlarge release pose. No numbers, letters, labels, grids, dividing lines, effects, shadow, floor, landscape, watermark or extra creatures. Refined nonpixel painted miniature anime game sprites, clean colored outline, soft broad shading, consistent with image2.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_attack2_v90.png",
+      "sha256": "ec185b43ce22caa56eb95b0742dc43daecc42c8cd3923dc0c290e2104c52bd9b"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_s_idle_v02.png",
+      "sha256": "5fc547b2f14a92c504db2fe29b956f487971b127fbfb3fd408771b17e20a17f3"
+    }
+  ],
+  "sha256": "a7e781a14800dfb0a6dd5fb43e1b4b1b9d4e910330e3efe5cc81ffc8d6ab7343",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1240,
+      1254
+    ],
+    "8": [
+      103,
+      82,
+      1196,
+      1216
+    ],
+    "32": [
+      103,
+      82,
+      1196,
+      1214
+    ],
+    "128": [
+      104,
+      82,
+      1195,
+      1214
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_sw_move_attack3_v91",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack3_v91.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-aa13ae61-5ff8-4693-9853-f435953bc576.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack3_v91.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY arms/hands and bow action in supplied four-frame sprite sheet. Preserve the FOUR existing heads, hair, facial angles, skull size, torso, waist and especially the FOUR DISTINCT LEG POSES EXACTLY. Do not redraw or change anything below waist. Keep opposite contacting legs and narrow passing feet under pelvis, no repeated wide strides. Third arrow-adjust shot: bow gently canted 10degrees; top-left right fingers adjust nock close to cheek, top-right full draw, bottom-left release open hand, bottom-right straighten bow and lower drawing elbow. All four face SAME original direction; arrow aimed original facing (lower-left for three-quarter front, screen-left for profile). One arrow while fingers closed on string, NO arrow after release, string straight between bow tips after release. Exactly two connected arms/hands, anatomical LEFT hand holds same ornate bow throughout. Keep flower legendary outfit/boots and ONE quiver. Same skull size in every frame, no bob/tilt/zoom. True transparent RGBA, four complete figures in 2x2 equal cells with12percent margins. No text/effects/shadow. CRITICAL: left fingers NEVER open; LEFT hand stays CLOSED around bow grip in every cell. Only RIGHT drawing hand opens on release. Never put both hands at chest or release bow. No idle hand remains at waist after new arm pose. All bows stay in front at SCREEN LEFT. Never move bow to screen right or point arrow right. Facing lower-left, arrowhead points LOWER-LEFT as in reference, short foreshortened shaft. Left hand grip remains screen-left, right drawing hand near right cheek, no mirror.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack2_v91.png",
+      "sha256": "8349c51f865a4457d63f1cb98fdc81362ede8b9d3b32246bcbe24ecfe7f490fc"
+    }
+  ],
+  "sha256": "833873bf259ee38ce5559c80b97113ed3618d0e1cda49452365bb93e9f24ace5",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    33,
+    0,
+    1360,
+    1073
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      33,
+      0,
+      1360,
+      1073
+    ],
+    "8": [
+      244,
+      2,
+      1308,
+      1070
+    ],
+    "32": [
+      244,
+      4,
+      1307,
+      1070
+    ],
+    "128": [
+      246,
+      5,
+      1307,
+      1070
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "reason": "all four legs retain same-side near-forward stance; need real opposite contact and opposite narrow passing poses, not only technical head pass"
+}

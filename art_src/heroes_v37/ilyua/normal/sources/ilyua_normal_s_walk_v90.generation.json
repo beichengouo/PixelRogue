@@ -1,0 +1,112 @@
+{
+  "asset": "ilyua_normal_s_walk_v90",
+  "kind": "source",
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_walk_left_single_v02.png",
+      "sha256": "e8e672c847edfb98e1b2399eca518ebfb55a5c1c1ead881a98e4bb121b1cafc4",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_walk_left_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_walk_passing_left_single_v01.png",
+      "sha256": "018685d3a31839ee96ca7fcc6ed0a13ec9642b3f54a1d1ea8a91aa9e664dfba3",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_walk_passing_left_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_walk_right_single_v02.png",
+      "sha256": "7d0a82f5b85fbd372bc4b4c2305f0030fa589bbcdeb7952298fc9998c7e88085",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_walk_right_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_walk_passing_right_single_v01.png",
+      "sha256": "057ada1f78e7d0af87fe7c31d074146d9a90a3ee2f4deba3f311390f41e16639",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_walk_passing_right_single_v01.png"
+    }
+  ],
+  "sha256": "040a00acbfce69c8975406bec5f20361478d33174b3400c49ac3ab0432366a09",
+  "registration": [
+    {
+      "scale": 0.23281161561591843,
+      "offset": [
+        -81.88343825849515,
+        -27.065145251820383
+      ],
+      "head_inliers": 67,
+      "head_registration_scale": 0.9991498503516499,
+      "head_angle": -0.03896417815121126,
+      "foot_deviation": 0,
+      "torso_residual": [
+        0.009357933886349201,
+        0.06724059581756592
+      ]
+    },
+    {
+      "scale": 0.23281161561591843,
+      "offset": [
+        -81.86398285800972,
+        -26.962947512135916
+      ],
+      "head_inliers": 89,
+      "head_registration_scale": 0.9989094286671155,
+      "head_angle": -0.012555765267743962,
+      "foot_deviation": 3,
+      "torso_residual": [
+        0.004522527568042278,
+        0.07361195236444473
+      ]
+    },
+    {
+      "scale": 0.23281161561591843,
+      "offset": [
+        -81.86146560224515,
+        -27.077660421723294
+      ],
+      "head_inliers": 86,
+      "head_registration_scale": 0.998971190429172,
+      "head_angle": 0.007483772171835114,
+      "foot_deviation": 0,
+      "torso_residual": [
+        -0.021176235750317574,
+        0.04900826886296272
+      ]
+    },
+    {
+      "scale": 0.23281161561591843,
+      "offset": [
+        -81.85415560527913,
+        -27.03165295054611
+      ],
+      "head_inliers": 76,
+      "head_registration_scale": 0.9995098845024,
+      "head_angle": 0.08732209018088773,
+      "foot_deviation": 2,
+      "torso_residual": [
+        -0.07831936329603195,
+        0.0760723203420639
+      ]
+    }
+  ],
+  "notes": "Left contact, passing, right contact, opposite passing. Full gait and neighboring-action review still required.",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

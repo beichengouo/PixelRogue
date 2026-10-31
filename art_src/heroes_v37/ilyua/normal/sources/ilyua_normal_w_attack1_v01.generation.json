@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_w_attack1_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-cb32fb86-414a-4b20-882e-de2eb9772e9b.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, WEST strict leftPROFILE facing left camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage1 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 starts low ready bow at waist and right fingers nearing string; 2 short low draw, bowgrip around lowerchest, right fingers near chin; 3 release from shortdraw, right fingers relax at collar, string straight, left arm keeps lowaim; 4 bow rises toward shoulderready to link stage2, right fingers reach string again.\nPrecisely STRICT WEST LEFT profile: visible ONE eye only. Bow LEFT of face on screen, drawn string hand RIGHT of bow near face, nocked arrowhead points SCREEN LEFT. Never draw right-pointing arrow. No second bow.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    }
+  ],
+  "sha256": "7ae3438482b3f2d85cd287e03b1c7cac25059e1102ba9cc7fddf9bbbc5737344",
+  "dimensions": [
+    1278,
+    1230
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    54,
+    0,
+    1260,
+    1230
+  ],
+  "outer_edge_alpha_max": [
+    6,
+    1,
+    0,
+    0
+  ],
+  "reason": "Top row hood touches top canvas; clipping",
+  "alpha_bounds_raw": [
+    54,
+    0,
+    1260,
+    1230
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      54,
+      0,
+      1260,
+      1230
+    ],
+    "8": [
+      154,
+      4,
+      1241,
+      1219
+    ],
+    "32": [
+      154,
+      6,
+      1239,
+      1219
+    ],
+    "128": [
+      155,
+      7,
+      1238,
+      1218
+    ]
+  }
+}

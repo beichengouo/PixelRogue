@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_s_attack1_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack1_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-9d322976-0542-43f9-adf4-954381d17a51.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_s_attack1_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise object removal from this 2x2 sprite sheet. In TOP LEFT frame there are mistakenly TWO quivers, one at each hip. Remove only the extra quiver and arrow cluster on the character's screen-LEFT waist, revealing the green tunic/belt and long hair that belong underneath. Keep the sole legitimate quiver on screen-RIGHT hip, matching other frames. Across all four frames exactly ONE quiver, no extra arrow clusters tucked into belt. Preserve every pose, face, head size, skull proportion, sleeves/hands, left-hand bow and right-hand string fingers, bowstring/weapon, all feet, framing and transparent alpha. Two arms/two hands only. No other changes, no text, numbers, labels, effects, shadow, scene, background. Four complete fullbody sprites, 2x2 equal cells, keep all tips inside transparent cell margins.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack1_v80.png",
+      "sha256": "6b40a64308fd1e3ea432e701234c50feabdcbedc04320b736dd42fd8699b3ab9"
+    }
+  ],
+  "sha256": "365514ecc553bfb13b1e5133dccab27a0acdc0c9c3b4c80cef49785af08af27d",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1228,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1228,
+      1254
+    ],
+    "8": [
+      95,
+      38,
+      1208,
+      1231
+    ],
+    "32": [
+      95,
+      38,
+      1208,
+      1231
+    ],
+    "128": [
+      96,
+      39,
+      1207,
+      1230
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

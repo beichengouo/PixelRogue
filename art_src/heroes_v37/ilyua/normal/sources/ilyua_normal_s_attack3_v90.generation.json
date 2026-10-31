@@ -1,0 +1,93 @@
+{
+  "asset": "ilyua_normal_s_attack3_v90",
+  "kind": "source",
+  "direction": "s",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "pending_full_sequence_review",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack3_f1_single_v02.png",
+      "sha256": "e5a0f9ddc04e84aa1ee31f500d5dcfb639d6f82d2bad246484e2fa63f74501d7"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack3_f2_single_v02.png",
+      "sha256": "d922ca9de716995596f4f6225b8d88378a625b3b11d23b94ebc3e75a42060aef"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack3_f3_single_v02.png",
+      "sha256": "4d127001a4b0a009af1293f11bf916113abeae6e0d7deb0da582450739b33bed"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack3_f4_single_v02.png",
+      "sha256": "94aa0e4555d83133430fa96327d65c18f270a0103c0b5c67170aa9d47dc2237c"
+    }
+  ],
+  "sha256": "54547f442a29dab251b282728c6b086404b524f060573d48d27168cc4fb86a61",
+  "registration": [
+    {
+      "scale": 0.23310205150013338,
+      "offset": [
+        -82.28051046723301,
+        -27.26527419599514
+      ],
+      "head_inliers": 69,
+      "head_registration_scale": 1.000396304354739,
+      "head_angle": 0.10818901357737984,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.23310205150013338,
+      "offset": [
+        -82.32269227851943,
+        -27.259983692354364
+      ],
+      "head_inliers": 56,
+      "head_registration_scale": 1.0010113623454968,
+      "head_angle": 0.014497452933483174,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.23310205150013338,
+      "offset": [
+        -82.26709932493932,
+        -27.316885050060673
+      ],
+      "head_inliers": 60,
+      "head_registration_scale": 0.9991642282484683,
+      "head_angle": 0.17536755020348746,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.23310205150013338,
+      "offset": [
+        -82.3150978458738,
+        -27.386472239077666
+      ],
+      "head_inliers": 57,
+      "head_registration_scale": 0.9994387346221807,
+      "head_angle": 0.13359926953909843,
+      "foot_deviation": 1,
+      "torso_residual": null
+    }
+  ],
+  "notes": "Slight tilt and cheek-side fletching, full hand/bow continuity requires review."
+}

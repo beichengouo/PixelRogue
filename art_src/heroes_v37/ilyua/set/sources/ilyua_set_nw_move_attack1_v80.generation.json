@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_nw_move_attack1_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_nw_move_attack1_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-0b2ef6b1-c175-40b8-9e49-59b130e16e12.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_nw_move_attack1_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit image1 ONLY by changing its outfit and weapon to image2 legendary form. Image1 is exact four-pose skeletal/footstep/camera target; image2 is only clothing, exposed hair and ornate flower bow reference. Replace hood with long exposed sage-green hair and pointed elf ears; use green leaf-panel dress, ivory gold-vine drapes, flower gold-leaf boots, ONE quiver same hip as image2. Preserve ALL FOUR original legs/feet EXACTLY, especially opposite contact and narrow passing feet under pelvis, no repeated wide stride. Keep same four upper-body attack phases, skull size and short body proportions. Bow in anatomical LEFT hand and right hand pulls/releases string, exactly two connected arms/hands. One arrow only while right fingers draw string; NO arrow once fingers open in release. Do not aim sideways from target facing. 2x2 equal cells, four complete figures with15percent empty margin around hair, bow tips and feet. True transparent RGBA, nonpixel painted miniature anime sprites. No text/labels/grid/effects/shadows.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_move_attack1_v80.png",
+      "sha256": "b4c5805a8d0b0d03462c32030c4e6c7200ee31fff6c549f75004c1bebb593f19"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_nw_idle_v01.png",
+      "sha256": "fa221fb6e491b7bb9255418cb091ad0de65c32bcecbbb8bbdbee447008fd2264"
+    }
+  ],
+  "sha256": "1c6b541dc8b23d07600dd9ac5bae76280faef6a21ce27b20ef9d44c5162bd74f",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1240,
+      1254
+    ],
+    "8": [
+      165,
+      31,
+      1225,
+      1217
+    ],
+    "32": [
+      166,
+      32,
+      1224,
+      1216
+    ],
+    "128": [
+      167,
+      32,
+      1224,
+      1216
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,88 @@
+{
+  "asset": "ilyua_set_n_idle_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_idle_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-a5a7ace3-d2e0-4c25-af6d-911f2de118b3.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit target image1 is the complete transparent back-view Ilyua legendary production sprite. Make ONE correction ONLY: move her small leather arrow QUIVER from the lower viewer-left side of the back to the viewer-RIGHT side of the back/hip, matching image2 rear-left sprite and image3 turnaround direct back panel. In direct BACK view anatomical right is viewer-right. Keep the quiver on her anatomical RIGHT hip, with brown arrow fletching visible. The bow remains in anatomical LEFT hand, at viewer-left. KEEP every other feature unchanged: compact body/skull/legs proportions, direct back facing away, white flower at viewer-right temple, sage-green flowing hair shape, ivory leaf skirt/cape, boots, hands, left-held bow, precise rendering style, transparent square canvas and all margins. No text, numbers, labels, backdrop, shadows, effects, extra objects. No mirroring of whole character. Keep real alpha transparency.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_idle_v01.png",
+      "sha256": "f2dc88e8bcc38618c5f942bb886c70b1d9aa1c8440ac07ff1735d57dc94b4727"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_nw_idle_v01.png",
+      "sha256": "fa221fb6e491b7bb9255418cb091ad0de65c32bcecbbb8bbdbee447008fd2264"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_set_turnaround_v02.png",
+      "sha256": "de80e0aea08910cdbcf08044f0c4d3e6ec47c24071b963960fbb003d4c1cad37"
+    }
+  ],
+  "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    39,
+    25,
+    1232,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    39,
+    25,
+    1232,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      39,
+      25,
+      1232,
+      1254
+    ],
+    "8": [
+      323,
+      164,
+      922,
+      1150
+    ],
+    "32": [
+      324,
+      164,
+      922,
+      1150
+    ],
+    "128": [
+      324,
+      165,
+      921,
+      1149
+    ]
+  }
+}

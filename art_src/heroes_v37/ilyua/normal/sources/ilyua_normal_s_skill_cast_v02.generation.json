@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_s_skill_cast_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_skill_cast_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-2309150b-3501-4108-8418-d391ff818685.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: background-extraction. Edit image1 four-frame game sprite SOURCE. Remove ALL grey/brown lighting halos and ALL backdrop pixels behind the four figures. Need ACTUAL ALPHA transparency, not black background, not a grey glow around characters. Each hood, hair, robe, bow, bowstring, skin and boot remains intact and fully opaque inside silhouette, antialiased edges only. Empty outside must be genuinely transparent all the way to body edges, no glow/shadows/floor. Keep exact same four poses, identity, geometry, scale, camera, foot anchors and 2x2 layout. Exactly four isolated figures with clean empty margins. No other art changes, no text/numbers/grid, no new elements. Production game cutouts, not a sheet illustration on any backdrop.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_skill_cast_v01.png",
+      "sha256": "52b0a8c6b84245809b368795182ef7c6b68ac3e8bd914ab92dbf04b28c67899d"
+    }
+  ],
+  "sha256": "f5ef264d1e34bbbb0988b1f17bf951018635d6f7f0762ad6e0cdf9dda0b77416",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    33,
+    5,
+    1504,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    33,
+    5,
+    1504,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      33,
+      5,
+      1504,
+      1024
+    ],
+    "8": [
+      306,
+      10,
+      1237,
+      1014
+    ],
+    "32": [
+      307,
+      10,
+      1236,
+      1013
+    ],
+    "128": [
+      307,
+      10,
+      1236,
+      1013
+    ]
+  },
+  "reason": "superseded by v03 source; alpha checked valid, max254 itself is legal"
+}

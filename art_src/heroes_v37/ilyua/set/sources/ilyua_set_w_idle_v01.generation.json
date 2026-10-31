@@ -1,0 +1,88 @@
+{
+  "asset": "ilyua_set_w_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-174b0907-004f-4a6e-aa33-308aa6db41eb.png",
+  "built_in_imagegen": true,
+  "prompt": "Production single-frame game SPRITE SOURCE for PixelRogue. Use source reference 1 for exact compact body/face/skull geometry and mild 15-degree top-down game viewing elevation; this is the SAME small body construction as the currently running V36 Xixifu. Do not grow torso/legs or shrink head. Use reference 2 for the requested hero's costume and identity. Additional sprite reference, if supplied, fixes the same costume details across views. Soft nonpixel hand-painted miniature, clean dark colored outlines, restrained 2-3tone cel shading, broad hair/fabric masses, no microtexture or 3D realism.\nEXACTLY ONE full-body neutral stable ready/idle sprite on a SQUARE true transparent canvas, intended1024x1024. Crown and soles near12%/88% height, all extremities/hair/weapon centered within middle65%width with generous EMPTY TRANSPARENT margins. No character movement, no wind, no floating hair, no glowing effects. Stable neutral standing, small feet slightly apart, free hand relaxed. NO WORDS, NO LETTERS, NO NUMBERS, NO LABELS, NO GUIDELINES, NO DIVIDERS, NO BORDER, NO WATERMARK, NO SHADOW, NO FLOOR, NO BACKGROUND. Do not copy the three-view sheet's white background, labels, guide lines or its other figures. A real production sprite source must contain one intact isolated figure only.\nILYUA LEGENDARY: same adult elf/body as normal, pale skin, long sage pale-GREEN hair, clear LAKE-BLUE eyes. NO HOOD, revealed natural pointed ears, flowing green rear hair. Restrained white flower/gold leaf hair ornament, WHITE FLOWER with GOLD LEAF collar pendant. Modest leaf-green/ivory hunting tunic, layered leaf-shaped skirt panels and split ivory cape tails with gold vine edges, brown belt/small quiver, compact mid-calf brown/gold leather boots with usable flat soles, forearm guards. One short gold-vine wooden BOW in anatomical LEFT hand, RIGHT drawing hand relaxed empty. No staff, no black hair, no elongated body or heels. The white-flower/gold-leaf HAIR ORNAMENT is on her ANATOMICAL RIGHT temple: FRONT viewer-left, BACK viewer-right, not mirrored across views.\nDirection WEST: STRICT LEFT-FACING SIDE PROFILE. Nose/toes/torso face screen LEFT, one visible eye, no front-facing face, no three-quarter chest. Keep anatomical weapon hand unchanged, complete held weapon slightly forward toward screen LEFT.\nReference1 is her hooded NORMAL body geometry only: REMOVE hood and reveal long sage hair/elf ear for this legendary look, body and face stay same. RIGHT-temple flower may be mostly on far side in this strict left profile; do not move it to near LEFT temple just to show it. LEFT hand holds bow slightly forward-left, right hand relaxed empty, all extremities/hair/bow complete inside transparent margins.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_set_turnaround_v02.png",
+      "sha256": "de80e0aea08910cdbcf08044f0c4d3e6ec47c24071b963960fbb003d4c1cad37"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_idle_v02.png",
+      "sha256": "5fc547b2f14a92c504db2fe29b956f487971b127fbfb3fd408771b17e20a17f3"
+    }
+  ],
+  "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    27,
+    23,
+    1210,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    27,
+    23,
+    1210,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      27,
+      23,
+      1210,
+      1254
+    ],
+    "8": [
+      350,
+      170,
+      1002,
+      1175
+    ],
+    "32": [
+      351,
+      170,
+      1002,
+      1175
+    ],
+    "128": [
+      351,
+      171,
+      1002,
+      1174
+    ]
+  }
+}

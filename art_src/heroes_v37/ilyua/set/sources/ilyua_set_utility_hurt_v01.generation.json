@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_utility_hurt_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_hurt_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-d52afc33-db01-4ecb-9515-c007e267e155.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe edit of FOUR animation SOURCE frames, hurt. IMAGE1 PRIMARY edit target: preserve its4 exact DISTINCT consecutive body/arm/leg poses, skull scale, shortlimb anatomy, face identity, WEST profile camera and2x2 reading order. IMAGE2 ONLY SAME CHARACTER LEGENDARY WARDROBE/PROP reference; do not copy its idlepose. Replace clothes/hair/prop only with image2. Exactly TWO arms/TWO hands perfigure, one complete prop, never retain old waist idlehand or original weaponshaft. All4 fullbody/hair/prop/toes completelyinside owncell, enough transparentroom all sides; no cropping. Preserve same body dimensions evenbowing/lyingdown, don't shrink fallposes. Soft refined nonpixel miniature celpainted finish. TRUE TRANSPARENT RGBA background; NO numbers/text/labels/grid/marks/borders/shadows/floor/glow/effects/background/extra creatures. Same sagehaired blueeyed elf. Change normal ivoryhood to legendary NOHOOD naturalhair with whiteflower/goldleaf ornament anatomicalRIGHT temple. Ivory/green layered LEAF hunting outfit, whiteflower/goldleaf collarpendant, split ivory goldvine cape, short brown flowerboots, goldvinebow same LEFT hand, RIGHT freehand. QuiverRIGHT hip. Do not swap bowhands or addbow. No cloth on head.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_utility_hurt_v02.png",
+      "sha256": "5b69cafa709580ed11877a62d1cde5e9b36b60cf20e0ea3e19df8d4e16bf832a"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "e5793309bfa289bc65bc19ca7c2577f5ceefbb11db6013a55c12a749d1e9ca8c",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "hurt",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1528,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    2,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    9,
+    1528,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      9,
+      1528,
+      1024
+    ],
+    "8": [
+      319,
+      13,
+      1346,
+      1014
+    ],
+    "32": [
+      320,
+      14,
+      1346,
+      1014
+    ],
+    "128": [
+      320,
+      14,
+      1346,
+      1014
+    ]
+  },
+  "reason": "measured9.934percent head scale drift exceeds6percent; next source required"
+}

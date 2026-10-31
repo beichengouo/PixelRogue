@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_s_move_attack1_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-d840e2fa-1e56-4c56-9f56-54852e274b6b.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair the transparent 2x2 sprite sheet. Keep all four different poses, walking legs and horizontal bow. Make each COMPLETE character including every bow tip fit inside the center 65 percent of its own equal quadrant. Gaps between neighboring bow tips must be at least 20 percent of cell width, and all four outlines must be entirely separate, never overlap or touch the center divisions. Equal head and body size across all frames. Pure transparent alpha in gaps and outside subjects. No panel frames, numbers, captions, text, lines, effects, shadows or background. Refined nonpixel game sprites.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_move_attack1_v02.png",
+      "sha256": "53e93b2e8c70eae63cdc63d4b1b7dd3a980684106d079ca96bda0d33aa63bb8d"
+    }
+  ],
+  "sha256": "cae98b62d550d23c8dfd0ef0bb991ee4b3d01658b4b5aaf71226d32af6209dc1",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Foot phases only repeat contact poses; no clear passing frame beneath pelvis.",
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1240,
+      1254
+    ],
+    "8": [
+      112,
+      40,
+      1158,
+      1226
+    ],
+    "32": [
+      112,
+      40,
+      1158,
+      1226
+    ],
+    "128": [
+      113,
+      41,
+      1157,
+      1225
+    ]
+  }
+}

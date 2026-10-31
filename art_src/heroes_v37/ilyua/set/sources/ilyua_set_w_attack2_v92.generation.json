@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_w_attack2_v92",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_attack2_v92.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-c0e621d4-3380-4653-aa85-940fe1133242.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_attack2_v92.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. FOUR-frame stationary bow shot number 2. Preserve all FOUR original HEADS/skull sizes, upright LEFT-profile eyes/ears/flowers/hair crowns, neck/torso proportions, waist and planted legs/boots EXACTLY as reference. These full-body dimensions match canonical idle: do NOT make the body, face or head smaller, no crouch/squat or compression. Edit ONLY two arms/hands and bow gesture. Frame1 bow raised aiming straight LEFT at chest height, right hand preparing the string; frame2 closed right fingers draw to cheek; frame3 open right fingers release near shoulder; frame4 right hand recovers at chest, left bow arm relaxes slightly. Anatomical LEFT hand holds exactly ONE floral gold-leaf wooden bow, RIGHT pulls/releases string. TOP two frames have ONE nocked arrow aiming LEFT; BOTTOM two frames have NO nocked arrow, shaft, tip or feathers in hand or bow grip. Keep the arrows stored INSIDE the one screen-right hip quiver, do not remove those feathers. One continuous bow and intact string, no ghost old raised hand/sleeve, exactly two arms/two hands. All FOUR original heads and planted legs remain unchanged, same scale in each cell, same original upright shoulder-to-belt distance; do not resize body/head or turn viewpoint. Costume unchanged: bare sage hair, whiteflower golden leaves ornament, green layered leaf shortdress, ivory drapes with goldvines, floral brown boots, one quiver. Four COMPLETE figures in equal2x2 cells with ample10% transparent margins around hair/bow tips/boots. Genuine RGBA alpha, no words/labels/grid, background gradients, FX/floor/shadows. Change ONLY arms/weapon shot phases, preserve each original head/body/legs exactly.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_attack1_v01.png",
+      "sha256": "3e21f872cbf526a0d25379a36d930add00491af3df5a3a2b7b663dc3a6452de0"
+    }
+  ],
+  "sha256": "7d76b6b138a6e1c4a6abb613bdc9514cda27bc81c1198e637424799e5fc24687",
+  "dimensions": [
+    1278,
+    1230
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    13,
+    1254,
+    1230
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      13,
+      1254,
+      1230
+    ],
+    "8": [
+      102,
+      15,
+      1243,
+      1206
+    ],
+    "32": [
+      102,
+      15,
+      1243,
+      1206
+    ],
+    "128": [
+      103,
+      16,
+      1243,
+      1205
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

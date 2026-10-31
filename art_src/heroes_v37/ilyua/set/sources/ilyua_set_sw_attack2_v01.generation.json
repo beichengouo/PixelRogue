@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_sw_attack2_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-a0b1c0f6-1f14-436c-8c6f-45c2f8cc7588.png",
+  "built_in_imagegen": true,
+  "prompt": "Wardrobe-only edit of image1 four-frame archery animation. Image2 specifies the SAME elf and her green-white gold-leaf legendary outfit, exposed pointed ears, flower and leaf collar, green layered leaf dress, brown boots, ornate leaf-and-flower bow. Preserve image1 camera angle, body and head proportions, foot positions and four different bow draw/release gestures exactly. Replace hood with hairstyle in image2; bow remains physically held in left hand, right hand draws string. Single arrow only while nocked, none flying. Full figures and bows in separate equal 2x2 cells with ample transparent margins. No text, numbers, frame lines, shadows, background or magic effects. Transparent, refined nonpixel game sprites.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack2_v01.png",
+      "sha256": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "bd5b7abba4c48f89eb2eacf4d52af5e6cdcdb1d63fa831b046d1a049313a51de",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    23,
+    10,
+    1504,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    5,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    23,
+    10,
+    1504,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      23,
+      10,
+      1504,
+      1024
+    ],
+    "8": [
+      257,
+      12,
+      1380,
+      1023
+    ],
+    "32": [
+      257,
+      12,
+      1379,
+      1022
+    ],
+    "128": [
+      258,
+      13,
+      1379,
+      1021
+    ]
+  },
+  "review_reason": "Solid content touches canvas edge."
+}

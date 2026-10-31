@@ -1,0 +1,13 @@
+{
+  "prompt": "Edit only legs to opposite contact, preserve upper body, bow, and proportions, transparent background.",
+  "asset": "ilyua_normal_sw_walk_opposite_single_v03",
+  "usage": "unpackaged_candidate",
+  "runtime_integrated": false,
+  "sha256": "f62eb879c601fa64c9d4159de0186e222be2e6e62ee38f940f87c6dc47d574a0",
+  "status": "pending_sequence_validation_and_packaging",
+  "frame_count": 1,
+  "review_reason": "Head registration scale 1.03221; candidate sequence passes preliminary 3.5% scale check, motion and anchor still require full review.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_contact_single_v01.png",
+  "kind": "single_frame_source",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-50fd992e-d768-4f7c-b792-0db2388ab55f.png"
+}

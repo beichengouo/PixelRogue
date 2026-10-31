@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_n_skill_cast_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_skill_cast_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-56fd3ce1-662e-4765-9abe-eacf64114431.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise repair of transparent4frame2x2 sprite SOURCE, image1 edit target and image2 SAME identity/anatomy/costume viewing direction. Keep exact4 distinct continuous ritual handgestures and common plantedfoot baseline, compact skulls and torso, same anatomy, same face/camera, true ALPHA. Fix only: Strict REAR view all4 cells. First and last pose wrongly expose front collar/neck under backhair and backhair reads as forehead bangs. Restore back skull/back hair sweep EXACTLY image2 N idle, covering backneck continuously down spine. NO FACE NO BANGS NO FRONT COLLAR visible from rear; hands extend forward away from viewer. Preserve2nd/3rd bowarm sequence.. Exactly2arms/2hands and1weapon, no retained old hands. All4 fullbody figures must fit own cell with generous clear transparent room. Do not alter costume/body proportions, no growing release pose, do not repeat all4 as idle. NO text/numbers/grid/labels/borders/marks/shadows/effects/glow/floor/background. Use same refined soft nonpixel game miniature finish.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_n_skill_cast_v01.png",
+      "sha256": "006bf8627a1274d34df82c195183624a4ed6270cb87e03221c54572c4d283e02"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_n_idle_v02.png",
+      "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8"
+    }
+  ],
+  "sha256": "1af0323f3a2b9608dc2cb82d9da8a5456fa2ddc3f86572bfc139c4a371f4d1fa",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    27,
+    1236,
+    1216
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    27,
+    1236,
+    1216
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      27,
+      1236,
+      1216
+    ],
+    "8": [
+      166,
+      33,
+      1146,
+      1208
+    ],
+    "32": [
+      166,
+      33,
+      1146,
+      1208
+    ],
+    "128": [
+      167,
+      34,
+      1145,
+      1207
+    ]
+  },
+  "reason": "back view corrected but measured6.135percent head scale drift exceeds6percent; next source required"
+}

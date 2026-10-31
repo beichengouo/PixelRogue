@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_n_walk_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-9e5ceb5e-05eb-455b-a910-160f71e991da.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise animation correction. IMAGE1 is edit target: same adult elf Ilyua legendary transparent 2x2 sprite sheet. Keep every upper-body/head/hair/bow/costume detail and exact scale/view as original. Her camera is direct BACK facing away. Top two sprites are LEFT-leg step half-cycle. Change ONLY LOWER TWO sprites legs/knees/boots/lower hem to the OPPOSITE RIGHT-leg step half-cycle, so four frames really alternate feet. In bottom-left pose the anatomical RIGHT leg at viewer-RIGHT swings backward toward camera, showing underside of RIGHT boot; viewer-LEFT foot is planted farther upscreen. In bottom-right passing pose the RIGHT boot remains planted while LEFT knee bends and LEFT foot travels beneath pelvis; show LEFT sole, not the same left/right pose as top-right. Image2 gives ONLY the correct four-foot phases to follow, NOT its costume, identity, staff or hairstyle. Do not mirror whole elf to swap feet! Bow stays viewer-left anatomical LEFT, quiver viewer-right anatomical RIGHT, hair flower viewer-right. Body/head must remain stable no side sway/rotation, skull identical dimensions all four cells. Keep short anatomical legs and coherent knees, flat brown gold flower boots. All four full figures fit their cells with generous transparent margins, no clipped leaves/bow/hair/feet. True transparent, no numbers/text/labels/shadow/lines/effects. Retain soft nonpixel hand-painted miniature finish, clean colored outlines.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_walk_v01.png",
+      "sha256": "ac00645648d94bf56a6798c11f78db120cc0046199a7153d17f718c39a3a6ec1"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_n_walk.png",
+      "sha256": "d29fb0965de4c2b14951136d2d1a949885ee4ea5ef3f908706abc06e2e311da1"
+    }
+  ],
+  "sha256": "9cf0387df1d549f93e283e2441ea4e181a2dd4c9702f6de0f1eb37b15a6be819",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    31,
+    21,
+    1224,
+    1230
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    31,
+    21,
+    1224,
+    1230
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      31,
+      21,
+      1224,
+      1230
+    ],
+    "8": [
+      222,
+      50,
+      1072,
+      1215
+    ],
+    "32": [
+      222,
+      51,
+      1071,
+      1215
+    ],
+    "128": [
+      223,
+      51,
+      1071,
+      1214
+    ]
+  }
+}

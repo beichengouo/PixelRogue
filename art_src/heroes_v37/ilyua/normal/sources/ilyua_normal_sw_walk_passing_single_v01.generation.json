@@ -1,0 +1,13 @@
+{
+  "kind": "single_frame_source",
+  "prompt": "Same character and pose, intermediate passing step, one foot planted and one raised, exactly two legs and hands, transparent background.",
+  "status": "pending_registration_and_packaging",
+  "runtime_integrated": false,
+  "sha256": "03ce569f38b055c397915662f580d0667dfcf0f911e18ff50bd6a885f39d35f8",
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-7848837b-f610-44c5-b279-6ab473aef264.png",
+  "asset": "ilyua_normal_sw_walk_passing_single_v01",
+  "review_reason": "Needs registration against idle and adjacent steps.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_opposite_single_v02.png"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "pending_registration_and_packaging",
+  "prompt": "Use passing pose of first reference and character proportions of second, transparent background, no text.",
+  "runtime_integrated": false,
+  "review_reason": "Head registration scale 1.02056; full four-frame sequence still exceeds 3.5% threshold.",
+  "asset": "ilyua_normal_sw_walk_passing_single_v02",
+  "frame_count": 1,
+  "sha256": "99c185bd995215370dd0f8a6c3c1cddd32b8abdb944325c7ef577cf7b15e1217",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-8f1f887f-a3f2-421b-a9b0-cbc2ec855c3d.png",
+  "usage": "unpackaged_candidate",
+  "kind": "single_frame_source",
+  "reference": [
+    "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_passing_single_v01.png",
+    "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_contact_single_v01.png"
+  ]
+}

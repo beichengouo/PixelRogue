@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_w_attack3_v05",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_attack3_v05.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-26885292-4b54-4401-90ba-53d619883e3c.png",
+  "built_in_imagegen": true,
+  "prompt": "Redraw the four west-facing archery frames with consistent head and hood, planted feet, draw release follow-through and recovery, transparent gutters, no text.\n",
+  "references": [
+    {
+      "path": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_w_attack3_v04.png",
+      "sha256": "9d77effe755aa3591ca1963b37a1c2dd9cc509ac75daf72cad85e31ea2e9ef44"
+    }
+  ],
+  "sha256": "91fe61b6b80e8f851314434322548eb978f0db2637ff23c0f0ac25dbaeb034de",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1230,
+    1224
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "review_reason": "Head registration drift 21.30% exceeds 6% gate; requires redraw.",
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1230,
+    1224
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1230,
+      1224
+    ],
+    "8": [
+      84,
+      22,
+      1224,
+      1208
+    ],
+    "32": [
+      84,
+      22,
+      1223,
+      1208
+    ],
+    "128": [
+      85,
+      23,
+      1223,
+      1208
+    ]
+  }
+}

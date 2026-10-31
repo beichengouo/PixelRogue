@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_set_utility_interact_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_interact_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-13da0178-25c0-475a-ba6c-4401cdec5f28.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise anatomy repair of four-frame transparent game sprite source, preserve exact character identity/costume/body proportions/facing/gestures and2x2 layout. FIX: TOPRIGHT has THREE HANDS. DELETE ONLY extra resting hand at WAIST viewer-right torso and its duplicate short sleeve. Retain leftbowhand at midline and rightreaching hand forward viewer-left. Fill deleted waist with continuous leafdress and ivorycape, no wrist. Also do not add back normaloutfit sleeves, preserve goldforearmguards.. Do not move correct limbs or shrink skull/body, no new hands/arms/prop. Keep all4 fullbody complete within clear transparent margins. TRUE TRANSPARENT alpha, same painterly colored line and shading. No numbers/text/labels/grid/dividers/marks/motionstrokes/effects/background/halos/shadows/floor.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_utility_interact_v01.png",
+      "sha256": "99630106ab0c4fdba165631b6e11a2c08de29514fd3b175b6855544457515b27"
+    }
+  ],
+  "sha256": "5785b68ac55f719067e2b23d2ef54284b963a79a7ca1b0b62251abf313523cd3",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "interact",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    3,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    3,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      3,
+      1240,
+      1254
+    ],
+    "8": [
+      223,
+      59,
+      1171,
+      1228
+    ],
+    "32": [
+      223,
+      59,
+      1170,
+      1226
+    ],
+    "128": [
+      224,
+      60,
+      1170,
+      1226
+    ]
+  },
+  "reason": "third hand fixed but measured9.196percent head scale drift exceeds6percent; next source required"
+}

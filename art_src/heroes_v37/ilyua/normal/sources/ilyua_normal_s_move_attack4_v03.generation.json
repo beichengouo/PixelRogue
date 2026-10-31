@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_s_move_attack4_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack4_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-0c1bdcc0-c663-4cf1-889d-26500e73fc46.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair the transparent 2x2 sprite sheet. Keep all four different poses, walking legs and horizontal bow. Make each COMPLETE character including every bow tip fit inside the center 65 percent of its own equal quadrant. Gaps between neighboring bow tips must be at least 20 percent of cell width, and all four outlines must be entirely separate, never overlap or touch the center divisions. Equal head and body size across all frames. Pure transparent alpha in gaps and outside subjects. No panel frames, numbers, captions, text, lines, effects, shadows or background. Refined nonpixel game sprites.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_move_attack4_v02.png",
+      "sha256": "e7d28481bc7b100746c8dde3597e11197bd47d2e32bb79ba98ad978f5e2b89d2"
+    }
+  ],
+  "sha256": "4e9fffe2288716988fe720260595f0c4d62d7d9a52af89dbf77d035508aaad91",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Head-size drift 10.72 percent exceeds 6 percent.",
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1240,
+      1254
+    ],
+    "8": [
+      81,
+      64,
+      1174,
+      1214
+    ],
+    "32": [
+      82,
+      64,
+      1174,
+      1213
+    ],
+    "128": [
+      82,
+      65,
+      1174,
+      1213
+    ]
+  }
+}

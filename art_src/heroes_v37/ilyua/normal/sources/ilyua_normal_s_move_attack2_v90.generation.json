@@ -1,0 +1,100 @@
+{
+  "asset": "ilyua_normal_s_move_attack2_v90",
+  "kind": "source",
+  "direction": "s",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack2_contact_single_v01.png",
+      "sha256": "078da5a6833aac856ab54eee72af63a9a0048154cbb7968655d65092a7b06637",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack2_contact_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack2_passing_single_v01.png",
+      "sha256": "8747c88c8ec398d33eb65358d656d464a27866900fc9e5cae4a72262de1a91b2",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack2_passing_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack2_release_single_v02.png",
+      "sha256": "b9d808b8d6f841443f13e3ae85372579f8e5c3e879f4c7fd307ef3aef3eb3237",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack2_release_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack2_passing_return_single_v01.png",
+      "sha256": "a4ed5fa6384b826fbb5ea044298e12061fdd5e00e68f1e57718e37a68e22b89d",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack2_passing_return_single_v01.png"
+    }
+  ],
+  "sha256": "14ef8a7eec0cf838e731024bf38e0eeec1d216bedda1477afeb552cf96b3ab26",
+  "registration": [
+    {
+      "scale": 0.2322882809940043,
+      "offset": [
+        -81.27119045813107,
+        -26.57412393810679
+      ],
+      "head_inliers": 63,
+      "head_registration_scale": 0.9969038725992685,
+      "head_angle": 0.00175517331394968,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2322882809940043,
+      "offset": [
+        -81.2034947663835,
+        -26.347130043992713
+      ],
+      "head_inliers": 46,
+      "head_registration_scale": 0.9937724408049542,
+      "head_angle": 0.15948395559541656,
+      "foot_deviation": 3,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2322882809940043,
+      "offset": [
+        -81.27932531856797,
+        -26.492270460406548
+      ],
+      "head_inliers": 58,
+      "head_registration_scale": 0.9955258026692508,
+      "head_angle": 0.13982186161760424,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2322882809940043,
+      "offset": [
+        -81.2868344205097,
+        -26.45178815230582
+      ],
+      "head_inliers": 56,
+      "head_registration_scale": 0.9967852977700943,
+      "head_angle": 0.11266041591960686,
+      "foot_deviation": 2,
+      "torso_residual": null
+    }
+  ],
+  "notes": "Contact, passing, opposite contact, opposite passing. Frame 2 trailing garment should be reviewed in context. Full gait and five attack sequence review required.",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

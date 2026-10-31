@@ -1,0 +1,16 @@
+{
+  "asset": "ilyua_normal_s_move_attack2_passing_single_v01",
+  "kind": "single_frame_source",
+  "status": "needs_anatomy_and_registration_review",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "8747c88c8ec398d33eb65358d656d464a27866900fc9e5cae4a72262de1a91b2",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-da031d9c-5eca-4a46-aa51-775eb686313f.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_walk_passing_left_single_v01.png",
+      "sha256": "018685d3a31839ee96ca7fcc6ed0a13ec9642b3f54a1d1ea8a91aa9e664dfba3"
+    }
+  ],
+  "notes": "Work in progress; passing may have extra sleeve and release apparent enlarged head; no packing."
+}

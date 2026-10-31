@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_w_move_attack1_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_move_attack1_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-42930d67-f5a5-4b26-9fe4-a06189decca0.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_w_move_attack1_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise upper-body-only edit of the supplied FOUR-FRAME WALK sheet. Preserve the original image's head shapes, body sizes, clothes and critically its FOUR DIFFERENT LEG POSES EXACTLY. Do not redraw or change anything below the waist. Top-left boot step, top-right narrow passing position, bottom-left opposite contact, bottom-right narrow passing position MUST remain as the supplied original, not four wide strides. Original feet move under the pelvis in the right column, do not spread them. Character faces strict LEFT profile. Change ONLY the two arms, sleeves, hands and ONE wooden bow to perform this four-phase archery sequence while walking: top-left left hand holds bow low ahead, right fingers nock one arrow pointing LEFT; top-right left arm extends forward shoulder high and right fingers pull string to cheek into V, arrow points LEFT; bottom-left right fingers open behind jaw in release, no arrow remains anywhere, left arm holds ONE bow steady and string straight between tips; bottom-right left arm slightly lowers and right hand returns near string to reconnect. Exactly two arms/two hands, remove the old hanging hand and old sleeve when reposing. One complete plain wooden recurved bow with small leaf pendants, no second/ghost bow or duplicate shaft, no arrows on release, one quiver. Keep hood, hair, face, torso and leg pixels from input unchanged, same skull size and upright head throughout. EXACT 2x2 equally sized cells, all complete hair/hood/bow/shoes within transparent margins, real alpha background, no text, numbers, labels, effects, shadow or floor. Detailed nonpixel anime painted game art. This is a walking attack, not stationary archery; the supplied four alternating feet are the source of truth.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_walk_v01.png",
+      "sha256": "94bd1a13eeab4f2438751ffd308570ff46323ab4a53e6ab22ad8c42a10dea07f"
+    }
+  ],
+  "sha256": "26963eddc3db75e07a7ea32b7a08ff31d860307d57beeb9bc3240e341ac98440",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    8,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      8,
+      1236,
+      1254
+    ],
+    "8": [
+      123,
+      12,
+      1205,
+      1236
+    ],
+    "32": [
+      124,
+      12,
+      1205,
+      1236
+    ],
+    "128": [
+      125,
+      13,
+      1204,
+      1236
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

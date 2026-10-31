@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_sw_move_attack2_v91",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack2_v91.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-702e6544-ef48-4ec7-870c-5528804bdbe7.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack2_v91.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise correction of BOTTOM ROW hands only. Keep upper row unchanged. In BOTH bottom frames the anatomical LEFT hand MUST close around the bow center grip, firmly holding bow, with left arm connected to left shoulder. In bottom-left only RIGHT hand is open in release, off to the right; in bottom-right RIGHT hand relaxes near chest, left hand still grips bow. Remove the old open left fingers in bottom-left and old chest-clasp left hand in bottom-right so there are exactly TWO connected arms and hands total per character. No floating bow. Bowstring bottom row is relaxed straight and no arrow remains. Preserve all original four heads, body sizes, all legs/feet/step phases, clothes, bow and quiver. Four complete figures, 2x2 equal cells with margins, true transparent background. No text/effects/shadows.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack2_v90.png",
+      "sha256": "6ba943daba76d4c109973b76d611edc48080f075c9d17825ef1bdd0aaef493f3"
+    }
+  ],
+  "sha256": "8349c51f865a4457d63f1cb98fdc81362ede8b9d3b32246bcbe24ecfe7f490fc",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1410,
+    1071
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1410,
+      1071
+    ],
+    "8": [
+      230,
+      3,
+      1293,
+      1068
+    ],
+    "32": [
+      231,
+      5,
+      1293,
+      1067
+    ],
+    "128": [
+      232,
+      6,
+      1292,
+      1067
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "reason": "all four legs retain same-side near-forward stance; need real opposite contact and opposite narrow passing poses, not only technical head pass"
+}

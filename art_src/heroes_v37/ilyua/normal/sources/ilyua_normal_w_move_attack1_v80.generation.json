@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_normal_w_move_attack1_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_move_attack1_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-3975b693-40dd-4cc3-a033-ead29d993454.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_w_move_attack1_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise upper-body animation edit of image1, a four-frame WALK sprite sheet. Image2 supplies ONLY the corresponding four archery arm/hand poses of attack stage 1. Both images are the same normal-form elf, same ivory hood with gold leaf trim, sage green hair, blue eyes, green tunic, short brown boots, plain recurved wooden bow with small gold leaf pendants and ONE hip quiver. STRICT LEFT PROFILE, faces and aims screen LEFT. Preserve image1 exact head/crown shape and pixel size, SAME head/body proportion, torso, waist, costume construction and FOUR ALTERNATING LEG POSES. Legs must not become the same stance: first contact, central passing foot, opposite contact, opposite passing. BOTH boots complete, heel and toe change visibly, moving foot passes under pelvis on second/fourth frames. No lateral head waggle/lean. Change only arms/sleeves/hands, the ONE held bow and string to image2 FOUR gestures, in same reading order. Exactly TWO ARMS and TWO HANDS, with continuous shoulders/sleeves; remove old hanging arms and old grips when repositioned. Anatomical LEFT hand always holds ONE BOW at its central grip; anatomical RIGHT fingers draw or release bowstring. NO second bow, floating old wooden arcs, duplicate grip or disconnected limbs. Bow limbs remain continuous, with one string connected to the upper/lower tips, pulled to V during draw, straight during release. Right-hand draw/release must stay BEHIND the held bow along the target direction: nocked arrow tail at string fingers, arrowhead beyond left-hand bow grip toward target, never points backward. When right fingers OPEN in release, remove ENTIRE nocked arrow/shaft/fletching/arrowhead; no golden diamond arrowhead left on the bow grip, no loose flying projectile. Feet keep walking even while bow arms draw/release. Do not swing bow like a club, do not swap hands.\nFour distinct complete full-body authored frames in EXACT 2x2 equal cells, genuine alpha transparency. Entire hood/hair/bow/arrow tips and boots inside each cell with wide empty 10 percent margins. Same skull/shoulder/body size in all frames; never grow the release pose or change viewpoint. Crisp refined nonpixel miniature cel-painted anime game art. No text, numbering, labels, diagram arrows, grid, borders, effects, shadow, ground, scenery or watermark.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_walk_v01.png",
+      "sha256": "94bd1a13eeab4f2438751ffd308570ff46323ab4a53e6ab22ad8c42a10dea07f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_attack1_v02.png",
+      "sha256": "46bb5da6f4262c847d4cde9ffbf0a07823694aef2df8c5c2efc37766179bfaf6"
+    }
+  ],
+  "sha256": "c7a707bf52cff8aa989e29941322f07107d7f0418405d40b4843dd119bf17bc4",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    10,
+    1234,
+    1238
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      10,
+      1234,
+      1238
+    ],
+    "8": [
+      130,
+      15,
+      1203,
+      1227
+    ],
+    "32": [
+      131,
+      15,
+      1203,
+      1227
+    ],
+    "128": [
+      131,
+      16,
+      1202,
+      1227
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

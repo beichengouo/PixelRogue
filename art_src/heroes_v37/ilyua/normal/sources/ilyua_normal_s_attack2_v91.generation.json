@@ -1,0 +1,100 @@
+{
+  "asset": "ilyua_normal_s_attack2_v91",
+  "kind": "source",
+  "direction": "s",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f1_v01.png",
+      "sha256": "e91591b1a671e2abd463fab585c76e4930988d6dbafb24a71aff8b7c1fbc3024",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack2_uniform_f1_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f2_v01.png",
+      "sha256": "e682ff7b4c2f92dd7b6462781b3315651cde92d1859de71ee4440643e838e2f1",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack2_uniform_f2_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f3_v02.png",
+      "sha256": "8a28a9546da8368a7847e112978227c85a9a83cd88882c97adaf9a854ab1b963",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack2_uniform_f3_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f4_v02.png",
+      "sha256": "31f0a835b763151086dfe06ed34263989fa57f48302e9d577edde56540578aa9",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack2_uniform_f4_v02.png"
+    }
+  ],
+  "sha256": "ed1f32f229661f838c57ea608c106be0a7c3247c52b935753fed5672dcd0624d",
+  "registration": [
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.34977055521846,
+        -27.391350310983004
+      ],
+      "head_inliers": 81,
+      "head_registration_scale": 1.000858259926369,
+      "head_angle": 0.03764662300380221,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.42060926122574,
+        -27.50961866656553
+      ],
+      "head_inliers": 60,
+      "head_registration_scale": 1.000411497362431,
+      "head_angle": 0.37703138246322326,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.43107649423544,
+        -27.448066785497566
+      ],
+      "head_inliers": 66,
+      "head_registration_scale": 0.9996076488162863,
+      "head_angle": 0.0032789454580326224,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.47028595266991,
+        -27.36270052715412
+      ],
+      "head_inliers": 54,
+      "head_registration_scale": 0.9998175904359032,
+      "head_angle": 0.20922111372704447,
+      "foot_deviation": 1,
+      "torso_residual": null
+    }
+  ],
+  "notes": "Frame 4 removes arrowhead on release; full continuity review required.",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

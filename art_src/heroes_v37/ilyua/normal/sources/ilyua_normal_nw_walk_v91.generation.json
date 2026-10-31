@@ -1,0 +1,112 @@
+{
+  "asset": "ilyua_normal_nw_walk_v91",
+  "kind": "source",
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_contact_single_v02.png",
+      "sha256": "12b2c3acd56c00f56f6bdcc0e68aabc9056eed1660daa6b30b78c4a26e62fabc",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_walk_contact_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_passing_single_v02.png",
+      "sha256": "de19a972e49d283787fd2180a082c9e2f612c5c82f69948146281e0422693ed9",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_walk_passing_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_opposite_single_v03.png",
+      "sha256": "4a6a0ea75484cc5360eb1043b4645bcca6c0ccec07eda1fd2fcf2536e7b2361e",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_walk_opposite_single_v03.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_return_single_v02.png",
+      "sha256": "3da524fd192b2afec5b0898065deb14b76d41ec4cd866698ce6ad6d495cd5217",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_walk_return_single_v02.png"
+    }
+  ],
+  "sha256": "54dc0815489472439ac5028d0d27150ab7e96f98e91665940d521dd970f8b15d",
+  "registration": [
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.80913837139425,
+        -24.246309720552908
+      ],
+      "head_inliers": 87,
+      "head_registration_scale": 1.0013824422773008,
+      "head_angle": -0.08384055590592415,
+      "foot_deviation": 2,
+      "torso_residual": [
+        -0.025254469364881516,
+        -0.07377742230892181
+      ]
+    },
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.82144869290869,
+        -24.156052809495215
+      ],
+      "head_inliers": 75,
+      "head_registration_scale": 0.9986612576555597,
+      "head_angle": -0.15127579179713344,
+      "foot_deviation": 3,
+      "torso_residual": [
+        -0.020648663863539696,
+        -0.11127178370952606
+      ]
+    },
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.79294057992792,
+        -24.133573091947138
+      ],
+      "head_inliers": 61,
+      "head_registration_scale": 0.9987638806448174,
+      "head_angle": -0.11565163057405621,
+      "foot_deviation": 0,
+      "torso_residual": [
+        -0.11711707711219788,
+        -0.14423076808452606
+      ]
+    },
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.81767390324522,
+        -24.124136117788485
+      ],
+      "head_inliers": 81,
+      "head_registration_scale": 0.9988306480417781,
+      "head_angle": -0.06468183070990748,
+      "foot_deviation": -2,
+      "torso_residual": [
+        -0.0216064453125,
+        -0.11684945970773697
+      ]
+    }
+  ],
+  "notes": "Alternating boot contact and passing visible, skirt obscures leg connection; full animation review required.",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

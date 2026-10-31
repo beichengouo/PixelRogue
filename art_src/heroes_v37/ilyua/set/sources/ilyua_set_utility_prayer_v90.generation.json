@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_utility_prayer_v90",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_prayer_v90.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-d97314f5-2a66-416b-b79e-adbfc9c5a853.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_utility_prayer_v90.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY the reaction gesture/expression of these four existing LEGENDARY Ilyua LEFT-PROFILE frames into calm standing prayer. Keep original FOUR native skull/head/hair silhouettes and sizes, bare sage-gray long hair, pointed ears, flower gold-leaf ornament, exact neck/torso/waist/limb lengths, leaf-layer dress with ivory gold-vine side panels, floral brown boots, ONE quiver and planted feet EXACTLY. Same LEFT profile all cells, no turn or tilt or rescaling or crouching. Anatomical LEFT hand keeps holding ONE gold-floral wooden bow low and intact throughout, continuous limbs/string. Exactly TWO arms/hands; do not leave a duplicate hand after reposing. Only change anatomical RIGHT hand and eyes/mouth for four quiet prayer phases: 1 free right palm rests gently over heart, mouth closed and calm; 2 relax right fingers over chest and close eyes softly; 3 quietly maintain closed eyes, right palm opens a little beside heart (no impact/recoil); 4 open eyes calmly and return right hand to relaxed low ready. Maintain quiet upright posture, stable shoulders/skull and original fixed foot positions, no raising the head or elongating body. No arrows, magic, glow, effects, tears, ground/shadow or extra objects. Four COMPLETE isolated figures in exact2x2 cells with generous10% transparent margin around full hair, bow tips and boots. Refined nonpixel cel-painted RGBA sprite identical style to target; no text/numbers/grid. This is gentle standing prayer, not taking a hit.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_hurt_v80.png",
+      "sha256": "7d6d1d3283170d9593a6f2e6400e063d3b941767481f6e91b07f0a5c771f8018"
+    }
+  ],
+  "sha256": "aec13f57a461e9e50936bd0e4d47bade74f5c634c1a33cb0f4b9947040241996",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "utility",
+  "action": "prayer",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    22,
+    1222,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      22,
+      1222,
+      1254
+    ],
+    "8": [
+      185,
+      50,
+      1159,
+      1219
+    ],
+    "32": [
+      186,
+      50,
+      1158,
+      1217
+    ],
+    "128": [
+      186,
+      51,
+      1158,
+      1217
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

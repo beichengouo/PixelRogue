@@ -1,0 +1,13 @@
+{
+  "review_reason": "Needs registration against idle and adjacent steps.",
+  "prompt": "Reverse the legs so left boot steps forward, same head, torso, hands, bow and costume, transparent background.",
+  "usage": "unpackaged_candidate",
+  "sha256": "333be195b3dc1370795450dfc85c255a51db6bd52f78bcdde379b975bc9d64f6",
+  "status": "pending_registration_and_packaging",
+  "frame_count": 1,
+  "kind": "single_frame_source",
+  "asset": "ilyua_normal_sw_walk_contact_single_v01",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_opposite_single_v02.png",
+  "runtime_integrated": false,
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-ef33ea3a-cb4f-4176-b2cc-3ef29243036a.png"
+}

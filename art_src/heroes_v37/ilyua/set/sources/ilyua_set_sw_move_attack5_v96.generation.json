@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_move_attack5_v96",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack5_v96.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-ff933db3-c928-4236-9085-9f899190de23.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack5_v96.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY arms/hands and bow action in supplied four-frame sprite sheet. Preserve the FOUR existing heads, hair, facial angles, skull size, torso, waist and especially the FOUR DISTINCT LEG POSES EXACTLY. Do not redraw or change anything below waist. Keep opposite contacting legs and narrow passing feet under pelvis, no repeated wide strides. Fifth strong shot: top-left full draw begins, top-right deeper long held full draw, bottom-left release ONE arrow with clear open-hand followthrough, bottom-right lower bow and recover right hand naturally. All four face SAME original direction; arrow aimed original facing (lower-left for three-quarter front, screen-left for profile). One arrow while fingers closed on string, NO arrow after release, string straight between bow tips after release. Exactly two connected arms/hands, anatomical LEFT hand holds same ornate bow throughout. Keep flower legendary outfit/boots and ONE quiver. Same skull size in every frame, no bob/tilt/zoom. True transparent RGBA, four complete figures in 2x2 equal cells with12percent margins. No text/effects/shadow. CRITICAL: left fingers NEVER open; LEFT hand stays CLOSED around bow grip in every cell. Only RIGHT drawing hand opens on release. Never put both hands at chest or release bow. No idle hand remains at waist after new arm pose. All bows stay in front at SCREEN LEFT. Never move bow to screen right or point arrow right. Facing lower-left, arrowhead points LOWER-LEFT as in reference, short foreshortened shaft. Left hand grip remains screen-left, right drawing hand near right cheek, no mirror. Use input NEW source as exact immutable lower-body template. Bottom-left RIGHT boot is clearly extended toward lower-right and LEFT knee bent back; retain this exact opposite step. Do NOT change anything below waist or head. Do not repeat first-leg forward in lower row. Only change bow/arms to described stage. All tips/cell margins already good, keep them.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack3_v95.png",
+      "sha256": "5787b13058edb55bacabb946533d4a837572aa1057c73d166e9a90b3889d8323"
+    }
+  ],
+  "sha256": "c404dbcc529c83e8472089f7ea596a444bcdbbc1b22d64f1968ba3a39928b6e8",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    32,
+    1332,
+    1070
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      32,
+      1332,
+      1070
+    ],
+    "8": [
+      181,
+      34,
+      1322,
+      1066
+    ],
+    "32": [
+      182,
+      35,
+      1321,
+      1066
+    ],
+    "128": [
+      182,
+      35,
+      1321,
+      1065
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

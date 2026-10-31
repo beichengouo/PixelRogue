@@ -1,0 +1,93 @@
+{
+  "asset": "ilyua_normal_sw_walk_single_pack_v01",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_walk_single_pack_v01.png",
+  "sha256": "650136f67b24873573b6dc4c37385f83541b0b9f0748ce3f699add505788487d",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_sw_walk_contact_single_v01": "333be195b3dc1370795450dfc85c255a51db6bd52f78bcdde379b975bc9d64f6",
+    "ilyua_normal_sw_walk_passing_single_v02": "99c185bd995215370dd0f8a6c3c1cddd32b8abdb944325c7ef577cf7b15e1217",
+    "ilyua_normal_sw_walk_opposite_single_v03": "f62eb879c601fa64c9d4159de0186e222be2e6e62ee38f940f87c6dc47d574a0",
+    "ilyua_normal_sw_walk_passing_opposite_single_v02": "eca341899aa1fa8a93b12d6ebbfe0920c4673b1fd38ab34039cf0a64751b743f"
+  },
+  "reference_idle_sha256": "e95f8b569e0392f260a708a56519c69ade8d39a43f05c45ed3847017d038ee90",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.24186597390867276,
+      "offset": [
+        -121.38697474211165,
+        9.411369842233015
+      ],
+      "head_inliers": 13,
+      "head_registration_scale": 1.0380081380247206,
+      "head_angle": -0.8775837760177169,
+      "foot_deviation": 1,
+      "torso_residual": [
+        -2.1980621814727783,
+        3.705315113067627
+      ]
+    },
+    {
+      "scale": 0.24186597390867276,
+      "offset": [
+        -128.25091967536406,
+        7.952669902912625
+      ],
+      "head_inliers": 10,
+      "head_registration_scale": 1.0205574965917084,
+      "head_angle": 1.0464240577131236,
+      "foot_deviation": 0,
+      "torso_residual": [
+        -1.6064927577972412,
+        4.950745105743408
+      ]
+    },
+    {
+      "scale": 0.24186597390867276,
+      "offset": [
+        -120.0304725424757,
+        8.522593674150492
+      ],
+      "head_inliers": 16,
+      "head_registration_scale": 1.0322140870339045,
+      "head_angle": -2.0556816618690137,
+      "foot_deviation": -1,
+      "torso_residual": [
+        -2.4705798625946045,
+        4.5882887840271
+      ]
+    },
+    {
+      "scale": 0.24186597390867276,
+      "offset": [
+        -119.95586506371359,
+        8.968318605885926
+      ],
+      "head_inliers": 11,
+      "head_registration_scale": 1.0329390120594235,
+      "head_angle": 0.1667386247985889,
+      "foot_deviation": 1,
+      "torso_residual": [
+        -2.2652316093444824,
+        4.506755352020264
+      ]
+    }
+  ],
+  "visual_review": "Two hands, two legs and opposite strides visible; costume and bow position match idle. Attack adjacency not approved: existing sw_attack1_v01 arrow may point contrary to facing. Requires full animation and seam review."
+}

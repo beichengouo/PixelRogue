@@ -1,0 +1,100 @@
+{
+  "asset": "ilyua_normal_s_move_attack1_v90",
+  "kind": "source",
+  "direction": "s",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack1_contact_single_v01.png",
+      "sha256": "ee5a8f0e3fee81900d2e5ea5a155050ace05b781e3ef9bb249b7f6976f1fbb09",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_contact_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack1_passing_single_v01.png",
+      "sha256": "ca8d5c06e3edbde841273afa1f885d0138b61cdd3aaa8a052f40915bf1fe9847",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_passing_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack1_release_single_v01.png",
+      "sha256": "b7c87bd3d54cbcab2e5b7d1111c123a9bcc014ddb132bd5c32c43f7687f8c407",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_release_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack1_return_single_v01.png",
+      "sha256": "8b67ec005ada9102c29a5675e1275be0474aa4b25698bb8e0eb8fbaf2a6c6169",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_return_single_v01.png"
+    }
+  ],
+  "sha256": "9f0add353a642febe22543cbf603aa0194db3a7cd40fdaf6ff5206b1afb9f151",
+  "registration": [
+    {
+      "scale": 0.2328872550973628,
+      "offset": [
+        -81.99951645934466,
+        -27.17886974742111
+      ],
+      "head_inliers": 52,
+      "head_registration_scale": 0.9994744697928487,
+      "head_angle": -0.0010662452210894236,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2328872550973628,
+      "offset": [
+        -81.9481473756068,
+        -27.24205002275485
+      ],
+      "head_inliers": 48,
+      "head_registration_scale": 0.997661335909788,
+      "head_angle": -0.032525880229578114,
+      "foot_deviation": 3,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2328872550973628,
+      "offset": [
+        -81.9986915958738,
+        -27.118363167475724
+      ],
+      "head_inliers": 49,
+      "head_registration_scale": 0.9961270793012962,
+      "head_angle": 0.027084322559833774,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2328872550973628,
+      "offset": [
+        -82.07503413228156,
+        -27.286948194781548
+      ],
+      "head_inliers": 35,
+      "head_registration_scale": 0.9904339434101027,
+      "head_angle": 0.13096093173662793,
+      "foot_deviation": 5,
+      "torso_residual": null
+    }
+  ],
+  "notes": "Low bow contact, passing, opposite contact, opposite passing. Return foot deviation +5 requires full-body review, no runtime admission.",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

@@ -1,0 +1,16 @@
+{
+  "asset": "ilyua_normal_s_move_attack4_passing_single_v01",
+  "kind": "single_frame_source",
+  "status": "needs_gait_and_registration_review",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "ad4a171f6bbe13c4f71e6b296897f448b6ae6cdc24f78a97a760aeac3e380b44",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-24b4dec6-f29c-49d7-b457-3cf14e60fcf8.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack3_contact_single_v02.png",
+      "sha256": "10f451a48cf936fd5c51ec008137c648c19a669599f0511de29bdc275073ff5a"
+    }
+  ],
+  "notes": "Partial set; release still has same leading foot. No runtime admission."
+}

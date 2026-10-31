@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_s_attack3_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack3_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-59a5c31e-a658-4eae-b003-6a805566c038.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_s_attack3_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise structural weapon repair of the supplied FOUR-frame 2x2 game sprite sheet. Preserve all four character bodies, heads, faces, hair, clothing, skin, boots, quiver and pose scale. Critical error: there are TWO BOWS. In EVERY frame DELETE the entire old plain brown wooden curved bow which floats across the left shoulder/chest, including its old grip, gold dangling tassel, strings and disconnected brown horizontal stubs. It has NO connection to a hand and MUST be completely erased, revealing normal hair, clothing and chest beneath. KEEP exactly ONE weapon: the ornate gold/wood recurved bow with WHITE FLOWERS and GOLD LEAVES held firmly by her extended anatomical LEFT hand on SCREEN RIGHT. This single bow has two continuous limbs joined at its central grip, one top tip and one bottom tip, nothing floating elsewhere. Its bowstring connects ONLY those two tips. Top-left and top-right are draw poses: right hand near cheek pulls the center of this ONE string back into a V, one arrow nocked, tail at right fingers, arrowhead points screen right beyond held bow. Bottom-left and bottom-right are release/followthrough: right hand opens near cheek, NO nocked arrow, bowstring is straight between the two tips of the ONE held bow. Do not leave a string to the former ghost bow. Do not add another weapon, hand or arm. Exactly TWO arms/two hands throughout. Four fullbody sprites remain same poses/scale and frame order, genuine transparent alpha background, equal 2x2 cells, broad empty margins, no cropping, no effects, shadows, text, numbers, labels or watermark. Refined nonpixel painted anime game sprites. Inspect each frame: there is no floating curved wooden object on the chest and only ONE bow in the left hand.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_s_attack3_v80.png",
+      "sha256": "587ae972730d7f172b2c23c67b8bf92d2560f4872381deabf4130292bece2035"
+    }
+  ],
+  "sha256": "f3ade5c73f21a0661140e3483f1adb2ad862f9f35e131296d0c7f6ff600896fd",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1236,
+      1254
+    ],
+    "8": [
+      134,
+      66,
+      1208,
+      1217
+    ],
+    "32": [
+      134,
+      66,
+      1208,
+      1217
+    ],
+    "128": [
+      135,
+      67,
+      1207,
+      1216
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Independent grounded review confirmed front-facing head/body but shot aimed horizontally screen-right; replaced by forward-aimed v92."
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_utility_prayer_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_prayer_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-53d1f4ef-a71d-4600-af6d-e563c9ab5d9c.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe edit of FOUR animation SOURCE frames, prayer. IMAGE1 PRIMARY edit target: preserve its4 exact DISTINCT consecutive body/arm/leg poses, skull scale, shortlimb anatomy, face identity, WEST profile camera and2x2 reading order. IMAGE2 ONLY SAME CHARACTER LEGENDARY WARDROBE/PROP reference; do not copy its idlepose. Replace clothes/hair/prop only with image2. Exactly TWO arms/TWO hands perfigure, one complete prop, never retain old waist idlehand or original weaponshaft. All4 fullbody/hair/prop/toes completelyinside owncell, enough transparentroom all sides; no cropping. Preserve same body dimensions evenbowing/lyingdown, don't shrink fallposes. Soft refined nonpixel miniature celpainted finish. TRUE TRANSPARENT RGBA background; NO numbers/text/labels/grid/marks/borders/shadows/floor/glow/effects/background/extra creatures. Same sagehaired blueeyed elf. Change normal ivoryhood to legendary NOHOOD naturalhair with whiteflower/goldleaf ornament anatomicalRIGHT temple. Ivory/green layered LEAF hunting outfit, whiteflower/goldleaf collarpendant, split ivory goldvine cape, short brown flowerboots, goldvinebow same LEFT hand, RIGHT freehand. QuiverRIGHT hip. Do not swap bowhands or addbow. No cloth on head.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_utility_prayer_v01.png",
+      "sha256": "6d3023b7b31820e35dc7e020801c5ec4a9b2d45e35feafac0b2f6df7f126da60"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "498c66854051c6d8bd85d5f0e8f48a51636ba5aa23e9a422cebf3f7f1bb0b418",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "prayer",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    2,
+    1494,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    2,
+    1494,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      2,
+      1494,
+      1024
+    ],
+    "8": [
+      388,
+      10,
+      1223,
+      1014
+    ],
+    "32": [
+      388,
+      10,
+      1223,
+      1014
+    ],
+    "128": [
+      389,
+      10,
+      1222,
+      1014
+    ]
+  }
+}

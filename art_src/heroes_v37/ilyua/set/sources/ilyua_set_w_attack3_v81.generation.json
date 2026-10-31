@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_w_attack3_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_attack3_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-7c912ace-8c3d-43f0-b232-e23558551b20.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_attack3_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit only upper arms/hands/bow action of supplied FOUR FRAME sheet. Preserve its FOUR HEADS, facial size, skull outline, camera, hairstyle, torso proportions and all planted feet EXACTLY. Do not redraw heads or change body size. Third attack: cant the bow by about 10degrees, right drawing hand returns close to cheek as arrow path is adjusted. Top-left nock, top-right full draw, bottom-left open release with NO arrow and straight relaxed string, bottom-right lowered bow recovery. Keep the same legendary clothes, ornate flower bow, ONE quiver and two connected arms/hands in each cell. One nocked arrow only in closed-hand drawing poses, aimed toward original facing; remove entire arrow after release. 2x2 equal cells, complete fullbody with12percent transparent margins, true transparent RGBA. No text/effects/shadow/background. The four heads must have precisely equal skull scale with no bob/tilt.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_attack2_v01.png",
+      "sha256": "2aee11037725b1dfdd49b6d60689667f07bc43ef6145dcf47bbd7c0015b7c4bb"
+    }
+  ],
+  "sha256": "84e07d6779ef9f27a2abbb16ecc641ab6a3e39eb1b167348e8fa485850ddc077",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    4,
+    1228,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      4,
+      1228,
+      1254
+    ],
+    "8": [
+      123,
+      36,
+      1206,
+      1236
+    ],
+    "32": [
+      124,
+      36,
+      1206,
+      1235
+    ],
+    "128": [
+      125,
+      37,
+      1205,
+      1235
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Two independent grounded reviewers confirmed head and full body too small versus idle/W1; replaced using correct W1 anatomy."
+}

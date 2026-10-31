@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_nw_walk_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_walk_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-b2c16dc7-2460-4c2d-a1d0-3c95fc7d53e5.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / game animation. IMAGE1 is PRIMARY EXACT character identity/costume/body geometry and viewing direction reference, an idle sprite. IMAGE2 supplies ONLY the four clear foot/knee WALKING PHASES and 2x2 layout in the same view; do NOT copy Xixifu character, her face, clothes, hair, staff or boots. Create exactly FOUR full-body sprites of image1 character in equal 2x2 cells, pure transparent background. Face NORTHWEST rear-left facing away up-left, no eyes in ALL four cells, never rotate toward viewer or rock side-to-side. Hold exact skull/head size and neck/shoulder/waist height steady in all frames; same compact short torso/limbs as image1, do not stretch body. Soft nonpixel hand-painted compact miniature, clean colored outlines, restrained cel shading matching image1. Read order top-left,top-right,bottom-left,bottom-right: left foot forward/right back; right foot passing directly UNDER pelvis close to planted left leg with knee bent; right foot forward/left back; left foot passing directly UNDER pelvis close to planted right leg with knee bent. BOTH intermediate passing poses must be genuinely drawn, not just repeated endpoint stances. Keep head and torso vertical stable, a little knee bend/pelvis bob only; no upperbody sway or tilt as movement substitute. Cloth hem follows steps slightly but exact same garment construction per frame. Face/hair/weapon model fixed, not a different person between poses. No motion blur or smearing. Maintain full feet/crown/bow or staff/hair inside EACH cell with at least10% transparent vertical margin and15% horizontal margins; if necessary fit all figures uniformly smaller within their cells, do NOT shrink one head or shorten legs. Equal scale/body origin and grounded sole anchor in all cells. No physical floor or drop shadow. NO text/numbers/labels/dividers/grid/guidelines/border/watermark/background/effects/extra creatures or figures. Ilyua holds one short BOW in anatomical LEFT hand, RIGHT empty relaxed, quiver on anatomical RIGHT hip; do not convert bow to staff or swap hands. Sage-green hair, lake-blue eyes. Normal ivory hood UP with gold leaf borders and pale sage lining, green shorts/tunic, brown lace-up boots. Hair emerges from front or below hood lower rim, never through top fabric. Keep normal ears hidden under hood.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_idle_v01.png",
+      "sha256": "2e4b8a11273804c1b16ea3cd744d32a78a831407e7a01fbb536bbb1c107ebe60"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_nw_walk.png",
+      "sha256": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f"
+    }
+  ],
+  "sha256": "75cd6ac152c93eab0272cb9cb50c5314f9120b4334bbaa7fe396a1a0b534756e",
+  "dimensions": [
+    1230,
+    1278
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    10,
+    1180,
+    1268
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    10,
+    1180,
+    1268
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      10,
+      1180,
+      1268
+    ],
+    "8": [
+      197,
+      47,
+      1085,
+      1223
+    ],
+    "32": [
+      198,
+      47,
+      1085,
+      1223
+    ],
+    "128": [
+      198,
+      47,
+      1084,
+      1222
+    ]
+  }
+}

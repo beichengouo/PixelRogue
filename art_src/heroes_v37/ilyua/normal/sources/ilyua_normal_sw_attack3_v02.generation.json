@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_sw_attack3_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_attack3_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-5e587af4-e88a-44d7-bdb8-aa3e21e2271e.png",
+  "built_in_imagegen": true,
+  "prompt": "Image1 is the EXACT correct LEFT-AIMED archery target. Preserve same hood/head, torso, camera, left-pointing bow, compact scale, left hand forward gripping bow on SCREEN LEFT, right hand drawing string on SCREEN RIGHT near face. NEVER aim right. Edit the FOUR arm phases to the actions below, with four poses in reading order. Delete any original old hands/bow so each has two arms and one bow. Keep transparent unlabeled 2x2 source, no background, text or numbers; all sprites complete with large gutters. Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, SOUTHWEST front-left facing down-left camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage3 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 inherits slightly raisedbow and rightfingers at string; 2 bow slants about25degrees diagonally across aim, leftwrist raised near shoulder and rightfingers anchored cheek; 3 releases while keeping diagonalbow, rightfingers open behind cheek/string straight; 4 rolls bow gently back upright, rightfingers close near string to begin fullaim.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack2_v01.png",
+      "sha256": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9"
+    }
+  ],
+  "sha256": "acdf0ab752de14217d8907ee1fbee95c416045bbb6dee64ff1e62f9882a466f3",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1400,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    2,
+    3,
+    1,
+    0
+  ],
+  "reason": "head size registration drift 12.93% exceeds 6% gate",
+  "alpha_bounds_raw": [
+    0,
+    0,
+    1400,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      0,
+      1400,
+      1024
+    ],
+    "8": [
+      240,
+      8,
+      1296,
+      1016
+    ],
+    "32": [
+      240,
+      8,
+      1296,
+      1015
+    ],
+    "128": [
+      241,
+      9,
+      1296,
+      1015
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_n_attack2_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_attack2_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-9bdfedce-b68a-4531-b19f-f35eac9cdf69.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_attack2_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Animate the exact character from the supplied BACK VIEW idle image in four small archery action poses, 2x2 sprite sheet. Strictly NORTH facing AWAY from viewer throughout. Preserve the BACK of the dress: long hair covers shoulders and upper back as in image, no front collar, no chest, no face or bangs. Four phases: upper-left left arm RAISES the bow above shoulder and extends it AHEAD away from camera, upper-right right elbow raised at shoulder height draws backward toward camera while bow is far side of body, bottom-left right elbow releases upward with open fingers, bottom-right left arm lowers the bow and right hand relaxes by side. Anatomical left hand holds bow at screen LEFT in all four cells. Bow and arrow always aim NORTH, away from camera, never sideways across back. Much of bow and hands are naturally OCCLUDED by hair/torso in first two poses: do not invent a visible arrow or string stretching horizontally across her BACK. Show only parts actually visible around sides. Exactly two connected arms/hands, one bow and one quiver on screen-right hip. Keep exact same back hairstyle, skull size, clothes, proportions, scale, stationary planted feet, and short limbs across all four poses. Fullbody complete, substantial transparent margins in every equal cell. Nonpixel hand painted miniature anime art. Transparent RGBA. No text, labels, effects, shadows or landscape. This is elevated second attack, not the low-held first attack. The bowstring and arrow are on the FAR SIDE OF HER HEAD and must be HIDDEN by head/hair. Never draw a visible string behind her head to right hand. Her back hair stays in front of and occludes all forward-reaching hands. Upper bow tip may peek above left shoulder, lower tip around left side, maintaining real north-aiming foreshortening.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_idle_v02.png",
+      "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8"
+    }
+  ],
+  "sha256": "8cb6495b6ffc86f1fedcae63725a5fb5b0d3e8c758d86a88aeadf58798c4ea50",
+  "dimensions": [
+    1298,
+    1212
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1286,
+    1212
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1286,
+      1212
+    ],
+    "8": [
+      209,
+      8,
+      1140,
+      1192
+    ],
+    "32": [
+      210,
+      9,
+      1139,
+      1192
+    ],
+    "128": [
+      210,
+      9,
+      1139,
+      1192
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,13 @@
+{
+  "runtime_integrated": false,
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-c7ea2ec4-6aa5-4657-979a-c40885e80e49.png",
+  "prompt": "Same elf archer, opposite contact step with image-right boot forward, image-left boot behind; full uncropped character, transparent background, no labels.",
+  "asset": "ilyua_normal_sw_walk_opposite_single_v01",
+  "sha256": "243ae69dc94d12b386fea201d53cdc378af07362856398c6f7a05457e2f0904e",
+  "frame_count": 1,
+  "status": "pending_anatomy_and_registration",
+  "kind": "single_frame_source",
+  "review_reason": "Check apparent extra flesh shape beneath skirt and registration before use.",
+  "usage": "unpackaged_candidate",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_v02.png"
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_utility_hurt_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_utility_hurt_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-090f543f-7deb-4ead-9501-235b282cf018.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise anatomy repair of four-frame transparent game sprite source, preserve exact character identity/costume/body proportions/facing/gestures and2x2 layout. FIX: DELETE two floating dark impact/motion strokes to right of upperleft hood. Do not replace with anything. Pure empty transparent air, no strokes, no effects. Preserve four exact body poses.. Do not move correct limbs or shrink skull/body, no new hands/arms/prop. Keep all4 fullbody complete within clear transparent margins. TRUE TRANSPARENT alpha, same painterly colored line and shading. No numbers/text/labels/grid/dividers/marks/motionstrokes/effects/background/halos/shadows/floor.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_utility_hurt_v01.png",
+      "sha256": "955930380b6b1327f28c3138ab66a05fea3ed0b3e64b291c905d49270ad08f06"
+    }
+  ],
+  "sha256": "5b69cafa709580ed11877a62d1cde5e9b36b60cf20e0ea3e19df8d4e16bf832a",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "hurt",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    25,
+    6,
+    1464,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    25,
+    6,
+    1464,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      25,
+      6,
+      1464,
+      1024
+    ],
+    "8": [
+      321,
+      12,
+      1271,
+      1013
+    ],
+    "32": [
+      321,
+      12,
+      1270,
+      1013
+    ],
+    "128": [
+      322,
+      12,
+      1270,
+      1013
+    ]
+  },
+  "reason": "floating strokes fixed but measured6.567percent head scale drift exceeds6percent; next source required"
+}

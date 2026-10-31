@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_sw_walk_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-7e239681-eaba-4368-aaa5-57b68ee37a9a.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit image1 four-frame transparent walking sprite SOURCE. Correct ONE consistency issue: the lower two figures have slightly larger heads than upper figures; render ALL FOUR figures at exactly the same head and compact body scale matching top-left frame. Same skull width/height, same shoulder/waist height, rigid un-tilted head. Maintain the original FOUR distinct legs walking poses in their original 2x2 order, especially intermediate passing feet directly beneath pelvis. Do not change SOUTHWEST front-left viewing angle, legendary green ivory leaf costume, flowing sage hair, whiteflower at anatomical right temple, left-held gold vine bow, right hip quiver, or brown/gold flower boots. Image2 is original same character idle for identity/garment geometry. Same soft nonpixel hand-painted miniature quality, no new feature. Leave generous clean transparent room around EVERY full body in each quadrant; no cut tips or feet. Remove disconnected stray speckles outside figure; pure empty alpha background. NO text/numbers/labels/guides/grid/shadows/floor/effects. All four full-body silhouettes must remain intact inside their own 2x2 cells, no mirroring or turning.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_v01.png",
+      "sha256": "97e43d9cc17aba221f5f13d41df5bf6a2c98bc629da53904f2b1197e3c698d85"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "3d8cf207d79ecb1b520a33d504d366a6f28285a7744732a8319f1382a31648d6",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    23,
+    9,
+    1422,
+    1086
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    23,
+    9,
+    1422,
+    1086
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      23,
+      9,
+      1422,
+      1086
+    ],
+    "8": [
+      324,
+      16,
+      1213,
+      1046
+    ],
+    "32": [
+      325,
+      16,
+      1212,
+      1045
+    ],
+    "128": [
+      325,
+      17,
+      1212,
+      1045
+    ]
+  },
+  "reason": "all four legs retain same-side near-forward stance; need real opposite contact and opposite narrow passing poses, not only technical head pass"
+}

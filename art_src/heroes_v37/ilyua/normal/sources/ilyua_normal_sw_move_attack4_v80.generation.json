@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_sw_move_attack4_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_move_attack4_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-2ee8df3b-2164-477b-a9a1-125743dd9729.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_sw_move_attack4_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise UPPER-BODY-ONLY edit of the FOUR-FRAME WALK sheet. Preserve original skulls, facial viewpoint, hood, torso, waist, costume and ALL FOUR leg poses EXACTLY. Do not redraw below waist. Reading order: contact, narrow passing under pelvis, opposite contact, opposite narrow passing. Keep same limb lengths and stable upright head/body, no crouch/rocking. SOUTHWEST front-left three quarter view throughout, looks and aims diagonally DOWN LEFT. Same ivory hood with gold vine trim, sage hair, blue eyes, green tunic, brown boots and ONE quiver. Change ONLY TWO arms, sleeves, hands and ONE plain wooden recurve bow with small golden leaf pendants. Anatomical LEFT hand holds bow center throughout; RIGHT hand nocks/draws/releases one string joining both tips. Remove former hanging arms/hands/sleeves, exactly two hands naturally attached to shoulders. Drawn arrow feathers at right fingers, arrowhead beyond grip toward down-left. Release/followthrough have NO arrow shaft/nock/feathers/head; no flying projectile or fixed diamond on grip. Bow continuous, no floating limb, second weapon or extra string. Preserve all four walking poses including right-column passing feet; no planted shooting. Exact2x2 equal cells, each COMPLETE figure with at least10% transparent margins all sides around full hood, hair, bow tips and boots, no clipping/overlap. Refined nonpixel cel-painted game sprite, true alpha transparency, no effects, shadows, floor, text, numbers, grid or extra figures. Attack stage4. Four phases reading order: raise bow higher; strong draw with elbow pulled back and upright body; open fingers release no arrow; gather high for final shot",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_walk_v90.png",
+      "sha256": "790a79e8bd9476be4a80d8d0eecc7f6cf38e708e12a39319a6b0d2a29c789500"
+    }
+  ],
+  "sha256": "a3f82893fc3d12664743d04673c2fcebef8cbdfcdc826664a4f354cf5608f371",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    3,
+    1430,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      3,
+      1430,
+      1086
+    ],
+    "8": [
+      190,
+      12,
+      1272,
+      1071
+    ],
+    "32": [
+      190,
+      12,
+      1271,
+      1071
+    ],
+    "128": [
+      191,
+      12,
+      1271,
+      1070
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

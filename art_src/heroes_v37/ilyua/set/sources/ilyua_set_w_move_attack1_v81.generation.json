@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_w_move_attack1_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_move_attack1_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-159c24c7-a3f5-4f60-b38e-f06231f3330a.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_w_move_attack1_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise local edit of supplied 2x2 sprite sheet: change ONLY TOP RIGHT frame right hand and arrow. In top right the right fingers must be CLOSED pinching the drawn bowstring at cheek level, with exactly ONE nocked straight arrow whose feather end is at those fingers and metal arrowhead points screen LEFT beyond bow grip. Keep shaft horizontal aimed left; fit full arrowhead inside cell with margin. Keep pulled V-shaped bowstring attached to right fingers and both bow tips. Preserve all other pixels/poses visually, especially all four heads, body sizes, alternating leg poses, costume, ornate flower bow and single quiver. Bottom-left open-hand release remains NO arrow and straight relaxed bowstring; bottom-right recovery has no nocked arrow. Exactly two connected arms/hands. True transparent RGBA, 2x2 cells, no text/effects/shadows.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_move_attack1_v80.png",
+      "sha256": "20b7b38a0c12c69926da27a1c5a4b2d710a20a7978d7b4e7f474ea8fb5e31fb2"
+    }
+  ],
+  "sha256": "fb04cca8efdfd41ff70a7bbd15b54b5c8f8caa1bd411e1bd21a4b96ed0688044",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    27,
+    0,
+    1254,
+    1242
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      27,
+      0,
+      1254,
+      1242
+    ],
+    "8": [
+      146,
+      9,
+      1253,
+      1239
+    ],
+    "32": [
+      146,
+      9,
+      1249,
+      1239
+    ],
+    "128": [
+      147,
+      10,
+      1248,
+      1238
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_w_adjust_ready_single_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "f230416a46b7f57adef8f2ef9262cbb0e8ffdd1bd616c9391f5f1d66c8fc3bd7",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-ca910cb0-bae3-464a-8046-55b207c5f5d8.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_draw_single_v02.png",
+  "prompt": "Side profile preparation, short partial draw, same body and bow, transparent.",
+  "review_reason": "Needs full sequence and registration review."
+}

@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_sw_attack4_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack4_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-5aa467dc-91af-4612-8d83-f50f66eecb2f.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair the four-frame 2x2 animation in image1. Preserve all four draw and release arm/bow positions. In EVERY cell use the EXACT SAME size and orientation of head, hair, face, ear and torso from image2; no perspective or scale variation. Same elf, flower-leaf outfit and green hair, planted feet. Bow and hands connected, nocked arrow only during draw. Entire figure and bow within each invisible quadrant with generous margins; transparent alpha outside. No labels, text, numbers, borders, effects, shadows or background. Nonpixel refined game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_attack4_v02.png",
+      "sha256": "7908ea61c254145b2e4d30b51bf6ed85cc38104bce0c07713edfa4d562bf3ba2"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "74c1dcfa541c486c6e4cfe9fec5206410b104c0ea644431fc5fc9a060772ba86",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    53,
+    0,
+    1460,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    1,
+    4,
+    0,
+    0
+  ],
+  "review_reason": "Head registration drift 19.50 percent exceeds 6 percent.",
+  "alpha_bounds_raw": [
+    53,
+    0,
+    1460,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      53,
+      0,
+      1460,
+      1024
+    ],
+    "8": [
+      237,
+      8,
+      1394,
+      1017
+    ],
+    "32": [
+      237,
+      9,
+      1394,
+      1016
+    ],
+    "128": [
+      238,
+      9,
+      1393,
+      1016
+    ]
+  }
+}

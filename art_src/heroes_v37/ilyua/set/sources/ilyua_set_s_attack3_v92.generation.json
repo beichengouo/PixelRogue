@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_s_attack3_v92",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack3_v92.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-299d5c7c-79b1-436f-bd51-473d087d4ac4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_s_attack3_v92.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit this FOUR-pose FRONT/SOUTH-facing bow animation into the third stationary shot. Keep ALL FOUR original heads/skulls, front-facing blue eyes, ears, hair crowns/white flower ornaments, costumes, torso length and every planted leg/boot pose exactly unchanged. Crucially keep the same bow orientation as source: the bow is strongly foreshortened and held almost HORIZONTALLY across the FRONT of the body, tips spanning screen-left/right. She aims straight TOWARD VIEWER / lower center of image, never toward screen right/left. Anatomical LEFT hand at front-center grips bow; RIGHT hand pulls string toward sternum/chin. Upper-left frame prepares, upper-right draws more firmly close to chest with closed fingers; lower-left right fingers open release near shoulder, lower-right free right hand recovers. Only the top TWO frames have one SHORT FORESHORTENED nocked arrow pointing straight down-image/toward viewer from center grip. Bottom TWO must have NO nocked arrow/shaft/tip/feathers, leaving intact floral wooden bow and relaxed string. Arrow feathers INSIDE the single hip quiver remain, those are NOT flying arrows. Do not rotate bow vertical or draw a long horizontal shaft pointing to screen side, do not turn torso or head. Exactly two attached arms/hands, erase prior arm when moving it, no duplicate old wrists/sleeves. Bare long sage hair and pointed ears, green leaf layered shortdress ivory goldvine drapes, floral boots, one screen-right brown quiver. Keep all four native head sizes and original upright anatomy unchanged. Four complete figures in equal2x2 cells with generous10% transparent margins, true RGBA alpha. No text, labels, grids, backdrop gradients, FX, shadows or floor. Only the different front-facing third-shot arm phases change; keep source identity, scale and forward aim.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack2_v80.png",
+      "sha256": "a7e781a14800dfb0a6dd5fb43e1b4b1b9d4e910330e3efe5cc81ffc8d6ab7343"
+    }
+  ],
+  "sha256": "a725fd04a5a5a850c8a40db13c516474ed400e72b294f650ef6d3f4c1ecbcd30",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    51,
+    33,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      51,
+      33,
+      1240,
+      1254
+    ],
+    "8": [
+      67,
+      72,
+      1229,
+      1244
+    ],
+    "32": [
+      68,
+      72,
+      1228,
+      1244
+    ],
+    "128": [
+      68,
+      73,
+      1227,
+      1243
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

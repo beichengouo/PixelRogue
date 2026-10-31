@@ -1,0 +1,89 @@
+{
+  "asset": "ilyua_set_s_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-325e3fe8-e6a2-4dab-8b25-b0abd45af887.png",
+  "built_in_imagegen": true,
+  "prompt": "Production single-frame game SPRITE SOURCE for PixelRogue. Use source reference 1 for exact compact body/face/skull geometry and mild 15-degree top-down game viewing elevation; this is the SAME small body construction as the currently running V36 Xixifu. Do not grow torso/legs or shrink head. Use reference 2 for the requested hero's costume and identity. Additional sprite reference, if supplied, fixes the same costume details across views. Soft nonpixel hand-painted miniature, clean dark colored outlines, restrained 2-3tone cel shading, broad hair/fabric masses, no microtexture or 3D realism.\nEXACTLY ONE full-body neutral stable ready/idle sprite on a SQUARE true transparent canvas, intended1024x1024. Crown and soles near12%/88% height, all extremities/hair/weapon centered within middle65%width with generous EMPTY TRANSPARENT margins. No character movement, no wind, no floating hair, no glowing effects. Stable neutral standing, small feet slightly apart, free hand relaxed. NO WORDS, NO LETTERS, NO NUMBERS, NO LABELS, NO GUIDELINES, NO DIVIDERS, NO BORDER, NO WATERMARK, NO SHADOW, NO FLOOR, NO BACKGROUND. Do not copy the three-view sheet's white background, labels, guide lines or its other figures. A real production sprite source must contain one intact isolated figure only.\nILYUA LEGENDARY: same adult elf/body as normal, pale skin, long sage pale-GREEN hair, clear LAKE-BLUE eyes. NO HOOD, revealed natural pointed ears, flowing green rear hair. Restrained white flower/gold leaf hair ornament, WHITE FLOWER with GOLD LEAF collar pendant. Modest leaf-green/ivory hunting tunic, layered leaf-shaped skirt panels and split ivory cape tails with gold vine edges, brown belt/small quiver, compact mid-calf brown/gold leather boots with usable flat soles, forearm guards. One short gold-vine wooden BOW in anatomical LEFT hand, RIGHT drawing hand relaxed empty. No staff, no black hair, no elongated body or heels.\nDirection SOUTH: STRICT FRONT facing viewer/downscreen; BOTH eyes visible symmetrically, shoulders and hips square, toes front. RIGHT-hand staff, if present, on VIEWER-LEFT; LEFT-hand bow, if present, on VIEWER-RIGHT. Do not turn head sideways.\nReference1 is her NORMAL underlying face/body: costume changes, body does not. REMOVE the normal white hood for legendary form, show sage-green crown hair and natural elf ears. Long hair flows outside new leaf costume without moving. LEFT bow on VIEWER-RIGHT, RIGHT empty hand on VIEWER-LEFT. All hair, flower ornament, fingers, boots and bow tips inside margins.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/ilyua_set_turnaround_v02.png",
+      "sha256": "de80e0aea08910cdbcf08044f0c4d3e6ec47c24071b963960fbb003d4c1cad37"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_s_idle.png",
+      "sha256": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42"
+    }
+  ],
+  "sha256": "5f0c504fe1a9b469cda9bb812b1a5e4bf59ff3330636c875620c8424c01bd98f",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    39,
+    1238,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    39,
+    1238,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      39,
+      1238,
+      1254
+    ],
+    "8": [
+      267,
+      165,
+      1019,
+      1178
+    ],
+    "32": [
+      267,
+      166,
+      1019,
+      1178
+    ],
+    "128": [
+      267,
+      166,
+      1018,
+      1177
+    ]
+  },
+  "reason": "hair flower on wrong temple relative to turnaround; superseded by v02"
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_sw_attack3_v04",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_attack3_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-1f952481-69f1-4a94-9fe0-e0a69881ec74.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair image1 animation frames while preserving image2 character design, view and proportions. Bow aims toward lower-left; one bow in left hand, right draws a single string and releases. No projectile floating outside bow: arrow is visible only while nocked in first two frames, and disappears on release. Remove flying arrow and all motion trails. Four distinct draw, aim, release, recovery frames, same head and torso size, planted feet. All complete bodies and bows entirely within each equal 2x2 cell with generous transparent margins and center gutters. Pure alpha outside figure, no glow, background, ground, labels, numbers, borders, marks, shadows or effects. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack3_v03.png",
+      "sha256": "225fc4317a65b18e235c167c0356a92745f0fdd44f7dafa6efbaa2c962610a59"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_idle_v01.png",
+      "sha256": "e95f8b569e0392f260a708a56519c69ade8d39a43f05c45ed3847017d038ee90"
+    }
+  ],
+  "sha256": "53979e0e33e1b8cee869f6a3db0d04bb8fdcfeed7ca42107a6366b63a9d1105d",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    93,
+    0,
+    1518,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    2,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    93,
+    0,
+    1518,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      93,
+      0,
+      1518,
+      1024
+    ],
+    "8": [
+      235,
+      8,
+      1339,
+      1014
+    ],
+    "32": [
+      236,
+      8,
+      1338,
+      1014
+    ],
+    "128": [
+      236,
+      9,
+      1338,
+      1014
+    ]
+  }
+}

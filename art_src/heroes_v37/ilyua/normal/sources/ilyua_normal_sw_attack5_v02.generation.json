@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_normal_sw_attack5_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_attack5_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-0b62a63f-e71e-4318-beb3-b20e8168b49d.png",
+  "built_in_imagegen": true,
+  "prompt": "Image1 is the EXACT correct LEFT-AIMED archery target. Preserve same hood/head, torso, camera, left-pointing bow, compact scale, left hand forward gripping bow on SCREEN LEFT, right hand drawing string on SCREEN RIGHT near face. NEVER aim right. Edit the FOUR arm phases to the actions below, with four poses in reading order. Delete any original old hands/bow so each has two arms and one bow. Keep transparent unlabeled 2x2 source, no background, text or numbers; all sprites complete with large gutters. Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, SOUTHWEST front-left facing down-left camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage5 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 inherits uprightaim, leftarm steady, rightfingers begin a DEEP deliberate draw; 2 fullestdraw, bowlimbs bend/string V deep, rightelbow pulled back at shoulderheight with fingers cheekanchor, slight knee flex but bodyheight unchanged; 3 powerful SINGLEarrow release, rightfingers opens back beyond cheek and leftbowarm remains extended, stringstraight; 4 full natural followthrough then lowers bow to lowready and right hand to chest, connects stage1. No multiplearrows, no magicburst.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack2_v01.png",
+      "sha256": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9"
+    }
+  ],
+  "sha256": "9d38a29e919702476c841fd10cd61ff6f5d66407d7fd010a2397deffe5a54c93",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    21,
+    10,
+    1500,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    2,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    21,
+    10,
+    1500,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      21,
+      10,
+      1500,
+      1024
+    ],
+    "8": [
+      259,
+      14,
+      1312,
+      1016
+    ],
+    "32": [
+      260,
+      14,
+      1312,
+      1016
+    ],
+    "128": [
+      260,
+      14,
+      1312,
+      1016
+    ]
+  }
+}

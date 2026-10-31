@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_s_attack2_v06",
+  "kind": "source",
+  "status": "pending_sequence_validation",
+  "runtime_integrated": false,
+  "usage": "unpackaged_candidate",
+  "sha256": "a9f1608e0f87a7ecbefcc5370e12461bb1569f808bab070f75fd227875808345",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-a9bc5561-b227-4482-ac2c-8897b37c6cef.png",
+  "references": [
+    "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_idle_v01.png"
+  ],
+  "review_reason": "first three frames retained, frame4 head drift 8.7%; not complete"
+}

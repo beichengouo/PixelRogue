@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_attack2_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack2_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-aa4cdd4e-9526-4daa-93f6-2cea612834f4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_attack2_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit only upper arms/hands/bow action of supplied FOUR FRAME sheet. Preserve its FOUR HEADS, facial size, skull outline, camera, hairstyle, torso proportions and all planted feet EXACTLY. Do not redraw heads or change body size. Second attack: raise bow from low hold to shoulder-height short draw. Top-left shoulder-height preparation with nocked arrow, top-right short draw with right fingers closed on string, bottom-left open release without arrow and straight string, bottom-right slightly raised bow recovery without arrow. Keep the same legendary clothes, ornate flower bow, ONE quiver and two connected arms/hands in each cell. One nocked arrow only in closed-hand drawing poses, aimed toward original facing; remove entire arrow after release. 2x2 equal cells, complete fullbody with12percent transparent margins, true transparent RGBA. No text/effects/shadow/background. The four heads must have precisely equal skull scale with no bob/tilt.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_attack1_v01.png",
+      "sha256": "6114206b73e03da4d1b42439fa14c5ce57234f535ebb730004a8226dbed4fe99"
+    }
+  ],
+  "sha256": "364621e4b301aef9528709cb83d6d4140788b32cbc03571921c2f9d17e30880d",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1376,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1376,
+      1024
+    ],
+    "8": [
+      254,
+      17,
+      1372,
+      1016
+    ],
+    "32": [
+      255,
+      18,
+      1372,
+      1016
+    ],
+    "128": [
+      255,
+      18,
+      1371,
+      1015
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

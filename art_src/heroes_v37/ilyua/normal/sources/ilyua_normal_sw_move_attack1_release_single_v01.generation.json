@@ -1,0 +1,16 @@
+{
+  "asset": "ilyua_normal_sw_move_attack1_release_single_v01",
+  "kind": "single_frame_source",
+  "status": "needs_full_sequence_review",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "61d7335ab407a34ebd5cd1bbd1fd99d45eed3a16642713b0a51082d8b0329a85",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-8d41053d-c24e-46a4-b7fc-6741a4584fe7.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_sw_walk_contact_single_v01.png",
+      "sha256": "333be195b3dc1370795450dfc85c255a51db6bd52f78bcdde379b975bc9d64f6"
+    }
+  ],
+  "notes": "Contact arrow points left, release has arrow removed; bow changes side at release and needs correction."
+}

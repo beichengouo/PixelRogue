@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_sw_walk_v96",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_v96.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-e1210c77-483c-4a2f-9036-53d71716e23f.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_walk_v96.png",
+  "built_in_imagegen": true,
+  "prompt": "Local head posture correction ONLY. Preserve all four walking body/waist/belt/leg poses, hands, bow, clothes, feet and RGBA layout from image1 EXACTLY. Change only all four heads to the exact UPRIGHT same skull/face orientation and size of image2 standing reference: no downward or sideways tilt, no bob, same front-threequarter facing lower-left. Head remains attached naturally at SAME neck/shoulder landmark; maintain identical skull size/angle in every frame. Preserve actual opposite contact in bottom-left and narrow passing in right column. Keep two hands, one bow and one quiver, no arrows or attack gesture. Four fullbody sprites, 2x2 equal cells with empty margins, true transparent background. No text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_v95.png",
+      "sha256": "84c34924bfce7860d9dee3af506eaf310faedb076a7afd17508eb6d72533d3b8"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "20c6535d51735fb10021a5099539a119cc58a05ca912d66d42050c9ad3cd4c3f",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1446,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      21,
+      1446,
+      1086
+    ],
+    "8": [
+      245,
+      27,
+      1318,
+      1066
+    ],
+    "32": [
+      246,
+      27,
+      1317,
+      1066
+    ],
+    "128": [
+      247,
+      28,
+      1317,
+      1065
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

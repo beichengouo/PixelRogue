@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_nw_attack2_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_nw_attack2_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-8ef4da10-0fab-4c3f-98dd-9235b6de3b8b.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair four-frame animation sheet in image1, retaining image2 exact character appearance and left-back facing. Maintain identical head and torso size and angle in every pose, no head drift. Preserve four distinct bow draw and release phases, string and hand anatomy. Entire head, hair, full bow tip, dress and boots must be inside each equal 2x2 cell with very generous transparent margins on every edge and between cells. One nocked arrow only during draw, no projectile after release. No text, numbers, borders, background, glow, shadows or effects. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_nw_attack2_v01.png",
+      "sha256": "61f3bf3f5e91bc7e9727df04d59477e14d4df2bf98e8d4acf2950bbcfbbb2003"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_nw_idle_v01.png",
+      "sha256": "fa221fb6e491b7bb9255418cb091ad0de65c32bcecbbb8bbdbee447008fd2264"
+    }
+  ],
+  "sha256": "ed1d045bc2672aed1870ef7e9f50d475042e7fed5ca7bf6191eac89868459b71",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    39,
+    23,
+    1222,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    39,
+    23,
+    1222,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      39,
+      23,
+      1222,
+      1254
+    ],
+    "8": [
+      161,
+      27,
+      1219,
+      1211
+    ],
+    "32": [
+      162,
+      28,
+      1219,
+      1211
+    ],
+    "128": [
+      162,
+      28,
+      1219,
+      1210
+    ]
+  }
+}

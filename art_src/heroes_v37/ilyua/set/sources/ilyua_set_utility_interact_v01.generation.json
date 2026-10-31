@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_utility_interact_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_interact_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-c83790d0-cc89-4133-9e29-152355681e44.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe edit of FOUR animation SOURCE frames, interact. IMAGE1 PRIMARY edit target: preserve its4 exact DISTINCT consecutive body/arm/leg poses, skull scale, shortlimb anatomy, face identity, WEST profile camera and2x2 reading order. IMAGE2 ONLY SAME CHARACTER LEGENDARY WARDROBE/PROP reference; do not copy its idlepose. Replace clothes/hair/prop only with image2. Exactly TWO arms/TWO hands perfigure, one complete prop, never retain old waist idlehand or original weaponshaft. All4 fullbody/hair/prop/toes completelyinside owncell, enough transparentroom all sides; no cropping. Preserve same body dimensions evenbowing/lyingdown, don't shrink fallposes. Soft refined nonpixel miniature celpainted finish. TRUE TRANSPARENT RGBA background; NO numbers/text/labels/grid/marks/borders/shadows/floor/glow/effects/background/extra creatures. Same sagehaired blueeyed elf. Change normal ivoryhood to legendary NOHOOD naturalhair with whiteflower/goldleaf ornament anatomicalRIGHT temple. Ivory/green layered LEAF hunting outfit, whiteflower/goldleaf collarpendant, split ivory goldvine cape, short brown flowerboots, goldvinebow same LEFT hand, RIGHT freehand. QuiverRIGHT hip. Do not swap bowhands or addbow. No cloth on head.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_utility_interact_v02.png",
+      "sha256": "2a34ffeb4ebdfff99ad70f8bb2c97b599dda8b3cf40878593c38f5c913936e67"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "99630106ab0c4fdba165631b6e11a2c08de29514fd3b175b6855544457515b27",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "interact",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1236,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1236,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1236,
+      1254
+    ],
+    "8": [
+      225,
+      61,
+      1164,
+      1224
+    ],
+    "32": [
+      225,
+      61,
+      1164,
+      1224
+    ],
+    "128": [
+      226,
+      61,
+      1163,
+      1223
+    ]
+  },
+  "reason": "third waist hand frame2; superseded by v02"
+}

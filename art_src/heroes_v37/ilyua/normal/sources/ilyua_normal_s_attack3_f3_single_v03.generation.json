@@ -1,0 +1,16 @@
+{
+  "asset": "ilyua_normal_s_attack3_f3_single_v03",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "5c17eb772c8ab70c148a86b8f06b3d19ebb98a2855b9635c9b3cf51d5ff2a5e9",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-6c965d48-8fd6-4459-82a0-08322801e40b.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack3_f3_single_v02.png",
+      "sha256": "4d127001a4b0a009af1293f11bf916113abeae6e0d7deb0da582450739b33bed"
+    }
+  ],
+  "notes": "Released arrow and gold diamond removed."
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_sw_move_attack3_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_move_attack3_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-3c703ebd-9b5b-4c6f-8718-185d92bbfaa3.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_sw_move_attack3_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise UPPER-BODY-ONLY edit of the FOUR-FRAME WALK sheet. Preserve original skulls, facial viewpoint, hood, torso, waist, costume and ALL FOUR leg poses EXACTLY. Do not redraw below waist. Reading order: contact, narrow passing under pelvis, opposite contact, opposite narrow passing. Keep same limb lengths and stable upright head/body, no crouch/rocking. SOUTHWEST front-left three quarter view throughout, looks and aims diagonally DOWN LEFT. Same ivory hood with gold vine trim, sage hair, blue eyes, green tunic, brown boots and ONE quiver. Change ONLY TWO arms, sleeves, hands and ONE plain wooden recurve bow with small golden leaf pendants. Anatomical LEFT hand holds bow center throughout; RIGHT hand nocks/draws/releases one string joining both tips. Remove former hanging arms/hands/sleeves, exactly two hands naturally attached to shoulders. Drawn arrow feathers at right fingers, arrowhead beyond grip toward down-left. Release/followthrough have NO arrow shaft/nock/feathers/head; no flying projectile or fixed diamond on grip. Bow continuous, no floating limb, second weapon or extra string. Preserve all four walking poses including right-column passing feet; no planted shooting. Exact2x2 equal cells, each COMPLETE figure with at least10% transparent margins all sides around full hood, hair, bow tips and boots, no clipping/overlap. Refined nonpixel cel-painted game sprite, true alpha transparency, no effects, shadows, floor, text, numbers, grid or extra figures. Attack stage3. Four phases reading order: raise diagonal bow a little; controlled full draw; open fingers release with no arrow; maintain diagonal ready\nKeep the supplied sheet's raised bow and stable body. FIRST frame must already hold bow RAISED shoulder-height toward down-left, with right fingers at string ready to draw. Never lower to nock again. Frame2 draw toward cheek with wrist angled upward for this third shot. Frame3 release NO arrow, right fingers open. Frame4 keep bow RAISED with right hand returning toward string for fourth shot. Preserve original four alternating legs exactly, including centered passing poses and opposite leading leg. Use the existing sheet as edit target: no copying idle body or standing legs.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_move_attack2_v80.png",
+      "sha256": "ac23d7ab9d55dd39811edecb8476802d59fc9a0d6eb64e332f542ef2cd937c1c"
+    }
+  ],
+  "sha256": "76b0f4fe5c4380086ebf553bc61c7884c198e64b66ad96c4f0d5a7c351c66466",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    13,
+    1448,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      13,
+      1448,
+      1086
+    ],
+    "8": [
+      187,
+      15,
+      1288,
+      1070
+    ],
+    "32": [
+      187,
+      16,
+      1288,
+      1070
+    ],
+    "128": [
+      188,
+      16,
+      1287,
+      1069
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

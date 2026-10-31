@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_walk_v95",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_v95.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-22c74bae-c6c2-4b15-90e9-1cb6ca3b16f9.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_walk_v95.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY both arms and bow pose in supplied four-frame sheet into peaceful WALK. Preserve all four original heads, face angles, torso/belt, clothes and EXACTLY all four LEG poses. Top-left first leg forward, top-right narrow passing, bottom-left opposite leg RIGHT boot clearly forward lower-right with other knee bent back, bottom-right opposite narrow passing. Do not change head or anything below waist. Remove all nocked arrows. Left hand always holds same ornate bow LOW by same hip as original source, right empty hand hangs relaxed swinging subtly opposite leg. No old attack arm remains, precisely two connected arms and hands, one bow/quiver. Four complete figures in 2x2 equal cells with12percent margins. True transparent RGBA, no text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack3_v95.png",
+      "sha256": "5787b13058edb55bacabb946533d4a837572aa1057c73d166e9a90b3889d8323"
+    }
+  ],
+  "sha256": "84c34924bfce7860d9dee3af506eaf310faedb076a7afd17508eb6d72533d3b8",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    30,
+    1428,
+    1070
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      30,
+      1428,
+      1070
+    ],
+    "8": [
+      248,
+      34,
+      1315,
+      1064
+    ],
+    "32": [
+      248,
+      35,
+      1314,
+      1064
+    ],
+    "128": [
+      249,
+      36,
+      1313,
+      1063
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

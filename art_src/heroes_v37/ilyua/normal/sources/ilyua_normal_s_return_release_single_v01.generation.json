@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_s_return_release_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_sequence_validation",
+  "runtime_integrated": false,
+  "usage": "unpackaged_candidate",
+  "sha256": "0668cdf68be2c1a933aa2aa4f51341d0ed4f01059dcd6597be723e1be32c81aa",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-c49e2327-2729-4493-934a-5579eb6a41a2.png",
+  "references": [
+    "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_idle_v01.png"
+  ],
+  "review_reason": "requires consistent scaling with 2x2 source and full body review"
+}

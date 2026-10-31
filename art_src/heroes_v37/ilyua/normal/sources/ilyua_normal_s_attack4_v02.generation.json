@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_s_attack4_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack4_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-971cb413-a853-412f-9d38-4ba5ee7ece68.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve clean four-frame gameSOURCE. Image1 exact CORRECT SOUTH shooting geometry and same Ilyua identity, not an image to repeat4times. Image2 exact idle proportions/costume. Four DISTINCT consecutive stage4 attack frames reading order2x2 true transparent. Character shoots SOUTH/DOWNscreen DIRECTLY TOWARD VIEWER; preserve image1 HORIZONTAL bow construction acrossscreen, NOT verticalbow pointing right. Leftbowgrip projects towardcamera at center/lowerchest; rightstringhand behind at sternum/chin, hands centered oneaboveanother in depth; arrow ifnocked veryforeshortened points DOWNscreen at viewer, NEVER long right/left horizontalarrow. Facialview stays FRONT both eyes/levelshoulders, stable upright torso. Same compact skull size/torso/shortleg lengths all4 and idle, don'tgrowdeepdraw. Feetplanted. Exactly2arms/2hands/onebow, no ghosthand. Same sagehair/blueeyes ivorygoldvineHOODUP sageinnerrobe, brownbelt/quiverRIGHT hip/shortboots, smallcurvedwoodbow anatomicalLEFThand always and RIGHTstringhand. Single bowfeathertassel asidle, notextraweapons. Soft refined nonpixel handpainted miniature celshading. All4 fullbody/hood/bowtips/feet fit their owncell with generous10%emptytransparent room, no tips cut or crosscells. NO numbers/text/labels/grid/borders/shadows/floor/glow/effects/particles/background/creatures/projectile arrows flying. Four stages within this clip: 1 bow rolls horizontalacrossscreen, rightfingers travel up string; 2 FULLdraw horizontalbowgrip at chest and rightfingers anchoredchin/stringdeepV, aimtowardviewer downscreen; 3 fullrelease rightfingers recoil besidejaw/stringstraight, lefthandsteadieshorizontalbow; 4 keeps horizontalbow forward and starts nextdeepdraw.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\ilyua_normal_s_aim_reference_v01.png",
+      "sha256": "6d9c0936ca1f40b4b8faa387bb4629121bb263535f18d9029a05bb0cf8e6b6dc"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "f057e210e64b4455739d4663903a7f1422c85b1034fb73495fdd85e170931e75",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1220,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    2,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    17,
+    1220,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      17,
+      1220,
+      1254
+    ],
+    "8": [
+      87,
+      21,
+      1186,
+      1246
+    ],
+    "32": [
+      87,
+      22,
+      1186,
+      1246
+    ],
+    "128": [
+      88,
+      23,
+      1185,
+      1245
+    ]
+  }
+}

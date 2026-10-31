@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_s_move_attack1_v04",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack1_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-a595f880-2968-4865-abfe-929a23677319.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise sprite sheet edit. Keep all four characters, their heads, outfits, bow and arm gestures exactly as shown. ONLY change the legs on TOP RIGHT and BOTTOM RIGHT: depict the swinging foot crossing DIRECTLY BELOW the body pelvis next to the planted supporting boot, a natural walking PASSING position midway between the opposite foot contacts shown in top-left and bottom-left. The swinging foot should be lifted near center, not repeated behind or forward. Preserve opposite leading legs in top-left and bottom-left unchanged. Four anatomically clear distinct gait stages. Keep full four subjects, bow tips and feet contained in equal separate 2x2 cells with wide transparent gaps. No text, labels, numbers, background, glow or shadows. Nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_move_attack1_v03.png",
+      "sha256": "cae98b62d550d23c8dfd0ef0bb991ee4b3d01658b4b5aaf71226d32af6209dc1"
+    }
+  ],
+  "sha256": "3e54efb713efcf205d9d89bbe92357c267eea0f1a4237aeb69736cf154535992",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1200,
+    1222
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "review_reason": "Feet alternate but no visible middle passing phases; repeated contacts.",
+  "alpha_bounds_raw": [
+    0,
+    21,
+    1200,
+    1222
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      21,
+      1200,
+      1222
+    ],
+    "8": [
+      109,
+      36,
+      1157,
+      1219
+    ],
+    "32": [
+      109,
+      38,
+      1156,
+      1219
+    ],
+    "128": [
+      110,
+      38,
+      1156,
+      1218
+    ]
+  }
+}

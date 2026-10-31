@@ -1,0 +1,22 @@
+{
+  "asset": "ilyua_normal_w_adjust_draw_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "0be8869945cdb18930a7d0f8ed3677841f03fed217fdb1d141558d4a15614c5e",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-25dae4ea-0a50-477e-8131-03bdbeb6e34e.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_attack3_v04.png",
+      "sha256": "9d77effe755aa3591ca1963b37a1c2dd9cc509ac75daf72cad85e31ea2e9ef44"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    }
+  ],
+  "prompt": "Side third shot draw, match idle body, bow and nocked arrow facing left, transparent.",
+  "review_reason": "Needs adjacent frames and idle body registration."
+}

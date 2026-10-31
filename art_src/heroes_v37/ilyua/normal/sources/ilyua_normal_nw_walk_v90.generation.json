@@ -1,0 +1,105 @@
+{
+  "asset": "ilyua_normal_nw_walk_v90",
+  "kind": "source",
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "needs_foot_baseline_review",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_contact_single_v02.png",
+      "sha256": "12b2c3acd56c00f56f6bdcc0e68aabc9056eed1660daa6b30b78c4a26e62fabc"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_passing_single_v02.png",
+      "sha256": "de19a972e49d283787fd2180a082c9e2f612c5c82f69948146281e0422693ed9"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_opposite_single_v02.png",
+      "sha256": "661f8c47c18888c87e94fe96459da011def2bfdea6a46ab29ddea308abd02e7a"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_return_single_v02.png",
+      "sha256": "3da524fd192b2afec5b0898065deb14b76d41ec4cd866698ce6ad6d495cd5217"
+    }
+  ],
+  "sha256": "948083d1c3f6ab5c7c26dbca05327a1529989ffc383a0e6482e77d0903c2a2a6",
+  "registration": [
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.80913837139425,
+        -24.246309720552908
+      ],
+      "head_inliers": 87,
+      "head_registration_scale": 1.0013824422773008,
+      "head_angle": -0.08384055590592415,
+      "foot_deviation": 2,
+      "torso_residual": [
+        -0.025254469364881516,
+        -0.07377742230892181
+      ]
+    },
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.82144869290869,
+        -24.156052809495215
+      ],
+      "head_inliers": 75,
+      "head_registration_scale": 0.9986612576555597,
+      "head_angle": -0.15127579179713344,
+      "foot_deviation": 3,
+      "torso_residual": [
+        -0.020648663863539696,
+        -0.11127178370952606
+      ]
+    },
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.81423715444714,
+        -24.13647460937502
+      ],
+      "head_inliers": 89,
+      "head_registration_scale": 0.9993285692946877,
+      "head_angle": 0.013793862657002541,
+      "foot_deviation": 5,
+      "torso_residual": [
+        -0.02670522779226303,
+        -0.14870981872081757
+      ]
+    },
+    {
+      "scale": 0.23108825591014634,
+      "offset": [
+        -71.81767390324522,
+        -24.124136117788485
+      ],
+      "head_inliers": 81,
+      "head_registration_scale": 0.9988306480417781,
+      "head_angle": -0.06468183070990748,
+      "foot_deviation": -2,
+      "torso_residual": [
+        -0.0216064453125,
+        -0.11684945970773697
+      ]
+    }
+  ],
+  "notes": "Foot deviation +5 on third frame exceeds 3px conservative gait goal; technical inspection and art review required, not admitted."
+}

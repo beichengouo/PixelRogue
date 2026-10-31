@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_attack4_v91",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack4_v91.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-459d5b73-6c09-4540-a06a-c54e1268b411.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_attack4_v91.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Game sprite FOUR-frame stationary fourth bow shot, FRONT-LEFT diagonal direction. Edit only arms, bow angle and firing gesture of reference's four figures. Preserve all FOUR original head sizes/skull silhouettes/eyes/ears/hair crowns, unchanged camera view, exact torso and limb lengths, costume and each original planted leg/boot position. Bare sage-gray hair, white flower golden leaves ornament, leaf-layer green short dress, ivory drapes gold vine borders, brown floral boots, one screen-right quiver. Four frames2x2: upper-left prepare aimed arrow forward-left slightly higher than reference; upper-right draw slightly more taut with right fingers closed at cheek; lower-left decisive open right fingers release extended outward, NO arrow after release; lower-right recover free right hand toward shoulder, NO arrow. Anatomical LEFT hand holds exactly one floral gold-leaf wooden bow, RIGHT draws/releases. Exactly two attached arms/hands, no old ghost limb. Top two frames one nocked arrow points forward-left at target, lower two frames NO arrow, no shafts, nock, feather, or arrowhead beside bow grip; one intact continuous wooden bow and its string. Head and torso must NOT enlarge/shrink or twist/crouch during release. This is a stationary shot: ALL original boots planted, NO new walking. Keep four original heads at exact same native size as each counterpart. Four complete figures inside equal2x2 cells, at least10% transparent margin around every bow tip/hair/boot. Genuine RGBA transparency, no opaque backdrop, gradients, glows, text, labels, floor, shadows, particles. Refined nonpixel cel-painted sprite, faithful to supplied character.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack3_v01.png",
+      "sha256": "3f5732c3198c425133939bb174437eba7f8fa6b031602b3608f5da52f95509b0"
+    }
+  ],
+  "sha256": "5a933ca7ec582b9cde35173c986ee95cdfa7f63ee8c78c35e95956cb574b9ff0",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    17,
+    0,
+    1522,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      17,
+      0,
+      1522,
+      1024
+    ],
+    "8": [
+      195,
+      8,
+      1418,
+      1018
+    ],
+    "32": [
+      195,
+      8,
+      1418,
+      1018
+    ],
+    "128": [
+      196,
+      9,
+      1417,
+      1017
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

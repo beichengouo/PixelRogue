@@ -1,0 +1,50 @@
+{
+  "asset": "ilyua_normal_w_attack3_v90",
+  "kind": "source",
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates, no scaling or modification.",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_ready_single_v02.png",
+      "sha256": "f230416a46b7f57adef8f2ef9262cbb0e8ffdd1bd616c9391f5f1d66c8fc3bd7",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_adjust_ready_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_draw_single_v02.png",
+      "sha256": "06c0a68be62ff123e0cdc3ca19bd34dfeeae6a0c4ae7d9c3a08608a5200a253d",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_adjust_draw_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_release_single_v02.png",
+      "sha256": "6d9635af9de862fb6a65b2a3a0b999b51f740ce234b29baa79cdb933a058659a",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_adjust_release_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_recovery_single_v02.png",
+      "sha256": "ba851ee5e9b9f8c53a3c5da40766ebd151b5393d5f8b51cffa584790931d0f6c",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_adjust_recovery_single_v02.png"
+    }
+  ],
+  "sha256": "12d4ca42ab894e0127c2a56c50a3087b880d07589507ef6ea6010af15030a1b6",
+  "evidence": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_attack3_adjust_pack_v02.generation.json",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

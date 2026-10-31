@@ -1,0 +1,13 @@
+{
+  "kind": "single_frame_source",
+  "status": "pending_registration_and_packaging",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_opposite_single_v01.png",
+  "runtime_integrated": false,
+  "prompt": "Remove stray skin under skirt from opposite-step source; preserve two legs, feet, costume, pose and style.",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-08e9f1be-c6e6-4e65-aef8-2d748ceb94cf.png",
+  "asset": "ilyua_normal_sw_walk_opposite_single_v02",
+  "usage": "unpackaged_candidate",
+  "sha256": "85d8c72116061561a03336a43a005141187a4e3eaca8459dc46970caab3359fa",
+  "review_reason": "Two hands and two legs visually present; needs registration against idle and adjacent steps.",
+  "frame_count": 1
+}

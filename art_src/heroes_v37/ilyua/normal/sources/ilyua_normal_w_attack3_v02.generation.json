@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_w_attack3_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_attack3_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-2829c62f-19db-4b51-ae05-305bc0444195.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair the four sequential left-profile archery poses in image1 using image2 as identity and proportions reference. Keep head, hood, body size and angle stable, feet planted; preserve each distinct bow draw and release position with anatomically connected arms and string. Nocked arrow only while drawing, no flying projectile after release. Four whole figures and full bow, within equal 2x2 cells with wide transparent margins and empty center gutters. No labels, text, numbers, borders, shadow, glow, marks or background. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_attack3_v01.png",
+      "sha256": "c682e5636be8628d3744ef2d44227af74eb9824583e0ead6c57b50a1ebe847f0"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    }
+  ],
+  "sha256": "bd9f450814b9f85814cfaf01593d3e3a6b6fcbe6bb74a4a5023b10064e8b3271",
+  "dimensions": [
+    1296,
+    1213
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    57,
+    9,
+    1282,
+    1199
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "review_reason": "10.74 percent head drift exceeds 6 percent limit.",
+  "alpha_bounds_raw": [
+    57,
+    9,
+    1282,
+    1199
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      57,
+      9,
+      1282,
+      1199
+    ],
+    "8": [
+      125,
+      16,
+      1268,
+      1196
+    ],
+    "32": [
+      125,
+      16,
+      1267,
+      1196
+    ],
+    "128": [
+      126,
+      17,
+      1267,
+      1196
+    ]
+  }
+}

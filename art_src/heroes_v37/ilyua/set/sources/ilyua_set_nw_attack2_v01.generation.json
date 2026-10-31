@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_nw_attack2_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_nw_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-29cded87-6526-4c90-8e82-a1d679cbab38.png",
+  "built_in_imagegen": true,
+  "prompt": "Wardrobe-only edit of image1 four-frame archery animation. Image2 specifies the SAME elf and her green-white gold-leaf legendary outfit, exposed pointed ears, flower and leaf collar, green layered leaf dress, brown boots, ornate leaf-and-flower bow. Preserve image1 camera angle, body and head proportions, foot positions and four different bow draw/release gestures exactly. Replace hood with hairstyle in image2; bow remains physically held in left hand, right hand draws string. Single arrow only while nocked, none flying. Full figures and bows in separate equal 2x2 cells with ample transparent margins. No text, numbers, frame lines, shadows, background or magic effects. Transparent, refined nonpixel game sprites. Preserve the exact three-quarter rear left facing of image1. Long hair stays behind head without covering bow string or arms.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_attack2_v01.png",
+      "sha256": "40fe2cc1d1268daae6102ab4a79b2fa4a652b4db22dcd47ab3fcbfcc13fdfc23"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_nw_idle_v01.png",
+      "sha256": "fa221fb6e491b7bb9255418cb091ad0de65c32bcecbbb8bbdbee447008fd2264"
+    }
+  ],
+  "sha256": "61f3bf3f5e91bc7e9727df04d59477e14d4df2bf98e8d4acf2950bbcfbbb2003",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    18,
+    1244,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Head-size drift 6.48% exceeds 6% threshold.",
+  "alpha_bounds_raw": [
+    0,
+    18,
+    1244,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      18,
+      1244,
+      1254
+    ],
+    "8": [
+      143,
+      20,
+      1236,
+      1236
+    ],
+    "32": [
+      143,
+      21,
+      1236,
+      1236
+    ],
+    "128": [
+      144,
+      22,
+      1235,
+      1235
+    ]
+  }
+}

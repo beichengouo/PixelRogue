@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_n_attack1_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_attack1_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-fd1f764c-a391-446e-99ea-894d1b87433f.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_attack1_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Animate the exact character from the supplied BACK VIEW idle image in four small archery action poses, 2x2 sprite sheet. Strictly NORTH facing AWAY from viewer throughout. Preserve the BACK of the dress: long hair covers shoulders and upper back as in image, no front collar, no chest, no face or bangs. Four phases: upper-left left arm brings bow forward away from camera and right hand begins reaching toward bowstring, upper-right right elbow draws backward toward camera while bow is held AHEAD on far side of body, bottom-left right elbow relaxes outward after release, bottom-right right hand returns toward quiver to prepare next arrow. Anatomical left hand holds bow at screen LEFT in all four cells. Bow and arrow always aim NORTH, away from camera, never sideways across back. Much of bow and hands are naturally OCCLUDED by hair/torso in first two poses: do not invent a visible arrow or string stretching horizontally across her BACK. Show only parts actually visible around sides. Exactly two connected arms/hands, one bow and one quiver on screen-right hip. Keep exact same back hairstyle, skull size, clothes, proportions, scale, stationary planted feet, and short limbs across all four poses. Fullbody complete, substantial transparent margins in every equal cell. Nonpixel hand painted miniature anime art. Transparent RGBA. No text, labels, effects, shadows or landscape.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_idle_v02.png",
+      "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8"
+    }
+  ],
+  "sha256": "3865e63b4b8d2982c36c97f7087229362dad19b5c13a9ca2372571639a5b6cb9",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    5,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      5,
+      1240,
+      1254
+    ],
+    "8": [
+      187,
+      44,
+      1126,
+      1212
+    ],
+    "32": [
+      188,
+      44,
+      1126,
+      1212
+    ],
+    "128": [
+      188,
+      45,
+      1125,
+      1212
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_sw_attack2_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack2_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-c48ac70c-1bd5-40c3-9e5e-05b6441b009e.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_attack2_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite outfit variant. Image1 is the EDIT TARGET and defines the EXACT four consecutive poses, skeletal proportions, skull size, camera direction, foot positions, bow hand roles and frame order. Image2 is legendary outfit and weapon reference ONLY; do not copy its stationary pose. Redraw all four original poses wearing image2 outfit: exposed long sage-green hair, pointed elf ears, no hood, white flowers and gold leaves at hair and collar, green leaf-panel tunic dress, ivory side drapes with gold vine border, brown belt and exactly ONE quiver on the same hip and screen side as image2, never two quivers, brown gold leaf/flower boots, ornate golden wood recurved bow with white flowers and leaves. The same elf face, blue eyes, short limbs and body proportions across all four frames, matching the body from image1. Bow always held by anatomical LEFT hand, right hand pulls/releases bowstring. Preserve actual drawn bowstring/V shape and straight string release phases, only one nocked arrow during drawing, no detached flying arrow. EXACTLY TWO ARMS AND TWO HANDS connected to torso, do not retain old idle arms/hands when relocating them. No ghost sleeve, extra finger clusters or duplicated shaft. No dramatic twisting or head bob. Retain all four distinct action poses, feet planted unless utility action intentionally changes posture. Exact 2x2 equally sized cells, genuine transparent RGBA, four COMPLETE figures. Every hair tip, bow tip, string, elbow and shoe must be fully inside its cell with generous empty margins at least 10% cell size. Same head and torso size in all frames, do not enlarge release pose. No numbers, letters, labels, grids, dividing lines, effects, shadow, floor, landscape, watermark or extra creatures. Refined nonpixel painted miniature anime game sprites, clean colored outline, soft broad shading, consistent with image2. IMPORTANT archery correction: in any frame where the right fingers are OPEN in release/followthrough, the arrow has already left. Remove that entire nocked arrow, shaft, feathers and especially the large golden diamond ARROWHEAD below the bow grip, leaving a continuous wooden bow grip and a relaxed straight bowstring. The golden diamond is NOT a fixed bow ornament. Keep a nocked arrow ONLY while right hand grips string in preparation/draw; arrow points along the character facing, never sideways or backward. Exactly one quiver on the reference hip in every frame. Preserve identical bare skull and eye size across ALL FOUR frames: no perspective/zoom/tilt change, same side face in every frame. Upper-left and upper-right are BOTH drawing grips with nocked arrow; bottom-left is open release with NO arrow and relaxed straight string; bottom-right recovery has NO arrow.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack2_v01.png",
+      "sha256": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "ed6a8e4f9676781bc51c65073fe02f4958cdefa9bac79b2beefbb0dd8d9c58cf",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1522,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      21,
+      1522,
+      1024
+    ],
+    "8": [
+      255,
+      30,
+      1316,
+      1007
+    ],
+    "32": [
+      256,
+      30,
+      1315,
+      1007
+    ],
+    "128": [
+      256,
+      30,
+      1315,
+      1006
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

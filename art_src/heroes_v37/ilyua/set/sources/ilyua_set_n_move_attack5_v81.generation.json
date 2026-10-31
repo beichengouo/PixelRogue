@@ -1,0 +1,77 @@
+{
+  "asset": "ilyua_set_n_move_attack5_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_move_attack5_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-0559b6fc-bbfc-4e5b-9639-45ba5480119d.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_move_attack5_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise ARMS-ONLY edit of image1 (the four-frame LEGENDARY Ilyua NORTH movement stage4 sheet). Keep image1's original FOUR HEADS and native skull size EXACTLY; do not redraw, rescale, tilt, move hair crown, widen skull or change any head. All four original faces/back-of-head, gray-green bare hair, pointed ears, flower-gold ornament at image RIGHT, neck, torso, belt, costume, quiver, limb lengths and ALL FOUR existing alternating leg/boot poses remain identical to image1. Image2 supplies ONLY the arm and bow positions for final attack5, never head/body/legs. Exactly2 connected arms/hands, ONE floral gold-leaf wooden bow. Strict BACK view aiming UP away from viewer, all string/arrow in FRONT naturally occluded by hair, no string/arrow over visible back. Four arm phases: 1 inherit raised forward bow;2 deepest controlled draw right elbow bent back and fingers at front cheek;3 release, right fingers open beyond jaw, NO arrow;4 lower bow naturally toward low ready while right hand relaxes near chest/waist for next attack. NEVER put arrow or shaft in release/followthrough. Preserve original walking contact/passing/opposite contact/opposite passing poses; no static legs. Do not shrink/enlarge a pose after release. Keep all FOUR skull/hair silhouettes at EXACT same native size as their original image1 cells, no new overall scaling. Complete isolated full figures2x2 equal cells, full bow/hair/boots with8% transparent margin every side. Nonpixel cel-painted alpha-transparent sprite, no text/grid/FX/floor/shadows.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_move_attack4_v80.png",
+      "sha256": "36fbdeeccb54a87f25e8f677158417d0f6f50cc8ad7b630ff9f0dd6a5b20df56"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_move_attack5_v80.png",
+      "sha256": "21a74ec5b69f358e1bb075316621ac35086ea8495f8f10d5634377726ee2e3d4"
+    }
+  ],
+  "sha256": "a375502d2022febbc9ce3793535641972003a1a4748fd194ff6f9df2961f56d3",
+  "dimensions": [
+    1282,
+    1227
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    31,
+    15,
+    1246,
+    1209
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      31,
+      15,
+      1246,
+      1209
+    ],
+    "8": [
+      221,
+      23,
+      1151,
+      1190
+    ],
+    "32": [
+      221,
+      23,
+      1151,
+      1190
+    ],
+    "128": [
+      222,
+      24,
+      1150,
+      1190
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "rejection_reason": "Measured head-size drift exceeded 6%; independent skull diagnostic also failed; replaced by authored v82."
+}

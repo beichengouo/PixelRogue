@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_sw_move_attack1_v95",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack1_v95.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-6f57d2b9-fd75-419c-bed0-731f4e157d71.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack1_v95.png",
+  "built_in_imagegen": true,
+  "prompt": "Change ONLY costume of image1, keeping EXACT all four original body poses, face direction, skull size, hand/arm positions, bow draw/release phases AND four different leg/foot poses. Image2 defines legendary outfit and exposed hair ONLY, not pose. Remove hood, expose same sage-green hair and pointed ears, white flower/gold leaf hair ornament, green leaf tunic, ivory gold-vine side drapes, flower brown boots, ONE quiver at same reference hip, ornate flower/gold wood bow. Preserve image1 top-left first-leg contact, top-right narrow passing, bottom-left OPPOSITE leg extends forward with first leg bent behind, bottom-right opposite passing. Do not repeat same leg. SAME skull size and body proportions across all four, NO zoom or head tilt. Anatomical left holds bow, right pulls/releases string. Exactly two connected arms/hands, left gripping bow even on release; one nocked arrow only while right fingers grip string, NO arrow on open release. Face and arrows aim lower-left, never right. Four COMPLETE figures in 2x2 equal cells, 15percent empty transparent margins all sides, actual transparent RGBA. No text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_move_attack1_v80.png",
+      "sha256": "2d8002b4448b094ed5cdfc57091a538c26f1937734d89abe2dc50ac1c9a80382"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_attack2_v81.png",
+      "sha256": "364621e4b301aef9528709cb83d6d4140788b32cbc03571921c2f9d17e30880d"
+    }
+  ],
+  "sha256": "eca3896236c5c040cb0f83a32e6aa2b6439e0f5fe1d88da71b3a54d214526135",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    43,
+    23,
+    1414,
+    1070
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      43,
+      23,
+      1414,
+      1070
+    ],
+    "8": [
+      215,
+      39,
+      1314,
+      1066
+    ],
+    "32": [
+      215,
+      40,
+      1313,
+      1065
+    ],
+    "128": [
+      216,
+      41,
+      1313,
+      1065
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_move_attack4_v97",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack4_v97.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-40cf3b24-c5d5-4548-8423-3ad037e32582.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack4_v97.png",
+  "built_in_imagegen": true,
+  "prompt": "Very small edit of supplied four-frame sheet: change ONLY upper-body bow draw to fourth stable aim. Preserve all FOUR HEADS/skull size, facial angles, hair, body proportions and FOUR LEG POSES EXACTLY. Top-left hands and bow stay as source. Top-right right elbow draws slightly farther back in strong stable full draw, nocked arrow aimed lower-left and right fingers gripping string. Bottom-left open release stays source with NO arrow, bottom-right recovery stays source with NO arrow. Keep left hand closed holding bow in all frames, exactly two hands. No new arm or body turn. DO NOT change heads, legs or lower body at all. Complete figures in same 2x2 grid, all margins and alpha intact. True transparent RGBA, no text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack2_v96.png",
+      "sha256": "55be9f7a2b1bdc8fe725276e7b4eae70a5d20128cd4843432a4438674f9fed79"
+    }
+  ],
+  "sha256": "56f182864c1b58fb864787f8453472bf34dd601666cfbf1fd76f327550836563",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    3,
+    1428,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      3,
+      1428,
+      1086
+    ],
+    "8": [
+      179,
+      36,
+      1325,
+      1067
+    ],
+    "32": [
+      179,
+      37,
+      1325,
+      1066
+    ],
+    "128": [
+      180,
+      38,
+      1324,
+      1066
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_set_s_attack2_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-58dc6d39-4db5-494e-ac1e-766eaca565ff.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, SOUTH direct FRONT facing downscreen camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage2 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same legendary leaf-and-flower white-and-green hunter outfit, exposed sage hair with white flower clip, NO HOOD, gold leaf shoulder ornaments, brown boots, quiverRIGHT hip, ornate golden leaf bow. Same ornate golden leaf bow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 inherits rising bow shoulderlevel and right fingers reaching string; 2 shoulderheight briskdraw, leftarm forward at shoulder, rightfingers at cheek; 3 release, rightelbow folds back and string straight, same shouldergrip; 4 wrist angles bow upward slightly to link nextdiagonal, rightfingers return near chin.\nImage1 defines the exact legendary costume, body, hair and ornate bow. Aim directly down-screen toward viewer, arrow very foreshortened, never long horizontal arrow across face. Bow is held by her anatomical left hand and right fingers must contact bowstring during draw. Keep white flowers, gold leaves and cloak matching image1 throughout all four frames. Entire hair and bow tips within generous frame margins. No frame labels.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_s_idle_v01.png",
+      "sha256": "5f0c504fe1a9b469cda9bb812b1a5e4bf59ff3330636c875620c8424c01bd98f"
+    }
+  ],
+  "sha256": "44152457a01560fe0fec68579f45dbab1a3eb7f894d662860017568fb25095c4",
+  "dimensions": [
+    1268,
+    1241
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    3,
+    1252,
+    1241
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Direct front aiming is incorrect: arrow points horizontally to screen right instead of toward viewer.",
+  "alpha_bounds_raw": [
+    0,
+    3,
+    1252,
+    1241
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      3,
+      1252,
+      1241
+    ],
+    "8": [
+      71,
+      13,
+      1222,
+      1224
+    ],
+    "32": [
+      71,
+      13,
+      1221,
+      1224
+    ],
+    "128": [
+      72,
+      14,
+      1221,
+      1224
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_w_attack4_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_w_attack4_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-f3331d44-9ad5-424f-bff5-6517cf015d74.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair image1 four sequential left-profile archery poses. Keep exact identity, head size, facial shape, hair, pointed ear and torso proportions from image2 across all four figures. No head scaling, turning or stretching. Retain image1 bow draw and release sequence, anatomical two arms, and stable planted feet. Arrow only while nocked, no detached projectiles. Complete four full figures and bow tips in equal 2x2 cells with wide transparent margins and center gaps. No text, labels, numbers, border, effects, shadows or background. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_attack4_v01.png",
+      "sha256": "4a368ae77aabece3b515b1f2cbe9dfe440688a494d4564b313d3c212a8f58900"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_attack2_v01.png",
+      "sha256": "2aee11037725b1dfdd49b6d60689667f07bc43ef6145dcf47bbd7c0015b7c4bb"
+    }
+  ],
+  "sha256": "43e0806bab44749cf7687ab0027c6638e50df3d3cc8e6b931327700a5924a849",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    31,
+    15,
+    1251,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    31,
+    15,
+    1251,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      31,
+      15,
+      1251,
+      1254
+    ],
+    "8": [
+      136,
+      35,
+      1214,
+      1227
+    ],
+    "32": [
+      136,
+      35,
+      1213,
+      1227
+    ],
+    "128": [
+      137,
+      36,
+      1213,
+      1226
+    ]
+  },
+  "rejection_reason": "Two independent grounded reviewers confirmed smaller whole-body proportions versus idle/W1; replaced using correct W1 anatomy."
+}

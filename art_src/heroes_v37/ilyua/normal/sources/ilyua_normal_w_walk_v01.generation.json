@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_w_walk_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_walk_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-2a822ed3-6911-4a33-8061-d2d9ffdc4ee7.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / game animation. IMAGE1 is PRIMARY EXACT character identity/costume/body geometry and viewing direction reference, an idle sprite. IMAGE2 supplies ONLY the four clear foot/knee WALKING PHASES and 2x2 layout in the same view; do NOT copy Xixifu character, her face, clothes, hair, staff or boots. Create exactly FOUR full-body sprites of image1 character in equal 2x2 cells, pure transparent background. Face WEST strict left profile only one eye in ALL four cells, never rotate toward viewer or rock side-to-side. Hold exact skull/head size and neck/shoulder/waist height steady in all frames; same compact short torso/limbs as image1, do not stretch body. Soft nonpixel hand-painted compact miniature, clean colored outlines, restrained cel shading matching image1. Read order top-left,top-right,bottom-left,bottom-right: left foot forward/right back; right foot passing directly UNDER pelvis close to planted left leg with knee bent; right foot forward/left back; left foot passing directly UNDER pelvis close to planted right leg with knee bent. BOTH intermediate passing poses must be genuinely drawn, not just repeated endpoint stances. Keep head and torso vertical stable, a little knee bend/pelvis bob only; no upperbody sway or tilt as movement substitute. Cloth hem follows steps slightly but exact same garment construction per frame. Face/hair/weapon model fixed, not a different person between poses. No motion blur or smearing. Maintain full feet/crown/bow or staff/hair inside EACH cell with at least10% transparent vertical margin and15% horizontal margins; if necessary fit all figures uniformly smaller within their cells, do NOT shrink one head or shorten legs. Equal scale/body origin and grounded sole anchor in all cells. No physical floor or drop shadow. NO text/numbers/labels/dividers/grid/guidelines/border/watermark/background/effects/extra creatures or figures. Ilyua holds one short BOW in anatomical LEFT hand, RIGHT empty relaxed, quiver on anatomical RIGHT hip; do not convert bow to staff or swap hands. Sage-green hair, lake-blue eyes. Normal ivory hood UP with gold leaf borders and pale sage lining, green shorts/tunic, brown lace-up boots. Hair emerges from front or below hood lower rim, never through top fabric. Keep normal ears hidden under hood.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_walk.png",
+      "sha256": "b350e0e8b05a14e65d76b496dd883fbaeb09f5edabb3bbdf0264be00a43c4383"
+    }
+  ],
+  "sha256": "94bd1a13eeab4f2438751ffd308570ff46323ab4a53e6ab22ad8c42a10dea07f",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1253,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    19,
+    1253,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      19,
+      1253,
+      1254
+    ],
+    "8": [
+      217,
+      25,
+      1101,
+      1231
+    ],
+    "32": [
+      218,
+      25,
+      1101,
+      1231
+    ],
+    "128": [
+      218,
+      25,
+      1100,
+      1231
+    ]
+  }
+}

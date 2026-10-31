@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_set_sw_attack4_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack4_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-85b72413-548f-4b3b-bdbb-863b63b70c7a.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair the four-frame archery sheet image1. Match the exact stable head, face, hair, ear and body proportions of image2 across every frame; no per-frame head size change or rotation. Preserve image1 four distinct bow draw and release poses, foot positions and precise outfit. Same bow and its string held correctly; no flying arrows, glow or effects. Draw each complete full-body character and bow in a 2x2 equal grid with generous clear transparent margins. No text, numbers, panel lines, background, shadow, labels or symbols. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_attack4_v01.png",
+      "sha256": "552f234ca8d95d9e028a7e1c1f6e94d94f03daccf676ad032e54ed3876fce7a8"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_attack3_v01.png",
+      "sha256": "3f5732c3198c425133939bb174437eba7f8fa6b031602b3608f5da52f95509b0"
+    }
+  ],
+  "sha256": "7908ea61c254145b2e4d30b51bf6ed85cc38104bce0c07713edfa4d562bf3ba2",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    41,
+    0,
+    1516,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    2,
+    2,
+    0,
+    0
+  ],
+  "review_reason": "17.35 percent head size drift exceeds 6 percent limit.",
+  "alpha_bounds_raw": [
+    41,
+    0,
+    1516,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      41,
+      0,
+      1516,
+      1024
+    ],
+    "8": [
+      216,
+      8,
+      1374,
+      1017
+    ],
+    "32": [
+      216,
+      8,
+      1374,
+      1017
+    ],
+    "128": [
+      217,
+      9,
+      1374,
+      1016
+    ]
+  }
+}

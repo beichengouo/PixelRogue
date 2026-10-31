@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_utility_interact_v91",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_interact_v91.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-d8236b04-6ae7-49db-baec-4aba0aebf295.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_utility_interact_v91.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit supplied four full-body LEFT-facing utility poses into a calm greeting/interact animation. Keep each original head/skull silhouette, hair crown/flower ornament, pointed ears, face direction, neck/torso, proportions, clothing, quiver and both ORIGINAL PLANTED BOOTS exactly unchanged. Change ONLY expression and anatomical RIGHT forearm/hand: frame1 calm eyes open, right hand resting near waist; frame2 right hand raised to shoulder with palm softly open greeting; frame3 small outward friendly open-palm gesture at shoulder; frame4 right hand lowers relaxed to waist. Expression gentle neutral, all eyes open, no pain. The anatomical LEFT hand keeps one floral gold-leaf wooden bow LOW and vertical as in reference, never aims/draws, no arrows anywhere. Preserve costume: bare long sage-green hair, goldleaf whiteflower ornament, leafgreen layered short dress, ivory goldvine side drapes, brown belt and ONE screen-right quiver, floral boots. EXACTLY two arms/two hands, connect new right wrist naturally and remove former hurt-pose right arm, no duplicate sleeve or old hand. Do not nod, turn, walk, crouch, stretch torso, scale heads or lift feet. Same head sizes as original four cells. Four complete isolated figures in2x2 equal cells,10% empty transparent margins around all bowtips/hair/boots, no clipping. True RGBA transparent backdrop, no background gradients, text, grids, FX, floor, shadows or other objects. Precise nonpixel cel-painted game sprite matching source. Only greeting arm/expression changes, everything else preserved.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_hurt_v80.png",
+      "sha256": "7d6d1d3283170d9593a6f2e6400e063d3b941767481f6e91b07f0a5c771f8018"
+    }
+  ],
+  "sha256": "748e46953198ea1082cee0501b7be501bd0a64e249f6eb5ee411bcbc236cb214",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "utility",
+  "action": "interact",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1206,
+    1235
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      23,
+      1206,
+      1235
+    ],
+    "8": [
+      185,
+      49,
+      1155,
+      1217
+    ],
+    "32": [
+      186,
+      49,
+      1154,
+      1217
+    ],
+    "128": [
+      186,
+      50,
+      1153,
+      1216
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

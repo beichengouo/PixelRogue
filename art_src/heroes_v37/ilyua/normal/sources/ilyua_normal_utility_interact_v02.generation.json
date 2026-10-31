@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_normal_utility_interact_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_utility_interact_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-0cf1992c-ffec-4750-b7c3-6cadc225ab81.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise anatomy repair of four-frame transparent game sprite source, preserve exact character identity/costume/body proportions/facing/gestures and2x2 layout. FIX: TOPRIGHT and BOTTOMLEFT each have THREE HANDS. In those two cells DELETE ONLY the extra resting hand at WAIST (viewer-right edge of torso) and its short duplicate sleeve. Retain original leftbowholding hand at midline and the free reaching/curling hand at chest forward viewer-left. Fill erased waist with continuous ordinary robe seam, no palm/fingers. Every figure exactly TWO arms/hands. Also uniformly move top-row subjects slightly down to clear hoodtops.. Do not move correct limbs or shrink skull/body, no new hands/arms/prop. Keep all4 fullbody complete within clear transparent margins. TRUE TRANSPARENT alpha, same painterly colored line and shading. No numbers/text/labels/grid/dividers/marks/motionstrokes/effects/background/halos/shadows/floor.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_utility_interact_v01.png",
+      "sha256": "ecde7aee9e67a78f9e482de7717471010c521c79a244c3447dc436ddff2b37c6"
+    }
+  ],
+  "sha256": "2a34ffeb4ebdfff99ad70f8bb2c97b599dda8b3cf40878593c38f5c913936e67",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "utility",
+  "action": "interact",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    95,
+    20,
+    1188,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    2,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    95,
+    20,
+    1188,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      95,
+      20,
+      1188,
+      1254
+    ],
+    "8": [
+      226,
+      49,
+      1090,
+      1250
+    ],
+    "32": [
+      227,
+      49,
+      1089,
+      1250
+    ],
+    "128": [
+      227,
+      50,
+      1089,
+      1249
+    ]
+  }
+}

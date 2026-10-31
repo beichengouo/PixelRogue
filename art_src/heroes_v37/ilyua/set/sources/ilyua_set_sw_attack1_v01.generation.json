@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_sw_attack1_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-76ffc214-a5a2-4fb9-9537-62b396faac9b.png",
+  "built_in_imagegen": true,
+  "prompt": "Wardrobe-only edit of image1 four-frame archery animation. Image2 specifies the SAME elf and her green-white gold-leaf legendary outfit, exposed pointed ears, flower and leaf collar, green layered leaf dress, brown boots, ornate leaf-and-flower bow. Preserve image1 camera angle, body and head proportions, foot positions and four different bow draw/release gestures exactly. Replace hood with hairstyle in image2; bow remains physically held in left hand, right hand draws string. Single arrow only while nocked, none flying. Full figures and bows in separate equal 2x2 cells with ample transparent margins. No text, numbers, frame lines, shadows, background or magic effects. Transparent, refined nonpixel game sprites.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_sw_attack1_v02.png",
+      "sha256": "bd5622a5d18bced7de6d750781fbe224928bbf7af17a6a70ae7b4124030df0db"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "6114206b73e03da4d1b42439fa14c5ce57234f535ebb730004a8226dbed4fe99",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1506,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    2,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    17,
+    1506,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      17,
+      1506,
+      1024
+    ],
+    "8": [
+      267,
+      26,
+      1378,
+      1015
+    ],
+    "32": [
+      267,
+      26,
+      1378,
+      1015
+    ],
+    "128": [
+      268,
+      27,
+      1377,
+      1014
+    ]
+  }
+}

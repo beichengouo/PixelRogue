@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_w_attack3_v04",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_w_attack3_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-50c6374b-eec5-46bf-a79b-e6cb7bc31407.png",
+  "built_in_imagegen": true,
+  "prompt": "Careful animation source redraw. Match the SAME head, hood, facial features, skull size, position and orientation across all four sprites in image2; match body proportions too. Only arms move. Preserve four distinct sequential archery poses of image1, with left hand holding the bow and right hand pulling the string, nocked arrow only during draw. No flying arrow after release. Feet planted. All four full figures in separate equal 2x2 cells with large transparent margins. No text, numbers, borders, marks, effects, background or shadow. Refined nonpixel cel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_attack3_v03.png",
+      "sha256": "e468e17fa9b56de1f5adb9ce7f70ab7f93ba1e9bb604ef1c46c9710de47e96aa"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_attack2_v01.png",
+      "sha256": "708cb8eb858bef1f13c5bbc27e730c39e05a3ed411afd745ef788ad22c66191e"
+    }
+  ],
+  "sha256": "9d77effe755aa3591ca1963b37a1c2dd9cc509ac75daf72cad85e31ea2e9ef44",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "12.49 percent head size drift; exceeds 6 percent.",
+  "alpha_bounds_raw": [
+    0,
+    17,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      17,
+      1240,
+      1254
+    ],
+    "8": [
+      103,
+      23,
+      1223,
+      1204
+    ],
+    "32": [
+      103,
+      24,
+      1222,
+      1203
+    ],
+    "128": [
+      104,
+      24,
+      1222,
+      1203
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_s_skill_cast_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_skill_cast_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-366523e0-4d5f-4c86-b25a-de89c41de638.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit image1 clean transparent FOUR-sprite game animation source. KEEP pure alpha transparency exactly like original, never paint any background or vignette or glow. Keep 2x2 layout, same Ilyua elf, ivory hood/gold leaf trim, green shorts, brown little boots, sage hair and blue eyes. Change the walking legs into stable neutral planted feet in all4 cells, keep exact compact anatomy/head size/view. Redraw original arms/hands and whole BOW (erase the old limbs/prop first so exactly2hands+1bow remain). Bow in anatomical LEFT hand at viewer-right. Four peaceful bow-form gestures reading order: left bow lifts/right fingers touch string; left arm extended/bow upright with right fingers at cheek, V-shaped string; fingers relaxed just behind cheek/bow still steady; bow lowers slightly/right palm returns to chest. Empty bow, no arrows, no target, no violence or effects. Entire body stays facing FRONT SOUTH as image1, no body spin, no side lean/sway. Same four heads and proportions, clean soft nonpixel game miniature shading. Every complete figure/bow/hair/shoe inside own quadrant with generous empty transparent margin, no cutting. ACTUAL alpha0 empty background only, no black/white/grey background, no halo or shadow or floor. No text/numbers/labels/dividers/grid/watermark. Image2 is same idle costume/body geometry only.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_walk_v01.png",
+      "sha256": "95abc0c54c57ab7bad2fbc74cb40818d46440536091fa48116ecc50345a18b4d"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "8078bfa69486542938c1b13950000dac799565c65226ae5c97e9ea73450ea589",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    16,
+    1230,
+    1246
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    16,
+    1230,
+    1246
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      16,
+      1230,
+      1246
+    ],
+    "8": [
+      180,
+      37,
+      1135,
+      1219
+    ],
+    "32": [
+      180,
+      37,
+      1135,
+      1219
+    ],
+    "128": [
+      181,
+      37,
+      1134,
+      1218
+    ]
+  }
+}

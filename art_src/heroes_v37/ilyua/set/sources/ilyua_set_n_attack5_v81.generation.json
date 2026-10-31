@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_n_attack5_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_attack5_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-9aeb1733-ac8d-4451-8cbb-db7c4a1b1823.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_attack5_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Animate the exact character from the supplied BACK VIEW idle image in four small archery action poses, 2x2 sprite sheet. Strictly NORTH facing AWAY from viewer throughout. Preserve the BACK of the dress: long hair covers shoulders and upper back as in image, no front collar, no chest, no face or bangs. Four phases: upper-left bow centered ahead with right elbow beginning a deep draw; upper-right both shoulders braced and right elbow fully drawn backward in strong held full-draw; bottom-left right elbow recoils after ONE strong arrow release, fingers open; bottom-right right hand lowers naturally toward sternum on FAR SIDE, left bow lowers to idle. This FIFTH attack is obvious deep full draw then long natural recovery, no extra arrows or effects. Anatomical left hand holds bow at screen LEFT in all four cells. Bow and arrow always aim NORTH, away from camera, never sideways across back. Much of bow and hands are naturally OCCLUDED by hair/torso in first two poses: do not invent a visible arrow or string stretching horizontally across her BACK. Show only parts actually visible around sides. Exactly two connected arms/hands, one bow and one quiver on screen-right hip. Keep exact same back hairstyle, skull size, clothes, proportions, scale, stationary planted feet, and short limbs across all four poses. Fullbody complete, substantial transparent margins in every equal cell. Nonpixel hand painted miniature anime art. Transparent RGBA. No text, labels, effects, shadows or landscape. Keep bowstring and arrow on the FAR SIDE of head and torso, naturally occluded by hair. Never show a string across the visible BACK or a sideways/backward arrow. Fit tips and feet with 10percent margins; do not enlarge head in any frame.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_idle_v02.png",
+      "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8"
+    }
+  ],
+  "sha256": "3bcb2fd91c0acbca97ed7bb44abfc9d5570aa9ef97172d576031ffb57572a8e0",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1298,
+    1199
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1298,
+      1199
+    ],
+    "8": [
+      215,
+      1,
+      1124,
+      1182
+    ],
+    "32": [
+      215,
+      1,
+      1123,
+      1182
+    ],
+    "128": [
+      216,
+      2,
+      1123,
+      1181
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "reason": "solid bow tip touches source top; redraw with true authored empty margins"
+}

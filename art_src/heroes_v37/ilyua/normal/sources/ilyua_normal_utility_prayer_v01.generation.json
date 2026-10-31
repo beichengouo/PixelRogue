@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_normal_utility_prayer_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_utility_prayer_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-346d0aa8-b244-4cdb-a6ca-cae204d0c09d.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game animation. Image1 is SAME exact character identity/body/costume/prop/camera reference, NOT a four-pose chart. Create ONE production2x2 source of exactly FOUR distinct consecutive action frames reading order on TRUE TRANSPARENT RGBA background. Soft nonpixel miniature painterly cel finish as reference, precise colored outline. Same rigid skull size and compact torso/short limb lengths across all4 frames, head never grows/shrinks. Strict WEST/left side profile, no turn toward viewer. Draw entire body/prop/hair/feet within own equal cell with generous12%transparent room on all sides. NO text/numbers/labels/grid/borders/guides/shadows/floor/background/glow/particles/effects. EXACTLY TWO arms/TWO hands and one intact prop per figure; remove old resting hands and whole prop before redrawing changed position, no third idle hand or ghost shaft. Ilyua same sagegreenhaired blueeyed elf, same small brownboots, bow anatomical LEFT hand always, RIGHT empty hand (not extra bow). Normal ivory hood stays UP and hair emergesonlyfromface/rim; legendary NOHOOD, flower anatomicalRIGHT temple and quiverRIGHT hip, goldvinebow. Four calm prayer phases: 1 stands upright, bow held low beside her, free palm moves up from waist toward sternum; 2 eyes softly closed, free palm rests over heart and chin lowers slightly; 3 small respectful upper-torso bow with free hand still heart, knees soft but not kneeling; 4 returns to upright prayer-ready, eyes opening. Same skull scale, not deep body fold, feet planted. Prop stays one same hand. Distinct head/hand changes but stable body ratio.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_w_idle_v01.png",
+      "sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    }
+  ],
+  "sha256": "6d3023b7b31820e35dc7e020801c5ec4a9b2d45e35feafac0b2f6df7f126da60",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "prayer",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    25,
+    0,
+    1536,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    3,
+    3,
+    0,
+    1
+  ],
+  "alpha_bounds_raw": [
+    25,
+    0,
+    1536,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      25,
+      0,
+      1536,
+      1024
+    ],
+    "8": [
+      391,
+      6,
+      1144,
+      1019
+    ],
+    "32": [
+      392,
+      7,
+      1143,
+      1019
+    ],
+    "128": [
+      392,
+      7,
+      1143,
+      1018
+    ]
+  }
+}

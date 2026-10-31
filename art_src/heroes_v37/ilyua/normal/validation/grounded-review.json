@@ -1,0 +1,971 @@
+{
+  "scope": "independent grounded anatomy review, not a visual or runtime pass",
+  "source_calibration_sha256": "5c77a5156165191a44eff4e090f7dfbbbb538287a82e3370a7900e06e99ff239",
+  "method": "tile native 448 cells; first column idle; columns2-5 authored frames; one rigid whole-frame grounding translation, no per-frame scale, drawing or pixel warping",
+  "technical_pass_clips": 64,
+  "technical_fail_clips": 0,
+  "grounded_review_flags": 24,
+  "rows": [
+    {
+      "page": "s-1.png",
+      "row": 0,
+      "asset": "ilyua_normal_s_attack1_v02",
+      "source_sha256": "218169bd0612f0c8ac82f0ded4c9d51d0932895d2f00b6317c828800d8107817",
+      "head_registered_foot_deviations": [
+        -6,
+        -6,
+        -5,
+        -6
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-1.png",
+      "row": 1,
+      "asset": "ilyua_normal_s_attack2_v91",
+      "source_sha256": "ed1f32f229661f838c57ea608c106be0a7c3247c52b935753fed5672dcd0624d",
+      "head_registered_foot_deviations": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-1.png",
+      "row": 2,
+      "asset": "ilyua_normal_s_attack3_v91",
+      "source_sha256": "414033a72f2413a916e0fafa1c967910fc6ef7c4358b76947c2805feffe51e45",
+      "head_registered_foot_deviations": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-1.png",
+      "row": 3,
+      "asset": "ilyua_normal_s_attack4_v02",
+      "source_sha256": "f057e210e64b4455739d4663903a7f1422c85b1034fb73495fdd85e170931e75",
+      "head_registered_foot_deviations": [
+        -11,
+        -11,
+        -14,
+        -13
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-2.png",
+      "row": 0,
+      "asset": "ilyua_normal_s_attack5_v03",
+      "source_sha256": "8775dd6c771be3299db97680619147556106e21aa1255dbbdcd304b9d82b8574",
+      "head_registered_foot_deviations": [
+        -5,
+        -7,
+        -11,
+        -13
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-2.png",
+      "row": 1,
+      "asset": "ilyua_normal_s_move_attack1_v90",
+      "source_sha256": "9f0add353a642febe22543cbf603aa0194db3a7cd40fdaf6ff5206b1afb9f151",
+      "head_registered_foot_deviations": [
+        0,
+        3,
+        0,
+        4
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-2.png",
+      "row": 2,
+      "asset": "ilyua_normal_s_move_attack2_v90",
+      "source_sha256": "14ef8a7eec0cf838e731024bf38e0eeec1d216bedda1477afeb552cf96b3ab26",
+      "head_registered_foot_deviations": [
+        -1,
+        3,
+        -1,
+        1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-2.png",
+      "row": 3,
+      "asset": "ilyua_normal_s_move_attack3_v90",
+      "source_sha256": "b9724da87e530c238a9214afc17648a438e8d9255fdac8d8c3422954d09bbede",
+      "head_registered_foot_deviations": [
+        -1,
+        5,
+        0,
+        4
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-3.png",
+      "row": 0,
+      "asset": "ilyua_normal_s_move_attack4_v90",
+      "source_sha256": "cd5aa2b0c33910f0995e6e514fbfd787ce072054187d7ff78d25d391001edc6c",
+      "head_registered_foot_deviations": [
+        0,
+        3,
+        0,
+        2
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-3.png",
+      "row": 1,
+      "asset": "ilyua_normal_s_move_attack5_v90",
+      "source_sha256": "3273cfb151aee5514de895a8a79d8dc41fac76b66f78d3a7ec217021897647cc",
+      "head_registered_foot_deviations": [
+        0,
+        2,
+        5,
+        5
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-3.png",
+      "row": 2,
+      "asset": "ilyua_normal_s_skill_cast_v03",
+      "source_sha256": "8078bfa69486542938c1b13950000dac799565c65226ae5c97e9ea73450ea589",
+      "head_registered_foot_deviations": [
+        -3,
+        -3,
+        -3,
+        -3
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "s-3.png",
+      "row": 3,
+      "asset": "ilyua_normal_s_walk_v90",
+      "source_sha256": "040a00acbfce69c8975406bec5f20361478d33174b3400c49ac3ab0432366a09",
+      "head_registered_foot_deviations": [
+        -1,
+        3,
+        -1,
+        2
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-1.png",
+      "row": 0,
+      "asset": "ilyua_normal_sw_attack1_v02",
+      "source_sha256": "bd5622a5d18bced7de6d750781fbe224928bbf7af17a6a70ae7b4124030df0db",
+      "head_registered_foot_deviations": [
+        -23,
+        -24,
+        -27,
+        -28
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-1.png",
+      "row": 1,
+      "asset": "ilyua_normal_sw_attack2_v01",
+      "source_sha256": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9",
+      "head_registered_foot_deviations": [
+        -23,
+        -24,
+        -27,
+        -27
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-1.png",
+      "row": 2,
+      "asset": "ilyua_normal_sw_attack3_v04",
+      "source_sha256": "53979e0e33e1b8cee869f6a3db0d04bb8fdcfeed7ca42107a6366b63a9d1105d",
+      "head_registered_foot_deviations": [
+        -14,
+        -15,
+        -17,
+        -18
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-1.png",
+      "row": 3,
+      "asset": "ilyua_normal_sw_attack4_v02",
+      "source_sha256": "d8e495121428e97fdb1be96c754a75266e68050d43bbe0416f85396d57535151",
+      "head_registered_foot_deviations": [
+        -19,
+        -19,
+        -21,
+        -21
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-2.png",
+      "row": 0,
+      "asset": "ilyua_normal_sw_attack5_v02",
+      "source_sha256": "9d38a29e919702476c841fd10cd61ff6f5d66407d7fd010a2397deffe5a54c93",
+      "head_registered_foot_deviations": [
+        -30,
+        -29,
+        -32,
+        -33
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-2.png",
+      "row": 1,
+      "asset": "ilyua_normal_sw_move_attack1_v80",
+      "source_sha256": "2d8002b4448b094ed5cdfc57091a538c26f1937734d89abe2dc50ac1c9a80382",
+      "head_registered_foot_deviations": [
+        0,
+        3,
+        3,
+        0
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-2.png",
+      "row": 2,
+      "asset": "ilyua_normal_sw_move_attack2_v80",
+      "source_sha256": "ac23d7ab9d55dd39811edecb8476802d59fc9a0d6eb64e332f542ef2cd937c1c",
+      "head_registered_foot_deviations": [
+        5,
+        6,
+        6,
+        5
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-2.png",
+      "row": 3,
+      "asset": "ilyua_normal_sw_move_attack3_v81",
+      "source_sha256": "76b0f4fe5c4380086ebf553bc61c7884c198e64b66ad96c4f0d5a7c351c66466",
+      "head_registered_foot_deviations": [
+        -2,
+        -3,
+        -2,
+        -3
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-3.png",
+      "row": 0,
+      "asset": "ilyua_normal_sw_move_attack4_v80",
+      "source_sha256": "a3f82893fc3d12664743d04673c2fcebef8cbdfcdc826664a4f354cf5608f371",
+      "head_registered_foot_deviations": [
+        8,
+        7,
+        8,
+        7
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-3.png",
+      "row": 1,
+      "asset": "ilyua_normal_sw_move_attack5_v81",
+      "source_sha256": "0d8d12b8d9413c7275d74c05fd4ad5af8945c049a4460724814f71ef2701f214",
+      "head_registered_foot_deviations": [
+        6,
+        8,
+        4,
+        3
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-3.png",
+      "row": 2,
+      "asset": "ilyua_normal_sw_skill_cast_v01",
+      "source_sha256": "93873dcfb8e0ecc320b9365b5e4e87077371e20b507b7570701a89d7ce30b911",
+      "head_registered_foot_deviations": [
+        1,
+        1,
+        -3,
+        -1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "sw-3.png",
+      "row": 3,
+      "asset": "ilyua_normal_sw_walk_v90",
+      "source_sha256": "790a79e8bd9476be4a80d8d0eecc7f6cf38e708e12a39319a6b0d2a29c789500",
+      "head_registered_foot_deviations": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-1.png",
+      "row": 0,
+      "asset": "ilyua_normal_w_attack1_v02",
+      "source_sha256": "46bb5da6f4262c847d4cde9ffbf0a07823694aef2df8c5c2efc37766179bfaf6",
+      "head_registered_foot_deviations": [
+        -29,
+        -27,
+        -31,
+        -32
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-1.png",
+      "row": 1,
+      "asset": "ilyua_normal_w_attack2_v01",
+      "source_sha256": "708cb8eb858bef1f13c5bbc27e730c39e05a3ed411afd745ef788ad22c66191e",
+      "head_registered_foot_deviations": [
+        -18,
+        -19,
+        -22,
+        -21
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-1.png",
+      "row": 2,
+      "asset": "ilyua_normal_w_attack3_v90",
+      "source_sha256": "12d4ca42ab894e0127c2a56c50a3087b880d07589507ef6ea6010af15030a1b6",
+      "head_registered_foot_deviations": [
+        0,
+        -1,
+        0,
+        0
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-1.png",
+      "row": 3,
+      "asset": "ilyua_normal_w_attack4_v01",
+      "source_sha256": "51c39610bd7d8fe3b47896b8832af1712e91ed2a60ef292801a9c13d2cdffd09",
+      "head_registered_foot_deviations": [
+        -8,
+        -9,
+        -8,
+        -7
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-2.png",
+      "row": 0,
+      "asset": "ilyua_normal_w_attack5_v01",
+      "source_sha256": "a6389a5b733e113472594a9e8a03355bc4bd12152b37b4c06d6b32bacfaacc31",
+      "head_registered_foot_deviations": [
+        -7,
+        -8,
+        -6,
+        -3
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-2.png",
+      "row": 1,
+      "asset": "ilyua_normal_w_move_attack1_v81",
+      "source_sha256": "26963eddc3db75e07a7ea32b7a08ff31d860307d57beeb9bc3240e341ac98440",
+      "head_registered_foot_deviations": [
+        1,
+        1,
+        -1,
+        -1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-2.png",
+      "row": 2,
+      "asset": "ilyua_normal_w_move_attack2_v80",
+      "source_sha256": "e31868d57dec61e93f9a3094be3d1319974dfc39bd30b54703f5cc5c901d50d7",
+      "head_registered_foot_deviations": [
+        -6,
+        -9,
+        -8,
+        -8
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-2.png",
+      "row": 3,
+      "asset": "ilyua_normal_w_move_attack3_v80",
+      "source_sha256": "83ff6840d91b9b950c379937d370492f6344d4d28f20b3a5e0ef480482e647c4",
+      "head_registered_foot_deviations": [
+        4,
+        6,
+        4,
+        9
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-3.png",
+      "row": 0,
+      "asset": "ilyua_normal_w_move_attack4_v80",
+      "source_sha256": "f34afa74b65184e972dae2e7a19933b652a6a697088323847d8a53b84a56eddf",
+      "head_registered_foot_deviations": [
+        -1,
+        -2,
+        -4,
+        -4
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-3.png",
+      "row": 1,
+      "asset": "ilyua_normal_w_move_attack5_v80",
+      "source_sha256": "c2055aed406782da18e4081ca91c92c40185f3318d34c1957113c642c3057be6",
+      "head_registered_foot_deviations": [
+        2,
+        3,
+        5,
+        0
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-3.png",
+      "row": 2,
+      "asset": "ilyua_normal_w_skill_cast_v01",
+      "source_sha256": "54dd6cd4b8ebe034dc687c518c905c90ca902d2434d9129d0fa89f36e1b23b63",
+      "head_registered_foot_deviations": [
+        -10,
+        -10,
+        -8,
+        -8
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "w-3.png",
+      "row": 3,
+      "asset": "ilyua_normal_w_walk_v01",
+      "source_sha256": "94bd1a13eeab4f2438751ffd308570ff46323ab4a53e6ab22ad8c42a10dea07f",
+      "head_registered_foot_deviations": [
+        -3,
+        -3,
+        -6,
+        -4
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-1.png",
+      "row": 0,
+      "asset": "ilyua_normal_nw_attack1_v02",
+      "source_sha256": "329ba262a783f74e6db91af3935b706e8b82ddf445e12c2b7ea5f334b00d0f65",
+      "head_registered_foot_deviations": [
+        11,
+        16,
+        15,
+        12
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-1.png",
+      "row": 1,
+      "asset": "ilyua_normal_nw_attack2_v01",
+      "source_sha256": "40fe2cc1d1268daae6102ab4a79b2fa4a652b4db22dcd47ab3fcbfcc13fdfc23",
+      "head_registered_foot_deviations": [
+        -9,
+        -10,
+        -11,
+        -7
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-1.png",
+      "row": 2,
+      "asset": "ilyua_normal_nw_attack3_v02",
+      "source_sha256": "cfe35f98233faace5f574e13647fcaac63423fd7be44782897336c735a65985e",
+      "head_registered_foot_deviations": [
+        -5,
+        -8,
+        -8,
+        -6
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-1.png",
+      "row": 3,
+      "asset": "ilyua_normal_nw_attack4_v01",
+      "source_sha256": "17f2dc3538a3b54951ebac4b8f0da5f5f27fa6c9d8781d88e1dc78ffedcc2526",
+      "head_registered_foot_deviations": [
+        12,
+        11,
+        14,
+        12
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-2.png",
+      "row": 0,
+      "asset": "ilyua_normal_nw_attack5_v02",
+      "source_sha256": "a2e57a5c6ac471da5069d9d3b42fd8ba1fa8067ec397569b3b8d28f6d0eb92d2",
+      "head_registered_foot_deviations": [
+        2,
+        2,
+        6,
+        3
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-2.png",
+      "row": 1,
+      "asset": "ilyua_normal_nw_move_attack1_v80",
+      "source_sha256": "b4c5805a8d0b0d03462c32030c4e6c7200ee31fff6c549f75004c1bebb593f19",
+      "head_registered_foot_deviations": [
+        3,
+        4,
+        3,
+        2
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-2.png",
+      "row": 2,
+      "asset": "ilyua_normal_nw_move_attack2_v80",
+      "source_sha256": "9c516861296049f9d9eb456b493d993abfccb6791ee0c6838f081c4ffba7e456",
+      "head_registered_foot_deviations": [
+        5,
+        8,
+        9,
+        7
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-2.png",
+      "row": 3,
+      "asset": "ilyua_normal_nw_move_attack3_v80",
+      "source_sha256": "e2d3072c66e13254ec8fce1ccca0e076a98cd320c737b8667bf6f1e3f9f4d333",
+      "head_registered_foot_deviations": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-3.png",
+      "row": 0,
+      "asset": "ilyua_normal_nw_move_attack4_v80",
+      "source_sha256": "96442d03af6b5380ad9c7fdd41a365eaa054644453dcc2293c6d141cfc41b7a4",
+      "head_registered_foot_deviations": [
+        8,
+        7,
+        7,
+        8
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-3.png",
+      "row": 1,
+      "asset": "ilyua_normal_nw_move_attack5_v80",
+      "source_sha256": "0e69604eb3159aa691ef6b702a82b6735403d10c878dfb58add741a7f1edb823",
+      "head_registered_foot_deviations": [
+        4,
+        4,
+        3,
+        0
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-3.png",
+      "row": 2,
+      "asset": "ilyua_normal_nw_skill_cast_v01",
+      "source_sha256": "7a36fb5535069f9d0026edad30bcacf8d728bd8ad3586bb1d8351c72a2f4048e",
+      "head_registered_foot_deviations": [
+        20,
+        13,
+        17,
+        17
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "nw-3.png",
+      "row": 3,
+      "asset": "ilyua_normal_nw_walk_v91",
+      "source_sha256": "54dc0815489472439ac5028d0d27150ab7e96f98e91665940d521dd970f8b15d",
+      "head_registered_foot_deviations": [
+        2,
+        3,
+        1,
+        -2
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-1.png",
+      "row": 0,
+      "asset": "ilyua_normal_n_attack1_v91",
+      "source_sha256": "559ca93bd1218a940fe4bb8f331b72a7d12306fdce19baed80e53b6868f4a848",
+      "head_registered_foot_deviations": [
+        17,
+        18,
+        9,
+        3
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-1.png",
+      "row": 1,
+      "asset": "ilyua_normal_n_attack2_v91",
+      "source_sha256": "074c2ce7f20bdb1520bc01baea769b7f5844015ebf8b371eea13de1c643196b0",
+      "head_registered_foot_deviations": [
+        28,
+        29,
+        26,
+        26
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-1.png",
+      "row": 2,
+      "asset": "ilyua_normal_n_attack3_v91",
+      "source_sha256": "ea29eb45fce0394e88afa2c5d1add9269b542e07468fddc232bcfa16b9c624f2",
+      "head_registered_foot_deviations": [
+        4,
+        3,
+        5,
+        5
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-1.png",
+      "row": 3,
+      "asset": "ilyua_normal_n_attack4_v91",
+      "source_sha256": "ce25724774b810f4b82691230f290cd5308b38b5920a421c07660b0bdc347c76",
+      "head_registered_foot_deviations": [
+        33,
+        35,
+        33,
+        32
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-2.png",
+      "row": 0,
+      "asset": "ilyua_normal_n_attack5_v91",
+      "source_sha256": "b6bd3be82a60c2ee4cf6edab880cc25ec10660ff71ba695daebd2eb7c83a75f6",
+      "head_registered_foot_deviations": [
+        31,
+        31,
+        31,
+        29
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-2.png",
+      "row": 1,
+      "asset": "ilyua_normal_n_move_attack1_v81",
+      "source_sha256": "8e844a280ada7326335f6f564546bb89ca473382d640500c0692ccf25f01d8c9",
+      "head_registered_foot_deviations": [
+        16,
+        11,
+        14,
+        13
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-2.png",
+      "row": 2,
+      "asset": "ilyua_normal_n_move_attack2_v81",
+      "source_sha256": "65caac0f3b8dab8af4e86eb6acdd0bf4753633b2ffce3abc8255234e72d7170e",
+      "head_registered_foot_deviations": [
+        11,
+        8,
+        10,
+        11
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-2.png",
+      "row": 3,
+      "asset": "ilyua_normal_n_move_attack3_v81",
+      "source_sha256": "d23988d8baa01b56d0bf4ad26f2986f777e44b9819b954d3fdaab9c204a71613",
+      "head_registered_foot_deviations": [
+        17,
+        13,
+        16,
+        18
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-3.png",
+      "row": 0,
+      "asset": "ilyua_normal_n_move_attack4_v81",
+      "source_sha256": "109cc6461c0ec0a550ad61b2a526583c9d6693754c45e166c7912c012338b693",
+      "head_registered_foot_deviations": [
+        18,
+        15,
+        18,
+        19
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-3.png",
+      "row": 1,
+      "asset": "ilyua_normal_n_move_attack5_v81",
+      "source_sha256": "fa2386f58c2267e1a2fa3d8acd43f408387a3422eb7bf26ab6d86850abd33537",
+      "head_registered_foot_deviations": [
+        17,
+        15,
+        17,
+        18
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-3.png",
+      "row": 2,
+      "asset": "ilyua_normal_n_skill_cast_v80",
+      "source_sha256": "d557c8ba4f7da9709467ef2d54a6ca8d2901a4855be95e0b0fa8e221164d5dc7",
+      "head_registered_foot_deviations": [
+        15,
+        16,
+        6,
+        3
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "n-3.png",
+      "row": 3,
+      "asset": "ilyua_normal_n_walk_v02",
+      "source_sha256": "c6bee5fe4e4c27b423c0d121cc281cfd20b5f489c50a2f94e41680ee79110f95",
+      "head_registered_foot_deviations": [
+        15,
+        12,
+        15,
+        13
+      ],
+      "requires_grounded_body_review": true,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "utility-1.png",
+      "row": 0,
+      "asset": "ilyua_normal_utility_death_v01",
+      "source_sha256": "d791bddb1f9455d0ee70d812b462f42e160a38cb13976031e85fd1d26de68ba2",
+      "head_registered_foot_deviations": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "utility-1.png",
+      "row": 1,
+      "asset": "ilyua_normal_utility_hurt_v80",
+      "source_sha256": "a8bee6ccae80f50f6a8a5185e252ff07378d4dae085687223e0fedc68d9419fa",
+      "head_registered_foot_deviations": [
+        1,
+        0,
+        1,
+        2
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "utility-1.png",
+      "row": 2,
+      "asset": "ilyua_normal_utility_interact_v02",
+      "source_sha256": "2a34ffeb4ebdfff99ad70f8bb2c97b599dda8b3cf40878593c38f5c913936e67",
+      "head_registered_foot_deviations": [
+        -3,
+        -6,
+        -7,
+        -7
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    },
+    {
+      "page": "utility-1.png",
+      "row": 3,
+      "asset": "ilyua_normal_utility_prayer_v90",
+      "source_sha256": "7df9cf7e02eec9802787dd22a41293c3b0c6e5fe8176462b5cbb83599d87c1ab",
+      "head_registered_foot_deviations": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "requires_grounded_body_review": false,
+      "visual_approved": false,
+      "runtime_integrated": false
+    }
+  ],
+  "complete": false
+}

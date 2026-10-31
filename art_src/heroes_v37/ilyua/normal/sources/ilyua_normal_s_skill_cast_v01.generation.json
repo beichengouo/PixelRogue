@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_s_skill_cast_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_skill_cast_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-d267b8b7-e313-4c27-87d6-81e3611a4248.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / game sprite animation. Image1 is exact SAME character identity, clothing, anatomy, idle pose baseline and camera. Create clean production2x2 FOUR-frame full-body skill-gesture source on true transparent canvas. ALL figures face SOUTH/direct front facing downscreen without changing face direction between frames. Same rigid skull size/face proportions, compact short body, stable upright torso and two planted feet with common sole baseline, no walking or side sway. Keep costume and hair physically coherent, no hood/hair clipping, same head/shoulder/waist and short legs in each frame, no growing in active pose. Soft nonpixel handpainted miniature, refined colored outlines, restrained readable cel shading, not realistic. Exactly TWO arms/TWO hands per figure (only physically occluded parts may be hidden), exactly ONE complete prop. ERASE original resting arms/hands and original entire weapon before redrawing the new arms and prop pose; do not add extra limb/ghost hand/old shaft beneath robe. All four distinct gestures form one coherent calm continuous magical skill sequence, NOT four unrelated poses. No projectiles, targets, creatures, impacts, glow, spell effects; character-body gesture only. Full body/prop/hair/toes entirely within owncell with min10%height/15%width EMPTY transparent room; no cut tips, no crosscell overlaps. NO text/numbers/labels/grid/lines/borders/shadows/floor/background/watermarks. This is unlabelled production source, not a concept sheet. SAME ILYUA elf holding short curved bow anatomical LEFT hand, RIGHT hand empty performs string/finger form. Four phases reading order: 1 left elbow begins lifting bow from low ready, right fingers travel from chest to string; 2 left arm extended comfortably along facing direction with upright bow, right fingers near cheek in full gentle draw, string clearly V shaped; 3 right fingers relax in small follow-through behind cheek and bowstring straightens, left hand steadies bow; 4 bow lowers to chest height, right hand returns near collar, ready stance. NO arrow needed; peaceful bow-form exercise. Bow always LEFT hand; never swap sides between phases. Hood NORMAL stays up, legendary nohood. Preserve exact image1 sage hair/blue eyes, costume, ornament and small boots. ",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "52b0a8c6b84245809b368795182ef7c6b68ac3e8bd914ab92dbf04b28c67899d",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    73,
+    7,
+    1450,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    73,
+    7,
+    1450,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      73,
+      7,
+      1450,
+      1024
+    ],
+    "8": [
+      307,
+      10,
+      1234,
+      1012
+    ],
+    "32": [
+      307,
+      11,
+      1234,
+      1012
+    ],
+    "128": [
+      308,
+      11,
+      1233,
+      1011
+    ]
+  },
+  "reason": "superseded by v03 source; alpha checked valid, preview RGB halo is not opaque background"
+}

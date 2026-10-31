@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_n_attack5_v82",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_attack5_v82.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-b76c78b1-6365-4d97-8ef4-8455de5b4645.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_attack5_v82.png",
+  "built_in_imagegen": true,
+  "prompt": "Redraw the supplied four-frame sprite sheet with exactly the same four poses, outfit, body/head size consistency, back-facing camera and correct two arms. Keep the entire original character anatomy and four distinct archery phases. The sole required change is generous EMPTY TRANSPARENT SPACE around every complete figure: each sprite occupies at most 72percent of cell height and 70percent cell width. Keep both upper bow tips well below cell top edge with at least 12percent CELL HEIGHT empty space above each, feet at least 10percent above cell bottom. Exactly 2x2 equally-sized cells, no border/grid/text/effects/shadow. Never crop any tip or foot. Preserve rear hair and occlusion of north-aiming bowstring on FAR SIDE of body; never add visible arrow or a string across her BACK. Fully transparent RGBA.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_attack5_v81.png",
+      "sha256": "3bcb2fd91c0acbca97ed7bb44abfc9d5570aa9ef97172d576031ffb57572a8e0"
+    }
+  ],
+  "sha256": "730a4a863f6bf470382560fe33e4013261c833502b74a19637c257b3395f9650",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1302,
+    1167
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      23,
+      1302,
+      1167
+    ],
+    "8": [
+      236,
+      76,
+      1131,
+      1137
+    ],
+    "32": [
+      237,
+      76,
+      1131,
+      1137
+    ],
+    "128": [
+      237,
+      77,
+      1130,
+      1136
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_set_sw_move_attack1_v90",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack1_v90.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-465526fb-bf0b-4b1b-a286-049f366267e7.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack1_v90.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY arms/hands and bow action in supplied four-frame sprite sheet. Preserve the FOUR existing heads, hair, facial angles, skull size, torso, waist and especially the FOUR DISTINCT LEG POSES EXACTLY. Do not redraw or change anything below waist. Keep opposite contacting legs and narrow passing feet under pelvis, no repeated wide strides. First low quick shot: left bow low in front and right fingers nock; top-right short low draw, bottom-left open release, bottom-right right hand returning toward string. All four face SAME original direction; arrow aimed original facing (lower-left for three-quarter front, screen-left for profile). One arrow while fingers closed on string, NO arrow after release, string straight between bow tips after release. Exactly two connected arms/hands, anatomical LEFT hand holds same ornate bow throughout. Keep flower legendary outfit/boots and ONE quiver. Same skull size in every frame, no bob/tilt/zoom. True transparent RGBA, four complete figures in 2x2 equal cells with12percent margins. No text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_walk_v02.png",
+      "sha256": "3d8cf207d79ecb1b520a33d504d366a6f28285a7744732a8319f1382a31648d6"
+    }
+  ],
+  "sha256": "15135e03ff87489d76cf0a084d5d6709d9ee433dcab64eb6995d536b52baa3c6",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    73,
+    13,
+    1390,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      73,
+      13,
+      1390,
+      1086
+    ],
+    "8": [
+      284,
+      15,
+      1246,
+      1064
+    ],
+    "32": [
+      284,
+      16,
+      1246,
+      1064
+    ],
+    "128": [
+      285,
+      16,
+      1245,
+      1063
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "reason": "all four legs retain same-side near-forward stance; need real opposite contact and opposite narrow passing poses, not only technical head pass"
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_s_attack3_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack3_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-e196cb04-babe-4aaa-86c8-31afa4b11c87.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Repair this four-frame 2x2 transparent SOURCE of Ilyua's continuous frontal archery. Image1 is EDIT TARGET. Preserve EXACT four arm/bow phases and horizontal foreshortened bow aimed toward viewer downscreen, anatomical left hand holding the bow grip and anatomical right hand drawing/releasing string. Keep four different phases, bow anatomy, costume, quiver, boots, silver green hair, blue eyes. Correct skull, hood and body consistency: all four faces must have IDENTICAL skull width/height and same compact upright body dimensions; top left is canonical. Each crown, eyes and chin same relative positions and size, shoulders level, feet planted, no stretching or squatting. Make all four figures small enough to have at least 10 percent clear alpha margin in each quadrant; completely draw both bow tips, hair, feet and hood. No cropped edges. Exactly two hands and arms, one bow each, no extra hands or old bows, no arrows flying. Transparent background with no numbers, letters, marks, lines, borders, ground, glow, shadows, effects or additional creatures. Refined nonpixel cel shaded game sprite. Preserve original relative body proportions, not pixel stretching. Entire four figures fully visible, 2x2 layout.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_attack3_v02.png",
+      "sha256": "bd1fff515aace41e1a611533688f9e0e57b61856055262df0ab96174ba3c24de"
+    }
+  ],
+  "sha256": "f16f3001d6356c275f129f3bfce955fff53f830dc1be4897bbad293127bed36f",
+  "dimensions": [
+    1206,
+    1305
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    22,
+    1190,
+    1305
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "reason": "head registration drift 6.016% over 6% original gate",
+  "alpha_bounds_raw": [
+    0,
+    22,
+    1190,
+    1305
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      22,
+      1190,
+      1305
+    ],
+    "8": [
+      80,
+      26,
+      1188,
+      1279
+    ],
+    "32": [
+      80,
+      26,
+      1188,
+      1278
+    ],
+    "128": [
+      80,
+      26,
+      1187,
+      1278
+    ]
+  }
+}

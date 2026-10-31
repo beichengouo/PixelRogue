@@ -1,0 +1,15 @@
+{
+  "asset": "ilyua_normal_nw_walk_opposite_single_v03",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "4a6a0ea75484cc5360eb1043b4645bcca6c0ccec07eda1fd2fcf2536e7b2361e",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-0c1269f3-2536-4c5e-b6cd-ed350727886f.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_walk_opposite_single_v02.png",
+      "sha256": "661f8c47c18888c87e94fe96459da011def2bfdea6a46ab29ddea308abd02e7a"
+    }
+  ]
+}

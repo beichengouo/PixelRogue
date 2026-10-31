@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_move_attack2_v93",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack2_v93.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-62566077-23a1-4c59-98f8-a4c83f7cb269.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_move_attack2_v93.png",
+  "built_in_imagegen": true,
+  "prompt": "Recreate the exact supplied four-frame sprite sheet on a roomier transparent canvas. Preserve its four heads, body sizes relative to each other, all arm/bow phases, and EXACT FOUR DIFFERENT LEG POSES: first left-forward, second narrow passing, third RIGHT leg reaches lower-right and left leg bent behind, fourth opposite passing. Do not change anatomy or replace opposite step with repeated same leg. Only add generous empty transparent margins in EACH cell: bow tips at least12percent cell height BELOW top edge, feet at least10percent ABOVE bottom, all sideways hair safely inside. Each complete figure occupies at most75percent cell height. 2x2 equal cells, no words/grid/effects/shadow. Two connected hands, left grips bow all frames. True transparent RGBA.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_move_attack2_v92.png",
+      "sha256": "35f500c267ef269cd5692f461bdb64bfd4ec696c488969dfb847b8209a0d4b0d"
+    }
+  ],
+  "sha256": "169c0bcdb8bbad137b7ed66b7cc8938ba32706ced0e4d1e0d4e38f74c1bb5b87",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    29,
+    1370,
+    1037
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      29,
+      1370,
+      1037
+    ],
+    "8": [
+      252,
+      95,
+      1277,
+      1035
+    ],
+    "32": [
+      253,
+      95,
+      1277,
+      1035
+    ],
+    "128": [
+      254,
+      96,
+      1276,
+      1034
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

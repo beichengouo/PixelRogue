@@ -1,0 +1,50 @@
+{
+  "asset": "ilyua_normal_sw_walk_v90",
+  "kind": "source",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2896,
+    2172
+  ],
+  "native_cell_dimensions": [
+    1448,
+    1086
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates, no scaling or modification.",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_sw_walk_contact_single_v01.png",
+      "sha256": "333be195b3dc1370795450dfc85c255a51db6bd52f78bcdde379b975bc9d64f6",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_walk_contact_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_sw_walk_passing_single_v02.png",
+      "sha256": "99c185bd995215370dd0f8a6c3c1cddd32b8abdb944325c7ef577cf7b15e1217",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_walk_passing_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_sw_walk_opposite_single_v03.png",
+      "sha256": "f62eb879c601fa64c9d4159de0186e222be2e6e62ee38f940f87c6dc47d574a0",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_walk_opposite_single_v03.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_sw_walk_passing_opposite_single_v02.png",
+      "sha256": "eca341899aa1fa8a93b12d6ebbfe0920c4673b1fd38ab34039cf0a64751b743f",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_sw_walk_passing_opposite_single_v02.png"
+    }
+  ],
+  "sha256": "790a79e8bd9476be4a80d8d0eecc7f6cf38e708e12a39319a6b0d2a29c789500",
+  "evidence": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_sw_walk_single_pack_v01.generation.json",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

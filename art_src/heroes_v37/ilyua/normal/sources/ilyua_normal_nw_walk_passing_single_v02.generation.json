@@ -1,0 +1,15 @@
+{
+  "asset": "ilyua_normal_nw_walk_passing_single_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "de19a972e49d283787fd2180a082c9e2f612c5c82f69948146281e0422693ed9",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-6e09317c-54be-41b4-8d25-03902914074b.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_nw_idle_v01.png",
+      "sha256": "2e4b8a11273804c1b16ea3cd744d32a78a831407e7a01fbb536bbb1c107ebe60"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_set_s_idle_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_idle_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-d69fea61-2247-41d8-b1de-ed0222330fd3.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit this transparent SOUTH-facing neutral sprite with ONE precise outfit-consistency correction only. The white flower and gold leaf HAIR ORNAMENT belongs on the character's ANATOMICAL RIGHT temple, matching the turnaround: in this strict FRONT-facing sprite it must be on the VIEWER'S LEFT, not viewer-right. Move that one complete hair flower/leaf cluster from viewer-right temple to viewer-left temple. Restore plain sage-green hair where it was removed. Do NOT mirror the whole sprite: bow must remain in anatomical LEFT hand on VIEWER-RIGHT, quiver and all other asymmetric clothing/arms stay exactly as they are.\nPreserve identical canvas size, true alpha transparency, the entire same body/face/head, lake-blue eyes, hairstyle, ears, pose, anatomy, hands, feet, bow, costume, collar flower and other adornments. No new effects, no text, no labels, no numbers, no guides, no ground. Keep every hair tip, bow tip and boot intact within the existing transparent margins. Same nonpixel painted linework. This is a single isolated real sprite source, not a reference board.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_idle_v01.png",
+      "sha256": "5f0c504fe1a9b469cda9bb812b1a5e4bf59ff3330636c875620c8424c01bd98f"
+    }
+  ],
+  "sha256": "5fc547b2f14a92c504db2fe29b956f487971b127fbfb3fd408771b17e20a17f3",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    20,
+    1240,
+    1230
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    20,
+    1240,
+    1230
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      20,
+      1240,
+      1230
+    ],
+    "8": [
+      266,
+      165,
+      1020,
+      1179
+    ],
+    "32": [
+      267,
+      165,
+      1020,
+      1179
+    ],
+    "128": [
+      267,
+      166,
+      1019,
+      1179
+    ]
+  }
+}

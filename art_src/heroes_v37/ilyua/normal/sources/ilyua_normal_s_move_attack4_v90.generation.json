@@ -1,0 +1,100 @@
+{
+  "asset": "ilyua_normal_s_move_attack4_v90",
+  "kind": "source",
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates without scaling",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack4_contact_single_v01.png",
+      "sha256": "0c1cb6b89caed2a2a065e2efebbf73b928547add43f54856a244db66d428d147",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack4_contact_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack4_passing_single_v01.png",
+      "sha256": "ad4a171f6bbe13c4f71e6b296897f448b6ae6cdc24f78a97a760aeac3e380b44",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack4_passing_single_v01.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack4_release_single_v02.png",
+      "sha256": "5427eec65ef63399b3eededdeb68c3799c58524eccda2b7eaf6550dbd5bd7424",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack4_release_single_v02.png"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_move_attack4_return_single_v01.png",
+      "sha256": "c6524a8c75edc6a0807434f898fe775d8fec5fafeb5f9031cdcbc0db3590cf0e",
+      "project_path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack4_return_single_v01.png"
+    }
+  ],
+  "sha256": "cd5aa2b0c33910f0995e6e514fbfd787ce072054187d7ff78d25d391001edc6c",
+  "registration": [
+    {
+      "scale": 0.2326888738052021,
+      "offset": [
+        -81.81025295813107,
+        -27.123511453276695
+      ],
+      "head_inliers": 31,
+      "head_registration_scale": 0.9986230834139923,
+      "head_angle": 0.08517973647686387,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2326888738052021,
+      "offset": [
+        -81.86503527002428,
+        -27.134092460558247
+      ],
+      "head_inliers": 23,
+      "head_registration_scale": 1.0000585203883097,
+      "head_angle": -0.13061289521062155,
+      "foot_deviation": 4,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2326888738052021,
+      "offset": [
+        -81.81632565989078,
+        -26.81377521996359
+      ],
+      "head_inliers": 36,
+      "head_registration_scale": 0.9942378371523246,
+      "head_angle": 0.03426294620007451,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2326888738052021,
+      "offset": [
+        -81.88514487257282,
+        -26.952394948422324
+      ],
+      "head_inliers": 35,
+      "head_registration_scale": 0.9905489778922586,
+      "head_angle": 0.02952312784079674,
+      "foot_deviation": 3,
+      "torso_residual": null
+    }
+  ],
+  "notes": "Full draw contact/passing, release opposite contact/passing; review flow and fletching in context.",
+  "contains_design_labels": false,
+  "usage": "crop_input_pending_validation",
+  "label_review": "Parent visually inspected native grounded sheet: no text/labels; exact SHA in integration-visual-review.json"
+}

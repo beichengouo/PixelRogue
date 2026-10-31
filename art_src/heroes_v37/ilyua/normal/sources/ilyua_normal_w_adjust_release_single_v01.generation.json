@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_w_adjust_release_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "e7c093beeea2207a6b8e42bc0b711752a96e40202508569ee9bcd6843682e5ec",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-ca973053-f057-424f-b8b9-c0a1b03f1b04.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_draw_single_v01.png",
+  "prompt": "Side third shot release hand near cheek, bow at rest, same body, transparent.",
+  "review_reason": "Needs full sequence and registration review."
+}

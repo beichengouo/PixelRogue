@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_s_attack3_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack3_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-b2ea96c1-e81a-470f-9c7e-79e13145dfee.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve clean four-frame gameSOURCE. Image1 exact CORRECT SOUTH shooting geometry and same Ilyua identity, not an image to repeat4times. Image2 exact idle proportions/costume. Four DISTINCT consecutive stage3 attack frames reading order2x2 true transparent. Character shoots SOUTH/DOWNscreen DIRECTLY TOWARD VIEWER; preserve image1 HORIZONTAL bow construction acrossscreen, NOT verticalbow pointing right. Leftbowgrip projects towardcamera at center/lowerchest; rightstringhand behind at sternum/chin, hands centered oneaboveanother in depth; arrow ifnocked veryforeshortened points DOWNscreen at viewer, NEVER long right/left horizontalarrow. Facialview stays FRONT both eyes/levelshoulders, stable upright torso. Same compact skull size/torso/shortleg lengths all4 and idle, don'tgrowdeepdraw. Feetplanted. Exactly2arms/2hands/onebow, no ghosthand. Same sagehair/blueeyes ivorygoldvineHOODUP sageinnerrobe, brownbelt/quiverRIGHT hip/shortboots, smallcurvedwoodbow anatomicalLEFThand always and RIGHTstringhand. Single bowfeathertassel asidle, notextraweapons. Soft refined nonpixel handpainted miniature celshading. All4 fullbody/hood/bowtips/feet fit their owncell with generous10%emptytransparent room, no tips cut or crosscells. NO numbers/text/labels/grid/borders/shadows/floor/glow/effects/particles/background/creatures/projectile arrows flying. Four stages within this clip: 1 bow horizontalacrossscreen tilted25degrees with righttip slightlyhigher, rightfingers hookstring; 2 shortdraw with diagonalbow and rightstringfingers atchin; 3 release same diagonalbow, rightfingers spread besidechin/stringstraight; 4 bow rolls back horizontal and rightfingers gather nextfullaim. Aim remains DOWNscreen viewer, NOT right/left.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\ilyua_normal_s_aim_reference_v01.png",
+      "sha256": "6d9c0936ca1f40b4b8faa387bb4629121bb263535f18d9029a05bb0cf8e6b6dc"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "sha256": "bd1fff515aace41e1a611533688f9e0e57b61856055262df0ab96174ba3c24de",
+  "dimensions": [
+    1206,
+    1304
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1190,
+    1304
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1190,
+    1304
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1190,
+      1304
+    ],
+    "8": [
+      79,
+      17,
+      1186,
+      1294
+    ],
+    "32": [
+      79,
+      18,
+      1186,
+      1293
+    ],
+    "128": [
+      80,
+      18,
+      1185,
+      1293
+    ]
+  },
+  "reason": "measured head scale drift exceeds6percent gate (11.92/9.16/7.18percent); stage3 also right bowtip touches outercanvas; needs new source after quota resets"
+}

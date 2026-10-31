@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_s_attack2_v04",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack2_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17bf1-89ac-7c70-bf6a-7d9cd2be44f7\\exec-5089e4cf-2c7b-4a5c-a629-fc5ce1c1f512.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair image 1: preserve the four sequential distinct archery poses and the exact front-facing identity, pose and bow geometry from image 2. Character aims directly toward the viewer; horizontal bow held in left hand and string manipulated by right hand, no horizontal arrow. Keep character proportions and head SIZE identical in all 4 frames, exactly like image 2, do not shrink or enlarge head. Keep boots grounded and torso upright, sleeves/hood/hair/wooden bow identical in all frames. Two arms and one bow only, strings connect tips to drawing hand, release string straight. Make all four full bodies and both bow tips fully visible with generous space between cells and margins. Four equal 2x2 cells, transparent background, no labels, numbers, text, border, shadows, effects, or additional figures. Same refined nonpixel chibi game sprite illustration.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_attack2_v03.png",
+      "sha256": "6ab87c7c6263604e803865d28d4e89d37be71014706109d00fa142622053c316"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\ilyua_normal_s_aim_reference_v01.png",
+      "sha256": "6d9c0936ca1f40b4b8faa387bb4629121bb263535f18d9029a05bb0cf8e6b6dc"
+    }
+  ],
+  "sha256": "5f0a063e1057e2e5122dcddf036b3f19ea464ac8de41a4ab8469a17bcdb2a32d",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    12,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Measured head-size drift exceeds 6% after registration; correct archery direction alone is insufficient.",
+  "alpha_bounds_raw": [
+    0,
+    12,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      12,
+      1240,
+      1254
+    ],
+    "8": [
+      72,
+      14,
+      1183,
+      1225
+    ],
+    "32": [
+      73,
+      14,
+      1182,
+      1225
+    ],
+    "128": [
+      73,
+      15,
+      1182,
+      1224
+    ]
+  }
+}

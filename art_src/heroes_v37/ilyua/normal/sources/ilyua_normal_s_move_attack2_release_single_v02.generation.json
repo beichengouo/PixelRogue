@@ -1,0 +1,15 @@
+{
+  "asset": "ilyua_normal_s_move_attack2_release_single_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "b9d808b8d6f841443f13e3ae85372579f8e5c3e879f4c7fd307ef3aef3eb3237",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-551b9869-9743-426f-8c7d-276882d7c82b.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f4_v01.png",
+      "sha256": "8265849420b0c2ec54bbf475f08230260fdcfb2dfdfa12d30f533bcc3af27459"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_set_sw_walk_return_single_v01",
+  "kind": "single_frame_source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_return_single_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-20b3ef1d-e636-48d6-bd88-06ed33554f54.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_sw_walk_return_single_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit only TWO LEGS below skirt of supplied SINGLE three-quarter front elf into ONE walk pose. Far anatomical LEFT leg moves back under pelvis supporting weight, boot planted centrally; near RIGHT leg swings forward with knee lifted and bent, its boot suspended ahead toward LOWER LEFT. Narrow opposite passing, unlike wide contact. Keep exact original HEAD/skull outline/face angle, blue eyes, ears, flower ornament, hair, neck, shoulders, chest, torso, BELT, quiver, LOW BOW and BOTH original relaxed arms/hands UNCHANGED. Do not redraw head/chest, rescale, turn, tilt or nod, crouch, stretch body or add head bob. Preserve hip/pelvis height and head-to-belt ratio. Only slight lower skirt movement allowed around changed legs. Same original camera lower-left facing; same native canvas and figure scale. One complete fullbody, floral brown boots fully visible, generous transparent margin. Genuine RGBA transparency. No nocked arrow but PRESERVE arrows inside quiver. No text/grid/effects/shadow. This is ONE native frame, not sprite sheet.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_idle_v01.png",
+      "sha256": "b9b2605246f1502519574c2275cb94dc779f5b836aea64a302daca35d22f240d"
+    }
+  ],
+  "sha256": "87e26f3ed4802a63287fcd665d4ad84178119f2fd84b1f2d789083fa89112152",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "walk_return_single",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "native_single_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    33,
+    21,
+    1220,
+    1214
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      33,
+      21,
+      1220,
+      1214
+    ],
+    "8": [
+      350,
+      133,
+      1042,
+      1168
+    ],
+    "32": [
+      350,
+      133,
+      1041,
+      1168
+    ],
+    "128": [
+      351,
+      134,
+      1041,
+      1167
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

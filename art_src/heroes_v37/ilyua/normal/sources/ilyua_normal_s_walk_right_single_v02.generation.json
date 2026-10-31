@@ -1,0 +1,15 @@
+{
+  "asset": "ilyua_normal_s_walk_right_single_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "sha256": "7d0a82f5b85fbd372bc4b4c2305f0030fa589bbcdeb7952298fc9998c7e88085",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-ac75b96c-f7cd-4efc-9599-93a683eb1cbe.png",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_walk_right_single_v01.png",
+      "sha256": "3d99562e09da8b43573432de9df35a3ff9ed8cf65eabd7338514401a0240e42f"
+    }
+  ]
+}

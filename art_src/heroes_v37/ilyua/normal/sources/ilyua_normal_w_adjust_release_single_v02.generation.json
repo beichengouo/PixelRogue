@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_w_adjust_release_single_v02",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "6d9635af9de862fb6a65b2a3a0b999b51f740ce234b29baa79cdb933a058659a",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-7ebf32c1-c221-476e-9671-acd1619d9bbd.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_w_adjust_draw_single_v02.png",
+  "prompt": "Side profile release, same body and bow, transparent.",
+  "review_reason": "Needs full sequence and registration review."
+}

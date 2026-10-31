@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_s_move_attack4_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_move_attack4_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-b16520de-ccbb-40ad-9104-ed3e24011540.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit FOUR distinct archery poses in image1. Keep the exact four distinct upper body, bow and hands in reading order: ready, draw, release and follow-through. Do not replace their arms by identical copies. Change only lower legs to match respective four phases in image2: alternate left lead and right lead, with lifted foot passing underneath pelvis in between. Preserve the same front facing head, hood, face, torso, costume, bow and scale throughout. Bow horizontal, arrow foreshortened toward viewer, no sideways flying arrow. Four full body sprites in an invisible equal 2x2 grid, generously wide transparent margins. No text, numbers, frames, backgrounds, shadows or effects. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_attack4_v02.png",
+      "sha256": "f057e210e64b4455739d4663903a7f1422c85b1034fb73495fdd85e170931e75"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_s_walk_v01.png",
+      "sha256": "95abc0c54c57ab7bad2fbc74cb40818d46440536091fa48116ecc50345a18b4d"
+    }
+  ],
+  "sha256": "e7d28481bc7b100746c8dde3597e11197bd47d2e32bb79ba98ad978f5e2b89d2",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    2,
+    1,
+    0
+  ],
+  "review_reason": "Four subjects cannot be separated by approved connected component extractor; bow overlaps neighboring cell.",
+  "alpha_bounds_raw": [
+    0,
+    17,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      17,
+      1240,
+      1254
+    ],
+    "8": [
+      85,
+      24,
+      1190,
+      1247
+    ],
+    "32": [
+      85,
+      24,
+      1190,
+      1247
+    ],
+    "128": [
+      86,
+      25,
+      1190,
+      1246
+    ]
+  }
+}

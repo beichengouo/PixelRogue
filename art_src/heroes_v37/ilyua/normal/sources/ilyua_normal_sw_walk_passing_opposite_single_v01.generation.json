@@ -1,0 +1,13 @@
+{
+  "status": "pending_registration_and_packaging",
+  "runtime_integrated": false,
+  "sha256": "8db485fbe8b773becc27d9591f58b48466e7e4ec9564063edc7ef26ad29a6949",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_sw_walk_passing_single_v01.png",
+  "review_reason": "Needs registration against idle and adjacent steps; head shape visibly differs.",
+  "usage": "unpackaged_candidate",
+  "asset": "ilyua_normal_sw_walk_passing_opposite_single_v01",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-47cca296-4f99-4f82-9386-aa5d907a3dce.png",
+  "prompt": "Swap which foot is raised in passing step, preserve head, torso, bow and costume, transparent background.",
+  "frame_count": 1,
+  "kind": "single_frame_source"
+}

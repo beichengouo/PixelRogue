@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_set_sw_walk_v97",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_sw_walk_v97.png",
+  "sha256": "83ad27db255a7c0d7fb53150c6104fca6934ec3a0d521abd02b5cca5681c2566",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "mode": "RGBA",
+  "contains_design_labels": false,
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": false,
+  "frames_generated_with_builtin": true,
+  "generation_path": "lossless_grid_assembly_of_four_authored_single_frames",
+  "frame_sources": [
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_walk_contact_single_v01.png",
+      "source_sha256": "97dbfb508fff01718580ef11a37c342f6c08d44a243d48a34b4087ba11046682",
+      "source_metadata_sha256": "533bcfd8321cd6277eba92d5deabdae407ba73043ad590e5aaf6218ef6e101ee",
+      "assembly_offset": [
+        0,
+        0
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_walk_passing_single_v01.png",
+      "source_sha256": "ce026c84bac332569b138c8d05339d06d4bb936941b3aa9bbc9eacbc83a78482",
+      "source_metadata_sha256": "26f66e7a63ccdef0002bdca5b5efa34c82138b3b24913eb13f5a133bb7bed12e",
+      "assembly_offset": [
+        1254,
+        0
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_walk_opposite_single_v01.png",
+      "source_sha256": "5d7d40f360688f5d5a20abf9ac0aad6839d8cd6a51d7b2209b54a66f4773808d",
+      "source_metadata_sha256": "00af14e7085fea1d314dc82b004e8de1fe34ef5bda672fd439fd19af47d03dbf",
+      "assembly_offset": [
+        0,
+        1254
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_sw_walk_return_single_v01.png",
+      "source_sha256": "87e26f3ed4802a63287fcd665d4ad84178119f2fd84b1f2d789083fa89112152",
+      "source_metadata_sha256": "fa7e1340b828a5a89a7a9fd6a5cf9808ab2ab035846a709fa0ff7ab93a11d456",
+      "assembly_offset": [
+        1254,
+        1254
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "assembly_policy": "common maximum canvas via transparent right/bottom padding, integer placement only; no scaling, painting, warping or in-between synthesis",
+  "primary_visual_review": "authored singles inspected; full-clip calibration and transition review pending"
+}

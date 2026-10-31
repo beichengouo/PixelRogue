@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_nw_attack5_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_nw_attack5_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-a2d61a74-edab-4d82-9e3c-e6357d45e6f7.png",
+  "built_in_imagegen": true,
+  "prompt": "Wardrobe-only edit of image1 four-frame archery animation. Image2 specifies the SAME elf and her green-white gold-leaf legendary outfit, exposed pointed ears, flower and leaf collar, green layered leaf dress, brown boots, ornate leaf-and-flower bow. Preserve image1 camera angle, body and head proportions, foot positions and four different bow draw/release gestures exactly. Replace hood with hairstyle in image2; bow remains physically held in left hand, right hand draws string. Single arrow only while nocked, none flying. Full figures and bows in separate equal 2x2 cells with ample transparent margins. No text, numbers, frame lines, shadows, background or magic effects. Transparent, refined nonpixel game sprites. Preserve the exact three-quarter rear left facing of image1. Long hair stays behind head without covering bow string or arms.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_attack5_v02.png",
+      "sha256": "a2e57a5c6ac471da5069d9d3b42fd8ba1fa8067ec397569b3b8d28f6d0eb92d2"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_nw_idle_v01.png",
+      "sha256": "fa221fb6e491b7bb9255418cb091ad0de65c32bcecbbb8bbdbee447008fd2264"
+    }
+  ],
+  "sha256": "bcb860039facdac6189cd92c6442bf5a66d2863794009d80106dbbbae57f5a62",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1236,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    0,
+    1236,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      0,
+      1236,
+      1254
+    ],
+    "8": [
+      159,
+      6,
+      1223,
+      1230
+    ],
+    "32": [
+      159,
+      6,
+      1223,
+      1229
+    ],
+    "128": [
+      160,
+      7,
+      1222,
+      1229
+    ]
+  }
+}

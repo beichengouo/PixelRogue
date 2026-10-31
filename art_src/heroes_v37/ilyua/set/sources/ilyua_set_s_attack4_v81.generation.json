@@ -1,0 +1,76 @@
+{
+  "asset": "ilyua_set_s_attack4_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_attack4_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182b2-8406-7900-bbaf-4790ff78afd9\\exec-51f35e1e-fe93-4e67-831d-d8b8b1cb4c79.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_s_attack4_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit image1 only by dressing the same four sprites in the legendary outfit shown in image2. Image1 pose and camera must remain EXACT: front facing SOUTH toward viewer in all cells; the bow is HORIZONTAL across body in ALL FOUR frames, both bow tips extend LEFT and RIGHT across image, and any nocked arrow is strongly foreshortened pointing DOWN toward viewer, NEVER pointing right/left across image. Do not copy image2 upright bow orientation. Keep the original four hand positions and phases: upper-left nock, upper-right draw, bottom-left open right hand release with NO arrow, bottom-right re-nock recovery. Replace hood with exposed sage hair, pointed ears, flower at same temple as image2. Copy image2 green leaf dress, ivory gold drapes, boots, ornate flower bow, ONE quiver at screen-right hip. Preserve image1 exact head/body size, feet, short limb lengths and cell placement, no raised/new arms. Precisely two arms/hands. Actual transparent background, 2x2 equal cells, four complete fullbody sprites. Every bow tip, hair and foot inside own cell with empty margins, no text/effects/shadow.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_attack4_v02.png",
+      "sha256": "f057e210e64b4455739d4663903a7f1422c85b1034fb73495fdd85e170931e75"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_s_idle_v02.png",
+      "sha256": "5fc547b2f14a92c504db2fe29b956f487971b127fbfb3fd408771b17e20a17f3"
+    }
+  ],
+  "sha256": "a96d8d0b85d6014c413d67326b7eda1b9033fe1a5aafafce2dc51b6178bf4b07",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      17,
+      1236,
+      1254
+    ],
+    "8": [
+      75,
+      35,
+      1197,
+      1234
+    ],
+    "32": [
+      75,
+      35,
+      1196,
+      1234
+    ],
+    "128": [
+      76,
+      36,
+      1196,
+      1233
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

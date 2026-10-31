@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_set_n_skill_cast_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_skill_cast_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-de2756d7-85d4-426d-9690-2224578ae506.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_set_n_skill_cast_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit IMAGE1's FOUR legendary Ilyua north-facing standing figures into an independent SKILL COMMAND gesture. Preserve ALL FOUR original native skulls/head size, bare long sage-gray hair, pointed ears, floral gold-leaf ornament at image RIGHT, neck/torso/waist/limb lengths, layered green leaf skirt, ivory gold vine side panels, floral brown boots, one quiver and planted feet exactly. NO hood or normal outfit. Image2 supplies ONLY four right-hand command gestures, never its hood/body/costume/weapon. Image3 is legendary head/body/outfit master. Change ONLY right arm/elbow/hand and small left wrist tilt; left hand holds ONE gold-floral wooden bow continuously FORWARD in front of body. Bow/string stay naturally occluded by head/hair, never draw bow/string across visible back. Exactly TWO connected arms/hands. Strict BACK view looking/aiming UP away from viewer. Four phases:1 right fingers gather at front cheek;2 right palm opens beside head slightly forward;3 fingers extend forward UP into depth to command a skill;4 fingers relax back toward cheek. Natural occlusion is correct. ZERO arrows in ALL FOUR cells, no shaft/nock/feathers/arrowheads, no flying bolts or magic FX. Maintain all four exact original heads/skull silhouettes and same planted body, no shrink/growth/crouch/turn. FOUR complete figures in2x2 equal cells, full bow/hair/boots with8% clear transparent margin each side. True RGBA transparency, refined nonpixel cel-painted sprite; no text/grid/floor/shadows/effects.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_attack4_v81.png",
+      "sha256": "217e3da5552946fd85482440a053683831420e5dd8fdf0f463848d5c9eb51de7"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_skill_cast_v80.png",
+      "sha256": "d557c8ba4f7da9709467ef2d54a6ca8d2901a4855be95e0b0fa8e221164d5dc7"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/set/sources/ilyua_set_n_idle_v02.png",
+      "sha256": "87e83235deb3e2f69e5b5728baa5e3e793e0bdc109a503a50adb4aae67f235a8"
+    }
+  ],
+  "sha256": "8e6e79bfdf0d450c88a5177116f5da49027e7490a611892770c94b73f5781e63",
+  "dimensions": [
+    1282,
+    1227
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    33,
+    19,
+    1250,
+    1205
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      33,
+      19,
+      1250,
+      1205
+    ],
+    "8": [
+      248,
+      22,
+      1152,
+      1191
+    ],
+    "32": [
+      249,
+      22,
+      1151,
+      1190
+    ],
+    "128": [
+      250,
+      23,
+      1151,
+      1190
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

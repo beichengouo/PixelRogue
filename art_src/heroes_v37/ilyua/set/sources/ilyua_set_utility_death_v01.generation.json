@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_set_utility_death_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/set/sources/ilyua_set_utility_death_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-3471a32d-d38e-41c5-aca0-ee766c4c52fb.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe edit of FOUR animation SOURCE frames, death. IMAGE1 PRIMARY edit target: preserve its4 exact DISTINCT consecutive body/arm/leg poses, skull scale, shortlimb anatomy, face identity, WEST profile camera and2x2 reading order. IMAGE2 ONLY SAME CHARACTER LEGENDARY WARDROBE/PROP reference; do not copy its idlepose. Replace clothes/hair/prop only with image2. Exactly TWO arms/TWO hands perfigure, one complete prop, never retain old waist idlehand or original weaponshaft. All4 fullbody/hair/prop/toes completelyinside owncell, enough transparentroom all sides; no cropping. Preserve same body dimensions evenbowing/lyingdown, don't shrink fallposes. Soft refined nonpixel miniature celpainted finish. TRUE TRANSPARENT RGBA background; NO numbers/text/labels/grid/marks/borders/shadows/floor/glow/effects/background/extra creatures. Same sagehaired blueeyed elf. Change normal ivoryhood to legendary NOHOOD naturalhair with whiteflower/goldleaf ornament anatomicalRIGHT temple. Ivory/green layered LEAF hunting outfit, whiteflower/goldleaf collarpendant, split ivory goldvine cape, short brown flowerboots, goldvinebow same LEFT hand, RIGHT freehand. QuiverRIGHT hip. Do not swap bowhands or addbow. No cloth on head.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_utility_death_v01.png",
+      "sha256": "d791bddb1f9455d0ee70d812b462f42e160a38cb13976031e85fd1d26de68ba2"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\set\\sources\\ilyua_set_w_idle_v01.png",
+      "sha256": "58dc192e0b473b10698e8b9282928f0227b08ddda66dd1ac0630e0d3a4298ff9"
+    }
+  ],
+  "sha256": "ecdda8465ad201bdcebc82e5c23cdeec69d6aa270d19e6288436a1fc0eaa3fbe",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "utility",
+  "action": "death",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    12,
+    1506,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    12,
+    1506,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      12,
+      1506,
+      1024
+    ],
+    "8": [
+      97,
+      16,
+      1486,
+      986
+    ],
+    "32": [
+      97,
+      16,
+      1486,
+      986
+    ],
+    "128": [
+      98,
+      16,
+      1485,
+      985
+    ]
+  }
+}

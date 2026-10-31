@@ -1,0 +1,83 @@
+{
+  "asset": "ilyua_normal_s_attack2_return_pack_v02",
+  "kind": "candidate_pack",
+  "status": "pending_full_sequence_review",
+  "runtime_integrated": false,
+  "frame_count": 4,
+  "layout": "2x2, 448px",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f1_v01.png",
+      "sha256": "e91591b1a671e2abd463fab585c76e4930988d6dbafb24a71aff8b7c1fbc3024"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f2_v01.png",
+      "sha256": "e682ff7b4c2f92dd7b6462781b3315651cde92d1859de71ee4440643e838e2f1"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f3_v02.png",
+      "sha256": "8a28a9546da8368a7847e112978227c85a9a83cd88882c97adaf9a854ab1b963"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_s_attack2_uniform_f4_v01.png",
+      "sha256": "8265849420b0c2ec54bbf475f08230260fdcfb2dfdfa12d30f533bcc3af27459"
+    }
+  ],
+  "pack_method": "one uniform scale for entire clip; registration translation only",
+  "registration": [
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.34977055521846,
+        -27.391350310983004
+      ],
+      "head_inliers": 81,
+      "head_registration_scale": 1.000858259926369,
+      "head_angle": 0.03764662300380221,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.42060926122574,
+        -27.50961866656553
+      ],
+      "head_inliers": 60,
+      "head_registration_scale": 1.000411497362431,
+      "head_angle": 0.37703138246322326,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.43107649423544,
+        -27.448066785497566
+      ],
+      "head_inliers": 66,
+      "head_registration_scale": 0.9996076488162863,
+      "head_angle": 0.0032789454580326224,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2332096916333287,
+      "offset": [
+        -82.41684048847088,
+        -27.373480639411405
+      ],
+      "head_inliers": 64,
+      "head_registration_scale": 0.9991864462002161,
+      "head_angle": 0.07360074466765502,
+      "foot_deviation": 1,
+      "torso_residual": null
+    }
+  ],
+  "sha256": "477ee3c1fad586952df7df35b4e818d895ecb3caa33700d84a99653bdf4d2c0d",
+  "notes": "Front return shot; candidate pending review of full five-hit sequence and adjacent movement."
+}
