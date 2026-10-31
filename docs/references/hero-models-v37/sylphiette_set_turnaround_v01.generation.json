@@ -1,0 +1,38 @@
+{
+  "asset": "sylphiette_set_turnaround_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/sylphiette_set_turnaround_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-d733e01d-9449-4961-afea-3de29176f1c8.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / stylized-concept. Production three-view sheet for Sylphiette's LEGENDARY holy ceremonial hooded outfit in PixelRogue. Image 1 is PRIMARY STYLE/ANATOMY reference, compact approximately 2.7-heads-tall nonpixel anime game body. Image 2 is the new NORMAL Sylphiette sheet: preserve that EXACT same silver-haired blue-eyed face and body, identical head volume, crown/chin/waist/sole distances, short limbs, shoulders and feet. Image 3 supplies legendary COSTUME identity ONLY; image 4 portrait supplies material/color and simple collar clasp. Do NOT copy tall illustration proportions, long fashion legs or giant dress.\nCreate ONE white-background 1536x1024 sheet, FRONT / LEFT PROFILE facing left / BACK orthographic neutral standing views evenly spaced at same scale/baseline, simple labels and subtle crown/chin/waist/sole guide lines. Clean soft cel-painted game-sprite linework exactly matching reference 1, not pixel art, not realistic, not 3D.\nCharacter is the same adult holy priestess in compact game proportions, SILVER-WHITE long soft wavy hair, clear BLUE eyes, calm firm gentle expression. Legendary form wears a WHITE-AND-GOLD NUN-LIKE CEREMONIAL HOOD UP with DEEP NAVY-BLUE inner lining, no crown, no tiara and no wizard hat. Her silver front locks emerge ONLY from front face opening; rear hair emerges correctly from BELOW the open lower rim of the hood and lays OVER the back cape, not through the crown fabric. Side and rear hood/hair overlap must be physically unambiguous. Modest white/gold robe with navy-backed broad sleeves/cape and restrained gold cloud borders, layered skirt close above small white/gold FLAT shoes. At throat a SIMPLE gold-bordered BLUE SAPPHIRE clasp named Eternal Daylight Ring, worn as a collar fastener, no hanging gold tassel forest. Gold trim only on defined edges; don't pile tiny ropes, dangling charms or embroidery everywhere.\nIn her ANATOMICAL RIGHT HAND hold one miniature gold staff with a blue orb in an open crescent/flame-shaped gold frame, complete and readable. FRONT: weapon on VIEWER'S LEFT. BACK: weapon on VIEWER'S RIGHT. Her LEFT hand empty and relaxed. Same head size, body, dress overall height and foot size as normal form image 2, outfit changes only. Keep all hood tips, hair, sleeves, staff and shoes inside generous margins. No halos, no magic effects, no floating symbols, no wings, no background, no additional characters. Do not expose or lengthen legs, do not add high heels, do not let fabric pierce hair.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/sylphiette_normal_turnaround_v01.png",
+      "sha256": "d42e4a73af7eb0e9c4baa803ee0c5f6ad91c129508bfd99d00f5d152ef9c552e"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v35/sylphiette_set_turnaround.png",
+      "sha256": "227c7a2aacef046a9b60e6df5ab8906a02fb14808f9775e8b141ec17a6d28c6d"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/legendary_sets_v21/sylphiette/portrait_set.png",
+      "sha256": "84fccbdf3ec7ce44b11de756bb61d3a6f0622aa2deb558edf2558ebcaa01d7d7"
+    }
+  ],
+  "sha256": "1bb377dbd0dcd01a276ae54edba5207c49cfcd4accf7df349a75bde811f8ec8b",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

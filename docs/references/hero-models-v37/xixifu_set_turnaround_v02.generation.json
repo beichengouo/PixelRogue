@@ -1,0 +1,34 @@
+{
+  "asset": "xixifu_set_turnaround_v02",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/xixifu_set_turnaround_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-a09a5e74-c5af-4581-89c8-327c16fb5cae.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a corrected THREE-VIEW CHARACTER DESIGN SHEET for Xixifu's legendary outfit. Input 1 is the exact approved NORMAL body and face construction. Input 2 is the exact same character's normal single game sprite, defining compact game anatomy and head/body ratio. Input 3 is the current legendary costume sheet to correct, CLOTHING ONLY. The problem in input 3 is that the dress has made the torso/legs look longer and the body taller relative to the head than normal.\nDraw the legendary outfit again on precisely the SAME UNDERLYING BODY as inputs 1/2: approximately 2.7 heads tall, same head size and face, same short neck, shoulder width, short torso, waist-to-knee and knee-to-sole distances, same small hands and feet. Do not merely scale the whole taller body down. Front silhouette should align visually to the normal reference: head top near y190, chin near y425, waist near y555, soles near y830 on the 1536x1024 sheet. These are guides for anatomical consistency, not visible rulers. Keep natural compact body; clothing volume may be fuller, anatomical height must not change.\nExactly THREE full-body views evenly spaced FRONT / LEFT PROFILE / BACK on clean WHITE 1536x1024 background, small view labels and subtle crown/chin/waist/sole guide lines are acceptable ONLY because this is a design reference sheet, not sprite source. Same neutral standing pose and baseline in all three. Hand-painted nonpixel soft cel anime miniature style like input 1.\nKeep Xixifu's same black long hair with muted violet shading and dark charcoal BLACK eyes. No horns, wings, tail or crown. Legendary costume: black capelet and wine-red modest bell ceremonial dress, thin gold edge embroidery, restrained small bells and a few violet charms, red clasp. Dress lower hem at MID-CALF of her SHORT SAME-BODY legs; do not add long calves. BARE FEET with delicate small gold anklets and tiny violet charm, no boots/heels. Her anatomical RIGHT hand holds one proportionate dark decorative staff with violet crystal orb: FRONT weapon on viewer-LEFT, BACK weapon on viewer-RIGHT. Left hand relaxed empty. Back long hair continuously drapes outside lowered hood/cape, no fabric piercing hair. Keep her head/face nearly identical to normal and short body clearly matching it, not a different older or taller person. Whole crown, hair, staff and feet inside large empty margins. No magical effects, no environment, no extra character, no realistic fashion anatomy.\nReduce the density of the current sheet's tiny chains modestly: use roughly four readable small front bells and two small rear bells with a few simple connecting chains, keep the contract-bell identity and wine-red layers. Avoid dozens of scattered tiny hanging ornaments.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_s_idle.png",
+      "sha256": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/xixifu_set_turnaround_v01.png",
+      "sha256": "6fd2bff65b6e66b8e9c4bc36a504cb46b058bddfc31ae3e607c0b15023954cd0"
+    }
+  ],
+  "sha256": "1712a2f0ff7e2c4e162241d2c9c4bf05791089937ee98f0a6a5ad5f549ade4ce",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

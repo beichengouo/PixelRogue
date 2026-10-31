@@ -1,0 +1,30 @@
+{
+  "asset": "sylphiette_normal_turnaround_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/sylphiette_normal_turnaround_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-630502fa-fba0-48a2-8c3f-b49058a5e1d8.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / stylized-concept. Create Sylphiette's NORMAL outfit production turnaround for PixelRogue. Reference image 1 is the PRIMARY STYLE AND BODY PROPORTION reference: match this exact compact approximately 2.7-heads-tall hand-painted anime sprite anatomy, same head volume, short torso/arms/legs, hands and feet, same shoulder/waist/sole ratios. Reference image 2 supplies Sylphiette's IDENTITY and normal CLOTHING only; do not copy its elongated body or excessive tassels.\nOne clean WHITE background 1536x1024 sheet, three evenly spaced full-body orthographic FRONT / LEFT PROFILE facing left / BACK views. All standing neutrally, same scale and common baseline, subtle crown/chin/waist/sole alignment lines and simple view labels. Crisp soft cel-painted game illustration linework like image 1, NONPIXEL, not realistic, not 3D.\nSylphiette: adult holy priestess in stylized compact game proportions. SILVER-WHITE long softly wavy hair, clear BLUE eyes, gentle composed and purposeful expression. No hat, no hood, no crown in NORMAL outfit. Small understated gold cloud hair clasp, with at most one tiny hanging accent, not a cascade of tassels. Normal robe is modest pure WHITE ceremonial traveling robe with thin GOLD CLOUD embroidery and pale cool-blue lining, restrained layered skirt ending above little white/gold flat shoes. One simple gold-bordered BLUE SAPPHIRE clasp at waist; practical sleeves showing small hands. Avoid overdecorating front with ropes, bells, dozens of chains or tassels. Hair falls naturally outside the garment, back half-gathered neatly so dress structure remains readable. In her ANATOMICAL RIGHT HAND hold a small golden CLOUD-CURL staff with one BLUE orb; front view staff must be on VIEWER'S LEFT, back view on VIEWER'S RIGHT. Left hand relaxed empty at side. The miniature staff is proportionate and complete, not giant.\nKeep exactly same compact body and low center of gravity as image 1, preserve same eye/face and costume across all three views, anatomy does not grow between views. Hair and sleeves overlap physically correctly, all ends, head and shoes inside generous margins. No large effects, no halo ring, no environment or extra character, no long legs or fashion heels, no wizard/nun hood in this NORMAL form.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v35/sylphiette_normal_turnaround.png",
+      "sha256": "42b223dacd7b6b4c1d6a49a03ef7a715f696b26c3f8f1b5f8a7b664166612b30"
+    }
+  ],
+  "sha256": "d42e4a73af7eb0e9c4baa803ee0c5f6ad91c129508bfd99d00f5d152ef9c552e",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "internal_reference_candidate",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true
+}

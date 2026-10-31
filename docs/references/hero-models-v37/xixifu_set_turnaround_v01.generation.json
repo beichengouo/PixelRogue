@@ -1,0 +1,35 @@
+{
+  "asset": "xixifu_set_turnaround_v01",
+  "kind": "design",
+  "path": "docs/references/hero-models-v37/xixifu_set_turnaround_v01.png",
+  "source_generated_path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\xixifu_set_turnaround_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / stylized-concept. Project PixelRogue, production character turnaround for a small nonpixel hand-painted anime game sprite. Reference image 1 is the PRIMARY style, FACE, identical anatomical body and compact proportions of Xixifu normal form: keep her exact same head size, short torso, small hands, short limbs, shoulder width, crown/chin/waist/knee/sole proportions, approximately 2.7 heads tall, and calm black eyes. Reference 2 supplies legendary outfit design ONLY; do NOT copy its longer legs or smaller head. Reference 3 supplies outfit material and identity details ONLY, not its mature illustration body, long boots or proportions.\nDraw ONE new clean character reference sheet with three evenly spaced orthographic full-body views: FRONT, LEFT PROFILE facing left, BACK, all exactly same scale and baseline, neutral standing pose, small weapon held in her anatomical RIGHT hand. White background, 1536x1024 landscape composition, generous complete margins, subtle alignment rules and simple view labels only. Same readable, clean soft cel-painted linework as reference 1, not pixel art, not realistic, no 3D.\nCharacter: Xixifu, long dark charcoal-black hair with restrained violet highlights, dark BLACK irises (not purple glowing eyes), light skin, no horns/wings/tail. This is her legendary outfit over THE SAME BODY as normal. Black and wine-red contract-bell ceremonial dress ending at MID-CALF, wine-red layered fabric under short black capelet, modest practical covered bodice, restrained fine gold embroidery along edges, small red clasp, a few readable small contract bells and violet gem charms, NOT a cluttered forest of chains. BARE FEET visible below hem, correctly small natural feet, fine gold anklets with tiny violet charm, NO boots, NO long legs, NO heels. A miniature dark ornamental staff with a violet crystal core in RIGHT hand, readable complete silhouette. Back long hair lies continuously OUTSIDE the lowered cape hood, no fabric protruding through hair, no headwear, no hair truncation. Outfit is structurally different from the plain robe in reference 1 while body is unchanged.\nIn all three views match same face, head volume, body construction, hairstyle lengths, dress length, hands, foot size and weapon. Back view shows honest rear hair and cape; do not invent a face on back. Keep complete crown, all hair tips, staff and feet inside the canvas. Avoid photorealism, elongated fashion anatomy, giant ornamental bells, cutouts, exposed midriff, pixel edges, rim glow, motion, floating effects, environment or extra characters.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png",
+      "sha256": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v35/xixifu_set_turnaround.png",
+      "sha256": "4c10096f4012c796f090644a48ae0b2b2fdff93418349c8b6f65572f6b9e9f8f"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/legendary_sets_v21/xixifu/portrait_set.png",
+      "sha256": "0c1052ac7638e6f508676c3cc5a0d8dc97dd7e480561659380e05af9948a4189"
+    }
+  ],
+  "sha256": "6fd2bff65b6e66b8e9c4bc36a504cb46b058bddfc31ae3e607c0b15023954cd0",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGB",
+  "alpha_extrema": null,
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "usage": "reference_only_not_crop_input",
+  "contains_design_labels": true,
+  "reason": "body slightly too tall relative to approved normal; superseded by v02"
+}
