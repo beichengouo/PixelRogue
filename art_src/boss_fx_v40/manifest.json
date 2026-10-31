@@ -1,0 +1,162 @@
+{
+  "families": {
+    "king": {
+      "area": {
+        "atlas": "res://assets/boss_fx_v40/king_area.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/king_area_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/king_area.svg"
+      },
+      "flight": {
+        "atlas": "res://assets/boss_fx_v40/king_flight.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/king_flight_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/king_flight.svg"
+      },
+      "radial": {
+        "atlas": "res://assets/boss_fx_v40/king_radial.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/king_radial_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/king_radial.svg"
+      },
+      "slash": {
+        "atlas": "res://assets/boss_fx_v40/king_slash.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/king_slash_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/king_slash.svg"
+      }
+    },
+    "mage": {
+      "area": {
+        "atlas": "res://assets/boss_fx_v40/mage_area.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/mage_area_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/mage_area.svg"
+      },
+      "flight": {
+        "atlas": "res://assets/boss_fx_v40/mage_flight.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/mage_flight_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/mage_flight.svg"
+      },
+      "radial": {
+        "atlas": "res://assets/boss_fx_v40/mage_radial.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/mage_radial_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/mage_radial.svg"
+      },
+      "slash": {
+        "atlas": "res://assets/boss_fx_v40/mage_slash.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/mage_slash_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/mage_slash.svg"
+      }
+    },
+    "nameless": {
+      "area": {
+        "atlas": "res://assets/boss_fx_v40/nameless_area.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/nameless_area_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/nameless_area.svg"
+      },
+      "flight": {
+        "atlas": "res://assets/boss_fx_v40/nameless_flight.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/nameless_flight_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/nameless_flight.svg"
+      },
+      "radial": {
+        "atlas": "res://assets/boss_fx_v40/nameless_radial.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/nameless_radial_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/nameless_radial.svg"
+      },
+      "slash": {
+        "atlas": "res://assets/boss_fx_v40/nameless_slash.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/nameless_slash_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/nameless_slash.svg"
+      }
+    },
+    "sephra": {
+      "area": {
+        "atlas": "res://assets/boss_fx_v40/sephra_area.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/sephra_area_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/sephra_area.svg"
+      },
+      "flight": {
+        "atlas": "res://assets/boss_fx_v40/sephra_flight.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/sephra_flight_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/sephra_flight.svg"
+      },
+      "radial": {
+        "atlas": "res://assets/boss_fx_v40/sephra_radial.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/sephra_radial_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/sephra_radial.svg"
+      },
+      "slash": {
+        "atlas": "res://assets/boss_fx_v40/sephra_slash.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/sephra_slash_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/sephra_slash.svg"
+      }
+    },
+    "tide": {
+      "area": {
+        "atlas": "res://assets/boss_fx_v40/tide_area.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/tide_area_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/tide_area.svg"
+      },
+      "flight": {
+        "atlas": "res://assets/boss_fx_v40/tide_flight.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/tide_flight_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/tide_flight.svg"
+      },
+      "radial": {
+        "atlas": "res://assets/boss_fx_v40/tide_radial.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/tide_radial_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/tide_radial.svg"
+      },
+      "slash": {
+        "atlas": "res://assets/boss_fx_v40/tide_slash.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/tide_slash_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/tide_slash.svg"
+      }
+    },
+    "verena": {
+      "area": {
+        "atlas": "res://assets/boss_fx_v40/verena_area.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/verena_area_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/verena_area.svg"
+      },
+      "flight": {
+        "atlas": "res://assets/boss_fx_v40/verena_flight.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/verena_flight_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/verena_flight.svg"
+      },
+      "radial": {
+        "atlas": "res://assets/boss_fx_v40/verena_radial.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/verena_radial_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/verena_radial.svg"
+      },
+      "slash": {
+        "atlas": "res://assets/boss_fx_v40/verena_slash.png",
+        "frames": 4,
+        "preview": "res://art_src/boss_fx_v40/verena_slash_preview_1024.png",
+        "svg": "res://art_src/boss_fx_v40/verena_slash.svg"
+      }
+    }
+  },
+  "resolution": 1024,
+  "status": "source_and_runtime_atlas"
+}

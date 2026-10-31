@@ -1,0 +1,81 @@
+{
+  "status": "skill_specific_mid_poses_integrated_for_all_14_boss_phases",
+  "resolution_target": "2560x1440",
+  "runtime_integrated": true,
+  "runtime_root": "assets/boss_stages_v41/",
+  "source_root": "art_src/boss_redraw_v40/poses/",
+  "source_audit": "art_src/boss_redraw_v40/poses/audit.json",
+  "source_packs": "art_src/boss_redraw_v40/packed/",
+  "phase_sets": 14,
+  "unique_key_poses_per_phase": 4,
+  "unique_key_poses_total": 56,
+  "skill_transition_source_root": "art_src/boss_redraw_v40/skill_transitions/",
+  "skill_transition_selection": "art_src/boss_redraw_v40/skill_transitions/selection.json",
+  "skill_transition_count": 74,
+  "unique_source_poses_total": 130,
+  "animation_kind": "skill_specific_middle_key_pose_per_action",
+  "source_audit_result": "56 checks, 0 failures",
+  "runtime_test_result": "3152 checks, 0 failures",
+  "skill_transition_contract_result": "5372 checks, 0 failures",
+  "live_gl_result": "2560x1440 OpenGL live AI, 14 stages, 226 checks, 0 failures; one actual skill middle pose, windup and matching release per stage",
+  "live_gl_report": "E:/CodexWorkspace/PixelRogue/work/v40-boss-gl-qa/report.json",
+  "historical_drafts": {
+    "sephra_p2_idle_move_v02.png": {
+      "sha256": "65dc9047bcfd4ca4039e0af5111c242ca7d3092f110c752aadda2af4d8d0d12f",
+      "status": "candidate_source_only_four_idling_walking_poses"
+    },
+    "sephra_p2_skill_poses_v01_rejected.png": {
+      "sha256": "c125de3c03781e40da416cf34245a6a4a1974d2fe69d19ab5783dd6d59e2069b",
+      "status": "rejected_quadrant_overflow_no_runtime_use"
+    },
+    "sephra_p2_skill_poses_v02_review.png": {
+      "sha256": "4f9da2a32f79ebe243b4f4c76bf5d6a14015e03c8a29ae669603c0a972c19252",
+      "status": "candidate_source_only_four_skill_poses_needs_cell_and_motion_review"
+    }
+  },
+  "sources": {
+    "king_phase1_turnaround.png": {
+      "sha256": "05d37c21d8ce806b81287dfa3fadd927e3dabf762015928a36636e330dc699f3",
+      "bytes": 2092882
+    },
+    "mage_phase1_turnaround.png": {
+      "sha256": "ea42cbff0166ce116a987235bf97c5b4c591fe8d813c75fef3b7f5ba18869d6f",
+      "bytes": 2383800
+    },
+    "nameless_phase1_turnaround.png": {
+      "sha256": "30da5bdf1f939af72b19fcd18221f2a092bd7c1967158e7be2ea23d39d3eed52",
+      "bytes": 2028920
+    },
+    "sephra_helmeted_turnaround.png": {
+      "sha256": "970f24e9b4dbaf027cdfd402334f6313f0ac8cab61152c9d71b78af1d804ed35",
+      "bytes": 2341124
+    },
+    "sephra_phase1_unhelmeted_rejected.png": {
+      "sha256": "50cc65c7545c01d8ad85353a9634f0138514ed1b6e7cfe40996cd4f318cf68dc",
+      "bytes": 2329031
+    },
+    "sephra_phase2_helmeted_turnaround.png": {
+      "sha256": "00169c4cef624f6de950431bd2dbe9e8c93827c435704c882356e5724d16246a",
+      "bytes": 3054369
+    },
+    "tide_phase1_turnaround.png": {
+      "sha256": "788c812f4f23309437ec2343bd1959bac5b2ea5280af6d3f9302efb2ae2efed3",
+      "bytes": 2541623
+    },
+    "verena_phase1_turnaround.png": {
+      "sha256": "60a75ce0d8e436b1a54127231c8360e28b86714fdb3be2d3adf4dddcd8bd832b",
+      "bytes": 2458125
+    }
+  },
+  "sephra_canonical": [
+    "sephra_helmeted_turnaround.png",
+    "sephra_phase2_helmeted_turnaround.png"
+  ],
+  "rejected": [
+    "sephra_phase1_unhelmeted_rejected.png"
+  ],
+  "pending": [
+    "Draw further inbetweens only if fully hand-drawn motion is required; each skill now has one independent middle key pose while timing slots still reuse key poses",
+    "Review natural smoke, flame, and particle effects separately from the already integrated geometric SVG effects"
+  ]
+}

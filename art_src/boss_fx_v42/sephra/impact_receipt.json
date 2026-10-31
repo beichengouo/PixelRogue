@@ -1,0 +1,122 @@
+{
+  "source": "E:/GodotProjects/PixelRogue/art_src/boss_fx_v42/sephra/impact_source.png",
+  "source_sha256": "f651540ac0f20296f47c9d02078a5c6e56027fca4693779b0bac73ace67637d6",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/sephra_impact.png",
+  "atlas_sha256": "405627cb3cc3b4377db957f1601c737a666e8109a6f292f20049700955ee737c",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        33,
+        153,
+        758,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        199,
+        171,
+        630,
+        621
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "dcab00862739606a741df5e38c73d54cb9003b4d61b9e71a63bd87202ee62e1a"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        1,
+        137,
+        754,
+        624
+      ],
+      "alpha_gt_8_bbox": [
+        121,
+        207,
+        589,
+        608
+      ],
+      "source_cell_edge_alpha_max": 0,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "160f79976cfa2c71962f200ac1229b716fb9c1ed3a3d5cb24956a4b868edb0af"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        36,
+        129,
+        740,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        206,
+        204,
+        612,
+        555
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "c63f240cc6190bdb418a288e6b49b998131830d3a7c887c897883099c9ebb9e6"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        250
+      ],
+      "alpha_bbox": [
+        1,
+        135,
+        767,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        217,
+        243,
+        559,
+        559
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "c9cdbb62fedf05aae851904d86c9b8b7565477b4d979a0a70cac8f14314cc9c0"
+    }
+  ],
+  "logical_width_max": 60,
+  "physical_width_2k": 120,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX sprite sheet, exactly four separated images in a 2x2 grid, each small centered in its quadrant with generous transparent empty space, never touch or cross quadrant or canvas edges. No border, lettering, checkerboard, person, scene or ground. Four time ordered sequential stages top left, top right, bottom left, bottom right. Detailed polished hand-painted nonpixel fantasy game art. Sephra silver-blue steel gate seal impact with restrained pale gold. Four stages: concentrated strike flash, explosive jagged silvery shards, fragments scattering, sparse fading glints."
+}

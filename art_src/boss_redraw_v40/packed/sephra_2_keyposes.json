@@ -1,0 +1,83 @@
+{
+  "cell": 1536,
+  "foot": [
+    768,
+    1476
+  ],
+  "poses": {
+    "idle": {
+      "cell_index": 0,
+      "frame_size": [
+        1213,
+        1216
+      ],
+      "source_sha256": "aac27c37d05476623d7b0af9f7d0a2934d9c4770653ec49fc2f6fbe790ae759b",
+      "top_left": [
+        161,
+        260
+      ],
+      "trim": [
+        44,
+        0,
+        1213,
+        1216
+      ]
+    },
+    "move": {
+      "cell_index": 1,
+      "frame_size": [
+        1270,
+        1216
+      ],
+      "source_sha256": "f01878bf5891e73bd3ff41ce638afd31f74b8d836b6173785139aeca265aed36",
+      "top_left": [
+        133,
+        260
+      ],
+      "trim": [
+        23,
+        0,
+        1270,
+        1216
+      ]
+    },
+    "release": {
+      "cell_index": 3,
+      "frame_size": [
+        1222,
+        1139
+      ],
+      "source_sha256": "ac5ebf2b6efe87eff8848b31575f14e760be80d51e19efed0cb808cea39aeb1e",
+      "top_left": [
+        157,
+        337
+      ],
+      "trim": [
+        43,
+        35,
+        1222,
+        1139
+      ]
+    },
+    "windup": {
+      "cell_index": 2,
+      "frame_size": [
+        1240,
+        1162
+      ],
+      "source_sha256": "e8943b8e4a01d291d0732172826d6e53222b751b6d547ca679059cc85729f422",
+      "top_left": [
+        148,
+        314
+      ],
+      "trim": [
+        36,
+        35,
+        1240,
+        1162
+      ]
+    }
+  },
+  "scale": 1.0,
+  "status": "qa_keyposes_not_runtime"
+}

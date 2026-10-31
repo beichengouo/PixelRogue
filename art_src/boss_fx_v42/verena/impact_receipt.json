@@ -1,0 +1,122 @@
+{
+  "source": "E:/GodotProjects/PixelRogue/art_src/boss_fx_v42/verena/impact_source.png",
+  "source_sha256": "964b5213012d9dc760f4060296949bb9d932455d40ff1fceaa63fad611d68be8",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/verena_impact.png",
+  "atlas_sha256": "bcd43d167191f527555f48b0aae1a9a191446b9ba509f9eb673ad9ac5a68757f",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        25,
+        137,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        304,
+        266,
+        497,
+        575
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "c25a28c7d828fc344a13f26b6f77b80a55203cc468694e16f6f98ad81efa2fc1"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        1,
+        128,
+        762,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        109,
+        183,
+        653,
+        625
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "367f4dbc71a83e882e4f9bcbe0b6243dda6fca1ce6128bf963214cbfe12dd43a"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        207,
+        192,
+        632,
+        593
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "f055d124bf9c3e315084feb42f1fa7bb95ad16a0600d00f4b054ac90f893c6a0"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        251
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        767,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        180,
+        212,
+        544,
+        560
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "7a4a21e7c26bcb144cb0beb616070bb591affd59c2a2e9014eb55c7facdb90e1"
+    }
+  ],
+  "logical_width_max": 60,
+  "physical_width_2k": 120,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX sprite sheet, exactly four separated images in a 2x2 grid, each small centered in its quadrant with generous transparent empty space, never touch or cross quadrant or canvas edges. No border, lettering, checkerboard, person, scene or ground. Four time ordered sequential stages top left, top right, bottom left, bottom right. Detailed polished hand-painted nonpixel fantasy game art. Verena warm amber wax and parchment impact. Four stages: focused spark, burst of wax fragments and torn luminous pages, fragments scattering, sparse disappearing motes."
+}

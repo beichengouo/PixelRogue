@@ -1,0 +1,98 @@
+{
+  "source": "cast_source.png",
+  "source_sha256": "a74570a2e03e5cbc277b7c78080b484384c342deafcb8ea733a9d30892587991",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/king_cast.png",
+  "atlas_sha256": "30d0d7eb568d865e93860dd49ee8c6eef1b042d47e11f69702afb043fa15a7c3",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        249
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        758,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        297,
+        316,
+        480,
+        509
+      ],
+      "rgba_sha256": "ce3a72179f0bb6b68e39e59cb849879ccc25acdbe00bea39a924a33e0a309954"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        39,
+        151,
+        726,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        266,
+        296,
+        483,
+        490
+      ],
+      "rgba_sha256": "b0791b6892fbdd65c78c6dc28cbf8256fe5d3e263600e36740001c9b360fd04b"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        145,
+        128,
+        722,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        233,
+        259,
+        543,
+        512
+      ],
+      "rgba_sha256": "bc6950664094630303fe32304c846c9299ea5edc0910dc89e566b424c788c61f"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        251
+      ],
+      "alpha_bbox": [
+        11,
+        128,
+        720,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        294,
+        275,
+        470,
+        508
+      ],
+      "rgba_sha256": "a53312584323e6ebb4303445303dc54f7a6c957dae45c4052031e3e76d0a2104"
+    }
+  ],
+  "logical_width_max": 88,
+  "physical_width_2k": 176,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent 2x2 game sprite sheet, four independent chronological frames, exactly equal quadrants. Each effect is very small, occupying at most the central 40% of each quadrant, with vast empty transparent margins on all sides. No effect or glow outside this central area; completely empty 30% padding along each cell edge. No checkerboard, no text, no border, no scene. Hand-painted polished fantasy, nonpixel. King cast: tiny royal energy sparks gather, a small luminous crown develops, release shines, sparse sparks dissipate. Colors ivory gold #f4d49c, copper #ae6c5a, burgundy #7c3649."
+}

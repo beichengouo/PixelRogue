@@ -1,0 +1,122 @@
+{
+  "source": "E:/GodotProjects/PixelRogue/art_src/boss_fx_v42/tide/cast_source.png",
+  "source_sha256": "8da4aa6eea69fbccca23f32ef266d4e52a6f491d612857abf54a6a6d9527ca2a",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/tide_cast.png",
+  "atlas_sha256": "88b8187172b38a863fb0b4063b1b5c1c7d5ab7712ea92b1fc6a6695422622f21",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        145,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        255,
+        191,
+        570,
+        622
+      ],
+      "source_cell_edge_alpha_max": 2,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "81c4fab7fae010f894efae4e8fdced53dabbf3ebb20f6d7de46c7543e8d805a9"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        754,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        102,
+        144,
+        619,
+        621
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "8ed9a89d5868063e587cf0edcd526a1df0301c3751766547a40f7c03d7f9a7c3"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        105,
+        128,
+        747,
+        620
+      ],
+      "source_cell_edge_alpha_max": 15,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.005078125,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "6fcd995dc398babab3c1cf64d3913cab823da27b5fbcd68fa9f6e6eef245bec9"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        176,
+        140,
+        603,
+        622
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "95641a56a4c302bdc43fd11cf5c69574158e88afc2bc0bd826cc8f6a8841b3af"
+    }
+  ],
+  "logical_width_max": 88,
+  "physical_width_2k": 176,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX sprite sheet, exactly four separate images in a 2x2 grid, each centered in its quadrant with generous transparent empty space, never touch or cross quadrant or canvas edges. No border, lettering, checkerboard, person, scene or ground. Four time ordered sequential stages top left, top right, bottom left, bottom right. Detailed polished hand-painted nonpixel fantasy game art. Deep sea root boss Tide, palette mint #a6eacb, turquoise #55bda9 and deep teal #286384. Root and sea spore casting magic: tiny motes gather, twisting roots and water ring intensify, luminous teal release, wisps and motes fade."
+}

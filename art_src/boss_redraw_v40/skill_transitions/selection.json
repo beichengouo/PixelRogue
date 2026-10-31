@@ -1,0 +1,108 @@
+{
+  "revision": 41,
+  "skill_count": 74,
+  "stages": {
+    "king_1": {
+      "skill_0_mid": "010f6a614b1244514b44b6651978b459e21c5edf8c3a99a3d87cc327bdcd0b96",
+      "skill_1_mid": "a38e12c7b1a56a74ff620a191261489959efbf3bd4dab58d34b2e04b135dc598",
+      "skill_2_mid": "a66f9ff989662b699e20a1447f4ba50614787f398528720afbf4a668bd441aea",
+      "skill_3_mid": "3a6ef23b5c0f021c4b43506d91f138de553ac89e0f7e50126f61312f02352acf",
+      "skill_5_mid": "b5e3b30dd2aa96492a1ec8f4312c2f14aeb0c14a79f432466231872ebcf27964"
+    },
+    "king_2": {
+      "skill_0_mid": "149d2f86019b7aec47e80729ed08b3be6e8b759e4606f4f461bf64218383a1c9",
+      "skill_1_mid": "25d693a52f779da17b3c929eeb41c3999b190ceadd75c053df275969cb42089d",
+      "skill_2_mid": "d86d213a67e59437aa63c6d6f5f100adae5fe49383556713cfd7495fe8806729",
+      "skill_3_mid": "04fceb5ad5bd7527d37a368956d61d1826a6c5bf9899796af100e44c5b4cc7e6",
+      "skill_4_mid": "1961691a5d7c96c21ca1ddf71f25e8c35dd9909c0c720e4ffa80d8357a586195",
+      "skill_5_mid": "4923c07ff77cfc3121a4d9c0962f629dc44924a0aeb1499a6ce27b740e5d0c3a",
+      "skill_6_mid": "f8a3ac7502ef0d0ee636a106e8a5c155f09967a2f6236de2534e3961b94354b6"
+    },
+    "mage_1": {
+      "skill_0_mid": "3552bd47e7d02b14a72ed536b487665f23b0e8f448121e5470431ae636bce986",
+      "skill_1_mid": "e15084d627de413de6dd978e6f5dba1012f08a28c284ff2a54f9cbc59b257b47",
+      "skill_2_mid": "552537a7ef44570b555f964f3981ab38075da700f566579bbb217eccc8c29917",
+      "skill_3_mid": "c749f0e00c0959b69c35451cb7208b8941eb478c05655355f59cfc144a3280cb",
+      "skill_4_mid": "9fe42e612bcef73b14f0b935abd0fcdfa96a4effc2f428d460fb17d8c740615a",
+      "skill_5_mid": "c3355f35f52fb09e20156ade9cbe864164839ff623671b710158228558dd7638"
+    },
+    "mage_2": {
+      "skill_0_mid": "4af0e15a1d6dd62e75556bd0544868b163971f470b830bfc69a64e62f4c54a13",
+      "skill_1_mid": "376a15b623c4031a67233c73644e8384a941133187029746b07c94a7d7ae45e1",
+      "skill_2_mid": "f95bc2ac57b76c314eed58253f1c39dbfa706541964b365ec9bbd434f117776d",
+      "skill_3_mid": "640355b5e57c47c182578137ccf2fca868ca94a88370c5831dee78a9b6e5cabc",
+      "skill_4_mid": "d98c45b83564058137ae8e378a398d9fc6869e6f599560db9026d03f01b8e125",
+      "skill_5_mid": "2fa093cfe71ec88cb51a424153f3cf5372229eb8cf329d9c78313e1f542e45df",
+      "skill_6_mid": "d10dcef28160944a168e8f4efafc85f3cfa8a7fa4c4771dd75e344f0bed8e384"
+    },
+    "nameless_1": {
+      "skill_0_mid": "60f6ba653163bc6510bb160e7ffc88741190856a0886872756de35a9afecd82c",
+      "skill_1_mid": "da7100ce3a29c3a929e0cffd21a01bc19f8907a96623eae45b4e590237c06ef9",
+      "skill_2_mid": "d1ee700d4f2718c4f0784c65e5c3c0ea970383dcde47a68d6e3c124d162f5266"
+    },
+    "nameless_2": {
+      "skill_0_mid": "3df08a1b09bef0f484bdcae26197c02d6ac580a2f2b50f10dd6d2eb949558d38",
+      "skill_1_mid": "2bcdb426b655399533f49a0bc4e86fe81986c4aeb1f39c327d3d66e5ee607fe1",
+      "skill_2_mid": "cfba4bf5e3611986f152cdf2fc4f0e912ab62143ee2f210102626045b45930e0",
+      "skill_3_mid": "626104f89c08220851610d25fef610ebcc28042b19a6fa17ec973821516cd91e",
+      "skill_4_mid": "9b1cf936d72bb9bb91d5164a6868f6db4cb06e88815f77bf68c67e086d272909"
+    },
+    "nameless_3": {
+      "skill_0_mid": "e2ed5261f6b7062b692d66ab0d229e1b7c207c3830b459971fd7e08089d19685",
+      "skill_1_mid": "b0eb8ae46309d02046a1fc04bf019c2890bb4fc5ef32cb018cc0ccd4273b48dc",
+      "skill_2_mid": "eea98ea11fbe8b49dee98560dbe81729b3b018b2aa8eed46251a3640ec3f0874",
+      "skill_3_mid": "d842743316490e149939c72c259209da84852b5d2cbf413aad88cd57a63d6bdb",
+      "skill_4_mid": "befc4b0fcd620ed1f2e5fe593cee39fe8e3de955a181dac5f24400cd72544abd",
+      "skill_5_mid": "fc7a1965cd1db824ab51e341469f1e14c028a97bacc41231df95b610136bf5e0",
+      "skill_6_mid": "8786598b3818b077dea48d61296c40ac515c1bb4e97ad92827d4fb1cfb4118f6"
+    },
+    "sephra_1": {
+      "skill_0_mid": "e6a5d05eaa6b2ed4ba833e5bd42d022b800eb4a972bc362711ea95fa5385e2b7",
+      "skill_1_mid": "cbf451fe534002d8ef3a4203e1436d8da7f5ec0f5a967038efc5b4d8a542b53c",
+      "skill_2_mid": "cd1e622259141ee5bb07991e1c0cb84f57b4358c512c9e307a0cb5dd259d2f33"
+    },
+    "sephra_2": {
+      "skill_0_mid": "1e69e47e0e8f76ff8647df5a5322696a4c35e111a57e1235a1be1b618412c6dd",
+      "skill_1_mid": "9b7cb20180b3c9c16bc4fc2e97c149e476dfa11025b4ed92258dc5bc5115aeda",
+      "skill_2_mid": "de298505542cf7e89494ea39529eab4b6e0719d61c7b6e6a65b9aa2d766e0f35",
+      "skill_3_mid": "45e424aca63d41b9732a7f3f7df825adad68f7a6b4b3621091c898293f3e43d8",
+      "skill_4_mid": "1db80e08ce13236f8675fa4b3db7ba63bd7e1036b1856aa0a82a75d931abe355"
+    },
+    "tide_1": {
+      "skill_0_mid": "28d1f836a7e9dae5a2cb0cfc6a7134337fb7ddec0c8615927c6a3c166b27ff79",
+      "skill_1_mid": "23a70258ad9d768489dbf8fb1e4d5b3e75da03ab62011e85f536d83bc874a594",
+      "skill_2_mid": "f6281258965d705d9845828e372aa521a2446fb98119e120f3c035e5f3cce248"
+    },
+    "tide_2": {
+      "skill_0_mid": "1b4a8d39a90b993136eb192bc41d6caa7d20a7be3dddbb472c1ff82b7ec6465b",
+      "skill_1_mid": "c33401a0b7e76ef18256b88beb4c811e42a9598d95be7e9593d3625d8e8341d4",
+      "skill_2_mid": "348f58a9c6632226717220a6c53bfebdf27b96d8abafff6f775dd60d608f87a0",
+      "skill_3_mid": "8b3a375081dcda53dc81698652592de4bcea976cc68a4bf59bc52890978de13b",
+      "skill_4_mid": "29f566854ffccfa688dd4831e9769d3019f4bbcbad0ce128a24214bea33e26fc",
+      "skill_5_mid": "d6ed980607ead2c71c2bd742a351575cbd4788a38fbcbb83d51fcc531a395049"
+    },
+    "tide_3": {
+      "skill_0_mid": "2b3e70f12b9e4cef3b6794424d16432fe0ea971282214a04e6d5420fc830c6b5",
+      "skill_1_mid": "1ecf577295be51abcd51f54798056dad148d7c42b92fcbe429a716e50bee871c",
+      "skill_2_mid": "79b69c3b93789114e001aa6657b916a7e05696ee1d16d4708571a8ecf829ca63",
+      "skill_3_mid": "b8459c96da990b0741cf905e64932a687952f7bcc132a781aab851a99fc702b1",
+      "skill_4_mid": "7002a69eac77c42a89046da39b30b7f8e7b634056381bc5ea5ab92c558ff86c3",
+      "skill_5_mid": "6c4ad3e27dae1728b410fdba6688a72ed5740ded0649bbdfa40ecd10a816bb74",
+      "skill_6_mid": "e90da140cf01f4188b50c8ac55c151a2e6a018378f8743b5b2c093093f07472e",
+      "skill_7_mid": "306e9855d0a48b9a81ba42a02c94409cc6ffc758061b5a9a22753166091db146",
+      "skill_8_mid": "91d8f342732aab99aa033a4902d067d04084739fc76c0c5905f245d8ccf1c723"
+    },
+    "verena_1": {
+      "skill_0_mid": "67693e2b9bc3b3d5d8027dfa7c93701ab1663e447bc113ba12304de3597a4a4f",
+      "skill_1_mid": "541acb6d310d8ed58612fac26f7e54a75f39373b59eb06aca575b32255c2ab54",
+      "skill_2_mid": "b6f35d713b745c1ecfd39972be45a19c21049ae9d479c7fbb81437ed046bdeb1"
+    },
+    "verena_2": {
+      "skill_0_mid": "8106deb2e954b46ce7cbd8f42cf9ca49e760ffca610ff77fbad294b1a74aefee",
+      "skill_1_mid": "620b0b548910a547a38aca94d69af841c679d7f62ee9931f967b6737c0ebee2e",
+      "skill_2_mid": "f86bb0962f9a95a81f37635e599b09ccdf908f297285248026b71560083e51df",
+      "skill_3_mid": "107ffb27a7894ddd758b330005061761379c05bdf36e372ff7ebacbd0c7a108a",
+      "skill_4_mid": "805d293e696c540e6d8a5d0bdc15500359e896842884eed9d7dc5c7d252a1126"
+    }
+  }
+}

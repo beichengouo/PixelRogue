@@ -1,0 +1,1512 @@
+{
+  "batch": 42,
+  "generation": "built-in image_gen",
+  "packing": "native 2x2 cells to 1x4 square cells with transparent padding; no resampling",
+  "expected_sets": 14,
+  "expected_frames": 56,
+  "verified_sets": 14,
+  "pending": [],
+  "sets": {
+    "king_cast": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\king\\cast_source.png",
+      "receipt": "art_src\\boss_fx_v42\\king\\cast_receipt.json",
+      "source_sha256": "a74570a2e03e5cbc277b7c78080b484384c342deafcb8ea733a9d30892587991",
+      "atlas": "assets\\boss_fx_v42\\king_cast.png",
+      "atlas_sha256": "30d0d7eb568d865e93860dd49ee8c6eef1b042d47e11f69702afb043fa15a7c3",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 88,
+      "physical_width_at_2k": 176,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            249
+          ],
+          "bounds": [
+            0,
+            128,
+            758,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            300,
+            319,
+            478,
+            503
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "ce3a72179f0bb6b68e39e59cb849879ccc25acdbe00bea39a924a33e0a309954"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            39,
+            151,
+            726,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            268,
+            300,
+            480,
+            487
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "b0791b6892fbdd65c78c6dc28cbf8256fe5d3e263600e36740001c9b360fd04b"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            145,
+            128,
+            722,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            239,
+            270,
+            538,
+            502
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "bc6950664094630303fe32304c846c9299ea5edc0910dc89e566b424c788c61f"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            251
+          ],
+          "bounds": [
+            11,
+            128,
+            720,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            295,
+            277,
+            467,
+            503
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "a53312584323e6ebb4303445303dc54f7a6c957dae45c4052031e3e76d0a2104"
+        }
+      ]
+    },
+    "king_impact": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\king\\impact_source.png",
+      "receipt": "art_src\\boss_fx_v42\\king\\impact_receipt.json",
+      "source_sha256": "80659c7b074aabe63da13cec18614c9aeed3f5356911f2f8e344a29ea11e5ad3",
+      "atlas": "assets\\boss_fx_v42\\king_impact.png",
+      "atlas_sha256": "9aa247d2d450dbff5d9197baf60c055b3557ff474343726fcf70cd022c02fbc5",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 60,
+      "physical_width_at_2k": 120,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            39,
+            165,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            303,
+            334,
+            467,
+            510
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "24347ffe4245553f9d72d96712c53fc703577f25b79f3ce50bf8b8587e2aa9b2"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            159,
+            752,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            192,
+            287,
+            541,
+            557
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "41849db14941618fe7a254710e9d1a157fad87f68196035ed551af49d978a87b"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            25,
+            128,
+            768,
+            616
+          ],
+          "visible_bounds_alpha_32": [
+            252,
+            227,
+            574,
+            514
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "1ad3c32d9f11898215cef29261fce4f93db80168b348a6601f02411084a56fab"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            250
+          ],
+          "bounds": [
+            1,
+            135,
+            752,
+            622
+          ],
+          "visible_bounds_alpha_32": [
+            254,
+            286,
+            496,
+            493
+          ],
+          "native_cell_edge_alpha_max": 0,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "239a3a5db9e13915732fa7840ba02d93ff5e36ad2b2e83e0dc2096465cb548c6"
+        }
+      ]
+    },
+    "mage_cast": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\mage\\cast_source.png",
+      "receipt": "art_src\\boss_fx_v42\\mage\\cast_receipt.json",
+      "source_sha256": "47ba07528158bd85995023a809b39fa8b918fc27dd9ba5ad44d785f75976426d",
+      "atlas": "assets\\boss_fx_v42\\mage_cast.png",
+      "atlas_sha256": "a273f1c796a31ec32196f725392d2604d610833cbec0951eacb8a2353bbae0ab",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "native_cell": 656,
+      "logical_width_max": 88,
+      "physical_width_at_2k": 176,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            63,
+            656,
+            624
+          ],
+          "visible_bounds_alpha_32": [
+            234,
+            234,
+            448,
+            482
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "413a51e6ace16d0bae79b259ab27b01853c66636033eb52931958b23015939f6"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            60,
+            642,
+            627
+          ],
+          "visible_bounds_alpha_32": [
+            206,
+            224,
+            449,
+            513
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "0aefcb1f4578c2b6bb14e572e41ab88c3eb43971fed6b016b28d4b8572b71670"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            33,
+            652,
+            628
+          ],
+          "visible_bounds_alpha_32": [
+            163,
+            141,
+            519,
+            480
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "c5e36537a995f4f5ca99ea9a1e76e69d0b8f5961d1be386654a41e3739944cc4"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            13,
+            28,
+            632,
+            604
+          ],
+          "visible_bounds_alpha_32": [
+            230,
+            208,
+            437,
+            441
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "6f0f0a3fbeed04cfd32e2f88df77b2b2c47ca4015b24510fdc20db1464a21360"
+        }
+      ]
+    },
+    "mage_impact": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\mage\\impact_source.png",
+      "receipt": "art_src\\boss_fx_v42\\mage\\impact_receipt.json",
+      "source_sha256": "57aa4e7abebdabcd7e4f1a69d7073e1f2d7d0f16b84cd4bc4d5274359540a222",
+      "atlas": "assets\\boss_fx_v42\\mage_impact.png",
+      "atlas_sha256": "f7c848b5f32c24333c81ecc729aae350bf9edfca9ffb63a4c7799cf2b6b0894f",
+      "source_size": [
+        1326,
+        1186
+      ],
+      "native_cell": 663,
+      "logical_width_max": 60,
+      "physical_width_at_2k": 120,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            52,
+            663,
+            628
+          ],
+          "visible_bounds_alpha_32": [
+            220,
+            228,
+            449,
+            452
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "ce912caa77c053848f7185a11d2ebd8e98c2a2c7d8535eb2214712ab438b542f"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            38,
+            653,
+            628
+          ],
+          "visible_bounds_alpha_32": [
+            68,
+            92,
+            550,
+            558
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "79291bb24de30eec6b9d7ec58c42150c98d949454e13847de5965d0667074cb3"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            35,
+            663,
+            628
+          ],
+          "visible_bounds_alpha_32": [
+            100,
+            98,
+            628,
+            561
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "7f7eb171501bd1249ae0e0362baa491594d6c089a82779620aa885ed54d2da3d"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            250
+          ],
+          "bounds": [
+            0,
+            35,
+            647,
+            628
+          ],
+          "visible_bounds_alpha_32": [
+            140,
+            132,
+            516,
+            481
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "45360f8bd9d4e26db88fa9225192946697dd326a8ffbd585b69f8552ddceefb3"
+        }
+      ]
+    },
+    "mage_construct": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\mage\\construct_source.png",
+      "receipt": "art_src\\boss_fx_v42\\mage\\construct_receipt.json",
+      "source_sha256": "3eeceb6b07e16a0327a031fb1f0b46b362e7cccff8e4f519da0160fd50e454f4",
+      "atlas": "assets\\boss_fx_v42\\mage_construct.png",
+      "atlas_sha256": "f0b5d36c70796c6b134fb8409f271361abb233e7e28eeb775d27cf6dd7664f20",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "native_cell": 627,
+      "logical_width_max": 48,
+      "physical_width_at_2k": 96,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "visible_bounds_alpha_32": [
+            156,
+            100,
+            468,
+            527
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "5a5536f705ba645f020366abbdd142a11d59994b72c168de853cd2c19c100b89"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            12,
+            617,
+            627
+          ],
+          "visible_bounds_alpha_32": [
+            153,
+            100,
+            480,
+            527
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "fd77359aafe0ea8f8ac251416ad9f68d5979b719d28138e39b572d27fb394b32"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            0,
+            627,
+            627
+          ],
+          "visible_bounds_alpha_32": [
+            160,
+            91,
+            472,
+            518
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "cdc263c657e63a22f212e03115364ae33ee87f24a2b4775b6bae8a0e46ae950c"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            255
+          ],
+          "bounds": [
+            0,
+            0,
+            615,
+            627
+          ],
+          "visible_bounds_alpha_32": [
+            161,
+            91,
+            491,
+            518
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "f9d5444e2b8ff06cfbf952b16ddffc07586495515e2b4db5e9687cf60fa31d04"
+        }
+      ]
+    },
+    "tide_cast": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\tide\\cast_source.png",
+      "receipt": "art_src\\boss_fx_v42\\tide\\cast_receipt.json",
+      "source_sha256": "8da4aa6eea69fbccca23f32ef266d4e52a6f491d612857abf54a6a6d9527ca2a",
+      "atlas": "assets\\boss_fx_v42\\tide_cast.png",
+      "atlas_sha256": "88b8187172b38a863fb0b4063b1b5c1c7d5ab7712ea92b1fc6a6695422622f21",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 88,
+      "physical_width_at_2k": 176,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            145,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            256,
+            198,
+            569,
+            622
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "81c4fab7fae010f894efae4e8fdced53dabbf3ebb20f6d7de46c7543e8d805a9"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            754,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            104,
+            146,
+            618,
+            620
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "8ed9a89d5868063e587cf0edcd526a1df0301c3751766547a40f7c03d7f9a7c3"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            106,
+            129,
+            745,
+            619
+          ],
+          "native_cell_edge_alpha_max": 15,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "6fcd995dc398babab3c1cf64d3913cab823da27b5fbcd68fa9f6e6eef245bec9"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            177,
+            142,
+            600,
+            622
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "95641a56a4c302bdc43fd11cf5c69574158e88afc2bc0bd826cc8f6a8841b3af"
+        }
+      ]
+    },
+    "tide_impact": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\tide\\impact_source.png",
+      "receipt": "art_src\\boss_fx_v42\\tide\\impact_receipt.json",
+      "source_sha256": "bf367bd27d0004dee20243ae9a0cbdb30bb5919c4d4ff34246fadc8c1d2816fe",
+      "atlas": "assets\\boss_fx_v42\\tide_impact.png",
+      "atlas_sha256": "1f67b8a3be77a4dc3fdcd16b726e2a96b309144f15a1c7fbb63a27db10287d86",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 60,
+      "physical_width_at_2k": 120,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            17,
+            143,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            283,
+            275,
+            554,
+            553
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "ad11c9b45799f61b0e5b9cf4deceb6e84005bd48ad5d3be1e2ed5a5369022e98"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            135,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            149,
+            180,
+            629,
+            605
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "f9e975a6878ccef6d2ca9842fc400ceb21b99c9ca258f05dcdeb67d98083131f"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            17,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            194,
+            181,
+            646,
+            578
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "50844ca2b243db2a7ba65f8fd69813c759645571333887695b3ccdc87f2384e1"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            251
+          ],
+          "bounds": [
+            0,
+            128,
+            754,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            279,
+            276,
+            521,
+            515
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "1d2e58b830e8ee1c5cb49b6cc4736c29adc0adbab1bdaa338eba3d51c156cfb2"
+        }
+      ]
+    },
+    "tide_construct": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\tide\\construct_source.png",
+      "receipt": "art_src\\boss_fx_v42\\tide\\construct_receipt.json",
+      "source_sha256": "d8f16dc9f2eaaae99e94d5b72d6bc69306c5cf9ccd85dd4676970e467ba6b27f",
+      "atlas": "assets\\boss_fx_v42\\tide_construct.png",
+      "atlas_sha256": "5ff4e643bc805ab50e0da04f26c040cae05e5390ce23a1e98751f3434b94d663",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 48,
+      "physical_width_at_2k": 96,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            143,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            199,
+            152,
+            584,
+            622
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "63b648356989bad97ff7ae62ba6aa6a1e5e5f036327028df2d001c4635b92fd0"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            141,
+            750,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            194,
+            152,
+            579,
+            622
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "3e214caf1bfba87e66fe468d446fa6ac5cff7ce6d22882c0ec1b3db00340cce2"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            200,
+            150,
+            589,
+            620
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "dae3541d8c24723c9275e315f69bb981a81d6b7813fc9499d515107e8e8aa410"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            128,
+            744,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            195,
+            150,
+            580,
+            620
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "74d5bcd444c6e0ad3da9dd032a533973e036001b36297fe555b9931d048936c8"
+        }
+      ]
+    },
+    "sephra_cast": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\sephra\\cast_source.png",
+      "receipt": "art_src\\boss_fx_v42\\sephra\\cast_receipt.json",
+      "source_sha256": "9943c23a6d7e8c71ee79e905c7fd3f8778a775c629ab89f9be4d493207e017e2",
+      "atlas": "assets\\boss_fx_v42\\sephra_cast.png",
+      "atlas_sha256": "513d2d05d4445e7254f3f13194d819150c7dec9ea2c5b571609f72d9b35c91b2",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 96,
+      "physical_width_at_2k": 192,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            318,
+            277,
+            545,
+            540
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "8d96ed3b32eb22224b101917ea63e0266dd5f10a667b0ce9ce445934c3d92873"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            127,
+            200,
+            545,
+            616
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "a855906abae57987af5c45f7b105ebd95b531e78496a3d46934e635fb6d72657"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            196,
+            168,
+            678,
+            574
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "3f30f8bcfd4ea796fed4cc4478d5d085335a1fb678790fb51be7f45dfcd4f341"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            252
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            170,
+            209,
+            571,
+            534
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "9f6dea9bae0f650370ae254951977bcf4be7fcde403e20846616c97f67331e57"
+        }
+      ]
+    },
+    "sephra_impact": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\sephra\\impact_source.png",
+      "receipt": "art_src\\boss_fx_v42\\sephra\\impact_receipt.json",
+      "source_sha256": "f651540ac0f20296f47c9d02078a5c6e56027fca4693779b0bac73ace67637d6",
+      "atlas": "assets\\boss_fx_v42\\sephra_impact.png",
+      "atlas_sha256": "405627cb3cc3b4377db957f1601c737a666e8109a6f292f20049700955ee737c",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 60,
+      "physical_width_at_2k": 120,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            33,
+            153,
+            758,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            206,
+            181,
+            618,
+            609
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "dcab00862739606a741df5e38c73d54cb9003b4d61b9e71a63bd87202ee62e1a"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            1,
+            137,
+            754,
+            624
+          ],
+          "visible_bounds_alpha_32": [
+            121,
+            207,
+            583,
+            603
+          ],
+          "native_cell_edge_alpha_max": 0,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "160f79976cfa2c71962f200ac1229b716fb9c1ed3a3d5cb24956a4b868edb0af"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            36,
+            129,
+            740,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            206,
+            204,
+            610,
+            554
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "c63f240cc6190bdb418a288e6b49b998131830d3a7c887c897883099c9ebb9e6"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            250
+          ],
+          "bounds": [
+            1,
+            135,
+            767,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            223,
+            251,
+            546,
+            554
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "c9cdbb62fedf05aae851904d86c9b8b7565477b4d979a0a70cac8f14314cc9c0"
+        }
+      ]
+    },
+    "verena_cast": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\verena\\cast_source.png",
+      "receipt": "art_src\\boss_fx_v42\\verena\\cast_receipt.json",
+      "source_sha256": "2b06ec7e6efd8cc30ab3508b3568b501582609984d71f518dd7198015128b027",
+      "atlas": "assets\\boss_fx_v42\\verena_cast.png",
+      "atlas_sha256": "377e18d286e195408b37a954a86a1c4f52d21fd04e6b2d66ec6528acaedd8bc3",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 96,
+      "physical_width_at_2k": 192,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            252
+          ],
+          "bounds": [
+            17,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            337,
+            315,
+            507,
+            500
+          ],
+          "native_cell_edge_alpha_max": 5,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "d1e500bff969a37a8a36d21aede372779da7c196909677f34e1959c0f1dd83cd"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            1,
+            135,
+            754,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            194,
+            224,
+            561,
+            554
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "0e9c84d45bf55b9f0bd451a2ef73c5497c86c17a569e37dd043c6f1e4af08c1b"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            163,
+            139,
+            676,
+            589
+          ],
+          "native_cell_edge_alpha_max": 12,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "ae5ec7509c0a5a6261c373c56db043940c45a20b2db926ba44d646be8e25efb8"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            1,
+            129,
+            756,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            248,
+            213,
+            589,
+            539
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "518fbdd4a4e7a5889de8d2459ffd39c938a29702a25cf3135ab868758f1384f9"
+        }
+      ]
+    },
+    "verena_impact": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\verena\\impact_source.png",
+      "receipt": "art_src\\boss_fx_v42\\verena\\impact_receipt.json",
+      "source_sha256": "964b5213012d9dc760f4060296949bb9d932455d40ff1fceaa63fad611d68be8",
+      "atlas": "assets\\boss_fx_v42\\verena_impact.png",
+      "atlas_sha256": "bcd43d167191f527555f48b0aae1a9a191446b9ba509f9eb673ad9ac5a68757f",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 60,
+      "physical_width_at_2k": 120,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            25,
+            137,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            308,
+            277,
+            493,
+            566
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "c25a28c7d828fc344a13f26b6f77b80a55203cc468694e16f6f98ad81efa2fc1"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            254
+          ],
+          "bounds": [
+            1,
+            128,
+            762,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            112,
+            184,
+            653,
+            624
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "367f4dbc71a83e882e4f9bcbe0b6243dda6fca1ce6128bf963214cbfe12dd43a"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            208,
+            195,
+            631,
+            589
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "f055d124bf9c3e315084feb42f1fa7bb95ad16a0600d00f4b054ac90f893c6a0"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            251
+          ],
+          "bounds": [
+            0,
+            128,
+            767,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            185,
+            217,
+            542,
+            557
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "7a4a21e7c26bcb144cb0beb616070bb591affd59c2a2e9014eb55c7facdb90e1"
+        }
+      ]
+    },
+    "nameless_cast": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\nameless\\cast_source.png",
+      "receipt": "art_src\\boss_fx_v42\\nameless\\cast_receipt.json",
+      "source_sha256": "b2b8099553bea650e540dd0247ccf1ff10751c71077785d68fdab75fdd0b0f21",
+      "atlas": "assets\\boss_fx_v42\\nameless_cast.png",
+      "atlas_sha256": "08406b4916d2ce1f7772c1261ded26fbc2b9b4a5a44e52dfdd53d4a9cb86865b",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 96,
+      "physical_width_at_2k": 192,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            252
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            302,
+            267,
+            516,
+            524
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "fcc0343515d2fabead879f41fa92c8e2354aac3356e6fe36da4e528da276ac58"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            146,
+            235,
+            584,
+            530
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "f53608dd6dde5ea68c291cc77eeea89158e6190d3f701d95e36a561d93d79562"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            142,
+            150,
+            704,
+            582
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "cb5ab2b70c919721523a3cefa08f5a8c7ca455ddd90dbe61c87f50f82eed942c"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            181,
+            225,
+            601,
+            527
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "6f07106e3c0c8fe76b54e1c8303e3290671b04d82b4e2916bb9dc555d0d2930a"
+        }
+      ]
+    },
+    "nameless_impact": {
+      "status": "native_pixels_verified",
+      "source": "art_src\\boss_fx_v42\\nameless\\impact_source.png",
+      "receipt": "art_src\\boss_fx_v42\\nameless\\impact_receipt.json",
+      "source_sha256": "7c21f1d95e7f0eef82ac6a10e133117d9869937303022d6e37d6d88cb9c4ad55",
+      "atlas": "assets\\boss_fx_v42\\nameless_impact.png",
+      "atlas_sha256": "cf0ea5e16796244ffd45113e75962ed9b9810b689065c4a3b8263e648b76973f",
+      "source_size": [
+        1536,
+        1024
+      ],
+      "native_cell": 768,
+      "logical_width_max": 60,
+      "physical_width_at_2k": 120,
+      "frames": [
+        {
+          "index": 0,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            200,
+            192,
+            560,
+            600
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "a01b6f7622797f49a5bba74592cb66ccc9d403c32b049f69fcdd3076a6145749"
+        },
+        {
+          "index": 1,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            144,
+            197,
+            658,
+            590
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "bf6ab8a461e5f0c67454d3d8060096954e4d7bfaac783c5187bf61d7918165d3"
+        },
+        {
+          "index": 2,
+          "alpha_range": [
+            0,
+            253
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            159,
+            179,
+            667,
+            559
+          ],
+          "native_cell_edge_alpha_max": 2,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "94a4be7cbd67927a1e64690b61c91594aca044187a56bfc64bec204c9e6cbabf"
+        },
+        {
+          "index": 3,
+          "alpha_range": [
+            0,
+            251
+          ],
+          "bounds": [
+            0,
+            128,
+            768,
+            640
+          ],
+          "visible_bounds_alpha_32": [
+            197,
+            187,
+            616,
+            575
+          ],
+          "native_cell_edge_alpha_max": 1,
+          "native_cell_edge_fraction_alpha_16": 0.0,
+          "rgba_sha256": "216502b3edb64ae735fcd3e4e00e815dad6ca77a141a4633396340a68ac773a3"
+        }
+      ]
+    }
+  },
+  "scope": "Six Boss cast/impact plus mage/tide construct. V40 geometry and attack rules retained.",
+  "limitations": [
+    "Pixel checks do not prove artistic continuity or in-game readability.",
+    "Low alpha edge haze is retained and measured; no alpha was erased."
+  ],
+  "validation": {
+    "date": "2026-10-30",
+    "status": "integrated_and_consumer_checks_passed",
+    "native_pixel_audit_sets": 14,
+    "native_pixel_audit_frames": 56,
+    "headless_checks": 249,
+    "headless_failures": 0,
+    "gl_checks": 251,
+    "gl_failures": 0,
+    "gl_physical_size": [
+      2560,
+      1440
+    ],
+    "gl_logical_size": [
+      1280,
+      720
+    ],
+    "geometry_regression_checks": 161,
+    "geometry_regression_failures": 0,
+    "boss_model_regression_checks": 3152,
+    "boss_model_regression_failures": 0,
+    "source_qa_sha_files": 31,
+    "source_qa_sha_mismatches": 0,
+    "logs": "E:/CodexWorkspace/PixelRogue/work/boss-fx-v42",
+    "visual_review": "All 14 native sheets reviewed; rejected cross-cell/clipped candidates replaced. Low alpha haze and edge noise retained; not 74-skill exhaustive live-AI review."
+  }
+}

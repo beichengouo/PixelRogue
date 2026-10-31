@@ -1,0 +1,98 @@
+{
+  "source": "cast_source.png",
+  "source_sha256": "47ba07528158bd85995023a809b39fa8b918fc27dd9ba5ad44d785f75976426d",
+  "source_size": [
+    1312,
+    1199
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 656,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/mage_cast.png",
+  "atlas_sha256": "a273f1c796a31ec32196f725392d2604d610833cbec0951eacb8a2353bbae0ab",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        63,
+        656,
+        624
+      ],
+      "alpha_gt_8_bbox": [
+        232,
+        233,
+        450,
+        483
+      ],
+      "rgba_sha256": "413a51e6ace16d0bae79b259ab27b01853c66636033eb52931958b23015939f6"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        60,
+        642,
+        627
+      ],
+      "alpha_gt_8_bbox": [
+        202,
+        217,
+        452,
+        521
+      ],
+      "rgba_sha256": "0aefcb1f4578c2b6bb14e572e41ab88c3eb43971fed6b016b28d4b8572b71670"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        33,
+        652,
+        628
+      ],
+      "alpha_gt_8_bbox": [
+        158,
+        134,
+        528,
+        486
+      ],
+      "rgba_sha256": "c5e36537a995f4f5ca99ea9a1e76e69d0b8f5961d1be386654a41e3739944cc4"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        13,
+        28,
+        632,
+        604
+      ],
+      "alpha_gt_8_bbox": [
+        227,
+        207,
+        437,
+        443
+      ],
+      "rgba_sha256": "6f0f0a3fbeed04cfd32e2f88df77b2b2c47ca4015b24510fdc20db1464a21360"
+    }
+  ],
+  "logical_width_max": 88,
+  "physical_width_2k": 176,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent 2x2 game sprite sheet, four independent chronological frames, exactly equal quadrants. Each effect is very small, occupying at most the central 40% of each quadrant, with vast empty transparent margins on all sides. No effect or glow outside this central area; completely empty 30% padding along each cell edge. No checkerboard, no text, no border, no scene. Hand-painted polished fantasy, nonpixel. Mage cast: frame 1 gathering crystal sparks, frame 2 small glowing prism forms, frame 3 energetic release, frame 4 tiny fading shards. Ice blue #b5edff, azure #5ea9e2, violet #8b4ed2."
+}

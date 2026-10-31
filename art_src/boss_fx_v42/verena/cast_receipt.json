@@ -1,0 +1,122 @@
+{
+  "source": "E:/GodotProjects/PixelRogue/art_src/boss_fx_v42/verena/cast_source.png",
+  "source_sha256": "2b06ec7e6efd8cc30ab3508b3568b501582609984d71f518dd7198015128b027",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/verena_cast.png",
+  "atlas_sha256": "377e18d286e195408b37a954a86a1c4f52d21fd04e6b2d66ec6528acaedd8bc3",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "alpha_bbox": [
+        17,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        336,
+        308,
+        508,
+        501
+      ],
+      "source_cell_edge_alpha_max": 5,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "d1e500bff969a37a8a36d21aede372779da7c196909677f34e1959c0f1dd83cd"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        1,
+        135,
+        754,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        193,
+        222,
+        561,
+        555
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "0e9c84d45bf55b9f0bd451a2ef73c5497c86c17a569e37dd043c6f1e4af08c1b"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        160,
+        128,
+        680,
+        602
+      ],
+      "source_cell_edge_alpha_max": 12,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.001171875,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "ae5ec7509c0a5a6261c373c56db043940c45a20b2db926ba44d646be8e25efb8"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        1,
+        129,
+        756,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        244,
+        211,
+        590,
+        542
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "518fbdd4a4e7a5889de8d2459ffd39c938a29702a25cf3135ab868758f1384f9"
+    }
+  ],
+  "logical_width_max": 96,
+  "physical_width_2k": 192,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX sprite sheet, exactly four separated images in a 2x2 grid, each small centered in its quadrant with generous transparent empty space, never touch or cross quadrant or canvas edges. No border, lettering, checkerboard, person, scene or ground. Four time ordered sequential stages top left, top right, bottom left, bottom right. Detailed polished hand-painted nonpixel fantasy game art. Verena librarian amber gold wax seal and curling parchment magic. Four stages: tiny sparks gather, orbiting paper and glowing wax seal accumulate, release flash, fading paper motes."
+}

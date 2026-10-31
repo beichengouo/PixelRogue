@@ -1,0 +1,1210 @@
+{
+  "contract": "native-size and painted-edge audit of new source poses",
+  "scope": "manual visual review remains required for backgrounds, phase identity, anatomy and animation",
+  "sets": {
+    "king_1": {
+      "idle": {
+        "canvas": [
+          1293,
+          1217
+        ],
+        "margins": [
+          17,
+          3,
+          4,
+          37
+        ],
+        "native_height": 1177,
+        "passes": true,
+        "sha256": "367a901193298b3a0196f61eebbc50e2272a0f9439b768fb7d31601b97228477",
+        "used": [
+          17,
+          3,
+          1272,
+          1177
+        ]
+      },
+      "move": {
+        "canvas": [
+          1322,
+          1190
+        ],
+        "margins": [
+          6,
+          5,
+          6,
+          5
+        ],
+        "native_height": 1180,
+        "passes": true,
+        "sha256": "a248fdcc613b454b8e7c061cf2e24fc25ab574f32da4aa0249e26fa11e5be0e9",
+        "used": [
+          6,
+          5,
+          1310,
+          1180
+        ]
+      },
+      "release": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "margins": [
+          77,
+          7,
+          72,
+          18
+        ],
+        "native_height": 916,
+        "passes": true,
+        "sha256": "8dd152a8024b1f7e06aae80db8359e4fb52836e986c2270780d512f16bf1594a",
+        "used": [
+          77,
+          7,
+          1523,
+          916
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1672,
+          941
+        ],
+        "margins": [
+          179,
+          5,
+          271,
+          13
+        ],
+        "native_height": 923,
+        "passes": true,
+        "sha256": "39e94dc3cf1c6faaa04b38f80a7bd7c22155da338f94c2e2ab0363ca4dbd85e7",
+        "used": [
+          179,
+          5,
+          1222,
+          923
+        ]
+      }
+    },
+    "king_2": {
+      "idle": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          8,
+          9,
+          1,
+          27
+        ],
+        "native_height": 1180,
+        "passes": true,
+        "sha256": "e44989c6f02171bf16075cd080581927b1fef665eb7deaeae0becaee5b0159ed",
+        "used": [
+          8,
+          9,
+          1284,
+          1180
+        ]
+      },
+      "move": {
+        "canvas": [
+          1295,
+          1214
+        ],
+        "margins": [
+          8,
+          7,
+          5,
+          6
+        ],
+        "native_height": 1201,
+        "passes": true,
+        "sha256": "c2b6f88af091a1a7495738bcccade327a4711675c1fdeac30269b968b689cb39",
+        "used": [
+          8,
+          7,
+          1282,
+          1201
+        ]
+      },
+      "release": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          14,
+          22,
+          4,
+          11
+        ],
+        "native_height": 1183,
+        "passes": true,
+        "sha256": "8b7ccceba7bd8e4cfa4513004c0f3678c97cd88240a509fd27d65268ff78a886",
+        "used": [
+          14,
+          22,
+          1276,
+          1183
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          11,
+          9,
+          16,
+          6
+        ],
+        "native_height": 1201,
+        "passes": true,
+        "sha256": "87ed579f1203f5d93b139ceb4e07f66a60db7e082f6931d4de78350abdcb1652",
+        "used": [
+          11,
+          9,
+          1267,
+          1201
+        ]
+      }
+    },
+    "mage_1": {
+      "idle": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          177,
+          4,
+          157,
+          9
+        ],
+        "native_height": 1187,
+        "passes": true,
+        "sha256": "f5e46456feb052f53e09de2cae828deed2d3ca1106c8e724e1379296791ca1fa",
+        "used": [
+          177,
+          4,
+          976,
+          1187
+        ]
+      },
+      "move": {
+        "canvas": [
+          1288,
+          1221
+        ],
+        "margins": [
+          16,
+          14,
+          16,
+          13
+        ],
+        "native_height": 1194,
+        "passes": true,
+        "sha256": "494389689d2d0cfa792e6699acf41d7aaf3a4ddd27e786d8064ea0ab23e52456",
+        "used": [
+          16,
+          14,
+          1256,
+          1194
+        ]
+      },
+      "release": {
+        "canvas": [
+          1286,
+          1223
+        ],
+        "margins": [
+          10,
+          9,
+          7,
+          8
+        ],
+        "native_height": 1206,
+        "passes": true,
+        "sha256": "3299d23fc082397fd2c960df96c21a8bc505357e09b314b16f8a279be5a64799",
+        "used": [
+          10,
+          9,
+          1269,
+          1206
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1330,
+          1183
+        ],
+        "margins": [
+          70,
+          5,
+          49,
+          2
+        ],
+        "native_height": 1176,
+        "passes": true,
+        "sha256": "3c0a76ed281686462800eac63aa101bcc3d74e185a77268a49203c92fcc87a38",
+        "used": [
+          70,
+          5,
+          1211,
+          1176
+        ]
+      }
+    },
+    "mage_2": {
+      "idle": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          199,
+          129,
+          190,
+          90
+        ],
+        "native_height": 981,
+        "passes": true,
+        "sha256": "3f83917f2eb5342666f97a292e60fcd6049476e1a191df631ec6fb7c0b2e60dd",
+        "used": [
+          199,
+          129,
+          921,
+          981
+        ]
+      },
+      "move": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          28,
+          9,
+          27,
+          10
+        ],
+        "native_height": 1181,
+        "passes": true,
+        "sha256": "b3ab26b2a79bb96299a7753c7953392d3acbf84134ec52431dd9968bab89de4a",
+        "used": [
+          28,
+          9,
+          1255,
+          1181
+        ]
+      },
+      "release": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          40,
+          7,
+          32,
+          8
+        ],
+        "native_height": 1185,
+        "passes": true,
+        "sha256": "07fbb90a9c7b19049f77755cbfe5e7a1b65ef0dd33a4979626e903aa3d77b97f",
+        "used": [
+          40,
+          7,
+          1238,
+          1185
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          65,
+          7,
+          44,
+          4
+        ],
+        "native_height": 1189,
+        "passes": true,
+        "sha256": "eb74674c68bda81d3caab1250d368549049a774a84f7c879eb4e6d230206a31c",
+        "used": [
+          65,
+          7,
+          1201,
+          1189
+        ]
+      }
+    },
+    "nameless_1": {
+      "idle": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          19,
+          8,
+          20,
+          15
+        ],
+        "native_height": 1193,
+        "passes": true,
+        "sha256": "23caac8a0768db2f10695823b0bc355930480a5dbb566eb7edc4e6bef4399a71",
+        "used": [
+          19,
+          8,
+          1254,
+          1193
+        ]
+      },
+      "move": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          14,
+          4,
+          12,
+          7
+        ],
+        "native_height": 1205,
+        "passes": true,
+        "sha256": "a52357babf9525b3d14829686bbf2d7ad2d8ad57c54c29582c2901b1ce1400c6",
+        "used": [
+          14,
+          4,
+          1267,
+          1205
+        ]
+      },
+      "release": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          32,
+          5,
+          13,
+          8
+        ],
+        "native_height": 1203,
+        "passes": true,
+        "sha256": "dbe7de3d13c74c12801b87b78951ab59981d991c8a190fcc24f95de7b5bbaa30",
+        "used": [
+          32,
+          5,
+          1248,
+          1203
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          8,
+          8,
+          10,
+          5
+        ],
+        "native_height": 1203,
+        "passes": true,
+        "sha256": "bb6c4fdc2bbe262cbfccacfa8f6f3e8958bc4ae3f0d6ede786bca60d71e82837",
+        "used": [
+          8,
+          8,
+          1275,
+          1203
+        ]
+      }
+    },
+    "nameless_2": {
+      "idle": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          11,
+          4,
+          10,
+          4
+        ],
+        "native_height": 1208,
+        "passes": true,
+        "sha256": "59d29341c782a42c80523e73d3e185e50cdab72f095688e0ddd3bbe07e522462",
+        "used": [
+          11,
+          4,
+          1273,
+          1208
+        ]
+      },
+      "move": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          11,
+          29,
+          10,
+          42
+        ],
+        "native_height": 1145,
+        "passes": true,
+        "sha256": "2bb98284b2e3b2b0b4c1a608be0ae0c8fe4cd23b7883c1b8ebc87395323b9b5e",
+        "used": [
+          11,
+          29,
+          1272,
+          1145
+        ]
+      },
+      "release": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          7,
+          1,
+          9,
+          5
+        ],
+        "native_height": 1210,
+        "passes": true,
+        "sha256": "d3cfd092c36d0b0f6c19f4ee6c8831a39f0070a9486aa96e4df0488189f6b931",
+        "used": [
+          7,
+          1,
+          1277,
+          1210
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          9,
+          5,
+          9,
+          11
+        ],
+        "native_height": 1200,
+        "passes": true,
+        "sha256": "a19f515c219db7f34fdd357d4ea9c2831e9604edf0a49524ead7826c21c71dfe",
+        "used": [
+          9,
+          5,
+          1275,
+          1200
+        ]
+      }
+    },
+    "nameless_3": {
+      "idle": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          40,
+          36,
+          38,
+          47
+        ],
+        "native_height": 1133,
+        "passes": true,
+        "sha256": "e7025beba0a9f856c710f0d5840616a3db9af8196a46bf4f39dcdff81364b301",
+        "used": [
+          40,
+          36,
+          1216,
+          1133
+        ]
+      },
+      "move": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          5,
+          1,
+          4,
+          2
+        ],
+        "native_height": 1213,
+        "passes": true,
+        "sha256": "62f1ecbf6d5dfb30f0268dfacf2cb03e5731a3005460716a51714978940238f6",
+        "used": [
+          5,
+          1,
+          1285,
+          1213
+        ]
+      },
+      "release": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          24,
+          35,
+          19,
+          33
+        ],
+        "native_height": 1148,
+        "passes": true,
+        "sha256": "4700fb5ceceb6d2a7b297ba56648aa670c504f70c808a3e543bc2299e9172502",
+        "used": [
+          24,
+          35,
+          1251,
+          1148
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          24,
+          30,
+          23,
+          48
+        ],
+        "native_height": 1138,
+        "passes": true,
+        "sha256": "f077846e19b2347d629ec8d8133eff27403f10c9c6e92155d913e94d79cfb01b",
+        "used": [
+          24,
+          30,
+          1247,
+          1138
+        ]
+      }
+    },
+    "sephra_1": {
+      "idle": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          209,
+          1,
+          152,
+          19
+        ],
+        "native_height": 1196,
+        "passes": true,
+        "sha256": "2bc21e2aa95e53abcdfb4feafa90d74a4e472c3020d2d8fb67d7ded1c9073a81",
+        "used": [
+          209,
+          1,
+          932,
+          1196
+        ]
+      },
+      "move": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          109,
+          4,
+          64,
+          22
+        ],
+        "native_height": 1190,
+        "passes": true,
+        "sha256": "5672554db8910ba3a6d5130cbf6d41257efd06c448bf05e85d554f3097ef0350",
+        "used": [
+          109,
+          4,
+          1121,
+          1190
+        ]
+      },
+      "release": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          6,
+          8,
+          7,
+          38
+        ],
+        "native_height": 1170,
+        "passes": true,
+        "sha256": "c66b4325139118c69d85622f7ea64717609ac2fd06902ec77e68e106f56cfb9c",
+        "used": [
+          6,
+          8,
+          1280,
+          1170
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          39,
+          3,
+          1,
+          3
+        ],
+        "native_height": 1210,
+        "passes": true,
+        "sha256": "c09fba4754f0e59513568fe30f909119d20165c012e36edb5307ac060967f7c0",
+        "used": [
+          39,
+          3,
+          1254,
+          1210
+        ]
+      }
+    },
+    "sephra_2": {
+      "idle": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          48,
+          2,
+          41,
+          4
+        ],
+        "native_height": 1210,
+        "passes": true,
+        "sha256": "aac27c37d05476623d7b0af9f7d0a2934d9c4770653ec49fc2f6fbe790ae759b",
+        "used": [
+          48,
+          2,
+          1205,
+          1210
+        ]
+      },
+      "move": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          27,
+          2,
+          5,
+          3
+        ],
+        "native_height": 1211,
+        "passes": true,
+        "sha256": "f01878bf5891e73bd3ff41ce638afd31f74b8d836b6173785139aeca265aed36",
+        "used": [
+          27,
+          2,
+          1262,
+          1211
+        ]
+      },
+      "release": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          47,
+          39,
+          32,
+          46
+        ],
+        "native_height": 1131,
+        "passes": true,
+        "sha256": "ac5ebf2b6efe87eff8848b31575f14e760be80d51e19efed0cb808cea39aeb1e",
+        "used": [
+          47,
+          39,
+          1214,
+          1131
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          40,
+          39,
+          21,
+          23
+        ],
+        "native_height": 1154,
+        "passes": true,
+        "sha256": "e8943b8e4a01d291d0732172826d6e53222b751b6d547ca679059cc85729f422",
+        "used": [
+          40,
+          39,
+          1232,
+          1154
+        ]
+      }
+    },
+    "tide_1": {
+      "idle": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          38,
+          8,
+          29,
+          10
+        ],
+        "native_height": 1182,
+        "passes": true,
+        "sha256": "c89119b795cd3aa3e7e76b2d426f4cad676a58dc4629c064ea406a7fe24aae5a",
+        "used": [
+          38,
+          8,
+          1243,
+          1182
+        ]
+      },
+      "move": {
+        "canvas": [
+          1359,
+          1157
+        ],
+        "margins": [
+          14,
+          6,
+          2,
+          6
+        ],
+        "native_height": 1145,
+        "passes": true,
+        "sha256": "3cc5a4da88eedebcad7786f9b44f05b6d1afdcacaec5374e3ec3b5685910f7af",
+        "used": [
+          14,
+          6,
+          1343,
+          1145
+        ]
+      },
+      "release": {
+        "canvas": [
+          1322,
+          1190
+        ],
+        "margins": [
+          18,
+          10,
+          13,
+          6
+        ],
+        "native_height": 1174,
+        "passes": true,
+        "sha256": "ed6209ce3441873c73659f0a9b112aba0b7e0dcb4532988a24740fc292f85482",
+        "used": [
+          18,
+          10,
+          1291,
+          1174
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1396,
+          1127
+        ],
+        "margins": [
+          11,
+          8,
+          4,
+          9
+        ],
+        "native_height": 1110,
+        "passes": true,
+        "sha256": "2a17b3ae20f306215bb00b31235f7faa0fa9457a4a56567aeaf97aafd13a679b",
+        "used": [
+          11,
+          8,
+          1381,
+          1110
+        ]
+      }
+    },
+    "tide_2": {
+      "idle": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          12,
+          6,
+          4,
+          4
+        ],
+        "native_height": 1190,
+        "passes": true,
+        "sha256": "095668c644179d81207aafcbc1b505b5774ce2f40481048e72b726eb61e2bb68",
+        "used": [
+          12,
+          6,
+          1294,
+          1190
+        ]
+      },
+      "move": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          2,
+          1,
+          5,
+          2
+        ],
+        "native_height": 1197,
+        "passes": true,
+        "sha256": "51e3e98a566fa15cdaeefe89f52815957c71c2e0bf20042a231df6b2d16aa530",
+        "used": [
+          2,
+          1,
+          1303,
+          1197
+        ]
+      },
+      "release": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          27,
+          29,
+          23,
+          28
+        ],
+        "native_height": 1143,
+        "passes": true,
+        "sha256": "65cf179dc369e1e616c4b1ff671a2807974fffd4e3f1885cb745d3642e80146d",
+        "used": [
+          27,
+          29,
+          1260,
+          1143
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          5,
+          3,
+          4,
+          7
+        ],
+        "native_height": 1190,
+        "passes": true,
+        "sha256": "4e69ff74b1586f68dce5635fd889b631f801c069c897d560a592ec652969efd1",
+        "used": [
+          5,
+          3,
+          1301,
+          1190
+        ]
+      }
+    },
+    "tide_3": {
+      "idle": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          6,
+          4,
+          4,
+          4
+        ],
+        "native_height": 1192,
+        "passes": true,
+        "sha256": "e5614b397ecc0ebcfcb684c423712e0cf23889b4c7a43a2e9169809570564320",
+        "used": [
+          6,
+          4,
+          1300,
+          1192
+        ]
+      },
+      "move": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          128,
+          43,
+          75,
+          33
+        ],
+        "native_height": 1124,
+        "passes": true,
+        "sha256": "bf260099296969e3d6682f95d869334bc02e44d896b7798669985a654dd8d40f",
+        "used": [
+          128,
+          43,
+          1107,
+          1124
+        ]
+      },
+      "release": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          13,
+          4,
+          7,
+          1
+        ],
+        "native_height": 1195,
+        "passes": true,
+        "sha256": "926daa9f2f306fc8286683b5561f0bea09f866a4b09afcd5d660a1a3ea12d6ca",
+        "used": [
+          13,
+          4,
+          1290,
+          1195
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1310,
+          1200
+        ],
+        "margins": [
+          7,
+          6,
+          6,
+          2
+        ],
+        "native_height": 1192,
+        "passes": true,
+        "sha256": "d877d5ee9ac21ece6792376f8f5919d91ad5baeb062738f80316bd99d8327892",
+        "used": [
+          7,
+          6,
+          1297,
+          1192
+        ]
+      }
+    },
+    "verena_1": {
+      "idle": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          8,
+          9,
+          17,
+          24
+        ],
+        "native_height": 1183,
+        "passes": true,
+        "sha256": "5ddf7fbbe6d2197579813e7d1c5f4743841177f5b6adc6780b7c7e71e6feca36",
+        "used": [
+          8,
+          9,
+          1268,
+          1183
+        ]
+      },
+      "move": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          17,
+          9,
+          13,
+          14
+        ],
+        "native_height": 1193,
+        "passes": true,
+        "sha256": "c512126e2d5b3697123d8ee6490f8a387c2a8c7d56dc30521a7052c61cf8c853",
+        "used": [
+          17,
+          9,
+          1263,
+          1193
+        ]
+      },
+      "release": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          7,
+          3,
+          6,
+          18
+        ],
+        "native_height": 1195,
+        "passes": true,
+        "sha256": "b0efbe454cbd42d9af1d2d488981deb693f42616c81e08806b36bd73188916fd",
+        "used": [
+          7,
+          3,
+          1280,
+          1195
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          3,
+          2,
+          3,
+          28
+        ],
+        "native_height": 1186,
+        "passes": true,
+        "sha256": "50eda3948309f7fde6d32ac008e3147036d5dd1179c3674918bc08ce3d621f0f",
+        "used": [
+          3,
+          2,
+          1287,
+          1186
+        ]
+      }
+    },
+    "verena_2": {
+      "idle": {
+        "canvas": [
+          1294,
+          1216
+        ],
+        "margins": [
+          3,
+          6,
+          2,
+          6
+        ],
+        "native_height": 1204,
+        "passes": true,
+        "sha256": "d115151133a181b63b91e4ce19c963a373ae226cb5f4ce246bfd9686bdcc47e7",
+        "used": [
+          3,
+          6,
+          1289,
+          1204
+        ]
+      },
+      "move": {
+        "canvas": [
+          1293,
+          1216
+        ],
+        "margins": [
+          20,
+          65,
+          17,
+          50
+        ],
+        "native_height": 1101,
+        "passes": true,
+        "sha256": "22c492858be1b01c1697a78fab6345c5d81f736754dcf98a0f68ad37aa948795",
+        "used": [
+          20,
+          65,
+          1256,
+          1101
+        ]
+      },
+      "release": {
+        "canvas": [
+          1222,
+          1287
+        ],
+        "margins": [
+          6,
+          4,
+          3,
+          3
+        ],
+        "native_height": 1280,
+        "passes": true,
+        "sha256": "3babd2d344667c36858228b928ea26561923e3b40e4d7527e5af51b895d1d810",
+        "used": [
+          6,
+          4,
+          1213,
+          1280
+        ]
+      },
+      "windup": {
+        "canvas": [
+          1199,
+          1312
+        ],
+        "margins": [
+          3,
+          7,
+          2,
+          35
+        ],
+        "native_height": 1270,
+        "passes": true,
+        "sha256": "20dcd97631995e58c0bf92209d93b97066711e1e146db2736199c67ae1e5d273",
+        "used": [
+          3,
+          7,
+          1194,
+          1270
+        ]
+      }
+    }
+  }
+}

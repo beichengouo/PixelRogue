@@ -1,0 +1,98 @@
+{
+  "source": "impact_source.png",
+  "source_sha256": "80659c7b074aabe63da13cec18614c9aeed3f5356911f2f8e344a29ea11e5ad3",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/king_impact.png",
+  "atlas_sha256": "9aa247d2d450dbff5d9197baf60c055b3557ff474343726fcf70cd022c02fbc5",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        39,
+        165,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        299,
+        327,
+        473,
+        517
+      ],
+      "rgba_sha256": "24347ffe4245553f9d72d96712c53fc703577f25b79f3ce50bf8b8587e2aa9b2"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        159,
+        752,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        186,
+        282,
+        544,
+        563
+      ],
+      "rgba_sha256": "41849db14941618fe7a254710e9d1a157fad87f68196035ed551af49d978a87b"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        25,
+        128,
+        768,
+        616
+      ],
+      "alpha_gt_8_bbox": [
+        247,
+        226,
+        577,
+        515
+      ],
+      "rgba_sha256": "1ad3c32d9f11898215cef29261fce4f93db80168b348a6601f02411084a56fab"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        250
+      ],
+      "alpha_bbox": [
+        1,
+        135,
+        752,
+        622
+      ],
+      "alpha_gt_8_bbox": [
+        248,
+        281,
+        498,
+        496
+      ],
+      "rgba_sha256": "239a3a5db9e13915732fa7840ba02d93ff5e36ad2b2e83e0dc2096465cb548c6"
+    }
+  ],
+  "logical_width_max": 60,
+  "physical_width_2k": 120,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent 2x2 game sprite sheet, four independent chronological frames, exactly equal quadrants. Each effect is very small, occupying at most the central 40% of each quadrant, with vast empty transparent margins on all sides. No effect or glow outside this central area; completely empty 30% padding along each cell edge. No checkerboard, no text, no border, no scene. Hand-painted polished fantasy, nonpixel. King impact of gold and copper energy: frame 1 tiny flash, frame 2 burst, frame 3 shattered fragments, frame 4 sparse sparks fading. Colors ivory gold #f4d49c, copper #ae6c5a, burgundy #7c3649."
+}

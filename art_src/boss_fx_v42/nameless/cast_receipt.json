@@ -1,0 +1,122 @@
+{
+  "source": "E:/GodotProjects/PixelRogue/art_src/boss_fx_v42/nameless/cast_source.png",
+  "source_sha256": "b2b8099553bea650e540dd0247ccf1ff10751c71077785d68fdab75fdd0b0f21",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/nameless_cast.png",
+  "atlas_sha256": "08406b4916d2ce1f7772c1261ded26fbc2b9b4a5a44e52dfdd53d4a9cb86865b",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        301,
+        265,
+        518,
+        526
+      ],
+      "source_cell_edge_alpha_max": 2,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "fcc0343515d2fabead879f41fa92c8e2354aac3356e6fe36da4e528da276ac58"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        138,
+        232,
+        593,
+        537
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "f53608dd6dde5ea68c291cc77eeea89158e6190d3f701d95e36a561d93d79562"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        130,
+        141,
+        716,
+        591
+      ],
+      "source_cell_edge_alpha_max": 2,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "cb5ab2b70c919721523a3cefa08f5a8c7ca455ddd90dbe61c87f50f82eed942c"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        169,
+        216,
+        615,
+        542
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "6f07106e3c0c8fe76b54e1c8303e3290671b04d82b4e2916bb9dc555d0d2930a"
+    }
+  ],
+  "logical_width_max": 96,
+  "physical_width_2k": 192,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX sprite sheet, exactly four separated images in a 2x2 grid, each small centered in its quadrant with generous transparent empty space, never touch or cross quadrant or canvas edges. No border, lettering, checkerboard, person, scene or ground. Four time ordered sequential stages top left, top right, bottom left, bottom right. Detailed polished hand-painted nonpixel fantasy game art. Nameless celestial recording machine cyan blue and silver star-orbit magic. Four stages: dim central star, concentric orbital arcs build, brilliant stellar release, arcs dissolve into motes."
+}

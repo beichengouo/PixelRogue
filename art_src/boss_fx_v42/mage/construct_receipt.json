@@ -1,0 +1,98 @@
+{
+  "source": "construct_source.png",
+  "source_sha256": "3eeceb6b07e16a0327a031fb1f0b46b362e7cccff8e4f519da0160fd50e454f4",
+  "source_size": [
+    1254,
+    1254
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 627,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/mage_construct.png",
+  "atlas_sha256": "f0b5d36c70796c6b134fb8409f271361abb233e7e28eeb775d27cf6dd7664f20",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_gt_8_bbox": [
+        151,
+        100,
+        470,
+        527
+      ],
+      "rgba_sha256": "5a5536f705ba645f020366abbdd142a11d59994b72c168de853cd2c19c100b89"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        12,
+        617,
+        627
+      ],
+      "alpha_gt_8_bbox": [
+        145,
+        100,
+        484,
+        528
+      ],
+      "rgba_sha256": "fd77359aafe0ea8f8ac251416ad9f68d5979b719d28138e39b572d27fb394b32"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "alpha_gt_8_bbox": [
+        154,
+        91,
+        478,
+        518
+      ],
+      "rgba_sha256": "cdc263c657e63a22f212e03115364ae33ee87f24a2b4775b6bae8a0e46ae950c"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        615,
+        627
+      ],
+      "alpha_gt_8_bbox": [
+        156,
+        91,
+        496,
+        518
+      ],
+      "rgba_sha256": "f9d5444e2b8ff06cfbf952b16ddffc07586495515e2b4db5e9687cf60fa31d04"
+    }
+  ],
+  "logical_width_max": 48,
+  "physical_width_2k": 96,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX animation sprite sheet. Exactly four separated small images in a 2x2 grid, each image contained within central 55 percent of its square quadrant; leave at least 20 percent of each cell as empty transparent margins, no element touching or crossing any quadrant edge or canvas edge. No borders, no text, no checkerboard. Polished fantasy hand-painted nonpixel art. Only magic effect, no person or scenery. Mage construct: a single hovering faceted blue violet crystal prism with a magical core, identical stable size and position throughout all four frames; only tiny shifts of glow and orbiting sparks, seamless looping persistent entity, never disappearing. Palette ice blue #b5edff, azure #5ea9e2, violet #8b4ed2."
+}

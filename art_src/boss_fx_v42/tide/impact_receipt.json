@@ -1,0 +1,122 @@
+{
+  "source": "E:/GodotProjects/PixelRogue/art_src/boss_fx_v42/tide/impact_source.png",
+  "source_sha256": "bf367bd27d0004dee20243ae9a0cbdb30bb5919c4d4ff34246fadc8c1d2816fe",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/tide_impact.png",
+  "atlas_sha256": "1f67b8a3be77a4dc3fdcd16b726e2a96b309144f15a1c7fbb63a27db10287d86",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        17,
+        143,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        283,
+        274,
+        556,
+        556
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "ad11c9b45799f61b0e5b9cf4deceb6e84005bd48ad5d3be1e2ed5a5369022e98"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        135,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        147,
+        178,
+        631,
+        607
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "f9e975a6878ccef6d2ca9842fc400ceb21b99c9ca258f05dcdeb67d98083131f"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        17,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        193,
+        178,
+        648,
+        578
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "50844ca2b243db2a7ba65f8fd69813c759645571333887695b3ccdc87f2384e1"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        251
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        754,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        277,
+        273,
+        525,
+        517
+      ],
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rgba_sha256": "1d2e58b830e8ee1c5cb49b6cc4736c29adc0adbab1bdaa338eba3d51c156cfb2"
+    }
+  ],
+  "logical_width_max": 60,
+  "physical_width_2k": 120,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game effect animation sheet exactly four small independent compact images in 2 by 2 equal quadrants. The subject occupies at most the central half of each cell; leave extremely generous empty transparent margins, no object or glow crossing quadrant borders, no borders, no text, no ground, no character, no checkerboard. Four stages in reading order: small sharp hit, wider explosion, separated flying fragments, just a few tiny fading motes. Deep sea root boss impact, turquoise water droplets and fine broken tendrils, mint #a6eacb turquoise #55bda9 dark teal #286384, high-resolution hand-painted fantasy VFX. Fixed center within each quadrant."
+}

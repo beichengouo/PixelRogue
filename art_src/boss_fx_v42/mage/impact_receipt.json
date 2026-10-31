@@ -1,0 +1,98 @@
+{
+  "source": "impact_source.png",
+  "source_sha256": "57aa4e7abebdabcd7e4f1a69d7073e1f2d7d0f16b84cd4bc4d5274359540a222",
+  "source_size": [
+    1326,
+    1186
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 663,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/mage_impact.png",
+  "atlas_sha256": "f7c848b5f32c24333c81ecc729aae350bf9edfca9ffb63a4c7799cf2b6b0894f",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        52,
+        663,
+        628
+      ],
+      "alpha_gt_8_bbox": [
+        212,
+        224,
+        453,
+        461
+      ],
+      "rgba_sha256": "ce912caa77c053848f7185a11d2ebd8e98c2a2c7d8535eb2214712ab438b542f"
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_bbox": [
+        0,
+        38,
+        653,
+        628
+      ],
+      "alpha_gt_8_bbox": [
+        58,
+        90,
+        560,
+        564
+      ],
+      "rgba_sha256": "79291bb24de30eec6b9d7ec58c42150c98d949454e13847de5965d0667074cb3"
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "alpha_bbox": [
+        0,
+        35,
+        663,
+        628
+      ],
+      "alpha_gt_8_bbox": [
+        98,
+        96,
+        629,
+        562
+      ],
+      "rgba_sha256": "7f7eb171501bd1249ae0e0362baa491594d6c089a82779620aa885ed54d2da3d"
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        250
+      ],
+      "alpha_bbox": [
+        0,
+        35,
+        647,
+        628
+      ],
+      "alpha_gt_8_bbox": [
+        132,
+        126,
+        524,
+        490
+      ],
+      "rgba_sha256": "45360f8bd9d4e26db88fa9225192946697dd326a8ffbd585b69f8552ddceefb3"
+    }
+  ],
+  "logical_width_max": 60,
+  "physical_width_2k": 120,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX animation sprite sheet. Exactly four separated small images in a 2x2 grid, each image contained within central 55 percent of its square quadrant; leave at least 20 percent of each cell as empty transparent margins, no element touching or crossing any quadrant edge or canvas edge. No borders, no text, no checkerboard. Four sequential moments of an arcane crystal impact: tiny flash, concentrated radial burst, scattering fractured crystalline shards, sparse fading sparks. Palette ice blue #b5edff, azure #5ea9e2, violet #8b4ed2. Polished fantasy hand-painted nonpixel art. Only magic effect, no person or scenery."
+}

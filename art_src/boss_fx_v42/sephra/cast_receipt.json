@@ -1,0 +1,123 @@
+{
+  "source": "cast_source.png",
+  "source_sha256": "9943c23a6d7e8c71ee79e905c7fd3f8778a775c629ab89f9be4d493207e017e2",
+  "source_size": [
+    1536,
+    1024
+  ],
+  "layout": "2x2 row-major to 1x4 with transparent padding, no resampling",
+  "cell_size": 768,
+  "runtime_atlas": "E:/GodotProjects/PixelRogue/assets/boss_fx_v42/sephra_cast.png",
+  "atlas_sha256": "513d2d05d4445e7254f3f13194d819150c7dec9ea2c5b571609f72d9b35c91b2",
+  "frames": [
+    {
+      "index": 0,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        315,
+        271,
+        547,
+        544
+      ],
+      "rgba_sha256": "8d96ed3b32eb22224b101917ea63e0266dd5f10a667b0ce9ce445934c3d92873",
+      "source_cell_edge_alpha_max": 2,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 1,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        123,
+        196,
+        549,
+        621
+      ],
+      "rgba_sha256": "a855906abae57987af5c45f7b105ebd95b531e78496a3d46934e635fb6d72657",
+      "source_cell_edge_alpha_max": 2,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 2,
+      "alpha_extrema": [
+        0,
+        253
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        191,
+        159,
+        690,
+        585
+      ],
+      "rgba_sha256": "3f30f8bcfd4ea796fed4cc4478d5d085335a1fb678790fb51be7f45dfcd4f341",
+      "source_cell_edge_alpha_max": 1,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "index": 3,
+      "alpha_extrema": [
+        0,
+        252
+      ],
+      "alpha_bbox": [
+        0,
+        128,
+        768,
+        640
+      ],
+      "alpha_gt_8_bbox": [
+        165,
+        206,
+        574,
+        539
+      ],
+      "rgba_sha256": "9f6dea9bae0f650370ae254951977bcf4be7fcde403e20846616c97f67331e57",
+      "source_cell_edge_alpha_max": 2,
+      "source_cell_edge_fraction_ge_8_16_32": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "logical_width_max": 96,
+  "physical_width_2k": 192,
+  "generation": "built-in image_gen; transparent_background=true",
+  "prompt": "Transparent game VFX animation sprite sheet. Exactly four separated small images in a 2x2 grid, each image contained within central 55 percent of its square quadrant; leave at least 20 percent of each cell as empty transparent margins, no element touching or crossing any quadrant edge or canvas edge. No borders, no text, no checkerboard. Four consecutive stages of Sephra's silver-blue gate-seal casting: first a small luminous star and subtle sparks; second concentric gate seal gathers; third bright flash from same central origin; fourth tiny broken arcs and sparse fading sparks. Silver blue with restrained pale gold; polished fantasy hand-painted nonpixel art. Only magic effect, no person or scenery.",
+  "edge_note": "Low-alpha 1-2 haze at source cell boundaries; preserved unmodified."
+}
