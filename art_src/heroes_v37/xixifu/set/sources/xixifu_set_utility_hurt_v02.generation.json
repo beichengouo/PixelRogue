@@ -1,0 +1,74 @@
+{
+  "asset": "xixifu_set_utility_hurt_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_utility_hurt_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-e0e17590-4a7c-4223-821b-8b0daa0bb7f8.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_utility_hurt_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit this transparent four-pose game sprite source. Each flinch pose has THREE HANDS: one gripping staff, one clenched over chest, and an erroneous third resting on waist. REMOVE the entire waist hand and its dangling empty sleeve. Exactly TWO arms: one arm staff, one arm raised to chest. Last recovery pose may lower second hand instead, never both. Preserve proper anatomical limbs.\nPreserve the same character face/head dimensions, compact skeleton, dark long hair, black and wine red calf-length legendary dress, gold embroidery, violet contract staff and barefoot anklets. Preserve each distinct pose and reading order. Exactly FOUR figures in 2x2 invisible equal cells. All full bodies and props inside their own cell with at least 8 percent transparent clearance at all sides. Do not crop anatomy, duplicate props or add hands. Do not put normal shoes back. Clear transparent background, no halos, marks, text, labels, numbers, grid lines, background, shadows or watermarks. Refined nonpixel handdrawn game art.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_utility_hurt_v01.png",
+      "sha256": "0193b556c43bb2360c62368bfcb722b13b1ecec0ec82f959d7321625ab1afd9e"
+    }
+  ],
+  "sha256": "02cb3bd9b97b1d7ab4124bc885af8cd8b12616f951970be7ea3379fd78348946",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "hurt",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    56,
+    1220,
+    1228
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      56,
+      1220,
+      1228
+    ],
+    "8": [
+      164,
+      64,
+      1165,
+      1222
+    ],
+    "32": [
+      165,
+      64,
+      1165,
+      1222
+    ],
+    "128": [
+      165,
+      65,
+      1164,
+      1221
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Bottom-right recovery retains chest hand plus lower hand in addition to staff grip.",
+  "replacement": "xixifu_set_utility_hurt_v03"
+}

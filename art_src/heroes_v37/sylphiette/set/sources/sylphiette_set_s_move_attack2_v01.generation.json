@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_set_s_move_attack2_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_s_move_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-8b96cccf-484e-4a28-8322-d48329eaa533.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_s_move_attack2_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe-only edit of image1's FOUR DISTINCT continuous attack poses. Image2 is legendary outfit reference ONLY. Preserve image1's EXACT skull/face, skeleton, body lengths, viewing direction, all4 authored hand/arm poses, foot stance and staff aim. DO NOT copy image2 resting hands, no extra waist fist. Change only clothing and staff design: WHITE/GOLD raised nun-style hood with DARK NAVY lining, complete smooth hood framing face without clipping hair, modest hooded capelet, whitegold calf-length layered ritual dress with deeper navy inner sleeves, blue sapphire throat clasp, whitegold flat shoes; same silverhair BLUEEYES. Staff changes from cloud-curl head to image2's GOLD CRESCENT enclosing blueorb, ONE whole staff in anatomical RIGHT hand as original. Anatomical LEFT is the only free hand, no swap. ExactlyTWO arms/hands. Keep compact normal body proportions, same torso/leg lengths beneath outfit. No crown/halo, no whitehair turned blond. Four consecutive ready/lead/release/followthrough poses remain DISTINCT; do not replace action with four resting copies. All four heads identical native size, no squat/stretch/sway. Full hair/hood/staff/shoes inside own cell with generous transparent margin, 2x2 equal cells. Pure alpha, no numbers, text, labels, borders, panel lines, shadows, background, glow, marks or effects. Refined nonpixel cel game illustration. Preserve the four distinct walking leg poses from image1 with alternating feet and passing phases; never turn them into stationary poses.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack2_v01.png",
+      "sha256": "66efb36770301a4fcec240ce240837234ed20ada870963e34d76a7c280076031"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_s_idle_v01.png",
+      "sha256": "3ab718e685152c8dfe1a94df70756ef1fc2391a76dedbb4586a110f23992ec9b"
+    }
+  ],
+  "sha256": "a020872ecd8dfbc5b17eeaf88dc1f5f55f27297e9fd4db558268236cd7ed5b5d",
+  "dimensions": [
+    1278,
+    1230
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1264,
+    1230
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1264,
+      1230
+    ],
+    "8": [
+      48,
+      12,
+      1254,
+      1201
+    ],
+    "32": [
+      49,
+      12,
+      1254,
+      1201
+    ],
+    "128": [
+      50,
+      13,
+      1253,
+      1200
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "User requires midline passing poses; four frames repeat two foot positions without a clear passing phase."
+}

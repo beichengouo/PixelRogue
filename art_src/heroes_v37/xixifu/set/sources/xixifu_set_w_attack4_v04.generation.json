@@ -1,0 +1,72 @@
+{
+  "asset": "xixifu_set_w_attack4_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_attack4_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-6cc036db-2856-49f6-95e0-c92ca64e74a4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_attack4_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Repair this four-frame transparent game sprite source, not a design board. Preserve the exact Xixifu character, black/wine-red legendary outfit, barefoot anklets, eyes, hairstyle, anatomy, correct hand/staff, viewing angle and FOUR DISTINCT consecutive poses. Do not replace the movement with four idle copies.\nRepair requirement: Keep identical head size and face across all four poses and match proportions of first pose; complete whole staff, hair and feet with sufficient margin.\nRedraw onto a ROOMIER CANVAS. Equal invisible 2x2 quadrants. Compose each complete figure head/raised weapon to toe inside the INNER 76 percent of its own quadrant, leaving at least 8 percent transparent margin on EVERY side. All four figures use the SAME skull diameter, SAME torso length and SAME anatomical leg lengths. Uniformly reduce ALL FOUR entire figures within their cells rather than cropping tips or shortening legs. Keep individual full staff and hair outlines separate from every image edge and halfway divider. Reconstruct any cut-off staff ornament, hair tip or toe fully, matching this outfit. Maintain stable body center in each cell; real alternating feet passing below the pelvis for walking.\nPreserve pure transparency including between sprites. No ground, background, shadow, numbers, text, guide lines, frames, captions, labels, markings, aura or magic effects. Exactly four complete poses, clean source for later crop and registration. Refined compact cel-painted nonpixel game art.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_attack4_v03.png",
+      "sha256": "47336395f1e9ce7d7b6651376ea9557049a7a0bb3ba4c9c5939f81ad669402ae"
+    }
+  ],
+  "sha256": "affd46272fc52825666150ce5c0e6b83b59c70919e10c86dbc7bc08373825835",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    31,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      31,
+      1240,
+      1254
+    ],
+    "8": [
+      58,
+      38,
+      1238,
+      1205
+    ],
+    "32": [
+      59,
+      38,
+      1237,
+      1204
+    ],
+    "128": [
+      59,
+      39,
+      1237,
+      1204
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

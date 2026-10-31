@@ -1,0 +1,72 @@
+{
+  "asset": "sylphiette_set_sw_move_attack1_v82",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_move_attack1_v82.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-f737dedf-ce6a-4571-9193-8a415f9e7044.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_sw_move_attack1_v82.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise sprite consistency repair. EDIT the supplied 2x2 animation sheet. Keep all four different body/arm/leg poses, gold crescent blue-orb staffs, cloth shapes and direction. Correct ONLY the inconsistent head sizes: use the TOP LEFT head as the exact master, with identical head width, crown-to-chin height, facial features and orientation in ALL FOUR cells. In particular the bottom left head is too large, reduce its authored head proportion to match top left without shortening the body or changing the step. Top right and bottom right should also match top-left head size exactly. Keep stable shoulder/waist heights and natural neck connection, same body scale throughout. Heads are level, no sideways bob. Four full characters inside four equal square cells on a transparent 1536x1536 canvas, each figure surrounded by at least 30px transparent margin, full hair/staff/shoes intact. No numbers, text, divider lines, effects, shadow or background. Exactly two arms and two hands each, one staff holding hand and one free hand; visible alternating footwork and centered passing steps preserved. Do not alter the crescent staff to cloud ornament. Refined nonpixel anime painted game sprites.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_move_attack1_v81.png",
+      "sha256": "a981be7cddba270f6be7a7cace144345efbbb48b7e4ffe296a711d4c894364ca"
+    }
+  ],
+  "sha256": "f01c1d4d6d0629eaabc9edf6235ed84202e3f7ce6e9541d5a0244a824c84a216",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    4,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      4,
+      1254,
+      1254
+    ],
+    "8": [
+      23,
+      53,
+      1253,
+      1233
+    ],
+    "32": [
+      23,
+      55,
+      1250,
+      1232
+    ],
+    "128": [
+      23,
+      55,
+      1249,
+      1232
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

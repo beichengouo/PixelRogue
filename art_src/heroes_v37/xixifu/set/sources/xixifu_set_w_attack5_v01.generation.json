@@ -1,0 +1,91 @@
+{
+  "asset": "xixifu_set_w_attack5_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_attack5_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-546e9e2c-1fb2-4d96-8897-c91e599d08b6.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_attack5_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a NEW clean animation source sheet. IMAGE 1 is the PRIMARY character/costume/body/face reference. IMAGE 2 is SECONDARY reference for only the four distinct poses and correct hand positions. Draw image 1's SAME Xixifu legendary character doing image 2's four consecutive attack5 poses, all facing strict left profile. Keep her compact head-to-body proportions, all four figures have exactly identical skull diameters and torso lengths. Same original black eyes, long dark violet hair, black/wine-red dress with gold trim and bells, bare feet with gold anklets. Calf-length skirt follows the legs, no heels/boots. Same ornate purple staff in the correct anatomical right hand; do not copy image 2's plain wooden weapon, boots, plain clothing or silver clasp.\nNEW ROOMY COMPOSITION, not a trace of the second image's tight sheet: exactly FOUR full bodies, equal 2x2 layout on a 1024 by 1024 TRANSPARENT square. Centers of figures approximately (256,256),(768,256),(256,768),(768,768). Each full figure including the ENTIRE held weapon fits within only 380px height and 380px width inside its own 512px square. Leave at least 50px empty transparent padding from ALL sides of EVERY cell. Make all four complete figures equally small in composition rather than closeups. The full raised staff ornament and long hair tips MUST be reconstructed inside these safe margins. No subject touches canvas edge. No panels touch. Do not fill all available canvas with hair. Keep all four pose variations, including passing feet under pelvis in walk, and distinct preparatory/release/follow-through/recovery arm gestures in attack. No torso wagging.\nRefined compact nonpixel cel-painted 2D game art, consistent image 1 style. Pure transparent RGBA. NO backdrop, shadow, ground, effects, magic bolts, numbers, captions, text, guide lines, grid, labels, borders, watermarks, or extra figures. NOT a design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_idle_v01.png",
+      "sha256": "aa462cd45e44e7e0bcd3af6d9503bbe806798cd0733ba8ee82333ccaee09c6a0"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_attack5.png",
+      "sha256": "c926ef5f46384ac129ee612bfa9a6def30e173d0e4551949970641210d955b86"
+    }
+  ],
+  "sha256": "b602093a2c5b7ed90379aa873f49de446cd8c27d1c7fdcae8ba310212bfda83d",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    57,
+    1238,
+    1236
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      57,
+      1238,
+      1236
+    ],
+    "8": [
+      84,
+      88,
+      1224,
+      1202
+    ],
+    "32": [
+      84,
+      89,
+      1224,
+      1202
+    ],
+    "128": [
+      85,
+      89,
+      1223,
+      1201
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "b602093a2c5b7ed90379aa873f49de446cd8c27d1c7fdcae8ba310212bfda83d",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "b602093a2c5b7ed90379aa873f49de446cd8c27d1c7fdcae8ba310212bfda83d",
+    "requires_landmark_review": true,
+    "head_registered_foot_deviations": [
+      -3,
+      -8,
+      -12,
+      -7
+    ],
+    "visual_approved": false
+  }
+}

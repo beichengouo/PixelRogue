@@ -1,0 +1,88 @@
+{
+  "asset": "xixifu_set_nw_move_attack5_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_nw_move_attack5_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-35b8d135-fc62-49b8-b3d3-aa217a95e813.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_nw_move_attack5_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Correct the FOUR HEADS only to the SAME stable canonical skull silhouette as TOP LEFT. All four must have identical compact crown-to-neck dimensions, identical upper cranial hair cap arc and WIDTH, upright crown and neck, SAME rear-left viewing angle. Do NOT dip or tilt head forwards in lower row. Retain same posterior hairstyle/hair length and long hair outside lowered hood. Preserve EXACT current torso/legs and all distinct arm/hand/staff gestures including forward extension, raised staff and recovery. Keep two hands, single continuous staff, no added waist fist. Keep actual stepping phases where present; do not change leg lengths. Black/wine-red calf-length legendary dress with gold trim, bare feet and gold anklets. All four full figures 2x2 clean transparent background, complete props, full hair and toes, generous empty border. No labels, numbers, text, lines, watermarks, background, fog, shadows or effects. Preserve refined compact nonpixel style and actual character identity.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_nw_move_attack5_v01.png",
+      "sha256": "755abb3e86a12d5d07726eca1df10ef346131a3ce96ec7e15a2c283d4903414f"
+    }
+  ],
+  "sha256": "91bfebd40b27179c32d888a327e6b3c5e4aa14e582bca0f7ca01d4ffc8305e15",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    37,
+    13,
+    1512,
+    992
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      37,
+      13,
+      1512,
+      992
+    ],
+    "8": [
+      258,
+      15,
+      1383,
+      990
+    ],
+    "32": [
+      259,
+      15,
+      1382,
+      989
+    ],
+    "128": [
+      260,
+      15,
+      1382,
+      989
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "91bfebd40b27179c32d888a327e6b3c5e4aa14e582bca0f7ca01d4ffc8305e15",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "91bfebd40b27179c32d888a327e6b3c5e4aa14e582bca0f7ca01d4ffc8305e15",
+    "requires_landmark_review": true,
+    "head_registered_foot_deviations": [
+      30,
+      25,
+      34,
+      39
+    ],
+    "visual_approved": false
+  },
+  "review_reason": "At shared floor the body is visibly taller/longer than ready despite same-sized head, up to39 atlas pixels. Exposed legs and hem/torso proportions disagree with approved compact body; head-gate pass is insufficient."
+}

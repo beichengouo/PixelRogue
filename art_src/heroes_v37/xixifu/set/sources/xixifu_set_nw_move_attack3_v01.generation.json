@@ -1,0 +1,91 @@
+{
+  "asset": "xixifu_set_nw_move_attack3_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_nw_move_attack3_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-80163d00-feb0-4a5d-b751-dd15580f980d.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_nw_move_attack3_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe edit of FOUR game animation frames.\nIMAGE 1 is EDIT TARGET: Xixifu NORMAL NORTHWEST rear-left three-quarter, action move_attack3. IMAGE 2 is only the LEGENDARY WARDROBE reference, not a pose to repeat.\nPreserve image 1's exact four DISTINCT consecutive action poses in reading order, anatomical hand positions and staff directions, compact skull and body ratios, eye identity and camera. This action is part of a continuous animation: do not replace all four poses with idle, do not repeat a single gesture. Do not change facial identity, add hats, grow taller or turn to face the camera. Keep absolute skull size and torso length identical across four cells; never enlarge a release pose. All four bodies fully visible.\nChange only the outfit, held staff and footwear to image 2's legendary form: modest black capelet with wine-red lining, layered wine-red mid-calf dress, restrained gold embroidery, red throat clasp, small contract bells and violet charms, compact ornate dark staff with violet crystal held by anatomical RIGHT hand in exactly the original hand position. Black charcoal eyes stay black, no glowing purple eyes. Replace BOTH boots/stockings with BARE FEET and delicate gold anklets with tiny violet charms. The legs have the same anatomical length as the normal body, not longer to fill a dress; preserve believable short calf and visible ankle. Show each foot's contact/passing pose clearly without a high slit or lifted dress. No shoes, heels or boots. Hair stays the SAME character length and volume and remains outside the lowered hood; complete tips and staff visible, not clipped.\n\n\nMatch the stable, compact refined nonpixel cel-painted V36 Xixifu drawing. No magic bolts, trails, fog, aura, background or extra creatures; game creates effects separately. All full hair tips, staff tips, anklets, toes and sleeves must be visible within their OWN cell.\nExactly FOUR full-body poses on transparent 2x2 equal-cell canvas. Center figures WITHIN EACH quadrant, head to foot occupying at most 80 percent of each quadrant height and width. Leave generous transparent margins on ALL sides, especially above the top row crowns and below the bottom row toes; do not copy image 1's tight framing. Uniformly make ALL FOUR figures slightly smaller to fit, never shorten limbs. No cell crossing or overlap. Preserve image 1's four distinct arm/leg gestures.\nTRUE transparent RGBA, no ground/shadows. NO numbers, letters, text, panel labels, grid/divider lines, borders, marks or watermarks. Clean runtime sprite source, NOT an instructional design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_nw_move_attack3.png",
+      "sha256": "d3df1a1317d0f3b148241cbbe7c642d67f6f2390ad1a03e7d7cc739cd0cf60c0"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_nw_idle_v01.png",
+      "sha256": "a7189c07837de9ba77156d4f6196a684cfaae7044229671f8d3954e77d5e1536"
+    }
+  ],
+  "sha256": "8fb608e1a1a06645171232c1e599a002506cdafd33cd50d6f8e3485a465bbdd7",
+  "dimensions": [
+    1278,
+    1230
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    25,
+    20,
+    1246,
+    1230
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      25,
+      20,
+      1246,
+      1230
+    ],
+    "8": [
+      97,
+      48,
+      1224,
+      1190
+    ],
+    "32": [
+      98,
+      48,
+      1223,
+      1190
+    ],
+    "128": [
+      98,
+      49,
+      1223,
+      1189
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "8fb608e1a1a06645171232c1e599a002506cdafd33cd50d6f8e3485a465bbdd7",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "8fb608e1a1a06645171232c1e599a002506cdafd33cd50d6f8e3485a465bbdd7",
+    "requires_landmark_review": true,
+    "head_registered_foot_deviations": [
+      0,
+      -2,
+      -5,
+      -13
+    ],
+    "visual_approved": false
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "asset": "sylphiette_set_sw_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-a45c15e0-20e7-4b49-b303-ec7054d4a697.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Production single-frame PixelRogue game SPRITE SOURCE. Image1 is edit target: same Sylphiette NORMAL exact viewing direction/body/skull/feet geometry. Change COSTUME only to LEGENDARY from image2 turnaround. Same compact body and silver-white hair/blue eyes, no taller torso or legs, same neutral ready pose and miniature soft nonpixel hand-painted style, clean colored outline, restrained 2-3tone cel shading. Exactly ONE intact full-body character, stable planted feet. Direction: SOUTHWEST front-left three-quarter facing down-left; both eyes visible, far eye smaller. White-gold NUN-LIKE CEREMONIAL HOOD UP, deep NAVY lining; NO crown/tiara. Front silver locks emerge only from face opening. REAR silver wavy hair must emerge ONLY BELOW hood lower rim and lie over back cape, never pierce the top/side fabric. Modest ivory/gold robe, navy-backed broad sleeves/cape, restrained gold cloud borders, layered skirt ending just above small white/gold FLAT shoes. SIMPLE gold-bordered BLUE SAPPHIRE throat/collar fastener; no dangling tassel forest. RIGHT hand holds one miniature golden staff with blue orb inside open crescent/flame frame, at viewer-left FRONT/viewer-right BACK. LEFT hand relaxed empty, never mirror hands. All hood, robe, hair, staff and feet inside generous true-transparent square canvas, crown/soles12%/88%height, 15%width margins. NO TEXT, NUMBERS, LABELS, guide lines, grid, border, floor, backdrop, shadow, glow, effects, halos, wings, extra figures. Never copy white background/labels from design board. Preserve image1 anatomy and viewing angle exactly. Image3 is this same legendary front source; maintain its exact costume details.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_sw_idle_v01.png",
+      "sha256": "aac6c058be6b8e2a0d6dd5cf17466d50c781bbbf23cee45b6f22d6d0349e79eb"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\sylphiette_set_turnaround_v01.png",
+      "sha256": "1bb377dbd0dcd01a276ae54edba5207c49cfcd4accf7df349a75bde811f8ec8b"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_s_idle_v02.png",
+      "sha256": "773c985fc5064037706293a3fa97705480ec40a1e74ccc44915f77788fa79ff9"
+    }
+  ],
+  "sha256": "2a741f7f528ac76b3bca3b685aa00e373a041aedae1407056f69543d5727f9a1",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    35,
+    20,
+    1251,
+    1230
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    35,
+    20,
+    1251,
+    1230
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      35,
+      20,
+      1251,
+      1230
+    ],
+    "8": [
+      274,
+      113,
+      1077,
+      1189
+    ],
+    "32": [
+      275,
+      114,
+      1077,
+      1188
+    ],
+    "128": [
+      275,
+      114,
+      1076,
+      1188
+    ]
+  },
+  "reason": "normal cloud staff head instead of legendary crescent; superseded by v02"
+}

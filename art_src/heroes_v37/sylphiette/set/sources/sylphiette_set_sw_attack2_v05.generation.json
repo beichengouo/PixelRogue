@@ -1,0 +1,65 @@
+{
+  "asset": "sylphiette_set_sw_attack2_v05",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_attack2_v05.png",
+  "sha256": "d9c764d0c5e23b555592897644eba268077a449298a4dffa05a60425209fdf9f",
+  "direction": "sw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "mode": "RGBA",
+  "contains_design_labels": false,
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "built_in_imagegen": false,
+  "frames_generated_with_builtin": true,
+  "generation_path": "lossless_grid_assembly_of_four_authored_single_frames",
+  "frame_sources": [
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_sw_attack2_f0_single_v01.png",
+      "source_sha256": "556ad8f6e5301616d228486036b91b29f7fdf3058a6947f5ab16dff630903d1f",
+      "source_metadata_sha256": "9bd23f21eb84184064b5942c4bb814f4fbbdee6e1e82d5ac34e5df92ed1c2898",
+      "assembly_offset": [
+        0,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_sw_attack2_f1_single_v01.png",
+      "source_sha256": "cea30ca12b5cd8d3db62cc8bc62261ab39be167a7023e1945470e4a2543851b4",
+      "source_metadata_sha256": "3417fbf745c174001f7effe253c764d05fb941253756e04734982ac4be221ad4",
+      "assembly_offset": [
+        1254,
+        0
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_sw_attack2_f2_single_v01.png",
+      "source_sha256": "468b9d8303977feb3be680b0006b16cc443b60e9820fb4dc9835b42534fcb77a",
+      "source_metadata_sha256": "e0ac7f422324d5443d05163deffa246008e8a975cb6e2fc468a15cc450d259a5",
+      "assembly_offset": [
+        0,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_sw_attack2_f3_single_v01.png",
+      "source_sha256": "1f18a21f909e11be5a4c50dac49aa686443e13e0888f0fce09b3cc3f5c6d9d94",
+      "source_metadata_sha256": "41742682e2aa2be84f9c9b536b01dddb46e287c1334eb1699ab5029f9fddfe2a",
+      "assembly_offset": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "assembly_policy": "same authored canvas, integer placement only; no scaling, painting, warping or in-between synthesis",
+  "primary_visual_review": "authored singles inspected; full-clip calibration and transition review pending"
+}

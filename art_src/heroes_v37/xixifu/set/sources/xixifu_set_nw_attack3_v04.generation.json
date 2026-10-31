@@ -1,0 +1,72 @@
+{
+  "asset": "xixifu_set_nw_attack3_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_nw_attack3_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-09f2e022-8456-412b-934f-318c1fcbc29e.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_nw_attack3_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Correct only the head size and body size in this four-pose sheet. Use the top-left head/skull, shoulders, torso and leg dimensions identically for the other three figures. Preserve the top-left figure and the four continuous casting gestures. The head must not shrink when the staff rises. Rear-left view. Same full hair, calf-length burgundy dress, gold-black cape, barefoot anklets. Exactly two arms and two hands. Each full figure fits in its equal 2x2 cell with clear transparent margins. No text, numbers or effects.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_nw_attack3_v03.png",
+      "sha256": "2b4795f9bc651ebbcff5d2a13fa5bc637667ca19b0076e8a566771f437e9eed6"
+    }
+  ],
+  "sha256": "500d3c5587eb28c32115c67a123cd2a36a657efcc1c7a105e8b33d08e32adbe8",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    49,
+    23,
+    1414,
+    1068
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      49,
+      23,
+      1414,
+      1068
+    ],
+    "8": [
+      218,
+      55,
+      1390,
+      1043
+    ],
+    "32": [
+      218,
+      56,
+      1390,
+      1043
+    ],
+    "128": [
+      219,
+      56,
+      1389,
+      1042
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

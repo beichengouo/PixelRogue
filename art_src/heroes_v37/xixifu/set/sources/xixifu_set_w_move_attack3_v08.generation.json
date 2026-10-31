@@ -1,0 +1,73 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v08",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v08.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-d88904f8-53d3-4850-94aa-15867a2c166f.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v08.png",
+  "built_in_imagegen": true,
+  "prompt": "Preserve this exact four-pose animation, costume, hands, head/body proportions and gestures. Fix the clipped trailing hair: widen the transparent outer margins and gaps, placing each complete character smaller inside its equal 2x2 cell. Each figure including the entire staff, every trailing hair tip and bare toes must fit within the central 75 percent of its cell. Draw the missing hair tips naturally; no straight cut edges. All four heads the same size, each character exactly two hands and two feet. Four full figures, transparent background, no text, numbers, grid, effects or shadows.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_move_attack3_v07.png",
+      "sha256": "af2d68f1588098114c953d2b224b065f4e7f0543e8e4b98d5920e48a1096b369"
+    }
+  ],
+  "sha256": "99775f05840b44b2e9f22cf42a446c3ea823385c123543ca601093a416fb3531",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    37,
+    15,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      37,
+      15,
+      1254,
+      1254
+    ],
+    "8": [
+      62,
+      99,
+      1245,
+      1185
+    ],
+    "32": [
+      63,
+      100,
+      1245,
+      1183
+    ],
+    "128": [
+      63,
+      100,
+      1244,
+      1183
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Trailing hair still reaches right canvas edge; cannot be admitted as complete contour."
+}

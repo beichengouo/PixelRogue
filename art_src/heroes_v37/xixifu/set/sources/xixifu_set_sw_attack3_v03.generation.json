@@ -1,0 +1,87 @@
+{
+  "asset": "xixifu_set_sw_attack3_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_sw_attack3_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-a1133d67-41fb-4ca8-869a-228706ba1e61.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_sw_attack3_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Change ONLY the legs below the calf-length dress hem from stepping to a stationary grounded stance. Keep ALL FOUR skulls/faces/crowns/hair/neck/torso/shoulder and arm/staff poses EXACTLY UNCHANGED in native size, location and outlines. These are stage3 stationary attack poses. Both feet stand planted parallel, about shoulder width, with natural tiny weight shift only, same foot positions across all FOUR poses. Keep calf-length skirt covering knees, bare feet gold anklets. NO upper-body redrawing. Precisely preserve original four DIFFERENT arm gestures and exact equal skull sizes. Do not copy first pose arms to others. Preserve refined nonpixel Xixifu, black and wine-red ornate legendary outfit, full hair, one violet staff, calf-length dress, two hands, no extra limbs. FOUR full bodies in transparent 2x2 cells. No ground, shadows, background, effects, marks, labels, numbers, letters, divider or watermark. Complete hair/staff/toes inside each cell.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_sw_move_attack3_v03.png",
+      "sha256": "67d560cf1205836fa754a2caede9e83fdf1a6b20217eec5317f39ea6c7fdd35e"
+    }
+  ],
+  "sha256": "f1ef12bd691ab2ab3088e5536b02168b4759caa1959ecdfe566cd5d52351b340",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    10,
+    1428,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      10,
+      1428,
+      1086
+    ],
+    "8": [
+      107,
+      14,
+      1313,
+      1049
+    ],
+    "32": [
+      107,
+      14,
+      1313,
+      1047
+    ],
+    "128": [
+      108,
+      15,
+      1312,
+      1046
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "f1ef12bd691ab2ab3088e5536b02168b4759caa1959ecdfe566cd5d52351b340",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "f1ef12bd691ab2ab3088e5536b02168b4759caa1959ecdfe566cd5d52351b340",
+    "requires_landmark_review": true,
+    "head_registered_foot_deviations": [
+      -7,
+      -7,
+      -11,
+      -12
+    ],
+    "visual_approved": false
+  }
+}

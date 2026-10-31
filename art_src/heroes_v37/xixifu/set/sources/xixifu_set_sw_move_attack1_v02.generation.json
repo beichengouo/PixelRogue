@@ -1,0 +1,74 @@
+{
+  "asset": "xixifu_set_sw_move_attack1_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_sw_move_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-6c09d5b7-f080-4cda-8d11-d5cf8c17426a.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_sw_move_attack1_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Correct specific anatomy/gait errors in these FOUR transparent animation poses. Preserve same face, skull size, upright body proportions, camera southwest, costume, calf-length skirt, bare ankles, and the distinct arm gesture in each cell. This is an animation source, NOT a design board.\n1. REMOVE the old thin vertical stick visible from beneath her skirt between/beside her feet. It is a leftover staff, not a leg. Each pose has ONE staff only, the staff currently held in her moving hand(s). Keep its full continuous shaft attached to its crystal head.\n2. Every pose has EXACTLY TWO HANDS. Where both hands grip the staff, DELETE the extra third hand by her waist and remove that obsolete sleeve opening. Where one hand holds the staff, the other is the single free hand. No extra idle fist on waist or under sleeve. Do not add another hand.\n3. Gait: top-left contact LEFT leg forward/right leg behind; top-right passing right foot under pelvis; bottom-left contact RIGHT leg forward/left leg behind; bottom-right passing left foot under pelvis. Bottom row MUST reverse the lead leg rather than copying top row. Distinguish the leg from the toe position; swap which calf emerges on near side, not just foot width. All arms preserve their existing distinct attacking phase independently of feet. Do not lift skirt above knee or change anatomical leg lengths.\nFOUR full figures, 2x2 equal cells, TRUE alpha transparency, no text/number/labels/lines/border/shadow/background/aura. Full hair, staff and toes INSIDE respective cells, empty outer margin at least 40 pixels. Same compact refined nonpixel cel game illustration. No added creatures or elements. Keep skull width constant across all four poses.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_sw_move_attack1_v01.png",
+      "sha256": "8f74e56c0fcbee996fea7a5b40b8ecbcaa4a75089996c24f0415bb9f4e28be5a"
+    }
+  ],
+  "sha256": "c01fec2664a57dbe526922938028b97a166669be0502063a488330a2e60a128b",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1428,
+    1072
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1428,
+      1072
+    ],
+    "8": [
+      211,
+      11,
+      1330,
+      1068
+    ],
+    "32": [
+      212,
+      12,
+      1330,
+      1067
+    ],
+    "128": [
+      213,
+      12,
+      1329,
+      1066
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Hand/staff cleanup improved, but lead leg still repeats across contact poses; true opposite contact and passing phases not proven.",
+  "replacement": "xixifu_set_sw_move_attack1_v03"
+}

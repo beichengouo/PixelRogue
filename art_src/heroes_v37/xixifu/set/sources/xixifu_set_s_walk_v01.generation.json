@@ -1,0 +1,77 @@
+{
+  "asset": "xixifu_set_s_walk_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_walk_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-13dc45eb-a6f5-46c4-9f9f-b6661d2993f0.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_s_walk_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Production game sprite source for PixelRogue: Xixifu legendary outfit, SOUTH/front walking cycle. Image 1 is the exact primary character identity, compact body anatomy, costume, right-hand staff, bare feet and anklets. Image 2 is the existing normal-outfit SOUTH WALK used only for gameplay viewing elevation and four-phase gait; do not copy its boots, normal robe or simple staff.\n\nDraw exactly FOUR full-body figures of the SAME character as image 1, arranged in an even 2x2 grid with four equal cells. Reading order top-left, top-right, bottom-left, bottom-right is the actual continuous walking loop: anatomical right foot forward/left foot back; passing pose with right foot moving directly UNDER the pelvis while left supports; anatomical left foot forward/right foot back; passing pose with left foot moving directly UNDER pelvis while right supports. Alternate planted and lifting bare feet naturally, distinguish the passing positions from the two stride extremes. Front torso faces downscreen/viewer throughout, eyes both visible, no sideways swaying or yaw, no whole-body scaling, no head bob, no jumps. A mild 15-degree top-down RPG viewing elevation. Head, neck, shoulder, hip and leg lengths IDENTICAL in all four cells, precisely the compact approximately 2.7-head body of image 1. Hair and cape move only slightly; character crown and grounded sole height and center align in each cell. The actual step motion is in the knees, ankles, and passing feet, not alternating torso leans. Calf-length dress must keep enough bare feet visible to read each step.\n\nLegendary appearance: black/charcoal long hair, black charcoal eyes (no luminous purple eyes), modest black short cape with wine-red lining, layered wine-red mid-calf dress with fine gold edging, red clasp, readable few contract bells and violet charms, no extra excessive chains; delicate gold anklets and bare feet with toes, NO boots, shoes, stockings, heels. The anatomical RIGHT hand (viewer LEFT) holds the same complete ornate dark compact purple-crystal staff in all four cells; LEFT hand relaxed beside dress, no swapped hands. Keep the torso and dress identical in size, not a new tall version. All hair tips, staff, fingers, dress hems and bare toes fully inside each quadrant, at least 8% generous empty margin to every cell edge. No overlap between figures.\n\nTRUE TRANSPARENT square canvas. NO text, NO numbering, NO frame labels, NO watermark, NO grid lines, NO guides, NO divider, NO borders, NO ground shadows or floor. No magical glow, projectiles, effects, extra creatures or props. This is a clean runtime-cropping sprite source, NOT an annotated action design sheet. Refined compact nonpixel soft cel illustration matching image 1, broad hair masses, restrained linework, flat consistent lighting. Do not turn it into photorealism or pixel art. Four different authored leg poses, stable identical face and proportions.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_idle_v01.png",
+      "sha256": "fe55e4a888bbfb7aec3c80410434cf74bc2f2f59ce607b73bc35db0a6e5a62e1"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_s_walk.png",
+      "sha256": "716d954ba294abf0e04292d27fd1df6f84094776e1e012f2024756a2507f3588"
+    }
+  ],
+  "sha256": "c3c9876033c132458aed91d1d04667ff3a7932362132efb87f775d3bab4977af",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded_needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "excluded_from_crop_input",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1218,
+    1230
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      23,
+      1218,
+      1230
+    ],
+    "8": [
+      145,
+      47,
+      1133,
+      1216
+    ],
+    "32": [
+      146,
+      48,
+      1132,
+      1215
+    ],
+    "128": [
+      146,
+      48,
+      1132,
+      1215
+    ]
+  },
+  "primary_visual_review": "unlabelled four distinct authored leg phases; requires measured body registration before packing",
+  "generation_path": "built_in_image_gen",
+  "replacement": "xixifu_set_s_walk_v02",
+  "reason": "solid foot touches or crosses nominal cell boundary"
+}

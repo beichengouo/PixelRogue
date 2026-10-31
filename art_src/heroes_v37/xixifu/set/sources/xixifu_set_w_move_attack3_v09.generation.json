@@ -1,0 +1,72 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v09",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v09.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-2a96d236-37b9-4144-a131-3f0dc139cf61.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v09.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a WIDE LANDSCAPE transparent canvas, aspect ratio 3:2, containing the same FOUR complete figures in a 2x2 arrangement. Recompose the provided animation sheet with MUCH MORE empty transparent space around every character. Each figure is small and centered in its own cell, no more than 65 percent of cell width. Keep exactly the same four poses, face, head size, full long hair, body, clothing, barefoot anklets, hands and ornate staff. Draw complete rounded trailing hair tips, never clipped at the outer canvas or the center divider. Clear wide transparent margins on all four sides of each figure. Two arms/two hands/two feet per figure. No text, numbers, backgrounds, effects, line frames, grid or shadow. Four poses, not six. Horizontal 3:2 sheet.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v08.png",
+      "sha256": "99775f05840b44b2e9f22cf42a446c3ea823385c123543ca601093a416fb3531"
+    }
+  ],
+  "sha256": "682668502277b513233b2dfe5ab6fd23e4fe3a5ed1d7e442483a1dc174ce41d2",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1482,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      17,
+      1482,
+      1024
+    ],
+    "8": [
+      198,
+      94,
+      1380,
+      938
+    ],
+    "32": [
+      198,
+      94,
+      1380,
+      938
+    ],
+    "128": [
+      199,
+      95,
+      1379,
+      937
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

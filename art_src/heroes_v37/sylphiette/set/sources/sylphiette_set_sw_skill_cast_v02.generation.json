@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_set_sw_skill_cast_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_skill_cast_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-e9d1e221-351c-42e7-a4b6-a9d0ff9a4fe7.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise repair of transparent4frame2x2 sprite SOURCE, image1 edit target and image2 SAME identity/anatomy/costume viewing direction. Keep exact4 distinct continuous ritual handgestures and common plantedfoot baseline, compact skulls and torso, same anatomy, same face/camera, true ALPHA. Fix only: Toprow hood crowns touch top edge. Redistribute all4 figures so each hood crown at least60pixels below cell top and feet at least60pixels above bottom. No head shortening or hood tip clipping.. Exactly2arms/2hands and1weapon, no retained old hands. All4 fullbody figures must fit own cell with generous clear transparent room. Do not alter costume/body proportions, no growing release pose, do not repeat all4 as idle. NO text/numbers/grid/labels/borders/marks/shadows/effects/glow/floor/background. Use same refined soft nonpixel game miniature finish.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_skill_cast_v01.png",
+      "sha256": "6cf2914c0395f8206eaa935ab47353ff7afa142d6622884540db6949eaadd05a"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_idle_v02.png",
+      "sha256": "8d64dd28df890756b1ed0c944d4fda085822ae5e403b65ef91f40ace27e76784"
+    }
+  ],
+  "sha256": "adc788e3d8c6c023abba2875cdb9c2b7156e41177525dfb55dfa95871e3892c3",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    65,
+    17,
+    1424,
+    1086
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    65,
+    17,
+    1424,
+    1086
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      65,
+      17,
+      1424,
+      1086
+    ],
+    "8": [
+      236,
+      62,
+      1253,
+      1031
+    ],
+    "32": [
+      236,
+      62,
+      1252,
+      1031
+    ],
+    "128": [
+      237,
+      63,
+      1252,
+      1030
+    ]
+  }
+}

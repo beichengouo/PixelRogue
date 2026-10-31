@@ -1,0 +1,91 @@
+{
+  "asset": "xixifu_set_n_move_attack5_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack5_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-1b6f6332-05eb-4147-8bd0-4ffaa785897c.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_n_move_attack5_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe and lower-leg animation edit. Exactly four full-body poses in equal 2x2 transparent layout, all strict BACK view, no face or eyes. IMAGE 1 is EDIT TARGET: preserve its FOUR upper-body arm/staff action poses for attack stage 5, exact skull/hair/torso size and orientation. IMAGE 2 provides the legendary outfit AND FOUR TRUE WALKING LEG PHASES, read top-left/top-right/bottom-left/bottom-right. Normal source image 1 may repeat lower-leg poses: OVERRIDE those lower-leg poses using the four distinct bare-foot gait poses from image 2, including opposite sole raised in bottom row, feet passing under center in top-right/bottom-right. Both bare feet must be visible; no hopping, feet glued together or same sole repeated four times.\nChange outfit to image 2's same black capelet/wine-red calf-length layered dress, restrained gold trim and contract bells, gold anklets with purple charms; same body proportions. Replace the complete plain staff from image 1 by ONE ornate violet/gold legendary staff as in image 2, in precisely image 1's arm/hand positions. Exactly TWO arms and TWO hands per figure; don't overlay new hands over old ones, don't keep an old vertical staff tip after it rotates. No boots/stockings/hats. Hair remains long, dark violet, naturally outside lowered hood; back dress bell/diamond arrangement matches image 2.\nStable torso and hair across four cells while only articulated arms and alternating legs move. Full bodies, all toes and complete weapon and hair tips inside own cell with 40px transparent room to image edges. No leaning side to side. Refined compact nonpixel cel-painted game art. Pure transparent background; no ground, aura, colored backdrop, shadow, text, numbers, labels, grid, borders, watermarks or effects. This is clean actual animation source, not design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_n_move_attack5.png",
+      "sha256": "b36dc0077e1a7b9914c3e7866959dd112750680991b2fbf67ef73f27329a7c2c"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_n_walk_v01.png",
+      "sha256": "5a2b6fc93fac3b5b0eb705781a7d90f411a2b908363380de7040557eb22a19fd"
+    }
+  ],
+  "sha256": "0b9fa13f8fb1815fd2490a9a51a26cf38dff53ce213996254d69a534937d86f4",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1522,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1522,
+      1024
+    ],
+    "8": [
+      275,
+      0,
+      1456,
+      995
+    ],
+    "32": [
+      276,
+      4,
+      1455,
+      994
+    ],
+    "128": [
+      276,
+      4,
+      1455,
+      994
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "0b9fa13f8fb1815fd2490a9a51a26cf38dff53ce213996254d69a534937d86f4",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "0b9fa13f8fb1815fd2490a9a51a26cf38dff53ce213996254d69a534937d86f4",
+    "requires_landmark_review": false,
+    "head_registered_foot_deviations": [
+      1,
+      4,
+      -2,
+      -2
+    ],
+    "visual_approved": false
+  }
+}

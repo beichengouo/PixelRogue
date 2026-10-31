@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_n_move_attack4_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack4_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-000702cb-fd8a-451d-b9b8-883fe6202832.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_n_move_attack4_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Transparent game sprite correction. Image 1 is the four-frame animation to edit. Image 2 supplies the CORRECT HAIR COLOR: muted near-black plum, no luminous violet tips or vivid purple highlights. Match image 2 hair color throughout all four frames. Preserve image 1 character proportions, exact rear view, clothing, staff and continuous arm gestures. Correct walking foot phases in reading order: frame1 left foot forward and right heel raised, frame2 narrow passing stance with ankles together under hips and left supporting foot, frame3 right foot forward and left heel raised, frame4 narrow passing stance with ankles together under hips and right supporting foot. Show two anatomically attached legs and two feet, two arms and two hands only. Barefoot gold anklets. Keep every head and torso the same size. All four complete figures fit inside equal 2x2 cells with 10 percent transparent margins beyond toes, hair and staff; no cropping. No text, labels, background, effects, fog or shadow.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_n_move_attack4_v01.png",
+      "sha256": "19e7fa0a9a9466f5f6207205f8b47908289c236561d4fa9c185c540d42ab503e"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_n_idle_v01.png",
+      "sha256": "13429538ae354fd9400e32188252a037c6f5dfbea6ac5ade47eb2bcebca8c311"
+    }
+  ],
+  "sha256": "cd1bc2ef91b6b8c6feab2922e0d98027f4874d112ca18e8918e6e51e8b6ff11f",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    35,
+    11,
+    1500,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      35,
+      11,
+      1500,
+      1024
+    ],
+    "8": [
+      280,
+      13,
+      1366,
+      1000
+    ],
+    "32": [
+      280,
+      14,
+      1366,
+      1000
+    ],
+    "128": [
+      281,
+      14,
+      1366,
+      999
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

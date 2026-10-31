@@ -1,0 +1,78 @@
+{
+  "asset": "xixifu_set_sw_move_attack2_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_sw_move_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-d192e5a7-d8b7-4ad0-a6c0-8ab98d2bcf3b.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_sw_move_attack2_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise local animation edit. IMAGE 1 IS THE EDIT TARGET: Xixifu legendary WALK, four consecutive poses. IMAGE 2 is ONLY a reference for the four arm/staff gestures of attack stage 2. Keep image 1's exact four faces, identical skull size, hair, torso, clothing construction, skirt length, viewing angle, bare feet and anklets. MOST IMPORTANT keep all FOUR leg poses and their alternation from image 1 unchanged: do not redraw all legs into one pose, do not lose the rear foot, do not make her hop on one leg. Preserve the passing steps in top-right and bottom-right and opposite leading foot in bottom-left compared to top-left. Preserve the SAME torso/shoulder position in each cell; no lateral waggle or camera turn. Do not copy boots or simple clothing from image 2.\nChange ONLY the upper arms, hands, sleeves and held legendary staff to perform the FOUR consecutive arm/staff gestures in image 2 in the same reading order. Her staff keeps image 1's ornate dark-gold/violet legendary head, correct anatomical RIGHT hand. In two-handed poses the left hand supports the shaft; do not add extra arms. Preserve black eyes, lowered hood, long dark-violet hair, black capelet and wine-red layered calf-length dress, gold trim and bells, barefoot gold anklets. Don't lift skirt, expose thighs, or remove a foot. Preserve compact nonpixel hand-painted cel style.\nExactly FOUR isolated full bodies in 2x2 layout on a truly transparent canvas. Include complete staff tip and all hair tips inside canvas with generous transparent padding. If a raised staff needs room, recompose all four subjects equally smaller, never crop any body or tip. No overlapping figures. NO text, numbers, letters, guide lines, watermark, labels, aura, magic effects, floor, shadow, backdrop or additional figures. This is clean runtime source, not a design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_sw_walk_v02.png",
+      "sha256": "92d988c08895918a7ae3f44460ae00b6cca6769105163763a5e8668ce20b921e"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_sw_move_attack2.png",
+      "sha256": "6e27eeb87d6b68fdb2923c79b3a50eb2ebd6b025588f7b8af368c0cb200e5e46"
+    }
+  ],
+  "sha256": "42e00a8c101bebd3b85ec97e0aff61b933472c9c1bd57d636e22dc5ffe884b50",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    37,
+    19,
+    1428,
+    1064
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      37,
+      19,
+      1428,
+      1064
+    ],
+    "8": [
+      239,
+      23,
+      1292,
+      1058
+    ],
+    "32": [
+      239,
+      23,
+      1292,
+      1058
+    ],
+    "128": [
+      240,
+      24,
+      1291,
+      1057
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Old staff shaft remnants and incomplete alternating leg phases.",
+  "replacement": "xixifu_set_sw_move_attack2_v02"
+}

@@ -1,0 +1,87 @@
+{
+  "asset": "xixifu_set_w_move_attack4_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack4_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-84afa7b4-9128-4f95-81ba-61c148d5d353.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack4_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Fix HEAD/BODY CONSISTENCY of these four game animation frames. Top-left head is the canonical head size and face. Redraw other three heads with the EXACT SAME skull width, crown-to-chin height, face size and viewing angle as TOP LEFT. Keep consistent anatomical neck-to-pelvis torso length and leg lengths; no squash/stretch of the girl. All figures are the same compact girl moving arms and legs, not changing size. Preserve four existing distinct arm gestures of stage4, proper two-hand anatomy, single violet ornate staff, alternating bare feet stepping through center, black/wine-red legendary dress to calf with anklets, full hair tips and profile left camera. Do not replace different arm poses with four repeated idle poses. Keep original leg phase and modest full skirt. Correct actual drawn skull sizes; don't merely change spacing or camera zoom. ALL hair tips curl inward and end WELL INSIDE each quadrant, at least40px empty right margin. All four full bodies 2x2 with transparent gutters, no shadows/background/glow/effects/text/labels/numbers/lines/watermark.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_move_attack4_v02.png",
+      "sha256": "8d701c1001ebb9beb2dea3f2852134efd4c273e2c684bc50015d362af7b255a1"
+    }
+  ],
+  "sha256": "6e4769320f60ea2b9fbccb6a9fdefdf5d0919a0b0891a1abc72fbbdf0c7b2c4c",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    55,
+    6,
+    1512,
+    992
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      55,
+      6,
+      1512,
+      992
+    ],
+    "8": [
+      126,
+      13,
+      1466,
+      973
+    ],
+    "32": [
+      126,
+      14,
+      1466,
+      973
+    ],
+    "128": [
+      127,
+      14,
+      1465,
+      972
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "6e4769320f60ea2b9fbccb6a9fdefdf5d0919a0b0891a1abc72fbbdf0c7b2c4c",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "6e4769320f60ea2b9fbccb6a9fdefdf5d0919a0b0891a1abc72fbbdf0c7b2c4c",
+    "requires_landmark_review": false,
+    "head_registered_foot_deviations": [
+      -2,
+      0,
+      -7,
+      -5
+    ],
+    "visual_approved": false
+  }
+}

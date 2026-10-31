@@ -1,0 +1,78 @@
+{
+  "asset": "xixifu_set_s_move_attack4_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_move_attack4_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-1fc513cc-5651-4681-8a2f-cfbbbc1b03d1.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_s_move_attack4_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a NEW clean animation source sheet. IMAGE 1 is the PRIMARY character/costume/body/face reference. IMAGE 2 is SECONDARY reference for only the four distinct poses and correct hand positions. Draw image 1's SAME Xixifu legendary character doing image 2's four consecutive move_attack4 poses, all facing front/downscreen. Keep her compact head-to-body proportions, all four figures have exactly identical skull diameters and torso lengths. Same original black eyes, long dark violet hair, black/wine-red dress with gold trim and bells, bare feet with gold anklets. Calf-length skirt follows the legs, no heels/boots. Same ornate purple staff in the correct anatomical right hand; do not copy image 2's plain wooden weapon, boots, plain clothing or silver clasp.\nNEW ROOMY COMPOSITION, not a trace of the second image's tight sheet: exactly FOUR full bodies, equal 2x2 layout on a 1024 by 1024 TRANSPARENT square. Centers of figures approximately (256,256),(768,256),(256,768),(768,768). Each full figure including the ENTIRE held weapon fits within only 380px height and 380px width inside its own 512px square. Leave at least 50px empty transparent padding from ALL sides of EVERY cell. Make all four complete figures equally small in composition rather than closeups. The full raised staff ornament and long hair tips MUST be reconstructed inside these safe margins. No subject touches canvas edge. No panels touch. Do not fill all available canvas with hair. Keep all four pose variations, including passing feet under pelvis in walk, and distinct preparatory/release/follow-through/recovery arm gestures in attack. No torso wagging.\nRefined compact nonpixel cel-painted 2D game art, consistent image 1 style. Pure transparent RGBA. NO backdrop, shadow, ground, effects, magic bolts, numbers, captions, text, guide lines, grid, labels, borders, watermarks, or extra figures. NOT a design board.\n\nThis is MOVING attack: preserve FOUR visibly different alternating leg gait phases from image 2 under the sustained upper-body cast; frame 2 and frame 4 passing feet under pelvis, opposite planted legs. No feet-together idle copying. No high slit.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_s_idle_v01.png",
+      "sha256": "fe55e4a888bbfb7aec3c80410434cf74bc2f2f59ce607b73bc35db0a6e5a62e1"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_s_move_attack4.png",
+      "sha256": "f3a0c1e5f0792dc7e97ff08d30429086be815ad0a7c5a6ff91d7a91e2f93b406"
+    }
+  ],
+  "sha256": "7d2880b2800539a3eb5de6217fac8df13edaf00c08add538df63baf9d90952d0",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "excluded_from_crop_input",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1248,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      9,
+      1248,
+      1254
+    ],
+    "8": [
+      120,
+      31,
+      1213,
+      1204
+    ],
+    "32": [
+      120,
+      31,
+      1213,
+      1204
+    ],
+    "128": [
+      121,
+      32,
+      1212,
+      1203
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "replacement": "xixifu_set_s_move_attack4_v02",
+  "reason": "legs repeated same leading side or rear foot disappeared; replaced using full four-phase walk as primary edit target"
+}

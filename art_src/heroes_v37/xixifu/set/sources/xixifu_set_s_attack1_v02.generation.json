@@ -1,0 +1,73 @@
+{
+  "asset": "xixifu_set_s_attack1_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-1c457376-29a2-4548-b643-4818985ba404.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_s_attack1_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Repair this four-frame transparent game sprite source, not a design board. Preserve the exact Xixifu character, black/wine-red legendary outfit, barefoot anklets, eyes, hairstyle, anatomy, correct hand/staff, viewing angle and FOUR DISTINCT consecutive poses. Do not replace the movement with four idle copies.\nRepair requirement: Correct costume continuity, keep mid-calf hem and consistent body proportions and head size in four frames; intact full length staff through each grip; first pose must match idle.\nRedraw onto a ROOMIER CANVAS. Equal invisible 2x2 quadrants. Compose each complete figure head/raised weapon to toe inside the INNER 76 percent of its own quadrant, leaving at least 8 percent transparent margin on EVERY side. All four figures use the SAME skull diameter, SAME torso length and SAME anatomical leg lengths. Uniformly reduce ALL FOUR entire figures within their cells rather than cropping tips or shortening legs. Keep individual full staff and hair outlines separate from every image edge and halfway divider. Reconstruct any cut-off staff ornament, hair tip or toe fully, matching this outfit. Maintain stable body center in each cell; real alternating feet passing below the pelvis for walking.\nPreserve pure transparency including between sprites. No ground, background, shadow, numbers, text, guide lines, frames, captions, labels, markings, aura or magic effects. Exactly four complete poses, clean source for later crop and registration. Refined compact cel-painted nonpixel game art.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_s_attack1_v01.png",
+      "sha256": "0f3a692705e2511b72aab7c078b0a19b243f029c47df80b3d1c70a08b28b2781"
+    }
+  ],
+  "sha256": "7d5c834fac7c4ca8918f48b4ac08dac62451d0949acd7f2e3d70381c0a15f5b2",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    25,
+    21,
+    1238,
+    1238
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      25,
+      21,
+      1238,
+      1238
+    ],
+    "8": [
+      109,
+      54,
+      1225,
+      1227
+    ],
+    "32": [
+      109,
+      54,
+      1224,
+      1227
+    ],
+    "128": [
+      110,
+      55,
+      1224,
+      1227
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Unintended changes to stationary feet."
+}

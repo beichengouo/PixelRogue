@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_set_sw_attack3_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_attack3_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-4b8052cb-c725-4b36-8240-748cc7beb09d.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_sw_attack3_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe-only edit of image1's FOUR DISTINCT continuous attack poses. Image2 is legendary outfit reference ONLY. Preserve image1's EXACT skull/face, skeleton, body lengths, viewing direction, all4 authored hand/arm poses, foot stance and staff aim. DO NOT copy image2 resting hands, no extra waist fist. Change only clothing and staff design: WHITE/GOLD raised nun-style hood with DARK NAVY lining, complete smooth hood framing face without clipping hair, modest hooded capelet, whitegold calf-length layered ritual dress with deeper navy inner sleeves, blue sapphire throat clasp, whitegold flat shoes; same silverhair BLUEEYES. Staff changes from cloud-curl head to image2's GOLD CRESCENT enclosing blueorb, ONE whole staff in anatomical RIGHT hand as original. Anatomical LEFT is the only free hand, no swap. ExactlyTWO arms/hands. Keep compact normal body proportions, same torso/leg lengths beneath outfit. No crown/halo, no whitehair turned blond. Four consecutive ready/lead/release/followthrough poses remain DISTINCT; do not replace action with four resting copies. All four heads identical native size, no squat/stretch/sway. Full hair/hood/staff/shoes inside own cell with generous transparent margin, 2x2 equal cells. Pure alpha, no numbers, text, labels, borders, panel lines, shadows, background, glow, marks or effects. Refined nonpixel cel game illustration. Image1 is SOUTHWEST FRONT-LEFT three-quarter angle; keep this exact orientation throughout, no turning frontal. Preserve same four distinct poses and original hand direction.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_sw_attack3_v01.png",
+      "sha256": "63f25310296bdb2d252353959254eb77a9a855cf4903c57e49a2659ed213c961"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_idle_v02.png",
+      "sha256": "8d64dd28df890756b1ed0c944d4fda085822ae5e403b65ef91f40ace27e76784"
+    }
+  ],
+  "sha256": "3816c87f7c84f2a0fe405d69d0775aae07531c1403db81edff5073d8f7cfb273",
+  "dimensions": [
+    1267,
+    1241
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    4,
+    1253,
+    1241
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      4,
+      1253,
+      1241
+    ],
+    "8": [
+      125,
+      18,
+      1209,
+      1212
+    ],
+    "32": [
+      125,
+      18,
+      1208,
+      1211
+    ],
+    "128": [
+      126,
+      19,
+      1208,
+      1211
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Calibration: edge clipping or head-size drift."
+}

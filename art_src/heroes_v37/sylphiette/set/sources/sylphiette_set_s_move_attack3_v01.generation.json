@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_set_s_move_attack3_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_s_move_attack3_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-6cc842be-55cd-449e-8926-db66bf4bc980.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_s_move_attack3_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Wardrobe-only edit of the four full-body game animation frames in image1. Image2 specifies the same character in white-and-gold hood and dress, deep blue lining and gold crescent blue-orb staff. Preserve exactly the image1 four distinct free arm gestures and leg steps, stable head and body dimensions, identity, hair, face and frontal camera. Replace clothing, hood and held staff to match image2. Critical: exactly two arms and hands per character: one staff-gripping hand, one free hand moving between hanging and casting; if free hand is raised, remove old hanging hand and sleeve. Never add a chest hand. Preserve both feet and walking phases; full characters and complete weapon in 2x2 separate cells with generous transparent margins. No text, labels, borders, effects, shadow or background. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_s_move_attack3_v07.png",
+      "sha256": "b36a1bd09e906cf3ab6578e48e4fb530a950926bb62a8c3fc7546aee0513327f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_s_idle_v02.png",
+      "sha256": "773c985fc5064037706293a3fa97705480ec40a1e74ccc44915f77788fa79ff9"
+    }
+  ],
+  "sha256": "b626d294c8b6291766f987da79b620fd7e91f1074f60b1f46474c10aa56b4d6d",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    1,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      1,
+      1236,
+      1254
+    ],
+    "8": [
+      128,
+      10,
+      1161,
+      1204
+    ],
+    "32": [
+      128,
+      10,
+      1161,
+      1204
+    ],
+    "128": [
+      129,
+      11,
+      1160,
+      1203
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

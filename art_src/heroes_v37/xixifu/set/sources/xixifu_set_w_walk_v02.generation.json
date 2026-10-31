@@ -1,0 +1,78 @@
+{
+  "asset": "xixifu_set_w_walk_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-b04a5c84-db2a-4bb1-b0f9-e2c2ab377b01.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_walk_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise wardrobe edit of the existing four-frame game sprite SOURCE. IMAGE 1 is the EDIT TARGET: the already approved Xixifu NORMAL outfit WEST strict left profile with just one eye visible walking source. IMAGE 2 is OUTFIT REFERENCE ONLY: the same character in her legendary outfit, same WEST strict left profile with just one eye visible viewing angle. Keep image 1's exact four figures, facial proportions and identical skull size per frame, compact body lengths, stable torso, same WEST strict left profile with just one eye visible camera, walking poses, grid placement, and transparent canvas. Do not invent a new camera, a taller girl or a bigger head in the top-right cell. Keep the exact same viewing angle as image 1; do not rotate between poses. Preserve the actual four distinct knee/ankle walking phases of image 1, including passing feet directly under the pelvis in top-right and bottom-right.\n\nChange only the outfit, held staff and footwear to image 2's legendary form: modest black capelet with wine-red lining, layered wine-red mid-calf dress, restrained gold embroidery, red throat clasp, small contract bells and violet charms, compact ornate dark staff with violet crystal held by anatomical RIGHT hand in exactly the original hand position. Black charcoal eyes stay black, no glowing purple eyes. Replace BOTH boots/stockings with BARE FEET and delicate gold anklets with tiny violet charms. The legs have the same anatomical length as the normal body, not longer to fill a dress; preserve believable short calf and visible ankle. Show each foot's contact/passing pose clearly without a high slit or lifted dress. No shoes, heels or boots. Hair stays the SAME character length and volume and remains outside the lowered hood; complete tips and staff visible, not clipped.\n\nExactly FOUR full bodies, equal 2x2 cells, reading order unchanged from the original. Keep head size and neck/shoulder/waist height stable across cells; only knees/ankles/feet perform the walk. No leaning torso as a substitute for stepping. Same full foot anchor per quadrant with safe transparent space; no overlapping sprites. Refined compact soft cel nonpixel illustration. PURE TRANSPARENT background, no shadow/ground, NO text, NO numbering, NO labels, NO divider or guide lines, NO borders, NO watermarks, NO effects or extra figures. This is a clean unlabelled runtime sprite SOURCE, not a design sheet. Do not copy the normal outfit's boots, silver clasp or plain wooden staff.\n\nSAFETY MARGIN: keep each complete figure within the inner 80 percent of its own quadrant height, centered at the same per-cell origin. Leave real transparent room above crown and below the lowest planted/passing toes. No toe or hair may cross the invisible horizontal halfway or vertical halfway of the image. Do not crop into a foot; reduce the entire clip uniformly in composition if necessary, never shorten one frame or its legs. Keep source image 1 exact body proportions.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_walk.png",
+      "sha256": "b350e0e8b05a14e65d76b496dd883fbaeb09f5edabb3bbdf0264be00a43c4383"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_idle_v01.png",
+      "sha256": "aa462cd45e44e7e0bcd3af6d9503bbe806798cd0733ba8ee82333ccaee09c6a0"
+    }
+  ],
+  "sha256": "7e31193f4d419c3c9beec78f5012f5dee9d50046c9d2684a3c9f4e46d5a876fa",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "excluded_from_crop_input",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    41,
+    0,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      41,
+      0,
+      1240,
+      1254
+    ],
+    "8": [
+      156,
+      6,
+      1183,
+      1238
+    ],
+    "32": [
+      156,
+      7,
+      1182,
+      1238
+    ],
+    "128": [
+      157,
+      7,
+      1181,
+      1237
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "replacement": "xixifu_set_w_walk_v03",
+  "reason": "superseded by roomier composition"
+}

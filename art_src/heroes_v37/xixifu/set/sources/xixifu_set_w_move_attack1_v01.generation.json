@@ -1,0 +1,78 @@
+{
+  "asset": "xixifu_set_w_move_attack1_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack1_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-c8ff5546-4829-4bec-a571-83197f73b8f3.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack1_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise local animation edit. IMAGE 1 IS THE EDIT TARGET: Xixifu legendary WALK, four consecutive poses. IMAGE 2 is ONLY a reference for the four arm/staff gestures of attack stage 1. Keep image 1's exact four faces, identical skull size, hair, torso, clothing construction, skirt length, viewing angle, bare feet and anklets. MOST IMPORTANT keep all FOUR leg poses and their alternation from image 1 unchanged: do not redraw all legs into one pose, do not lose the rear foot, do not make her hop on one leg. Preserve the passing steps in top-right and bottom-right and opposite leading foot in bottom-left compared to top-left. Preserve the SAME torso/shoulder position in each cell; no lateral waggle or camera turn. Do not copy boots or simple clothing from image 2.\nChange ONLY the upper arms, hands, sleeves and held legendary staff to perform the FOUR consecutive arm/staff gestures in image 2 in the same reading order. Her staff keeps image 1's ornate dark-gold/violet legendary head, correct anatomical RIGHT hand. EXACTLY TWO ARMS AND TWO HANDS PER FIGURE. In two-handed poses the left hand supports the shaft: REMOVE the old idle left hand/sleeve hanging near waist, replace it by the newly posed arm, do not leave a third hand or floating fist on the waist. Draw the left arm continuously from the left shoulder into its new sleeve and grip. In single-handed poses the left hand can remain free. Preserve black eyes, lowered hood, long dark-violet hair, black capelet and wine-red layered calf-length dress, gold trim and bells, barefoot gold anklets. Don't lift skirt, expose thighs, or remove a foot. Preserve compact nonpixel hand-painted cel style.\nExactly FOUR isolated full bodies in 2x2 layout on a truly transparent canvas. Include complete staff tip and all hair tips inside canvas with generous transparent padding. If a raised staff needs room, recompose all four subjects equally smaller, never crop any body or tip. No overlapping figures. NO text, numbers, letters, guide lines, watermark, labels, aura, magic effects, floor, shadow, backdrop or additional figures. This is clean runtime source, not a design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_walk_v03.png",
+      "sha256": "23d9d16fbea7bd0a3f10f7187b857a5380d3bcbf8904fe7c8e7398091044216d"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_move_attack1.png",
+      "sha256": "5d6245f183b090edec4f6cf9b1fd3806a763ca12b7f494fb525a5b3d1e76ac7d"
+    }
+  ],
+  "sha256": "e865a94851f970cc5e05faee88c361dc9af90403bcf2dfca89be955c770f5870",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1237,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1237,
+      1254
+    ],
+    "8": [
+      93,
+      97,
+      1232,
+      1188
+    ],
+    "32": [
+      93,
+      97,
+      1232,
+      1187
+    ],
+    "128": [
+      94,
+      97,
+      1231,
+      1186
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Obsolete waist hand/staff remnants in walk-based generation; replaced by normal-pose wardrobe edit.",
+  "replacement": "xixifu_set_w_move_attack1_v02"
+}

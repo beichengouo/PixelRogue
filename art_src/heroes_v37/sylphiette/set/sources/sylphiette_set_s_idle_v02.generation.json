@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_set_s_idle_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_s_idle_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-25d195ec-cea5-4db1-8b74-1c37b2ef5a36.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit image1 production sprite, change ONLY the top of her staff: replace the closed gold CLOUD-CURL orb holder copied from normal costume with the LEGENDARY staff head shown in image2: a clean open upwards golden CRESCENT / two swept flame-shaped gold prongs embracing one small bright BLUE orb. NO cloud scroll loops on the head. Keep the shaft gold and same length/hand position. Keep every other pixel arrangement and feature as close as possible: compact proportions, exact blue eyes, silver hair, white/gold navy-lined hood, robe, blue throat and waist clasps, small shoes, right hand grip and left relaxed hand, stable frontal stance, canvas size and generous transparent margins. No new tassels, no text/numbers/grid/background/glow/shadows. Exactly one intact transparent full-body sprite. This is a costume-specific weapon correction, no redesign of her body or clothing.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_s_idle_v01.png",
+      "sha256": "3ab718e685152c8dfe1a94df70756ef1fc2391a76dedbb4586a110f23992ec9b"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/sylphiette_set_turnaround_v01.png",
+      "sha256": "1bb377dbd0dcd01a276ae54edba5207c49cfcd4accf7df349a75bde811f8ec8b"
+    }
+  ],
+  "sha256": "773c985fc5064037706293a3fa97705480ec40a1e74ccc44915f77788fa79ff9",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "s",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    25,
+    1216,
+    1228
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    25,
+    1216,
+    1228
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      25,
+      1216,
+      1228
+    ],
+    "8": [
+      271,
+      166,
+      1013,
+      1171
+    ],
+    "32": [
+      272,
+      166,
+      1013,
+      1171
+    ],
+    "128": [
+      272,
+      167,
+      1012,
+      1170
+    ]
+  }
+}

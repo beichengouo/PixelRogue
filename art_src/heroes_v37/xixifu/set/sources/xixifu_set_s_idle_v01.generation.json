@@ -1,0 +1,84 @@
+{
+  "asset": "xixifu_set_s_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-5acf5ef6-efc7-43f0-ae16-d273241ffc15.png",
+  "built_in_imagegen": true,
+  "prompt": "Production game SPRITE SOURCE for PixelRogue, Xixifu LEGENDARY outfit. Image 1 is the exact NORMAL south idle source and is PRIMARY body, skull/face/hand/feet scale, game viewing elevation and soft nonpixel linework reference. Image 2 defines the corrected LEGENDARY outfit ONLY. Use exactly the SAME underlying compact approx 2.7-heads-tall body as image 1, not a taller girl. Short neck, short trunk, short legs and same large head; do not stretch torso for the fancy dress.\nDraw EXACTLY ONE isolated full-body neutral idle/ready sprite, direction SOUTH strict FRONT facing viewer/downscreen, both eyes symmetrically visible, shoulders/hips square to viewer, mild 15-degree game viewing elevation. Stable vertical body, feet planted slightly apart, no movement or wind. TRUE TRANSPARENT square 1024x1024 canvas, all extremities centered inside middle 65% width, crown/soles near 12%/88% height, generous empty transparent margin around hair, feet and staff. ONE FIGURE ONLY. NO TEXT, NO NUMBERS, NO LABELS, NO WATERMARK, NO GUIDES, NO BORDER, NO GRID, NO DIVIDERS, NO SHADOW OR GROUND. This is a real single-frame sprite source, never include reference-sheet captions.\nIdentity: human-looking summoner, black charcoal eyes (NOT glowing purple), long charcoal-black hair with muted violet shading, no horns/wings/tail. Correct legendary costume: black short capelet with wine-red lining and a MID-CALF wine-red layered ceremonial dress, modest covered bodice, fine restrained gold edge embroidery, red clasp, a few small readable contract bells and violet charms, not dozens of micro-chains. Bare feet and delicate gold anklets with tiny violet charms, no boots/heels/long calves. Her ANATOMICAL RIGHT hand holds a compact dark ornamental violet-crystal staff on VIEWER-LEFT; anatomical LEFT hand relaxed on VIEWER-RIGHT. Staff complete and proportionate, no detached parts. Back long hair drapes naturally outside the lowered hood/cape with no fabric piercing through it, hair still and whole. Keep EXACT body/face of normal reference under the new clothes. Clean restrained 2-3tone soft cel painting, broad hair masses, no photoreal microtexture. No magical glow/particles/extra creatures, no backdrop. Entire hair, fingers, staff and bare toes fully visible within transparent margins.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_s_idle.png",
+      "sha256": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/xixifu_set_turnaround_v02.png",
+      "sha256": "1712a2f0ff7e2c4e162241d2c9c4bf05791089937ee98f0a6a5ad5f549ade4ce"
+    }
+  ],
+  "sha256": "fe55e4a888bbfb7aec3c80410434cf74bc2f2f59ce607b73bc35db0a6e5a62e1",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1226,
+    1216
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    21,
+    1226,
+    1216
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      21,
+      1226,
+      1216
+    ],
+    "8": [
+      289,
+      155,
+      984,
+      1186
+    ],
+    "32": [
+      289,
+      155,
+      984,
+      1186
+    ],
+    "128": [
+      290,
+      156,
+      984,
+      1185
+    ]
+  }
+}

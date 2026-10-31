@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_set_n_skill_cast_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_n_skill_cast_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-15964462-95d5-4f76-8144-d1a49232c016.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise repair of transparent4frame2x2 sprite SOURCE, image1 edit target and image2 SAME identity/anatomy/costume viewing direction. Keep exact4 distinct continuous ritual handgestures and common plantedfoot baseline, compact skulls and torso, same anatomy, same face/camera, true ALPHA. Fix only: Topright crescent staff tip touches upper edge. LOWER the raised right arm so the whole crescent tip remains NO HIGHER THAN HOOD CROWN, not above skull; all4 hoods at least50pixels below celltop. Staff remains one complete rigid crescentgold blueorb prop. Do not just add margin while preserving dangerously high arm.. Exactly2arms/2hands and1weapon, no retained old hands. All4 fullbody figures must fit own cell with generous clear transparent room. Do not alter costume/body proportions, no growing release pose, do not repeat all4 as idle. NO text/numbers/grid/labels/borders/marks/shadows/effects/glow/floor/background. Use same refined soft nonpixel game miniature finish.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_n_skill_cast_v01.png",
+      "sha256": "756541bf28b75344ad859062599d0be1b1c49acee65b2efce4cf26786dda5cd3"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_n_idle_v01.png",
+      "sha256": "788c5511102f4e78b891c002493b032ba7d2e54d39e196372b76016324df91d4"
+    }
+  ],
+  "sha256": "dd508a6d1f5d3dc5eeb9bee82caf1086e319846e1c35153562d3fef4905a8dd6",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1206,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    19,
+    1206,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      19,
+      1206,
+      1254
+    ],
+    "8": [
+      130,
+      63,
+      1157,
+      1213
+    ],
+    "32": [
+      130,
+      63,
+      1157,
+      1213
+    ],
+    "128": [
+      131,
+      63,
+      1156,
+      1212
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "xixifu_set_n_move_attack4_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack4_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-5f84204d-ece5-43d0-b2de-a92654629e5a.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_n_move_attack4_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY the lower-left figure leg pose in this four-frame animation. The lower-left figure must lift its RIGHT heel toward the viewer and put its LEFT foot forward down on the ground, opposite to the upper-left figure that lifts the left heel. Keep exactly two legs and two feet, joined anatomically to the body under the dress. Keep the other three figures, every hair/head, costume, arm gesture and staff unchanged. Same size in all frames. Same muted dark plum hair and barefoot gold anklets. Keep all complete figures in equal 2x2 cells with clear transparent margins. No text, labels, grid, effects or background.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack4_v02.png",
+      "sha256": "cd1bc2ef91b6b8c6feab2922e0d98027f4874d112ca18e8918e6e51e8b6ff11f"
+    }
+  ],
+  "sha256": "d4b3d1ceda0590c2fb92aec62ab918dd54f0f4dbaf8524b6f87eabba1c613d80",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    8,
+    1480,
+    997
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      8,
+      1480,
+      997
+    ],
+    "8": [
+      276,
+      13,
+      1392,
+      995
+    ],
+    "32": [
+      277,
+      13,
+      1392,
+      994
+    ],
+    "128": [
+      277,
+      14,
+      1391,
+      994
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

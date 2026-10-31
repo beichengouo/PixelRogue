@@ -1,0 +1,88 @@
+{
+  "asset": "xixifu_set_n_idle_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_idle_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a1779a-5336-74c3-aa79-44c916d58431\\exec-79d35478-4ed8-4694-b5c4-7230723409f7.png",
+  "built_in_imagegen": true,
+  "prompt": "Production single-frame game SPRITE SOURCE for PixelRogue. Use source reference 1 for exact compact body/face/skull geometry and mild 15-degree top-down game viewing elevation; this is the SAME small body construction as the currently running V36 Xixifu. Do not grow torso/legs or shrink head. Use reference 2 for the requested hero's costume and identity. Additional sprite reference, if supplied, fixes the same costume details across views. Soft nonpixel hand-painted miniature, clean dark colored outlines, restrained 2-3tone cel shading, broad hair/fabric masses, no microtexture or 3D realism.\nEXACTLY ONE full-body neutral stable ready/idle sprite on a SQUARE true transparent canvas, intended1024x1024. Crown and soles near12%/88% height, all extremities/hair/weapon centered within middle65%width with generous EMPTY TRANSPARENT margins. No character movement, no wind, no floating hair, no glowing effects. Stable neutral standing, small feet slightly apart, free hand relaxed. NO WORDS, NO LETTERS, NO NUMBERS, NO LABELS, NO GUIDELINES, NO DIVIDERS, NO BORDER, NO WATERMARK, NO SHADOW, NO FLOOR, NO BACKGROUND. Do not copy the three-view sheet's white background, labels, guide lines or its other figures. A real production sprite source must contain one intact isolated figure only.\nXIXIFU LEGENDARY: human-looking summoner, BLACK charcoal irises not glowing purple, long charcoal-black hair with muted violet reflected shading, no horns/wings/tail. EXACT same body as normal, now dressed in black capelet and wine-red MID-CALF layered contract-bell dress, modest bodice, red clasp, restrained fine gold edge embroidery, a few small readable bells/chain links and violet charms. BARE FEET plus delicate gold anklets with tiny violet charms, no boots or heels, short normal calves. Hair lies continuously outside lowered hood/cape, no fabric through hair. One compact dark ornamental violet-crystal staff held in anatomical RIGHT hand, anatomical LEFT hand empty relaxed.\nDirection NORTH: STRICT BACK facing away/up-screen. No visible face or eyes, honest rear hair/hood/cloak. RIGHT-hand staff, if present, at VIEWER-RIGHT; LEFT-hand bow, if present, at VIEWER-LEFT. Small rear heels and neutral hands visible below/along outfit as natural.\nEntire head, hands, bare rear heels, all hair tips and complete staff inside transparent margins. Rear hair continuously covers back cape upper area, two rear bells and central violet charm remain visible below hair, as corrected turnaround. No front face.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_n_idle.png",
+      "sha256": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/docs/references/hero-models-v37/xixifu_set_turnaround_v02.png",
+      "sha256": "1712a2f0ff7e2c4e162241d2c9c4bf05791089937ee98f0a6a5ad5f549ade4ce"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_idle_v01.png",
+      "sha256": "fe55e4a888bbfb7aec3c80410434cf74bc2f2f59ce607b73bc35db0a6e5a62e1"
+    }
+  ],
+  "sha256": "13429538ae354fd9400e32188252a037c6f5dfbea6ac5ade47eb2bcebca8c311",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    27,
+    7,
+    1212,
+    1206
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    27,
+    7,
+    1212,
+    1206
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      27,
+      7,
+      1212,
+      1206
+    ],
+    "8": [
+      332,
+      167,
+      932,
+      1143
+    ],
+    "32": [
+      333,
+      168,
+      931,
+      1143
+    ],
+    "128": [
+      333,
+      168,
+      931,
+      1142
+    ]
+  }
+}

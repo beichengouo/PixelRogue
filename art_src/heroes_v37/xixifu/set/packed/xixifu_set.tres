@@ -1,0 +1,1837 @@
+[gd_resource type="SpriteFrames" load_steps=331 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack1_n.png" id="1"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack2_n.png" id="2"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack3_n.png" id="3"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack4_n.png" id="4"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack5_n.png" id="5"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/idle_n.png" id="6"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack1_n.png" id="7"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack2_n.png" id="8"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack3_n.png" id="9"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack4_n.png" id="10"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack5_n.png" id="11"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/skill_cast_n.png" id="12"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/walk_n.png" id="13"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack1_nw.png" id="14"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack2_nw.png" id="15"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack3_nw.png" id="16"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack4_nw.png" id="17"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack5_nw.png" id="18"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/idle_nw.png" id="19"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack1_nw.png" id="20"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack2_nw.png" id="21"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack3_nw.png" id="22"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack4_nw.png" id="23"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack5_nw.png" id="24"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/skill_cast_nw.png" id="25"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/walk_nw.png" id="26"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack1_s.png" id="27"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack2_s.png" id="28"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack3_s.png" id="29"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack4_s.png" id="30"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack5_s.png" id="31"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/idle_s.png" id="32"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack1_s.png" id="33"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack2_s.png" id="34"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack3_s.png" id="35"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack4_s.png" id="36"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack5_s.png" id="37"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/skill_cast_s.png" id="38"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/walk_s.png" id="39"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack1_sw.png" id="40"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack2_sw.png" id="41"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack3_sw.png" id="42"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack4_sw.png" id="43"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack5_sw.png" id="44"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/idle_sw.png" id="45"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack1_sw.png" id="46"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack2_sw.png" id="47"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack3_sw.png" id="48"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack4_sw.png" id="49"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack5_sw.png" id="50"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/skill_cast_sw.png" id="51"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/walk_sw.png" id="52"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/death.png" id="53"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/hurt.png" id="54"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/interact.png" id="55"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/prayer.png" id="56"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack1_w.png" id="57"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack2_w.png" id="58"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack3_w.png" id="59"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack4_w.png" id="60"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/attack5_w.png" id="61"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/idle_w.png" id="62"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack1_w.png" id="63"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack2_w.png" id="64"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack3_w.png" id="65"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack4_w.png" id="66"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/move_attack5_w.png" id="67"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/skill_cast_w.png" id="68"]
+
+[ext_resource type="Texture2D" path="res://assets/heroes_handdrawn_v37/xixifu/set/walk_w.png" id="69"]
+
+[sub_resource type="AtlasTexture" id="attack1_n_0"]
+atlas = ExtResource("1")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(134,135,163,257)
+
+[sub_resource type="AtlasTexture" id="attack1_n_1"]
+atlas = ExtResource("1")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(132,131,200,261)
+
+[sub_resource type="AtlasTexture" id="attack1_n_2"]
+atlas = ExtResource("1")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,115,209,277)
+
+[sub_resource type="AtlasTexture" id="attack1_n_3"]
+atlas = ExtResource("1")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,109,210,283)
+
+[sub_resource type="AtlasTexture" id="attack2_n_0"]
+atlas = ExtResource("2")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,147,181,245)
+
+[sub_resource type="AtlasTexture" id="attack2_n_1"]
+atlas = ExtResource("2")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(125,120,186,272)
+
+[sub_resource type="AtlasTexture" id="attack2_n_2"]
+atlas = ExtResource("2")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(108,131,235,261)
+
+[sub_resource type="AtlasTexture" id="attack2_n_3"]
+atlas = ExtResource("2")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(122,120,206,272)
+
+[sub_resource type="AtlasTexture" id="attack3_n_0"]
+atlas = ExtResource("3")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(107,90,220,302)
+
+[sub_resource type="AtlasTexture" id="attack3_n_1"]
+atlas = ExtResource("3")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(110,120,241,272)
+
+[sub_resource type="AtlasTexture" id="attack3_n_2"]
+atlas = ExtResource("3")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(125,83,196,309)
+
+[sub_resource type="AtlasTexture" id="attack3_n_3"]
+atlas = ExtResource("3")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(131,96,190,296)
+
+[sub_resource type="AtlasTexture" id="attack4_n_0"]
+atlas = ExtResource("4")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(106,96,219,296)
+
+[sub_resource type="AtlasTexture" id="attack4_n_1"]
+atlas = ExtResource("4")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,111,194,281)
+
+[sub_resource type="AtlasTexture" id="attack4_n_2"]
+atlas = ExtResource("4")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(120,125,217,267)
+
+[sub_resource type="AtlasTexture" id="attack4_n_3"]
+atlas = ExtResource("4")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(119,102,199,290)
+
+[sub_resource type="AtlasTexture" id="attack5_n_0"]
+atlas = ExtResource("5")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(121,70,184,323)
+
+[sub_resource type="AtlasTexture" id="attack5_n_1"]
+atlas = ExtResource("5")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,102,210,290)
+
+[sub_resource type="AtlasTexture" id="attack5_n_2"]
+atlas = ExtResource("5")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(121,88,189,305)
+
+[sub_resource type="AtlasTexture" id="attack5_n_3"]
+atlas = ExtResource("5")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,130,199,262)
+
+[sub_resource type="AtlasTexture" id="idle_n_0"]
+atlas = ExtResource("6")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(138,145,152,247)
+
+[sub_resource type="AtlasTexture" id="move_attack1_n_0"]
+atlas = ExtResource("7")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(133,148,166,244)
+
+[sub_resource type="AtlasTexture" id="move_attack1_n_1"]
+atlas = ExtResource("7")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(132,148,227,244)
+
+[sub_resource type="AtlasTexture" id="move_attack1_n_2"]
+atlas = ExtResource("7")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(133,156,220,236)
+
+[sub_resource type="AtlasTexture" id="move_attack1_n_3"]
+atlas = ExtResource("7")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(131,141,215,251)
+
+[sub_resource type="AtlasTexture" id="move_attack2_n_0"]
+atlas = ExtResource("8")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(120,132,216,260)
+
+[sub_resource type="AtlasTexture" id="move_attack2_n_1"]
+atlas = ExtResource("8")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(122,136,247,256)
+
+[sub_resource type="AtlasTexture" id="move_attack2_n_2"]
+atlas = ExtResource("8")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(119,133,218,259)
+
+[sub_resource type="AtlasTexture" id="move_attack2_n_3"]
+atlas = ExtResource("8")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,139,251,253)
+
+[sub_resource type="AtlasTexture" id="move_attack3_n_0"]
+atlas = ExtResource("9")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(121,147,225,245)
+
+[sub_resource type="AtlasTexture" id="move_attack3_n_1"]
+atlas = ExtResource("9")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(123,152,267,240)
+
+[sub_resource type="AtlasTexture" id="move_attack3_n_2"]
+atlas = ExtResource("9")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(121,157,241,235)
+
+[sub_resource type="AtlasTexture" id="move_attack3_n_3"]
+atlas = ExtResource("9")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(121,155,272,237)
+
+[sub_resource type="AtlasTexture" id="move_attack4_n_0"]
+atlas = ExtResource("10")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(114,169,208,223)
+
+[sub_resource type="AtlasTexture" id="move_attack4_n_1"]
+atlas = ExtResource("10")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(112,169,231,223)
+
+[sub_resource type="AtlasTexture" id="move_attack4_n_2"]
+atlas = ExtResource("10")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(111,170,214,222)
+
+[sub_resource type="AtlasTexture" id="move_attack4_n_3"]
+atlas = ExtResource("10")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(110,173,236,219)
+
+[sub_resource type="AtlasTexture" id="move_attack5_n_0"]
+atlas = ExtResource("11")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(122,139,205,253)
+
+[sub_resource type="AtlasTexture" id="move_attack5_n_1"]
+atlas = ExtResource("11")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(125,150,261,242)
+
+[sub_resource type="AtlasTexture" id="move_attack5_n_2"]
+atlas = ExtResource("11")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(118,140,214,252)
+
+[sub_resource type="AtlasTexture" id="move_attack5_n_3"]
+atlas = ExtResource("11")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,149,192,243)
+
+[sub_resource type="AtlasTexture" id="skill_cast_n_0"]
+atlas = ExtResource("12")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(128,131,182,261)
+
+[sub_resource type="AtlasTexture" id="skill_cast_n_1"]
+atlas = ExtResource("12")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(111,129,229,263)
+
+[sub_resource type="AtlasTexture" id="skill_cast_n_2"]
+atlas = ExtResource("12")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(109,100,213,292)
+
+[sub_resource type="AtlasTexture" id="skill_cast_n_3"]
+atlas = ExtResource("12")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(134,133,183,259)
+
+[sub_resource type="AtlasTexture" id="walk_n_0"]
+atlas = ExtResource("13")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(139,146,152,246)
+
+[sub_resource type="AtlasTexture" id="walk_n_1"]
+atlas = ExtResource("13")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(139,149,152,243)
+
+[sub_resource type="AtlasTexture" id="walk_n_2"]
+atlas = ExtResource("13")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(138,148,155,244)
+
+[sub_resource type="AtlasTexture" id="walk_n_3"]
+atlas = ExtResource("13")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(137,155,155,237)
+
+[sub_resource type="AtlasTexture" id="attack1_nw_0"]
+atlas = ExtResource("14")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,147,175,245)
+
+[sub_resource type="AtlasTexture" id="attack1_nw_1"]
+atlas = ExtResource("14")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(95,144,250,248)
+
+[sub_resource type="AtlasTexture" id="attack1_nw_2"]
+atlas = ExtResource("14")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(98,144,249,248)
+
+[sub_resource type="AtlasTexture" id="attack1_nw_3"]
+atlas = ExtResource("14")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(129,126,217,266)
+
+[sub_resource type="AtlasTexture" id="attack2_nw_0"]
+atlas = ExtResource("15")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(166,148,176,244)
+
+[sub_resource type="AtlasTexture" id="attack2_nw_1"]
+atlas = ExtResource("15")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(108,149,237,243)
+
+[sub_resource type="AtlasTexture" id="attack2_nw_2"]
+atlas = ExtResource("15")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(109,158,247,234)
+
+[sub_resource type="AtlasTexture" id="attack2_nw_3"]
+atlas = ExtResource("15")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(106,159,249,233)
+
+[sub_resource type="AtlasTexture" id="attack3_nw_0"]
+atlas = ExtResource("16")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(128,163,205,229)
+
+[sub_resource type="AtlasTexture" id="attack3_nw_1"]
+atlas = ExtResource("16")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(100,162,239,230)
+
+[sub_resource type="AtlasTexture" id="attack3_nw_2"]
+atlas = ExtResource("16")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(110,142,223,250)
+
+[sub_resource type="AtlasTexture" id="attack3_nw_3"]
+atlas = ExtResource("16")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(125,126,209,266)
+
+[sub_resource type="AtlasTexture" id="attack4_nw_0"]
+atlas = ExtResource("17")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,120,226,272)
+
+[sub_resource type="AtlasTexture" id="attack4_nw_1"]
+atlas = ExtResource("17")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(105,124,244,268)
+
+[sub_resource type="AtlasTexture" id="attack4_nw_2"]
+atlas = ExtResource("17")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(111,118,239,274)
+
+[sub_resource type="AtlasTexture" id="attack4_nw_3"]
+atlas = ExtResource("17")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(102,120,254,272)
+
+[sub_resource type="AtlasTexture" id="attack5_nw_0"]
+atlas = ExtResource("18")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(92,99,269,293)
+
+[sub_resource type="AtlasTexture" id="attack5_nw_1"]
+atlas = ExtResource("18")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(99,104,263,288)
+
+[sub_resource type="AtlasTexture" id="attack5_nw_2"]
+atlas = ExtResource("18")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(94,101,282,291)
+
+[sub_resource type="AtlasTexture" id="attack5_nw_3"]
+atlas = ExtResource("18")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(149,124,218,268)
+
+[sub_resource type="AtlasTexture" id="idle_nw_0"]
+atlas = ExtResource("19")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,158,147,234)
+
+[sub_resource type="AtlasTexture" id="move_attack1_nw_0"]
+atlas = ExtResource("20")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(165,146,163,246)
+
+[sub_resource type="AtlasTexture" id="move_attack1_nw_1"]
+atlas = ExtResource("20")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,147,212,245)
+
+[sub_resource type="AtlasTexture" id="move_attack1_nw_2"]
+atlas = ExtResource("20")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(108,135,231,257)
+
+[sub_resource type="AtlasTexture" id="move_attack1_nw_3"]
+atlas = ExtResource("20")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,127,222,265)
+
+[sub_resource type="AtlasTexture" id="move_attack2_nw_0"]
+atlas = ExtResource("21")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,142,171,250)
+
+[sub_resource type="AtlasTexture" id="move_attack2_nw_1"]
+atlas = ExtResource("21")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(134,149,206,243)
+
+[sub_resource type="AtlasTexture" id="move_attack2_nw_2"]
+atlas = ExtResource("21")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(128,147,211,245)
+
+[sub_resource type="AtlasTexture" id="move_attack2_nw_3"]
+atlas = ExtResource("21")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(130,154,209,238)
+
+[sub_resource type="AtlasTexture" id="move_attack3_nw_0"]
+atlas = ExtResource("22")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(113,159,223,233)
+
+[sub_resource type="AtlasTexture" id="move_attack3_nw_1"]
+atlas = ExtResource("22")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(100,161,236,231)
+
+[sub_resource type="AtlasTexture" id="move_attack3_nw_2"]
+atlas = ExtResource("22")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(123,148,216,244)
+
+[sub_resource type="AtlasTexture" id="move_attack3_nw_3"]
+atlas = ExtResource("22")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(136,152,198,240)
+
+[sub_resource type="AtlasTexture" id="move_attack4_nw_0"]
+atlas = ExtResource("23")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(110,129,242,264)
+
+[sub_resource type="AtlasTexture" id="move_attack4_nw_1"]
+atlas = ExtResource("23")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(115,135,239,257)
+
+[sub_resource type="AtlasTexture" id="move_attack4_nw_2"]
+atlas = ExtResource("23")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(99,131,270,261)
+
+[sub_resource type="AtlasTexture" id="move_attack4_nw_3"]
+atlas = ExtResource("23")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(102,131,263,261)
+
+[sub_resource type="AtlasTexture" id="move_attack5_nw_0"]
+atlas = ExtResource("24")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(90,95,279,297)
+
+[sub_resource type="AtlasTexture" id="move_attack5_nw_1"]
+atlas = ExtResource("24")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(91,100,278,292)
+
+[sub_resource type="AtlasTexture" id="move_attack5_nw_2"]
+atlas = ExtResource("24")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(88,99,289,293)
+
+[sub_resource type="AtlasTexture" id="move_attack5_nw_3"]
+atlas = ExtResource("24")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(90,94,285,298)
+
+[sub_resource type="AtlasTexture" id="skill_cast_nw_0"]
+atlas = ExtResource("25")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(166,140,165,252)
+
+[sub_resource type="AtlasTexture" id="skill_cast_nw_1"]
+atlas = ExtResource("25")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(141,136,188,256)
+
+[sub_resource type="AtlasTexture" id="skill_cast_nw_2"]
+atlas = ExtResource("25")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(106,141,239,251)
+
+[sub_resource type="AtlasTexture" id="skill_cast_nw_3"]
+atlas = ExtResource("25")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(160,138,173,254)
+
+[sub_resource type="AtlasTexture" id="walk_nw_0"]
+atlas = ExtResource("26")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(165,143,157,249)
+
+[sub_resource type="AtlasTexture" id="walk_nw_1"]
+atlas = ExtResource("26")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(166,147,156,245)
+
+[sub_resource type="AtlasTexture" id="walk_nw_2"]
+atlas = ExtResource("26")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,145,162,247)
+
+[sub_resource type="AtlasTexture" id="walk_nw_3"]
+atlas = ExtResource("26")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(164,145,159,247)
+
+[sub_resource type="AtlasTexture" id="attack1_s_0"]
+atlas = ExtResource("27")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(127,155,204,237)
+
+[sub_resource type="AtlasTexture" id="attack1_s_1"]
+atlas = ExtResource("27")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(125,154,211,238)
+
+[sub_resource type="AtlasTexture" id="attack1_s_2"]
+atlas = ExtResource("27")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(118,150,217,242)
+
+[sub_resource type="AtlasTexture" id="attack1_s_3"]
+atlas = ExtResource("27")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(120,136,215,256)
+
+[sub_resource type="AtlasTexture" id="attack2_s_0"]
+atlas = ExtResource("28")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(133,149,194,243)
+
+[sub_resource type="AtlasTexture" id="attack2_s_1"]
+atlas = ExtResource("28")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(135,150,193,242)
+
+[sub_resource type="AtlasTexture" id="attack2_s_2"]
+atlas = ExtResource("28")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(120,125,209,267)
+
+[sub_resource type="AtlasTexture" id="attack2_s_3"]
+atlas = ExtResource("28")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(122,127,210,265)
+
+[sub_resource type="AtlasTexture" id="attack3_s_0"]
+atlas = ExtResource("29")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(129,157,201,235)
+
+[sub_resource type="AtlasTexture" id="attack3_s_1"]
+atlas = ExtResource("29")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(127,158,201,234)
+
+[sub_resource type="AtlasTexture" id="attack3_s_2"]
+atlas = ExtResource("29")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(113,144,216,248)
+
+[sub_resource type="AtlasTexture" id="attack3_s_3"]
+atlas = ExtResource("29")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(131,139,198,253)
+
+[sub_resource type="AtlasTexture" id="attack4_s_0"]
+atlas = ExtResource("30")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(120,156,222,236)
+
+[sub_resource type="AtlasTexture" id="attack4_s_1"]
+atlas = ExtResource("30")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,164,219,228)
+
+[sub_resource type="AtlasTexture" id="attack4_s_2"]
+atlas = ExtResource("30")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(117,161,232,231)
+
+[sub_resource type="AtlasTexture" id="attack4_s_3"]
+atlas = ExtResource("30")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(118,162,244,230)
+
+[sub_resource type="AtlasTexture" id="attack5_s_0"]
+atlas = ExtResource("31")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(127,152,213,240)
+
+[sub_resource type="AtlasTexture" id="attack5_s_1"]
+atlas = ExtResource("31")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(127,153,217,239)
+
+[sub_resource type="AtlasTexture" id="attack5_s_2"]
+atlas = ExtResource("31")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(130,156,203,236)
+
+[sub_resource type="AtlasTexture" id="attack5_s_3"]
+atlas = ExtResource("31")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(128,156,223,236)
+
+[sub_resource type="AtlasTexture" id="idle_s_0"]
+atlas = ExtResource("32")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(148,147,165,245)
+
+[sub_resource type="AtlasTexture" id="move_attack1_s_0"]
+atlas = ExtResource("33")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(145,162,176,230)
+
+[sub_resource type="AtlasTexture" id="move_attack1_s_1"]
+atlas = ExtResource("33")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(122,161,199,231)
+
+[sub_resource type="AtlasTexture" id="move_attack1_s_2"]
+atlas = ExtResource("33")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(137,148,190,244)
+
+[sub_resource type="AtlasTexture" id="move_attack1_s_3"]
+atlas = ExtResource("33")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(143,154,183,238)
+
+[sub_resource type="AtlasTexture" id="move_attack2_s_0"]
+atlas = ExtResource("34")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(141,160,177,232)
+
+[sub_resource type="AtlasTexture" id="move_attack2_s_1"]
+atlas = ExtResource("34")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(138,159,181,233)
+
+[sub_resource type="AtlasTexture" id="move_attack2_s_2"]
+atlas = ExtResource("34")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(101,163,218,229)
+
+[sub_resource type="AtlasTexture" id="move_attack2_s_3"]
+atlas = ExtResource("34")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(126,157,199,235)
+
+[sub_resource type="AtlasTexture" id="move_attack3_s_0"]
+atlas = ExtResource("35")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(141,160,175,232)
+
+[sub_resource type="AtlasTexture" id="move_attack3_s_1"]
+atlas = ExtResource("35")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(146,158,172,234)
+
+[sub_resource type="AtlasTexture" id="move_attack3_s_2"]
+atlas = ExtResource("35")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(123,135,193,257)
+
+[sub_resource type="AtlasTexture" id="move_attack3_s_3"]
+atlas = ExtResource("35")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(144,147,179,245)
+
+[sub_resource type="AtlasTexture" id="move_attack4_s_0"]
+atlas = ExtResource("36")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(136,157,191,235)
+
+[sub_resource type="AtlasTexture" id="move_attack4_s_1"]
+atlas = ExtResource("36")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(137,165,205,227)
+
+[sub_resource type="AtlasTexture" id="move_attack4_s_2"]
+atlas = ExtResource("36")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(134,157,202,235)
+
+[sub_resource type="AtlasTexture" id="move_attack4_s_3"]
+atlas = ExtResource("36")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(133,158,229,234)
+
+[sub_resource type="AtlasTexture" id="move_attack5_s_0"]
+atlas = ExtResource("37")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(139,164,189,228)
+
+[sub_resource type="AtlasTexture" id="move_attack5_s_1"]
+atlas = ExtResource("37")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(140,163,201,229)
+
+[sub_resource type="AtlasTexture" id="move_attack5_s_2"]
+atlas = ExtResource("37")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(137,166,188,226)
+
+[sub_resource type="AtlasTexture" id="move_attack5_s_3"]
+atlas = ExtResource("37")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(139,166,183,226)
+
+[sub_resource type="AtlasTexture" id="skill_cast_s_0"]
+atlas = ExtResource("38")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(138,151,185,241)
+
+[sub_resource type="AtlasTexture" id="skill_cast_s_1"]
+atlas = ExtResource("38")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(130,152,196,240)
+
+[sub_resource type="AtlasTexture" id="skill_cast_s_2"]
+atlas = ExtResource("38")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(105,158,227,234)
+
+[sub_resource type="AtlasTexture" id="skill_cast_s_3"]
+atlas = ExtResource("38")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(138,157,188,235)
+
+[sub_resource type="AtlasTexture" id="walk_s_0"]
+atlas = ExtResource("39")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(142,160,171,232)
+
+[sub_resource type="AtlasTexture" id="walk_s_1"]
+atlas = ExtResource("39")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(144,159,170,233)
+
+[sub_resource type="AtlasTexture" id="walk_s_2"]
+atlas = ExtResource("39")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(142,163,173,229)
+
+[sub_resource type="AtlasTexture" id="walk_s_3"]
+atlas = ExtResource("39")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(141,164,174,228)
+
+[sub_resource type="AtlasTexture" id="attack1_sw_0"]
+atlas = ExtResource("40")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(147,148,190,244)
+
+[sub_resource type="AtlasTexture" id="attack1_sw_1"]
+atlas = ExtResource("40")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(83,146,262,246)
+
+[sub_resource type="AtlasTexture" id="attack1_sw_2"]
+atlas = ExtResource("40")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(104,155,244,237)
+
+[sub_resource type="AtlasTexture" id="attack1_sw_3"]
+atlas = ExtResource("40")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(102,151,250,241)
+
+[sub_resource type="AtlasTexture" id="attack2_sw_0"]
+atlas = ExtResource("41")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(135,161,206,231)
+
+[sub_resource type="AtlasTexture" id="attack2_sw_1"]
+atlas = ExtResource("41")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(106,160,235,232)
+
+[sub_resource type="AtlasTexture" id="attack2_sw_2"]
+atlas = ExtResource("41")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(130,165,213,227)
+
+[sub_resource type="AtlasTexture" id="attack2_sw_3"]
+atlas = ExtResource("41")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(136,161,206,231)
+
+[sub_resource type="AtlasTexture" id="attack3_sw_0"]
+atlas = ExtResource("42")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(70,160,275,232)
+
+[sub_resource type="AtlasTexture" id="attack3_sw_1"]
+atlas = ExtResource("42")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(92,159,257,233)
+
+[sub_resource type="AtlasTexture" id="attack3_sw_2"]
+atlas = ExtResource("42")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(128,160,217,232)
+
+[sub_resource type="AtlasTexture" id="attack3_sw_3"]
+atlas = ExtResource("42")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(143,146,207,246)
+
+[sub_resource type="AtlasTexture" id="attack4_sw_0"]
+atlas = ExtResource("43")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(68,103,310,289)
+
+[sub_resource type="AtlasTexture" id="attack4_sw_1"]
+atlas = ExtResource("43")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(84,117,286,275)
+
+[sub_resource type="AtlasTexture" id="attack4_sw_2"]
+atlas = ExtResource("43")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(74,117,306,275)
+
+[sub_resource type="AtlasTexture" id="attack4_sw_3"]
+atlas = ExtResource("43")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(40,154,350,238)
+
+[sub_resource type="AtlasTexture" id="attack5_sw_0"]
+atlas = ExtResource("44")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(75,137,290,256)
+
+[sub_resource type="AtlasTexture" id="attack5_sw_1"]
+atlas = ExtResource("44")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(76,161,317,231)
+
+[sub_resource type="AtlasTexture" id="attack5_sw_2"]
+atlas = ExtResource("44")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(88,131,289,261)
+
+[sub_resource type="AtlasTexture" id="attack5_sw_3"]
+atlas = ExtResource("44")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(157,124,208,268)
+
+[sub_resource type="AtlasTexture" id="idle_sw_0"]
+atlas = ExtResource("45")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,155,154,237)
+
+[sub_resource type="AtlasTexture" id="move_attack1_sw_0"]
+atlas = ExtResource("46")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(132,151,209,241)
+
+[sub_resource type="AtlasTexture" id="move_attack1_sw_1"]
+atlas = ExtResource("46")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(103,149,238,243)
+
+[sub_resource type="AtlasTexture" id="move_attack1_sw_2"]
+atlas = ExtResource("46")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(128,153,217,239)
+
+[sub_resource type="AtlasTexture" id="move_attack1_sw_3"]
+atlas = ExtResource("46")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(131,146,214,246)
+
+[sub_resource type="AtlasTexture" id="move_attack2_sw_0"]
+atlas = ExtResource("47")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(135,158,205,234)
+
+[sub_resource type="AtlasTexture" id="move_attack2_sw_1"]
+atlas = ExtResource("47")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(105,158,236,234)
+
+[sub_resource type="AtlasTexture" id="move_attack2_sw_2"]
+atlas = ExtResource("47")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(131,164,212,228)
+
+[sub_resource type="AtlasTexture" id="move_attack2_sw_3"]
+atlas = ExtResource("47")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(136,159,204,233)
+
+[sub_resource type="AtlasTexture" id="move_attack3_sw_0"]
+atlas = ExtResource("48")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(73,165,267,227)
+
+[sub_resource type="AtlasTexture" id="move_attack3_sw_1"]
+atlas = ExtResource("48")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(95,164,249,228)
+
+[sub_resource type="AtlasTexture" id="move_attack3_sw_2"]
+atlas = ExtResource("48")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(132,163,210,229)
+
+[sub_resource type="AtlasTexture" id="move_attack3_sw_3"]
+atlas = ExtResource("48")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(145,149,200,243)
+
+[sub_resource type="AtlasTexture" id="move_attack4_sw_0"]
+atlas = ExtResource("49")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(92,149,253,243)
+
+[sub_resource type="AtlasTexture" id="move_attack4_sw_1"]
+atlas = ExtResource("49")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(109,149,230,243)
+
+[sub_resource type="AtlasTexture" id="move_attack4_sw_2"]
+atlas = ExtResource("49")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(93,160,256,232)
+
+[sub_resource type="AtlasTexture" id="move_attack4_sw_3"]
+atlas = ExtResource("49")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(86,163,268,229)
+
+[sub_resource type="AtlasTexture" id="move_attack5_sw_0"]
+atlas = ExtResource("50")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(135,159,210,233)
+
+[sub_resource type="AtlasTexture" id="move_attack5_sw_1"]
+atlas = ExtResource("50")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(76,157,270,235)
+
+[sub_resource type="AtlasTexture" id="move_attack5_sw_2"]
+atlas = ExtResource("50")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(133,163,215,229)
+
+[sub_resource type="AtlasTexture" id="move_attack5_sw_3"]
+atlas = ExtResource("50")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(134,162,214,230)
+
+[sub_resource type="AtlasTexture" id="skill_cast_sw_0"]
+atlas = ExtResource("51")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(144,145,196,247)
+
+[sub_resource type="AtlasTexture" id="skill_cast_sw_1"]
+atlas = ExtResource("51")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(129,145,217,247)
+
+[sub_resource type="AtlasTexture" id="skill_cast_sw_2"]
+atlas = ExtResource("51")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(90,162,266,230)
+
+[sub_resource type="AtlasTexture" id="skill_cast_sw_3"]
+atlas = ExtResource("51")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(142,149,203,243)
+
+[sub_resource type="AtlasTexture" id="walk_sw_0"]
+atlas = ExtResource("52")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(162,155,171,237)
+
+[sub_resource type="AtlasTexture" id="walk_sw_1"]
+atlas = ExtResource("52")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(162,151,170,241)
+
+[sub_resource type="AtlasTexture" id="walk_sw_2"]
+atlas = ExtResource("52")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(160,151,174,241)
+
+[sub_resource type="AtlasTexture" id="walk_sw_3"]
+atlas = ExtResource("52")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(160,152,173,240)
+
+[sub_resource type="AtlasTexture" id="death_0"]
+atlas = ExtResource("53")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(159,152,164,240)
+
+[sub_resource type="AtlasTexture" id="death_1"]
+atlas = ExtResource("53")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(144,205,168,187)
+
+[sub_resource type="AtlasTexture" id="death_2"]
+atlas = ExtResource("53")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(120,295,215,97)
+
+[sub_resource type="AtlasTexture" id="death_3"]
+atlas = ExtResource("53")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(121,298,207,94)
+
+[sub_resource type="AtlasTexture" id="hurt_0"]
+atlas = ExtResource("54")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(154,179,174,213)
+
+[sub_resource type="AtlasTexture" id="hurt_1"]
+atlas = ExtResource("54")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(157,183,172,209)
+
+[sub_resource type="AtlasTexture" id="hurt_2"]
+atlas = ExtResource("54")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(150,179,180,213)
+
+[sub_resource type="AtlasTexture" id="hurt_3"]
+atlas = ExtResource("54")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(151,180,178,212)
+
+[sub_resource type="AtlasTexture" id="interact_0"]
+atlas = ExtResource("55")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,165,147,227)
+
+[sub_resource type="AtlasTexture" id="interact_1"]
+atlas = ExtResource("55")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,165,147,227)
+
+[sub_resource type="AtlasTexture" id="interact_2"]
+atlas = ExtResource("55")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(153,168,158,224)
+
+[sub_resource type="AtlasTexture" id="interact_3"]
+atlas = ExtResource("55")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(163,167,149,225)
+
+[sub_resource type="AtlasTexture" id="prayer_0"]
+atlas = ExtResource("56")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(164,167,144,225)
+
+[sub_resource type="AtlasTexture" id="prayer_1"]
+atlas = ExtResource("56")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(168,168,145,224)
+
+[sub_resource type="AtlasTexture" id="prayer_2"]
+atlas = ExtResource("56")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(166,172,150,220)
+
+[sub_resource type="AtlasTexture" id="prayer_3"]
+atlas = ExtResource("56")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(166,173,144,219)
+
+[sub_resource type="AtlasTexture" id="attack1_w_0"]
+atlas = ExtResource("57")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(157,151,169,241)
+
+[sub_resource type="AtlasTexture" id="attack1_w_1"]
+atlas = ExtResource("57")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(74,153,268,239)
+
+[sub_resource type="AtlasTexture" id="attack1_w_2"]
+atlas = ExtResource("57")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(97,149,245,243)
+
+[sub_resource type="AtlasTexture" id="attack1_w_3"]
+atlas = ExtResource("57")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(96,137,250,255)
+
+[sub_resource type="AtlasTexture" id="attack2_w_0"]
+atlas = ExtResource("58")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(134,162,205,230)
+
+[sub_resource type="AtlasTexture" id="attack2_w_1"]
+atlas = ExtResource("58")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(106,142,238,250)
+
+[sub_resource type="AtlasTexture" id="attack2_w_2"]
+atlas = ExtResource("58")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(62,167,289,225)
+
+[sub_resource type="AtlasTexture" id="attack2_w_3"]
+atlas = ExtResource("58")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(100,141,248,251)
+
+[sub_resource type="AtlasTexture" id="attack3_w_0"]
+atlas = ExtResource("59")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(76,158,266,235)
+
+[sub_resource type="AtlasTexture" id="attack3_w_1"]
+atlas = ExtResource("59")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(70,159,280,233)
+
+[sub_resource type="AtlasTexture" id="attack3_w_2"]
+atlas = ExtResource("59")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(90,132,256,260)
+
+[sub_resource type="AtlasTexture" id="attack3_w_3"]
+atlas = ExtResource("59")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(110,118,237,274)
+
+[sub_resource type="AtlasTexture" id="attack4_w_0"]
+atlas = ExtResource("60")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(92,131,254,261)
+
+[sub_resource type="AtlasTexture" id="attack4_w_1"]
+atlas = ExtResource("60")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(91,163,238,229)
+
+[sub_resource type="AtlasTexture" id="attack4_w_2"]
+atlas = ExtResource("60")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(76,159,270,233)
+
+[sub_resource type="AtlasTexture" id="attack4_w_3"]
+atlas = ExtResource("60")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(70,168,254,224)
+
+[sub_resource type="AtlasTexture" id="attack5_w_0"]
+atlas = ExtResource("61")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(103,145,238,247)
+
+[sub_resource type="AtlasTexture" id="attack5_w_1"]
+atlas = ExtResource("61")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(71,169,269,223)
+
+[sub_resource type="AtlasTexture" id="attack5_w_2"]
+atlas = ExtResource("61")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(88,172,264,220)
+
+[sub_resource type="AtlasTexture" id="attack5_w_3"]
+atlas = ExtResource("61")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(160,166,185,226)
+
+[sub_resource type="AtlasTexture" id="idle_w_0"]
+atlas = ExtResource("62")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(161,155,148,237)
+
+[sub_resource type="AtlasTexture" id="move_attack1_w_0"]
+atlas = ExtResource("63")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(161,160,183,232)
+
+[sub_resource type="AtlasTexture" id="move_attack1_w_1"]
+atlas = ExtResource("63")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(89,160,255,232)
+
+[sub_resource type="AtlasTexture" id="move_attack1_w_2"]
+atlas = ExtResource("63")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(116,159,226,233)
+
+[sub_resource type="AtlasTexture" id="move_attack1_w_3"]
+atlas = ExtResource("63")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(123,155,220,237)
+
+[sub_resource type="AtlasTexture" id="move_attack2_w_0"]
+atlas = ExtResource("64")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(157,167,185,225)
+
+[sub_resource type="AtlasTexture" id="move_attack2_w_1"]
+atlas = ExtResource("64")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(100,153,240,239)
+
+[sub_resource type="AtlasTexture" id="move_attack2_w_2"]
+atlas = ExtResource("64")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(104,173,242,219)
+
+[sub_resource type="AtlasTexture" id="move_attack2_w_3"]
+atlas = ExtResource("64")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(106,165,238,227)
+
+[sub_resource type="AtlasTexture" id="move_attack3_w_0"]
+atlas = ExtResource("65")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(91,153,268,239)
+
+[sub_resource type="AtlasTexture" id="move_attack3_w_1"]
+atlas = ExtResource("65")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(64,152,292,241)
+
+[sub_resource type="AtlasTexture" id="move_attack3_w_2"]
+atlas = ExtResource("65")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(90,154,273,239)
+
+[sub_resource type="AtlasTexture" id="move_attack3_w_3"]
+atlas = ExtResource("65")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(69,152,296,240)
+
+[sub_resource type="AtlasTexture" id="move_attack4_w_0"]
+atlas = ExtResource("66")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(86,146,305,246)
+
+[sub_resource type="AtlasTexture" id="move_attack4_w_1"]
+atlas = ExtResource("66")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(73,155,314,237)
+
+[sub_resource type="AtlasTexture" id="move_attack4_w_2"]
+atlas = ExtResource("66")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(76,149,316,243)
+
+[sub_resource type="AtlasTexture" id="move_attack4_w_3"]
+atlas = ExtResource("66")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(79,149,312,243)
+
+[sub_resource type="AtlasTexture" id="move_attack5_w_0"]
+atlas = ExtResource("67")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(91,156,301,236)
+
+[sub_resource type="AtlasTexture" id="move_attack5_w_1"]
+atlas = ExtResource("67")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(56,180,334,212)
+
+[sub_resource type="AtlasTexture" id="move_attack5_w_2"]
+atlas = ExtResource("67")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(92,155,300,237)
+
+[sub_resource type="AtlasTexture" id="move_attack5_w_3"]
+atlas = ExtResource("67")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(138,177,257,215)
+
+[sub_resource type="AtlasTexture" id="skill_cast_w_0"]
+atlas = ExtResource("68")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(156,155,171,237)
+
+[sub_resource type="AtlasTexture" id="skill_cast_w_1"]
+atlas = ExtResource("68")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(124,154,202,239)
+
+[sub_resource type="AtlasTexture" id="skill_cast_w_2"]
+atlas = ExtResource("68")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(92,164,242,228)
+
+[sub_resource type="AtlasTexture" id="skill_cast_w_3"]
+atlas = ExtResource("68")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(157,160,175,232)
+
+[sub_resource type="AtlasTexture" id="walk_w_0"]
+atlas = ExtResource("69")
+region = Rect2(0,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(164,165,170,227)
+
+[sub_resource type="AtlasTexture" id="walk_w_1"]
+atlas = ExtResource("69")
+region = Rect2(448,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(166,161,169,231)
+
+[sub_resource type="AtlasTexture" id="walk_w_2"]
+atlas = ExtResource("69")
+region = Rect2(896,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(158,172,184,220)
+
+[sub_resource type="AtlasTexture" id="walk_w_3"]
+atlas = ExtResource("69")
+region = Rect2(1344,0,448,448)
+filter_clip = true
+metadata/painted_bounds = Rect2(164,167,176,225)
+
+[resource]
+animations = [{"name":&"idle_s","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_s_0")}]},
+{"name":&"walk_s","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_s_0")},{"duration":1.0,"texture":SubResource("walk_s_1")},{"duration":1.0,"texture":SubResource("walk_s_2")},{"duration":1.0,"texture":SubResource("walk_s_3")}]},
+{"name":&"skill_cast_s","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_s_0")},{"duration":1.0,"texture":SubResource("skill_cast_s_1")},{"duration":1.0,"texture":SubResource("skill_cast_s_2")},{"duration":1.0,"texture":SubResource("skill_cast_s_3")}]},
+{"name":&"attack1_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_s_0")},{"duration":0.09,"texture":SubResource("attack1_s_1")},{"duration":0.126,"texture":SubResource("attack1_s_2")},{"duration":0.144,"texture":SubResource("attack1_s_3")}]},
+{"name":&"attack2_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_s_0")},{"duration":0.1275,"texture":SubResource("attack2_s_1")},{"duration":0.1785,"texture":SubResource("attack2_s_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_s_3")}]},
+{"name":&"attack3_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_s_0")},{"duration":0.165,"texture":SubResource("attack3_s_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_s_2")},{"duration":0.264,"texture":SubResource("attack3_s_3")}]},
+{"name":&"attack4_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_s_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_s_1")},{"duration":0.301,"texture":SubResource("attack4_s_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_s_3")}]},
+{"name":&"attack5_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_s_0")},{"duration":0.3025,"texture":SubResource("attack5_s_1")},{"duration":0.4235,"texture":SubResource("attack5_s_2")},{"duration":0.484,"texture":SubResource("attack5_s_3")}]},
+{"name":&"move_attack1_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_s_0")},{"duration":0.09,"texture":SubResource("move_attack1_s_1")},{"duration":0.126,"texture":SubResource("move_attack1_s_2")},{"duration":0.144,"texture":SubResource("move_attack1_s_3")}]},
+{"name":&"move_attack2_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_s_0")},{"duration":0.1275,"texture":SubResource("move_attack2_s_1")},{"duration":0.1785,"texture":SubResource("move_attack2_s_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_s_3")}]},
+{"name":&"move_attack3_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_s_0")},{"duration":0.165,"texture":SubResource("move_attack3_s_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_s_2")},{"duration":0.264,"texture":SubResource("move_attack3_s_3")}]},
+{"name":&"move_attack4_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_s_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_s_1")},{"duration":0.301,"texture":SubResource("move_attack4_s_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_s_3")}]},
+{"name":&"move_attack5_s","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_s_0")},{"duration":0.3025,"texture":SubResource("move_attack5_s_1")},{"duration":0.4235,"texture":SubResource("move_attack5_s_2")},{"duration":0.484,"texture":SubResource("move_attack5_s_3")}]},
+{"name":&"combo_cycle_s","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_s_0")},{"duration":0.09,"texture":SubResource("attack1_s_1")},{"duration":0.126,"texture":SubResource("attack1_s_2")},{"duration":0.144,"texture":SubResource("attack1_s_3")},{"duration":0.24,"texture":SubResource("attack2_s_0")},{"duration":0.1275,"texture":SubResource("attack2_s_1")},{"duration":0.1785,"texture":SubResource("attack2_s_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_s_3")},{"duration":0.24,"texture":SubResource("attack3_s_0")},{"duration":0.165,"texture":SubResource("attack3_s_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_s_2")},{"duration":0.264,"texture":SubResource("attack3_s_3")},{"duration":0.24,"texture":SubResource("attack4_s_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_s_1")},{"duration":0.301,"texture":SubResource("attack4_s_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_s_3")},{"duration":0.24,"texture":SubResource("attack5_s_0")},{"duration":0.3025,"texture":SubResource("attack5_s_1")},{"duration":0.4235,"texture":SubResource("attack5_s_2")},{"duration":0.484,"texture":SubResource("attack5_s_3")}]},
+{"name":&"move_combo_cycle_s","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_s_0")},{"duration":0.09,"texture":SubResource("move_attack1_s_1")},{"duration":0.126,"texture":SubResource("move_attack1_s_2")},{"duration":0.144,"texture":SubResource("move_attack1_s_3")},{"duration":0.24,"texture":SubResource("move_attack2_s_0")},{"duration":0.1275,"texture":SubResource("move_attack2_s_1")},{"duration":0.1785,"texture":SubResource("move_attack2_s_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_s_3")},{"duration":0.24,"texture":SubResource("move_attack3_s_0")},{"duration":0.165,"texture":SubResource("move_attack3_s_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_s_2")},{"duration":0.264,"texture":SubResource("move_attack3_s_3")},{"duration":0.24,"texture":SubResource("move_attack4_s_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_s_1")},{"duration":0.301,"texture":SubResource("move_attack4_s_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_s_3")},{"duration":0.24,"texture":SubResource("move_attack5_s_0")},{"duration":0.3025,"texture":SubResource("move_attack5_s_1")},{"duration":0.4235,"texture":SubResource("move_attack5_s_2")},{"duration":0.484,"texture":SubResource("move_attack5_s_3")}]},
+{"name":&"idle_sw","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_sw_0")}]},
+{"name":&"walk_sw","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_sw_0")},{"duration":1.0,"texture":SubResource("walk_sw_1")},{"duration":1.0,"texture":SubResource("walk_sw_2")},{"duration":1.0,"texture":SubResource("walk_sw_3")}]},
+{"name":&"skill_cast_sw","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_sw_0")},{"duration":1.0,"texture":SubResource("skill_cast_sw_1")},{"duration":1.0,"texture":SubResource("skill_cast_sw_2")},{"duration":1.0,"texture":SubResource("skill_cast_sw_3")}]},
+{"name":&"attack1_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_sw_0")},{"duration":0.09,"texture":SubResource("attack1_sw_1")},{"duration":0.126,"texture":SubResource("attack1_sw_2")},{"duration":0.144,"texture":SubResource("attack1_sw_3")}]},
+{"name":&"attack2_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_sw_0")},{"duration":0.1275,"texture":SubResource("attack2_sw_1")},{"duration":0.1785,"texture":SubResource("attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_sw_3")}]},
+{"name":&"attack3_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_sw_0")},{"duration":0.165,"texture":SubResource("attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_sw_2")},{"duration":0.264,"texture":SubResource("attack3_sw_3")}]},
+{"name":&"attack4_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_sw_1")},{"duration":0.301,"texture":SubResource("attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_sw_3")}]},
+{"name":&"attack5_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_sw_0")},{"duration":0.3025,"texture":SubResource("attack5_sw_1")},{"duration":0.4235,"texture":SubResource("attack5_sw_2")},{"duration":0.484,"texture":SubResource("attack5_sw_3")}]},
+{"name":&"move_attack1_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_sw_0")},{"duration":0.09,"texture":SubResource("move_attack1_sw_1")},{"duration":0.126,"texture":SubResource("move_attack1_sw_2")},{"duration":0.144,"texture":SubResource("move_attack1_sw_3")}]},
+{"name":&"move_attack2_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_sw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_sw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_sw_3")}]},
+{"name":&"move_attack3_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_sw_0")},{"duration":0.165,"texture":SubResource("move_attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_sw_2")},{"duration":0.264,"texture":SubResource("move_attack3_sw_3")}]},
+{"name":&"move_attack4_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_sw_1")},{"duration":0.301,"texture":SubResource("move_attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_sw_3")}]},
+{"name":&"move_attack5_sw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_sw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_sw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_sw_2")},{"duration":0.484,"texture":SubResource("move_attack5_sw_3")}]},
+{"name":&"combo_cycle_sw","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_sw_0")},{"duration":0.09,"texture":SubResource("attack1_sw_1")},{"duration":0.126,"texture":SubResource("attack1_sw_2")},{"duration":0.144,"texture":SubResource("attack1_sw_3")},{"duration":0.24,"texture":SubResource("attack2_sw_0")},{"duration":0.1275,"texture":SubResource("attack2_sw_1")},{"duration":0.1785,"texture":SubResource("attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_sw_3")},{"duration":0.24,"texture":SubResource("attack3_sw_0")},{"duration":0.165,"texture":SubResource("attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_sw_2")},{"duration":0.264,"texture":SubResource("attack3_sw_3")},{"duration":0.24,"texture":SubResource("attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_sw_1")},{"duration":0.301,"texture":SubResource("attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_sw_3")},{"duration":0.24,"texture":SubResource("attack5_sw_0")},{"duration":0.3025,"texture":SubResource("attack5_sw_1")},{"duration":0.4235,"texture":SubResource("attack5_sw_2")},{"duration":0.484,"texture":SubResource("attack5_sw_3")}]},
+{"name":&"move_combo_cycle_sw","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_sw_0")},{"duration":0.09,"texture":SubResource("move_attack1_sw_1")},{"duration":0.126,"texture":SubResource("move_attack1_sw_2")},{"duration":0.144,"texture":SubResource("move_attack1_sw_3")},{"duration":0.24,"texture":SubResource("move_attack2_sw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_sw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_sw_3")},{"duration":0.24,"texture":SubResource("move_attack3_sw_0")},{"duration":0.165,"texture":SubResource("move_attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_sw_2")},{"duration":0.264,"texture":SubResource("move_attack3_sw_3")},{"duration":0.24,"texture":SubResource("move_attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_sw_1")},{"duration":0.301,"texture":SubResource("move_attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_sw_3")},{"duration":0.24,"texture":SubResource("move_attack5_sw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_sw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_sw_2")},{"duration":0.484,"texture":SubResource("move_attack5_sw_3")}]},
+{"name":&"idle_w","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_w_0")}]},
+{"name":&"walk_w","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_w_0")},{"duration":1.0,"texture":SubResource("walk_w_1")},{"duration":1.0,"texture":SubResource("walk_w_2")},{"duration":1.0,"texture":SubResource("walk_w_3")}]},
+{"name":&"skill_cast_w","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_w_0")},{"duration":1.0,"texture":SubResource("skill_cast_w_1")},{"duration":1.0,"texture":SubResource("skill_cast_w_2")},{"duration":1.0,"texture":SubResource("skill_cast_w_3")}]},
+{"name":&"attack1_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_w_0")},{"duration":0.09,"texture":SubResource("attack1_w_1")},{"duration":0.126,"texture":SubResource("attack1_w_2")},{"duration":0.144,"texture":SubResource("attack1_w_3")}]},
+{"name":&"attack2_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_w_0")},{"duration":0.1275,"texture":SubResource("attack2_w_1")},{"duration":0.1785,"texture":SubResource("attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_w_3")}]},
+{"name":&"attack3_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_w_0")},{"duration":0.165,"texture":SubResource("attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_w_2")},{"duration":0.264,"texture":SubResource("attack3_w_3")}]},
+{"name":&"attack4_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_w_1")},{"duration":0.301,"texture":SubResource("attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_w_3")}]},
+{"name":&"attack5_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_w_0")},{"duration":0.3025,"texture":SubResource("attack5_w_1")},{"duration":0.4235,"texture":SubResource("attack5_w_2")},{"duration":0.484,"texture":SubResource("attack5_w_3")}]},
+{"name":&"move_attack1_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_w_0")},{"duration":0.09,"texture":SubResource("move_attack1_w_1")},{"duration":0.126,"texture":SubResource("move_attack1_w_2")},{"duration":0.144,"texture":SubResource("move_attack1_w_3")}]},
+{"name":&"move_attack2_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_w_0")},{"duration":0.1275,"texture":SubResource("move_attack2_w_1")},{"duration":0.1785,"texture":SubResource("move_attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_w_3")}]},
+{"name":&"move_attack3_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_w_0")},{"duration":0.165,"texture":SubResource("move_attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_w_2")},{"duration":0.264,"texture":SubResource("move_attack3_w_3")}]},
+{"name":&"move_attack4_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_w_1")},{"duration":0.301,"texture":SubResource("move_attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_w_3")}]},
+{"name":&"move_attack5_w","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_w_0")},{"duration":0.3025,"texture":SubResource("move_attack5_w_1")},{"duration":0.4235,"texture":SubResource("move_attack5_w_2")},{"duration":0.484,"texture":SubResource("move_attack5_w_3")}]},
+{"name":&"combo_cycle_w","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_w_0")},{"duration":0.09,"texture":SubResource("attack1_w_1")},{"duration":0.126,"texture":SubResource("attack1_w_2")},{"duration":0.144,"texture":SubResource("attack1_w_3")},{"duration":0.24,"texture":SubResource("attack2_w_0")},{"duration":0.1275,"texture":SubResource("attack2_w_1")},{"duration":0.1785,"texture":SubResource("attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_w_3")},{"duration":0.24,"texture":SubResource("attack3_w_0")},{"duration":0.165,"texture":SubResource("attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_w_2")},{"duration":0.264,"texture":SubResource("attack3_w_3")},{"duration":0.24,"texture":SubResource("attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_w_1")},{"duration":0.301,"texture":SubResource("attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_w_3")},{"duration":0.24,"texture":SubResource("attack5_w_0")},{"duration":0.3025,"texture":SubResource("attack5_w_1")},{"duration":0.4235,"texture":SubResource("attack5_w_2")},{"duration":0.484,"texture":SubResource("attack5_w_3")}]},
+{"name":&"move_combo_cycle_w","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_w_0")},{"duration":0.09,"texture":SubResource("move_attack1_w_1")},{"duration":0.126,"texture":SubResource("move_attack1_w_2")},{"duration":0.144,"texture":SubResource("move_attack1_w_3")},{"duration":0.24,"texture":SubResource("move_attack2_w_0")},{"duration":0.1275,"texture":SubResource("move_attack2_w_1")},{"duration":0.1785,"texture":SubResource("move_attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_w_3")},{"duration":0.24,"texture":SubResource("move_attack3_w_0")},{"duration":0.165,"texture":SubResource("move_attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_w_2")},{"duration":0.264,"texture":SubResource("move_attack3_w_3")},{"duration":0.24,"texture":SubResource("move_attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_w_1")},{"duration":0.301,"texture":SubResource("move_attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_w_3")},{"duration":0.24,"texture":SubResource("move_attack5_w_0")},{"duration":0.3025,"texture":SubResource("move_attack5_w_1")},{"duration":0.4235,"texture":SubResource("move_attack5_w_2")},{"duration":0.484,"texture":SubResource("move_attack5_w_3")}]},
+{"name":&"idle_nw","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_nw_0")}]},
+{"name":&"walk_nw","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_nw_0")},{"duration":1.0,"texture":SubResource("walk_nw_1")},{"duration":1.0,"texture":SubResource("walk_nw_2")},{"duration":1.0,"texture":SubResource("walk_nw_3")}]},
+{"name":&"skill_cast_nw","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_nw_0")},{"duration":1.0,"texture":SubResource("skill_cast_nw_1")},{"duration":1.0,"texture":SubResource("skill_cast_nw_2")},{"duration":1.0,"texture":SubResource("skill_cast_nw_3")}]},
+{"name":&"attack1_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_nw_0")},{"duration":0.09,"texture":SubResource("attack1_nw_1")},{"duration":0.126,"texture":SubResource("attack1_nw_2")},{"duration":0.144,"texture":SubResource("attack1_nw_3")}]},
+{"name":&"attack2_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_nw_0")},{"duration":0.1275,"texture":SubResource("attack2_nw_1")},{"duration":0.1785,"texture":SubResource("attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_nw_3")}]},
+{"name":&"attack3_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_nw_0")},{"duration":0.165,"texture":SubResource("attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_nw_2")},{"duration":0.264,"texture":SubResource("attack3_nw_3")}]},
+{"name":&"attack4_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_nw_1")},{"duration":0.301,"texture":SubResource("attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_nw_3")}]},
+{"name":&"attack5_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_nw_0")},{"duration":0.3025,"texture":SubResource("attack5_nw_1")},{"duration":0.4235,"texture":SubResource("attack5_nw_2")},{"duration":0.484,"texture":SubResource("attack5_nw_3")}]},
+{"name":&"move_attack1_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_nw_0")},{"duration":0.09,"texture":SubResource("move_attack1_nw_1")},{"duration":0.126,"texture":SubResource("move_attack1_nw_2")},{"duration":0.144,"texture":SubResource("move_attack1_nw_3")}]},
+{"name":&"move_attack2_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_nw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_nw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_nw_3")}]},
+{"name":&"move_attack3_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_nw_0")},{"duration":0.165,"texture":SubResource("move_attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_nw_2")},{"duration":0.264,"texture":SubResource("move_attack3_nw_3")}]},
+{"name":&"move_attack4_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_nw_1")},{"duration":0.301,"texture":SubResource("move_attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_nw_3")}]},
+{"name":&"move_attack5_nw","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_nw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_nw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_nw_2")},{"duration":0.484,"texture":SubResource("move_attack5_nw_3")}]},
+{"name":&"combo_cycle_nw","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_nw_0")},{"duration":0.09,"texture":SubResource("attack1_nw_1")},{"duration":0.126,"texture":SubResource("attack1_nw_2")},{"duration":0.144,"texture":SubResource("attack1_nw_3")},{"duration":0.24,"texture":SubResource("attack2_nw_0")},{"duration":0.1275,"texture":SubResource("attack2_nw_1")},{"duration":0.1785,"texture":SubResource("attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_nw_3")},{"duration":0.24,"texture":SubResource("attack3_nw_0")},{"duration":0.165,"texture":SubResource("attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_nw_2")},{"duration":0.264,"texture":SubResource("attack3_nw_3")},{"duration":0.24,"texture":SubResource("attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_nw_1")},{"duration":0.301,"texture":SubResource("attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_nw_3")},{"duration":0.24,"texture":SubResource("attack5_nw_0")},{"duration":0.3025,"texture":SubResource("attack5_nw_1")},{"duration":0.4235,"texture":SubResource("attack5_nw_2")},{"duration":0.484,"texture":SubResource("attack5_nw_3")}]},
+{"name":&"move_combo_cycle_nw","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_nw_0")},{"duration":0.09,"texture":SubResource("move_attack1_nw_1")},{"duration":0.126,"texture":SubResource("move_attack1_nw_2")},{"duration":0.144,"texture":SubResource("move_attack1_nw_3")},{"duration":0.24,"texture":SubResource("move_attack2_nw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_nw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_nw_3")},{"duration":0.24,"texture":SubResource("move_attack3_nw_0")},{"duration":0.165,"texture":SubResource("move_attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_nw_2")},{"duration":0.264,"texture":SubResource("move_attack3_nw_3")},{"duration":0.24,"texture":SubResource("move_attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_nw_1")},{"duration":0.301,"texture":SubResource("move_attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_nw_3")},{"duration":0.24,"texture":SubResource("move_attack5_nw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_nw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_nw_2")},{"duration":0.484,"texture":SubResource("move_attack5_nw_3")}]},
+{"name":&"idle_n","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_n_0")}]},
+{"name":&"walk_n","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_n_0")},{"duration":1.0,"texture":SubResource("walk_n_1")},{"duration":1.0,"texture":SubResource("walk_n_2")},{"duration":1.0,"texture":SubResource("walk_n_3")}]},
+{"name":&"skill_cast_n","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_n_0")},{"duration":1.0,"texture":SubResource("skill_cast_n_1")},{"duration":1.0,"texture":SubResource("skill_cast_n_2")},{"duration":1.0,"texture":SubResource("skill_cast_n_3")}]},
+{"name":&"attack1_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_n_0")},{"duration":0.09,"texture":SubResource("attack1_n_1")},{"duration":0.126,"texture":SubResource("attack1_n_2")},{"duration":0.144,"texture":SubResource("attack1_n_3")}]},
+{"name":&"attack2_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_n_0")},{"duration":0.1275,"texture":SubResource("attack2_n_1")},{"duration":0.1785,"texture":SubResource("attack2_n_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_n_3")}]},
+{"name":&"attack3_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_n_0")},{"duration":0.165,"texture":SubResource("attack3_n_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_n_2")},{"duration":0.264,"texture":SubResource("attack3_n_3")}]},
+{"name":&"attack4_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_n_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_n_1")},{"duration":0.301,"texture":SubResource("attack4_n_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_n_3")}]},
+{"name":&"attack5_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_n_0")},{"duration":0.3025,"texture":SubResource("attack5_n_1")},{"duration":0.4235,"texture":SubResource("attack5_n_2")},{"duration":0.484,"texture":SubResource("attack5_n_3")}]},
+{"name":&"move_attack1_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_n_0")},{"duration":0.09,"texture":SubResource("move_attack1_n_1")},{"duration":0.126,"texture":SubResource("move_attack1_n_2")},{"duration":0.144,"texture":SubResource("move_attack1_n_3")}]},
+{"name":&"move_attack2_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_n_0")},{"duration":0.1275,"texture":SubResource("move_attack2_n_1")},{"duration":0.1785,"texture":SubResource("move_attack2_n_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_n_3")}]},
+{"name":&"move_attack3_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_n_0")},{"duration":0.165,"texture":SubResource("move_attack3_n_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_n_2")},{"duration":0.264,"texture":SubResource("move_attack3_n_3")}]},
+{"name":&"move_attack4_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_n_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_n_1")},{"duration":0.301,"texture":SubResource("move_attack4_n_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_n_3")}]},
+{"name":&"move_attack5_n","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_n_0")},{"duration":0.3025,"texture":SubResource("move_attack5_n_1")},{"duration":0.4235,"texture":SubResource("move_attack5_n_2")},{"duration":0.484,"texture":SubResource("move_attack5_n_3")}]},
+{"name":&"combo_cycle_n","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_n_0")},{"duration":0.09,"texture":SubResource("attack1_n_1")},{"duration":0.126,"texture":SubResource("attack1_n_2")},{"duration":0.144,"texture":SubResource("attack1_n_3")},{"duration":0.24,"texture":SubResource("attack2_n_0")},{"duration":0.1275,"texture":SubResource("attack2_n_1")},{"duration":0.1785,"texture":SubResource("attack2_n_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_n_3")},{"duration":0.24,"texture":SubResource("attack3_n_0")},{"duration":0.165,"texture":SubResource("attack3_n_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_n_2")},{"duration":0.264,"texture":SubResource("attack3_n_3")},{"duration":0.24,"texture":SubResource("attack4_n_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_n_1")},{"duration":0.301,"texture":SubResource("attack4_n_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_n_3")},{"duration":0.24,"texture":SubResource("attack5_n_0")},{"duration":0.3025,"texture":SubResource("attack5_n_1")},{"duration":0.4235,"texture":SubResource("attack5_n_2")},{"duration":0.484,"texture":SubResource("attack5_n_3")}]},
+{"name":&"move_combo_cycle_n","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_n_0")},{"duration":0.09,"texture":SubResource("move_attack1_n_1")},{"duration":0.126,"texture":SubResource("move_attack1_n_2")},{"duration":0.144,"texture":SubResource("move_attack1_n_3")},{"duration":0.24,"texture":SubResource("move_attack2_n_0")},{"duration":0.1275,"texture":SubResource("move_attack2_n_1")},{"duration":0.1785,"texture":SubResource("move_attack2_n_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_n_3")},{"duration":0.24,"texture":SubResource("move_attack3_n_0")},{"duration":0.165,"texture":SubResource("move_attack3_n_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_n_2")},{"duration":0.264,"texture":SubResource("move_attack3_n_3")},{"duration":0.24,"texture":SubResource("move_attack4_n_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_n_1")},{"duration":0.301,"texture":SubResource("move_attack4_n_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_n_3")},{"duration":0.24,"texture":SubResource("move_attack5_n_0")},{"duration":0.3025,"texture":SubResource("move_attack5_n_1")},{"duration":0.4235,"texture":SubResource("move_attack5_n_2")},{"duration":0.484,"texture":SubResource("move_attack5_n_3")}]},
+{"name":&"idle_ne","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_nw_0")}]},
+{"name":&"walk_ne","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_nw_0")},{"duration":1.0,"texture":SubResource("walk_nw_1")},{"duration":1.0,"texture":SubResource("walk_nw_2")},{"duration":1.0,"texture":SubResource("walk_nw_3")}]},
+{"name":&"skill_cast_ne","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_nw_0")},{"duration":1.0,"texture":SubResource("skill_cast_nw_1")},{"duration":1.0,"texture":SubResource("skill_cast_nw_2")},{"duration":1.0,"texture":SubResource("skill_cast_nw_3")}]},
+{"name":&"attack1_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_nw_0")},{"duration":0.09,"texture":SubResource("attack1_nw_1")},{"duration":0.126,"texture":SubResource("attack1_nw_2")},{"duration":0.144,"texture":SubResource("attack1_nw_3")}]},
+{"name":&"attack2_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_nw_0")},{"duration":0.1275,"texture":SubResource("attack2_nw_1")},{"duration":0.1785,"texture":SubResource("attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_nw_3")}]},
+{"name":&"attack3_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_nw_0")},{"duration":0.165,"texture":SubResource("attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_nw_2")},{"duration":0.264,"texture":SubResource("attack3_nw_3")}]},
+{"name":&"attack4_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_nw_1")},{"duration":0.301,"texture":SubResource("attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_nw_3")}]},
+{"name":&"attack5_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_nw_0")},{"duration":0.3025,"texture":SubResource("attack5_nw_1")},{"duration":0.4235,"texture":SubResource("attack5_nw_2")},{"duration":0.484,"texture":SubResource("attack5_nw_3")}]},
+{"name":&"move_attack1_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_nw_0")},{"duration":0.09,"texture":SubResource("move_attack1_nw_1")},{"duration":0.126,"texture":SubResource("move_attack1_nw_2")},{"duration":0.144,"texture":SubResource("move_attack1_nw_3")}]},
+{"name":&"move_attack2_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_nw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_nw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_nw_3")}]},
+{"name":&"move_attack3_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_nw_0")},{"duration":0.165,"texture":SubResource("move_attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_nw_2")},{"duration":0.264,"texture":SubResource("move_attack3_nw_3")}]},
+{"name":&"move_attack4_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_nw_1")},{"duration":0.301,"texture":SubResource("move_attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_nw_3")}]},
+{"name":&"move_attack5_ne","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_nw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_nw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_nw_2")},{"duration":0.484,"texture":SubResource("move_attack5_nw_3")}]},
+{"name":&"combo_cycle_ne","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_nw_0")},{"duration":0.09,"texture":SubResource("attack1_nw_1")},{"duration":0.126,"texture":SubResource("attack1_nw_2")},{"duration":0.144,"texture":SubResource("attack1_nw_3")},{"duration":0.24,"texture":SubResource("attack2_nw_0")},{"duration":0.1275,"texture":SubResource("attack2_nw_1")},{"duration":0.1785,"texture":SubResource("attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_nw_3")},{"duration":0.24,"texture":SubResource("attack3_nw_0")},{"duration":0.165,"texture":SubResource("attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_nw_2")},{"duration":0.264,"texture":SubResource("attack3_nw_3")},{"duration":0.24,"texture":SubResource("attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_nw_1")},{"duration":0.301,"texture":SubResource("attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_nw_3")},{"duration":0.24,"texture":SubResource("attack5_nw_0")},{"duration":0.3025,"texture":SubResource("attack5_nw_1")},{"duration":0.4235,"texture":SubResource("attack5_nw_2")},{"duration":0.484,"texture":SubResource("attack5_nw_3")}]},
+{"name":&"move_combo_cycle_ne","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_nw_0")},{"duration":0.09,"texture":SubResource("move_attack1_nw_1")},{"duration":0.126,"texture":SubResource("move_attack1_nw_2")},{"duration":0.144,"texture":SubResource("move_attack1_nw_3")},{"duration":0.24,"texture":SubResource("move_attack2_nw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_nw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_nw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_nw_3")},{"duration":0.24,"texture":SubResource("move_attack3_nw_0")},{"duration":0.165,"texture":SubResource("move_attack3_nw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_nw_2")},{"duration":0.264,"texture":SubResource("move_attack3_nw_3")},{"duration":0.24,"texture":SubResource("move_attack4_nw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_nw_1")},{"duration":0.301,"texture":SubResource("move_attack4_nw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_nw_3")},{"duration":0.24,"texture":SubResource("move_attack5_nw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_nw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_nw_2")},{"duration":0.484,"texture":SubResource("move_attack5_nw_3")}]},
+{"name":&"idle_e","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_w_0")}]},
+{"name":&"walk_e","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_w_0")},{"duration":1.0,"texture":SubResource("walk_w_1")},{"duration":1.0,"texture":SubResource("walk_w_2")},{"duration":1.0,"texture":SubResource("walk_w_3")}]},
+{"name":&"skill_cast_e","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_w_0")},{"duration":1.0,"texture":SubResource("skill_cast_w_1")},{"duration":1.0,"texture":SubResource("skill_cast_w_2")},{"duration":1.0,"texture":SubResource("skill_cast_w_3")}]},
+{"name":&"attack1_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_w_0")},{"duration":0.09,"texture":SubResource("attack1_w_1")},{"duration":0.126,"texture":SubResource("attack1_w_2")},{"duration":0.144,"texture":SubResource("attack1_w_3")}]},
+{"name":&"attack2_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_w_0")},{"duration":0.1275,"texture":SubResource("attack2_w_1")},{"duration":0.1785,"texture":SubResource("attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_w_3")}]},
+{"name":&"attack3_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_w_0")},{"duration":0.165,"texture":SubResource("attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_w_2")},{"duration":0.264,"texture":SubResource("attack3_w_3")}]},
+{"name":&"attack4_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_w_1")},{"duration":0.301,"texture":SubResource("attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_w_3")}]},
+{"name":&"attack5_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_w_0")},{"duration":0.3025,"texture":SubResource("attack5_w_1")},{"duration":0.4235,"texture":SubResource("attack5_w_2")},{"duration":0.484,"texture":SubResource("attack5_w_3")}]},
+{"name":&"move_attack1_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_w_0")},{"duration":0.09,"texture":SubResource("move_attack1_w_1")},{"duration":0.126,"texture":SubResource("move_attack1_w_2")},{"duration":0.144,"texture":SubResource("move_attack1_w_3")}]},
+{"name":&"move_attack2_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_w_0")},{"duration":0.1275,"texture":SubResource("move_attack2_w_1")},{"duration":0.1785,"texture":SubResource("move_attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_w_3")}]},
+{"name":&"move_attack3_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_w_0")},{"duration":0.165,"texture":SubResource("move_attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_w_2")},{"duration":0.264,"texture":SubResource("move_attack3_w_3")}]},
+{"name":&"move_attack4_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_w_1")},{"duration":0.301,"texture":SubResource("move_attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_w_3")}]},
+{"name":&"move_attack5_e","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_w_0")},{"duration":0.3025,"texture":SubResource("move_attack5_w_1")},{"duration":0.4235,"texture":SubResource("move_attack5_w_2")},{"duration":0.484,"texture":SubResource("move_attack5_w_3")}]},
+{"name":&"combo_cycle_e","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_w_0")},{"duration":0.09,"texture":SubResource("attack1_w_1")},{"duration":0.126,"texture":SubResource("attack1_w_2")},{"duration":0.144,"texture":SubResource("attack1_w_3")},{"duration":0.24,"texture":SubResource("attack2_w_0")},{"duration":0.1275,"texture":SubResource("attack2_w_1")},{"duration":0.1785,"texture":SubResource("attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_w_3")},{"duration":0.24,"texture":SubResource("attack3_w_0")},{"duration":0.165,"texture":SubResource("attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_w_2")},{"duration":0.264,"texture":SubResource("attack3_w_3")},{"duration":0.24,"texture":SubResource("attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_w_1")},{"duration":0.301,"texture":SubResource("attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_w_3")},{"duration":0.24,"texture":SubResource("attack5_w_0")},{"duration":0.3025,"texture":SubResource("attack5_w_1")},{"duration":0.4235,"texture":SubResource("attack5_w_2")},{"duration":0.484,"texture":SubResource("attack5_w_3")}]},
+{"name":&"move_combo_cycle_e","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_w_0")},{"duration":0.09,"texture":SubResource("move_attack1_w_1")},{"duration":0.126,"texture":SubResource("move_attack1_w_2")},{"duration":0.144,"texture":SubResource("move_attack1_w_3")},{"duration":0.24,"texture":SubResource("move_attack2_w_0")},{"duration":0.1275,"texture":SubResource("move_attack2_w_1")},{"duration":0.1785,"texture":SubResource("move_attack2_w_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_w_3")},{"duration":0.24,"texture":SubResource("move_attack3_w_0")},{"duration":0.165,"texture":SubResource("move_attack3_w_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_w_2")},{"duration":0.264,"texture":SubResource("move_attack3_w_3")},{"duration":0.24,"texture":SubResource("move_attack4_w_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_w_1")},{"duration":0.301,"texture":SubResource("move_attack4_w_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_w_3")},{"duration":0.24,"texture":SubResource("move_attack5_w_0")},{"duration":0.3025,"texture":SubResource("move_attack5_w_1")},{"duration":0.4235,"texture":SubResource("move_attack5_w_2")},{"duration":0.484,"texture":SubResource("move_attack5_w_3")}]},
+{"name":&"idle_se","speed":1.0,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("idle_sw_0")}]},
+{"name":&"walk_se","speed":7.5,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("walk_sw_0")},{"duration":1.0,"texture":SubResource("walk_sw_1")},{"duration":1.0,"texture":SubResource("walk_sw_2")},{"duration":1.0,"texture":SubResource("walk_sw_3")}]},
+{"name":&"skill_cast_se","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("skill_cast_sw_0")},{"duration":1.0,"texture":SubResource("skill_cast_sw_1")},{"duration":1.0,"texture":SubResource("skill_cast_sw_2")},{"duration":1.0,"texture":SubResource("skill_cast_sw_3")}]},
+{"name":&"attack1_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack1_sw_0")},{"duration":0.09,"texture":SubResource("attack1_sw_1")},{"duration":0.126,"texture":SubResource("attack1_sw_2")},{"duration":0.144,"texture":SubResource("attack1_sw_3")}]},
+{"name":&"attack2_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack2_sw_0")},{"duration":0.1275,"texture":SubResource("attack2_sw_1")},{"duration":0.1785,"texture":SubResource("attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_sw_3")}]},
+{"name":&"attack3_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack3_sw_0")},{"duration":0.165,"texture":SubResource("attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_sw_2")},{"duration":0.264,"texture":SubResource("attack3_sw_3")}]},
+{"name":&"attack4_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_sw_1")},{"duration":0.301,"texture":SubResource("attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_sw_3")}]},
+{"name":&"attack5_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("attack5_sw_0")},{"duration":0.3025,"texture":SubResource("attack5_sw_1")},{"duration":0.4235,"texture":SubResource("attack5_sw_2")},{"duration":0.484,"texture":SubResource("attack5_sw_3")}]},
+{"name":&"move_attack1_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_sw_0")},{"duration":0.09,"texture":SubResource("move_attack1_sw_1")},{"duration":0.126,"texture":SubResource("move_attack1_sw_2")},{"duration":0.144,"texture":SubResource("move_attack1_sw_3")}]},
+{"name":&"move_attack2_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack2_sw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_sw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_sw_3")}]},
+{"name":&"move_attack3_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack3_sw_0")},{"duration":0.165,"texture":SubResource("move_attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_sw_2")},{"duration":0.264,"texture":SubResource("move_attack3_sw_3")}]},
+{"name":&"move_attack4_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_sw_1")},{"duration":0.301,"texture":SubResource("move_attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_sw_3")}]},
+{"name":&"move_attack5_se","speed":1.0,"loop":false,"frames":[{"duration":0.24,"texture":SubResource("move_attack5_sw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_sw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_sw_2")},{"duration":0.484,"texture":SubResource("move_attack5_sw_3")}]},
+{"name":&"combo_cycle_se","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("attack1_sw_0")},{"duration":0.09,"texture":SubResource("attack1_sw_1")},{"duration":0.126,"texture":SubResource("attack1_sw_2")},{"duration":0.144,"texture":SubResource("attack1_sw_3")},{"duration":0.24,"texture":SubResource("attack2_sw_0")},{"duration":0.1275,"texture":SubResource("attack2_sw_1")},{"duration":0.1785,"texture":SubResource("attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("attack2_sw_3")},{"duration":0.24,"texture":SubResource("attack3_sw_0")},{"duration":0.165,"texture":SubResource("attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("attack3_sw_2")},{"duration":0.264,"texture":SubResource("attack3_sw_3")},{"duration":0.24,"texture":SubResource("attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("attack4_sw_1")},{"duration":0.301,"texture":SubResource("attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("attack4_sw_3")},{"duration":0.24,"texture":SubResource("attack5_sw_0")},{"duration":0.3025,"texture":SubResource("attack5_sw_1")},{"duration":0.4235,"texture":SubResource("attack5_sw_2")},{"duration":0.484,"texture":SubResource("attack5_sw_3")}]},
+{"name":&"move_combo_cycle_se","speed":1.0,"loop":true,"frames":[{"duration":0.24,"texture":SubResource("move_attack1_sw_0")},{"duration":0.09,"texture":SubResource("move_attack1_sw_1")},{"duration":0.126,"texture":SubResource("move_attack1_sw_2")},{"duration":0.144,"texture":SubResource("move_attack1_sw_3")},{"duration":0.24,"texture":SubResource("move_attack2_sw_0")},{"duration":0.1275,"texture":SubResource("move_attack2_sw_1")},{"duration":0.1785,"texture":SubResource("move_attack2_sw_2")},{"duration":0.20400000000000001,"texture":SubResource("move_attack2_sw_3")},{"duration":0.24,"texture":SubResource("move_attack3_sw_0")},{"duration":0.165,"texture":SubResource("move_attack3_sw_1")},{"duration":0.23099999999999998,"texture":SubResource("move_attack3_sw_2")},{"duration":0.264,"texture":SubResource("move_attack3_sw_3")},{"duration":0.24,"texture":SubResource("move_attack4_sw_0")},{"duration":0.21500000000000002,"texture":SubResource("move_attack4_sw_1")},{"duration":0.301,"texture":SubResource("move_attack4_sw_2")},{"duration":0.3440000000000001,"texture":SubResource("move_attack4_sw_3")},{"duration":0.24,"texture":SubResource("move_attack5_sw_0")},{"duration":0.3025,"texture":SubResource("move_attack5_sw_1")},{"duration":0.4235,"texture":SubResource("move_attack5_sw_2")},{"duration":0.484,"texture":SubResource("move_attack5_sw_3")}]},
+{"name":&"prayer","speed":8,"loop":true,"frames":[{"duration":1.0,"texture":SubResource("prayer_0")},{"duration":1.0,"texture":SubResource("prayer_1")},{"duration":1.0,"texture":SubResource("prayer_2")},{"duration":1.0,"texture":SubResource("prayer_3")}]},
+{"name":&"hurt","speed":12,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("hurt_0")},{"duration":1.0,"texture":SubResource("hurt_1")},{"duration":1.0,"texture":SubResource("hurt_2")},{"duration":1.0,"texture":SubResource("hurt_3")}]},
+{"name":&"death","speed":5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("death_0")},{"duration":1.0,"texture":SubResource("death_1")},{"duration":1.0,"texture":SubResource("death_2")},{"duration":1.0,"texture":SubResource("death_3")}]},
+{"name":&"interact","speed":12.5,"loop":false,"frames":[{"duration":1.0,"texture":SubResource("interact_0")},{"duration":1.0,"texture":SubResource("interact_1")},{"duration":1.0,"texture":SubResource("interact_2")},{"duration":1.0,"texture":SubResource("interact_3")}]}]
+metadata/character = &"xixifu"
+metadata/form = "set"
+metadata/cell = 448
+metadata/foot = Vector2(224,392)
+metadata/core_height = 240.0
+metadata/combo_release_times = PackedFloat32Array(0.24,0.84,1.59,2.49,3.59)

@@ -1,0 +1,73 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-55cc2638-00fc-47f7-bc24-af0c5280ceff.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Repair HAIR ONLY. In the two right-hand sprites, curl the last trailing hair tips INWARD, ending BEFORE the right edge, leaving at least 50px clear transparent gutter. Reconstruct every complete round hair tip. Do NOT copy the clipped hair edge. Preserve all bodies, hands, feet and staff exactly. Do not expand body or canvas. Preserve compact nonpixel Xixifu legendary costume, identity, same four DISTINCT poses, layout, transparent background, no labels, numbers, guides, border, ground, shadows or effects.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_move_attack3_v03.png",
+      "sha256": "c8b86dcef69ef41b21d6f1d83bc8d77cb759785e5b5e35d437e273a55e336f63"
+    }
+  ],
+  "sha256": "8136a91be02f1ecbced0b9a7564c678487314e55041918452c0cc98dbf5139ed",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    37,
+    17,
+    1221,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      37,
+      17,
+      1221,
+      1254
+    ],
+    "8": [
+      52,
+      87,
+      1218,
+      1187
+    ],
+    "32": [
+      53,
+      88,
+      1217,
+      1187
+    ],
+    "128": [
+      54,
+      88,
+      1217,
+      1186
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "replacement": "xixifu_set_w_move_attack3_v05"
+}

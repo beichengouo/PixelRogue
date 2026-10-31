@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_n_move_attack4_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack4_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-27ed3eac-d270-4ef7-aa6c-4f0f7ade8662.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_n_move_attack4_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Image 1 supplies the exact four upper-body spell poses to preserve. Image 2 supplies the FOUR CORRECT LEG POSES to use in the corresponding cells. Correct ONLY the legs and bare feet of image 1 to match image 2: top left LEFT sole visible, top right feet passing next to each other, bottom left RIGHT sole visible, bottom right feet passing next to each other. In bottom left the LEFT foot is planted and the RIGHT foot is raised back toward camera; this must be the opposite leg to top left. Do not repeat a left-sole lift twice. Keep image 1 heads, hair, cape, dress, arm gestures and staff unchanged. Same sizes throughout, exactly two feet/two hands per figure, gold anklets. Transparent wide 3:2 canvas, full figures in equal 2x2 cells with margins, no text/background/effects.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack4_v03.png",
+      "sha256": "d4b3d1ceda0590c2fb92aec62ab918dd54f0f4dbaf8524b6f87eabba1c613d80"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack5_v03.png",
+      "sha256": "4d03815c9831b238854d2b787166f7dcc78e664151e2cdea27e652021f730a4e"
+    }
+  ],
+  "sha256": "c30f91c49e4c79076b0384db333a5e34cd6c74807aa3f69e75a7c9c489172b49",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    31,
+    6,
+    1518,
+    1006
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      31,
+      6,
+      1518,
+      1006
+    ],
+    "8": [
+      276,
+      12,
+      1393,
+      1000
+    ],
+    "32": [
+      277,
+      13,
+      1393,
+      1000
+    ],
+    "128": [
+      277,
+      13,
+      1392,
+      1000
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

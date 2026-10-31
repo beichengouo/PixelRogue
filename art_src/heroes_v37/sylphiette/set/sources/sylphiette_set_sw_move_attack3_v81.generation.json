@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_set_sw_move_attack3_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_move_attack3_v81.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-6d5b04ee-9277-4507-9513-d73513cc7785.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_sw_move_attack3_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY the WEAPON HEAD in image1, a 2x2 sprite sheet, replacing the cloud-scroll staff head in every frame with the gold open CRESCENT around a blue orb from image2. Retain each staff angle and the original two-hand and foot poses. Do not change faces, head shapes, hood, sleeves or robe at all. Four equally sized full-body figures arranged in 2x2 equal cells. SAME head size in every cell and SAME proportions, consistent with original sprite. Preserve all leg motion including passing and alternating contacts. Place each figure at identical relative location in its cell with generous 40 pixel CLEAR TRANSPARENT padding all around the outermost HAIR, weapon, hood and feet; NO HAIR may touch or cross cell boundaries. Output 1536x1536, transparent alpha, no floor, glow, shadow, letters, numbers or borders. Image2 only supplies crescent staff-head shape, do not copy its pose. The original outfit and head MUST remain unchanged across four phases.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_move_attack3_v01.png",
+      "sha256": "503a4bc7e75275c613d29eb590fc29cd144ce65bd64cd2176113ef58506fb887"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_w_idle_v01.png",
+      "sha256": "08b23026b265a36e233b9b90dccf79921b9d3c7babe53f8ea1107a70b8215454"
+    }
+  ],
+  "sha256": "4a2e57e8bb577cfb1c2d17211a8f732cf769456219395dc10e267c18f0f814ff",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    36,
+    1236,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      36,
+      1236,
+      1254
+    ],
+    "8": [
+      63,
+      45,
+      1229,
+      1232
+    ],
+    "32": [
+      63,
+      45,
+      1229,
+      1232
+    ],
+    "128": [
+      64,
+      45,
+      1228,
+      1231
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

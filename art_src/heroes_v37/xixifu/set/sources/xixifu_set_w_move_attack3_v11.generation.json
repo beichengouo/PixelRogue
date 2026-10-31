@@ -1,0 +1,72 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v11",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v11.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-2646d047-586c-4acb-bafd-e563d05d95d0.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v11.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit only the leg poses of the TOP RIGHT and BOTTOM RIGHT figures in this four-frame transparent animation sheet. In these two right-column frames the feet must pass under the body: draw the ankles very close together below the waist, one foot planted beneath the hips and the other lifted next to that calf, knees slightly bent. Narrow passing stance, not a wide stride. Keep the left column wide contact poses unchanged. Keep every head, body, hair, arms, hands, staff and outfit unchanged. Same sizes and four positions. Preserve WIDE landscape 3:2 canvas and complete unclipped hair and staff within cells. Exactly two hands and two feet in each figure, no text, numbers, background, grid or effects.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v10.png",
+      "sha256": "5de3e3a1374b1e2d45473763ee20a7faf7489c95fd8c498f7e0bba58863ae9a1"
+    }
+  ],
+  "sha256": "22ad63667b4dbc6ef712de1182354d92284b7f4a1a1097b6603b89f4399a420d",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1536,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "8": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "32": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "128": [
+      182,
+      29,
+      1438,
+      996
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

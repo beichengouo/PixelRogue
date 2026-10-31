@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_nw_attack3_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_nw_attack3_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-f771767b-5ad6-4e1d-8688-4e9bbea638e7.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_nw_attack3_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Transparent 2x2 game animation sheet. Edit image 1 four poses ONLY by replacing its outfit and staff with the outfit and staff in image 2. Preserve every head silhouette and size, face, hair, body proportions, arm gestures, camera, and stationary feet placement of image 1. This is the same character, rear-left view in all cells. Costume: black cape with gold embroidery and burgundy layered calf-length dress; gold bells and violet pendants; barefoot with anklets. One ornate staff, exactly two hands and two arms. Four connected casting poses, preparation -> aim -> upward release -> high follow-through, no extra hands on waist or chest. Keep complete staff and hair with wide margins in equal 2x2 cells. No labels, numbers, text, effects, background or floor shadow.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_nw_attack3.png",
+      "sha256": "79431d633887888ba00f0e254b5afb3d4c9595aaa1bf4d546ffe057edfe58afd"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_nw_idle_v01.png",
+      "sha256": "a7189c07837de9ba77156d4f6196a684cfaae7044229671f8d3954e77d5e1536"
+    }
+  ],
+  "sha256": "2b4795f9bc651ebbcff5d2a13fa5bc637667ca19b0076e8a566771f437e9eed6",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    43,
+    36,
+    1428,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      43,
+      36,
+      1428,
+      1086
+    ],
+    "8": [
+      216,
+      55,
+      1390,
+      1044
+    ],
+    "32": [
+      218,
+      55,
+      1390,
+      1043
+    ],
+    "128": [
+      219,
+      56,
+      1389,
+      1043
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

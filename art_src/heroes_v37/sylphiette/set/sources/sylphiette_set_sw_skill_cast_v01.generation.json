@@ -1,0 +1,85 @@
+{
+  "asset": "sylphiette_set_sw_skill_cast_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_skill_cast_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17aae-d26b-7022-a127-bec36100d82f\\exec-b9563722-3a54-45ee-9fbe-53c3b0153c10.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe edit of four game animation frames. IMAGE1 edit target: same Sylphiette normal4 distinct consecutive ritual skill poses in2x2. IMAGE2 only outfit/hair/prop construction reference for same woman same direction. Change only clothing to image2 whitegold nunlike ceremonial hood UP/navy lining, sapphire throat fastener, modest ivorygold broad robe/navy sleeve lining/skirt and same small flat shoes; replace cloud-scroll staff with image2 golden open-crescent framing blueorb staff, same RIGHT hand same hand positions. NO crown/tiara. Silver hair emerges only BELOW hood back rim not through hood top/sides. Preserve image1 exact4 distinct arm gestures and planted feet, identical compact skull/body dimensions across all4, camera/facing, feet baseline; no walking or sideways sway, no taller/elongated release. Exactly2hands/2arms and1staff each, erase old entire staff/old hands before replacement, no floating wrist or oldshaft. Nonpixel handpainted compact game miniature, same refined colored lines and restrained cel tones. Four full bodies2x2 equal cells true transparent, each top/side/bottom generous10%clear room, all stafftips/hood/hair/toes fullyinside owncell; don't copy tight framing. No text/numbers/labels/grid/dividers/background/glow/effects/shadows/floor/extra creatures. No artificial backdrop. Preserve distinct4 gestures, do not repeat idle.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_sw_skill_cast_v01.png",
+      "sha256": "8b27baf9e2e7e3b031b3cc2285e78280a00c9dd680923c3237ea5d3003438f9a"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_idle_v02.png",
+      "sha256": "8d64dd28df890756b1ed0c944d4fda085822ae5e403b65ef91f40ace27e76784"
+    }
+  ],
+  "sha256": "6cf2914c0395f8206eaa935ab47353ff7afa142d6622884540db6949eaadd05a",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "rejected_or_superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    27,
+    0,
+    1370,
+    1086
+  ],
+  "outer_edge_alpha_max": [
+    3,
+    3,
+    0,
+    0
+  ],
+  "alpha_bounds_raw": [
+    27,
+    0,
+    1370,
+    1086
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      27,
+      0,
+      1370,
+      1086
+    ],
+    "8": [
+      196,
+      7,
+      1270,
+      1076
+    ],
+    "32": [
+      198,
+      8,
+      1270,
+      1076
+    ],
+    "128": [
+      198,
+      8,
+      1269,
+      1076
+    ]
+  },
+  "reason": "hood crowns touch canvas top; superseded by v02"
+}

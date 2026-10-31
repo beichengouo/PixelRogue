@@ -1,0 +1,78 @@
+{
+  "asset": "xixifu_set_utility_hurt_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_utility_hurt_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-6fefc7e8-f54b-4dec-b43b-f00ecc59b9ed.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_utility_hurt_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Wardrobe edit of four consecutive game animation frames. Image1 is the edit target, normal Xixifu hurt animation. Image2 is the same character's legendary outfit reference only. Keep the EXACT FOUR DISTINCT POSES and camera of image1, same compact skull and skeleton proportions, same hand grips and staff direction, same silhouette height from head to anatomical foot. Only replace clothes/staff/footwear. No idle duplicates. Change only the outfit, held staff and footwear to image 2's legendary form: modest black capelet with wine-red lining, layered wine-red mid-calf dress, restrained gold embroidery, red throat clasp, small contract bells and violet charms, compact ornate dark staff with violet crystal held by anatomical RIGHT hand in exactly the original hand position. Black charcoal eyes stay black, no glowing purple eyes. Replace BOTH boots/stockings with BARE FEET and delicate gold anklets with tiny violet charms. The legs have the same anatomical length as the normal body, not longer to fill a dress; preserve believable short calf and visible ankle. Show each foot's contact/passing pose clearly without a high slit or lifted dress. No shoes, heels or boots. Hair stays the SAME character length and volume and remains outside the lowered hood; complete tips and staff visible, not clipped.\n\n\nMatch image1's action: brief flinch and recover, no enlarged body or amputated limb.\nExactly FOUR full bodies in transparent 2x2 layout. Each complete pose, hair, staff tips and bare toes inside its own equal quadrant with generous 8 percent clear margin ALL sides. Uniform skull size across frames, no changing body length. No number, label, text, guides, border, panel lines, effects, shadows or background. Clean RGBA game sprite source. Refined compact nonpixel cel-painted art. Exactly two hands, two arms, two bare feet per character, one staff only. In changing a staff direction REMOVE old staff completely.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_utility_hurt.png",
+      "sha256": "1d7e254316439545ae1231105a271351f0e8e3ea1f944226a4c18accbb0d1864"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_idle_v01.png",
+      "sha256": "aa462cd45e44e7e0bcd3af6d9503bbe806798cd0733ba8ee82333ccaee09c6a0"
+    }
+  ],
+  "sha256": "0193b556c43bb2360c62368bfcb722b13b1ecec0ec82f959d7321625ab1afd9e",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "utility",
+  "action": "hurt",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1240,
+      1254
+    ],
+    "8": [
+      165,
+      66,
+      1153,
+      1220
+    ],
+    "32": [
+      166,
+      66,
+      1151,
+      1219
+    ],
+    "128": [
+      166,
+      66,
+      1151,
+      1219
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "extra waist hand",
+  "replacement": "xixifu_set_utility_hurt_v02"
+}

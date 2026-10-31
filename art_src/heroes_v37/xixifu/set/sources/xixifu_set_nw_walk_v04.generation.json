@@ -1,0 +1,77 @@
+{
+  "asset": "xixifu_set_nw_walk_v04",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_nw_walk_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-ee097f87-200f-453c-83dc-33b039856876.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_nw_walk_v04.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Keep this SAME four-frame alternating barefoot walking cycle, correct leading legs and passing feet. Stabilize the upright upper body: all four skulls, neck, shoulders, torso and pelvis must be the SAME size, SAME relative positions and vertical axis. In the BOTTOM LEFT pose the torso is shifted right relative to head: move torso back to a directly-under-head centered position like first pose, retaining same limbs/hem lengths. Arm holding staff stays close, no torso sway, no sideways head tilt. Only knees/ankles step. No new anatomy or pose repetitions. Preserve refined nonpixel Xixifu, black and wine-red ornate legendary outfit, full hair, one violet staff, calf-length dress, two hands, no extra limbs. FOUR full bodies in transparent 2x2 cells. No ground, shadows, background, effects, marks, labels, numbers, letters, divider or watermark. Complete hair/staff/toes inside each cell.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_nw_walk_v03.png",
+      "sha256": "d4abacfe9b913cd623d5e84f9bad741b7180d2bf5393dc926bd1a6e1159deaa5"
+    }
+  ],
+  "sha256": "012899d435bf140f8d2bc1d85d4470bb670ed96ef87df995c0662f78a1401a6c",
+  "dimensions": [
+    1230,
+    1278
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    138,
+    48,
+    1210,
+    1278
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      138,
+      48,
+      1210,
+      1278
+    ],
+    "8": [
+      195,
+      51,
+      1117,
+      1213
+    ],
+    "32": [
+      195,
+      51,
+      1117,
+      1213
+    ],
+    "128": [
+      196,
+      52,
+      1116,
+      1212
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "012899d435bf140f8d2bc1d85d4470bb670ed96ef87df995c0662f78a1401a6c",
+    "pass": false,
+    "reason": "('walk head/torso cannot share a stable root', [[-0.8492075800895691, 0.37750890851020813], [-1.5304274559020996, 1.8073786497116089], [0.37112677097320557, -0.34210285544395447], [-6.860128402709961, 5.318846702575684]])"
+  }
+}

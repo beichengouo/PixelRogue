@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v10",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v10.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-17d8b188-e571-4bc4-b8c4-ba9d3769ec0f.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v10.png",
+  "built_in_imagegen": true,
+  "prompt": "Create a 1536x1024 wide LANDSCAPE transparent sprite sheet in 2x2 cells. Image 1 is the exact character model and proportions. Image 2 supplies ONLY the four arm/leg poses. Draw image 1 in the four poses of image 2, retaining image 1 identical head dimensions, left-facing eye/face, neck, shoulders and torso. DO NOT copy the changing head sizes from image 2. Every head is the same size and profile angle. The same barefoot girl in burgundy calf-length layered bell dress and black gold cape, gold anklets. One ornate purple staff. Exactly two hands and two feet. Walking spell third attack: diagonal staff prepare, forward aim, raised staff release, follow-through, accompanied by left contact / middle passing / right contact / middle passing. Full long hair ends in rounded complete tips. Keep characters SMALL, each inside central 65% of its cell with wide transparent margins around the whole staff and hair. No numbers, text, effects, shadows, dividers or background.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_idle_v01.png",
+      "sha256": "aa462cd45e44e7e0bcd3af6d9503bbe806798cd0733ba8ee82333ccaee09c6a0"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v36/xixifu/normal/sources/xixifu_normal_w_move_attack3.png",
+      "sha256": "e2dced3e36eb0362f370899c2208cf014186f31af254d324d2516a9731d439cf"
+    }
+  ],
+  "sha256": "5de3e3a1374b1e2d45473763ee20a7faf7489c95fd8c498f7e0bba58863ae9a1",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    75,
+    17,
+    1512,
+    1024
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      75,
+      17,
+      1512,
+      1024
+    ],
+    "8": [
+      181,
+      28,
+      1438,
+      993
+    ],
+    "32": [
+      181,
+      28,
+      1437,
+      992
+    ],
+    "128": [
+      182,
+      29,
+      1437,
+      992
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

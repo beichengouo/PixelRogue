@@ -1,0 +1,81 @@
+{
+  "asset": "sylphiette_set_nw_walk_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_nw_walk_v03.png",
+  "sha256": "03703d36199988f3cb73c510678944ae91d19ab89ca5143e2fd41f9df4203edc",
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "mode": "RGBA",
+  "contains_design_labels": false,
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "built_in_imagegen": false,
+  "frames_generated_with_builtin": true,
+  "generation_path": "lossless_grid_assembly_of_four_authored_single_frames",
+  "frame_sources": [
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_nw_walk_f0_single_v02.png",
+      "source_sha256": "18f42d329074bef3c11ddbebfde492d0a5d1bd02845bf413af6639a9a9f2058b",
+      "source_metadata_sha256": "7ed258f07abea8659f9b4079f3a4ed24489ff3f482dde2e6a3b7a9ffbe9d2f74",
+      "assembly_offset": [
+        0,
+        0
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_nw_walk_f1_single_v01.png",
+      "source_sha256": "c3303a8a0eb4ef5b054b6b9a54c65f8edd5069991cec8c0428895987acd89daf",
+      "source_metadata_sha256": "a6ece48f060903a40bb9ff27b570e923dfc0a79c32fc59c353f7a3c4730b6573",
+      "assembly_offset": [
+        1254,
+        0
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_nw_walk_f2_single_v02.png",
+      "source_sha256": "4d0193399b209212886b2d1069eb4213cc708437bb1a70337ec5cc45bd7e7769",
+      "source_metadata_sha256": "5212d55c48c96ed6a9e36c1d06ab5f23ad5dbd665a4b23b9d6fff67db4a6a36c",
+      "assembly_offset": [
+        0,
+        1254
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "source_file": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\frame_inputs\\sylphiette_set_nw_walk_f3_single_v01.png",
+      "source_sha256": "d156c15d45997282de3a0edaed196fa52c7f142eecaabd15d68cb6542cd77e94",
+      "source_metadata_sha256": "4c86f14c1788639f63f616564f54e5a8c39103b0766b5c6b25c925f634be1a84",
+      "assembly_offset": [
+        1254,
+        1254
+      ],
+      "native_dimensions": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "assembly_policy": "common maximum canvas via transparent right/bottom padding, integer placement only; no scaling, painting, warping or in-between synthesis",
+  "primary_visual_review": "authored singles inspected; full-clip calibration and transition review pending"
+}

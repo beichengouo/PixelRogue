@@ -1,0 +1,74 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-e272f67d-2ceb-4e7d-8761-1bc398fbd692.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit this transparent four-pose game sprite source. Rightmost hair in top-right pose is cut off at the canvas edge. Draw the COMPLETE curled outline of all hair tips and leave a clearly empty gutter on the right of every pose. Preserve four distinct walking phases.\nPreserve the same character face/head dimensions, compact skeleton, dark long hair, black and wine red calf-length legendary dress, gold embroidery, violet contract staff and barefoot anklets. Preserve each distinct pose and reading order. Exactly FOUR figures in 2x2 invisible equal cells. All full bodies and props inside their own cell with at least 8 percent transparent clearance at all sides. Do not crop anatomy, duplicate props or add hands. Do not put normal shoes back. Clear transparent background, no halos, marks, text, labels, numbers, grid lines, background, shadows or watermarks. Refined nonpixel handdrawn game art.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_move_attack3_v02.png",
+      "sha256": "497d977800ff0fc3902d643a08cd64dd219eafc74816b2b902e1c5e849502fe2"
+    }
+  ],
+  "sha256": "c8b86dcef69ef41b21d6f1d83bc8d77cb759785e5b5e35d437e273a55e336f63",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    11,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      11,
+      1254,
+      1254
+    ],
+    "8": [
+      55,
+      89,
+      1254,
+      1186
+    ],
+    "32": [
+      55,
+      89,
+      1253,
+      1185
+    ],
+    "128": [
+      56,
+      90,
+      1253,
+      1184
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Right hair still touches outer canvas; targeted redraw did not fix complete contour.",
+  "replacement": "xixifu_set_w_move_attack3_v04"
+}

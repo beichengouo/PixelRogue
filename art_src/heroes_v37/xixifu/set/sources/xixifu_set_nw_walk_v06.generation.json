@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_nw_walk_v06",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_nw_walk_v06.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-9f61136a-5fcf-43cf-82ec-0dd2d444b6d4.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_nw_walk_v06.png",
+  "built_in_imagegen": true,
+  "prompt": "Game sprite sheet, transparent background. Edit image 1 only to change the outfit and staff to image 2. Keep image 1 exact four full-body walking poses, identical head and torso size, hair, camera and centerline in every cell. The character is viewed from rear-left, walking away diagonally. Replace plain dress with the image 2 black cape/gold embroidered burgundy layered dress with hem at mid-calf, chain bells, and bare feet with gold anklets. Replace simple staff with image 2 staff held in the same hand. Four poses in chronological reading order: left foot forward, passing with right foot under hips, right foot forward, passing with left foot under hips. Preserve the actual alternate foot poses from image 1. Head, waist and pelvis are the same size throughout and do not wobble sideways. Exactly two arms and two legs per character, no extra hands, no duplicate staff. Equal 2x2 cells with complete hair, toes and staff and wide transparent margins. No numbers, letters, text, background, shadows or grid.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_nw_walk.png",
+      "sha256": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_nw_idle_v01.png",
+      "sha256": "a7189c07837de9ba77156d4f6196a684cfaae7044229671f8d3954e77d5e1536"
+    }
+  ],
+  "sha256": "8f54fae10a23162db9b0eb542e0f45a022e7c3b26b8974800e89f623048f4467",
+  "dimensions": [
+    1230,
+    1278
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1202,
+    1278
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1202,
+      1278
+    ],
+    "8": [
+      200,
+      33,
+      1107,
+      1197
+    ],
+    "32": [
+      201,
+      33,
+      1106,
+      1197
+    ],
+    "128": [
+      201,
+      33,
+      1106,
+      1196
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

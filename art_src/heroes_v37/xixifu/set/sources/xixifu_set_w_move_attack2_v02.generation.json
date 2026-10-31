@@ -1,0 +1,77 @@
+{
+  "asset": "xixifu_set_w_move_attack2_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack2_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-b26e4dc0-4e9f-4898-a9dc-e393c7cb5f21.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack2_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe edit of FOUR game animation frames.\nIMAGE 1 is EDIT TARGET: Xixifu NORMAL WEST strict left profile, action move_attack2. IMAGE 2 is only the LEGENDARY WARDROBE reference, not a pose to repeat.\nPreserve image 1's exact four DISTINCT consecutive action poses in reading order, anatomical hand positions and staff directions, compact skull and body ratios, eye identity and camera. This action is part of a continuous animation: do not replace all four poses with idle, do not repeat a single gesture. Do not change facial identity, add hats, grow taller or turn to face the camera. Keep absolute skull size and torso length identical across four cells; never enlarge a release pose. All four bodies fully visible.\nChange only the outfit, held staff and footwear to image 2's legendary form: modest black capelet with wine-red lining, layered wine-red mid-calf dress, restrained gold embroidery, red throat clasp, small contract bells and violet charms, compact ornate dark staff with violet crystal held by anatomical RIGHT hand in exactly the original hand position. Black charcoal eyes stay black, no glowing purple eyes. Replace BOTH boots/stockings with BARE FEET and delicate gold anklets with tiny violet charms. The legs have the same anatomical length as the normal body, not longer to fill a dress; preserve believable short calf and visible ankle. Show each foot's contact/passing pose clearly without a high slit or lifted dress. No shoes, heels or boots. Hair stays the SAME character length and volume and remains outside the lowered hood; complete tips and staff visible, not clipped.\n\n\nMatch the stable, compact refined nonpixel cel-painted V36 Xixifu drawing. No magic bolts, trails, fog, aura, background or extra creatures; game creates effects separately. All full hair tips, staff tips, anklets, toes and sleeves must be visible within their OWN cell.\nExactly FOUR full-body poses on transparent 2x2 equal-cell canvas. Center figures WITHIN EACH quadrant, head to foot occupying at most 80 percent of each quadrant height and width. Leave generous transparent margins on ALL sides, especially above the top row crowns and below the bottom row toes; do not copy image 1's tight framing. Uniformly make ALL FOUR figures slightly smaller to fit, never shorten limbs. No cell crossing or overlap. Preserve image 1's four distinct arm/leg gestures.\nTRUE transparent RGBA, no ground/shadows. NO numbers, letters, text, panel labels, grid/divider lines, borders, marks or watermarks. Clean runtime sprite source, NOT an instructional design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_move_attack2.png",
+      "sha256": "f55e4b05faa481748ea6401ec12b1598ea8db24485ea8bfd625b0b246784bdd5"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_idle_v01.png",
+      "sha256": "aa462cd45e44e7e0bcd3af6d9503bbe806798cd0733ba8ee82333ccaee09c6a0"
+    }
+  ],
+  "sha256": "9ae52be2336fa1e7f335d554f28169d5f99134ec5252251468170ca017b73bec",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    35,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      35,
+      1254,
+      1254
+    ],
+    "8": [
+      79,
+      60,
+      1251,
+      1184
+    ],
+    "32": [
+      79,
+      60,
+      1250,
+      1182
+    ],
+    "128": [
+      80,
+      61,
+      1250,
+      1181
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "replacement": "xixifu_set_w_move_attack2_v03"
+}

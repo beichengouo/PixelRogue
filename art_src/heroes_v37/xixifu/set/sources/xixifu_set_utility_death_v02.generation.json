@@ -1,0 +1,87 @@
+{
+  "asset": "xixifu_set_utility_death_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_utility_death_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-7f2e2548-92db-4070-9e1f-aa9c9f64be00.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_utility_death_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit this transparent four-pose game sprite source. Last lying body on bottom right touches the right edge. Recompose all four poses at 80 percent current scale with a broad clear border around each full pose. FULL hair, toes and staff on lying poses must be visible with clear space right of them; retain four states from standing to kneeling to lying. Do not merely expand the existing image with a blank border; reconstruct cut toe tips.\nPreserve the same character face/head dimensions, compact skeleton, dark long hair, black and wine red calf-length legendary dress, gold embroidery, violet contract staff and barefoot anklets. Preserve each distinct pose and reading order. Exactly FOUR figures in 2x2 invisible equal cells. All full bodies and props inside their own cell with at least 8 percent transparent clearance at all sides. Do not crop anatomy, duplicate props or add hands. Do not put normal shoes back. Clear transparent background, no halos, marks, text, labels, numbers, grid lines, background, shadows or watermarks. Refined nonpixel handdrawn game art.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_utility_death_v01.png",
+      "sha256": "3f1618c79971d14e437d3165155cfbbbd3cedf85ac817d18a24312573f9f8e73"
+    }
+  ],
+  "sha256": "c82a1a9944ef847d21539413bc0f205d5077d5ae21ee9ac2be0ac79044839578",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "utility",
+  "action": "death",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    19,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      19,
+      1240,
+      1254
+    ],
+    "8": [
+      21,
+      72,
+      1231,
+      1197
+    ],
+    "32": [
+      23,
+      72,
+      1230,
+      1197
+    ],
+    "128": [
+      23,
+      73,
+      1230,
+      1196
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "c82a1a9944ef847d21539413bc0f205d5077d5ae21ee9ac2be0ac79044839578",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "c82a1a9944ef847d21539413bc0f205d5077d5ae21ee9ac2be0ac79044839578",
+    "requires_landmark_review": false,
+    "head_registered_foot_deviations": [
+      1,
+      1,
+      0,
+      1
+    ],
+    "visual_approved": false
+  }
+}

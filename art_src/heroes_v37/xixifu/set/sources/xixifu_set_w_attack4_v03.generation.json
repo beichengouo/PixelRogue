@@ -1,0 +1,77 @@
+{
+  "asset": "xixifu_set_w_attack4_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_attack4_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-03410d57-1f00-4cd8-85b1-a963259056bd.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_attack4_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. In the two RIGHT-HAND sprites ONLY, curl trailing hair tips inward BEFORE the right canvas edge, leaving at least40px alpha gutter. Reconstruct complete curled hair ends. Do not move or resize head, body, legs, hands or staff. Other pixels and poses unchanged. Preserve refined nonpixel Xixifu, black and wine-red ornate legendary outfit, full hair, one violet staff, calf-length dress, two hands, no extra limbs. FOUR full bodies in transparent 2x2 cells. No ground, shadows, background, effects, marks, labels, numbers, letters, divider or watermark. Complete hair/staff/toes inside each cell.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_attack4_v02.png",
+      "sha256": "2b3a399e8627d1c3f929e11f18d86b1cb296e4a1fb28fae14a167412487a6430"
+    }
+  ],
+  "sha256": "47336395f1e9ce7d7b6651376ea9557049a7a0bb3ba4c9c5939f81ad669402ae",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    28,
+    1228,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      28,
+      1228,
+      1254
+    ],
+    "8": [
+      77,
+      30,
+      1218,
+      1205
+    ],
+    "32": [
+      78,
+      31,
+      1218,
+      1205
+    ],
+    "128": [
+      79,
+      31,
+      1217,
+      1204
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "47336395f1e9ce7d7b6651376ea9557049a7a0bb3ba4c9c5939f81ad669402ae",
+    "pass": false,
+    "reason": "('head-size drift', 'attack4', [2.013013163805825, 1.817219797329965, 1.8551710448793899, 1.9380198298046392])"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "asset": "xixifu_set_sw_walk_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_sw_walk_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-a3f03809-9d96-4f20-8931-8a2eda991658.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_sw_walk_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Production game sprite source for PixelRogue: Xixifu legendary outfit, SOUTHWEST/front-left three-quarter walking cycle. Image 1 is the exact primary character identity, compact body anatomy, costume, right-hand staff, bare feet and anklets. Image 2 is the existing normal-outfit SOUTHWEST/front-left three-quarter WALK used only for gameplay viewing elevation and four-phase gait; do not copy its boots, normal robe or simple staff.\n\nDraw exactly FOUR full-body figures of the SAME character as image 1, arranged in an even 2x2 grid with four equal cells. Reading order top-left, top-right, bottom-left, bottom-right is the actual continuous walking loop: anatomical right foot forward/left foot back; passing pose with right foot moving directly UNDER the pelvis while left supports; anatomical left foot forward/right foot back; passing pose with left foot moving directly UNDER pelvis while right supports. Alternate planted and lifting bare feet naturally, distinguish the passing positions from the two stride extremes. All torsos face diagonally downscreen-left throughout, both eyes visible with correct three-quarter projection; do not turn toward front, do not yaw sideways. No whole-body scaling, head bob, jumps or swaying. A mild 15-degree top-down RPG viewing elevation. Head, neck, shoulder, hip and leg lengths IDENTICAL in all four cells, precisely the compact approximately 2.7-head body of image 1. Hair and cape move only slightly; character crown and grounded sole height and center align in each cell. The actual step motion is in the knees, ankles, and passing feet, not alternating torso leans. Calf-length dress must keep enough bare feet visible to read each step.\n\nLegendary appearance: black/charcoal long hair, black charcoal eyes (no luminous purple eyes), modest black short cape with wine-red lining, layered wine-red mid-calf dress with fine gold edging, red clasp, readable few contract bells and violet charms, no extra excessive chains; delicate gold anklets and bare feet with toes, NO boots, shoes, stockings, heels. The anatomical RIGHT hand holds the same complete ornate dark compact purple-crystal staff in all four cells; LEFT hand relaxed beside dress, no swapped hands. Weapon-hand silhouette and visibility exactly follow the primary same-direction idle reference. Keep the torso and dress identical in size, not a new tall version. All hair tips, staff, fingers, dress hems and bare toes fully inside each quadrant, at least 8% generous empty margin to every cell edge. No overlap between figures.\n\nTRUE TRANSPARENT square canvas. NO text, NO numbering, NO frame labels, NO watermark, NO grid lines, NO guides, NO divider, NO borders, NO ground shadows or floor. No magical glow, projectiles, effects, extra creatures or props. This is a clean runtime-cropping sprite source, NOT an annotated action design sheet. Refined compact nonpixel soft cel illustration matching image 1, broad hair masses, restrained linework, flat consistent lighting. Do not turn it into photorealism or pixel art. Four different authored leg poses, stable identical face and proportions.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_sw_idle_v01.png",
+      "sha256": "4e6fd859e58d0294205d18d2ee22290c62164ab2e55d11bbca652c62b754d218"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_sw_walk.png",
+      "sha256": "179429f6210a3aba108843fb19df6171708e3e2d77f7994d7516d074b3a9706a"
+    }
+  ],
+  "sha256": "bcfb196a4832f3c926704509b6ca1123a7847e1e00e45122ad32e0ac1ff65324",
+  "dimensions": [
+    1448,
+    1086
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "superseded_needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "excluded_from_crop_input",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    33,
+    10,
+    1410,
+    1086
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      33,
+      10,
+      1410,
+      1086
+    ],
+    "8": [
+      339,
+      14,
+      1220,
+      1064
+    ],
+    "32": [
+      339,
+      14,
+      1219,
+      1062
+    ],
+    "128": [
+      340,
+      14,
+      1218,
+      1062
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "replacement": "xixifu_set_sw_walk_v02",
+  "reason": "head registration size drift 5.61 percent exceeds walk limit"
+}

@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_set_nw_move_attack2_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_nw_move_attack2_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-81dc86e5-70c5-431b-acad-481cce8a7da5.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_nw_move_attack2_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "局部修复图1四帧游戏精灵，图2仅参考正确服装和新月杖头。四帧杖头统一为金色新月包蓝宝珠，不保留云纹杖头。右下人物的腰边旧垂手与袖口必须删除，抬在胸前的左手保留为唯一空手。其余头部、脸、兜帽、银发、身体尺寸、白金深蓝礼服、四相脚步、画布位置及整体画风保持不变，绝不重新设计人物。每个人只有两只手：右手持唯一法杖，左手单掌祷术；禁止双掌合十再持杖，禁止留下旧垂手或第三条袖子。移动空手时必须移动它的整个袖子，删除旧位置。四个完整人物的发梢、兜帽、杖尖、双鞋均须留在各自单元内，四周充分透明留白，必要时给整张增加透明画布，不能裁切。2x2四帧，透明背景，无文字序号、边框、光效、投射物、阴影、背景。",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_nw_move_attack2_v01.png",
+      "sha256": "6fedc39b0d861db7f89c8889b6c9779062b31a548d765204f97b2d3ca6954cf5"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_nw_idle_v01.png",
+      "sha256": "f65eae99dad597e99e03e2c3c518fa55946b7b7e172c82203b8e9ba06cc7082f"
+    }
+  ],
+  "sha256": "6204662a83ed17d9f8f94fb64c4601d3d71bcfa93eec1cbb6ddcd653f53cc2b9",
+  "dimensions": [
+    1230,
+    1278
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1216,
+    1278
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      23,
+      1216,
+      1278
+    ],
+    "8": [
+      112,
+      28,
+      1165,
+      1210
+    ],
+    "32": [
+      112,
+      28,
+      1165,
+      1210
+    ],
+    "128": [
+      112,
+      29,
+      1164,
+      1209
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_w_move_attack3_v07",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_w_move_attack3_v07.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-19b76481-1c7c-48b6-9b92-c4305e3f0954.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_w_move_attack3_v07.png",
+  "built_in_imagegen": true,
+  "prompt": "Game animation costume edit. Image 1 is the exact body, head proportions and four pose reference; image 2 is the outfit and staff reference. Repaint image 1 with image 2 costume: calf-length burgundy layered dress, black gold embroidered cape with bells and amethysts, barefoot and gold anklets. Keep the same identical head/face size and hair silhouette in all four frames. Same strict left-facing side view in every frame, stable torso dimensions. Four consecutive walking-while-casting poses: wide left contact, narrow feet passing, wide right contact, narrow feet passing. One ornate staff and precisely two arms and two hands; no lower remnant hand after free arm raises. Four FULL characters, all hair including trailing hair and all toes, no clipping. Enlarge transparent outer margins and spacing to fit the complete hair and full staff in each equal 2x2 cell. No text, numbers, dividers, magic effects or background. All figures are the same size.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_w_move_attack3.png",
+      "sha256": "e2dced3e36eb0362f370899c2208cf014186f31af254d324d2516a9731d439cf"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_w_idle_v01.png",
+      "sha256": "aa462cd45e44e7e0bcd3af6d9503bbe806798cd0733ba8ee82333ccaee09c6a0"
+    }
+  ],
+  "sha256": "af2d68f1588098114c953d2b224b065f4e7f0543e8e4b98d5920e48a1096b369",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "w",
+  "action": "move_attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    9,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      9,
+      1254,
+      1254
+    ],
+    "8": [
+      56,
+      79,
+      1254,
+      1187
+    ],
+    "32": [
+      58,
+      79,
+      1254,
+      1186
+    ],
+    "128": [
+      59,
+      79,
+      1254,
+      1186
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

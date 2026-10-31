@@ -1,0 +1,91 @@
+{
+  "asset": "xixifu_set_s_move_attack1_v02",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_move_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-68387cfd-9e42-4170-a9e9-611fd0b2439c.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_s_move_attack1_v02.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise local animation edit. IMAGE 1 IS THE EDIT TARGET: Xixifu legendary WALK, four consecutive poses. IMAGE 2 is ONLY a reference for the four arm/staff gestures of attack stage 1. Keep image 1's exact four faces, identical skull size, hair, torso, clothing construction, skirt length, viewing angle, bare feet and anklets. MOST IMPORTANT keep all FOUR leg poses and their alternation from image 1 unchanged: do not redraw all legs into one pose, do not lose the rear foot, do not make her hop on one leg. Preserve the passing steps in top-right and bottom-right and opposite leading foot in bottom-left compared to top-left. Preserve the SAME torso/shoulder position in each cell; no lateral waggle or camera turn. Do not copy boots or simple clothing from image 2.\nChange ONLY the upper arms, hands, sleeves and held legendary staff to perform the FOUR consecutive arm/staff gestures in image 2 in the same reading order. Her staff keeps image 1's ornate dark-gold/violet legendary head, correct anatomical RIGHT hand. In two-handed poses the left hand supports the shaft; do not add extra arms. Preserve black eyes, lowered hood, long dark-violet hair, black capelet and wine-red layered calf-length dress, gold trim and bells, barefoot gold anklets. Don't lift skirt, expose thighs, or remove a foot. Preserve compact nonpixel hand-painted cel style.\nExactly FOUR isolated full bodies in 2x2 layout on a truly transparent canvas. Include complete staff tip and all hair tips inside canvas with generous transparent padding. If a raised staff needs room, recompose all four subjects equally smaller, never crop any body or tip. No overlapping figures. NO text, numbers, letters, guide lines, watermark, labels, aura, magic effects, floor, shadow, backdrop or additional figures. This is clean runtime source, not a design board.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_s_walk_v02.png",
+      "sha256": "ca09bdb30e98e8fc3d776f41e7d893ec108c38bfab888ac13b93dc2f888478a0"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_s_move_attack1.png",
+      "sha256": "eb13b454da648266059078e587de1dc3925b2cb2757fc4d86b5aa67669130745"
+    }
+  ],
+  "sha256": "b5090161c4f6e3b84df9d6d107b52cc9eedec62034c58bc2f5ed7a13d91a5cf9",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    21,
+    1234,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      21,
+      1234,
+      1254
+    ],
+    "8": [
+      140,
+      51,
+      1148,
+      1209
+    ],
+    "32": [
+      140,
+      51,
+      1147,
+      1209
+    ],
+    "128": [
+      141,
+      52,
+      1147,
+      1208
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "b5090161c4f6e3b84df9d6d107b52cc9eedec62034c58bc2f5ed7a13d91a5cf9",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "b5090161c4f6e3b84df9d6d107b52cc9eedec62034c58bc2f5ed7a13d91a5cf9",
+    "requires_landmark_review": true,
+    "head_registered_foot_deviations": [
+      -15,
+      -14,
+      -17,
+      -18
+    ],
+    "visual_approved": false
+  }
+}

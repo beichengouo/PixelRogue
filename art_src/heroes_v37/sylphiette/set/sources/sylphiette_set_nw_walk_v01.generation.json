@@ -1,0 +1,84 @@
+{
+  "asset": "sylphiette_set_nw_walk_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_nw_walk_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-fb5b33c2-73ea-4bfa-87ab-45244b58ab17.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve / game animation. IMAGE1 is PRIMARY EXACT character identity/costume/body geometry and viewing direction reference, an idle sprite. IMAGE2 supplies ONLY the four clear foot/knee WALKING PHASES and 2x2 layout in the same view; do NOT copy Xixifu character, her face, clothes, hair, staff or boots. Create exactly FOUR full-body sprites of image1 character in equal 2x2 cells, pure transparent background. Face NORTHWEST rear-left facing away up-left, no eyes in ALL four cells, never rotate toward viewer or rock side-to-side. Hold exact skull/head size and neck/shoulder/waist height steady in all frames; same compact short torso/limbs as image1, do not stretch body. Soft nonpixel hand-painted compact miniature, clean colored outlines, restrained cel shading matching image1. Read order top-left,top-right,bottom-left,bottom-right: left foot forward/right back; right foot passing directly UNDER pelvis close to planted left leg with knee bent; right foot forward/left back; left foot passing directly UNDER pelvis close to planted right leg with knee bent. BOTH intermediate passing poses must be genuinely drawn, not just repeated endpoint stances. Keep head and torso vertical stable, a little knee bend/pelvis bob only; no upperbody sway or tilt as movement substitute. Cloth hem follows steps slightly but exact same garment construction per frame. Face/hair/weapon model fixed, not a different person between poses. No motion blur or smearing. Maintain full feet/crown/bow or staff/hair inside EACH cell with at least10% transparent vertical margin and15% horizontal margins; if necessary fit all figures uniformly smaller within their cells, do NOT shrink one head or shorten legs. Equal scale/body origin and grounded sole anchor in all cells. No physical floor or drop shadow. NO text/numbers/labels/dividers/grid/guidelines/border/watermark/background/effects/extra creatures or figures. Sylphiette keeps gold staff in anatomical RIGHT hand, LEFT empty; silver hair/blue eyes. Legendary white/gold NUN HOOD UP deep navy lining, hair emerges below hood lower rim, simple blue sapphire collar; staff head OPEN GOLD CRESCENT/flame prongs around BLUE orb, never cloud-scroll. All hair and cloth overlap physically correct.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_nw_idle_v01.png",
+      "sha256": "f65eae99dad597e99e03e2c3c518fa55946b7b7e172c82203b8e9ba06cc7082f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v36\\xixifu\\normal\\sources\\xixifu_normal_nw_walk.png",
+      "sha256": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f"
+    }
+  ],
+  "sha256": "b133a625ede87c7cd4419c0ae081c4ef14059782d3e0b1213e59d970d9597f35",
+  "dimensions": [
+    1230,
+    1278
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    29,
+    1216,
+    1278
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    29,
+    1216,
+    1278
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      29,
+      1216,
+      1278
+    ],
+    "8": [
+      183,
+      31,
+      1119,
+      1207
+    ],
+    "32": [
+      183,
+      31,
+      1119,
+      1207
+    ],
+    "128": [
+      184,
+      32,
+      1119,
+      1206
+    ]
+  }
+}

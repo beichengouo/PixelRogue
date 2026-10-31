@@ -1,0 +1,76 @@
+{
+  "asset": "xixifu_set_n_move_attack5_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack5_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-07ac90a7-1948-4ce1-8246-bccb242714ec.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_n_move_attack5_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit image 1 only to make the four heads and bodies MATCH image 2 exact model proportions. All four rear-view heads must have identical skull width and height, with the same muted black-plum hair and same small highlights as image 2. Keep the four original arm gestures, staff, calf-length burgundy dress and gold cape, alternating left/right walking feet and narrow passing poses. Exactly two arms/two hands/two legs/two feet per character. Preserve 2x2 layout and complete figures with generous transparent margins above staff and below feet. No text, numbers, background, glow, fog, shadows or grid.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_move_attack5_v02.png",
+      "sha256": "ef033b47635ed7108e326abbb75d6f9cf5cd3c13650f06d13d48eccd75533464"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/xixifu/set/sources/xixifu_set_n_idle_v01.png",
+      "sha256": "13429538ae354fd9400e32188252a037c6f5dfbea6ac5ade47eb2bcebca8c311"
+    }
+  ],
+  "sha256": "4d03815c9831b238854d2b787166f7dcc78e664151e2cdea27e652021f730a4e",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "move_attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    33,
+    0,
+    1490,
+    1010
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      33,
+      0,
+      1490,
+      1010
+    ],
+    "8": [
+      329,
+      13,
+      1398,
+      978
+    ],
+    "32": [
+      329,
+      13,
+      1398,
+      978
+    ],
+    "128": [
+      330,
+      14,
+      1397,
+      978
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

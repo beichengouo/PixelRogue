@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_set_w_move_attack4_v01",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_w_move_attack4_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-2f9039e6-4315-4d37-b2f0-de821073ee13.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_w_move_attack4_v01.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve. Precise wardrobe-only edit of image1's FOUR DISTINCT continuous attack poses. Image2 is legendary outfit reference ONLY. Preserve image1's EXACT skull/face, skeleton, body lengths, viewing direction, all4 authored hand/arm poses, foot stance and staff aim. DO NOT copy image2 resting hands, no extra waist fist. Change only clothing and staff design: WHITE/GOLD raised nun-style hood with DARK NAVY lining, complete smooth hood framing face without clipping hair, modest hooded capelet, whitegold calf-length layered ritual dress with deeper navy inner sleeves, blue sapphire throat clasp, whitegold flat shoes; same silverhair BLUEEYES. Staff uses image2's exact GOLD BLUEORB head design for this viewing direction, ONE whole staff in anatomical RIGHT hand as original. Anatomical LEFT is the only free hand, no swap. ExactlyTWO arms/hands. Keep compact normal body proportions, same torso/leg lengths beneath outfit. No crown/halo, no whitehair turned blond. Four consecutive ready/lead/release/followthrough poses remain DISTINCT; do not replace action with four resting copies. All four heads identical native size, no squat/stretch/sway. Full hair/hood/staff/shoes inside own cell with generous transparent margin, 2x2 equal cells. Pure alpha, no numbers, text, labels, borders, panel lines, shadows, background, glow, marks or effects. Refined nonpixel cel game illustration.\nImage1 is the current complete normal-form move_attack4 source; image2 is outfit reference only. Keep image1 exact native face/skull, shoulders, waist, skeleton and four gait phases. A hood may surround the SAME head, never reduce the head/face to fit it. Match image2 hood and cape construction; hair emerges naturally below hood, never pierces hood. Match image2 crescent staff head, no cloud-scroll head left over. Do not copy image2 idle hands or planted legs. Every figure is MOVING: preserve contact/passing/opposite-contact/opposite-passing leg silhouettes of image1, including visible shoes below calf hem. No static repeated step or turning body. One right hand holds staff; one LEFT free palm. NEVER two palms pressed together while also holding staff. In a prayer pose LEFT hand alone stays open and visible, right hand remains holding staff. Delete any old resting left hand/sleeve after moving it. No third wrist, extra arm, detached hand. Generous transparent padding around every full body including raised staff tip. Four equal 2x2 cells, no design labels. Keep the reading order and refined nonpixel style.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\normal\\sources\\sylphiette_normal_w_move_attack4_v02.png",
+      "sha256": "2355374f3abe9285684226f158a871d5ca3512e4a26c9e278ceefc4c8b6af1b8"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_w_idle_v01.png",
+      "sha256": "08b23026b265a36e233b9b90dccf79921b9d3c7babe53f8ea1107a70b8215454"
+    }
+  ],
+  "sha256": "2d32af9a5b082b662eecbf11993b6f5d950a35ad8aa1b15c9c4e7021bbc610b4",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "w",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    1,
+    1242,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      1,
+      1242,
+      1254
+    ],
+    "8": [
+      142,
+      30,
+      1194,
+      1226
+    ],
+    "32": [
+      142,
+      30,
+      1193,
+      1225
+    ],
+    "128": [
+      143,
+      31,
+      1193,
+      1225
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,77 @@
+{
+  "asset": "sylphiette_set_sw_attack2_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_attack2_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-e7bef9d0-d5cb-4926-b5aa-7ee196ec4813.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_sw_attack2_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Recompose all four full-body sprites in image1 with ample transparent space, preserve their four authored arm positions and exact image2 character design. Scale each entire figure to fit the inner 72 percent of its own 2x2 cell; preserve stable and equal head and body proportions. Restore complete hair, hood, staff, hands, hem and feet, with at least 10 percent clear space from all edges and gutters. Exactly two arms, one staff in the same hand. No text, numbers, outlines, glow, background, effects, or frames. Transparent PNG and nonpixel cel game style.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_attack2_v02.png",
+      "sha256": "95a4650ef2439815cc8a2da0ce2eaab6f700ba6f7515146804ea6aece3499ce6"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\sylphiette\\set\\sources\\sylphiette_set_sw_idle_v01.png",
+      "sha256": "2a741f7f528ac76b3bca3b685aa00e373a041aedae1407056f69543d5727f9a1"
+    }
+  ],
+  "sha256": "ca6a83c63322ddca497a4892a07503a1464a3c42eb37aa17a563d1aec5505853",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "sw",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1253,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      17,
+      1253,
+      1254
+    ],
+    "8": [
+      54,
+      44,
+      1240,
+      1216
+    ],
+    "32": [
+      54,
+      44,
+      1240,
+      1214
+    ],
+    "128": [
+      55,
+      45,
+      1239,
+      1214
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "review_reason": "Head-size drift beyond tolerance."
+}

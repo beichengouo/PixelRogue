@@ -1,0 +1,87 @@
+{
+  "asset": "xixifu_set_s_move_attack4_v03",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/xixifu/set/sources/xixifu_set_s_move_attack4_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-4e01486b-bd7d-43db-98f4-9e51d53fb433.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\xixifu_set_s_move_attack4_v03.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit this transparent four-pose game sprite source. Top-left raised staff ornament is clipped at the top edge. Lower the staff to horizontal above her head, fully inside cell with ornament well below top edge. Keep all four alternating walking foot phases.\nPreserve the same character face/head dimensions, compact skeleton, dark long hair, black and wine red calf-length legendary dress, gold embroidery, violet contract staff and barefoot anklets. Preserve each distinct pose and reading order. Exactly FOUR figures in 2x2 invisible equal cells. All full bodies and props inside their own cell with at least 8 percent transparent clearance at all sides. Do not crop anatomy, duplicate props or add hands. Do not put normal shoes back. Clear transparent background, no halos, marks, text, labels, numbers, grid lines, background, shadows or watermarks. Refined nonpixel handdrawn game art.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\xixifu\\set\\sources\\xixifu_set_s_move_attack4_v02.png",
+      "sha256": "69145535d61bd0ac1e725d131afb3e5e72067b3beac46be2eaf5834f2721ab5f"
+    }
+  ],
+  "sha256": "aa41966e43949bb741aded88e72f4ecfb0121b00b6d711d148170230cd90b111",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "s",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    77,
+    29,
+    1238,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      77,
+      29,
+      1238,
+      1254
+    ],
+    "8": [
+      136,
+      65,
+      1228,
+      1208
+    ],
+    "32": [
+      136,
+      66,
+      1228,
+      1208
+    ],
+    "128": [
+      137,
+      66,
+      1227,
+      1207
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen",
+  "technical_registration": {
+    "source_sha256": "aa41966e43949bb741aded88e72f4ecfb0121b00b6d711d148170230cd90b111",
+    "pass": true
+  },
+  "grounded_body_review": {
+    "source_sha256": "aa41966e43949bb741aded88e72f4ecfb0121b00b6d711d148170230cd90b111",
+    "requires_landmark_review": true,
+    "head_registered_foot_deviations": [
+      -19,
+      -17,
+      -11,
+      -12
+    ],
+    "visual_approved": false
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "asset": "sylphiette_set_sw_idle_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_idle_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-5f7c05e8-a254-48e6-b683-d1f501376d8a.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\sylphiette_set_sw_idle_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise-object-edit: image1 is EDIT TARGET, image2 is ONLY weapon style reference. Output one isolated full-body sprite exactly preserving image1 head/face/hood/hair/body/feet, head-to-body proportion, canvas size and pixel placement, all garment folds and colors. Change ONLY the gold staff head: replace its rounded cloud/scroll design with the gold open crescent embracing a blue orb seen in image2. Crescent tips taper upward, no cloud scroll on top, keep existing grip and angle, same overall weapon length. Do not turn character to side view or imitate image2 pose. Keep the exact front/diagonal view from image1. No other changes. Transparent alpha, crisp edges, no text, labels, number, glow or background. Complete head, hair, staff tip and shoes with original margins.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_sw_idle_v01.png",
+      "sha256": "2a741f7f528ac76b3bca3b685aa00e373a041aedae1407056f69543d5727f9a1"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/sylphiette/set/sources/sylphiette_set_w_idle_v01.png",
+      "sha256": "08b23026b265a36e233b9b90dccf79921b9d3c7babe53f8ea1107a70b8215454"
+    }
+  ],
+  "sha256": "c2aedb3079fc8aa3ab3981d4813f58bcff52b4b1c0157a495662aacca48ae64c",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "sw",
+  "action": "idle",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    45,
+    23,
+    1224,
+    1194
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      45,
+      23,
+      1224,
+      1194
+    ],
+    "8": [
+      267,
+      113,
+      1079,
+      1189
+    ],
+    "32": [
+      267,
+      113,
+      1078,
+      1189
+    ],
+    "128": [
+      267,
+      114,
+      1078,
+      1189
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}
