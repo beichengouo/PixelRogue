@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_n_walk_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_walk_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a177f5-3f0f-7993-88a6-3c89d553a5f3\\exec-47ad0071-e9f8-4ab4-b7dc-c3a2fc299501.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: precise-object-edit. Edit image1 four-frame transparent walking sprite SOURCE. Correct ONE consistency issue: the lower two figures have slightly larger heads/hoods than upper figures; render ALL FOUR figures at exactly the same head/hood and compact body scale matching top-left frame. Same skull width/height and hood dimensions, same shoulder/waist height, rigid un-tilted head. Maintain the original FOUR distinct legs walking poses in their original 2x2 order, especially intermediate passing feet directly beneath pelvis. Do not change direct BACK facing away view, costume, sage hair, hood gold leaves, left-held bow at viewer-left, right hip quiver at viewer-right, or brown boots. Image2 is original same character idle for identity/garment geometry. Same soft nonpixel hand-painted miniature quality, no new feature. Leave generous clean transparent room around EVERY full body in each quadrant; no cut tips or feet. Remove disconnected stray speckles outside figure; pure empty alpha background. NO text/numbers/labels/guides/grid/shadows/floor/effects. All four full-body silhouettes must remain intact inside their own 2x2 cells, no mirroring or turning.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_walk_v01.png",
+      "sha256": "514dbaa52e9237d5aaf80380af8636167aa4c2c71d4186a58b63f95cad8f0587"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    }
+  ],
+  "sha256": "c6bee5fe4e4c27b423c0d121cc281cfd20b5f489c50a2f94e41680ee79110f95",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    13,
+    1200,
+    1220
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    13,
+    1200,
+    1220
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      13,
+      1200,
+      1220
+    ],
+    "8": [
+      208,
+      58,
+      1046,
+      1210
+    ],
+    "32": [
+      208,
+      58,
+      1046,
+      1210
+    ],
+    "128": [
+      209,
+      59,
+      1045,
+      1209
+    ]
+  }
+}

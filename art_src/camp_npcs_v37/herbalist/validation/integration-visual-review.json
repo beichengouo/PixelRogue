@@ -1,0 +1,30 @@
+{
+  "resident_id": "herbalist",
+  "manual_review_complete": true,
+  "criteria": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged.",
+  "review_scope": "12 selected clips: 5 idle directions, 5 four-frame walks, four-frame occupational rest and talk",
+  "user_approved_individual_frames": false,
+  "calibration_sha256": "6b449021acf351b30d07232b2331ca07d3e60a41cddbb551459fb32839424aef",
+  "source_sha256": {
+    "herbalist_n_walk_v01": "23a35a206e62767897c042103e3169f670e4ff774b62655f8b93eb57944ed60f",
+    "herbalist_neutral_cardinal_v01": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+    "herbalist_neutral_diagonal_v01": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+    "herbalist_nw_walk_v01": "01034666a4ed3bfc09fb9cbb804870954d12d492cca59e21b4bc9f34c80badfa",
+    "herbalist_s_walk_v01": "ca9085b26fd82773ff0d3908ef40a3d6f9a7521fa6c554a71f6d7d010dbb3b5e",
+    "herbalist_sw_walk_v02": "4ba9338c64501dd7fab10826253e858d89a7e0fcd031a7c2ae4ac2af6188fcde",
+    "herbalist_utility_rest_v01": "cf0d6c6ff25570abb533c7409fa1621f2b5598e97b70913a2f5e5ddd27e0e172",
+    "herbalist_utility_talk_v01": "e7dab80f80b8095396d049496dc9d39df3c8cffceb17fd502af8361a4eef6bc7",
+    "herbalist_w_walk_v01": "a4e453b28f500558828a32ec334690bd001eb69a1992e0148e301c7cceee4137"
+  },
+  "source_metadata_sha256": {
+    "herbalist_n_walk_v01": "7f2f730f3b59981f1bd8e51c8135d3f5b6593c3d0e6f37a13507a317d9e4ee8c",
+    "herbalist_neutral_cardinal_v01": "2b945df1743eeae125948e53af6ce043dbae60f8e6acff387f744275a1e42564",
+    "herbalist_neutral_diagonal_v01": "e85ba9b174ffc7871c2ed17bdae3de0ece0b29b3f4cdd23b3b346a8fa4c4dc0b",
+    "herbalist_nw_walk_v01": "a3cbc2d317fa23409a475bdcaf7d037d03b0935ed4de3a83a616734a9d1dbcf4",
+    "herbalist_s_walk_v01": "6a06ecb84c759f6f6677435bcb22b575bc9f687bcd99bcf3de451c87eb849532",
+    "herbalist_sw_walk_v02": "f031f36a241b1f2596d1ffb3eae802c927fcbd6ba2dbb1b31fb06fe34860cd9f",
+    "herbalist_utility_rest_v01": "a404b3b36dab60bb7f78c8475fb5053dea2ed1d443aaae41b45299687cf53d81",
+    "herbalist_utility_talk_v01": "1a70912c728f59e7fbc3cbc254120d1752480d1379fe47bd042c7ce65d4c3627",
+    "herbalist_w_walk_v01": "66194b3c8563dd90ae10e11bc3605495454495ed8bb1f5f10857140e1c2e672e"
+  }
+}

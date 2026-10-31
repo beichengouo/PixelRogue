@@ -1,0 +1,13 @@
+{
+  "key": "xixifu_normal_s_move_attack3",
+  "provider": "built-in image_gen",
+  "prompt": "Precise arms-only sprite edit of IMAGE1's2x2 FOUR-FRAME walking cycle. IMAGE1 is the immutable target anatomy/gait. Preserve its FOUR HEADS/FACES/TORSOS/HAIR/WAIST/ROBE HEM and EVERY LEG/BOOT in their EXACT current lengths, positions, overlaps and TL/TR/BL/BR walking order. Do not redraw or mirror legs, do not duplicate top-row legs in bottom-row, do not make feet planted stationary. BOTH original passing feet underhipcenter and opposite contact legs must survive. Edit ONLY arms/hands/sleeves and smallpurplecrystal wooden staff of eachfigure, using corresponding4armposes from IMAGE2 as reference. IMAGE2 is ONLY arm-pose reference: do NOT copy its head, body, legs, proportions, camera or foot positions. Same anatomical RIGHT primary grip all4; normal human girl ordinary charcoalrobe/lavenderlining/silverbutterflyclasp/clothwaisttie/darkleggings/shortblackboots/nearblacklonghair over loweredhood/darkirises. Same smooth nonpixel2-3tone handdrawn style. No wholebody scaling/squat/lean/head turn/sway. Physical arms articulate one connected prepare/release/followthrough/bridge segment, NOT four repeat pulses; no returntoneutral between stages1-4. Allhair/staff/hand/boot tips complete inside transparentmargins, preserve2x2 layout and actual transparency. NO shotbolts/trails/glow/fog/FX/runes/shadows/background/text. Four FULL figures only.\nStage3 arms SOUTH FRONT: starts raised diagonal wrist, crosses staff laterally at upperchest; second frame crystal points toward viewer for sweeprelease; third follows arc diagonallyupward; fourth staff held above crown on same right/viewerLEFT hand. No head/torso bend. Keep exactly original targetwalklegs.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_walk.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack3.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-9bbe0356-9695-4909-bae0-f94ab43ebd6e.png",
+  "transparent_background": true,
+  "review": "candidate_unvalidated",
+  "runtime_integrated": false
+}

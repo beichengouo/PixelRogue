@@ -1,0 +1,30 @@
+{
+  "resident_id": "minstrel",
+  "manual_review_complete": true,
+  "criteria": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged.",
+  "review_scope": "12 selected clips: 5 idle directions, 5 four-frame walks, four-frame occupational rest and talk",
+  "user_approved_individual_frames": false,
+  "calibration_sha256": "34ad71febc826434436b343bf71737d742bd12492e7608819c78914cac31022c",
+  "source_sha256": {
+    "minstrel_n_walk_v01": "541bdd95bb2c63c65f0f34e9272c8c471c718448e8d431b00cb4ffbba1cc21c2",
+    "minstrel_neutral_cardinal_v01": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+    "minstrel_neutral_diagonal_v01": "1afe065a0a1f245cc2125ba4525d9a8db2c29d8ec0026798941eb316d5ca9dee",
+    "minstrel_nw_walk_v01": "3a41b00dc49a087eb00ef03efca81930e0c72dda6475ef20c42a90be2703aaf2",
+    "minstrel_s_walk_v01": "95a105ce0ff652f7343f694e6c5225224ebea0a064965b632bb3231c10c39470",
+    "minstrel_sw_walk_v02": "fe5237c7e465b5e641057d0d61a55d04ab000d1c73ffa39e222a141ae168d55e",
+    "minstrel_utility_rest_v01": "6f6f262f83369108bb3f52af2c174e480e2a35f4893a33032f5ec7ddd61a2cc4",
+    "minstrel_utility_talk_v01": "f6da9f7a33d63c10c858cd82371fc0aceb35e5f0a5e5579cf8533ece23a04fbe",
+    "minstrel_w_walk_v01": "627f7746ce278992a0032cf8ce23a8b776cd8c4159a7601b2ccd078bf9e2b9e8"
+  },
+  "source_metadata_sha256": {
+    "minstrel_n_walk_v01": "6f211e866f3d3ed5e45e1c311b580a27c39693f77e4601cc747ea839b7edc7dc",
+    "minstrel_neutral_cardinal_v01": "7a86d670a1bbfad745f02ff3263df801c7f2d1cfba27dced0a4d534a9a0e6b31",
+    "minstrel_neutral_diagonal_v01": "4e49a02dda26713a5e5fddc373c2853263dada87dc48083b86158263a25af1bb",
+    "minstrel_nw_walk_v01": "2a476233b6bd4388037c2b69dbfe883ff1d603aaab294683d096580f5e56bbca",
+    "minstrel_s_walk_v01": "0ce86e79903a2d1f700ed719e020612a34c61190c27011d35cabd9e41341ebd2",
+    "minstrel_sw_walk_v02": "d79e23a9f4c0aedad3d3c0cb6b85e6e1b90fd01f49672cee601398871b4d1487",
+    "minstrel_utility_rest_v01": "64552dc98e341040fc5fb7fb298a00a4958334f4f3a821f148f9b988a6724674",
+    "minstrel_utility_talk_v01": "58eff427e075e510da92fd6053ff473f808abdca67001f99fba3e6bc4cfe38f2",
+    "minstrel_w_walk_v01": "c9f3ca51460780df23086e95779cd421cd6cbaeb6c1db80c80d325246404132c"
+  }
+}

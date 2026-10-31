@@ -1,0 +1,47 @@
+{
+  "name": "surveyor_sw_walk_v02",
+  "id": "surveyor",
+  "kind": "runtime_clip",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_sw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve. Asset: hand-painted NONPIXEL miniature NPC four-frame animation. Input image is the EXACT canonical single neutral model, not a suggestion. Keep the same compact 2.7-head proportions and SAME skull size, face angle, crown, shoulders, torso, pelvis and costume. Chestnut-brown chin-length bob hair, green eyes, small white daisy-and-leaf ornament on her anatomical LEFT temple, human round ears. Olive-green short hooded travel cape with hood DOWN behind bare head, pale gold botanical trim, ivory puff-sleeve blouse and layered short ivory skirt, brown fitted lace-up waist corset and leather belt, opaque dark-brown tights, brown mid-calf lace-up boots with small leaves. ONE brown field satchel on anatomical RIGHT hip and a closed brown embossed leaf field notebook held low by LEFT hand, right hand relaxed. Preserve her botanical researcher silhouette and muted olive/ivory/brown palette from portrait. Do not turn cape into a raised hood or give her an archer bow. Camera locked to FRONT-LEFT three-quarter, looking lower-left; never turn head/body. Draw one slow in-place WALK CYCLE, four DISTINCT chronological poses in 2x2 reading order. Frame1 foreground anatomical LEFT thigh/boot is forward lower-left, background RIGHT thigh/boot trails upper-right. Frame2 LEFT supports under pelvis and RIGHT knee swings past. Frame3 foreground LEFT thigh slopes BACKWARD to screen-right with heel LIFTED, while background RIGHT boot is planted farthest LOWER-LEFT. Frame4 RIGHT supports under pelvis and LEFT knee swings past. Critical: in bottom row the FOREGROUND boot must be the BACK boot on screen-right; top row it is the FRONT boot on screen-left. Exchange the leg attached to each hip, not just shoe spacing. Keep upper body upright, pelvis height and leg/boot lengths constant. Hands/props retain original low carrying position, no extra hand. Small cloth/ponytail sway only. Lower legs must visibly exchange front/back ownership; DO NOT repeat same leading leg in frame3. Composition: four separate COMPLETE full-body figures in equal2x2 cells. Each figure occupies ONLY 70% of cell height with 15% EMPTY TRANSPARENT border ABOVE hair, BELOW soles, and around all props. Generous margin especially ponytail/ahoge. Each has exactly2 arms/2 hands/2 legs. No cut-off body edges or touching cells. Refined broad soft-painted shading exactly matching reference. True transparent RGBA background; no shadow/floor, letters/numbers/gridlines, particles, props not in model, camera change, growth/shrink, alternate costume, labels or backdrop. Preserve anatomical accessory sides.",
+  "asset": "surveyor_sw_walk_v02",
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_v02.png",
+  "sha256": "1095c7cdefd47e189eb374559709f56122f014f335431b8b066cd2d51db143b5",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-35bcc736-3765-499f-a499-e3d0d384c718.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_gait",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_sw_idle_ref_v01.png",
+      "sha256": "53303bdb08deace42793db39147a0a77cde46a666c5437238293c264fb8cfbf0"
+    }
+  ],
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    }
+  ],
+  "review_reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+}

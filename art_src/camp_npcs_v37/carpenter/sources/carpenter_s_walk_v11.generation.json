@@ -1,0 +1,40 @@
+{
+  "name": "carpenter_s_walk_v11",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_s_idle_ref_v01.png"
+  ],
+  "prompt": "Transparent 2x2 four-frame strict front-view carpenter walking sheet. Same head, body, copper ponytail, blue apron and two tool pouches. Alternate left and right lead boots across contact and passing poses, identical body size and transparent cell padding; no text, floor or border.",
+  "asset": "carpenter_s_walk_v11",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_v11.png",
+  "sha256": "4a4a0f1a4564c721eb4c65f78acb4644000a028a2283bccca558b1478bbcfae4",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-3ba5e8ab-376e-4e72-aa72-9c6ddd876458.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_s_idle_ref_v01.png",
+      "sha256": "8ee040ea27f03587990e9326ad6bd8bca828206d10d6398da1bbc6d791e7d136"
+    }
+  ],
+  "review_history": []
+}

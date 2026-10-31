@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack1_single_pack_v01",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack1_single_pack_v01.png",
+  "sha256": "b02ceaf88085e40e83ab4a77ad614ec7618f855adbfa9408056c65f3ef1dcafa",
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_n_attack_ready_single_v02": "95620f61f99f488e9a6a8e499002ca69a3881e8bc107dde920ec749509b5fb2c",
+    "ilyua_normal_n_attack_draw_single_v02": "571655100cfce57f65299267b70c64ed921af4b86c546960125e5fdd9738da71",
+    "ilyua_normal_n_attack_release_single_v02": "a23b702d43fd46e838094827056d5d70fcb063dea0d2a8f020447d7783f8c693",
+    "ilyua_normal_n_attack_recovery_single_v02": "4bfa89cc9addaeb30050e6a5220f170c0eee6d9d5a18e85cb5b5ce216542acea"
+  },
+  "reference_idle_sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.24514555318045497,
+      "offset": [
+        -78.67649165919572,
+        -41.26617881899972
+      ],
+      "head_inliers": 52,
+      "head_registration_scale": 0.9969252496005169,
+      "head_angle": 0.11543747080887662,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24514555318045497,
+      "offset": [
+        -80.64008769050976,
+        -41.79585641329403
+      ],
+      "head_inliers": 34,
+      "head_registration_scale": 1.0017022710674601,
+      "head_angle": -0.2695928481312046,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24514555318045497,
+      "offset": [
+        -80.72269527247697,
+        -41.97958474081069
+      ],
+      "head_inliers": 34,
+      "head_registration_scale": 1.0037585318089608,
+      "head_angle": 0.12215828200555914,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24514555318045497,
+      "offset": [
+        -78.7871804159196,
+        -41.18169515641007
+      ],
+      "head_inliers": 48,
+      "head_registration_scale": 0.9931653173176296,
+      "head_angle": -0.020853996750190052,
+      "foot_deviation": 0,
+      "torso_residual": null
+    }
+  ],
+  "visual_review": "Rear ready, draw, release and recovery; right hand on string, projectile occluded by hood, no sideways arrow. Both hands and feet visible; bow remains on left. Needs full transition / bowstring review."
+}

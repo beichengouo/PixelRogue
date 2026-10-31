@@ -1,0 +1,13 @@
+{
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-26929ded-5f9d-49a1-91a9-58ebb725bd0c.png",
+  "sha256": "4bfa89cc9addaeb30050e6a5220f170c0eee6d9d5a18e85cb5b5ce216542acea",
+  "status": "pending_anatomy_and_registration",
+  "frame_count": 1,
+  "review_reason": "Needs registration and full sequence review.",
+  "kind": "single_frame_source",
+  "prompt": "Rear archer recovery, bow stays in left hand, preserve head and proportions, transparent background.",
+  "asset": "ilyua_normal_n_attack_recovery_single_v02",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_attack_ready_single_v02.png",
+  "usage": "unpackaged_candidate",
+  "runtime_integrated": false
+}

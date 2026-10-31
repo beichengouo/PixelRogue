@@ -1,0 +1,13 @@
+{
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_attack_ready_single_v02.png",
+  "frame_count": 1,
+  "status": "pending_anatomy_and_registration",
+  "prompt": "Third shot adjusted: bow tilts 20 degrees, drawing hand at right cheek, preserve exact body.",
+  "kind": "single_frame_source",
+  "asset": "ilyua_normal_n_adjust_draw_single_v01",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-2da7b12b-72eb-4eb7-b79d-1f76647a6b5c.png",
+  "runtime_integrated": false,
+  "review_reason": "Needs string geometry and full sequence registration.",
+  "sha256": "94b3c7799f31fd6a500624322fbc0d37a137664485c627954c9eb2e9cc5fca2c",
+  "usage": "unpackaged_candidate"
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_n_move_probe_release_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "4d5e104874dac4777b3b12c72a02d23276baf1d6e215bf7da93e09bed63756a0",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-a83b1004-9c85-466d-9483-40401c2415e2.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_move_probe_opposite_single_v01.png",
+  "prompt": "Release low shot while left boot lifted, preserve body, transparent.",
+  "review_reason": "Needs intermediate foot phases and sequence validation."
+}

@@ -1,0 +1,22 @@
+{
+  "key": "xixifu_normal_s_attack5",
+  "provider": "built-in image_gen",
+  "prompt": "Production four-frame final stage5 animation of Xixifu NORMAL, SOUTH FRONT view, on TRANSPARENT canvas in2x2 equal cells. Image1 is BODY MASTER: all four figures have exact same skull/face dimensions and image1's full upright neck-to-waist/waist-to-knees/shin/boot length. Image2 lastframe is previous-stage start position reference. Keep upright torso and planted legs unchanged, no giant head/squat compressed torso or crouch. Animate ONLY arms/wrists with small natural shoulder follow-through. Frame1 starts with staff braced by anatomical RIGHT primary hand (viewerLEFT) and left supporting hand near chest, shaft diagonal/slightly horizontal in front. Frame2 ONE strong straight-forward thrust aiming the crystal toward viewer/down-screen, both arms extend but body upright, staff foreshortening only, cannot occlude whole face. Frame3 small arm recoil, right elbow returns toward ribs, free left hand releases the support, staff tip rolls upward. Frame4 EXACT relaxed ready posture/body proportions from IMAGE1 with right hand holding upright staff, freehand by side, same head height, no shortening the entire final recovery frame. Pose4 must directly connect nextcycle idle/attack1. Same hands, thinwood shaft small SOLID purplecrystal. Plain charcoal midcalf robe with lavender lining/silverbutterfly clasp/clothwaistbow/darkleggings/blackshortboots; near-black longhair lies OUTSIDE lowered hood, dark eyes, same clean smooth nonpixel2-3tone drawing as image1. No shot trails, bullets, glow, fog, symbols, halos, shadows, ground, labels or background. Four COMPLETE characters at same overall scale; each in center70% cell with spacious clear alpha gutters/outermargins, all hair/boots/staff/hands intact. Keep skull crown/groundline consistent, fit by canvas spacing NEVER by shortening body.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack4_repair_r01.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-577a7662-362d-4a13-8e4a-30a4a8f54f27.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "9488f0deae8c2eb33843ba25061f38243d51b14811b25506ab5484f1ecd5f62d",
+  "sha256": "906cce7a08ba10a56f14224594b168ece6e10d219a555503a56a5a26b2812b43",
+  "selection_note": "Final recovery now returns to full-length idle body. Use authored source cells0,1,3,2 so small recoil precedes exact neutral recovery, not the reverse.",
+  "frame_order": [
+    0,
+    1,
+    3,
+    2
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_n_move_probe_passing_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "92e4670db412d03cbb7b90fd6c6cf6eb7e478808d814db6007aadbe0d1c74142",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-e2a1ffbd-3b00-4a3b-b70d-28fcba58fa18.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_move_probe_draw_single_v01.png",
+  "prompt": "Moving low draw passing step, feet close under body, transparent.",
+  "review_reason": "Needs sequence validation."
+}

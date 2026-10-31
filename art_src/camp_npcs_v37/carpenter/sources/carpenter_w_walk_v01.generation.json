@@ -1,0 +1,47 @@
+{
+  "name": "carpenter_w_walk_v01",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_w_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve. Asset: hand-painted NONPIXEL miniature NPC four-frame animation. Input image is the EXACT canonical single neutral model, not a suggestion. Keep the same compact 2.7-head proportions and SAME skull size, face angle, crown, shoulders, torso, pelvis and costume. Warm copper-auburn hair in a high long ponytail, soft side bangs, amber-brown eyes, small gold leaf ponytail tie, human round ears. Ivory rolled/puffed-sleeve blouse, indigo-blue work apron dress with broad front bib, tan-gold stitching, small pale botanical trim at hem, brown leather waistbelt and TWO different work pouches (one on each hip), small carving chisel/woodworking tools safely STOWED in belt loops. Bare knees and brown sturdy ankle-to-mid-calf lace-up boots. Hands relaxed and empty in this turnaround, no hammer raised and no weapon. Preserve her practical carpenter costume and recognizable high ponytail exactly from portrait, no armor or adventurer hood. Camera locked to strict LEFT PROFILE, looking screen-left; never turn head/body. Draw one slow in-place WALK CYCLE, four DISTINCT chronological poses in 2x2 reading order. Frame1 foreground anatomical LEFT leg reaches LEFT heel contact, background RIGHT leg trails RIGHT. Frame2 LEFT straight supports under pelvis, RIGHT knee swings forward. Frame3 foreground LEFT thigh/shin slope to screen-RIGHT with raised heel, background RIGHT leg extends LEFT heel contact. Frame4 RIGHT supports under pelvis, foreground LEFT knee bends and swings forward. Bottom row must put foreground leg at BACK/RIGHT, opposite top row. Keep upper body upright, pelvis height and leg/boot lengths constant. Hands/props retain original low carrying position, no extra hand. Small cloth/ponytail sway only. Lower legs must visibly exchange front/back ownership; DO NOT repeat same leading leg in frame3. Composition: four separate COMPLETE full-body figures in equal2x2 cells. Each figure occupies ONLY 70% of cell height with 15% EMPTY TRANSPARENT border ABOVE hair, BELOW soles, and around all props. Generous margin especially ponytail/ahoge. Each has exactly2 arms/2 hands/2 legs. No cut-off body edges or touching cells. Refined broad soft-painted shading exactly matching reference. True transparent RGBA background; no shadow/floor, letters/numbers/gridlines, particles, props not in model, camera change, growth/shrink, alternate costume, labels or backdrop. Preserve anatomical accessory sides.",
+  "asset": "carpenter_w_walk_v01",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_w_walk_v01.png",
+  "sha256": "db46ae6ff1f272a026769febfa1ccfc3831caeca495dd38df28c9a47b8460c26",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-5ab88f35-3ea8-4ef0-98d2-7c0885e9c9e7.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_gait",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_w_idle_ref_v01.png",
+      "sha256": "9a8220a65cadbcbb0732c681eae90a3312f8ebabdb6a1bf99a5de7b88b2008a0"
+    }
+  ],
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    }
+  ],
+  "review_reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+}

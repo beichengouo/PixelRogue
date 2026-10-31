@@ -1,0 +1,102 @@
+{
+  "name": "surveyor_w_walk_v10",
+  "asset": "surveyor_w_walk_v10",
+  "id": "surveyor",
+  "kind": "runtime_clip",
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_v10.png",
+  "sha256": "25a37e8860db94c2e546c9e20bbcbf1c68c7c44ebb72e38d7227b1514a77b62b",
+  "dimensions": [
+    2572,
+    2572
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "native_assembly": true,
+  "inputs": [
+    {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f1.png",
+      "sha256": "2b5513aafecfaa68da652880ee154b079159f8d1aa3ee0d17c580fe77f3dbc34",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        16,
+        16
+      ],
+      "rgba_byte_rebuild_verified": true
+    },
+    {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f2.png",
+      "sha256": "5c0416683b01eb31473fbea0084726d760196e7076af68b1bc68ee6c6028cd59",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        1302,
+        16
+      ],
+      "rgba_byte_rebuild_verified": true
+    },
+    {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f3.png",
+      "sha256": "0d8f4d90ef375cda60f45e0e515225dd27095434f37c17dda67bf83c9d3f4892",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        16,
+        1302
+      ],
+      "rgba_byte_rebuild_verified": true
+    },
+    {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f4.png",
+      "sha256": "ce28d19b3534baae46d0fd202fb5525b0bbcaa193b2c7b75d985f9270fe4d4f3",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        1302,
+        1302
+      ],
+      "rgba_byte_rebuild_verified": true
+    }
+  ],
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "selected_simplified_gait_reviewed",
+  "prompt": "Native unscaled2x2 assembly of four independent built-in generated complete poses. Individual exact prompts retained in original runtime_single sidecars.",
+  "no_frame_resize_or_pixel_redrawing": true,
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_gait",
+      "reason": "Native-frame proof review: opposite contact does not clearly exchange near/far leg ownership; not admitted despite technical PASS."
+    },
+    {
+      "previous_status": "needs_redraw_gait",
+      "status": "selected_simplified_gait_reviewed",
+      "reason": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged."
+    }
+  ],
+  "review_reason": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged."
+}

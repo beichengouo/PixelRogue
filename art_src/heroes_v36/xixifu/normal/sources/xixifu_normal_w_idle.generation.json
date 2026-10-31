@@ -1,0 +1,19 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "idle",
+  "grid": [
+    1,
+    1
+  ],
+  "frame_count": 1,
+  "prompt": "Create ONE production game sprite of Xixifu NORMAL outfit, using the approved THREE-VIEW SHEET as strict identity/anatomy/costume reference. Transparent background, full body centered, no text/guides/labels/border/shadow/ground/effects. Canvas1024x1024. Only one character. Draw the LEFT facing strict side-profile neutral ready pose, feet planted on one groundline, vertical torso/head, relaxed left free arm, anatomical RIGHT hand holding staff near front of torso. Top-down RPG mild15-degree viewing elevation, visible tops of boot toes; no foreshortened giant head. Preserve approved compact body and head exactly, not taller adult proportions and not super-deformed baby. Same head width/height, same shoulder-waist distances, same limb proportions as middle view of reference.\n\nXixifu: black long hair with muted purple reflected shading, black/charcoal irises, normal human ears no horns/wings/tail. Plain charcoal mid-calf robe, muted lavender inner sleeves/hem, hood lowered BEHIND all hair, hair falls continuously OVER hood to hips, small silver butterfly clasp at chest, cloth waist tie, dark opaque leggings, rounded black short ankle boots. Hair rests in broad calm locks close to body, not blowing sideways. Thin dark wood staff with small purple crystal, consistent length and plain shape, not ornate scepter. Staff in right hand, body turned LEFT. Feet both grounded, free hand relaxed near side, head looks straight left.\nStyle strict approved NON-PIXEL clean hand-drawn 2D fantasy RPG miniature: smooth dark-colored outlines, restrained2-3tone cel-painted shadows, broad hair locks and fabric folds, no glossy microtexture, no pixel squares, no painted background. Crisp readable silhouette at32px game body height. Keep all parts fully within canvas with at least12% margins. Produce authored sprite, NOT cutout of the sheet, not portrait.",
+  "native_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-2aed011c-ed6c-45c4-89c3-b2bc0658dd27.png",
+  "references": [
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "sha256": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+  "runtime_integrated": false,
+  "status": "source_saved_draft_not_activated",
+  "provenance_note": "Recorded from original generation and its saved prompt; native SHA checked against current source."
+}

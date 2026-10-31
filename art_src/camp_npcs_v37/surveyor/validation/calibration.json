@@ -1,0 +1,837 @@
+{
+  "id": "surveyor",
+  "runtime_integrated": false,
+  "manual_review_complete": false,
+  "idle": [
+    {
+      "direction": "s",
+      "asset": "surveyor_neutral_cardinal_v01",
+      "source_sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+      "source_frame": 0,
+      "pass": true,
+      "factor": 0.24691358024691357,
+      "offset": [
+        91.90123456790124,
+        20.641975308641975
+      ],
+      "bounds": [
+        156,
+        152,
+        288,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "sw",
+      "asset": "surveyor_neutral_diagonal_v01",
+      "source_sha256": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+      "source_frame": 0,
+      "pass": true,
+      "factor": 0.2441505595116989,
+      "offset": [
+        23.186164801627655,
+        22.844354018311265
+      ],
+      "bounds": [
+        154,
+        152,
+        293,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "w",
+      "asset": "surveyor_neutral_cardinal_v01",
+      "source_sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+      "source_frame": 1,
+      "pass": true,
+      "factor": 0.24793388429752067,
+      "offset": [
+        107.59504132231405,
+        18.859504132231393
+      ],
+      "bounds": [
+        179,
+        152,
+        289,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "nw",
+      "asset": "surveyor_neutral_diagonal_v01",
+      "source_sha256": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+      "source_frame": 1,
+      "pass": true,
+      "factor": 0.24217961654894046,
+      "offset": [
+        49.751765893037344,
+        24.129162462159456
+      ],
+      "bounds": [
+        168,
+        152,
+        296,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "n",
+      "asset": "surveyor_neutral_cardinal_v01",
+      "source_sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+      "source_frame": 2,
+      "pass": true,
+      "factor": 0.24716786817713698,
+      "offset": [
+        101.15756951596292,
+        20.25952626158596
+      ],
+      "bounds": [
+        157,
+        152,
+        290,
+        392
+      ],
+      "foot_deviation": 0
+    }
+  ],
+  "results": [
+    {
+      "direction": "n",
+      "action": "walk",
+      "asset": "surveyor_n_walk_v01",
+      "source_sha256": "cd0c7e06bba0097d6212bbb5f100554f263f64d8767b7a43ece8685fe67923fe",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4723407614818503,
+          "offset": [
+            -112.13218894824924,
+            -25.6525086894954
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.9110119974953192,
+          "head_angle": -0.45708557598304395,
+          "foot_deviation": 15,
+          "torso_residual": [
+            -0.019973771646618843,
+            4.1785688400268555
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4723407614818503,
+          "offset": [
+            -47.23659363735841,
+            -25.13459364540426
+          ],
+          "head_inliers": 41,
+          "head_registration_scale": 1.9540046446778794,
+          "head_angle": -0.9378382945225885,
+          "foot_deviation": 16,
+          "torso_residual": [
+            0.7860071063041687,
+            3.087169647216797
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4723407614818503,
+          "offset": [
+            -111.1138887100927,
+            -4.077200735388807
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.9016327953707441,
+          "head_angle": -0.36485893660359187,
+          "foot_deviation": 13,
+          "torso_residual": [
+            -0.4228585958480835,
+            3.8106002807617188
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4723407614818503,
+          "offset": [
+            -47.51373724736099,
+            -3.526217333934124
+          ],
+          "head_inliers": 31,
+          "head_registration_scale": 1.920485498912891,
+          "head_angle": -0.495034498920343,
+          "foot_deviation": 17,
+          "torso_residual": [
+            -0.18898144364356995,
+            3.521674394607544
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          153,
+          151,
+          297,
+          407
+        ],
+        [
+          151,
+          152,
+          296,
+          408
+        ],
+        [
+          151,
+          152,
+          297,
+          405
+        ],
+        [
+          153,
+          152,
+          298,
+          409
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "nw",
+      "action": "walk",
+      "asset": "surveyor_nw_walk_v10",
+      "source_sha256": "2977486349241484418a822ab4a69d3995fc91c8d26bd894ca90ff32b588f316",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.2493530983917696,
+          "offset": [
+            -88.75198958596116,
+            -48.89068215502016
+          ],
+          "head_inliers": 75,
+          "head_registration_scale": 1.0296205021093487,
+          "head_angle": 0.03792976974088502,
+          "foot_deviation": -3,
+          "torso_residual": [
+            -0.012312965467572212,
+            0.16939565539360046
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.2493530983917696,
+          "offset": [
+            -88.7375628705222,
+            -48.84666293516648
+          ],
+          "head_inliers": 75,
+          "head_registration_scale": 1.0308012884659916,
+          "head_angle": 0.11468123977165252,
+          "foot_deviation": 2,
+          "torso_residual": [
+            -0.049015358090400696,
+            0.1376228779554367
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.2493530983917696,
+          "offset": [
+            -88.77043686144046,
+            -48.85485186995457
+          ],
+          "head_inliers": 73,
+          "head_registration_scale": 1.0295031939076038,
+          "head_angle": 0.13429778513167756,
+          "foot_deviation": 3,
+          "torso_residual": [
+            0.01727953925728798,
+            0.18076260387897491
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.2493530983917696,
+          "offset": [
+            -88.80838089682138,
+            -48.89230811680119
+          ],
+          "head_inliers": 78,
+          "head_registration_scale": 1.02830684012246,
+          "head_angle": 0.175549584652897,
+          "foot_deviation": 1,
+          "torso_residual": [
+            -0.0525333471596241,
+            0.23833642899990082
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          168,
+          152,
+          296,
+          389
+        ],
+        [
+          168,
+          152,
+          296,
+          394
+        ],
+        [
+          168,
+          152,
+          296,
+          395
+        ],
+        [
+          168,
+          152,
+          296,
+          393
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "s",
+      "action": "walk",
+      "asset": "surveyor_s_walk_v01",
+      "source_sha256": "d9354f734e223fcac9602b7d77964abcafc4862dfb2c8b25cf42af132cf27830",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4072120051659542,
+          "offset": [
+            -62.57556604456016,
+            8.181429639274691
+          ],
+          "head_inliers": 60,
+          "head_registration_scale": 1.6492086209221146,
+          "head_angle": -0.22306333473954054,
+          "foot_deviation": -5,
+          "torso_residual": [
+            0.8188356161117554,
+            3.301866292953491
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4072120051659542,
+          "offset": [
+            -7.625516915026992,
+            8.624823676215279
+          ],
+          "head_inliers": 54,
+          "head_registration_scale": 1.6511227601590779,
+          "head_angle": -0.5904809932604117,
+          "foot_deviation": -4,
+          "torso_residual": [
+            1.1115105152130127,
+            3.219468832015991
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4072120051659542,
+          "offset": [
+            -62.963192033178984,
+            19.275202244888117
+          ],
+          "head_inliers": 54,
+          "head_registration_scale": 1.6633100191483459,
+          "head_angle": -0.7456812989642274,
+          "foot_deviation": -8,
+          "torso_residual": [
+            1.1119248867034912,
+            3.800629138946533
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4072120051659542,
+          "offset": [
+            -7.837798695505384,
+            18.33967646846065
+          ],
+          "head_inliers": 60,
+          "head_registration_scale": 1.666275158142404,
+          "head_angle": -0.5141850194840929,
+          "foot_deviation": -7,
+          "torso_residual": [
+            0.9063871502876282,
+            4.018833637237549
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          151,
+          152,
+          293,
+          387
+        ],
+        [
+          150,
+          153,
+          288,
+          388
+        ],
+        [
+          150,
+          153,
+          295,
+          384
+        ],
+        [
+          151,
+          153,
+          289,
+          385
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "sw",
+      "action": "walk",
+      "asset": "surveyor_sw_walk_v10",
+      "source_sha256": "4f3f905ed8dbf169882216b713d662d9645f45f1389fd144ae954df6bc55b5c6",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.2506442763883308,
+          "offset": [
+            -98.72141046223298,
+            -50.72973309940873
+          ],
+          "head_inliers": 108,
+          "head_registration_scale": 1.0265971820405382,
+          "head_angle": -0.052473528403600395,
+          "foot_deviation": 4,
+          "torso_residual": [
+            0.058027483522892,
+            0.44720950722694397
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.2506442763883308,
+          "offset": [
+            -98.74681797590287,
+            -50.13258201932862
+          ],
+          "head_inliers": 105,
+          "head_registration_scale": 1.0235291763330894,
+          "head_angle": -0.0008561883363415663,
+          "foot_deviation": 4,
+          "torso_residual": [
+            0.01812800019979477,
+            -0.06585091352462769
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.2506442763883308,
+          "offset": [
+            -98.72893585484489,
+            -50.14351991670908
+          ],
+          "head_inliers": 101,
+          "head_registration_scale": 1.0247240661305337,
+          "head_angle": -0.03747740273956617,
+          "foot_deviation": 5,
+          "torso_residual": [
+            0.07248219847679138,
+            -0.03940027579665184
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.2506442763883308,
+          "offset": [
+            -98.7372361393693,
+            -50.052514822291485
+          ],
+          "head_inliers": 113,
+          "head_registration_scale": 1.0243392130798055,
+          "head_angle": -0.026620083840717134,
+          "foot_deviation": 5,
+          "torso_residual": [
+            0.07115594297647476,
+            -0.10247945785522461
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          153,
+          152,
+          293,
+          396
+        ],
+        [
+          154,
+          152,
+          294,
+          396
+        ],
+        [
+          154,
+          152,
+          294,
+          397
+        ],
+        [
+          154,
+          152,
+          294,
+          397
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "utility",
+      "action": "rest",
+      "asset": "surveyor_utility_rest_v01",
+      "source_sha256": "1ca920cf35a9959bff207cf3f4f5ddb363d06ff775da91bd4453e3c409adad1f",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.429116896093202,
+          "offset": [
+            -68.65852500317907,
+            9.305487228191732
+          ],
+          "head_inliers": 73,
+          "head_registration_scale": 1.7575912869150732,
+          "head_angle": 3.339574386190516,
+          "foot_deviation": 11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.429116896093202,
+          "offset": [
+            -30.595640537576315,
+            11.58267103255338
+          ],
+          "head_inliers": 50,
+          "head_registration_scale": 1.7762162817603977,
+          "head_angle": 3.4397489941597983,
+          "foot_deviation": 13,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.429116896093202,
+          "offset": [
+            -70.24344719608344,
+            12.821626339172148
+          ],
+          "head_inliers": 54,
+          "head_registration_scale": 1.7494151769863382,
+          "head_angle": 5.991906982799137,
+          "foot_deviation": 11,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.429116896093202,
+          "offset": [
+            -31.934147102301644,
+            14.589981839712587
+          ],
+          "head_inliers": 57,
+          "head_registration_scale": 1.7834211469668324,
+          "head_angle": 7.2110604285945,
+          "foot_deviation": 13,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          155,
+          150,
+          291,
+          403
+        ],
+        [
+          155,
+          152,
+          290,
+          405
+        ],
+        [
+          153,
+          151,
+          290,
+          403
+        ],
+        [
+          154,
+          153,
+          293,
+          405
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "utility",
+      "action": "talk",
+      "asset": "surveyor_utility_talk_v01",
+      "source_sha256": "7ee417a496dc883ab981754816d83087c9a7f95db0678cdb4eca48aa183901af",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4364017256500728,
+          "offset": [
+            -76.63319100489575,
+            -3.704515831637874
+          ],
+          "head_inliers": 81,
+          "head_registration_scale": 1.7874287346417563,
+          "head_angle": -0.028783851239653938,
+          "foot_deviation": 2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4364017256500728,
+          "offset": [
+            -22.87505712344229,
+            -3.0811525424402646
+          ],
+          "head_inliers": 70,
+          "head_registration_scale": 1.7743190629653707,
+          "head_angle": 0.17843729689638382,
+          "foot_deviation": 2,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4364017256500728,
+          "offset": [
+            -80.15686295937184,
+            8.04308399033568
+          ],
+          "head_inliers": 48,
+          "head_registration_scale": 1.7431575349108601,
+          "head_angle": 1.1078259240084503,
+          "foot_deviation": 3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4364017256500728,
+          "offset": [
+            -23.55223069525689,
+            7.79067785160221
+          ],
+          "head_inliers": 68,
+          "head_registration_scale": 1.7713684436238624,
+          "head_angle": -0.3581229429002828,
+          "foot_deviation": 3,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          152,
+          152,
+          298,
+          394
+        ],
+        [
+          153,
+          153,
+          300,
+          394
+        ],
+        [
+          147,
+          151,
+          300,
+          395
+        ],
+        [
+          152,
+          152,
+          300,
+          395
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "w",
+      "action": "walk",
+      "asset": "surveyor_w_walk_v10",
+      "source_sha256": "25a37e8860db94c2e546c9e20bbcbf1c68c7c44ebb72e38d7227b1514a77b62b",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.24900128377840236,
+          "offset": [
+            -86.60062629132233,
+            -48.7025171705514
+          ],
+          "head_inliers": 90,
+          "head_registration_scale": 1.0043051779062229,
+          "head_angle": -0.10429585430371213,
+          "foot_deviation": 0,
+          "torso_residual": [
+            -0.07611739635467529,
+            0.2847971022129059
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.24900128377840236,
+          "offset": [
+            -86.6014888542743,
+            -48.678009789837304
+          ],
+          "head_inliers": 95,
+          "head_registration_scale": 1.0083751443841786,
+          "head_angle": -0.030687390215991817,
+          "foot_deviation": 4,
+          "torso_residual": [
+            -0.04212938994169235,
+            0.32878023386001587
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.24900128377840236,
+          "offset": [
+            -86.60571087293388,
+            -48.63047803137914
+          ],
+          "head_inliers": 99,
+          "head_registration_scale": 1.0062155712691847,
+          "head_angle": -0.04250868114594791,
+          "foot_deviation": 2,
+          "torso_residual": [
+            0.01765984110534191,
+            0.3158190846443176
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.24900128377840236,
+          "offset": [
+            -86.58776351045972,
+            -48.66605496997677
+          ],
+          "head_inliers": 86,
+          "head_registration_scale": 1.005904842842201,
+          "head_angle": -0.057158161944555114,
+          "foot_deviation": 1,
+          "torso_residual": [
+            -0.06619035452604294,
+            0.2727363407611847
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          175,
+          151,
+          289,
+          392
+        ],
+        [
+          179,
+          152,
+          289,
+          396
+        ],
+        [
+          178,
+          152,
+          289,
+          394
+        ],
+        [
+          178,
+          152,
+          289,
+          393
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    }
+  ],
+  "missing_groups": [],
+  "passed_clips": 7,
+  "failed_clips": 0,
+  "idle_passes": 5,
+  "technical_complete": true
+}

@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_s_attack1",
+  "provider": "built-in image_gen",
+  "prompt": "Precise ARMS-ONLY edit of IMAGE1 transparent2x2 FOUR SOUTH FRONT standing-body sprites. Image1 has the CORRECT full body anatomy. Keep allfour SKULLS/FACES/NECKS/TORSOS/WAIST/ROBE HEM/SHINS/LEGS/BOOTS in their exact current size and positions. DO NOT copy shorter body from image2. Change ONLY arms/hands/sleeves/staff of each image1figure to corresponding Image2 stage1armposes:1 nearvertical staff held by RIGHT anatomical hand/viewerLEFT close ribs, freehandrelaxed;2 shortforward downward/viewer push, freehandopensat chest;3 inward wristrotation staffdiagonalupward with rightrarmstillforward;4slightlyhigherupwardroll readyforstage2. Keep targetbody straight, no crouch/lean/headnod/shortening of torsoorlegs. Image2 ONLYarmreference, never its anatomy. Same identity/costume/palette/smoothnonpixelhanddrawn2-3tone:charcoalplainrobe/lavenderlining/silverbutterfly/clothwaisttie/darkleggings/blackshortboots/darkeyes/nearblacklonghairoverloweredhood. All4completefigures, same groundline/headheight and generous alphamargins, no crop. Solidpurplecrystal no glows/particles/shadows/backdrop/text. Preserve2x2grid and transparency. Main task preserve image1 anatomy, change only specifiedarms.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack3.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack1.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-40540375-82d6-436b-ad1e-6edc458eb207.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "da56b2ce0e684e608ecb0a28192267756abf5c35c14b2128ce2f60c46fd319cd",
+  "sha256": "a7a18edb68b1b38eda95247624f178a2248a74c7cfb8110b58d8a9b2354ba1c0",
+  "selection_note": "Cross-action equal-floor comparison found old stage1 full torso shorter than repaired stages3-5. Arms-only redrawing from corrected stage3 keeps full body/boots and preserves distinct stage1 gesture."
+}

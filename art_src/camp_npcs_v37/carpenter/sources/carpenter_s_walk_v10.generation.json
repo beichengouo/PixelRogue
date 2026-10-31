@@ -1,0 +1,97 @@
+{
+  "name": "carpenter_s_walk_v10",
+  "asset": "carpenter_s_walk_v10",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_v10.png",
+  "sha256": "4c1b02b9bb7dd605038f57d12bff9978c576f18929a38d7349695ecc0c3818aa",
+  "dimensions": [
+    2572,
+    2572
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "native_assembly": true,
+  "inputs": [
+    {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_single_v10_f1.png",
+      "sha256": "19a5d37371a6abe518d65536189746d7551794ffcf8f238d3df57aefc290ee37",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        16,
+        16
+      ],
+      "rgba_byte_rebuild_verified": true
+    },
+    {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_single_v10_f2.png",
+      "sha256": "a09cb01fe1d2fa5d5dffcea2495d5c5d369fbbb79d48f048f55f8095aa020ac2",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        1302,
+        16
+      ],
+      "rgba_byte_rebuild_verified": true
+    },
+    {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_single_v10_f3.png",
+      "sha256": "46739ea0b4a8c8b93accffe135d55321c1fd65666902aa82263b00de574443b9",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        16,
+        1302
+      ],
+      "rgba_byte_rebuild_verified": true
+    },
+    {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_single_v10_f4.png",
+      "sha256": "0bcbfcc6a2f3d8fcdb0c884dfffc80fcb9584b1145cacd1f90275ebca61ec8b0",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "native_scale": 1,
+      "paste_offset": [
+        1302,
+        1302
+      ],
+      "rgba_byte_rebuild_verified": true
+    }
+  ],
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_head_size",
+  "prompt": "Native unscaled2x2 assembly of four independent built-in generated complete poses. Individual exact prompts retained in original runtime_single sidecars.",
+  "no_frame_resize_or_pixel_redrawing": true,
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_head_size",
+      "reason": "Measured walk head-size drift exceeds unchanged 3.5% gate; native S replacement also fails."
+    }
+  ],
+  "review_reason": "Measured walk head-size drift exceeds unchanged 3.5% gate; native S replacement also fails."
+}

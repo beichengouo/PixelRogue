@@ -1,0 +1,23 @@
+{
+  "asset": "ilyua_normal_n_move_attack1_v02",
+  "kind": "source",
+  "direction": "n",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "status": "needs_redraw",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "sha256": "46e977120f74f1ffb653d0a44ab431ec827293b548152206888cda3a9f749152",
+  "references": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_walk_v02.png",
+      "sha256": "c6bee5fe4e4c27b423c0d121cc281cfd20b5f489c50a2f94e41680ee79110f95"
+    }
+  ],
+  "prompt": "Use rear walk four leg phases, low bow draw and release, two arms and legs, no sideways arrows, transparent.",
+  "review_reason": "Frames 1 and 2 have a long horizontal arrow-like line across the torso; bow draw geometry fails even though legs alternate."
+}

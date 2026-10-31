@@ -1,0 +1,36 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "nw",
+  "action": "move_attack3",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Edit FIRST image, the existing four-phase walking/attack source, as the physical character MASTER. Keep its FOUR distinct leg/boot phases, foot positions, head/torso dimensions, face facing and hip/robe proportions exactly unchanged; change ONLY arms/sleeves/hands/staff to new connected attack stage specified below. Second image is stationary arm/weapon reference only, NOT a leg/body to paste. Same2x2 ordering TL TR BL BR, exactlyfour complete figures, retain original body scale and intact hair/boots; spacious transparent margins no cell clipping or overlap. Preserve near/foreground boot silver buckle identity and farboot plain cuff where visible, especially opposite legs on bottomrow. NEVER make frame3 repeat frame1 legs or frame4 repeatframe2 legs. Midcalf charcoal plainrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots. Anatomical RIGHT hand always holds same smallsolidpurplecrystalstaff, otherhand free. Long nearblackhair continuously outside loweredhood, blackeyes, upright original fullheight torso. Smooth NONPIXEL clean handdrawn broad2-3tone shading. Do not redraw wholebody into a shorter child. No magicalglow/lighting/fog/particles/bullets/runes/groundshadow/text/backdrop/extra creatures orprops. Allspace beyond physicalfigure remains transparentalpha. Fourframe leg sequence already authored MUST stay intact while arms change. These are moving attacks, never planted stationary legs.\nBACK-LEFT/NORTHWEST facingUP-LEFT in all4, exactfirstimageback3/4 camera, facehidden exceptear. ONLYarms change.\nStage3 continuous lateral staff ARC/SWEEP. Frame1 takes prior wristreturn sideways to leading edge; frame2 sweeps staff tip across forward target direction at chestheight (no actual slash/magic); frame3 follows sweep across slightly upward; frame4 raises staff toward overhead brace transition, no neutral reset. Upright samehead/torso while elbows articulate.\nFirstframe staff must ALREADY be extended/sweeping from preceding raisedpose, NOT uprightready. Preservefirstimage 4legsole phases: rightsoleRIGHT TL/rightpassingTR, leftsoleLEFT BL/leftpassingBR; bottom opposite to top. Longhair shape staysclose/back notwindblown, original fulltorso uprightlength andsamehead. Safealphamargin aroundeverypart.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-e7843989-8d3f-4c4a-a32e-47ef3c545967.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack2.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack3.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "NW4sole phases retained, arm arc starts extended, freehand approaches contractchest as staff rises. No neutralreset or frontaleyes, complete physicalfigures; not finalregistrationapproval.",
+  "sha256": "d3df1a1317d0f3b148241cbbe7c642d67f6f2390ad1a03e7d7cc739cd0cf60c0",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack2.png": "73fc5a37456589d98ea6507da86a401953b066c056a4426fa581a5f1732dd6ad",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack3.png": "79431d633887888ba00f0e254b5afb3d4c9595aaa1bf4d546ffe057edfe58afd"
+  },
+  "size": [
+    1278,
+    1230
+  ],
+  "alpha24_bounds": [
+    87,
+    43,
+    1224,
+    1198
+  ],
+  "outer_clearance_px": 32,
+  "complete_component_frames": 4
+}

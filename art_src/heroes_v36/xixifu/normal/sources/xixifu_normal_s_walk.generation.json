@@ -1,0 +1,89 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "s",
+  "action": "walk",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Production sprite source for PixelRogue: Xixifu NORMAL appearance ONLY. Ref1 W idle defines physical body proportions, head/skull, ordinary costume and shading; ref2 approved A04 turnaround defines matching front/back identity and correct hair/hood layer. Keep SAME compact body, no taller torso/legs or shrinking head. Non-pixel smooth hand-drawn fantasy RPG miniature, dark colored clean outlines, restrained2-3tone painted/cel shading, broad still hair masses and fabric folds, no microtexture, no3D, no jagged pixel grid.\n\nIdentity invariant: human-looking summoner girl, BLACK irises (charcoal, not glowing violet), long near-black hair with muted purple reflected shading. Human ears, no horns, wings, tail. Plain charcoal mid-calf robe, lavender sleeve/hem lining, small silver butterfly clasp, simple cloth waist tie, dark leggings, rounded short black ankle boots. Thin dark wood staff with small purple crystal, held in anatomical RIGHT hand, not a huge ornate scepter. Hood folded down on robe behind ALL hair. Long hair drapes continuously over and outside hood to hips, no cloth band cuts through hair. NO hair/cloth wind or floating locks. Mild15-degree viewing elevation, same camera as W idle and all directional sprites. Fully visible feet, hair, staff and fingertips. True transparent background; NO glow, halo, gradient, shadows, ground, particles, symbols, text, border, guides, additional characters, extra limbs or props. Leave generous empty margins around ALL extremities.\nCreate FOUR authored walking frames, evenly in a2x2 transparent square sheet, reading order top-left,top-right,bottom-left,bottom-right. Each frame is the SAME Xixifu NORMAL sprite at exact same physical size, camera angle, body proportions and head drawing as FIRST reference (same-direction idle). Second reference W idle is supplementary consistency, third A04 is costume construction only. Leave12% empty space on EACH edge of each quadrant; scale ALL FOUR equally small enough to fit hair/staff/boots fully. Four whole people, one per quadrant; no overlapping grid boundaries. Every frame crown height and centerline essentially fixed, no head tilt, rocking torso, side sway, scaling or direction change. Lower body steps, upper body remains steady, right staff hand keeps staff steady alongside body, free arm only small natural counter-motion. Use contact→passing through body's middle→opposite contact→opposite passing. Passing poses MUST have a foot lifted/tucked beneath body center and knees modestly flexed, clearly different from wide contact poses. Robe hem follows modest leg motion without transforming costume. Feet never disappear into the robe. No blurry smear or morph.\nDirection SOUTH, STRAIGHT FRONTAL walking toward viewer/down-screen in DEPTH, both eyes face viewer with shoulders square. This is NOT a sideways march: hips, face, hair center stay in exactly same x coordinate relative to each cell.\nFrame1 anatomical RIGHT boot(viewer-left) steps toward viewer, visibly lower/front with toe showing; LEFT boot is slightly behind/higher, heel lifting.\nFrame2 RIGHT boot supports directly beneath right hip while LEFT knee folds and LEFT boot swings THROUGH BODY CENTER, raised heel and sole angle visible, feet close together below robe.\nFrame3 opposite contact: LEFT boot(viewer-right) forward/lower, RIGHT boot slightly behind/higher heel rising.\nFrame4 LEFT boot supports beneath left hip, RIGHT knee folds and RIGHT boot passes through middle, foot close under body. Loop next to frame1. Make1vs3 unambiguously different leg lead,2vs4 unambiguously different lifted foot. Don't merely change hair or copy identical boots. Do not move character left/right. NO windblown hair, no elongated legs, no attacks, NO glow/halo/shadow/gradient haze. True transparency.\nTARGETED REFINEMENT after original source exec-37c480ef-2d52-49f9-9758-3643b63c9535.png:\nPrecise one-frame edit of this FOUR-frame source sheet. Preserve first three figures and all head/body/staff/robe drawings EXACTLY, with transparent background and same2x2layout. FIX ONLY THE TWO BOOTS/LOWER LEGS OF BOTTOM-RIGHT FRAME4. Current frame4 repeats frame2's lifted viewer-left boot; must show OPPOSITE passing leg.\nFrame4 desired: VIEWER-LEFT boot(anatomical RIGHT) planted beneath viewer-left hip, toes down toward viewer, sole flat on ground. VIEWER-RIGHT boot(anatomical LEFT) is the SWING boot, bent knee and heel lifted, travels through body's middle, slightly crosses toward center, its sole visible tilted. Clearly reverse which boot is lifted compared with top-right frame2. Both boots same design/size as other frames. Do not duplicate legs, do not change body height or face/hair, no glow/shadow or opaque fill. Bottom-right standing/swing pose should transition naturally from bottom-left frame3 and toward top-left frame1. Keep whole full-body figures and existing generous outer margins. Only ordinary Xixifu boots change in one last frame, not a new animation or direction.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-fc9c109e-76dc-48f3-b15f-f85d37be19c1.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Final reviewed four frontal depth-step frames. Targeted single-frame imagegen refinement reverses frame4 lifted boot: frame2 lifts viewer-left, frame4 lifts viewer-right; frames1/3 lead opposite feet. Same frontal gaze; no lateral sway or halo, no edge clipping. Original generation native retained in C default output; pending rig/calibration.",
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "major_components_alpha24": [
+    {
+      "box": [
+        155,
+        53,
+        405,
+        564
+      ],
+      "pixels": 142594,
+      "centre": [
+        356.6225998288848,
+        328.64749568705554
+      ]
+    },
+    {
+      "box": [
+        702,
+        52,
+        401,
+        568
+      ],
+      "pixels": 141878,
+      "centre": [
+        899.4941710483655,
+        328.7360478721155
+      ]
+    },
+    {
+      "box": [
+        155,
+        653,
+        413,
+        559
+      ],
+      "pixels": 143285,
+      "centre": [
+        359.1653278431099,
+        927.8202812576334
+      ]
+    },
+    {
+      "box": [
+        695,
+        653,
+        415,
+        557
+      ],
+      "pixels": 143008,
+      "centre": [
+        898.6083435891699,
+        927.6602847393153
+      ]
+    }
+  ],
+  "sha256": "716d954ba294abf0e04292d27fd1df6f84094776e1e012f2024756a2507f3588",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "edge_nontransparent_pixels": 0
+}

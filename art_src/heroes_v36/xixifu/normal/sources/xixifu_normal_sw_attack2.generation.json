@@ -1,0 +1,10 @@
+{
+  "key": "xixifu_normal_sw_attack2_clean",
+  "prompt": "Precise background extraction/edit: remove ALL purple atmospheric haze, halo and light glow around the FOUR existing characters. Preserve the four physical character drawings and poses, canvas, layout, whole hair, staff and clothing. Output actual fully transparent alpha outside character silhouettes, absolutely no haze, shadow, backdrop, gradient or magic glow anywhere. Keep the crystal physically solid purple, not light-emitting. Do not crop hair, do not resize canvas or change poses, do not add content. Keep all four bodies complete and clear of image edge. This is background cleanup only, not new art design.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_attack2.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-01b9c796-7e15-4994-9c09-0b9a195930c0.png",
+  "transparent_background": true,
+  "review": "pending"
+}

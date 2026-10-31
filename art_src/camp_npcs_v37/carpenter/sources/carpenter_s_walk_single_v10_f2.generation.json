@@ -1,0 +1,40 @@
+{
+  "name": "carpenter_s_walk_single_v10_f2",
+  "id": "carpenter",
+  "kind": "runtime_single",
+  "direction": "s",
+  "action": "walk",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "phase": 1,
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_s_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. SINGLE NPC sprite, edit ONLY legs BELOW apron hem in supplied exact canonical reference. One gentle walk pose: screen-LEFT planted, screen-RIGHT knee raised forward. Preserve original head/skull/pony-tail PIXEL SIZE, original fixed upright body/waist proportions and original face/view angle. No head/torso scaling or rotation. Arms and tools stowed exactly as source. Same canvas, original complete hair and boot margins. One figure only, not a sheet. Hand-painted nonpixel style, transparent RGBA. No text, FX, floor or shadow.",
+  "asset": "carpenter_s_walk_single_v10_f2",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_single_v10_f2.png",
+  "sha256": "a09cb01fe1d2fa5d5dffcea2495d5c5d369fbbb79d48f048f55f8095aa020ac2",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-8d7cf8b6-2be6-4ba3-a134-f6efe902b173.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_s_idle_ref_v01.png",
+      "sha256": "8ee040ea27f03587990e9326ad6bd8bca828206d10d6398da1bbc6d791e7d136"
+    }
+  ]
+}

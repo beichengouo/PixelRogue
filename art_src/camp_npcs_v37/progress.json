@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-10-29T11:23:39.298433+00:00",
+  "status": "admitted_runtime",
+  "runtime_integrated": true,
+  "scope": [
+    "surveyor",
+    "carpenter",
+    "herbalist",
+    "minstrel"
+  ],
+  "clip_count": 48,
+  "source_frames": 132,
+  "animation_count": 72,
+  "admission_receipt": "E:/CodexWorkspace/PixelRogue/work/v37-camp-npc-models/admission.json",
+  "historical_sources_audit": "E:/CodexWorkspace/PixelRogue/work/v37-camp-npc-models/source-audit.json",
+  "historical_resume_jobs_only": true
+}

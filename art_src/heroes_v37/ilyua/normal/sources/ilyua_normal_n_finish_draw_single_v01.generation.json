@@ -1,0 +1,13 @@
+{
+  "kind": "single_frame_source",
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "prompt": "Fifth finishing shot, deeper pull toward right ear, same rear body, transparent.",
+  "sha256": "35cc70d1509282f7066209ba6d8e12b0410f7a8750a01c13e3f4dac934c284d3",
+  "runtime_integrated": false,
+  "asset": "ilyua_normal_n_finish_draw_single_v01",
+  "status": "pending_anatomy_and_registration",
+  "review_reason": "Check horizontal segment near right hand and draw geometry before packing.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_seek_draw_single_v01.png",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-410e9584-3b5f-4c06-9ec6-6eaf7370a3d4.png"
+}

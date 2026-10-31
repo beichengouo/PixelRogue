@@ -1,0 +1,43 @@
+{
+  "name": "carpenter_turnaround_v01",
+  "id": "carpenter",
+  "kind": "design_turnaround",
+  "frame_count": 3,
+  "grid": [
+    3,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/assets/camp_life_v01/carpenter_portrait.png",
+    "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve character turnaround. Create a production CHARACTER DESIGN reference sheet for the same young adult woman in IMAGE1. Image1 defines identity, clothing and job accessories; IMAGE2 is ONLY a rendering/proportion reference for the game's already established smooth hand-painted miniature sprites, never copy image2's elf identity, ears, hood or bow. Use compact approximately2.7-head body proportions, gentle adult identity, clean colored outlines and broad soft cel-painted shading, NONPIXEL. Three COMPLETE full-body views in three equal horizontal columns: strict FRONT, strict LEFT PROFILE, strict BACK. Same skull size, shoulder/waist/limb lengths, outfit construction and character scale in all3. Boots share one floor baseline; head crowns align; view is consistent slightly elevated 2D game orthographic, no perspective scene. Neutral relaxed standing, arms slightly clear of costume, exactly two arms/two hands/two legs. All garments/accessories physically continue correctly across back and side, bags keep the same anatomical hip across views, no duplicate prop. Warm copper-auburn hair in a high long ponytail, soft side bangs, amber-brown eyes, small gold leaf ponytail tie, human round ears. Ivory rolled/puffed-sleeve blouse, indigo-blue work apron dress with broad front bib, tan-gold stitching, small pale botanical trim at hem, brown leather waistbelt and TWO different work pouches (one on each hip), small carving chisel/woodworking tools safely STOWED in belt loops. Bare knees and brown sturdy ankle-to-mid-calf lace-up boots. Hands relaxed and empty in this turnaround, no hammer raised and no weapon. Preserve her practical carpenter costume and recognizable high ponytail exactly from portrait, no armor or adventurer hood. Ample separate transparent margin around each full figure including hair, cape tails, props and boots; do not crop/overlap any view. Genuine RGBA transparent background. No labels, letters, numbers, caption, design boards, grid, floor, shadows, effects, scenery or additional objects. This sheet is DESIGN REFERENCE ONLY; separate animation source drawings will be made afterward.",
+  "asset": "carpenter_turnaround_v01",
+  "path": "art_src/camp_npcs_v37/carpenter/design/carpenter_turnaround_v01.png",
+  "sha256": "1ed37f38d14d344cb196e9efc7ffcea9aee720cf7b53b1eb8004fb48777c4cba",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-4bd73bc4-cb82-47d1-884f-182527dd7a0e.png",
+  "dimensions": [
+    1881,
+    836
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "wardrobe_reference_only_needs_compact_proportions",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/camp_life_v01/carpenter_portrait.png",
+      "sha256": "43de592cbcc400a5b27891ba481543ea43cf591625e6a7823c642a550817da4d"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "review_note": "Identity, costume and back construction usable as wardrobe reference; too tall/slender for established compact hero-style model. Separate compact v02 drawing required. Never runtime crop."
+}

@@ -1,0 +1,13 @@
+{
+  "runtime_integrated": false,
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-98afb4af-516e-4fec-88bb-d32dca22b394.png",
+  "review_reason": "Needs full sequence registration and visual review.",
+  "asset": "ilyua_normal_n_adjust_recovery_single_v01",
+  "usage": "unpackaged_candidate",
+  "kind": "single_frame_source",
+  "sha256": "60a765cf3e9b1e09076787f7d007facdf75c2bca90a60b213b80ff6d3bda103f",
+  "status": "pending_anatomy_and_registration",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_adjust_release_single_v01.png",
+  "frame_count": 1,
+  "prompt": "Third shot recovery, bow returns upright, same body, transparent."
+}

@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_n_skill_cast_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_skill_cast_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-353e53dc-e4c6-478c-a36b-69b7f8f1e6fa.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_n_skill_cast_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit this FOUR-frame NORTH-facing Ilyua sheet into a distinct skill-command gesture. Preserve the four original native heads/hoods, body proportions, ivory gold-leaf cape, sage hair, green tunic, brown boots, ONE quiver, planted legs and continuous wooden leaf-pendant bow exactly. STRICT BACK view facing UP away from viewer. LEFT hand continues holding bow FORWARD in FRONT of body, naturally occluded by hood where necessary, bow tip visible above hood, NEVER draw a hand/bow/string across her visible back. Exactly TWO arms and TWO hands connected to shoulders. Change ONLY right arm/sleeve/hand and subtle left wrist tilt, all four consecutive phases: 1 right fingers gather beside FRONT cheek in preparation; 2 right palm opens beside head and slightly forward, elbow bent; 3 right index/middle fingers extend FORWARD UP into depth to command a skill, naturally partly hidden by hood; 4 fingers relax and return toward front cheek. No arrow is nocked in ANY frame, no shaft/nock/feathers/arrowhead, no flying projectiles or magic effects. Keep upright body and same standing feet, no growth/shrink/turn/crouch. Four COMPLETE figures in2x2 equal cells, generous8% transparent margins all sides including bow tips. True RGBA transparency, refined nonpixel anime handpainted matching target. No text, numbers, grid, floor, shadow, effects or extra beings.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack1_v91.png",
+      "sha256": "559ca93bd1218a940fe4bb8f331b72a7d12306fdce19baed80e53b6868f4a848"
+    }
+  ],
+  "sha256": "d557c8ba4f7da9709467ef2d54a6ca8d2901a4855be95e0b0fa8e221164d5dc7",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "skill_cast",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1254,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      15,
+      1254,
+      1254
+    ],
+    "8": [
+      222,
+      17,
+      1108,
+      1246
+    ],
+    "32": [
+      222,
+      17,
+      1108,
+      1245
+    ],
+    "128": [
+      223,
+      18,
+      1107,
+      1245
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,40 @@
+{
+  "name": "surveyor_sw_walk_single_v10_f4",
+  "id": "surveyor",
+  "kind": "runtime_single",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_sw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Edit the supplied SINGLE canonical NPC image. Keep EXACT original canvas framing, head pixels/size/location, face and view, hair, upper body, pelvis, hands and props UNCHANGED. Change ONLY legs below skirt into this ONE walk-cycle phase: RIGHT side leg stands supporting pelvis vertically, LEFT side knee bends and lifts toward LEFT, boot raised clear. This is opposite passing leg to pose2. Travel is screen-left toward viewer. Keep original boot designs, leg lengths and compact body proportions. Full body SINGLE figure at original scale and same position, original transparent margin around crown and boots. No new arm or hands; all accessories unchanged. True transparent RGBA. No letters, panel, grid, floor, shadow or FX. Do NOT make a sheet or multiple characters.",
+  "phase": 3,
+  "asset": "surveyor_sw_walk_single_v10_f4",
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_single_v10_f4.png",
+  "sha256": "bde51e7098633559613c6e12ffdc4b69244949a95fee2c8a19cd5963d281833e",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-407b5b57-e10f-4fa3-8586-ce8dcc669839.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_sw_idle_ref_v01.png",
+      "sha256": "53303bdb08deace42793db39147a0a77cde46a666c5437238293c264fb8cfbf0"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "s",
+  "action": "idle",
+  "grid": [
+    1,
+    1
+  ],
+  "frame_count": 1,
+  "prompt": "Production sprite source for PixelRogue: Xixifu NORMAL appearance ONLY. Ref1 W idle defines physical body proportions, head/skull, ordinary costume and shading; ref2 approved A04 turnaround defines matching front/back identity and correct hair/hood layer. Keep SAME compact body, no taller torso/legs or shrinking head. Non-pixel smooth hand-drawn fantasy RPG miniature, dark colored clean outlines, restrained2-3tone painted/cel shading, broad still hair masses and fabric folds, no microtexture, no3D, no jagged pixel grid.\n\nIdentity invariant: human-looking summoner girl, BLACK irises (charcoal, not glowing violet), long near-black hair with muted purple reflected shading. Human ears, no horns, wings, tail. Plain charcoal mid-calf robe, lavender sleeve/hem lining, small silver butterfly clasp, simple cloth waist tie, dark leggings, rounded short black ankle boots. Thin dark wood staff with small purple crystal, held in anatomical RIGHT hand, not a huge ornate scepter. Hood folded down on robe behind ALL hair. Long hair drapes continuously over and outside hood to hips, no cloth band cuts through hair. NO hair/cloth wind or floating locks. Mild15-degree viewing elevation, same camera as W idle and all directional sprites. Fully visible feet, hair, staff and fingertips. True transparent background; NO glow, halo, gradient, shadows, ground, particles, symbols, text, border, guides, additional characters, extra limbs or props. Leave generous empty margins around ALL extremities.\nDraw exactly ONE full-body neutral ready sprite on a square transparent canvas1024x1024. Direction SOUTH: STRICT FRONT facing the viewer/down-screen, BOTH eyes visible symmetrically; shoulders and hips square to viewer, head not turned left/right. Look calmly forward, NOT three-quarter profile. Natural neutral stance with feet planted apart slightly, toes toward viewer; right hand holds upright staff on VIEWER-LEFT, free left hand hangs relaxed on VIEWER-RIGHT. Crown and soles around12%/88% of canvas; character including hair and staff fits middle65% width, no cropped strands. Do not invent motion, no swaying. Keep the same skull/body/head ratio and ordinary robe as W idle, merely correctly rotate the viewpoint. One figure only, no lineup.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-5a7c3597-81b1-4920-ac03-bfdf26b42f67.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "One intact frontal ready sprite, both eyes forward, feet/toes toward viewer, right-hand staff on viewer-left. Same ordinary robe/short boots and compact face; muted cool iris shading not glowing. Long hair still, all tips visible. No halo or opaque background. Pending cross-view rig proportion calibration.",
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "major_components_alpha24": [
+    {
+      "box": [
+        286,
+        156,
+        696,
+        1010
+      ],
+      "pixels": 442781,
+      "centre": [
+        626.9168369916505,
+        659.4073819789015
+      ]
+    }
+  ],
+  "sha256": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "edge_nontransparent_pixels": 0
+}

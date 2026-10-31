@@ -1,0 +1,24 @@
+{
+  "kind": "derived_reference_only",
+  "path": "art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_sw_idle_ref_v01.png",
+  "sha256": "53303bdb08deace42793db39147a0a77cde46a666c5437238293c264fb8cfbf0",
+  "source_path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_neutral_diagonal_v01.png",
+  "source_sha256": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+  "source_frame": 0,
+  "source_grid": [
+    2,
+    1
+  ],
+  "native_component_bounds": [
+    534,
+    527,
+    1108,
+    1515
+  ],
+  "integer_paste_offset": [
+    356,
+    149
+  ],
+  "native_scale": 1.0,
+  "policy": "Native crop/padding only after original canvas edge check; no source edits, scaling, new pose, or turnaround crop. Not a runtime frame."
+}

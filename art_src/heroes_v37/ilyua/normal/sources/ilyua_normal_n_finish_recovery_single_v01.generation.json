@@ -1,0 +1,13 @@
+{
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-92b6e456-af98-4db6-a376-415d3bdaa75d.png",
+  "frame_count": 1,
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_finish_release_single_v01.png",
+  "status": "pending_anatomy_and_registration",
+  "sha256": "d2bc82cbd5d7d496c70196d1645503262dff9b258b8e133e67b77e4fad0999e2",
+  "prompt": "Finisher recovery, lower bow and right arm, preserve rear elf body.",
+  "usage": "unpackaged_candidate",
+  "kind": "single_frame_source",
+  "runtime_integrated": false,
+  "asset": "ilyua_normal_n_finish_recovery_single_v01",
+  "review_reason": "Needs full sequence validation."
+}

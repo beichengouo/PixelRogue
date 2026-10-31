@@ -1,0 +1,13 @@
+{
+  "key": "xixifu_normal_sw_move_attack5",
+  "provider": "built-in image_gen",
+  "prompt": "Precise arms-only sprite edit of IMAGE1's2x2 FOUR-FRAME walking cycle. IMAGE1 is the immutable target anatomy/gait. Preserve its FOUR HEADS/FACES/TORSOS/HAIR/WAIST/ROBE HEM and EVERY LEG/BOOT in their EXACT current lengths, positions, overlaps and TL/TR/BL/BR walking order. Do not redraw or mirror legs, do not duplicate top-row legs in bottom-row, do not make feet planted stationary. BOTH original passing feet underhipcenter and opposite contact legs must survive. Edit ONLY arms/hands/sleeves and smallpurplecrystal wooden staff of eachfigure, using corresponding4armposes from IMAGE2 as reference. IMAGE2 is ONLY arm-pose reference: do NOT copy its head, body, legs, proportions, camera or foot positions. Same anatomical RIGHT primary grip all4; normal human girl ordinary charcoalrobe/lavenderlining/silverbutterflyclasp/clothwaisttie/darkleggings/shortblackboots/nearblacklonghair over loweredhood/darkirises. Same smooth nonpixel2-3tone handdrawn style. No wholebody scaling/squat/lean/head turn/sway. Physical arms articulate one connected prepare/release/followthrough/bridge segment, NOT four repeat pulses; no returntoneutral between stages1-4. Allhair/staff/hand/boot tips complete inside transparentmargins, preserve2x2 layout and actual transparency. NO shotbolts/trails/glow/fog/FX/runes/shadows/background/text. Four FULL figures only.\nStage5 SOUTHWEST front-left3/4: firstbothhandsbrace staffforward-high;secondclear strongerforwardDOWN-LEFT push with smallstafftip, no fullbody lunge;thirdarmrecoil startsbringingstaffback;fourthoriginalone-handed uprightready staff/freehandrelaxed while feet remain the original passingwalkphase. Rightprimarygrip, unchangedtargethead/torso and4walklegsilhouettes, no plantedstance reset or extralean.\nKeep four firstimage leg phases PERFECTLY UNCHANGED:TLfrontbootroundclasp/BLfrontbootplain-withoutclasp and rearbootroundclasp; TR/BR opposite centerpassing. Final armrecovery must not affect ongoingwalkphase. No fullbodylean or compressedtorso; only arms do push. Solid crystal with no glow/bolts.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_move_attack2.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_attack5.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-30d699df-7d87-4929-bb49-84071705f213.png",
+  "transparent_background": true,
+  "review": "candidate_unvalidated",
+  "runtime_integrated": false
+}

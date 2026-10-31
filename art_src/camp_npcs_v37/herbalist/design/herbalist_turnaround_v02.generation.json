@@ -1,0 +1,48 @@
+{
+  "name": "herbalist_turnaround_v02",
+  "id": "herbalist",
+  "kind": "design_turnaround",
+  "frame_count": 3,
+  "grid": [
+    3,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/design/herbalist_turnaround_v01.png"
+  ],
+  "prompt": "Use case: style-transfer for MINIATURE GAME AVATAR turnaround. IMAGE1 is the TARGET BODY PROPORTION and painting style: large head, very SHORT compact torso, SHORT limbs, approximately2.5 to2.7 HEADS TALL total including head. IMAGE2 supplies ONLY this NPC's face/hair, outfit colors/structure and occupational props; IGNORE image2's tall/slender adult BODY PROPORTIONS. Redesign that NPC into the SAME compact CHIBI game model as image1, preserving her adult character identity, not a toddler. Make all THREE figures clearly big-headed, short-bodied and short-legged like image1. Do not retain the long legs, small head, narrow waist or fashion-illustration body of image2. THREE views in equal horizontal columns: FRONT, LEFT PROFILE, BACK; same body/skull size and baseline in all3. Long deep teal-blue hair in a low flowing ponytail, soft bangs, amber-honey eyes, small ivory flower-and-green-leaf cluster with muted brick-red ribbon by anatomical LEFT ear, human round ears. Ochre/mustard-gold draped shawl/cape with pale botanical border and fine fringes, muted plum-brown fitted overdress over ivory ruffled layered skirt and ivory puff-sleeve blouse, thin brown waist cord with small tassels, brown floral lace-up boots. ONE small wicker herb basket held low in LEFT hand containing green leaves and white blossoms, right hand relaxed. Keep the original shawl draping/long ponytail silhouette and warm gold/plum/ivory palette; no wizard hat or staff. Smooth NONPIXEL painted miniature game sprite, clean colored contours, simple broad shading and readable outfit shapes. No elf ears, no archer bow, no borrowing the hero's white hood from image1. Exactly two arms/hands/legs, one set of accessories in anatomically correct places, full hair/boots and props entirely visible with generous transparent margins. True transparent RGBA, no background gradient, text/labels/grid/floor/shadows or effects. This is a design reference sheet, NOT runtime frames. The key mandatory change is2.7-head CHIBI proportions matching IMAGE1, not a tall portrait turnaround.",
+  "asset": "herbalist_turnaround_v02",
+  "path": "art_src/camp_npcs_v37/herbalist/design/herbalist_turnaround_v02.png",
+  "sha256": "c654fabdacbc47644092df4dbd071f3533291dd8c8aa45c694e9f267070f5410",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-fe3ca2ae-9b03-4299-969b-390c58cbfe2a.png",
+  "dimensions": [
+    1882,
+    836
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "design_reviewed_pending_runtime_sources",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/design/herbalist_turnaround_v01.png",
+      "sha256": "5c5ba6441b3266a06db7e360e08608296571a892186351f92a8724700fc88462"
+    }
+  ],
+  "manual_design_review": true,
+  "review_notes": [
+    "Reviewed front/left/back identity, clothing and prop placement. Compact proportions now match hero model family.",
+    "Complete bodies preserved; carpenter design has tight2px framing and is REFERENCE ONLY; fresh runtime inputs require their own edge check.",
+    "Never crop turnaround figures as runtime frames."
+  ]
+}

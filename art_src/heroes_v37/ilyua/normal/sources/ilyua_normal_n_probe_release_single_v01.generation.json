@@ -1,0 +1,13 @@
+{
+  "status": "pending_anatomy_and_registration",
+  "asset": "ilyua_normal_n_probe_release_single_v01",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "prompt": "Low draw release, string resting, bow stays low, same body and hood, transparent.",
+  "sha256": "126441d6d90ddbb0c3b73c6dc40adee14682189755783ac1dd1bf3d6b7950bbf",
+  "review_reason": "Needs complete sequence and registration, quiver position comparison.",
+  "usage": "unpackaged_candidate",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_probe_draw_single_v01.png",
+  "kind": "single_frame_source",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-c2091092-0d1d-4d93-a136-bf3fd103b518.png"
+}

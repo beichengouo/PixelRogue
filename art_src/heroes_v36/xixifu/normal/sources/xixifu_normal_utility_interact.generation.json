@@ -1,0 +1,93 @@
+{
+  "provider": "built-in image_gen",
+  "action": "interact",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create a production sprite animation SOURCE SHEET for PixelRogue, Xixifu NORMAL outfit only. Use image1, xixifu_normal_w_idle.png, as STRICT body/face/costume/left-facing-ready reference. Image2 approved turnaround is supporting identity and proper hood/hair layering reference. Output exactly FOUR authored animation frames in a 2x2 evenly divided grid on a transparent square canvas, ideally2048x2048. Reading order top-left,top-right,bottom-left,bottom-right. No text, frame numbers, guides, border, ground plane, cast shadow, particles, effects or background. One complete whole character per cell, no extra characters. Four cells equal size with12% empty padding each; no hair/staff can cross a cell boundary. Feet ground baseline at~88% of each cell, head vertical position equal across standing frames. Fixed head size and skull, anatomy, staff design and clothes across frames; motions may change pose but NEVER individual frame scaling/squashing/head-size shifts. Each head/face must be same drawing design as source, compact side-profile facing LEFT, mild15-degree elevated RPG camera. Body about same approved proportions and ready height. No taller legs or smaller head.\n\nIdentity invariants: petite human-looking female summoner, long black hair with subdued violet reflected shading, black irises, natural human ears, no horns/tail/wings. Plain charcoal mid-calf robe, muted lavender sleeve lining and hem, small silver butterfly clasp, simple cloth waist tie, opaque dark leggings, rounded short black ankle boots. Thin dark wood staff with SMALL purple crystal, anatomical RIGHT hand (never switch hands). Hair lies continuously outside and OVER lowered hood, hood mostly hidden below hair; no hood band crossing hair, no hat on head. Non-pixel clean smooth hand-drawn 2D art, restrained2-3tone painted/cel shading, broad fabric folds and calm hair masses. Not glossy gacha art, not3D, not pixelated. All frames derived from same body and camera; no redesign.\nACTION ONLY: quiet INTERACTION reaching with free LEFT hand, four frames. Frame1 EXACT left-facing upright ready posture: free left hand down near waist side, anatomical right hand holds staff upright near front. Frame2 free LEFT forearm gently rises to chest, palm slightly open; right hand and staff remain held in same place. Frame3 free LEFT hand reaches forward toward viewer-left at chest level to receive an object, open palm empty, body stays upright; right hand still holds staff, no hand swap or second staff. Frame4 free left hand lowers back to original side ready posture, face quietly open-eyed. Feet remain planted and aligned, shoulders only move naturally, head keeps identical size and position. No walking, no kneeling, no dramatic lean or swaying, no scaleshifts. Exactly four clear successive frames. Each person comfortably inside ONE equal quadrant: crowns at row-relative~15%, soles at~85%, widths less70% of cell, full staff and hair never cross quadrant edge. No glow, no halo, no shadow, no gradient haze, no particles, no drawn object, no other person, no magic effect. True transparent surroundings.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-00d7f6c9-8641-479c-814c-34aa1cc71475.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Four complete left-facing normal-costume figures: ready→free hand to chest→free hand extends empty palm forward→free hand lowers toward ready. Right-held staff stays near torso, no hand swaps. Standing body and face stay same type, planted feet fully visible. No halo, drawn shadow, objects, extra limbs or particle background. Rig/calibration not yet accepted.",
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "sha256": "e9aaf448fc369183994edd4426812b52cb2f23a927d6bcdcac288257d152ea21",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "opaque_pixel_ratio": 0.32330291074939776,
+  "corner_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "major_components_alpha24": [
+    {
+      "box": [
+        205,
+        38,
+        362,
+        580
+      ],
+      "pixels": 135039,
+      "centre": [
+        374.4255215160065,
+        316.45183243359327
+      ]
+    },
+    {
+      "box": [
+        771,
+        39,
+        364,
+        581
+      ],
+      "pixels": 135478,
+      "centre": [
+        943.2019073207458,
+        317.8008163687093
+      ]
+    },
+    {
+      "box": [
+        175,
+        649,
+        393,
+        577
+      ],
+      "pixels": 137446,
+      "centre": [
+        371.5976819987486,
+        926.0692781164967
+      ]
+    },
+    {
+      "box": [
+        774,
+        649,
+        365,
+        580
+      ],
+      "pixels": 135812,
+      "centre": [
+        944.7925072894884,
+        928.6539260153742
+      ]
+    }
+  ],
+  "edge_nontransparent_pixels": 0
+}

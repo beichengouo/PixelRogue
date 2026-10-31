@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_nw_attack3",
+  "provider": "built-in image_gen",
+  "prompt": "Fix game-animation identity/anatomy: FOUR full-body frames on transparent2x2 canvas, Xixifu ordinary form facing NORTHWEST back-left3/4. COPY image1's unchanged back-left CAMERA, skull/crown/ear contour, hair mass, upright torso and FULL leg lengths; NO camera pivot or head nod between frames. Image2 motion ideas only, avoid its inconsistent last heads. Use exactly same head/ear size and visible small side-ear portion from image1, do not change hair part or expose/occlude different face amount across cells. Body straight standing, feet planted at same baseline, no squashed torso, no lean. Anatomical RIGHT hand holds small purple-crystal wooden staff throughout, freehand stays near chest. Stage3 connected lateral sweep:1 elbow opens while staff is diagonal forward-up-left;2 stafftip sweeps horizontally UP-LEFT/NW across front of chest,3 right forearm continues sweep upward above shoulder,4 right hand lifted modestly with staff diagonal over crown preparing nextstage, WITHOUT bending neck or turning head. Staff/arm should not pass through hair/head. Long nearblack hair falls continuously outside lowered hood over back, plain charcoal midcalf robe/lavenderlining/clothwaisttie/darkleggings/shortblackboots, no other creatures/horns/wings/tail/jewelry. Same smooth nonpixel handdrawn2-3tone style, not3D/realistic. Huge transparent gutters and12% margin around EVERY hair/weapon/boot; all4 same scale and skull/groundline, bodyheight68%cellmax. NO spell glows, smoke, beams, symbols, background, shadow, text, borders. Only physical character. Produce4 independently complete figures.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack3.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-3c4a478a-23c7-430e-8870-fd4e112a675d.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "8322cd3e50fac73e3f30499a8c1f12594003296d6fece9941dfd3a27a590a605",
+  "sha256": "79431d633887888ba00f0e254b5afb3d4c9595aaa1bf4d546ffe057edfe58afd",
+  "selection_note": "Re-authored from same-facing idle; stable skull/ear silhouette and clear right arm sweep, no camera turn. Texture match reliability remains a technical gate, not waived."
+}

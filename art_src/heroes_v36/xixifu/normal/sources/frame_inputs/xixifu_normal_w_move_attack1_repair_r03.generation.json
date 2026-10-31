@@ -1,0 +1,19 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "move_attack1",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "native_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17662-af08-75d1-9658-8b637428a5be\\exec-386c77d9-9ce2-44c2-b2e3-3990a18f506b.png",
+  "prompt": "ONE tiny edit ONLY to the BOTTOM-LEFT figure's two boot buckles in this2x2sheet. Every other pixel/figure/pose is correct and must remain unchanged, especially top row and bottom-right. In BOTTOM-LEFT figure ONLY: REMOVE silver round ankle buckle from the LEFT-POSITION forward boot; make that boot's cuff plain shadowed black. ADD that same small silver round buckle to the RIGHT-POSITION rear boot cuff instead. This identifies the near leg as the rear/right leg in this opposite contact frame. Do not move either leg or boot, do not change any head/hair/arms/staff/robe or any other details. Both bottom-left boots still pointleft, same length/design. No wholebody scaling or re-posing. Keep 4fullfigures and original transparentalpha. No neweffects/text/background. Only move bottom-left pair's buckle from front/left boot to rear/rightboot.",
+  "references": [
+    "E:\\CodexWorkspace\\PixelRogue\\work\\v36-style-and-combo\\generated\\xixifu_normal_w_move_attack1_repair_r02.png"
+  ],
+  "sha256": "74352fccad389928082b160d567e0158c987b320c7ce57d21a6d3c3b3792b276",
+  "runtime_integrated": false,
+  "status": "partial_gait_repair_use_selected_frames_only",
+  "visual_review": "TL/TR/BL now valid contactA/passingA/oppositecontactB; BR got unwanted far support buckle back. Use first3 authored frames, not whole sheet."
+}

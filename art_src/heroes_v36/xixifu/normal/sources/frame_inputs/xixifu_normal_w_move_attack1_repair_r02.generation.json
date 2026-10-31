@@ -1,0 +1,19 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "move_attack1",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "native_source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17662-af08-75d1-9658-8b637428a5be\\exec-15ef35ef-958d-4fba-8f4f-18b150a54664.png",
+  "prompt": "Tiny precise local gait-identity correction of this 2x2 four-frame leftfacing moveattack. Top-left and bottom-left figures now have CORRECT alternate contact legs; leave them entirely unchanged. Foreground NEAR anatomical left boot has a visible silver round buckle, FAR boot has NO visible buckle.\nTOP-RIGHT figure: grounded forward LEFT-position boot is NEAR/buckled; keep that buckle. Raised bent boot to RIGHT/rear is FAR leg, remove its visible silver buckle so its cuff is plain black. Preserve its leg/foot shape.\nBOTTOM-RIGHT figure: grounded LEFT-position support boot is now FAR leg, remove visible silver buckle from that grounded boot, make cuff plain black. Raised RIGHT-position boot is now NEAR swinging leg; KEEP its visible silver roundbuckle, and bring that raised near boot about half a bootwidth toward body center/under pelvis rather than stretched far behind. Near calf overlaps in front of shadowed support leg. Both boots still point LEFT, same leg lengths and shortboot design, exactly two valid legs. These create opposite support/passing identities across rows. Do not repeat top-right leg depths. Change ONLY these specified lower leg/boot details, no upperbody/head/hair/arms/staff/robe changes or scaling. Keep2x2 order, same smooth nonpixelhanddrawn ordinaryoutfit, full uncut figures, transparentalpha, no neweffects/text/background.",
+  "references": [
+    "E:\\CodexWorkspace\\PixelRogue\\work\\v36-style-and-combo\\generated\\xixifu_normal_w_move_attack1_repair_r01.png"
+  ],
+  "sha256": "8a0ed4fa3adab0310649d20651b4a3dea6cdae34fb95e50f6ae3bed34d570113",
+  "runtime_integrated": false,
+  "status": "partial_gait_repair_use_selected_frames_only",
+  "visual_review": "TL/TR are contactA/passingA; BR now passingB with plain far support boot and buckled near raised boot under pelvis. BL incorrectly reverted to same lead identity asTL; use BR as authored good frame only."
+}

@@ -1,0 +1,4751 @@
+{
+  "hero": "ilyua",
+  "form": "normal",
+  "clips": {
+    "attack1_n": {
+      "file": "attack1_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            83,
+            158,
+            309
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            82,
+            171,
+            310
+          ],
+          "foot_y": 392,
+          "translation_y": -18
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            101,
+            165,
+            291
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            111,
+            161,
+            281
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "ilyua_normal_n_attack1_v91",
+      "source_sha256": "559ca93bd1218a940fe4bb8f331b72a7d12306fdce19baed80e53b6868f4a848"
+    },
+    "attack2_n": {
+      "file": "attack2_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            54,
+            165,
+            338
+          ],
+          "foot_y": 392,
+          "translation_y": -28
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            54,
+            186,
+            338
+          ],
+          "foot_y": 392,
+          "translation_y": -29
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            59,
+            179,
+            333
+          ],
+          "foot_y": 392,
+          "translation_y": -26
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            65,
+            181,
+            327
+          ],
+          "foot_y": 392,
+          "translation_y": -26
+        }
+      ],
+      "source_asset": "ilyua_normal_n_attack2_v91",
+      "source_sha256": "074c2ce7f20bdb1520bc01baea769b7f5844015ebf8b371eea13de1c643196b0"
+    },
+    "attack3_n": {
+      "file": "attack3_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            98,
+            158,
+            294
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            97,
+            176,
+            295
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            96,
+            167,
+            296
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            96,
+            168,
+            296
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "ilyua_normal_n_attack3_v91",
+      "source_sha256": "ea29eb45fce0394e88afa2c5d1add9269b542e07468fddc232bcfa16b9c624f2"
+    },
+    "attack4_n": {
+      "file": "attack4_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            46,
+            165,
+            346
+          ],
+          "foot_y": 392,
+          "translation_y": -33
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            43,
+            191,
+            349
+          ],
+          "foot_y": 392,
+          "translation_y": -35
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            53,
+            185,
+            339
+          ],
+          "foot_y": 392,
+          "translation_y": -33
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            54,
+            187,
+            338
+          ],
+          "foot_y": 392,
+          "translation_y": -32
+        }
+      ],
+      "source_asset": "ilyua_normal_n_attack4_v91",
+      "source_sha256": "ce25724774b810f4b82691230f290cd5308b38b5920a421c07660b0bdc347c76"
+    },
+    "attack5_n": {
+      "file": "attack5_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            46,
+            163,
+            346
+          ],
+          "foot_y": 392,
+          "translation_y": -31
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            46,
+            190,
+            346
+          ],
+          "foot_y": 392,
+          "translation_y": -31
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            55,
+            195,
+            337
+          ],
+          "foot_y": 392,
+          "translation_y": -31
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            55,
+            186,
+            337
+          ],
+          "foot_y": 392,
+          "translation_y": -29
+        }
+      ],
+      "source_asset": "ilyua_normal_n_attack5_v91",
+      "source_sha256": "b6bd3be82a60c2ee4cf6edab880cc25ec10660ff71ba695daebd2eb7c83a75f6"
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            152,
+            139,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_n_idle_v01",
+      "source_sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    },
+    "move_attack1_n": {
+      "file": "move_attack1_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            96,
+            151,
+            296
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            102,
+            159,
+            290
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            163,
+            96,
+            155,
+            296
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            163,
+            96,
+            153,
+            296
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        }
+      ],
+      "source_asset": "ilyua_normal_n_move_attack1_v81",
+      "source_sha256": "8e844a280ada7326335f6f564546bb89ca473382d640500c0692ccf25f01d8c9"
+    },
+    "move_attack2_n": {
+      "file": "move_attack2_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            91,
+            159,
+            301
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            94,
+            169,
+            298
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            89,
+            162,
+            303
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            162,
+            91,
+            162,
+            301
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        }
+      ],
+      "source_asset": "ilyua_normal_n_move_attack2_v81",
+      "source_sha256": "65caac0f3b8dab8af4e86eb6acdd0bf4753633b2ffce3abc8255234e72d7170e"
+    },
+    "move_attack3_n": {
+      "file": "move_attack3_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            78,
+            162,
+            314
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            81,
+            177,
+            311
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            77,
+            172,
+            315
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            75,
+            174,
+            317
+          ],
+          "foot_y": 392,
+          "translation_y": -18
+        }
+      ],
+      "source_asset": "ilyua_normal_n_move_attack3_v81",
+      "source_sha256": "d23988d8baa01b56d0bf4ad26f2986f777e44b9819b954d3fdaab9c204a71613"
+    },
+    "move_attack4_n": {
+      "file": "move_attack4_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            74,
+            155,
+            318
+          ],
+          "foot_y": 392,
+          "translation_y": -18
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            77,
+            179,
+            315
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            74,
+            172,
+            318
+          ],
+          "foot_y": 392,
+          "translation_y": -18
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            74,
+            173,
+            318
+          ],
+          "foot_y": 392,
+          "translation_y": -19
+        }
+      ],
+      "source_asset": "ilyua_normal_n_move_attack4_v81",
+      "source_sha256": "109cc6461c0ec0a550ad61b2a526583c9d6693754c45e166c7912c012338b693"
+    },
+    "move_attack5_n": {
+      "file": "move_attack5_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            75,
+            156,
+            317
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            78,
+            178,
+            314
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            75,
+            172,
+            317
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            75,
+            173,
+            317
+          ],
+          "foot_y": 392,
+          "translation_y": -18
+        }
+      ],
+      "source_asset": "ilyua_normal_n_move_attack5_v81",
+      "source_sha256": "fa2386f58c2267e1a2fa3d8acd43f408387a3422eb7bf26ab6d86850abd33537"
+    },
+    "skill_cast_n": {
+      "file": "skill_cast_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            158,
+            86,
+            159,
+            306
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            86,
+            177,
+            306
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            105,
+            146,
+            287
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            105,
+            161,
+            287
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "ilyua_normal_n_skill_cast_v80",
+      "source_sha256": "d557c8ba4f7da9709467ef2d54a6ca8d2901a4855be95e0b0fa8e221164d5dc7"
+    },
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            138,
+            145,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            140,
+            145,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            136,
+            150,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            138,
+            148,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        }
+      ],
+      "source_asset": "ilyua_normal_n_walk_v02",
+      "source_sha256": "c6bee5fe4e4c27b423c0d121cc281cfd20b5f489c50a2f94e41680ee79110f95"
+    },
+    "attack1_nw": {
+      "file": "attack1_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            139,
+            180,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            138,
+            188,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            137,
+            206,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            137,
+            178,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_attack1_v02",
+      "source_sha256": "329ba262a783f74e6db91af3935b706e8b82ddf445e12c2b7ea5f334b00d0f65"
+    },
+    "attack2_nw": {
+      "file": "attack2_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            149,
+            187,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            145,
+            192,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            113,
+            138,
+            186,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            137,
+            191,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_attack2_v01",
+      "source_sha256": "40fe2cc1d1268daae6102ab4a79b2fa4a652b4db22dcd47ab3fcbfcc13fdfc23"
+    },
+    "attack3_nw": {
+      "file": "attack3_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            146,
+            186,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            141,
+            190,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            142,
+            185,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            144,
+            178,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_attack3_v02",
+      "source_sha256": "cfe35f98233faace5f574e13647fcaac63423fd7be44782897336c735a65985e"
+    },
+    "attack4_nw": {
+      "file": "attack4_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            124,
+            184,
+            268
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            99,
+            124,
+            203,
+            268
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            121,
+            188,
+            271
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            122,
+            199,
+            270
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_attack4_v01",
+      "source_sha256": "17f2dc3538a3b54951ebac4b8f0da5f5f27fa6c9d8781d88e1dc78ffedcc2526"
+    },
+    "attack5_nw": {
+      "file": "attack5_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            99,
+            126,
+            200,
+            266
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            86,
+            124,
+            209,
+            268
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            126,
+            198,
+            266
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            148,
+            190,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_attack5_v02",
+      "source_sha256": "a2e57a5c6ac471da5069d9d3b42fd8ba1fa8067ec397569b3b8d28f6d0eb92d2"
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            152,
+            131,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_idle_v01",
+      "source_sha256": "2e4b8a11273804c1b16ea3cd744d32a78a831407e7a01fbb536bbb1c107ebe60"
+    },
+    "move_attack1_nw": {
+      "file": "move_attack1_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            149,
+            177,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            129,
+            188,
+            263
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            141,
+            174,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            150,
+            172,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_move_attack1_v80",
+      "source_sha256": "b4c5805a8d0b0d03462c32030c4e6c7200ee31fff6c549f75004c1bebb593f19"
+    },
+    "move_attack2_nw": {
+      "file": "move_attack2_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            121,
+            185,
+            271
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            123,
+            193,
+            269
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            116,
+            186,
+            276
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            118,
+            172,
+            274
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_move_attack2_v80",
+      "source_sha256": "9c516861296049f9d9eb456b493d993abfccb6791ee0c6838f081c4ffba7e456"
+    },
+    "move_attack3_nw": {
+      "file": "move_attack3_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            133,
+            181,
+            259
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            91,
+            130,
+            192,
+            262
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            131,
+            170,
+            261
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            134,
+            159,
+            258
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_move_attack3_v80",
+      "source_sha256": "e2d3072c66e13254ec8fce1ccca0e076a98cd320c737b8667bf6f1e3f9f4d333"
+    },
+    "move_attack4_nw": {
+      "file": "move_attack4_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            105,
+            126,
+            195,
+            266
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            92,
+            127,
+            197,
+            265
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            127,
+            173,
+            265
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            127,
+            200,
+            265
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_move_attack4_v80",
+      "source_sha256": "96442d03af6b5380ad9c7fdd41a365eaa054644453dcc2293c6d141cfc41b7a4"
+    },
+    "move_attack5_nw": {
+      "file": "move_attack5_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            96,
+            125,
+            191,
+            267
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            94,
+            121,
+            194,
+            271
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            113,
+            115,
+            187,
+            277
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            152,
+            169,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_move_attack5_v80",
+      "source_sha256": "0e69604eb3159aa691ef6b702a82b6735403d10c878dfb58add741a7f1edb823"
+    },
+    "skill_cast_nw": {
+      "file": "skill_cast_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            131,
+            181,
+            261
+          ],
+          "foot_y": 392,
+          "translation_y": -20
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            128,
+            191,
+            264
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            112,
+            135,
+            196,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            134,
+            168,
+            258
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_skill_cast_v01",
+      "source_sha256": "7a36fb5535069f9d0026edad30bcacf8d728bd8ad3586bb1d8351c72a2f4048e"
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            150,
+            132,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            149,
+            132,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            151,
+            132,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            154,
+            132,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        }
+      ],
+      "source_asset": "ilyua_normal_nw_walk_v91",
+      "source_sha256": "54dc0815489472439ac5028d0d27150ab7e96f98e91665940d521dd970f8b15d"
+    },
+    "attack1_s": {
+      "file": "attack1_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            157,
+            181,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            157,
+            191,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            156,
+            182,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            157,
+            183,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        }
+      ],
+      "source_asset": "ilyua_normal_s_attack1_v02",
+      "source_sha256": "218169bd0612f0c8ac82f0ded4c9d51d0932895d2f00b6317c828800d8107817"
+    },
+    "attack2_s": {
+      "file": "attack2_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            152,
+            189,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            151,
+            187,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            151,
+            189,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            115,
+            150,
+            190,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "ilyua_normal_s_attack2_v91",
+      "source_sha256": "ed1f32f229661f838c57ea608c106be0a7c3247c52b935753fed5672dcd0624d"
+    },
+    "attack3_s": {
+      "file": "attack3_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            151,
+            178,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            151,
+            179,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            151,
+            179,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            151,
+            180,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "ilyua_normal_s_attack3_v91",
+      "source_sha256": "414033a72f2413a916e0fafa1c967910fc6ef7c4358b76947c2805feffe51e45"
+    },
+    "attack4_s": {
+      "file": "attack4_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            162,
+            193,
+            230
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            161,
+            197,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            165,
+            192,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            164,
+            198,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 13
+        }
+      ],
+      "source_asset": "ilyua_normal_s_attack4_v02",
+      "source_sha256": "f057e210e64b4455739d4663903a7f1422c85b1034fb73495fdd85e170931e75"
+    },
+    "attack5_s": {
+      "file": "attack5_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            156,
+            201,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            121,
+            158,
+            194,
+            234
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            164,
+            183,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 11
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            165,
+            166,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 13
+        }
+      ],
+      "source_asset": "ilyua_normal_s_attack5_v03",
+      "source_sha256": "8775dd6c771be3299db97680619147556106e21aa1255dbbdcd304b9d82b8574"
+    },
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            152,
+            149,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_s_idle_v01",
+      "source_sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    },
+    "move_attack1_s": {
+      "file": "move_attack1_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            152,
+            188,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            149,
+            188,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            151,
+            189,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            147,
+            189,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        }
+      ],
+      "source_asset": "ilyua_normal_s_move_attack1_v90",
+      "source_sha256": "9f0add353a642febe22543cbf603aa0194db3a7cd40fdaf6ff5206b1afb9f151"
+    },
+    "move_attack2_s": {
+      "file": "move_attack2_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            117,
+            153,
+            188,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            149,
+            184,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            152,
+            189,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            150,
+            189,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "ilyua_normal_s_move_attack2_v90",
+      "source_sha256": "14ef8a7eec0cf838e731024bf38e0eeec1d216bedda1477afeb552cf96b3ab26"
+    },
+    "move_attack3_s": {
+      "file": "move_attack3_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            153,
+            186,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            118,
+            147,
+            187,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            152,
+            184,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            148,
+            185,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        }
+      ],
+      "source_asset": "ilyua_normal_s_move_attack3_v90",
+      "source_sha256": "b9724da87e530c238a9214afc17648a438e8d9255fdac8d8c3422954d09bbede"
+    },
+    "move_attack4_s": {
+      "file": "move_attack4_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            151,
+            207,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            148,
+            207,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            152,
+            192,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            149,
+            192,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "ilyua_normal_s_move_attack4_v90",
+      "source_sha256": "cd5aa2b0c33910f0995e6e514fbfd787ce072054187d7ff78d25d391001edc6c"
+    },
+    "move_attack5_s": {
+      "file": "move_attack5_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            152,
+            205,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            150,
+            205,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            146,
+            205,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            146,
+            205,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "ilyua_normal_s_move_attack5_v90",
+      "source_sha256": "3273cfb151aee5514de895a8a79d8dc41fac76b66f78d3a7ec217021897647cc"
+    },
+    "skill_cast_s": {
+      "file": "skill_cast_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            154,
+            155,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            154,
+            155,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            154,
+            158,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            154,
+            166,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        }
+      ],
+      "source_asset": "ilyua_normal_s_skill_cast_v03",
+      "source_sha256": "8078bfa69486542938c1b13950000dac799565c65226ae5c97e9ea73450ea589"
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            153,
+            150,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            149,
+            150,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            153,
+            149,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            150,
+            150,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "ilyua_normal_s_walk_v90",
+      "source_sha256": "040a00acbfce69c8975406bec5f20361478d33174b3400c49ac3ab0432366a09"
+    },
+    "attack1_sw": {
+      "file": "attack1_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            175,
+            171,
+            217
+          ],
+          "foot_y": 392,
+          "translation_y": 23
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            175,
+            186,
+            217
+          ],
+          "foot_y": 392,
+          "translation_y": 24
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            179,
+            174,
+            213
+          ],
+          "foot_y": 392,
+          "translation_y": 27
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            113,
+            179,
+            182,
+            213
+          ],
+          "foot_y": 392,
+          "translation_y": 28
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_attack1_v02",
+      "source_sha256": "bd5622a5d18bced7de6d750781fbe224928bbf7af17a6a70ae7b4124030df0db"
+    },
+    "attack2_sw": {
+      "file": "attack2_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            176,
+            169,
+            216
+          ],
+          "foot_y": 392,
+          "translation_y": 23
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            104,
+            176,
+            185,
+            216
+          ],
+          "foot_y": 392,
+          "translation_y": 24
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            180,
+            169,
+            212
+          ],
+          "foot_y": 392,
+          "translation_y": 27
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            181,
+            163,
+            211
+          ],
+          "foot_y": 392,
+          "translation_y": 27
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_attack2_v01",
+      "source_sha256": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9"
+    },
+    "attack3_sw": {
+      "file": "attack3_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            163,
+            208,
+            229
+          ],
+          "foot_y": 392,
+          "translation_y": 14
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            99,
+            164,
+            205,
+            228
+          ],
+          "foot_y": 392,
+          "translation_y": 15
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            115,
+            166,
+            197,
+            226
+          ],
+          "foot_y": 392,
+          "translation_y": 17
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            167,
+            196,
+            225
+          ],
+          "foot_y": 392,
+          "translation_y": 18
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_attack3_v04",
+      "source_sha256": "53979e0e33e1b8cee869f6a3db0d04bb8fdcfeed7ca42107a6366b63a9d1105d"
+    },
+    "attack4_sw": {
+      "file": "attack4_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            172,
+            203,
+            220
+          ],
+          "foot_y": 392,
+          "translation_y": 19
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            97,
+            172,
+            205,
+            220
+          ],
+          "foot_y": 392,
+          "translation_y": 19
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            173,
+            191,
+            219
+          ],
+          "foot_y": 392,
+          "translation_y": 21
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            173,
+            182,
+            219
+          ],
+          "foot_y": 392,
+          "translation_y": 21
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_attack4_v02",
+      "source_sha256": "d8e495121428e97fdb1be96c754a75266e68050d43bbe0416f85396d57535151"
+    },
+    "attack5_sw": {
+      "file": "attack5_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            184,
+            174,
+            208
+          ],
+          "foot_y": 392,
+          "translation_y": 30
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            184,
+            186,
+            208
+          ],
+          "foot_y": 392,
+          "translation_y": 29
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            187,
+            171,
+            205
+          ],
+          "foot_y": 392,
+          "translation_y": 32
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            187,
+            169,
+            205
+          ],
+          "foot_y": 392,
+          "translation_y": 33
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_attack5_v02",
+      "source_sha256": "9d38a29e919702476c841fd10cd61ff6f5d66407d7fd010a2397deffe5a54c93"
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            152,
+            138,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_idle_v01",
+      "source_sha256": "e95f8b569e0392f260a708a56519c69ade8d39a43f05c45ed3847017d038ee90"
+    },
+    "move_attack1_sw": {
+      "file": "move_attack1_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            147,
+            142,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            97,
+            145,
+            209,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            147,
+            174,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            149,
+            146,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_move_attack1_v80",
+      "source_sha256": "2d8002b4448b094ed5cdfc57091a538c26f1937734d89abe2dc50ac1c9a80382"
+    },
+    "move_attack2_sw": {
+      "file": "move_attack2_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            142,
+            161,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            108,
+            140,
+            200,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            135,
+            172,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            139,
+            168,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_move_attack2_v80",
+      "source_sha256": "ac23d7ab9d55dd39811edecb8476802d59fc9a0d6eb64e332f542ef2cd937c1c"
+    },
+    "move_attack3_sw": {
+      "file": "move_attack3_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            153,
+            181,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            150,
+            189,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            149,
+            167,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            149,
+            168,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_move_attack3_v81",
+      "source_sha256": "76b0f4fe5c4380086ebf553bc61c7884c198e64b66ad96c4f0d5a7c351c66466"
+    },
+    "move_attack4_sw": {
+      "file": "move_attack4_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            137,
+            177,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            138,
+            201,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            137,
+            173,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            138,
+            173,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_move_attack4_v80",
+      "source_sha256": "a3f82893fc3d12664743d04673c2fcebef8cbdfcdc826664a4f354cf5608f371"
+    },
+    "move_attack5_sw": {
+      "file": "move_attack5_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            123,
+            138,
+            197,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            103,
+            136,
+            212,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            140,
+            182,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            141,
+            184,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_move_attack5_v81",
+      "source_sha256": "0d8d12b8d9413c7275d74c05fd4ad5af8945c049a4460724814f71ef2701f214"
+    },
+    "skill_cast_sw": {
+      "file": "skill_cast_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            149,
+            139,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            149,
+            157,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            146,
+            153,
+            156,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            171,
+            152,
+            136,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_skill_cast_v01",
+      "source_sha256": "93873dcfb8e0ecc320b9365b5e4e87077371e20b507b7570701a89d7ce30b911"
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            152,
+            144,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            150,
+            146,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            151,
+            145,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            166,
+            150,
+            147,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_sw_walk_v90",
+      "source_sha256": "790a79e8bd9476be4a80d8d0eecc7f6cf38e708e12a39319a6b0d2a29c789500"
+    },
+    "death": {
+      "file": "death.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            178,
+            160,
+            214
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            113,
+            224,
+            193,
+            168
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            254,
+            214,
+            138
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            102,
+            298,
+            236,
+            94
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "ilyua_normal_utility_death_v01",
+      "source_sha256": "d791bddb1f9455d0ee70d812b462f42e160a38cb13976031e85fd1d26de68ba2"
+    },
+    "hurt": {
+      "file": "hurt.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            159,
+            150,
+            140,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            150,
+            139,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            161,
+            149,
+            143,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            148,
+            139,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        }
+      ],
+      "source_asset": "ilyua_normal_utility_hurt_v80",
+      "source_sha256": "a8bee6ccae80f50f6a8a5185e252ff07378d4dae085687223e0fedc68d9419fa"
+    },
+    "interact": {
+      "file": "interact.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            155,
+            132,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            159,
+            158,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            160,
+            136,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            160,
+            130,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        }
+      ],
+      "source_asset": "ilyua_normal_utility_interact_v02",
+      "source_sha256": "2a34ffeb4ebdfff99ad70f8bb2c97b599dda8b3cf40878593c38f5c913936e67"
+    },
+    "prayer": {
+      "file": "prayer.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            151,
+            123,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            151,
+            123,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            151,
+            123,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            151,
+            123,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "ilyua_normal_utility_prayer_v90",
+      "source_sha256": "7df9cf7e02eec9802787dd22a41293c3b0c6e5fe8176462b5cbb83599d87c1ab"
+    },
+    "attack1_w": {
+      "file": "attack1_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            181,
+            162,
+            211
+          ],
+          "foot_y": 392,
+          "translation_y": 29
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            180,
+            184,
+            212
+          ],
+          "foot_y": 392,
+          "translation_y": 27
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            183,
+            168,
+            209
+          ],
+          "foot_y": 392,
+          "translation_y": 31
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            116,
+            184,
+            186,
+            208
+          ],
+          "foot_y": 392,
+          "translation_y": 32
+        }
+      ],
+      "source_asset": "ilyua_normal_w_attack1_v02",
+      "source_sha256": "46bb5da6f4262c847d4cde9ffbf0a07823694aef2df8c5c2efc37766179bfaf6"
+    },
+    "attack2_w": {
+      "file": "attack2_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            120,
+            170,
+            173,
+            222
+          ],
+          "foot_y": 392,
+          "translation_y": 18
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            171,
+            180,
+            221
+          ],
+          "foot_y": 392,
+          "translation_y": 19
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            135,
+            174,
+            157,
+            218
+          ],
+          "foot_y": 392,
+          "translation_y": 22
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            167,
+            163,
+            225
+          ],
+          "foot_y": 392,
+          "translation_y": 21
+        }
+      ],
+      "source_asset": "ilyua_normal_w_attack2_v01",
+      "source_sha256": "708cb8eb858bef1f13c5bbc27e730c39e05a3ed411afd745ef788ad22c66191e"
+    },
+    "attack3_w": {
+      "file": "attack3_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            137,
+            199,
+            255
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            97,
+            141,
+            195,
+            251
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            138,
+            153,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            149,
+            151,
+            143,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_w_attack3_v90",
+      "source_sha256": "12d4ca42ab894e0127c2a56c50a3087b880d07589507ef6ea6010af15030a1b6"
+    },
+    "attack4_w": {
+      "file": "attack4_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            155,
+            172,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            89,
+            157,
+            207,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            152,
+            172,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            155,
+            159,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        }
+      ],
+      "source_asset": "ilyua_normal_w_attack4_v01",
+      "source_sha256": "51c39610bd7d8fe3b47896b8832af1712e91ed2a60ef292801a9c13d2cdffd09"
+    },
+    "attack5_w": {
+      "file": "attack5_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            95,
+            148,
+            204,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            81,
+            150,
+            215,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            151,
+            178,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            154,
+            159,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        }
+      ],
+      "source_asset": "ilyua_normal_w_attack5_v01",
+      "source_sha256": "a6389a5b733e113472594a9e8a03355bc4bd12152b37b4c06d6b32bacfaacc31"
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            152,
+            123,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_w_idle_v01",
+      "source_sha256": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d"
+    },
+    "move_attack1_w": {
+      "file": "move_attack1_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            122,
+            150,
+            193,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            96,
+            145,
+            208,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            151,
+            180,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            136,
+            151,
+            176,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        }
+      ],
+      "source_asset": "ilyua_normal_w_move_attack1_v81",
+      "source_sha256": "26963eddc3db75e07a7ea32b7a08ff31d860307d57beeb9bc3240e341ac98440"
+    },
+    "move_attack2_w": {
+      "file": "move_attack2_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            78,
+            154,
+            233,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            101,
+            157,
+            198,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 9
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            156,
+            185,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            159,
+            177,
+            233
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        }
+      ],
+      "source_asset": "ilyua_normal_w_move_attack2_v80",
+      "source_sha256": "e31868d57dec61e93f9a3094be3d1319974dfc39bd30b54703f5cc5c901d50d7"
+    },
+    "move_attack3_w": {
+      "file": "move_attack3_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            111,
+            147,
+            199,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            100,
+            142,
+            205,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            145,
+            197,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            140,
+            179,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        }
+      ],
+      "source_asset": "ilyua_normal_w_move_attack3_v80",
+      "source_sha256": "83ff6840d91b9b950c379937d370492f6344d4d28f20b3a5e0ef480482e647c4"
+    },
+    "move_attack4_w": {
+      "file": "move_attack4_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            110,
+            152,
+            201,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            103,
+            152,
+            203,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            114,
+            154,
+            200,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            103,
+            154,
+            203,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        }
+      ],
+      "source_asset": "ilyua_normal_w_move_attack4_v80",
+      "source_sha256": "f34afa74b65184e972dae2e7a19933b652a6a697088323847d8a53b84a56eddf"
+    },
+    "move_attack5_w": {
+      "file": "move_attack5_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            99,
+            147,
+            215,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            109,
+            146,
+            199,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            119,
+            143,
+            193,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            107,
+            149,
+            203,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "ilyua_normal_w_move_attack5_v80",
+      "source_sha256": "c2055aed406782da18e4081ca91c92c40185f3318d34c1957113c642c3057be6"
+    },
+    "skill_cast_w": {
+      "file": "skill_cast_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            160,
+            161,
+            145,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            129,
+            160,
+            164,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 10
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            134,
+            157,
+            164,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            157,
+            132,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        }
+      ],
+      "source_asset": "ilyua_normal_w_skill_cast_v01",
+      "source_sha256": "54dd6cd4b8ebe034dc687c518c905c90ca902d2434d9129d0fa89f36e1b23b63"
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            155,
+            144,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            173,
+            154,
+            134,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            156,
+            153,
+            236
+          ],
+          "foot_y": 392,
+          "translation_y": 6
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            173,
+            154,
+            140,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        }
+      ],
+      "source_asset": "ilyua_normal_w_walk_v01",
+      "source_sha256": "94bd1a13eeab4f2438751ffd308570ff46323ab4a53e6ab22ad8c42a10dea07f"
+    }
+  },
+  "source_sha256": {
+    "ilyua_normal_n_attack1_v91": "559ca93bd1218a940fe4bb8f331b72a7d12306fdce19baed80e53b6868f4a848",
+    "ilyua_normal_n_attack2_v91": "074c2ce7f20bdb1520bc01baea769b7f5844015ebf8b371eea13de1c643196b0",
+    "ilyua_normal_n_attack3_v91": "ea29eb45fce0394e88afa2c5d1add9269b542e07468fddc232bcfa16b9c624f2",
+    "ilyua_normal_n_attack4_v91": "ce25724774b810f4b82691230f290cd5308b38b5920a421c07660b0bdc347c76",
+    "ilyua_normal_n_attack5_v91": "b6bd3be82a60c2ee4cf6edab880cc25ec10660ff71ba695daebd2eb7c83a75f6",
+    "ilyua_normal_n_idle_v01": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20",
+    "ilyua_normal_n_move_attack1_v81": "8e844a280ada7326335f6f564546bb89ca473382d640500c0692ccf25f01d8c9",
+    "ilyua_normal_n_move_attack2_v81": "65caac0f3b8dab8af4e86eb6acdd0bf4753633b2ffce3abc8255234e72d7170e",
+    "ilyua_normal_n_move_attack3_v81": "d23988d8baa01b56d0bf4ad26f2986f777e44b9819b954d3fdaab9c204a71613",
+    "ilyua_normal_n_move_attack4_v81": "109cc6461c0ec0a550ad61b2a526583c9d6693754c45e166c7912c012338b693",
+    "ilyua_normal_n_move_attack5_v81": "fa2386f58c2267e1a2fa3d8acd43f408387a3422eb7bf26ab6d86850abd33537",
+    "ilyua_normal_n_skill_cast_v80": "d557c8ba4f7da9709467ef2d54a6ca8d2901a4855be95e0b0fa8e221164d5dc7",
+    "ilyua_normal_n_walk_v02": "c6bee5fe4e4c27b423c0d121cc281cfd20b5f489c50a2f94e41680ee79110f95",
+    "ilyua_normal_nw_attack1_v02": "329ba262a783f74e6db91af3935b706e8b82ddf445e12c2b7ea5f334b00d0f65",
+    "ilyua_normal_nw_attack2_v01": "40fe2cc1d1268daae6102ab4a79b2fa4a652b4db22dcd47ab3fcbfcc13fdfc23",
+    "ilyua_normal_nw_attack3_v02": "cfe35f98233faace5f574e13647fcaac63423fd7be44782897336c735a65985e",
+    "ilyua_normal_nw_attack4_v01": "17f2dc3538a3b54951ebac4b8f0da5f5f27fa6c9d8781d88e1dc78ffedcc2526",
+    "ilyua_normal_nw_attack5_v02": "a2e57a5c6ac471da5069d9d3b42fd8ba1fa8067ec397569b3b8d28f6d0eb92d2",
+    "ilyua_normal_nw_idle_v01": "2e4b8a11273804c1b16ea3cd744d32a78a831407e7a01fbb536bbb1c107ebe60",
+    "ilyua_normal_nw_move_attack1_v80": "b4c5805a8d0b0d03462c32030c4e6c7200ee31fff6c549f75004c1bebb593f19",
+    "ilyua_normal_nw_move_attack2_v80": "9c516861296049f9d9eb456b493d993abfccb6791ee0c6838f081c4ffba7e456",
+    "ilyua_normal_nw_move_attack3_v80": "e2d3072c66e13254ec8fce1ccca0e076a98cd320c737b8667bf6f1e3f9f4d333",
+    "ilyua_normal_nw_move_attack4_v80": "96442d03af6b5380ad9c7fdd41a365eaa054644453dcc2293c6d141cfc41b7a4",
+    "ilyua_normal_nw_move_attack5_v80": "0e69604eb3159aa691ef6b702a82b6735403d10c878dfb58add741a7f1edb823",
+    "ilyua_normal_nw_skill_cast_v01": "7a36fb5535069f9d0026edad30bcacf8d728bd8ad3586bb1d8351c72a2f4048e",
+    "ilyua_normal_nw_walk_v91": "54dc0815489472439ac5028d0d27150ab7e96f98e91665940d521dd970f8b15d",
+    "ilyua_normal_s_attack1_v02": "218169bd0612f0c8ac82f0ded4c9d51d0932895d2f00b6317c828800d8107817",
+    "ilyua_normal_s_attack2_v91": "ed1f32f229661f838c57ea608c106be0a7c3247c52b935753fed5672dcd0624d",
+    "ilyua_normal_s_attack3_v91": "414033a72f2413a916e0fafa1c967910fc6ef7c4358b76947c2805feffe51e45",
+    "ilyua_normal_s_attack4_v02": "f057e210e64b4455739d4663903a7f1422c85b1034fb73495fdd85e170931e75",
+    "ilyua_normal_s_attack5_v03": "8775dd6c771be3299db97680619147556106e21aa1255dbbdcd304b9d82b8574",
+    "ilyua_normal_s_idle_v01": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae",
+    "ilyua_normal_s_move_attack1_v90": "9f0add353a642febe22543cbf603aa0194db3a7cd40fdaf6ff5206b1afb9f151",
+    "ilyua_normal_s_move_attack2_v90": "14ef8a7eec0cf838e731024bf38e0eeec1d216bedda1477afeb552cf96b3ab26",
+    "ilyua_normal_s_move_attack3_v90": "b9724da87e530c238a9214afc17648a438e8d9255fdac8d8c3422954d09bbede",
+    "ilyua_normal_s_move_attack4_v90": "cd5aa2b0c33910f0995e6e514fbfd787ce072054187d7ff78d25d391001edc6c",
+    "ilyua_normal_s_move_attack5_v90": "3273cfb151aee5514de895a8a79d8dc41fac76b66f78d3a7ec217021897647cc",
+    "ilyua_normal_s_skill_cast_v03": "8078bfa69486542938c1b13950000dac799565c65226ae5c97e9ea73450ea589",
+    "ilyua_normal_s_walk_v90": "040a00acbfce69c8975406bec5f20361478d33174b3400c49ac3ab0432366a09",
+    "ilyua_normal_sw_attack1_v02": "bd5622a5d18bced7de6d750781fbe224928bbf7af17a6a70ae7b4124030df0db",
+    "ilyua_normal_sw_attack2_v01": "db42dbcbdd043b2d1698282dba0ba5dc0e56fce6d910e00f21fd13a21a906af9",
+    "ilyua_normal_sw_attack3_v04": "53979e0e33e1b8cee869f6a3db0d04bb8fdcfeed7ca42107a6366b63a9d1105d",
+    "ilyua_normal_sw_attack4_v02": "d8e495121428e97fdb1be96c754a75266e68050d43bbe0416f85396d57535151",
+    "ilyua_normal_sw_attack5_v02": "9d38a29e919702476c841fd10cd61ff6f5d66407d7fd010a2397deffe5a54c93",
+    "ilyua_normal_sw_idle_v01": "e95f8b569e0392f260a708a56519c69ade8d39a43f05c45ed3847017d038ee90",
+    "ilyua_normal_sw_move_attack1_v80": "2d8002b4448b094ed5cdfc57091a538c26f1937734d89abe2dc50ac1c9a80382",
+    "ilyua_normal_sw_move_attack2_v80": "ac23d7ab9d55dd39811edecb8476802d59fc9a0d6eb64e332f542ef2cd937c1c",
+    "ilyua_normal_sw_move_attack3_v81": "76b0f4fe5c4380086ebf553bc61c7884c198e64b66ad96c4f0d5a7c351c66466",
+    "ilyua_normal_sw_move_attack4_v80": "a3f82893fc3d12664743d04673c2fcebef8cbdfcdc826664a4f354cf5608f371",
+    "ilyua_normal_sw_move_attack5_v81": "0d8d12b8d9413c7275d74c05fd4ad5af8945c049a4460724814f71ef2701f214",
+    "ilyua_normal_sw_skill_cast_v01": "93873dcfb8e0ecc320b9365b5e4e87077371e20b507b7570701a89d7ce30b911",
+    "ilyua_normal_sw_walk_v90": "790a79e8bd9476be4a80d8d0eecc7f6cf38e708e12a39319a6b0d2a29c789500",
+    "ilyua_normal_utility_death_v01": "d791bddb1f9455d0ee70d812b462f42e160a38cb13976031e85fd1d26de68ba2",
+    "ilyua_normal_utility_hurt_v80": "a8bee6ccae80f50f6a8a5185e252ff07378d4dae085687223e0fedc68d9419fa",
+    "ilyua_normal_utility_interact_v02": "2a34ffeb4ebdfff99ad70f8bb2c97b599dda8b3cf40878593c38f5c913936e67",
+    "ilyua_normal_utility_prayer_v90": "7df9cf7e02eec9802787dd22a41293c3b0c6e5fe8176462b5cbb83599d87c1ab",
+    "ilyua_normal_w_attack1_v02": "46bb5da6f4262c847d4cde9ffbf0a07823694aef2df8c5c2efc37766179bfaf6",
+    "ilyua_normal_w_attack2_v01": "708cb8eb858bef1f13c5bbc27e730c39e05a3ed411afd745ef788ad22c66191e",
+    "ilyua_normal_w_attack3_v90": "12d4ca42ab894e0127c2a56c50a3087b880d07589507ef6ea6010af15030a1b6",
+    "ilyua_normal_w_attack4_v01": "51c39610bd7d8fe3b47896b8832af1712e91ed2a60ef292801a9c13d2cdffd09",
+    "ilyua_normal_w_attack5_v01": "a6389a5b733e113472594a9e8a03355bc4bd12152b37b4c06d6b32bacfaacc31",
+    "ilyua_normal_w_idle_v01": "54bb627322de2ed9eabea56c192a5215b31d8e93eabcff6112cd30005981db9d",
+    "ilyua_normal_w_move_attack1_v81": "26963eddc3db75e07a7ea32b7a08ff31d860307d57beeb9bc3240e341ac98440",
+    "ilyua_normal_w_move_attack2_v80": "e31868d57dec61e93f9a3094be3d1319974dfc39bd30b54703f5cc5c901d50d7",
+    "ilyua_normal_w_move_attack3_v80": "83ff6840d91b9b950c379937d370492f6344d4d28f20b3a5e0ef480482e647c4",
+    "ilyua_normal_w_move_attack4_v80": "f34afa74b65184e972dae2e7a19933b652a6a697088323847d8a53b84a56eddf",
+    "ilyua_normal_w_move_attack5_v80": "c2055aed406782da18e4081ca91c92c40185f3318d34c1957113c642c3057be6",
+    "ilyua_normal_w_skill_cast_v01": "54dd6cd4b8ebe034dc687c518c905c90ca902d2434d9129d0fa89f36e1b23b63",
+    "ilyua_normal_w_walk_v01": "94bd1a13eeab4f2438751ffd308570ff46323ab4a53e6ab22ad8c42a10dea07f"
+  },
+  "source_frames": 261,
+  "clip_count": 69,
+  "animations": 124,
+  "manual_visual_review_sha256": "e50c99165451a3296e15db9f2d80ab303c89ed11bb433aa748595a5e4e0751a5",
+  "calibration_sha256": "5c77a5156165191a44eff4e090f7dfbbbb538287a82e3370a7900e06e99ff239",
+  "status": "runtime_integrated_reviewed",
+  "runtime_integrated": true,
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "version": "0.55",
+  "combat_scope": "Model admission only; existing Ilyua combat remains unchanged; authored five-stage design clips retained without enabling Xixifu chain"
+}

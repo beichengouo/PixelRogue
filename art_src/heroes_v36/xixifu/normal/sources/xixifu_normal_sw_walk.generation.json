@@ -1,0 +1,15 @@
+{
+  "key": "xixifu_normal_sw_walk",
+  "provider": "built-in image_gen",
+  "prompt": "Use this SINGLE full-body master to draw4 SMALL WALKING steps, Xixifu normal front-left3/4 SOUTHWEST. STRICT EXACT SAME full body/face/torso and LEG LENGTHS as input, never redraw a squat version. Fourfigures transparent2x2, skull crowns aligned, head steady, FULLY STRAIGHT supporting shin in everyframe reaches same ground. Tiny modest walk, NOT exaggerated knees-up run or crouch: supporting leg remains input length. Upperbody/staff/hair almost identical to input with no tilt/rock/squash. Change only legs/hem minimally. Frame1 anatomical LEFT leg (visible near leg with circularbootbuckle) steps slightly forward/down-left, right boot behind atup-right. Frame2 RIGHT boot slides through directly UNDER HIP CENTER, both boots nearly touching, supporting LEFT leg straight. Frame3 anatomical RIGHT leg/far leg (NO visible circular buckle) now steps slightly forward/down-left, LEFT near boot with CIRCULAR BUCKLE goes behind up-right; knees overlap oppositely, visiblebuckle must be on TRAILING boot not leading one. Frame4 LEFT boot with buckle slides through UNDER HIP CENTER beside planted RIGHT leg, passing legs opposite frame2. Both boot soles stay NEAR ground with almost no knee lift; crown-to-ground and neck-to-belt/robe length unchanged from master. Four separate authored poses, never repeat top-row legs in bottomrow, do not mirror head/staff. Same anatomical RIGHT primary staff hand, purple crystal solid nonglowing. Plain charcoal midcalfrobe/lavenderlining/silverbutterfly clasp/clothwaisttie/darkleggings/shortblackboots, blackeyes/nearblacklonghair OUTSIDE loweredhood. Exact clean smooth nonpixel2-3tone style. All4 same scale in central70% of cells with generous alphamargins; allhair/staff/boots complete. Transparentbackground no glow/shadow/particles/backdrop/text. Do not foreshorten torso/legs or lower waist to show walking, keep standing body height EXACT.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_idle.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-f13bc27a-63c8-4c43-bd2b-d90d5df5052e.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "5ca6bf020f29370c854542baf56ef4fbb1d47fd580412ecd7904cd48e843c9c9",
+  "sha256": "179429f6210a3aba108843fb19df6171708e3e2d77f7994d7516d074b3a9706a",
+  "selection_note": "Modest fully extended support leg rather than crouched gait. Bottom contact leads with far boot without buckle, near buckled boot trails; center passing frames2/4. Pending quantitative gate and grounded review."
+}

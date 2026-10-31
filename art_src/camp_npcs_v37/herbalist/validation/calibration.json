@@ -1,0 +1,837 @@
+{
+  "id": "herbalist",
+  "runtime_integrated": false,
+  "manual_review_complete": false,
+  "idle": [
+    {
+      "direction": "s",
+      "asset": "herbalist_neutral_cardinal_v01",
+      "source_sha256": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+      "source_frame": 0,
+      "pass": true,
+      "factor": 0.3022670025188917,
+      "offset": [
+        20.725440806045327,
+        18.700251889168726
+      ],
+      "bounds": [
+        128,
+        152,
+        320,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "sw",
+      "asset": "herbalist_neutral_diagonal_v01",
+      "source_sha256": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+      "source_frame": 0,
+      "pass": true,
+      "factor": 0.291970802919708,
+      "offset": [
+        -42.56934306569343,
+        13.021897810219002
+      ],
+      "bounds": [
+        143,
+        152,
+        337,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "w",
+      "asset": "herbalist_neutral_cardinal_v01",
+      "source_sha256": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+      "source_frame": 1,
+      "pass": true,
+      "factor": 0.3080872913992298,
+      "offset": [
+        56.86264441591783,
+        12.744544287548138
+      ],
+      "bounds": [
+        176,
+        152,
+        344,
+        393
+      ],
+      "foot_deviation": 1
+    },
+    {
+      "direction": "nw",
+      "asset": "herbalist_neutral_diagonal_v01",
+      "source_sha256": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+      "source_frame": 1,
+      "pass": true,
+      "factor": 0.291970802919708,
+      "offset": [
+        -17.021897810218945,
+        13.313868613138709
+      ],
+      "bounds": [
+        140,
+        152,
+        320,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "n",
+      "asset": "herbalist_neutral_cardinal_v01",
+      "source_sha256": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+      "source_frame": 2,
+      "pass": true,
+      "factor": 0.3037974683544304,
+      "offset": [
+        37.316455696202524,
+        17.721518987341767
+      ],
+      "bounds": [
+        142,
+        152,
+        312,
+        393
+      ],
+      "foot_deviation": 1
+    }
+  ],
+  "results": [
+    {
+      "direction": "n",
+      "action": "walk",
+      "asset": "herbalist_n_walk_v01",
+      "source_sha256": "23a35a206e62767897c042103e3169f670e4ff774b62655f8b93eb57944ed60f",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4921931621077494,
+          "offset": [
+            -107.58025118670886,
+            -31.39684285996836
+          ],
+          "head_inliers": 49,
+          "head_registration_scale": 1.6201358252713416,
+          "head_angle": -1.5690102846692136,
+          "foot_deviation": 23,
+          "torso_residual": [
+            -0.2628745436668396,
+            0.7829126119613647
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4921931621077494,
+          "offset": [
+            -68.99012930181964,
+            -31.1194589349288
+          ],
+          "head_inliers": 50,
+          "head_registration_scale": 1.637358503461973,
+          "head_angle": -1.385587896914577,
+          "foot_deviation": 21,
+          "torso_residual": [
+            -0.6141681671142578,
+            0.9500438570976257
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4921931621077494,
+          "offset": [
+            -107.53141070015823,
+            -17.05832179588608
+          ],
+          "head_inliers": 46,
+          "head_registration_scale": 1.6188543200801473,
+          "head_angle": -1.0202435755945978,
+          "foot_deviation": 20,
+          "torso_residual": [
+            -1.8721258640289307,
+            1.2847328186035156
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4921931621077494,
+          "offset": [
+            -67.72798098793514,
+            -17.170836629746844
+          ],
+          "head_inliers": 41,
+          "head_registration_scale": 1.6544433007790336,
+          "head_angle": -1.6157399238441723,
+          "foot_deviation": 20,
+          "torso_residual": [
+            -0.9860901236534119,
+            -0.2980307936668396
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          138,
+          153,
+          331,
+          415
+        ],
+        [
+          138,
+          153,
+          325,
+          413
+        ],
+        [
+          139,
+          153,
+          339,
+          412
+        ],
+        [
+          140,
+          153,
+          334,
+          412
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "nw",
+      "action": "walk",
+      "asset": "herbalist_nw_walk_v01",
+      "source_sha256": "01034666a4ed3bfc09fb9cbb804870954d12d492cca59e21b4bc9f34c80badfa",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.5178033938146815,
+          "offset": [
+            -121.90213525034211,
+            -40.08543318031475
+          ],
+          "head_inliers": 58,
+          "head_registration_scale": 1.7734766238152846,
+          "head_angle": -0.5033583343995136,
+          "foot_deviation": 25,
+          "torso_residual": [
+            -1.6588997840881348,
+            0.658208429813385
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.5178033938146815,
+          "offset": [
+            -94.63120865647807,
+            -40.301444171989026
+          ],
+          "head_inliers": 63,
+          "head_registration_scale": 1.7720945116415456,
+          "head_angle": -0.36660434164749633,
+          "foot_deviation": 24,
+          "torso_residual": [
+            -1.5661888122558594,
+            0.8613530397415161
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.5178033938146815,
+          "offset": [
+            -122.12028470004557,
+            -29.483038463731724
+          ],
+          "head_inliers": 39,
+          "head_registration_scale": 1.7813748495689592,
+          "head_angle": -0.9033349020636934,
+          "foot_deviation": 21,
+          "torso_residual": [
+            -0.35683733224868774,
+            1.661938190460205
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.5178033938146815,
+          "offset": [
+            -94.89855155109485,
+            -29.077444257527347
+          ],
+          "head_inliers": 47,
+          "head_registration_scale": 1.765114080411877,
+          "head_angle": -0.6216412169219054,
+          "foot_deviation": 20,
+          "torso_residual": [
+            -1.0659945011138916,
+            1.5800976753234863
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          131,
+          152,
+          347,
+          417
+        ],
+        [
+          133,
+          152,
+          348,
+          416
+        ],
+        [
+          127,
+          152,
+          355,
+          413
+        ],
+        [
+          132,
+          153,
+          347,
+          412
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "s",
+      "action": "walk",
+      "asset": "herbalist_s_walk_v01",
+      "source_sha256": "ca9085b26fd82773ff0d3908ef40a3d6f9a7521fa6c554a71f6d7d010dbb3b5e",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.44465799748890944,
+          "offset": [
+            -72.64275892435455,
+            -3.9683527333911
+          ],
+          "head_inliers": 71,
+          "head_registration_scale": 1.4710768750258085,
+          "head_angle": 0.014861856023721701,
+          "foot_deviation": 9,
+          "torso_residual": [
+            0.9153428673744202,
+            1.2661490440368652
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.44465799748890944,
+          "offset": [
+            -41.63959924039674,
+            -5.1824203990869435
+          ],
+          "head_inliers": 77,
+          "head_registration_scale": 1.4860407846326678,
+          "head_angle": 0.35987430916314017,
+          "foot_deviation": 4,
+          "torso_residual": [
+            0.43281152844429016,
+            1.8013335466384888
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.44465799748890944,
+          "offset": [
+            -76.10560158217886,
+            -0.46809567852648826
+          ],
+          "head_inliers": 60,
+          "head_registration_scale": 1.4440341967776367,
+          "head_angle": -0.47535224997146164,
+          "foot_deviation": 8,
+          "torso_residual": [
+            1.7139779329299927,
+            1.2944496870040894
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.44465799748890944,
+          "offset": [
+            -46.64751997402395,
+            -0.9089324720560867
+          ],
+          "head_inliers": 75,
+          "head_registration_scale": 1.45706294745355,
+          "head_angle": -0.5578959534059995,
+          "foot_deviation": 5,
+          "torso_residual": [
+            1.799461007118225,
+            0.27202001214027405
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          126,
+          152,
+          331,
+          401
+        ],
+        [
+          130,
+          153,
+          334,
+          396
+        ],
+        [
+          124,
+          153,
+          339,
+          400
+        ],
+        [
+          125,
+          152,
+          335,
+          397
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "sw",
+      "action": "walk",
+      "asset": "herbalist_sw_walk_v02",
+      "source_sha256": "4ba9338c64501dd7fab10826253e858d89a7e0fcd031a7c2ae4ac2af6188fcde",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4429690586652916,
+          "offset": [
+            -66.35984902486314,
+            1.0062050923814123
+          ],
+          "head_inliers": 72,
+          "head_registration_scale": 1.517169025928624,
+          "head_angle": 1.3541316103423473,
+          "foot_deviation": -1,
+          "torso_residual": [
+            -1.714936375617981,
+            2.3144352436065674
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4429690586652916,
+          "offset": [
+            -47.35585367244526,
+            -0.19186601847625262
+          ],
+          "head_inliers": 67,
+          "head_registration_scale": 1.5275308900676392,
+          "head_angle": 0.4197721012979878,
+          "foot_deviation": -3,
+          "torso_residual": [
+            -0.8633310794830322,
+            3.0035176277160645
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4429690586652916,
+          "offset": [
+            -69.09190736199818,
+            10.447907162408784
+          ],
+          "head_inliers": 41,
+          "head_registration_scale": 1.5321677816549195,
+          "head_angle": 0.6878069206895353,
+          "foot_deviation": -2,
+          "torso_residual": [
+            -1.517984390258789,
+            3.3219518661499023
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4429690586652916,
+          "offset": [
+            -48.392506843065696,
+            9.696096601277397
+          ],
+          "head_inliers": 59,
+          "head_registration_scale": 1.4720559224538998,
+          "head_angle": 0.7776048722081742,
+          "foot_deviation": -1,
+          "torso_residual": [
+            -1.5791175365447998,
+            2.2495687007904053
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          142,
+          150,
+          348,
+          391
+        ],
+        [
+          141,
+          151,
+          347,
+          389
+        ],
+        [
+          141,
+          151,
+          363,
+          390
+        ],
+        [
+          139,
+          151,
+          356,
+          391
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "utility",
+      "action": "rest",
+      "asset": "herbalist_utility_rest_v01",
+      "source_sha256": "cf0d6c6ff25570abb533c7409fa1621f2b5598e97b70913a2f5e5ddd27e0e172",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.3716103953406349,
+          "offset": [
+            -12.8014548642792,
+            33.16177078581207
+          ],
+          "head_inliers": 71,
+          "head_registration_scale": 1.2727656040416746,
+          "head_angle": 3.5804548078726723,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3716103953406349,
+          "offset": [
+            7.114343350821166,
+            32.03998916514601
+          ],
+          "head_inliers": 90,
+          "head_registration_scale": 1.2784434928294517,
+          "head_angle": 2.0634650620226025,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3716103953406349,
+          "offset": [
+            -16.99917669365876,
+            35.5547766024179
+          ],
+          "head_inliers": 69,
+          "head_registration_scale": 1.2544723312367152,
+          "head_angle": 3.510463517826424,
+          "foot_deviation": -12,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.3716103953406349,
+          "offset": [
+            5.55734097000456,
+            33.2232336336679
+          ],
+          "head_inliers": 56,
+          "head_registration_scale": 1.2579196545751803,
+          "head_angle": 9.903051279325496,
+          "foot_deviation": -14,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          147,
+          154,
+          339,
+          380
+        ],
+        [
+          147,
+          154,
+          337,
+          380
+        ],
+        [
+          146,
+          154,
+          340,
+          380
+        ],
+        [
+          152,
+          151,
+          343,
+          378
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "utility",
+      "action": "talk",
+      "asset": "herbalist_utility_talk_v01",
+      "source_sha256": "e7dab80f80b8095396d049496dc9d39df3c8cffceb17fd502af8361a4eef6bc7",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.46242443336270134,
+          "offset": [
+            -69.89161938298358,
+            -4.4190985686587325
+          ],
+          "head_inliers": 78,
+          "head_registration_scale": 1.5838036842672523,
+          "head_angle": 0.6920129799654251,
+          "foot_deviation": 7,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.46242443336270134,
+          "offset": [
+            -48.47067639427463,
+            -4.116310732208003
+          ],
+          "head_inliers": 80,
+          "head_registration_scale": 1.5870754274868288,
+          "head_angle": 0.7775659397756385,
+          "foot_deviation": 8,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.46242443336270134,
+          "offset": [
+            -72.37534037123632,
+            -3.2739721145072735
+          ],
+          "head_inliers": 74,
+          "head_registration_scale": 1.537036239210205,
+          "head_angle": 1.1525906235503187,
+          "foot_deviation": 9,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.46242443336270134,
+          "offset": [
+            -51.14468450615876,
+            -3.8387210595346453
+          ],
+          "head_inliers": 65,
+          "head_registration_scale": 1.5185548788237684,
+          "head_angle": 0.44355463819007884,
+          "foot_deviation": 8,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          139,
+          153,
+          340,
+          399
+        ],
+        [
+          140,
+          154,
+          341,
+          400
+        ],
+        [
+          137,
+          152,
+          347,
+          401
+        ],
+        [
+          138,
+          151,
+          346,
+          400
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "w",
+      "action": "walk",
+      "asset": "herbalist_w_walk_v01",
+      "source_sha256": "a4e453b28f500558828a32ec334690bd001eb69a1992e0148e301c7cceee4137",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.47154915940850944,
+          "offset": [
+            -59.505355441371364,
+            -25.642466553674588
+          ],
+          "head_inliers": 54,
+          "head_registration_scale": 1.5305699799134536,
+          "head_angle": -0.6905624827535768,
+          "foot_deviation": 16,
+          "torso_residual": [
+            0.5908792018890381,
+            1.897847056388855
+          ],
+          "rigid_clip_translation": [
+            2.273136615753174,
+            0
+          ]
+        },
+        {
+          "scale": 0.47154915940850944,
+          "offset": [
+            -35.28398539563966,
+            -25.751587070763804
+          ],
+          "head_inliers": 59,
+          "head_registration_scale": 1.51433613360765,
+          "head_angle": -0.6017519606949863,
+          "foot_deviation": 16,
+          "torso_residual": [
+            0.672996997833252,
+            1.9486277103424072
+          ],
+          "rigid_clip_translation": [
+            2.273136615753174,
+            0
+          ]
+        },
+        {
+          "scale": 0.47154915940850944,
+          "offset": [
+            -60.06069857960949,
+            -11.0791648698251
+          ],
+          "head_inliers": 50,
+          "head_registration_scale": 1.5081082305502622,
+          "head_angle": 0.21999923362125828,
+          "foot_deviation": 10,
+          "torso_residual": [
+            -3.0,
+            1.395193099975586
+          ],
+          "rigid_clip_translation": [
+            2.273136615753174,
+            0
+          ]
+        },
+        {
+          "scale": 0.47154915940850944,
+          "offset": [
+            -36.186406242679126,
+            -10.492136728778885
+          ],
+          "head_inliers": 42,
+          "head_registration_scale": 1.4888755431762293,
+          "head_angle": -0.4408107760872404,
+          "foot_deviation": 11,
+          "torso_residual": [
+            1.6713566184043884,
+            1.219665765762329
+          ],
+          "rigid_clip_translation": [
+            2.273136615753174,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          180,
+          154,
+          371,
+          408
+        ],
+        [
+          179,
+          154,
+          369,
+          408
+        ],
+        [
+          179,
+          154,
+          375,
+          402
+        ],
+        [
+          177,
+          154,
+          369,
+          403
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    }
+  ],
+  "missing_groups": [],
+  "passed_clips": 7,
+  "failed_clips": 0,
+  "idle_passes": 5,
+  "technical_complete": true
+}

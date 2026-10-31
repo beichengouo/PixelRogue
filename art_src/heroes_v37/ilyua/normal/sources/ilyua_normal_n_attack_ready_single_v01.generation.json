@@ -1,0 +1,13 @@
+{
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-1d023f18-4b70-475c-a4ce-499f42e60c54.png",
+  "usage": "unpackaged_candidate",
+  "asset": "ilyua_normal_n_attack_ready_single_v01",
+  "frame_count": 1,
+  "review_reason": "Needs registration, bow transition and full attack sequence review.",
+  "runtime_integrated": false,
+  "status": "pending_anatomy_and_registration",
+  "kind": "single_frame_source",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_attack_draw_single_v01.png",
+  "prompt": "Rear archer anticipation frame, right hand ready at shoulder, same costume and proportions, transparent background.",
+  "sha256": "ebb8fbd799afb334e26d83c7f6eadb53eaace7f528e17c766ad8eba42267e88d"
+}

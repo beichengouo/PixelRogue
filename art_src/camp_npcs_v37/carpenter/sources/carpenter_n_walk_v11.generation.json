@@ -1,0 +1,40 @@
+{
+  "name": "carpenter_n_walk_v11",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "n",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_n_idle_ref_v01.png"
+  ],
+  "prompt": "Transparent 2x2 four-frame strict back-view walking sheet of the same red-haired carpenter. Keep identical body size, costume, ponytail and cell ground baseline. Alternate left and right lead boots across contact and passing poses, with no duplicated contact phase; no text, floor or panel borders.",
+  "asset": "carpenter_n_walk_v11",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_n_walk_v11.png",
+  "sha256": "082b152049b26a368e9de7a85ea288da720495571263bb689a8afd73b3636881",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-282f41c3-277c-4bf0-94e3-0309deb30112.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_n_idle_ref_v01.png",
+      "sha256": "bd36f78693b13a012bdc14dc794769ed2ef81336872021d39d39c43a27ca2b43"
+    }
+  ],
+  "review_history": []
+}

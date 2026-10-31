@@ -1,0 +1,36 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "nw",
+  "action": "move_attack5",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Edit FIRST image, the existing four-phase walking/attack source, as the physical character MASTER. Keep its FOUR distinct leg/boot phases, foot positions, head/torso dimensions, face facing and hip/robe proportions exactly unchanged; change ONLY arms/sleeves/hands/staff to new connected attack stage specified below. Second image is stationary arm/weapon reference only, NOT a leg/body to paste. Same2x2 ordering TL TR BL BR, exactlyfour complete figures, retain original body scale and intact hair/boots; spacious transparent margins no cell clipping or overlap. Preserve near/foreground boot silver buckle identity and farboot plain cuff where visible, especially opposite legs on bottomrow. NEVER make frame3 repeat frame1 legs or frame4 repeatframe2 legs. Midcalf charcoal plainrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots. Anatomical RIGHT hand always holds same smallsolidpurplecrystalstaff, otherhand free. Long nearblackhair continuously outside loweredhood, blackeyes, upright original fullheight torso. Smooth NONPIXEL clean handdrawn broad2-3tone shading. Do not redraw wholebody into a shorter child. No magicalglow/lighting/fog/particles/bullets/runes/groundshadow/text/backdrop/extra creatures orprops. Allspace beyond physicalfigure remains transparentalpha. Fourframe leg sequence already authored MUST stay intact while arms change. These are moving attacks, never planted stationary legs.\nBACK-LEFT/NORTHWEST towardUP-LEFT, samefirstimageback3/4camera, no frontaleyes.\nStage5 reinforced finishing PUSH/RECOIL/READY. Frame1 botharms participate in raisedstaffbrace continuing stage4; frame2 strong deliberate forward staffpush with freehand supporting shaft lower down, no crouch, no extra bullet/flare; frame3 small recoil ofarms while stillmoving; frame4 arms/staff relax toward original neutral ready, preserving walkinglegs in fourthpassingphase. Body never shrinks in recovery. This lastfourthframe completes5stagechain.\nCRITICAL fourthframe arms finish LOW ordinaryready carry: rightstaffhandrelaxesbesidetorso withstaffnearUPRIGHT crystalnearface level BELOWcrown, freelefthanddown; do NOT leavearmsupraised. Keepwalkinglegs unmodified into thatlastframe. Preserve solemap TLrightsoleRIGHT/TRrightpassing/BLleftsoleLEFT/BRleftpassing. WideLANDSCAPE3:2 canvas2x2 widecells with10%alpha margins for fullhair/staff. No wholebody squashing instrongpush; motion comesfromarmsonly.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-f570782b-805b-423b-b0eb-9508111a1717.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack4.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack5.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "NW4legsole identities retained through finishingbrace/push/releasearm/recovery. Laststaff nearupright slightlyhighready; sourcecamera/facehidden correct. Need finalchainbridge review, no claimindependent upper/lower blend.",
+  "sha256": "7fd82770bb85b7263f4a5646dc39ea68600a5b90e58cb0c07ab3f52dfb073602",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack4.png": "f2848e82befe850f24fa61f096b76ef9bd9df4615bc5a23723d29af3a2bb7c7a",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack5.png": "1d7b2bd93112b0f967078b58124d899a579edbc010e309e8e436d6240b28d8b4"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    243,
+    16,
+    1421,
+    984
+  ],
+  "outer_clearance_px": 16,
+  "complete_component_frames": 4
+}

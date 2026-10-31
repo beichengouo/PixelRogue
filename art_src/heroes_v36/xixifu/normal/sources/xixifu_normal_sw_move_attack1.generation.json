@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_sw_move_attack1",
+  "provider": "built-in image_gen",
+  "prompt": "Precise arms-only sprite edit of IMAGE1's2x2 FOUR-FRAME walking cycle. IMAGE1 is the immutable target anatomy/gait. Preserve its FOUR HEADS/FACES/TORSOS/HAIR/WAIST/ROBE HEM and EVERY LEG/BOOT in their EXACT current lengths, positions, overlaps and TL/TR/BL/BR walking order. Do not redraw or mirror legs, do not duplicate top-row legs in bottom-row, do not make feet planted stationary. BOTH original passing feet underhipcenter and opposite contact legs must survive. Edit ONLY arms/hands/sleeves and smallpurplecrystal wooden staff of eachfigure, using corresponding4armposes from IMAGE2 as reference. IMAGE2 is ONLY arm-pose reference: do NOT copy its head, body, legs, proportions, camera or foot positions. Same anatomical RIGHT primary grip all4; normal human girl ordinary charcoalrobe/lavenderlining/silverbutterflyclasp/clothwaisttie/darkleggings/shortblackboots/nearblacklonghair over loweredhood/darkirises. Same smooth nonpixel2-3tone handdrawn style. No wholebody scaling/squat/lean/head turn/sway. Physical arms articulate one connected prepare/release/followthrough/bridge segment, NOT four repeat pulses; no returntoneutral between stages1-4. Allhair/staff/hand/boot tips complete inside transparentmargins, preserve2x2 layout and actual transparency. NO shotbolts/trails/glow/fog/FX/runes/shadows/background/text. Four FULL figures only.\nStage1 SOUTHWEST front-left3/4 facing DOWN-LEFT, exact walking camera: right anatomical hand starts small uprightstaffnear ribs; secondframe short forwardDOWN-LEFT push; thirdwrist rotates inward diagonallyup-left; fourtharmcontinuesupwardroll into nextstage, no idlearmreset. Keep ALL FIRST IMAGE original fourleg phases unchanged; roundbuckle is nearleg (top-left leading, bottomleft trailing), plain boot is farleg/opposite. Freehandopensnear chest.\nDo not change firstimage FOUR LEGS/BOOTS AT ALL:top-left leadboot hasroundclasp, bottom-left leadboot is PLAIN withoutclasp and its rearboot hasclasp. Head/torso/waist/hem/legs untouched; ONLY different rightarm staff anticipation→push→wristturn→upwardbridge and leftfreearm gestures. Preservefirstimagebody/legphase, no duplicated contact phases.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_move_attack2.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_attack1.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-0b70d8ad-b6b3-4223-8ab7-80a2e76aa179.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "517bad1ae2532b3467fea96ac7ccc3d500941c4a51cae31709de46562c9c9329",
+  "sha256": "141ce380e2e444a2082a800f131c5628691f341252e7d544adef2edd6f6f4dcf",
+  "selection_note": "Arms-only derivation from correct SW move2 gait preserves boot identity: bottom leading boot plain, rear boot clasp, original duplicate contact rejected. Preserve actual four authored leg phases."
+}

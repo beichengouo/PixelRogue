@@ -1,0 +1,48 @@
+{
+  "name": "herbalist_sw_walk_v01",
+  "id": "herbalist",
+  "kind": "runtime_clip",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/reference_inputs/herbalist_sw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve hand-painted miniature game animation. Preserve the supplied compact2.7-head NPC's EXACT skull/face/hair crown size, FRONT-LEFT diagonal viewpoint, neck/chest/waist proportions, costume and props. Same upright head and body scale in all FOUR frames. Long deep teal-blue hair in a low flowing ponytail, soft bangs, amber-honey eyes, small ivory flower-and-green-leaf cluster with muted brick-red ribbon by anatomical LEFT ear, human round ears. Ochre/mustard-gold draped shawl/cape with pale botanical border and fine fringes, muted plum-brown fitted overdress over ivory ruffled layered skirt and ivory puff-sleeve blouse, thin brown waist cord with small tassels, brown floral lace-up boots. ONE small wicker herb basket held low in LEFT hand containing green leaves and white blossoms, right hand relaxed. Keep the original shawl draping/long ponytail silhouette and warm gold/plum/ivory palette; no wizard hat or staff. Make FOUR consecutive slow walk poses traveling LOWER-LEFT, in2x2 reading order. Keep the entire original head, shoulders, chest, waist and carried props rigid and unchanged; animate only legs, lower cloth and a restrained free arm. 1 FOREGROUND NEAR leg reaches lower-left heel-contact, FAR leg trails upper-right toe;2 near leg supports under pelvis, FAR knee/boot swings forward;3 OPPOSITE contact: FAR leg now reaches lower-left, foreground NEAR leg trails upper-right with raised heel, near shin overlaps in front at crossing;4 FAR leg supports under pelvis, NEAR knee/boot swings forward. Clearly exchange which leg leads in frame3: not four same-leg lunges or two repeated poses. Keep equal pelvis height, original leg/boot lengths, no head bob/nod/turn or body compression. If both hands carry a prop, keep both hands exactly in the original carrying pose; never add an arm swing third hand. No raising shawl/skirt unnecessarily. Four COMPLETE separate figures inside equal2x2 cells,10% empty margin for full hair/cape/boots and props, no cropping or overlap. True transparent RGBA, nonpixel broad soft shading, no labels/grid/FX/shadow/floor/background gradient.",
+  "asset": "herbalist_sw_walk_v01",
+  "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_sw_walk_v01.png",
+  "sha256": "321152ea942b01013c86d16c9f3df9ba842b48fe1152b991e64904f18c028615",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-57e192dd-a573-4b5a-8433-6a1fd7dd0f93.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_gait",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/reference_inputs/herbalist_sw_idle_ref_v01.png",
+      "sha256": "65c61e99379821c03a04ab07a8b689255d11f931ab7d279d25be8188604a8e2f"
+    }
+  ],
+  "manual_review": "Whole-body review: foreground leg leads in both contact phases; carpenter additionally touches source top. Do not admit.",
+  "review_history": [
+    {
+      "previous_status": "needs_redraw_same_leading_leg",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    }
+  ],
+  "review_reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+}

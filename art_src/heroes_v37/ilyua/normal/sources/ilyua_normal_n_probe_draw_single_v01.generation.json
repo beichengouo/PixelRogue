@@ -1,0 +1,13 @@
+{
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png",
+  "prompt": "Exact idle sprite, move right hand to lightly pull bowstring at waist, bow remains low, no projectile.",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-b6b95d49-58cf-4a2b-883f-7374168d0bce.png",
+  "status": "pending_anatomy_and_registration",
+  "asset": "ilyua_normal_n_probe_draw_single_v01",
+  "runtime_integrated": false,
+  "kind": "single_frame_source",
+  "frame_count": 1,
+  "sha256": "080278bebdcc4ee85b64cc0cfaacbc64ccca87be32abb3b4a057ea303a4e49ae",
+  "usage": "unpackaged_candidate",
+  "review_reason": "Needs complete low-draw sequence and registration."
+}

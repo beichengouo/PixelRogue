@@ -1,0 +1,36 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "nw",
+  "action": "move_attack2",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Edit FIRST image, the existing four-phase walking/attack source, as the physical character MASTER. Keep its FOUR distinct leg/boot phases, foot positions, head/torso dimensions, face facing and hip/robe proportions exactly unchanged; change ONLY arms/sleeves/hands/staff to new connected attack stage specified below. Second image is stationary arm/weapon reference only, NOT a leg/body to paste. Same2x2 ordering TL TR BL BR, exactlyfour complete figures, retain original body scale and intact hair/boots; spacious transparent margins no cell clipping or overlap. Preserve near/foreground boot silver buckle identity and farboot plain cuff where visible, especially opposite legs on bottomrow. NEVER make frame3 repeat frame1 legs or frame4 repeatframe2 legs. Midcalf charcoal plainrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots. Anatomical RIGHT hand always holds same smallsolidpurplecrystalstaff, otherhand free. Long nearblackhair continuously outside loweredhood, blackeyes, upright original fullheight torso. Smooth NONPIXEL clean handdrawn broad2-3tone shading. Do not redraw wholebody into a shorter child. No magicalglow/lighting/fog/particles/bullets/runes/groundshadow/text/backdrop/extra creatures orprops. Allspace beyond physicalfigure remains transparentalpha. Fourframe leg sequence already authored MUST stay intact while arms change. These are moving attacks, never planted stationary legs.\nAll4 BACK-LEFT/NORTHWEST targetUP-LEFT, SAME rear3/4, facehidden exceptear, no frontaleyes. Onlyarms/staffchange.\nStage2 continuous inward wrist return and UPWARD FLICK. Frame1 continues preceding raised staff bridge, folding wrist modestly toward chest without lowering to neutral; frame2 swings crystal diagonally up/forward releasing secondpulse (draw no pulse); frame3 follows arc slightly inward, freehand relaxedopen; frame4 settles into ready-to-sweep sideways arm angle for stage3, no full neutral reset.\nPreserve exactly original4legs: rightsolevisible TL, rightheelpassesunderhips TR, LEFTsolevisible BL withRIGHTbootsupport, LEFTheelpassesunderhips BR. Both bottomrowsole/footidentities opposite top. Firstpose already raised/retracting staff, neverreturn neutral. No newhiptwist/headrotate.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-2311dbb3-e298-4460-ae39-9eeff5ac09fe.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack1.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack2.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Four original backleft leg sole phases retained, wristreturn/upflick arms; initialarm retracts close to body before rising. No frontal eyes, fullhead/body visible. Pending chainbridge continuity review.",
+  "sha256": "73fc5a37456589d98ea6507da86a401953b066c056a4426fa581a5f1732dd6ad",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack1.png": "d64f71f8c9cc1ba943c79122724ad62574975e03a7871506c37b74f8a0ab3668",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack2.png": "e0646a496dfd6f53939dc853797eb58c933402989f7a275870c4de1dd2999f57"
+  },
+  "size": [
+    1230,
+    1278
+  ],
+  "alpha24_bounds": [
+    108,
+    28,
+    1152,
+    1210
+  ],
+  "outer_clearance_px": 28,
+  "complete_component_frames": 4
+}

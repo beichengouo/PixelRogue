@@ -1,0 +1,40 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "n",
+  "action": "move_attack2_repair_r01",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Precise local continuity edit ONLY TOP-LEFT firstframe's arms/staff in image1. This is stage2 inward wrist return AFTER image2 bottom-right highstaff followthrough, not idle start. Raise firstframe's right elbow/hand from near-lowcarry up to SHOULDER height beside righthead; wrist folds inward toward crown, staff DIAGONAL up-left/inward above rightshoulder, purpletip slightlyabovecrown/right but NEVER overcanvas. Freeleft arm lifts a little toward chest/leftshoulder partlybehindhair, small contract-readygesture, not hanging idle. Keep wholehead/hair/torso/robe/legs/boots/footpose EXACT, especially leftsolevisibleleft while rightboot grounded. Keep OTHER3figures unchanged with exact4legphases. Do not reset torso, do not turnshead orshowface, rightstaffhand viewer-right always. Maintain fullbodyheight and same style/scale. True transparentalpha, no glow/fog/shadows/text/background ornewprops. Completehair/stafftip withalphamargin. One small firstarm transition repaironly.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-a4f15e6c-78c0-41b9-a321-41266c36586c.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_move_attack2_before_bridge_repair.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_move_attack1.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Singlefirstarmbridge repair successful: staffhand high at shoulder andstaff diagonal inward aboverightcrown, leftarm raisedpartlyoccluded insteadofidle. Fourlegphases andthreeotherarmposes retained. Candidateonly currentcanonicaln_move_attack2 untouched.",
+  "sha256": "115d5fa996f03ce64c72cb41e216657d84c196d987de93c7916305c8af0d4073",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_move_attack2_before_bridge_repair.png": "27720d5f1661ae1f2f45da9197c7dbbda7297af0fec45c6b835c1d48c5e18155",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_move_attack1.png": "12b9324b39bb5a5050c1b23831480454f1c813b63f85b13d0126fd3993cc7795"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    269,
+    1,
+    1413,
+    1003
+  ],
+  "outer_clearance_px": 1,
+  "complete_component_frames": 4,
+  "key": "xixifu_normal_n_move_attack2",
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "replaced_source_sha256": "27720d5f1661ae1f2f45da9197c7dbbda7297af0fec45c6b835c1d48c5e18155",
+  "selection_note": "Primary view confirms first shoulder-high inward wrist return and raised freehand now connect previous highstaff recovery; all four gait identities kept. Stafftip is closed with1px alpha clearance in native source, final atlas will have normalized padding; no missing tip."
+}

@@ -1,0 +1,42 @@
+{
+  "name": "herbalist_neutral_diagonal_v01",
+  "id": "herbalist",
+  "kind": "runtime_neutral_sheet",
+  "action": "idle",
+  "directions": [
+    "sw",
+    "nw"
+  ],
+  "frame_count": 2,
+  "grid": [
+    2,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/design/herbalist_turnaround_v02.png"
+  ],
+  "prompt": "Use case: identity-preserve runtime game sprites. Draw FRESH 2 neutral standing full-body sprites of the EXACT compact2.7-head NPC in supplied design reference, preserving her head/skull size, face/hair, torso and leg lengths, outfit and occupational accessories. Do not make her tall or change proportion. 2 equal horizontal cells: FRONT-LEFT three-quarter facing lower-left, BACK-LEFT three-quarter facing upper-left, in that exact order. Consistent slightly elevated2D game orthographic camera, common floor line and equal native character scale in every cell. Relaxed standing on both boots, head upright, no nod/lean/crouch. Long deep teal-blue hair in a low flowing ponytail, soft bangs, amber-honey eyes, small ivory flower-and-green-leaf cluster with muted brick-red ribbon by anatomical LEFT ear, human round ears. Ochre/mustard-gold draped shawl/cape with pale botanical border and fine fringes, muted plum-brown fitted overdress over ivory ruffled layered skirt and ivory puff-sleeve blouse, thin brown waist cord with small tassels, brown floral lace-up boots. ONE small wicker herb basket held low in LEFT hand containing green leaves and white blossoms, right hand relaxed. Keep the original shawl draping/long ponytail silhouette and warm gold/plum/ivory palette; no wizard hat or staff. Keep the reference's compact chibi miniature silhouette, broad nonpixel hand-painted shading and clear outlines. Exactly two arms/hands/legs and one proper set of props; no ghost hands. Keep satchel/basket/instrument at same anatomical side; back view naturally occludes front hands/props, never draws them through the back. Complete hair, coat tails, bag/flute and boots inside EACH cell with generous10% transparent margin; no overlap or cropping. Genuine transparent RGBA, no background/gradient/text/labels/grid/shadow/floor/effects. These are NEW runtime neutral source poses based on the design, not a crop or copy of the reference sheet.",
+  "asset": "herbalist_neutral_diagonal_v01",
+  "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_neutral_diagonal_v01.png",
+  "sha256": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-64648af6-26a3-4c18-a6ea-9489ece345ef.png",
+  "dimensions": [
+    1774,
+    887
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/design/herbalist_turnaround_v02.png",
+      "sha256": "c654fabdacbc47644092df4dbd071f3533291dd8c8aa45c694e9f267070f5410"
+    }
+  ]
+}

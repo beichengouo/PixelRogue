@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_s_move_attack1",
+  "provider": "built-in image_gen",
+  "prompt": "Precise game sprite edit of IMAGE1, a2x2 FOUR-FRAME SOUTH walking cycle. Preserve IMAGE1's FOUR HEADS/TORSOS/HAIR and especially EVERY LEG/BOOT/ROBE HEM in EXACT existing positions, lengths, overlaps and order. Top-left currently viewerLEFTboot forward; top-right otherbootpasses; bottomleft viewerRIGHTboot forward; bottomright oppositepassing. Keep these exact4 DIFFERENT leg phases; do not redraw them, duplicate top legs in bottom, or return legs to standing. Change ONLY arms/hands/sleeves and staff in eachfigure to match the corresponding same-grid arm sequence in IMAGE2. Image2 is arm-pose reference ONLY; NEVER use its head, legs, torso scale or feet. Frame1 right anatomical arm (viewerLEFT) keeps staffvertical anticipation, freehandquiet;frame2 shortforward staffpush/rightshoulder,freehandopensnear chest;frame3 wristturninward staffdiagonallyup,freehandclosecontract;frame4 forearmcontinuesdiagonalupbridge readyfornextsegment, no armneutralreset. Same anatomical RIGHT primary grip in all4. No whole-body scaling/camera rotation/lean. This creates4 walking-while-attacking frames with ALL EXISTING WALK LEGS untouched and4 consecutive armposes, not4 repeated pulses. Preserve original simplecharcoal/lavenderrobe/silverclasp/shortboots/nearblacklonghair/darkeyes/smoothnonpixelhanddrawn style and allhairtip clearances. No bullets/glow/fog/symbols/shadows/backdrop/text. Keep transparentalpha and full2x2canvas, all4completefigures, no clipping.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_walk.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack1.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-b39f952b-7ee5-48bc-8190-6b86ab8f718e.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "6a7341ef33de77d8aa90e3d1864bd5d1de4cb32c0d91fded3be8e96e0f8768e5",
+  "sha256": "eb13b454da648266059078e587de1dc3925b2cb2757fc4d86b5aa67669130745",
+  "selection_note": "Arms-only edit preserves original four different S walk contact/passing phases and full body. Initial free-generated same-leg duplicate archived, not used."
+}

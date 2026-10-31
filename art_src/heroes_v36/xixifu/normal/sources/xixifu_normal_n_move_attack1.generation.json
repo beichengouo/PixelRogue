@@ -1,0 +1,36 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "n",
+  "action": "move_attack1",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Edit FIRST image, the existing four-phase walking/attack source, as the physical character MASTER. Keep its FOUR distinct leg/boot phases, foot positions, head/torso dimensions, face facing and hip/robe proportions exactly unchanged; change ONLY arms/sleeves/hands/staff to new connected attack stage specified below. Second image is stationary arm/weapon reference only, NOT a leg/body to paste. Same2x2 ordering TL TR BL BR, exactlyfour complete figures, retain original body scale and intact hair/boots; spacious transparent margins no cell clipping or overlap. Preserve near/foreground boot silver buckle identity and farboot plain cuff where visible, especially opposite legs on bottomrow. NEVER make frame3 repeat frame1 legs or frame4 repeatframe2 legs. Midcalf charcoal plainrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots. Anatomical RIGHT hand always holds same smallsolidpurplecrystalstaff, otherhand free. Long nearblackhair continuously outside loweredhood, blackeyes, upright original fullheight torso. Smooth NONPIXEL clean handdrawn broad2-3tone shading. Do not redraw wholebody into a shorter child. No magicalglow/lighting/fog/particles/bullets/runes/groundshadow/text/backdrop/extra creatures orprops. Allspace beyond physicalfigure remains transparentalpha. Fourframe leg sequence already authored MUST stay intact while arms change. These are moving attacks, never planted stationary legs.\nSTRICT NORTH BACK facingUPscreen all4, shoulders/hips squaredaway, headstaticnotleft/rightturn, facefullyhidden all4. Rightstaffhand staysVIEWER-RIGHT. Preservefirstimage uprighttorso/skull fullheight and ALLfour EXACT gaitposes.\nStage1 connected short forward staff PUSH: frame1 rightstaffhand close and upright, freeleft hand relaxedopen; frame2 staff pushes forward in target direction at chestlevel for release(no bullet/effect); frame3 modest followthrough starting to arc tip upward; frame4 staff rises a little further as bridge toward wristreturn stage2. Feet continue all4 original walkingphases, not castingstance. Onlyarmsstaff move.\nLegmap: TL LEFTboot SOLE visible atLEFT /rightsupport; TR LEFTheelpasses underpelvis beside right leg; BL RIGHTboot SOLE visible atRIGHT /leftsupport; BR RIGHT heelpasses underpelvis beside left leg. Opposite feet acrossrows, bothknees/shortboots visiblebeneath robe. Never change legs to planted casting. OutputWIDE LANDSCAPE3:2 canvas2x2widecells with10%emptyalphamargins, wholefigures physicalonly. No bobbing/sidewayshead/hair sway.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-72a026ae-859c-4638-b071-7c892b0853ee.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_walk.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack1.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "North strictrear head remains square/static,4original gaitphases lefsole/contact/passing thenrightsole/contact/passing retained, staffrightviewer with4push/followarms; no shownface. Pendingrig/seams.",
+  "sha256": "12b9324b39bb5a5050c1b23831480454f1c813b63f85b13d0126fd3993cc7795",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_walk.png": "d29fb0965de4c2b14951136d2d1a949885ee4ea5ef3f908706abc06e2e311da1",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack1.png": "a0449f5ee6b88e3ce725e86b2c3277857462b99c4ac28165752dc2bc68b78e8f"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    278,
+    22,
+    1337,
+    1002
+  ],
+  "outer_clearance_px": 22,
+  "complete_component_frames": 4
+}

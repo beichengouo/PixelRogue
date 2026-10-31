@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack4_seek_pack_v01",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack4_seek_pack_v01.png",
+  "sha256": "e001023c9ed7ed497a552a86292efa000bab02a2eb32f2e0ad016ae9f1994b96",
+  "direction": "n",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_n_seek_ready_single_v01": "399e727af81ccb57980ff871af67b03f02c034ac780543546091b3043d54de83",
+    "ilyua_normal_n_seek_draw_single_v01": "b50793a96a5c22e63cca1beee5421405fbc44f62dba77bcacddde2903fd33573",
+    "ilyua_normal_n_seek_release_single_v01": "5a187b8373551cba2db1576762a7e54987cdfaf17d929dae9b5f4b5a8be5b758",
+    "ilyua_normal_n_seek_recovery_single_v01": "044df7dbd413ba13d45d887ab224fc852a6c3c014792514afb37ca18418c6989"
+  },
+  "reference_idle_sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.2475281768408491,
+      "offset": [
+        -84.59953333119878,
+        -43.31094910668543
+      ],
+      "head_inliers": 17,
+      "head_registration_scale": 1.006614585819453,
+      "head_angle": 0.8992314957781717,
+      "foot_deviation": 3,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2475281768408491,
+      "offset": [
+        -84.47117939933403,
+        -43.11547651447231
+      ],
+      "head_inliers": 15,
+      "head_registration_scale": 0.9974410167782146,
+      "head_angle": 0.3392625956231809,
+      "foot_deviation": 3,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2475281768408491,
+      "offset": [
+        -82.98271204213628,
+        -43.14226694576074
+      ],
+      "head_inliers": 11,
+      "head_registration_scale": 1.0027031859119426,
+      "head_angle": 2.270249546380766,
+      "foot_deviation": 4,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2475281768408491,
+      "offset": [
+        -83.45347320056355,
+        -43.9284723000448
+      ],
+      "head_inliers": 12,
+      "head_registration_scale": 1.008032883374235,
+      "head_angle": 2.7459047779449586,
+      "foot_deviation": 3,
+      "torso_residual": null
+    }
+  ],
+  "visual_review": "Upright bow, right hand full draw and release, stationary feet. Full body and connected transitions across all five must be reviewed."
+}

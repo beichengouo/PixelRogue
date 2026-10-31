@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_n_move_attack1_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_move_attack1_v81.png",
+  "source_generated_path": "E:\\CodexData\\home\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-fb9af462-f971-4271-ac21-16e9452c9639.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_n_move_attack1_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY the upper arms, hands, bow and arrow of this four-frame walking game sprite. Keep the four original heads, hood, body, legs, boots, costume, size and 2x2 placement exactly. STRICT REAR VIEW ARCHERY AIMING NORTH, straight up into depth away from camera. The LEFT arm reaches FORWARD AWAY from viewer, mostly hidden ahead of shoulder. The bow must be foreshortened in the plane across her FRONT, beyond the hood, with upper limb visible ABOVE the hood and lower limb OCCLUDED by her body. The arrow points toward TOP CENTER AWAY from camera; NEVER sideways to the left. Anatomical RIGHT hand draws near the FRONT cheek and is mostly occluded by hood, right elbow visible at right side. Do NOT draw the hands or bow across the back of her cloak. Four consecutive phases: 1 raise bow and nock forward 2 full draw forward/up, elbow back 3 open fingers release arrow away/up (no remaining arrow) 4 lower bow a little to forward ready. Exactly TWO arms and hands, one intact wooden leaf-pendant bow, continuous string, no duplicate hanging arms. Preserve the four alternating walking poses from reference, including narrow passing feet. Full figures each cell, transparent margins at least 8%, refined nonpixel anime handpainted, transparent background, no text, grid, FX, ground, shadow. This is a BACK view of a character shooting AWAY from viewer, never shooting screen-left.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_n_walk_v02.png",
+      "sha256": "c6bee5fe4e4c27b423c0d121cc281cfd20b5f489c50a2f94e41680ee79110f95"
+    }
+  ],
+  "sha256": "8e844a280ada7326335f6f564546bb89ca473382d640500c0692ccf25f01d8c9",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "move_attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1240,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1240,
+      1254
+    ],
+    "8": [
+      235,
+      8,
+      1083,
+      1233
+    ],
+    "32": [
+      235,
+      8,
+      1083,
+      1233
+    ],
+    "128": [
+      236,
+      8,
+      1082,
+      1233
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "carpenter_nw_walk_v03",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/sources/carpenter_nw_walk_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Edit this exact 2x2 four-frame walk sheet. Fix ONLY the LEGS in BOTTOM TWO figures (frames3 and4). Top two frames stay identical. Every head, hairstyle, torso, hands, held props and costume palette stay identical with original scale, camera and position. Currently ALL four poses repeat the same leading leg; correct that.\nBOTTOM LEFT contact pose: the FOREGROUND thigh/leg that leads LEFT in top-left MUST now slope BACKWARD to screen-RIGHT and LOWER (trailing behind travel upper-left), heel lifted; the FAR/BACKGROUND leg must extend LEFT/forward with heel planted. Clearly attach the foreground knee to its original hip, cross the two shins, then place foreground BOOT to RIGHT of far boot. Do not just widen same pose. BOTTOM RIGHT passing pose: far leg stands under pelvis and foreground knee swings forward with bent boot lifted clear. Exactly two legs, unchanged leg lengths. Preserve all upper body pixels and compact proportions, not four new faces. All four figures complete and separated, no cropping of crown/ponytail or boot, keep transparent margins. True transparent RGBA; no letters, diagram, arrows, floor, shadows, particles or additional hands.",
+  "asset": "carpenter_nw_walk_v03",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_nw_walk_v03.png",
+  "sha256": "173041953a5bde8a45f216bcdad18902e3846d951005cd09e6b8d9f7f2fb92ab",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-718d502d-53cf-40f7-acb8-38ea2bae6989.png",
+  "dimensions": [
+    1312,
+    1199
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_gait",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/sources/carpenter_nw_walk_v01.png",
+      "sha256": "a1fb96995c3bbb3a161c65fa16742bc58e9138973bf8a6b9c654a4c8df395f50"
+    }
+  ],
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    }
+  ],
+  "review_reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+}

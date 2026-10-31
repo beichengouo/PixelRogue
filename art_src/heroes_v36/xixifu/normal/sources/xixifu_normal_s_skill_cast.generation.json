@@ -1,0 +1,78 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "s",
+  "action": "skill_cast",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create a production FOUR-frame SKILL-CAST animation of Xixifu NORMAL form, strictly based on attached SOUTH FRONT neutral master. This is a new distinct skill-casting sequence, not ordinary attack. 2 columns by 2 rows, exactly four complete full-body figures, ordered TL TR BL BR. Square transparent canvas, wide empty space between cells and at least10% cellwidth alpha margins for all hair/staff/boots. ALL FOUR frames strictly SOUTH FRONT facing viewer, both eyes visible; same mild topdown camera as reference. Keep neutral anatomy exactly: crown-to-chin, chin-to-waist, waist-to-knee, boot/leg lengths same absolute proportions. Torso upright throughout, feet planted same ground line, no crouching, no shortening body or oversized head. Right anatomical hand holds thin wood staff (viewer-left). Frame1 draw staff close upright and lift free left hand near chest, gathering intent. Frame2 free left hand makes small deliberate closed contract gesture at sternum as staff tilts slightly outward. Frame3 open free palm forward toward viewer with separated fingers, right staff guides outward/downforward in restrained release, no lunging or body squash. Frame4 arms relax almost back to the attached exact neutral pose, torso remains original full height. Preserve normal charcoal midcalf robe, lavender lining, silver butterfly clasp, cloth waist tie, dark leggings and round black short ankle boots. Black eyes, nearblack long hair calm close to body and layered over lowered hood, no hair-cloth interpenetration. Same smooth nonpixel handdrawn outlines/broad2-3tone shading. Draw ONLY physical character and solid-shaded purple staff crystal. No light, glow, fog, shadows, runes, magic circles, symbols, extra creatures, bullets, backgrounds or text. No clipping. Four poses each fully visible and same body scale.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-74f9eea5-99ec-4148-9dd9-12741ca02d42.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_rig_calibration",
+  "visual_review": "Four complete south-facing upright figures, closed contract gesture distinct from ordinary attack, recovery close to idle. No effect/backdrop. Same apparent anatomy; pending independent fixed-scale/neutral and source checks.",
+  "sha256": "34bac1b4f4f4fd3dc364ac93192173afe08848b812328c9b5bb26ce3223fa38d",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png": "c0f03b75c594fe20a1cbd1b610805339740f284f2b7d48ee1f964fcbce0a7e42"
+  },
+  "size": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "alpha24_bounds": [
+    53,
+    28,
+    1158,
+    1227
+  ],
+  "complete_component_frames": 4,
+  "outer_clearance_px": 27,
+  "head_match_to_neutral": [
+    {
+      "scale": 1.7623612153962396,
+      "angle": -0.0002392506555909865,
+      "inliers": 54
+    },
+    {
+      "scale": 1.7783643899866062,
+      "angle": -0.19867219843529887,
+      "inliers": 50
+    },
+    {
+      "scale": 1.7722760903184962,
+      "angle": 0.5714014496842856,
+      "inliers": 37
+    },
+    {
+      "scale": 1.7678978467193953,
+      "angle": -0.49811011435688685,
+      "inliers": 44
+    }
+  ],
+  "matches_are_not_visual_approval": true,
+  "direct_neutral_review": {
+    "technical_direct_neutral_registration": "pass",
+    "fixed_scale": 0.41919394617948214,
+    "head_registered_foot_deviation_px": [
+      3,
+      3,
+      2,
+      1
+    ],
+    "torso_residuals": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "caution": "These registration observations are not artistic approval; inspect ready transition and body/legs."
+  }
+}

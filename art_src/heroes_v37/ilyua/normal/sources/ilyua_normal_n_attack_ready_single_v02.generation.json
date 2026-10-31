@@ -1,0 +1,13 @@
+{
+  "usage": "unpackaged_candidate",
+  "status": "pending_anatomy_and_registration",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png",
+  "review_reason": "Needs registration and bow transition validation.",
+  "prompt": "Move existing two arms of back idle into bow preparation while keeping exact hood and body; no arrow.",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-71a75720-2db8-4de6-9142-ab56c2d369a5.png",
+  "asset": "ilyua_normal_n_attack_ready_single_v02",
+  "kind": "single_frame_source",
+  "frame_count": 1,
+  "runtime_integrated": false,
+  "sha256": "95620f61f99f488e9a6a8e499002ca69a3881e8bc107dde920ec749509b5fb2c"
+}

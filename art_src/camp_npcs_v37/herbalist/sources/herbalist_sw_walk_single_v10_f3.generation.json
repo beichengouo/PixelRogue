@@ -1,0 +1,45 @@
+{
+  "name": "herbalist_sw_walk_single_v10_f3",
+  "id": "herbalist",
+  "kind": "runtime_single",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "refs": [
+    "E:\\GodotProjects\\PixelRogue\\art_src\\camp_npcs_v37\\herbalist\\sources\\herbalist_sw_walk_single_v10_f1.png",
+    "E:\\GodotProjects\\PixelRogue\\art_src\\camp_npcs_v37\\herbalist\\sources\\herbalist_sw_walk_single_v10_f2.png"
+  ],
+  "prompt": "Strict transparent 1254x1254 sprite edit. Preserve full herbalist character, scale and position. Reference 2 has left boot planted and right boot lifted; swap leg roles so right boot is planted and left boot visibly lifted forward on screen-left. No crop, background, floor or text.",
+  "phase": 2,
+  "asset": "herbalist_sw_walk_single_v10_f3",
+  "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_sw_walk_single_v10_f3.png",
+  "sha256": "56eddbf955da38922971a03f7a45751f5eb4175b591a95d55d56ff108001ef03",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-9a96cb13-0cb8-4aa9-8a3f-7abd2ed16a60.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\camp_npcs_v37\\herbalist\\sources\\herbalist_sw_walk_single_v10_f1.png",
+      "sha256": "8783a0e7a7f5dcba51a0015c0a506cf5dd910a870b6f56f3de9a605d2f7ed76f"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\camp_npcs_v37\\herbalist\\sources\\herbalist_sw_walk_single_v10_f2.png",
+      "sha256": "79117c11ccf363f2b91612f307295ba504cadfa158c3c774d55941584bcfbdac"
+    }
+  ]
+}

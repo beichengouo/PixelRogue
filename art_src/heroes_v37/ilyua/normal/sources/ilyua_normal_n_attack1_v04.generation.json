@@ -1,0 +1,80 @@
+{
+  "asset": "ilyua_normal_n_attack1_v04",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack1_v04.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-b5c0d79f-c684-46a0-b87e-7aa402155b05.png",
+  "built_in_imagegen": true,
+  "prompt": "Rear first shot low short pull and release, same idle body, transparent grid.\n",
+  "references": [
+    {
+      "path": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    }
+  ],
+  "sha256": "cab382232c67d2e77dccff2e07e4f6bf9e9facc8f1e564eb9b8f1d0bb21673f0",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "status": "generated_pending_rig_calibration",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1496,
+    1024
+  ],
+  "outer_edge_alpha_max": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    0,
+    1496,
+    1024
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      0,
+      1496,
+      1024
+    ],
+    "8": [
+      237,
+      10,
+      1240,
+      996
+    ],
+    "32": [
+      237,
+      10,
+      1239,
+      996
+    ],
+    "128": [
+      238,
+      11,
+      1239,
+      995
+    ]
+  }
+}

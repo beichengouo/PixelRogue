@@ -1,0 +1,13 @@
+{
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_attack_draw_single_v01.png",
+  "prompt": "Same rear archer immediately after release, right hand opens, bowstring at rest, no arrow, stable body, transparent background.",
+  "asset": "ilyua_normal_n_attack_release_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "frame_count": 1,
+  "review_reason": "Needs registration and full attack sequence.",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-72cc2d92-3b0f-47c7-8f17-92b479131930.png",
+  "sha256": "fdf7315e57de8368778a70953692e78fb03cde5ba69d8c1f78438c0c7881e0a7",
+  "usage": "unpackaged_candidate",
+  "runtime_integrated": false
+}

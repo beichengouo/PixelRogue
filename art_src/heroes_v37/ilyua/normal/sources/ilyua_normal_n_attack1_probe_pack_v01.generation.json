@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack1_probe_pack_v01",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack1_probe_pack_v01.png",
+  "sha256": "f31287b95c89ef4f36a37e34a2afafa090d0e8b80a4df3dc15ed65e157871bd9",
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_n_probe_ready_single_v01": "496fb18261d4825ad6f52a05b56340dfd894f1d590f83bbbc542304ba49f857e",
+    "ilyua_normal_n_probe_draw_single_v01": "080278bebdcc4ee85b64cc0cfaacbc64ccca87be32abb3b4a057ea303a4e49ae",
+    "ilyua_normal_n_probe_release_single_v02": "ac981293022778755c32c354acdccb7066dd591ef49bf0dce1b36e5407a4298f",
+    "ilyua_normal_n_probe_recovery_single_v02": "441f419ba3d5e9f4ec0bd367d82d0e5af48fcfb5e1633f62a6b3fdb476c50e86"
+  },
+  "reference_idle_sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.24467714828471768,
+      "offset": [
+        -78.20095775166497,
+        -40.72084720799178
+      ],
+      "head_inliers": 51,
+      "head_registration_scale": 0.9950204030245186,
+      "head_angle": 0.0974000479393726,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24467714828471768,
+      "offset": [
+        -78.13711097592216,
+        -40.80184886494619
+      ],
+      "head_inliers": 49,
+      "head_registration_scale": 0.997565983804075,
+      "head_angle": 0.15063866131514786,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24467714828471768,
+      "offset": [
+        -78.03829405737707,
+        -40.69711854027918
+      ],
+      "head_inliers": 72,
+      "head_registration_scale": 0.996324393174264,
+      "head_angle": 0.008458078194154258,
+      "foot_deviation": 0,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24467714828471768,
+      "offset": [
+        -78.05711489818137,
+        -40.68536677126022
+      ],
+      "head_inliers": 57,
+      "head_registration_scale": 0.9979013330420827,
+      "head_angle": 0.039763369568475655,
+      "foot_deviation": 0,
+      "torso_residual": null
+    }
+  ],
+  "visual_review": "Low bow short draw then release, two hands and two feet, bow remains left, quiver and dagger remain in correct positions. Validate motion continuity against second shot before runtime."
+}

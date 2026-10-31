@@ -1,0 +1,48 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "n",
+  "action": "idle",
+  "grid": [
+    1,
+    1
+  ],
+  "frame_count": 1,
+  "prompt": "Production sprite source for PixelRogue: Xixifu NORMAL appearance ONLY. Ref1 W idle defines physical body proportions, head/skull, ordinary costume and shading; ref2 approved A04 turnaround defines matching front/back identity and correct hair/hood layer. Keep SAME compact body, no taller torso/legs or shrinking head. Non-pixel smooth hand-drawn fantasy RPG miniature, dark colored clean outlines, restrained2-3tone painted/cel shading, broad still hair masses and fabric folds, no microtexture, no3D, no jagged pixel grid.\n\nIdentity invariant: human-looking summoner girl, BLACK irises (charcoal, not glowing violet), long near-black hair with muted purple reflected shading. Human ears, no horns, wings, tail. Plain charcoal mid-calf robe, lavender sleeve/hem lining, small silver butterfly clasp, simple cloth waist tie, dark leggings, rounded short black ankle boots. Thin dark wood staff with small purple crystal, held in anatomical RIGHT hand, not a huge ornate scepter. Hood folded down on robe behind ALL hair. Long hair drapes continuously over and outside hood to hips, no cloth band cuts through hair. NO hair/cloth wind or floating locks. Mild15-degree viewing elevation, same camera as W idle and all directional sprites. Fully visible feet, hair, staff and fingertips. True transparent background; NO glow, halo, gradient, shadows, ground, particles, symbols, text, border, guides, additional characters, extra limbs or props. Leave generous empty margins around ALL extremities.\nExactly ONE complete full-body neutral ready sprite on transparent square1024x1024. Direction NORTH: STRICT STRAIGHT REAR facing directly AWAY/up-screen. Perfectly centered back of skull, no face whatsoever, NO eyes, cheek, chin or ear visible. Back, shoulders, pelvis square to camera and head aligned straight with torso, NOT three-quarter pose, NOT turned to look back. Long dark hair forms complete continuous outer curtain from crown down hips OVER folded hood, just as approved rear A04; lowered hood mostly invisible behind hair, only tiny edges at outer shoulders if visible, NO U/V cloth band crossing hair. Robe ordinary black with lavender hem/sleeve edges and plain back, NO chest clasp placed on back. Anatomical RIGHT hand holds staff upright on VIEWER-RIGHT of body, crystal visible beside right shoulder, small same staff design/length; free LEFT hand relaxed on viewer-left. Both small ordinary boots heels face viewer, toes point straight away, soles both grounded. Keep same compact head/torso/legs as W idle and approved rear; do not lengthen torso, giant hair not covering all legs. Entire body+hair+staff fits middle65%width, crown/soles12%/88% with12%empty outer margins. True transparent surroundings, no halo/glow/ground/shadow/gradient or extra figure.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-a533f247-fdc2-45b0-a7e5-8a2b7e78c6d0.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Strict back view with no face/ear/eyes; hair continuously covers lowered hood, no crossing cloth band. Right-hand staff on viewer-right, free hand on viewer-left, both boot heels toward viewer. No clipping or halo. Pending cross-view rig calibration.",
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "major_components_alpha24": [
+    {
+      "box": [
+        342,
+        167,
+        573,
+        953
+      ],
+      "pixels": 363752,
+      "centre": [
+        629.8118828212629,
+        641.641098880556
+      ]
+    }
+  ],
+  "sha256": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "edge_nontransparent_pixels": 0
+}

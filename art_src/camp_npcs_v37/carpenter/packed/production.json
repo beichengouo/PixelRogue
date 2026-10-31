@@ -1,0 +1,783 @@
+{
+  "resident_id": "carpenter",
+  "clip_count": 12,
+  "source_frames": 33,
+  "source_images": 9,
+  "animation_count": 18,
+  "clips": {
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            166,
+            138,
+            144,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            165,
+            140,
+            144,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            164,
+            138,
+            147,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            166,
+            142,
+            144,
+            250
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        }
+      ],
+      "source_asset": "carpenter_n_walk_v11",
+      "source_sha256": "082b152049b26a368e9de7a85ea288da720495571263bb689a8afd73b3636881",
+      "source_frame": null
+    },
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            144,
+            152,
+            139,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "carpenter_neutral_cardinal_v01",
+      "source_sha256": "28e517750f8c9ad0a9745df8e1327515ed6a5a58324477c10340265ea27fbd56",
+      "source_frame": 0
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            176,
+            151,
+            150,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "carpenter_neutral_cardinal_v01",
+      "source_sha256": "28e517750f8c9ad0a9745df8e1327515ed6a5a58324477c10340265ea27fbd56",
+      "source_frame": 1
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            166,
+            152,
+            141,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "carpenter_neutral_cardinal_v01",
+      "source_sha256": "28e517750f8c9ad0a9745df8e1327515ed6a5a58324477c10340265ea27fbd56",
+      "source_frame": 2
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            172,
+            152,
+            159,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "carpenter_neutral_diagonal_v01",
+      "source_sha256": "46aeb67e61ef5149677c5d55f6255eeb987af3b6580bb3ce5006baf7d9476a1a",
+      "source_frame": 0
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            151,
+            150,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "carpenter_neutral_diagonal_v01",
+      "source_sha256": "46aeb67e61ef5149677c5d55f6255eeb987af3b6580bb3ce5006baf7d9476a1a",
+      "source_frame": 1
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            138,
+            161,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -14
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            139,
+            163,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            135,
+            165,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            139,
+            168,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        }
+      ],
+      "source_asset": "carpenter_nw_walk_v12",
+      "source_sha256": "f955cf91a0b80588abb1bb357639bb60984ce8b9e439d40dc9c06ad8437001bb",
+      "source_frame": null
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            147,
+            146,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            148,
+            142,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            146,
+            142,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            146,
+            143,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "carpenter_s_walk_v11",
+      "source_sha256": "4a4a0f1a4564c721eb4c65f78acb4644000a028a2283bccca558b1478bbcfae4",
+      "source_frame": null
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            170,
+            140,
+            173,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            139,
+            174,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            169,
+            140,
+            179,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            170,
+            138,
+            181,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -12
+        }
+      ],
+      "source_asset": "carpenter_sw_walk_v03",
+      "source_sha256": "58082a03da48db00110b56dbce8e12773210e08cb4d6ef04dd7397e46b577ccc",
+      "source_frame": null
+    },
+    "rest": {
+      "file": "rest.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            148,
+            166,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            170,
+            148,
+            163,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            167,
+            152,
+            167,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            150,
+            182,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "carpenter_utility_rest_v02",
+      "source_sha256": "51c26870f4e5e86aecaf80d9250cb9a8c9eb86babc62711b5f7b7f98fea49dbd",
+      "source_frame": null
+    },
+    "talk": {
+      "file": "talk.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            171,
+            152,
+            163,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            152,
+            168,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            170,
+            153,
+            165,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            172,
+            154,
+            163,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        }
+      ],
+      "source_asset": "carpenter_utility_talk_v01",
+      "source_sha256": "2831eff225134266ced29a112785ae17766a68b585570573a1b540fec9f005f7",
+      "source_frame": null
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            175,
+            144,
+            163,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            175,
+            145,
+            160,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -6
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            176,
+            144,
+            165,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            175,
+            144,
+            164,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        }
+      ],
+      "source_asset": "carpenter_w_walk_v03",
+      "source_sha256": "de0324770176308e8c6cc3f0dd71f64cad3f7d5bdfafa41f6a75f7edd6e5852a",
+      "source_frame": null
+    }
+  },
+  "source_sha256": {
+    "carpenter_n_walk_v11": "082b152049b26a368e9de7a85ea288da720495571263bb689a8afd73b3636881",
+    "carpenter_neutral_cardinal_v01": "28e517750f8c9ad0a9745df8e1327515ed6a5a58324477c10340265ea27fbd56",
+    "carpenter_neutral_diagonal_v01": "46aeb67e61ef5149677c5d55f6255eeb987af3b6580bb3ce5006baf7d9476a1a",
+    "carpenter_nw_walk_v12": "f955cf91a0b80588abb1bb357639bb60984ce8b9e439d40dc9c06ad8437001bb",
+    "carpenter_s_walk_v11": "4a4a0f1a4564c721eb4c65f78acb4644000a028a2283bccca558b1478bbcfae4",
+    "carpenter_sw_walk_v03": "58082a03da48db00110b56dbce8e12773210e08cb4d6ef04dd7397e46b577ccc",
+    "carpenter_utility_rest_v02": "51c26870f4e5e86aecaf80d9250cb9a8c9eb86babc62711b5f7b7f98fea49dbd",
+    "carpenter_utility_talk_v01": "2831eff225134266ced29a112785ae17766a68b585570573a1b540fec9f005f7",
+    "carpenter_w_walk_v03": "de0324770176308e8c6cc3f0dd71f64cad3f7d5bdfafa41f6a75f7edd6e5852a"
+  },
+  "source_metadata": {
+    "carpenter_n_walk_v11": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_n_walk_v11.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "n",
+      "metadata_sha256": "91d9bf4c19f3c6171b5254ed01f4c1fd83c1661ef2a5bd545fa734a2df297d81",
+      "native_inputs": []
+    },
+    "carpenter_neutral_cardinal_v01": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_neutral_cardinal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        3,
+        1
+      ],
+      "directions": [
+        "s",
+        "w",
+        "n"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "8d1ad19dfc6ef70c1e997909365ee09eeb3f878a7bfa055073961a6fd9b882de",
+      "native_inputs": []
+    },
+    "carpenter_neutral_diagonal_v01": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_neutral_diagonal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        2,
+        1
+      ],
+      "directions": [
+        "sw",
+        "nw"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "15bb94c0bec076d362990e67ba53422b4755719177dbf2caec6c644d61c8d1b7",
+      "native_inputs": []
+    },
+    "carpenter_nw_walk_v12": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_nw_walk_v12.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "nw",
+      "metadata_sha256": "00c9bd6a499751fa83e27d4ad1134738a68d517d293af48eb150e9a53c16701c",
+      "native_inputs": []
+    },
+    "carpenter_s_walk_v11": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_s_walk_v11.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "s",
+      "metadata_sha256": "2eeee357824970df571cbf43b335cb559907c6687af9738dd85d78c4f916d371",
+      "native_inputs": []
+    },
+    "carpenter_sw_walk_v03": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_sw_walk_v03.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "sw",
+      "metadata_sha256": "f45f68879976a443616325f387c1a9eba6f934f2127c7cc5129b6222440581f9",
+      "native_inputs": []
+    },
+    "carpenter_utility_rest_v02": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_utility_rest_v02.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "rest",
+      "direction": "utility",
+      "metadata_sha256": "9de1244045c66c5a3c7534d2ab596e75aacf57b7c7189cba6ab6ea919891cb37",
+      "native_inputs": []
+    },
+    "carpenter_utility_talk_v01": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_utility_talk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "talk",
+      "direction": "utility",
+      "metadata_sha256": "0a06ef3d7f19a67bf27440cce9821b7fb9a595dc603dd6d40b3616cdc372113e",
+      "native_inputs": []
+    },
+    "carpenter_w_walk_v03": {
+      "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_w_walk_v03.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "w",
+      "metadata_sha256": "9ab572d00cb3ea68a8d2a1093ee49eb7e87ab60075e881bc3d0b250b1a2a6c19",
+      "native_inputs": []
+    }
+  },
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "world_height": 32,
+  "world_floor_y": 12,
+  "status": "admitted_runtime",
+  "runtime_integrated": true,
+  "manual_review_sha256": "93df288b993caec6280b44688b010b826d956dc24725a49753365e3f75e2bd84",
+  "calibration_sha256": "f77a810b22f27ea2b95f3351f440ac0adb349f73384724db4e2cf51680124212",
+  "game_version": "0.55"
+}

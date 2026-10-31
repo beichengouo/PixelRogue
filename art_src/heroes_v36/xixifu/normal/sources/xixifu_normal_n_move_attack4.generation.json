@@ -1,0 +1,36 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "n",
+  "action": "move_attack4",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Edit FIRST image, the existing four-phase walking/attack source, as the physical character MASTER. Keep its FOUR distinct leg/boot phases, foot positions, head/torso dimensions, face facing and hip/robe proportions exactly unchanged; change ONLY arms/sleeves/hands/staff to new connected attack stage specified below. Second image is stationary arm/weapon reference only, NOT a leg/body to paste. Same2x2 ordering TL TR BL BR, exactlyfour complete figures, retain original body scale and intact hair/boots; spacious transparent margins no cell clipping or overlap. Preserve near/foreground boot silver buckle identity and farboot plain cuff where visible, especially opposite legs on bottomrow. NEVER make frame3 repeat frame1 legs or frame4 repeatframe2 legs. Midcalf charcoal plainrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots. Anatomical RIGHT hand always holds same smallsolidpurplecrystalstaff, otherhand free. Long nearblackhair continuously outside loweredhood, blackeyes, upright original fullheight torso. Smooth NONPIXEL clean handdrawn broad2-3tone shading. Do not redraw wholebody into a shorter child. No magicalglow/lighting/fog/particles/bullets/runes/groundshadow/text/backdrop/extra creatures orprops. Allspace beyond physicalfigure remains transparentalpha. Fourframe leg sequence already authored MUST stay intact while arms change. These are moving attacks, never planted stationary legs.\nSTRICT NORTHBACK all4 facingUPscreen withheadsquare/static, nofaceoreyes. AnatomicalRIGHTstaffhand staysVIEWER-RIGHT; freeLEFTviewer-left. Onlyarm/sleeve/staffchanges.\nStage4 continues sweep into staff LIFT and freehand CONTRACT gesture. Frame1 staff elevated from prior sweep, free left hand approaches chest; frame2 clear compact finger/hand contract gesture while staff points forward/up for fourthrelease (no effects); frame3 freehand approaches lowerstaffshaft to brace finisher; frame4 both arms ready near raisedstaff in prefinisherbrace. No neutral reset, no shrinkingtorso.\nLeftfreehand contractgesture should become visible besideLEFTshoulder orpartlyoccluded chest; thenfreehand approacheslowerstaffshaft forpre-finisher, not swappedstaffhand. Preserve EXACT4legposes fromfirstimage: TLleftsoleLEFT/TRleftpassingundercenter, BLrightsoleRIGHT/BRrightpassingundercenter. Bodytorso/skull fullheightfixed; no side-to-sidewobble. WideLANDSCAPE3:2 2x2widecells, clearalphamargins all4physicalfigures.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-55477391-75f3-48de-be02-36d71d9aa45e.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_move_attack3.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack4.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Leftfreehand contractvisible besideleftshoulder onfirsttwo frames then approachesstaffshaft inlasttwo, rightstaffhandremainsviewer-right. Fouroriginallegs preserved andstaticnorthheads. No gameplayintegration claim.",
+  "sha256": "f6101575a37a41b79f81c4b4669ce9ef686a2c6279eadc6c8db6650655765adb",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_move_attack3.png": "13b59e71f67f008592e64b3becc612912686befd689e435daea4a07fe7d12561",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack4.png": "5640b3c6f181e1957b6a86105d7479acc5a003c3aefb3e2bd7362eb60cc7f5f8"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    266,
+    17,
+    1463,
+    1003
+  ],
+  "outer_clearance_px": 17,
+  "complete_component_frames": 4
+}

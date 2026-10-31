@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_s_attack4",
+  "provider": "built-in image_gen",
+  "prompt": "Four-frame stage4 connected staff attack, SOUTH front view. Image1 is EXACT physical body master; image2 previous stage's ending overhead staff is starting pose ONLY. Make TWOcolumns xTWOrows FOUR full-body figures on genuinely transparent square canvas. COPY IMAGE1's skull/face, straight torso length, neck-to-belt and belt-to-hem distances, full shins and short boots UNCHANGED in all4. Arms articulate but body upright and feet remain planted exactly like image1, no crouch, forward lean or foreshortening. No squashed toddler body. Frame1 continues overhead staff from prior final frame (right hand on viewerLEFT, staff held above hair, freehand around chest). Frame2 right forearm pivots staff from overhead into diagonal forward raised position while free left hand closes fingers toward the staff near chest, contract-casting gesture; frame3 freehand reaches second support on shaft as staff angle lowers toward chest height, frame4 both hands gently brace shaft high in front ready for the next strong push. This stage is not a repeated single push; keep original anatomical RIGHT primary grip throughout. Face forward SOUTH all4, dark irises calm concentration, no camera turn/head bob. Long dark hair OVER folded-down hood, simple charcoal midcalf robe/lavender lining/silver butterfly clasp/cloth waist bow/dark leggings/black ankleboots, same image1 proportions/clean nonpixel 2-3tone drawing. All4 figures SAME SIZE, same local skullcrown and foot baseline. Each figure including staff fits central70% of cell with12% alpha margin; make canvas spacious instead of shortening torso/legs. Solid purple crystal, NO glow/fog/FX/runes/particles/shadows/backdrop/text/lines. Complete all hair/weapon/hands/boots. Output authored animation sprites, not character redesign.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack3_repair_r01.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-002e5e25-fdb4-4934-81ca-2dcfcbead01e.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "92b41245e0c8e27a8535e067975e8d78c02da161a0c79c4e8ed60ca0069af7aa",
+  "sha256": "29992c2dff243beac77f007a0eacd2eed368a10a889d5f2db633fc91f589e07d",
+  "selection_note": "Same-floor body now matches idle; arm lowering/brace distinct, no shortened upright final torso. Direct head matches4.1% maximum technical diagnostic; full clip calibration required."
+}

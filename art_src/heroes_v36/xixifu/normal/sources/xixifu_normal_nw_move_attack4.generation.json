@@ -1,0 +1,34 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "nw",
+  "action": "move_attack4",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Repair ONLY cropped rightmostHAIR and expand framing of this4frameBACKLEFT movingstaffattack sheet. Rightedge has cut longhair. Reconstruct closed naturalhairtips for ALL4figures, keep EXACT poses/heads/torso/arms/staff/legs/boots and SAMEscale across4. MUST use WIDER LANDSCAPE3:2 canvas1536x1024 or2048x1365, TWOcolumns xTWOrows ofWIDEindependentcells. Each full figure allhair/staff/boot extremities fits central70%width and80%height ofcell, at least10%EMPTYTRANSPARENTalpha margins everyedge. Move whole figures rigidly into own expandedcell, no body distortion/shortening/repose, same body/anatomy. Do not crop or fadehairtips, no overlap. Preserve4legphases: TLrightsoleRIGHT,TRrightheelpassing,BLleftsoleLEFT/rights supportboot,BRleftheelpassing. Headbackleft remainsfacehidden, no addedeyes. Normalcharcoalrobe/lavenderlining/blackshortboots. No background/light/fog/glow/shadow/text/runes/particles/effects. True transparentalpha outsidephysicalcharacters.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-3c148213-f1bd-4516-9801-6309eabf3739.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack4_clipped_candidate.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Wide3:2 margin repair restores fullhair and preserves4sole gait phases. Upperarms contractthen twohandbrace, no frontaleyes. RGBhaze preview requires actualalpha background inspection; not accepted as baked effect.",
+  "sha256": "f2848e82befe850f24fa61f096b76ef9bd9df4615bc5a23723d29af3a2bb7c7a",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_move_attack4_clipped_candidate.png": "dd40e88ee5f982b9f70907ab845b2c6d52ff384e7d8870d0b9c5855efe67d9c2"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    217,
+    20,
+    1369,
+    982
+  ],
+  "outer_clearance_px": 20,
+  "complete_component_frames": 4
+}

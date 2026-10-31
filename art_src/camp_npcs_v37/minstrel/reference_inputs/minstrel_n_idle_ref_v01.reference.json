@@ -1,0 +1,24 @@
+{
+  "kind": "derived_reference_only",
+  "path": "art_src/camp_npcs_v37/minstrel/reference_inputs/minstrel_n_idle_ref_v01.png",
+  "sha256": "c545998a9be5ce9c90b4dbd92699d10f64657b1e56aad202be2a471689cc0605",
+  "source_path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_neutral_cardinal_v01.png",
+  "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+  "source_frame": 2,
+  "source_grid": [
+    3,
+    1
+  ],
+  "native_component_bounds": [
+    290,
+    569,
+    759,
+    1482
+  ],
+  "integer_paste_offset": [
+    359,
+    137
+  ],
+  "native_scale": 1.0,
+  "policy": "Native crop/padding only after original canvas edge check; no source edits, scaling, new pose, or turnaround crop. Not a runtime frame."
+}

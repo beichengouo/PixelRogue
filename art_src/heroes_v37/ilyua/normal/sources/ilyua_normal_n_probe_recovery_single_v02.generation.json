@@ -1,0 +1,13 @@
+{
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "usage": "unpackaged_candidate",
+  "asset": "ilyua_normal_n_probe_recovery_single_v02",
+  "frame_count": 1,
+  "kind": "single_frame_source",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-26e891f3-f190-479f-aa27-a2c16b155901.png",
+  "prompt": "Low shot recovery from idle, bend right wrist while preserving same hood, dagger, quiver and bow.",
+  "sha256": "441f419ba3d5e9f4ec0bd367d82d0e5af48fcfb5e1633f62a6b3fdb476c50e86",
+  "review_reason": "Needs full sequence registration and visual check."
+}

@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_n_attack4",
+  "provider": "built-in image_gen",
+  "prompt": "Precise ARMS-ONLY sprite correction. IMAGE1 is correct stable full-body NORTHERN BACK view2x2 fourframes with plantedlegs. Keep ALL4 HEADS/HAIR/TORSOS/WAISTS/ROBE HEMS/SHINS/BOOTS in exact image1 size/positions/proportions, do not lengthen the body or enlarge a figure. IMAGE2 is ONLY stage4 ARM reference, do NOT copy its overly tall anatomy. Change only hands/sleeves/arms/staff in image1 to consecutive stage4 lift/contract/brace:1 right anatomical hand(viewerRIGHT) keeps staff raised from previousstage3 highstaff recovery, leftarm relaxed;2 freeleft arm contracts toward chest/leftshoulder partly hidden behind hair while rightstaff stays high;3 left hand reaches the lower staff shaft partly occluded behind right shoulder/hair for support;4 both hands brace staff above right shoulder ready final strongforwardpush. Four distinct arm gestures, not repeated idle/shot. RIGHT remains primary staffgrip always, true BACK view no face or camerashift, body/head upright and perfectly same height asimage1 all4, feet planted/crown level. Longnearblackhair continuously over OUTSIDE loweredhood, plaincharcoal midcalfrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots, same smoothnonpixel2-3tone style. Fullhair/staff/boots intact, sufficientalphamargins, actual transparentbackground, NO glow/fog/runes/particles/shadow/backdrop/text. Preserve image1 anatomy only arms change, no tall-body redesign.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack3.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack4.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-46ed7298-f631-440b-9d9d-50f29b4da3f9.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "5640b3c6f181e1957b6a86105d7479acc5a003c3aefb3e2bd7362eb60cc7f5f8",
+  "sha256": "da54d87a10afcf640bd32b7887ec8017f125c786e37b675ef7a36ec4ac3e8cfd",
+  "selection_note": "Final equal-floor visual audit found old upright stage4 body about32atlaspx taller than idle. Arms-only reauthor from same-facing stage3 restores torso/leg proportion while retaining raised rightstaff and freehand contract/support sequence."
+}

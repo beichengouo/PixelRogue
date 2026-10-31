@@ -1,0 +1,39 @@
+{
+  "name": "carpenter_utility_rest_v02",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "utility",
+  "action": "rest",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/sources/carpenter_utility_rest_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Keep this EXACT 2x2 sprite sheet, same four figures, same head size, all hair/torso/feet/costume/canvas and true transparent RGBA. Change ONLY hands and held props on BOTTOM RIGHT figure. In that figure the wooden star was wrongly switched to the opposite hand. It MUST stay in her anatomical LEFT hand (screen RIGHT), as it is in the first three figures. Raise her screen-RIGHT hand open showing the ONE star. Her anatomical RIGHT hand on screen LEFT lowers the ONE chisel, blade down away from body. Remove old star and old wrist on screen LEFT; do not add third hand or second tool. Exactly two connected arms, one star/one chisel, same two belt pouches and all other pixels unchanged. No labels/grid/shadow/background.",
+  "asset": "carpenter_utility_rest_v02",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_utility_rest_v02.png",
+  "sha256": "51c26870f4e5e86aecaf80d9250cb9a8c9eb86babc62711b5f7b7f98fea49dbd",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-2329a80d-c6b1-48dd-af4b-9f4b0bd13fb3.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/sources/carpenter_utility_rest_v01.png",
+      "sha256": "07e4ae1a1d960e6b18ef83d12b5bf3dab95b230d5525a3943b645d7a2e6e28a7"
+    }
+  ]
+}

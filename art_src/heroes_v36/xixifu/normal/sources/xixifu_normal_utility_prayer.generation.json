@@ -1,0 +1,93 @@
+{
+  "provider": "built-in image_gen",
+  "action": "prayer",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create a production sprite animation SOURCE SHEET for PixelRogue, Xixifu NORMAL outfit only. Use image1, xixifu_normal_w_idle.png, as STRICT body/face/costume/left-facing-ready reference. Image2 approved turnaround is supporting identity and proper hood/hair layering reference. Output exactly FOUR authored animation frames in a 2x2 evenly divided grid on a transparent square canvas, ideally2048x2048. Reading order top-left,top-right,bottom-left,bottom-right. No text, frame numbers, guides, border, ground plane, cast shadow, particles, effects or background. One complete whole character per cell, no extra characters. Four cells equal size with12% empty padding each; no hair/staff can cross a cell boundary. Feet ground baseline at~88% of each cell, head vertical position equal across standing frames. Fixed head size and skull, anatomy, staff design and clothes across frames; motions may change pose but NEVER individual frame scaling/squashing/head-size shifts. Each head/face must be same drawing design as source, compact side-profile facing LEFT, mild15-degree elevated RPG camera. Body about same approved proportions and ready height. No taller legs or smaller head.\n\nIdentity invariants: petite human-looking female summoner, long black hair with subdued violet reflected shading, black irises, natural human ears, no horns/tail/wings. Plain charcoal mid-calf robe, muted lavender sleeve lining and hem, small silver butterfly clasp, simple cloth waist tie, opaque dark leggings, rounded short black ankle boots. Thin dark wood staff with SMALL purple crystal, anatomical RIGHT hand (never switch hands). Hair lies continuously outside and OVER lowered hood, hood mostly hidden below hair; no hood band crossing hair, no hat on head. Non-pixel clean smooth hand-drawn 2D art, restrained2-3tone painted/cel shading, broad fabric folds and calm hair masses. Not glossy gacha art, not3D, not pixelated. All frames derived from same body and camera; no redesign.\nACTION ONLY: prayer/quiet invocation, a subtle readable four-frame loop. Frame1 ready with staff close to body, starts lowering eyelids; frame2 eyes softly closed, left free hand rises to gently rest against the right staff-holding hand near chest, both hands form a small quiet prayer/contract gesture around the staff (keep staff right hand); frame3 quiet held prayer, hands gently together by staff, chin very slightly lowered, shoulders relaxed; frame4 nearly same calm posture that can smoothly return to frame2. Staff upright throughout. Feet planted still in same place, knees not bending, no kneeling or dramatic bow. No magical symbols or glow particles. Head never changes size; avoid body sway. Exactly four distinct subtle prayer frames, NOT four identical idle copies.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-fcbee358-cf50-4d59-82c4-d50a6ef6d43d.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Four intact left-facing ordinary-costume figures. Ready/open eyes then free hand joins staff hand and quiet closed-eye prayer. Frame3 small chin dip, frame4 upright quiet prayer; right-held staff remains. Last row tight lower padding but no parts cut. No extra limbs, no horns, no particles.",
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "sha256": "cad6c045e9014073f7f1583654b34dd3402b1bcfdba51516b9cca94fe7122991",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "opaque_pixel_ratio": 0.3554545708914885,
+  "corner_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "major_components_alpha24": [
+    {
+      "box": [
+        180,
+        24,
+        377,
+        607
+      ],
+      "pixels": 151132,
+      "centre": [
+        353.95488050181297,
+        316.71120609798055
+      ]
+    },
+    {
+      "box": [
+        753,
+        28,
+        385,
+        604
+      ],
+      "pixels": 148908,
+      "centre": [
+        928.2073562199479,
+        319.8443669916996
+      ]
+    },
+    {
+      "box": [
+        182,
+        649,
+        398,
+        594
+      ],
+      "pixels": 145503,
+      "centre": [
+        367.91124581623745,
+        934.5672460361642
+      ]
+    },
+    {
+      "box": [
+        761,
+        650,
+        380,
+        593
+      ],
+      "pixels": 146089,
+      "centre": [
+        933.3880237389536,
+        936.2090164214965
+      ]
+    }
+  ],
+  "edge_nontransparent_pixels": 0
+}

@@ -1,0 +1,10 @@
+{
+  "key": "xixifu_normal_nw_attack5_no_fx",
+  "prompt": "Edit ONLY ONE small detail in attached four-frame sprite sheet: REMOVE the bright PURPLE STARBURST / laser spikes extending OUT from the purple crystal in the TOP-RIGHT (second) character. Replace that detached luminous burst/spikes with fully TRANSPARENT alpha0 empty space. Leave the solid wooden staff head and its purple gemstone intact. Do NOT change any character pixels, poses, staff orientation, hair, proportions, colors, cell layout, size, margins or other frames. Transparent background. Keep all4 complete figures. The second pose must be physical character+staff only, without magical flare or projectile. This is a precise local removal, NOT a redraw of all characters. No new glow, haze, shadow or effects.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_attack5.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-dc769fca-b129-4970-a176-c92f8712652f.png",
+  "transparent_background": true,
+  "review": "pending"
+}

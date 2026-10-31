@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_s_attack3",
+  "provider": "built-in image_gen",
+  "prompt": "Production sprite correction. Image1 is the EXACT APPROVED SOUTH-FACING BODY MASTER. Image2 supplies ONLY arm/staff movement ideas and is anatomically WRONG/too squat; do NOT copy its torso or leg proportions. Create a transparent 2columns x2rows four-frame staff sweep clip. All FOUR bodies must COPY IMAGE1's skull, face, neck-to-belt distance, belt-to-hem distance, full leg/boot length and SAME WIDTH/HEIGHT RATIOS. Keep SAME unchanged straight standing torso and planted legs as image1. Do not shrink body under the head or shorten robe/legs to fit. Only shoulders/elbows/wrists/freehand and staff change. This is stage3 of one continuous attack. Frame1 right arm (viewer LEFT) draws the diagonal staff across front at upper chest, free left palm at chest on viewer RIGHT. Frame2 right forearm sweeps staff across front so purple crystal points forward toward viewer/down-screen, little perspective foreshortening allowed for STAFF ONLY. Frame3 arm continues the arc diagonally upward, elbow raises on viewerleft. Frame4 staff lifted in a horizontal-diagonal position above crown, supported by SAME anatomical right hand, free hand remains around chest. Face looks straight SOUTH all4, body upright, no lean/crouch/jump/head tilt/camera turn. Same crystal size, hair and boots. Full-body dark long hair covers outside lowered hood, simple charcoal midcalf robe/lavender lining/silver butterfly clasp/cloth waist bow/dark leggings/short black boots, dark irises. Clean nonpixel handdrawn2-3tones exact style image1, no extra texture/ornaments. FOUR COMPLETE FIGURES with huge alpha gutters; request 2048x2048, EACH figure occupies at most68% of its cell height/width including raised staff. Fit whole figure via generous canvas, NOT squashing the body. Crown/soles on identical local horizontal lines in all4. Solid colored crystal, no glow/fog/FX/particles/shadow/background/text/grid. Every hair tip/hand/staff/boot complete, minimum12% transparent margins each cell. Crisp actual alpha. Keep image1 body anatomy exactly.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack3.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-6e1398e1-460b-4598-a62e-a3d3d7d1bd34.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "895fb5d90edd11733941e564d299a1cbe86d938c8ab85742f30383e5a9408312",
+  "sha256": "2659527b3e4417d183cd6fba5712bfc9d37e3ef45203f3643a2205d8e17cd06d",
+  "selection_note": "Same-floor primary visual review: full upright torso/shins restored from idle; no former squat recovery. Neutral bridge ratios within2.1%, foot offsets6..-5 atlaspx, actual arm sweep authored."
+}

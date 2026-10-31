@@ -1,0 +1,40 @@
+{
+  "name": "herbalist_sw_walk_single_v10_f2",
+  "id": "herbalist",
+  "kind": "runtime_single",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "refs": [
+    "E:\\GodotProjects\\PixelRogue\\art_src\\camp_npcs_v37\\herbalist\\sources\\herbalist_sw_walk_single_v10_f1.png"
+  ],
+  "prompt": "Precise pose edit of this SINGLE 1254x1254 transparent full-body herbalist game sprite. Preserve the current character head, face, hair, flower pin, shawl, hands, basket, skirt, proportions, position and transparent padding. Change ONLY the two legs into the next passing pose: screen-left leg vertical planted; screen-right knee lifts forward-left, boot off ground. Same scale and anatomy. No floor, shadow, text or extra figures.",
+  "phase": 1,
+  "asset": "herbalist_sw_walk_single_v10_f2",
+  "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_sw_walk_single_v10_f2.png",
+  "sha256": "79117c11ccf363f2b91612f307295ba504cadfa158c3c774d55941584bcfbdac",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-d0c7f2c8-2bf3-4e42-a9b2-6ebfa6369931.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\camp_npcs_v37\\herbalist\\sources\\herbalist_sw_walk_single_v10_f1.png",
+      "sha256": "8783a0e7a7f5dcba51a0015c0a506cf5dd910a870b6f56f3de9a605d2f7ed76f"
+    }
+  ]
+}

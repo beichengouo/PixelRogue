@@ -1,0 +1,78 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "nw",
+  "action": "skill_cast",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create FOUR authored SKILL-CAST frames of Xixifu NORMAL matching attached NORTHWEST BACK-LEFT three-quarter neutral master EXACTLY. All figures show BACK-LEFT view toward UP-LEFT, face mostly hidden by far hair; DO NOT show frontal eyes/turn head toward viewer. Same mild topdown camera, skull/neck/torso/robe/leg/shortboot proportions as input. Keep SAME full torso length and full height when arms move; no new squat child body. Eachframe upright head/chest, grounded planted feet, only arms/wrists gesture. Right anatomical hand holds the SAME staff on far/front left as visible in neutral. Free left hand emerges on visible side only when gesturing. 1 gather: bring staff close upright, free hand rises toward chest partly occluded; 2 contract: fingers form compact deliberate gesture near chest while staff tilts a little toward up-left; 3 release: free left hand opens forward UP-LEFT (can be partially hidden by body), right staff guides forward-up-left in controlled extension, no lunge or crouch; 4 relax: return upright staff/free arm almost exact input neutral stance. Four independent complete bodies in2columns x2rows square genuine transparentcanvas, TL TR BL BR, same scale and groundline perlocalcell, spacious alpha margins around all hair, boot and staff extremities. Hair must lay continuously over folded downhood, no clothing stripe across backhair. Ordinary plain charcoal midcalfrobe/lavenderlining/silverbutterflyclasp/clothwaisttie/darkleggings/rounded black shortankleboots, nearblacklonghair andblackeyes if partly visible. Same NONPIXEL smooth cleanhanddrawn darkoutlines/broad2-3tonecel shading. No crystal glow, NO fog/light/shadow/runes/symbols/particles/bullets/ground/backdrop/text/extra props or creatures. Staff crystal solid purple. Four complete separate cleanalpha bodies, no crop/overlap.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-a94df72d-dd5a-47ea-800f-e4a4b84c6bfc.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_idle.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_rig_calibration",
+  "visual_review": "Four back-left figures retain no visible frontal eyes, hair outside lowered hood and full grounded boots. Contract gesture visible beside forward staff, both arms release up-left, then ready. No physical effect. Pending calibrated skull/body/bridge review.",
+  "sha256": "b154a260a5dd47bb4828ac6418bbef6cb33bf595370ac4131c90cd52465efe1e",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_idle.png": "6cce60c6eecb320db5b848bcc80325bd82253ccac0809717264672432b9a2e58"
+  },
+  "size": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "alpha24_bounds": [
+    98,
+    14,
+    1121,
+    1201
+  ],
+  "complete_component_frames": 4,
+  "outer_clearance_px": 14,
+  "head_match_to_neutral": [
+    {
+      "scale": 1.7912203860269547,
+      "angle": 1.4255755972955946,
+      "inliers": 17
+    },
+    {
+      "scale": 1.8605013268674122,
+      "angle": 3.838529904899477,
+      "inliers": 15
+    },
+    {
+      "scale": 1.7985533958172852,
+      "angle": -1.25532229167184,
+      "inliers": 6
+    },
+    {
+      "scale": 1.7793417751373188,
+      "angle": 0.858425281975035,
+      "inliers": 14
+    }
+  ],
+  "matches_are_not_visual_approval": true,
+  "direct_neutral_review": {
+    "technical_direct_neutral_registration": "pass",
+    "fixed_scale": 0.4377728031023107,
+    "head_registered_foot_deviation_px": [
+      10,
+      10,
+      13,
+      10
+    ],
+    "torso_residuals": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "caution": "These registration observations are not artistic approval; inspect ready transition and body/legs."
+  }
+}

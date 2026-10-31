@@ -1,0 +1,197 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "n",
+  "action": "skill_cast",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Precise final consistency edit of image1 four-frame north/back casting sheet. TOP ROW TWO HEADS are correct; leave both top-row figures unchanged. BOTTOM ROW TWO upper skull/hair caps became about6-7% too large in last edit. Adjust ONLY the bottom-left and bottom-right upper cranial hair cap volumes to EXACTLY MATCH the top-left figure's head/skull width and height at the same whole-body scale, reducing those two upper caps slightly (~6%). Do not scale whole bottom bodies, legs, boots, robe, arms, hands or staff, do not shorten longhair lower tips, preserve poses. All4 headcaps must be the same physical size, same strictnorthback camera and same drawing identity, with continuous natural longblackhair outside loweredhood. Head size changes only at uppercranium, keep neck attachment stable. Preserve2x2 layout,4 complete figures, allpartssafelyinsidecanvas, genuine transparentalpha, no effects/text/background/glow/shadows. Nonpixel smooth handdrawn normal outfit. Image2 neutral identity only supports matching same skull-to-body proportions, NOT a separate body to paste.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-0fca1d68-519b-47a7-9ef0-3ecdaf07f91c.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_skill_cast_repair_r01.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_idle.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_final_body_review",
+  "visual_review": "Selected r02: actual upper-head silhouette scanline widths agree within2.5% across4 heads; same-clip neutral bridge passes unchanged6% size gate with5–7px foot deviation. Direct neutral textural matching lacks final-frame head match; not used as sole anatomical proof. No pixel drawing/warping or threshold relaxation. All4 intact north-back poses; final scene review pending.",
+  "sha256": "253ba85220441d2d6eaec2fdc9a8a03a92930281c59bccde10bea131bd81c173",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_skill_cast_repair_r01.png": "3fc6079997ed310d30cdac8cdf957cf92d675d70217345027f0c9fed9c584724",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_idle.png": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27"
+  },
+  "direct_neutral_review": {
+    "technical": "fail",
+    "reason": "('missing head registration', 'skill_cast', [9, 11, 10, None])"
+  },
+  "independent_head_cap_contours": [
+    {
+      "crown_y": 22,
+      "roi": [
+        200,
+        0,
+        495,
+        180
+      ],
+      "scanlines": [
+        {
+          "y": 42,
+          "width": 120,
+          "center": 355.5
+        },
+        {
+          "y": 62,
+          "width": 156,
+          "center": 355.5
+        },
+        {
+          "y": 82,
+          "width": 182,
+          "center": 355.5
+        },
+        {
+          "y": 102,
+          "width": 198,
+          "center": 355.5
+        },
+        {
+          "y": 122,
+          "width": 212,
+          "center": 355.5
+        }
+      ]
+    },
+    {
+      "crown_y": 22,
+      "roi": [
+        827,
+        0,
+        1122,
+        180
+      ],
+      "scanlines": [
+        {
+          "y": 42,
+          "width": 118,
+          "center": 933.5
+        },
+        {
+          "y": 62,
+          "width": 154,
+          "center": 933.5
+        },
+        {
+          "y": 82,
+          "width": 180,
+          "center": 933.5
+        },
+        {
+          "y": 102,
+          "width": 196,
+          "center": 933.5
+        },
+        {
+          "y": 122,
+          "width": 210,
+          "center": 933.5
+        }
+      ]
+    },
+    {
+      "crown_y": 638,
+      "roi": [
+        200,
+        627,
+        495,
+        807
+      ],
+      "scanlines": [
+        {
+          "y": 658,
+          "width": 117,
+          "center": 359.0
+        },
+        {
+          "y": 678,
+          "width": 154,
+          "center": 358.5
+        },
+        {
+          "y": 698,
+          "width": 181,
+          "center": 359.0
+        },
+        {
+          "y": 718,
+          "width": 200,
+          "center": 358.5
+        },
+        {
+          "y": 738,
+          "width": 215,
+          "center": 359.0
+        }
+      ]
+    },
+    {
+      "crown_y": 637,
+      "roi": [
+        827,
+        627,
+        1122,
+        807
+      ],
+      "scanlines": [
+        {
+          "y": 657,
+          "width": 117,
+          "center": 938.0
+        },
+        {
+          "y": 677,
+          "width": 154,
+          "center": 938.5
+        },
+        {
+          "y": 697,
+          "width": 181,
+          "center": 938.0
+        },
+        {
+          "y": 717,
+          "width": 200,
+          "center": 938.5
+        },
+        {
+          "y": 737,
+          "width": 214,
+          "center": 938.5
+        }
+      ]
+    }
+  ],
+  "same_clip_bridge_review": {
+    "technical_same_clip_bridge": "pass",
+    "fixed_scale": 0.430850401337114,
+    "head_registered_foot_deviation_px": [
+      5,
+      5,
+      6,
+      7
+    ],
+    "scale_ratios": [
+      1.0,
+      0.9994137281310064,
+      0.9678534539495668,
+      0.951227383546791
+    ],
+    "inliers": [
+      98,
+      23,
+      18,
+      13
+    ]
+  },
+  "selected_candidate": "xixifu_normal_n_skill_cast_repair_r02"
+}

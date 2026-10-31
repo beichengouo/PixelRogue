@@ -1,0 +1,13 @@
+{
+  "sha256": "399e727af81ccb57980ff871af67b03f02c034ac780543546091b3043d54de83",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-95273727-a667-4016-8736-46eea8e72948.png",
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_seek_draw_single_v01.png",
+  "runtime_integrated": false,
+  "kind": "single_frame_source",
+  "review_reason": "Needs sequence validation and registration.",
+  "asset": "ilyua_normal_n_seek_ready_single_v01",
+  "prompt": "Early fourth-stage aim: upright bow, right hand begins draw, preserve body.",
+  "status": "pending_anatomy_and_registration"
+}

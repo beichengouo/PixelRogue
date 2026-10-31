@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack4_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack4_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-40e5a07b-e0b6-4e75-bb85-461eda0a3bad.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, NORTH direct BACK facing awayup, NO eyes/nose/bangs/frontcollar camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage4 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 uprightbow starts to settle on targetline, rightfingers reach string at throat; 2 stable FULLdraw, lefthand shoulderheight forward, rightfingers anchored cheek, elbows form a strong horizontal archeryline, knees soft; 3 release with rightfingers recoiling behind jaw and leftarm stillsteady; 4 keeps bowupright and rightfingers travel toward nextdraw, visibly preparing heavierstage5.\nSTRICT DIRECT BACK of hood and back robe facing away from camera, no face/eyes/front bangs/collar; aim is AWAY AND UP SCREEN, bow horizontal across upper torso projected from back view; nocked arrow points away, do not draw a sideways arrow across screen. Four distinct draw/release phases, two hands, left bowgrip and right string. Maintain entire bow and hood within generous margins.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    }
+  ],
+  "sha256": "bcfc8661a542ed6d88d68c62473b916a7648e019e982985d7caa414993d22d0c",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    17,
+    1180,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "reason": "Back view bow vertical and nocked arrows project screen left; aiming does not point away/up screen as required. Requires correctly foreshortened N aim reference.",
+  "alpha_bounds_raw": [
+    0,
+    17,
+    1180,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      17,
+      1180,
+      1254
+    ],
+    "8": [
+      204,
+      19,
+      1129,
+      1227
+    ],
+    "32": [
+      205,
+      20,
+      1129,
+      1225
+    ],
+    "128": [
+      205,
+      21,
+      1128,
+      1225
+    ]
+  }
+}

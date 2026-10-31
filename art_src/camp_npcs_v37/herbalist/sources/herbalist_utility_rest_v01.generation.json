@@ -1,0 +1,39 @@
+{
+  "name": "herbalist_utility_rest_v01",
+  "id": "herbalist",
+  "kind": "runtime_clip",
+  "direction": "utility",
+  "action": "rest",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/reference_inputs/herbalist_sw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve hand-painted miniature game animation. Preserve the supplied compact2.7-head NPC's EXACT skull/face/hair crown size, FRONT-LEFT diagonal viewpoint, neck/chest/waist proportions, costume and props. Same upright head and body scale in all FOUR frames. Long deep teal-blue hair in a low flowing ponytail, soft bangs, amber-honey eyes, small ivory flower-and-green-leaf cluster with muted brick-red ribbon by anatomical LEFT ear, human round ears. Ochre/mustard-gold draped shawl/cape with pale botanical border and fine fringes, muted plum-brown fitted overdress over ivory ruffled layered skirt and ivory puff-sleeve blouse, thin brown waist cord with small tassels, brown floral lace-up boots. ONE small wicker herb basket held low in LEFT hand containing green leaves and white blossoms, right hand relaxed. Keep the original shawl draping/long ponytail silhouette and warm gold/plum/ivory palette; no wizard hat or staff. Four consecutive gentle herb-identification poses while standing:1 LEFT hand keeps the original herb basket low, RIGHT fingers take ONE small herb sprig;2 raise that single sprig near nose/eyes to inspect, not eat it;3 turn the sprig slightly between fingers;4 lower sprig toward the same basket. Exactly ONE basket, no ghost third hand from prior idle. Keep head upright and original compact body, only mild eye expression changes. No floating plants or detached leaves. Keep all original planted boot positions and leg lengths, no rescaling, no turning toward another camera. Exactly two arms/two hands connected to torso; replace former limb position rather than leaving a ghost wrist/sleeve. Keep occupational accessories and their anatomical sides unchanged. Four COMPLETE isolated figures in equal2x2 cells, ample10% true transparent margins around hair/props/boots, no clipping or overlap, no labels/words/grid/FX/floor/shadows/backdrop. Refined NONPIXEL painted sprite exactly consistent with source, no tall fashion-portrait proportions.",
+  "asset": "herbalist_utility_rest_v01",
+  "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_utility_rest_v01.png",
+  "sha256": "cf0d6c6ff25570abb533c7409fa1621f2b5598e97b70913a2f5e5ddd27e0e172",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-303f3e2f-429a-49da-9eae-6b9ec0223b34.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/herbalist/reference_inputs/herbalist_sw_idle_ref_v01.png",
+      "sha256": "65c61e99379821c03a04ab07a8b689255d11f931ab7d279d25be8188604a8e2f"
+    }
+  ]
+}

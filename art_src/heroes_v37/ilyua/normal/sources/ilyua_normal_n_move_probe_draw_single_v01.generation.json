@@ -1,0 +1,16 @@
+{
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-2007b3c8-5c8b-47ff-b266-6cff4bce198f.png",
+  "reference": [
+    "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_probe_draw_single_v01.png",
+    "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png"
+  ],
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "review_reason": "Head SIFT scale 0.98889, needs companion phases and full body review.",
+  "prompt": "Rear moving low draw with right foot lifted, idle body proportions, transparent.",
+  "frame_count": 1,
+  "asset": "ilyua_normal_n_move_probe_draw_single_v01",
+  "sha256": "0cce8213e4a3e9031bde80bc86c4ad5c36a96a2c2d5e30a745029c02c8d545d5",
+  "kind": "single_frame_source",
+  "usage": "unpackaged_candidate"
+}

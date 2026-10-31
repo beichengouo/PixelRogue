@@ -1,0 +1,954 @@
+{
+  "resident_id": "surveyor",
+  "clip_count": 12,
+  "source_frames": 33,
+  "source_images": 9,
+  "animation_count": 18,
+  "clips": {
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            136,
+            144,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -15
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            136,
+            145,
+            256
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            139,
+            146,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            135,
+            145,
+            257
+          ],
+          "foot_y": 392,
+          "translation_y": -17
+        }
+      ],
+      "source_asset": "surveyor_n_walk_v01",
+      "source_sha256": "cd0c7e06bba0097d6212bbb5f100554f263f64d8767b7a43ece8685fe67923fe",
+      "source_frame": null
+    },
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            156,
+            152,
+            132,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "surveyor_neutral_cardinal_v01",
+      "source_sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+      "source_frame": 0
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            179,
+            152,
+            110,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "surveyor_neutral_cardinal_v01",
+      "source_sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+      "source_frame": 1
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            157,
+            152,
+            133,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "surveyor_neutral_cardinal_v01",
+      "source_sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+      "source_frame": 2
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            152,
+            139,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "surveyor_neutral_diagonal_v01",
+      "source_sha256": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+      "source_frame": 0
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            152,
+            128,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "surveyor_neutral_diagonal_v01",
+      "source_sha256": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+      "source_frame": 1
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            155,
+            128,
+            237
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            150,
+            128,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            149,
+            128,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            168,
+            151,
+            128,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "surveyor_nw_walk_v10",
+      "source_sha256": "2977486349241484418a822ab4a69d3995fc91c8d26bd894ca90ff32b588f316",
+      "source_frame": null
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            157,
+            142,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 5
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            157,
+            138,
+            235
+          ],
+          "foot_y": 392,
+          "translation_y": 4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            150,
+            161,
+            145,
+            231
+          ],
+          "foot_y": 392,
+          "translation_y": 8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            151,
+            160,
+            138,
+            232
+          ],
+          "foot_y": 392,
+          "translation_y": 7
+        }
+      ],
+      "source_asset": "surveyor_s_walk_v01",
+      "source_sha256": "d9354f734e223fcac9602b7d77964abcafc4862dfb2c8b25cf42af132cf27830",
+      "source_frame": null
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            148,
+            140,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            148,
+            140,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            147,
+            140,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            147,
+            140,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "surveyor_sw_walk_v10",
+      "source_sha256": "4f3f905ed8dbf169882216b713d662d9645f45f1389fd144ae954df6bc55b5c6",
+      "source_frame": null
+    },
+    "rest": {
+      "file": "rest.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            139,
+            136,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            155,
+            139,
+            135,
+            253
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            140,
+            137,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            154,
+            140,
+            139,
+            252
+          ],
+          "foot_y": 392,
+          "translation_y": -13
+        }
+      ],
+      "source_asset": "surveyor_utility_rest_v01",
+      "source_sha256": "1ca920cf35a9959bff207cf3f4f5ddb363d06ff775da91bd4453e3c409adad1f",
+      "source_frame": null
+    },
+    "talk": {
+      "file": "talk.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            150,
+            146,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            153,
+            151,
+            147,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            148,
+            153,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            149,
+            148,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -3
+        }
+      ],
+      "source_asset": "surveyor_utility_talk_v01",
+      "source_sha256": "7ee417a496dc883ab981754816d83087c9a7f95db0678cdb4eca48aa183901af",
+      "source_frame": null
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            175,
+            151,
+            114,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            179,
+            148,
+            110,
+            244
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            178,
+            150,
+            111,
+            242
+          ],
+          "foot_y": 392,
+          "translation_y": -2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            178,
+            151,
+            111,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "surveyor_w_walk_v10",
+      "source_sha256": "25a37e8860db94c2e546c9e20bbcbf1c68c7c44ebb72e38d7227b1514a77b62b",
+      "source_frame": null
+    }
+  },
+  "source_sha256": {
+    "surveyor_n_walk_v01": "cd0c7e06bba0097d6212bbb5f100554f263f64d8767b7a43ece8685fe67923fe",
+    "surveyor_neutral_cardinal_v01": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+    "surveyor_neutral_diagonal_v01": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+    "surveyor_nw_walk_v10": "2977486349241484418a822ab4a69d3995fc91c8d26bd894ca90ff32b588f316",
+    "surveyor_s_walk_v01": "d9354f734e223fcac9602b7d77964abcafc4862dfb2c8b25cf42af132cf27830",
+    "surveyor_sw_walk_v10": "4f3f905ed8dbf169882216b713d662d9645f45f1389fd144ae954df6bc55b5c6",
+    "surveyor_utility_rest_v01": "1ca920cf35a9959bff207cf3f4f5ddb363d06ff775da91bd4453e3c409adad1f",
+    "surveyor_utility_talk_v01": "7ee417a496dc883ab981754816d83087c9a7f95db0678cdb4eca48aa183901af",
+    "surveyor_w_walk_v10": "25a37e8860db94c2e546c9e20bbcbf1c68c7c44ebb72e38d7227b1514a77b62b"
+  },
+  "source_metadata": {
+    "surveyor_n_walk_v01": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_n_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "n",
+      "metadata_sha256": "80b31cb0427b441432290a34833729fb37b59ca7bf94a9fa59b5fe8c7f00758e",
+      "native_inputs": []
+    },
+    "surveyor_neutral_cardinal_v01": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_neutral_cardinal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        3,
+        1
+      ],
+      "directions": [
+        "s",
+        "w",
+        "n"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "291924069855d301748f66dbf09c57baea05194ef685fcf159eafdc6827743a1",
+      "native_inputs": []
+    },
+    "surveyor_neutral_diagonal_v01": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_neutral_diagonal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        2,
+        1
+      ],
+      "directions": [
+        "sw",
+        "nw"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "0bc2e91abdf06b1e34b8d413042ef10627713fc2448fff5e3e0f745e6898fb22",
+      "native_inputs": []
+    },
+    "surveyor_nw_walk_v10": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_v10.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "nw",
+      "metadata_sha256": "84e3787ad23809429ec8785741d81dce2c86a1d31760db1a44088d355fc1cc88",
+      "native_inputs": [
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_single_v10_f1.png",
+          "sha256": "28e896caeaa704bdc52aa324d788ee11f2fd5beb22c89d7c4f4d2c878aca7bd8",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            16,
+            16
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_single_v10_f2.png",
+          "sha256": "a7f8f16b39e5ea659d272c642984e59ac8086a6a56ae64900de481a176cff512",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            1302,
+            16
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_single_v10_f3.png",
+          "sha256": "754c400990633a682f121211c57bb8ddf3bdadf169092c8f352463e9131cca6d",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            16,
+            1302
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_single_v10_f4.png",
+          "sha256": "40fa43630b2a9a1a8174f28470316a535b505dbc85e76a3ea1c68bdddc3f9a75",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            1302,
+            1302
+          ],
+          "rgba_byte_rebuild_verified": true
+        }
+      ]
+    },
+    "surveyor_s_walk_v01": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_s_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "s",
+      "metadata_sha256": "fbbf500e5524af42f3a6f82f4b31281ec7cb5f1f7755d85c027e8ac6cb0aa357",
+      "native_inputs": []
+    },
+    "surveyor_sw_walk_v10": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_v10.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "sw",
+      "metadata_sha256": "1f6c2d8a380f8454e1018943f9101b69c74f2c55e8ecffbe44fe39df84f3d3cf",
+      "native_inputs": [
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_single_v10_f1.png",
+          "sha256": "512ef975ccfb85086c2b1ce9d1403c77058432788c60417eac242354a5b4deb1",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            16,
+            16
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_single_v10_f2.png",
+          "sha256": "7af349a52b297b77225c45cec34ad1ce1ce420257f6105b75d3922182eab5b18",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            1302,
+            16
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_single_v10_f3.png",
+          "sha256": "9d50fd76ea529e8e6bc2df949e4d98087448a37b926c9b8075df09ff19187790",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            16,
+            1302
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_sw_walk_single_v10_f4.png",
+          "sha256": "bde51e7098633559613c6e12ffdc4b69244949a95fee2c8a19cd5963d281833e",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            1302,
+            1302
+          ],
+          "rgba_byte_rebuild_verified": true
+        }
+      ]
+    },
+    "surveyor_utility_rest_v01": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_utility_rest_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "rest",
+      "direction": "utility",
+      "metadata_sha256": "1c1cb21b7af9f01617603e1e629b1f03d40d5ec16d518588a2b326a5fd56b63f",
+      "native_inputs": []
+    },
+    "surveyor_utility_talk_v01": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_utility_talk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "talk",
+      "direction": "utility",
+      "metadata_sha256": "b6473eda30130fc0b5399f7214bfe791da9f83edc408a4f64e67357b652ef526",
+      "native_inputs": []
+    },
+    "surveyor_w_walk_v10": {
+      "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_v10.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "w",
+      "metadata_sha256": "15be7b402c785b0a7ed0957d7657726cd41f463b022614306bfa1e5770c9ec27",
+      "native_inputs": [
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f1.png",
+          "sha256": "2b5513aafecfaa68da652880ee154b079159f8d1aa3ee0d17c580fe77f3dbc34",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            16,
+            16
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f2.png",
+          "sha256": "5c0416683b01eb31473fbea0084726d760196e7076af68b1bc68ee6c6028cd59",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            1302,
+            16
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f3.png",
+          "sha256": "0d8f4d90ef375cda60f45e0e515225dd27095434f37c17dda67bf83c9d3f4892",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            16,
+            1302
+          ],
+          "rgba_byte_rebuild_verified": true
+        },
+        {
+          "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f4.png",
+          "sha256": "ce28d19b3534baae46d0fd202fb5525b0bbcaa193b2c7b75d985f9270fe4d4f3",
+          "dimensions": [
+            1254,
+            1254
+          ],
+          "native_scale": 1,
+          "paste_offset": [
+            1302,
+            1302
+          ],
+          "rgba_byte_rebuild_verified": true
+        }
+      ]
+    }
+  },
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "world_height": 32,
+  "world_floor_y": 12,
+  "status": "admitted_runtime",
+  "runtime_integrated": true,
+  "manual_review_sha256": "5b3bfcf98f0667a94b0e97af4421d3e1561824a795df98d910684ad15b1aae82",
+  "calibration_sha256": "fe8e778c0727821358346403b29f5f3760a19e12bef6aba944be45658c33ede6",
+  "game_version": "0.55"
+}

@@ -1,0 +1,13 @@
+{
+  "frame_count": 1,
+  "status": "pending_anatomy_and_registration",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_finish_draw_single_v02.png",
+  "runtime_integrated": false,
+  "kind": "single_frame_source",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-b2000964-ab6c-4967-9c5b-8833be657745.png",
+  "asset": "ilyua_normal_n_finish_ready_single_v01",
+  "prompt": "Half draw before strong finisher, same rear view body and bow, no sideways arrow.",
+  "usage": "unpackaged_candidate",
+  "sha256": "20fe15cd31615bcd649f908ae8fa1eb8eae6c5f1025d6707a2920743dd999845",
+  "review_reason": "Needs full sequence validation."
+}

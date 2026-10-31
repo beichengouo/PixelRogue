@@ -1,0 +1,13 @@
+{
+  "kind": "single_frame_source",
+  "runtime_integrated": false,
+  "prompt": "Tilted bow third shot release, open right hand near cheek, same body, transparent.",
+  "status": "pending_anatomy_and_registration",
+  "review_reason": "Needs full sequence and registration.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_adjust_draw_single_v01.png",
+  "frame_count": 1,
+  "asset": "ilyua_normal_n_adjust_release_single_v01",
+  "usage": "unpackaged_candidate",
+  "sha256": "60bdbfa026538932562b2ea1b8e8ade5cee87760d23b77ba0fe2f4e99d063a45",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-baa96536-76aa-464b-a12d-0485b9c1e974.png"
+}

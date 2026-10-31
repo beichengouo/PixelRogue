@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_n_attack1_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-c095daa0-0941-4c45-90ca-3a2481f561a2.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, NORTH direct BACK facing awayup, NO eyes/nose/bangs/frontcollar camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage1 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 starts low ready bow at waist and right fingers nearing string; 2 short low draw, bowgrip around lowerchest, right fingers near chin; 3 release from shortdraw, right fingers relax at collar, string straight, left arm keeps lowaim; 4 bow rises toward shoulderready to link stage2, right fingers reach string again.\nSTRICT DIRECT BACK of hood and back robe facing away from camera, no face/eyes/front bangs/collar; aim is AWAY AND UP SCREEN, bow horizontal across upper torso projected from back view; nocked arrow points away, do not draw a sideways arrow across screen. Four distinct draw/release phases, two hands, left bowgrip and right string. Maintain entire bow and hood within generous margins.\nImage2 is aiming geometry reference only: center grip at chest, not above head; preserve compact scale and clothing from Image1. Bow and hands entirely clear of hood. Arrow foreshortened toward top; NEVER draw horizontal arrow or sideways aim. Four equal separate figures in 2x2 layout.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\docs\\references\\hero-models-v37\\ilyua_normal_n_aim_reference_v01.png",
+      "sha256": "0159edbd474e82078c41fe28012cb509eb0db2b8f410f4e4626ff8311644448b"
+    }
+  ],
+  "sha256": "77309990eae69f986a13d3a96919afe24e75c6805a7d885c0f12dcbf3c765f5e",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1248,
+    1240
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "review_reason": "Bowstring and nocked arrow do not connect plausibly to drawing hand; direct-back aim geometry fails.",
+  "alpha_bounds_raw": [
+    0,
+    23,
+    1248,
+    1240
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      23,
+      1248,
+      1240
+    ],
+    "8": [
+      136,
+      26,
+      1130,
+      1237
+    ],
+    "32": [
+      136,
+      27,
+      1129,
+      1237
+    ],
+    "128": [
+      137,
+      27,
+      1129,
+      1237
+    ]
+  }
+}

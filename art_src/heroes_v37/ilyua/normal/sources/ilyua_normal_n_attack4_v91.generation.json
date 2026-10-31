@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_n_attack4_v91",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack4_v91.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-5272a42e-414a-41e6-8728-9cde305f64aa.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_n_attack4_v91.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY the upper arms, hands, bow and arrow of this four-frame NORTH-facing STATIONARY archery game sprite. Keep original heads, hood, costume, body proportions and size exactly. Replace all four walking legs with the SAME relaxed standing stance, boots side by side below hips. No stepping. STRICT REAR VIEW ARCHERY AIMING NORTH, straight up into depth away from camera. The LEFT arm reaches FORWARD AWAY from viewer, mostly hidden ahead of shoulder. The bow must be foreshortened in the plane across her FRONT, beyond the hood, with upper limb visible ABOVE the hood and lower limb OCCLUDED by her body. The arrow points toward TOP CENTER AWAY from camera; NEVER sideways to the left. Anatomical RIGHT hand draws near the FRONT cheek and is mostly occluded by hood, right elbow visible at right side. Do NOT draw the hands or bow across the back of her cloak. Four consecutive phases: 1 raise bow and nock forward 2 full draw forward/up, elbow back 3 open fingers release arrow away/up (no remaining arrow) 4 lower bow a little to forward ready. Exactly TWO arms and hands, one intact wooden leaf-pendant bow, continuous string, no duplicate hanging arms. All four frames STANDING STILL, boots grounded side by side, no crouch or widen legs. Native compact head and body size unchanged. Full figures each cell, transparent margins at least 8%, refined nonpixel anime handpainted, transparent background, no text, grid, FX, ground, shadow. This is a BACK view of a character shooting AWAY from viewer, never shooting screen-left.\n\nStatic attack stage4. Four upper body phases in reading order: raise bow higher; strong draw with elbow pulled back and upright body; open fingers release no arrow; gather high for final shot. Bow IN FRONT OF BODY, LEFT arm reaches FORWARD and naturally occluded by torso/hood; right fingers mostly hidden at FRONT cheek, right elbow visible beside shoulder. Never a leftward shot or drawing hands on her back. Arrow points UP away from viewer. At least8% clear margin around entire bow in each cell.",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack2_v91.png",
+      "sha256": "074c2ce7f20bdb1520bc01baea769b7f5844015ebf8b371eea13de1c643196b0"
+    }
+  ],
+  "sha256": "ce25724774b810f4b82691230f290cd5308b38b5920a421c07660b0bdc347c76",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    0,
+    1253,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      0,
+      1253,
+      1254
+    ],
+    "8": [
+      242,
+      8,
+      1104,
+      1236
+    ],
+    "32": [
+      243,
+      8,
+      1103,
+      1236
+    ],
+    "128": [
+      243,
+      9,
+      1103,
+      1236
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

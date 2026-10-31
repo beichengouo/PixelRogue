@@ -1,0 +1,175 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "n",
+  "action": "attack2",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Xixifu NORMAL ordinary costume ONLY. Same compact anatomy, skull/face size and same whole-body scale in all cells as approved reference and current neutral master. BLACK eyes, near-black long hair with muted violet reflections, charcoal midcalf robe with lavender lining, silver butterfly clasp, cloth waist tie, opaque dark leggings, rounded BLACK SHORT ANKLE BOOTS with one fastening. Anatomical RIGHT hand always holds plain dark wooden staff with SMALL purple crystal; other hand is free. Long hair lays continuously OUTSIDE and OVER folded-down hood; hood behind hair never cuts through it. Natural human ears no horns/tail/wings. Smooth clean NON-PIXEL hand-drawn 2D RPG art, broad2-3tone shading and broad locks/folds; no pixel grids, no glossy microtexture, no extra jewelry or creatures. Full bodies, transparentalpha, no background/ground/shadows/text/labels/grid/extra figures.\nCreate exactly FOUR authored consecutive animation frames for ONE segment of Xixifu's connected5-stage normal staff-attack chain. Transparent landscape sheet1536x1024 preferred, exactly2columns x2rows equal cells, reading orderTL/TR/BL/BR. FULL whole character in EACH frame, same physical scale with same local crown/feet ground baseline. Each complete person+staff+hair inside central70%width and76%height of its own cell, at least12%empty alpha0 margins to every cell edge. No cropped hair/staff/feet, no cell overlap. No text, frame numbers, borders, ground, shadow, halo, glows, floating light, magic fog, gradients, particles or actual bullets. Crystal is a SMALL SOLID SHADED purple physical crystal, not a light source.\n\nABSOLUTE DIRECTION: NORTH, STRICT BACK facing straight AWAY/up-screen. First reference N idle determines viewpoint/head/body/clothes. Head NEVER turns toward viewer: NO eyes, face, cheek, nose, chin or ears in ANY frame. Shoulders and pelvis remain square to camera, feet stationary with boot HEELS toward viewer and toes away. Hair curtain continuously covers lowered hood on outside, no cloth cutting across hair, no windblown sideways hair or whole-body swaying. Head/skull stays identical size and stable position. Only elbows, wrists, arms and staff move, gentle cloth follow-through. Right hand always on VIEWER-RIGHT, left free hand on VIEWER-LEFT, never swap staff hands.\nATTACKS AIM ALONG DEPTH directly AWAY/north, NOT horizontally left/right across screen. Adapt gesture path from W side reference into rear-view3D projection; DO NOT copy its left-facing body or a wide left-pointing staff. Forward extension appears foreshortened toward top of sheet beside right shoulder; staff can project above shoulder but must stay whole and not cross canvas margin. Right arm/hand may be partly hidden on far/front side of body when physically correct, but body stays strictly rear-facing. On reaching across front, left hand may become partly hidden by torso/hair; do not draw arms through hair or add extra hands.\nROLE OF OTHER REFERENCES: preceding N segment determines START/END action continuity when present; same-number W segment is GESTURE SEQUENCE ONLY, not pose viewpoint or body size. A04 supports ordinary costume and correct back hair/hood layering.\nFrame1 is preparation continuing previous pose, frame2 actual release pose, frame3 follow-through, frame4 clear bridge to next stage. All4 differ naturally within ONE motion; do not repeat full attack four times or return to ready between segments1-4. Only stage5 ends back at N ready.\nSEGMENT2 INWARD RETURN AND UPWARD FLICK. This starts from the LAST raised/wrist-turn pose in N attack1 reference, not from idle. First frame right elbow returns modestly toward shoulder while wrist keeps staff tilted toward far/north. Second frame small UPWARD FLICK in DEPTH releases2nd pulse: right hand moves up near right-side head height, crystal/shaft pointed away/up-screen with foreshortening, NOT a big horizontal side swing. Third frame follow raised motion into lateral preparatory forearm arc across FRONT/FAR SIDE of torso; from back the forearm/staff stays mainly visible beside viewer-right shoulder and gradually angles inward toward upper-middle, without going through hair. Fourth frame holds/continues this elevated-inward bridge for the next arc segment, NOT return to ready. Left free hand opens a little beside left torso, no staff grabbing yet. Feet remain planted and body/head square strictly BACK. No eye/face, no turned head. Keep right hand on viewer-right of body through every frame. Crystal solid physical stone only; no drawn pulses/light/aura/bullets. Camera derived strictly from N idle, gesture from corresponding W attack2 only.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-935f2d45-60f9-47a6-af40-4424f7c6a130.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack1.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_attack2.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Four strict rear figures; staff follows raised inward/return→upward flick→inward lateral preparation→up/inward next-arc bridge. Face never turns; right hand remains viewer-right, feet planted and hair continuous over hood. Native RGB haze must be assessed by actual alpha, not preview. Pending source alpha samples and rig/seam review.",
+  "status": "generated_alpha_checked_pending_rig_and_seams",
+  "runtime_integrated": false,
+  "major_components_alpha24": [
+    {
+      "box": [
+        964,
+        9,
+        319,
+        477
+      ],
+      "pixels": 93785,
+      "centre": [
+        1139.0386948872422,
+        241.82082422562243
+      ]
+    },
+    {
+      "box": [
+        253,
+        22,
+        320,
+        464
+      ],
+      "pixels": 91975,
+      "centre": [
+        415.9472356618646,
+        246.7373525414515
+      ]
+    },
+    {
+      "box": [
+        947,
+        508,
+        350,
+        491
+      ],
+      "pixels": 97677,
+      "centre": [
+        1139.5445601318631,
+        752.146288276667
+      ]
+    },
+    {
+      "box": [
+        231,
+        512,
+        376,
+        487
+      ],
+      "pixels": 99026,
+      "centre": [
+        423.9455496536263,
+        750.7219013188455
+      ]
+    }
+  ],
+  "sha256": "00c3c76afd4fe2261725b3ea7382d64b6d52488e6c857d286af4059ec66a8824",
+  "size": [
+    1536,
+    1024
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_idle.png": "2e03dd6f61c19b2b3c3452371eee08bdb87139dc9c2359debdebaef8130d4a27",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack1.png": "a0449f5ee6b88e3ce725e86b2c3277857462b99c4ac28165752dc2bc68b78e8f",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_attack2.png": "717e43253a2a20ca584206faaa7db249d684f82252f6dae0f6d43273146c5efc",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "edge_nontransparent_pixels": 0,
+  "transparent_rgb_preview_samples": {
+    "(100, 100)": [
+      0,
+      1,
+      0,
+      0
+    ],
+    "(700, 250)": [
+      13,
+      10,
+      15,
+      0
+    ],
+    "(1450, 300)": [
+      3,
+      1,
+      4,
+      0
+    ],
+    "(750, 800)": [
+      4,
+      2,
+      5,
+      0
+    ],
+    "(740, 400)": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "nonzero_alpha_more_than_3px_from_alpha200_count": 26957,
+  "max_nonzero_alpha_distance_from_alpha200_px": 254.689,
+  "background_review": "Native preview shows purple RGB at sampled positions, but every sampled background alpha=0. Transparent RGB intentionally preserved; no code erasure or palette processing. This is not a runtime animation acceptance.",
+  "reference_sha_current_checks": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_idle.png": true,
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_n_attack1.png": true,
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_attack2.png": true,
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": true
+  },
+  "distant_alpha_proxy_histogram": {
+    "1": 20973,
+    "2": 3196,
+    "3": 1229,
+    "4": 680,
+    "5": 416,
+    "6": 212,
+    "7": 109,
+    "8": 46,
+    "9": 24,
+    "10": 17,
+    "11": 9,
+    "12": 6,
+    "14": 2,
+    "15": 3,
+    "16": 3,
+    "17": 1,
+    "18": 3,
+    "19": 1,
+    "20": 1,
+    "21": 1,
+    "22": 3,
+    "24": 2,
+    "26": 1,
+    "30": 2,
+    "38": 1,
+    "41": 1,
+    "46": 1,
+    "48": 1,
+    "51": 1,
+    "53": 2,
+    "77": 1,
+    "80": 1,
+    "82": 1,
+    "85": 1,
+    "86": 1,
+    "90": 1,
+    "107": 1,
+    "108": 1,
+    "121": 1,
+    "165": 1
+  },
+  "distant_alpha_proxy_caution": "Distance from alpha200 is only a geometric matte proxy: alpha1-3 speckles dominate outside main opaque regions, plus sparse higher-alpha pixels may be thin hair/staff or matte residue. Sampled haze RGB positions are alpha0. Do not call whole sprite background perfectly zero or animation complete; inspect component extraction. Do not globally threshold alpha or distort RGB."
+}

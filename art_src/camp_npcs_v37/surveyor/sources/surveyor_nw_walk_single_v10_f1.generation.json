@@ -1,0 +1,40 @@
+{
+  "name": "surveyor_nw_walk_single_v10_f1",
+  "id": "surveyor",
+  "kind": "runtime_single",
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_nw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Edit the supplied SINGLE canonical NPC image. Keep EXACT original canvas framing, head pixels/size/location, face and view, hair, upper body, pelvis, hands and props UNCHANGED. Change ONLY legs below skirt into this ONE walk-cycle phase: LEFT side of image leg goes diagonally FORWARD/LEFT with heel on ground, RIGHT side leg goes BACK/RIGHT with toe on ground, a modest separated stride. Travel is upper-left away from camera. Keep original boot designs, leg lengths and compact body proportions. Full body SINGLE figure at original scale and same position, original transparent margin around crown and boots. No new arm or hands; all accessories unchanged. True transparent RGBA. No letters, panel, grid, floor, shadow or FX. Do NOT make a sheet or multiple characters.",
+  "phase": 0,
+  "asset": "surveyor_nw_walk_single_v10_f1",
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_single_v10_f1.png",
+  "sha256": "28e896caeaa704bdc52aa324d788ee11f2fd5beb22c89d7c4f4d2c878aca7bd8",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-77727705-c22c-4bcf-b7a9-08367f649cf1.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_nw_idle_ref_v01.png",
+      "sha256": "1ba1e8b4b6f7feebd24533d2ddb41ec3d06a65cf2436cc670a0a3f769c1ad6d0"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "prompt": "Rear bow draw from v02 ready, preserve exact hood and proportions; arrow hidden, no text.",
+  "kind": "single_frame_source",
+  "usage": "unpackaged_candidate",
+  "review_reason": "Needs source sequence registration and bow geometry review.",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_attack_ready_single_v02.png",
+  "sha256": "571655100cfce57f65299267b70c64ed921af4b86c546960125e5fdd9738da71",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-405c2ac3-f5b1-4c7a-a5e5-48312d3ad2d4.png",
+  "asset": "ilyua_normal_n_attack_draw_single_v02"
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack3_adjust_pack_v01",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack3_adjust_pack_v01.png",
+  "sha256": "f61d6e5ada4aa5494afe32315541a34018e28c6472caca91f671614ad2eef088",
+  "direction": "n",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_n_adjust_ready_single_v01": "e85bcfbf3ba2fe6628f5d21d9030b7631db3bfeb63c62f18b3565caa6432abb0",
+    "ilyua_normal_n_adjust_draw_single_v01": "94b3c7799f31fd6a500624322fbc0d37a137664485c627954c9eb2e9cc5fca2c",
+    "ilyua_normal_n_adjust_release_single_v01": "60bdbfa026538932562b2ea1b8e8ade5cee87760d23b77ba0fe2f4e99d063a45",
+    "ilyua_normal_n_adjust_recovery_single_v01": "60a765cf3e9b1e09076787f7d007facdf75c2bca90a60b213b80ff6d3bda103f"
+  },
+  "reference_idle_sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.24536042063857003,
+      "offset": [
+        -81.96359503073772,
+        -40.688593629930814
+      ],
+      "head_inliers": 27,
+      "head_registration_scale": 0.9977990439301848,
+      "head_angle": 0.6488557901511036,
+      "foot_deviation": 2,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24536042063857003,
+      "offset": [
+        -81.81948202164449,
+        -40.64762002913676
+      ],
+      "head_inliers": 31,
+      "head_registration_scale": 1.0025193390027438,
+      "head_angle": 0.7916267056137493,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24536042063857003,
+      "offset": [
+        -82.10962914638834,
+        -40.618773413486146
+      ],
+      "head_inliers": 29,
+      "head_registration_scale": 0.9995057652085922,
+      "head_angle": 0.7373659829634132,
+      "foot_deviation": 1,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.24536042063857003,
+      "offset": [
+        -82.23825323386272,
+        -40.68518666752047
+      ],
+      "head_inliers": 22,
+      "head_registration_scale": 1.000637750232797,
+      "head_angle": 0.45773529893946335,
+      "foot_deviation": 2,
+      "torso_residual": null
+    }
+  ],
+  "visual_review": "Third shot bow tilts left, right hand adjusts at face, releases, bow returns upright. Both hands and feet; rear arrow hidden. Verify bowstring and full five-shot transitions."
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "derived_reference_only",
+  "path": "art_src/camp_npcs_v37/herbalist/reference_inputs/herbalist_nw_idle_ref_v01.png",
+  "sha256": "38cfb42bb43a762cfdae65e3546abf0e3616d4851989c2f84053ed9fdcc3fc92",
+  "source_path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_neutral_diagonal_v01.png",
+  "source_sha256": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+  "source_frame": 1,
+  "source_grid": [
+    2,
+    1
+  ],
+  "native_component_bounds": [
+    537,
+    473,
+    1159,
+    1300
+  ],
+  "integer_paste_offset": [
+    227,
+    125
+  ],
+  "native_scale": 1.0,
+  "policy": "Native crop/padding only after original canvas edge check; no source edits, scaling, new pose, or turnaround crop. Not a runtime frame."
+}

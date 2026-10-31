@@ -1,0 +1,93 @@
+{
+  "provider": "built-in image_gen",
+  "action": "hurt",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create a production sprite animation SOURCE SHEET for PixelRogue, Xixifu NORMAL outfit only. Use image1, xixifu_normal_w_idle.png, as STRICT body/face/costume/left-facing-ready reference. Image2 approved turnaround is supporting identity and proper hood/hair layering reference. Output exactly FOUR authored animation frames in a 2x2 evenly divided grid on a transparent square canvas, ideally2048x2048. Reading order top-left,top-right,bottom-left,bottom-right. No text, frame numbers, guides, border, ground plane, cast shadow, particles, effects or background. One complete whole character per cell, no extra characters. Four cells equal size with12% empty padding each; no hair/staff can cross a cell boundary. Feet ground baseline at~88% of each cell, head vertical position equal across standing frames. Fixed head size and skull, anatomy, staff design and clothes across frames; motions may change pose but NEVER individual frame scaling/squashing/head-size shifts. Each head/face must be same drawing design as source, compact side-profile facing LEFT, mild15-degree elevated RPG camera. Body about same approved proportions and ready height. No taller legs or smaller head.\n\nIdentity invariants: petite human-looking female summoner, long black hair with subdued violet reflected shading, black irises, natural human ears, no horns/tail/wings. Plain charcoal mid-calf robe, muted lavender sleeve lining and hem, small silver butterfly clasp, simple cloth waist tie, opaque dark leggings, rounded short black ankle boots. Thin dark wood staff with SMALL purple crystal, anatomical RIGHT hand (never switch hands). Hair lies continuously outside and OVER lowered hood, hood mostly hidden below hair; no hood band crossing hair, no hat on head. Non-pixel clean smooth hand-drawn 2D art, restrained2-3tone painted/cel shading, broad fabric folds and calm hair masses. Not glossy gacha art, not3D, not pixelated. All frames derived from same body and camera; no redesign.\nACTION ONLY: HURT recoil and recovery, one short four-frame sequence. Frame1 same feet and body size as ready, reacting to impact with eyes narrowing and small shoulder recoil backwards; right hand retains staff, free left hand near chest. Frame2 brief tucked shoulder/torso flinch, small knee softness, both boots still planted, head physically same size, no torso stretch. Frame3 shoulders and face begin relaxing, returns toward original upright silhouette. Frame4 matches original left-facing ready posture with open black eyes, free left hand relaxed down, right-hand staff at original position, so can join idle/walk. Keep recoil SMALL and coherent; no dramatic flying, no thrown staff, no magic flashes, no gore, no additional character. No horizontal flip, no direction change. Precisely FOUR different authored frames, not four static duplicates.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-7b7137e2-b09d-488d-af1b-eaf6224b76e0.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Four intact left-facing normal-costume figures. Eyes close in recoil then knees soften/shoulder tucks; recovery opens eyes then returns to nearly ready with free hand down. Staff retained in right hand; both feet visible. Hair expands a little in recoil, needs rig review against ready; no extra limbs or lost boots.",
+  "status": "generated_pending_rig_calibration",
+  "runtime_integrated": false,
+  "sha256": "1d7e254316439545ae1231105a271351f0e8e3ea1f944226a4c18accbb0d1864",
+  "size": [
+    1254,
+    1254
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "opaque_pixel_ratio": 0.3106944539832981,
+  "corner_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "major_components_alpha24": [
+    {
+      "box": [
+        173,
+        67,
+        403,
+        548
+      ],
+      "pixels": 138773,
+      "centre": [
+        359.9433895642524,
+        333.23961433420044
+      ]
+    },
+    {
+      "box": [
+        739,
+        106,
+        404,
+        509
+      ],
+      "pixels": 129750,
+      "centre": [
+        926.7502196531792,
+        359.042612716763
+      ]
+    },
+    {
+      "box": [
+        176,
+        675,
+        400,
+        538
+      ],
+      "pixels": 129738,
+      "centre": [
+        362.9124157918266,
+        936.1550047017836
+      ]
+    },
+    {
+      "box": [
+        758,
+        675,
+        371,
+        542
+      ],
+      "pixels": 126929,
+      "centre": [
+        929.8145341096204,
+        938.609703062342
+      ]
+    }
+  ],
+  "edge_nontransparent_pixels": 0
+}

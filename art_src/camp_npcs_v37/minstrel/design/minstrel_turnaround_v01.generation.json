@@ -1,0 +1,43 @@
+{
+  "name": "minstrel_turnaround_v01",
+  "id": "minstrel",
+  "kind": "design_turnaround",
+  "frame_count": 3,
+  "grid": [
+    3,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/assets/camp_life_v01/minstrel_portrait.png",
+    "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve character turnaround. Create a production CHARACTER DESIGN reference sheet for the same young adult woman in IMAGE1. Image1 defines identity, clothing and job accessories; IMAGE2 is ONLY a rendering/proportion reference for the game's already established smooth hand-painted miniature sprites, never copy image2's elf identity, ears, hood or bow. Use compact approximately2.7-head body proportions, gentle adult identity, clean colored outlines and broad soft cel-painted shading, NONPIXEL. Three COMPLETE full-body views in three equal horizontal columns: strict FRONT, strict LEFT PROFILE, strict BACK. Same skull size, shoulder/waist/limb lengths, outfit construction and character scale in all3. Boots share one floor baseline; head crowns align; view is consistent slightly elevated 2D game orthographic, no perspective scene. Neutral relaxed standing, arms slightly clear of costume, exactly two arms/two hands/two legs. All garments/accessories physically continue correctly across back and side, bags keep the same anatomical hip across views, no duplicate prop. Long silver-white hair with faint lavender shadows, a thick side braid draped over anatomical RIGHT shoulder, soft bangs and a small burgundy ribbon at back, violet-gray eyes, human round ears. Ivory puff-sleeve blouse, navy-blue asymmetrical layered skirt with ivory underskirt and restrained gold star/constellation embroidery, brown fitted waist corset/belt with small tassels and ONE brown satchel on anatomical LEFT hip, brown ankle boots. ONE burgundy scarf wrapped around neck with two fringed tails draping back. ONE silver transverse flute held low horizontally at waist with both hands in neutral standing, never a sword/staff. Preserve musician identity, braid placement and ivory/navy/burgundy/silver palette from portrait. Ample separate transparent margin around each full figure including hair, cape tails, props and boots; do not crop/overlap any view. Genuine RGBA transparent background. No labels, letters, numbers, caption, design boards, grid, floor, shadows, effects, scenery or additional objects. This sheet is DESIGN REFERENCE ONLY; separate animation source drawings will be made afterward.",
+  "asset": "minstrel_turnaround_v01",
+  "path": "art_src/camp_npcs_v37/minstrel/design/minstrel_turnaround_v01.png",
+  "sha256": "13332449bc2b6d120348f9b670ba9926e16b01216d54089ce5db0ae6c779b356",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-2bd96dad-1116-4687-8a1e-b6cbeb0e2aa8.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "wardrobe_reference_only_needs_compact_proportions",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/camp_life_v01/minstrel_portrait.png",
+      "sha256": "ea0cc9b82d023b2e0b50cfc89fad920200f95d595116cda63acb6f41b2a1f92f"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "review_note": "Identity, costume and back construction usable as wardrobe reference; too tall/slender for established compact hero-style model. Separate compact v02 drawing required. Never runtime crop."
+}

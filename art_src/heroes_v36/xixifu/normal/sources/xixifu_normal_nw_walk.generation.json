@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_nw_walk",
+  "provider": "built-in image_gen",
+  "prompt": "Precise local animation correction. Edit image1 transparent2x2 sheet; image2 is REFERENCE ONLY for opposite footwork in its bottom row. KEEP image1's skull/head/torso/hair/robe camera/staff/arms and ALL TOP ROW unchanged. Change ONLY lower robe hem/legs/boots in BOTTOM TWO figures to the OPPOSITE LEG PHASE. In image1 current bottom-left wrongly repeats top-left with sole on RIGHT. Bottom-left MUST instead show exposed boot SOLE ON LEFT SIDE of the figure: LEFT-SCREEN boot swings backward toward viewer/downscreen to bottom-left with sole visible, while RIGHT-SCREEN boot is planted beside/just right of bodycenter and points away up-left. They are the opposite planted/trailing legs from top-left, NOT a duplicated leg silhouette. In bottom-right, left-screen boot swings FORWARD underneath CENTER OF PELVIS beside grounded right-screen boot, distinct bent knee, bootsole no longer exposed, opposite passing legs from top-right. Mirror/reverse only which legs lead/trail, NEVER mirror head/torso/staff/hands. Keep full anatomical LEG LENGTH, same body size/proportions, no squash or shrink. Fourframes should show leftcontact/rightpassing/rightcontact/leftpassing, one continuous NW walk. No cut boots/extra limb, preserve 2x2 equalcells and original genuine transparentbackground, no text/effects/shadows. Keep allhair/weapon intact; do not change costume, color or clean handdrawn style.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_walk_repair_r01.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_nw_walk.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-d3638fdf-48ea-454d-8165-bca13e460050.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "2fe94a421f2ce07dd597f41d1f0fceca4d41b49d3944c5cfddaa22cf3b00778a",
+  "sha256": "3176ce965c62d003501cc633bbc290b7c95c8919c9c3b02ec5644996107bb12f",
+  "selection_note": "Preserves full supporting leg and restores opposite trailing boot sole in bottom row; actual central passing phases2/4; direct-neutral diagnostic foot offsets4..9atlaspx vs former -12..-20."
+}

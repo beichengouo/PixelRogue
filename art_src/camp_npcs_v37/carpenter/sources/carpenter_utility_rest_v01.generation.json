@@ -1,0 +1,47 @@
+{
+  "name": "carpenter_utility_rest_v01",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "utility",
+  "action": "rest",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_sw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve hand-painted miniature game animation. Preserve the supplied compact2.7-head NPC's EXACT skull/face/hair crown size, FRONT-LEFT diagonal viewpoint, neck/chest/waist proportions, costume and props. Same upright head and body scale in all FOUR frames. Warm copper-auburn hair in a high long ponytail, soft side bangs, amber-brown eyes, small gold leaf ponytail tie, human round ears. Ivory rolled/puffed-sleeve blouse, indigo-blue work apron dress with broad front bib, tan-gold stitching, small pale botanical trim at hem, brown leather waistbelt and TWO different work pouches (one on each hip), small carving chisel/woodworking tools safely STOWED in belt loops. Bare knees and brown sturdy ankle-to-mid-calf lace-up boots. Hands relaxed and empty in this turnaround, no hammer raised and no weapon. Preserve her practical carpenter costume and recognizable high ponytail exactly from portrait, no armor or adventurer hood. Four consecutive gentle wood-carving poses while standing:1 LEFT hand holds ONE small five-point wooden star at waist, RIGHT hand holds ONE short woodworking chisel safely away from body;2 make a short controlled carving stroke against held star;3 second small stroke;4 lower the chisel and show the star in left palm. Keep same head and torso/leg proportions and two original attached arms; do not retain old relaxed hands when moving wrists. Belt/pouches remain and unused tools stay stowed. No hammer swing, violence or debris particles. Keep all original planted boot positions and leg lengths, no rescaling, no turning toward another camera. Exactly two arms/two hands connected to torso; replace former limb position rather than leaving a ghost wrist/sleeve. Keep occupational accessories and their anatomical sides unchanged. Four COMPLETE isolated figures in equal2x2 cells, ample10% true transparent margins around hair/props/boots, no clipping or overlap, no labels/words/grid/FX/floor/shadows/backdrop. Refined NONPIXEL painted sprite exactly consistent with source, no tall fashion-portrait proportions.",
+  "asset": "carpenter_utility_rest_v01",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_utility_rest_v01.png",
+  "sha256": "07e4ae1a1d960e6b18ef83d12b5bf3dab95b230d5525a3943b645d7a2e6e28a7",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-d06e6dd7-a3f1-4f02-a904-436fb3a15c5d.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_prop_hand",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_sw_idle_ref_v01.png",
+      "sha256": "0846c11fa4f55c64e48d447d53fca253ea56d5a8e179ec2cbd0644f468055377"
+    }
+  ],
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_prop_hand",
+      "reason": "Bottom-right frame switches wood star to the other anatomical hand; v02 not generated due quota."
+    }
+  ],
+  "review_reason": "Bottom-right frame switches wood star to the other anatomical hand; v02 not generated due quota."
+}

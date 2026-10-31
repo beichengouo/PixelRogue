@@ -1,0 +1,13 @@
+{
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-18b9d24a-bca5-492d-887e-d2e4a384301b.png",
+  "runtime_integrated": false,
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_finish_draw_single_v01.png",
+  "asset": "ilyua_normal_n_finish_draw_single_v02",
+  "prompt": "Remove sideways arrow-like line, keep deep bowstring draw and same figure.",
+  "review_reason": "Needs remaining finisher frames and continuity review.",
+  "sha256": "fc41a7d4fa743b3a2bd3d9b96e9443383c5e45e2a972d2953072dcb748a69f94",
+  "frame_count": 1,
+  "usage": "unpackaged_candidate"
+}

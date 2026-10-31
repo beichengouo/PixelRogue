@@ -1,0 +1,93 @@
+{
+  "provider": "built-in image_gen",
+  "action": "death",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create a production sprite animation SOURCE SHEET for PixelRogue, Xixifu NORMAL outfit only. Use image1, xixifu_normal_w_idle.png, as STRICT body/face/costume/left-facing-ready reference. Image2 approved turnaround is supporting identity and proper hood/hair layering reference. Output exactly FOUR authored animation frames in a 2x2 evenly divided grid on a transparent square canvas, ideally2048x2048. Reading order top-left,top-right,bottom-left,bottom-right. No text, frame numbers, guides, border, ground plane, cast shadow, particles, effects or background. One complete whole character per cell, no extra characters. Four cells equal size with12% empty padding each; no hair/staff can cross a cell boundary. Feet ground baseline at~88% of each cell, head vertical position equal across standing frames. Fixed head size and skull, anatomy, staff design and clothes across frames; motions may change pose but NEVER individual frame scaling/squashing/head-size shifts. Each head/face must be same drawing design as source, compact side-profile facing LEFT, mild15-degree elevated RPG camera. Body about same approved proportions and ready height. No taller legs or smaller head.\n\nIdentity invariants: petite human-looking female summoner, long black hair with subdued violet reflected shading, black irises, natural human ears, no horns/tail/wings. Plain charcoal mid-calf robe, muted lavender sleeve lining and hem, small silver butterfly clasp, simple cloth waist tie, opaque dark leggings, rounded short black ankle boots. Thin dark wood staff with SMALL purple crystal, anatomical RIGHT hand (never switch hands). Hair lies continuously outside and OVER lowered hood, hood mostly hidden below hair; no hood band crossing hair, no hat on head. Non-pixel clean smooth hand-drawn 2D art, restrained2-3tone painted/cel shading, broad fabric folds and calm hair masses. Not glossy gacha art, not3D, not pixelated. All frames derived from same body and camera; no redesign.\nACTION ONLY: DEATH collapse, four distinct progressive frames, poses MUST descend and END LYING DOWN, never stand back up. This is non-graphic game defeat, no blood. Frame1 original upright left-facing ready body losing strength, eyes closing, knees start giving way, right staff hand lowers. Frame2 knees fold downward, body sinks near a kneeling/sitting pose, upper torso leans gently toward left; head unchanged size, staff tip stays near ground and shaft tilts with right arm. Frame3 body lands ON LEFT SIDE at bottom of cell, head toward viewer-left and short boots toward viewer-right, knees bent together, long hair drapes along ground, staff falls beside her parallel/diagonal to body. Frame4 completely collapsed on left side on same floor baseline, eyes closed, relaxed arms and bent legs, staff lying beside right hand; maintain visibly same single person and still fallen final pose. ALL four frames same physical body scale, so prone frame looks much shorter vertically but wider horizontally. Allow head to lower naturally in frames2-4; do NOT enlarge prone figure to fill cell vertically. Leave enough horizontal padding for prone complete body and staff, no cut off hair or feet. NO floating duplicate head, no separate limb, no ghost figure. No glowing particles or drawn floor shadow. This is an authored collapse sequence not a row of standing expressions. Final two MUST be lying on the ground, no standing reset.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a1738b-211a-7b20-9d06-a1ff8bc6aa9f/exec-a7ad0377-8907-498b-92c0-9fac1a525298.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png"
+  ],
+  "visual_review": "Collapse progresses upright loss of strength, kneeling sink, left-side lying and still left-side lying; final never stands. One character per pose and same right staff hand, fallen staff beside hand. Four complete components appear present. IMPORTANT: raw art ignored even 2x2 vertical baselines; standing top row extends below exact midline. Must use component extraction rather than equal-cell cutting, and verify bottom-right boot margin/complete alpha. Not accepted as packed atlas yet.",
+  "status": "generated_pending_component_extraction_and_rig_review",
+  "runtime_integrated": false,
+  "sha256": "948ca39d90e9fc02d8b8af6b6d7344aea6d4b7d834b537436ff1c4030ddf2979",
+  "size": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/GodotProjects/PixelRogue/docs/references/hero-models-v36/xixifu_normal_turnaround_candidate_v04.png": "99a78f97735026d1108d16f79e43256c577702992a2a64cde87d5535206b23e3"
+  },
+  "opaque_pixel_ratio": 0.30846299815073425,
+  "corner_alpha": [
+    0,
+    0,
+    0,
+    0
+  ],
+  "major_components_alpha24": [
+    {
+      "box": [
+        133,
+        58,
+        426,
+        672
+      ],
+      "pixels": 167079,
+      "centre": [
+        340.0833318370352,
+        376.595424918751
+      ]
+    },
+    {
+      "box": [
+        710,
+        202,
+        449,
+        517
+      ],
+      "pixels": 156762,
+      "centre": [
+        922.0080695576734,
+        484.6382669269338
+      ]
+    },
+    {
+      "box": [
+        30,
+        901,
+        595,
+        262
+      ],
+      "pixels": 106559,
+      "centre": [
+        314.4083559342711,
+        1048.726658470894
+      ]
+    },
+    {
+      "box": [
+        660,
+        941,
+        564,
+        230
+      ],
+      "pixels": 90742,
+      "centre": [
+        927.6834211280333,
+        1066.0462409909414
+      ]
+    }
+  ],
+  "edge_nontransparent_pixels": 0
+}

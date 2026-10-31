@@ -1,0 +1,783 @@
+{
+  "resident_id": "herbalist",
+  "clip_count": 12,
+  "source_frames": 33,
+  "source_images": 9,
+  "animation_count": 18,
+  "clips": {
+    "walk_n": {
+      "file": "walk_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            130,
+            194,
+            262
+          ],
+          "foot_y": 392,
+          "translation_y": -23
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            132,
+            187,
+            260
+          ],
+          "foot_y": 392,
+          "translation_y": -21
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            133,
+            201,
+            259
+          ],
+          "foot_y": 392,
+          "translation_y": -20
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            133,
+            195,
+            259
+          ],
+          "foot_y": 392,
+          "translation_y": -20
+        }
+      ],
+      "source_asset": "herbalist_n_walk_v01",
+      "source_sha256": "23a35a206e62767897c042103e3169f670e4ff774b62655f8b93eb57944ed60f",
+      "source_frame": null
+    },
+    "idle_s": {
+      "file": "idle_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            128,
+            152,
+            192,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "herbalist_neutral_cardinal_v01",
+      "source_sha256": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+      "source_frame": 0
+    },
+    "idle_w": {
+      "file": "idle_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            176,
+            151,
+            168,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "herbalist_neutral_cardinal_v01",
+      "source_sha256": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+      "source_frame": 1
+    },
+    "idle_n": {
+      "file": "idle_n.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            142,
+            151,
+            170,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": -1
+        }
+      ],
+      "source_asset": "herbalist_neutral_cardinal_v01",
+      "source_sha256": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+      "source_frame": 2
+    },
+    "idle_sw": {
+      "file": "idle_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            143,
+            152,
+            194,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "herbalist_neutral_diagonal_v01",
+      "source_sha256": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+      "source_frame": 0
+    },
+    "idle_nw": {
+      "file": "idle_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            152,
+            180,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 0
+        }
+      ],
+      "source_asset": "herbalist_neutral_diagonal_v01",
+      "source_sha256": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+      "source_frame": 1
+    },
+    "walk_nw": {
+      "file": "walk_nw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            131,
+            127,
+            216,
+            265
+          ],
+          "foot_y": 392,
+          "translation_y": -25
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            133,
+            128,
+            215,
+            264
+          ],
+          "foot_y": 392,
+          "translation_y": -24
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            127,
+            131,
+            228,
+            261
+          ],
+          "foot_y": 392,
+          "translation_y": -21
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            132,
+            133,
+            215,
+            259
+          ],
+          "foot_y": 392,
+          "translation_y": -20
+        }
+      ],
+      "source_asset": "herbalist_nw_walk_v01",
+      "source_sha256": "01034666a4ed3bfc09fb9cbb804870954d12d492cca59e21b4bc9f34c80badfa",
+      "source_frame": null
+    },
+    "walk_s": {
+      "file": "walk_s.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            126,
+            143,
+            205,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            130,
+            149,
+            204,
+            243
+          ],
+          "foot_y": 392,
+          "translation_y": -4
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            124,
+            145,
+            215,
+            247
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            125,
+            147,
+            210,
+            245
+          ],
+          "foot_y": 392,
+          "translation_y": -5
+        }
+      ],
+      "source_asset": "herbalist_s_walk_v01",
+      "source_sha256": "ca9085b26fd82773ff0d3908ef40a3d6f9a7521fa6c554a71f6d7d010dbb3b5e",
+      "source_frame": null
+    },
+    "walk_sw": {
+      "file": "walk_sw.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            151,
+            207,
+            241
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            154,
+            206,
+            238
+          ],
+          "foot_y": 392,
+          "translation_y": 3
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            141,
+            153,
+            222,
+            239
+          ],
+          "foot_y": 392,
+          "translation_y": 2
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            152,
+            217,
+            240
+          ],
+          "foot_y": 392,
+          "translation_y": 1
+        }
+      ],
+      "source_asset": "herbalist_sw_walk_v02",
+      "source_sha256": "4ba9338c64501dd7fab10826253e858d89a7e0fcd031a7c2ae4ac2af6188fcde",
+      "source_frame": null
+    },
+    "rest": {
+      "file": "rest.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            166,
+            192,
+            226
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            147,
+            166,
+            190,
+            226
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            146,
+            166,
+            194,
+            226
+          ],
+          "foot_y": 392,
+          "translation_y": 12
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            152,
+            165,
+            191,
+            227
+          ],
+          "foot_y": 392,
+          "translation_y": 14
+        }
+      ],
+      "source_asset": "herbalist_utility_rest_v01",
+      "source_sha256": "cf0d6c6ff25570abb533c7409fa1621f2b5598e97b70913a2f5e5ddd27e0e172",
+      "source_frame": null
+    },
+    "talk": {
+      "file": "talk.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            139,
+            146,
+            202,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -7
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            140,
+            146,
+            201,
+            246
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            137,
+            143,
+            210,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -9
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            138,
+            143,
+            208,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -8
+        }
+      ],
+      "source_asset": "herbalist_utility_talk_v01",
+      "source_sha256": "e7dab80f80b8095396d049496dc9d39df3c8cffceb17fd502af8361a4eef6bc7",
+      "source_frame": null
+    },
+    "walk_w": {
+      "file": "walk_w.png",
+      "frames": [
+        {
+          "region": [
+            0,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            180,
+            138,
+            191,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            448,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            179,
+            138,
+            190,
+            254
+          ],
+          "foot_y": 392,
+          "translation_y": -16
+        },
+        {
+          "region": [
+            896,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            179,
+            144,
+            196,
+            248
+          ],
+          "foot_y": 392,
+          "translation_y": -10
+        },
+        {
+          "region": [
+            1344,
+            0,
+            448,
+            448
+          ],
+          "painted_bounds": [
+            177,
+            143,
+            192,
+            249
+          ],
+          "foot_y": 392,
+          "translation_y": -11
+        }
+      ],
+      "source_asset": "herbalist_w_walk_v01",
+      "source_sha256": "a4e453b28f500558828a32ec334690bd001eb69a1992e0148e301c7cceee4137",
+      "source_frame": null
+    }
+  },
+  "source_sha256": {
+    "herbalist_n_walk_v01": "23a35a206e62767897c042103e3169f670e4ff774b62655f8b93eb57944ed60f",
+    "herbalist_neutral_cardinal_v01": "b6bd6512851b8d2b21c1840932c1c796931a45b99da98fc881f1002a1b3f5183",
+    "herbalist_neutral_diagonal_v01": "2f4fa4afaf34e9b5c269fb26801a2f50e51007c54ffe3e9c69412d38528d3170",
+    "herbalist_nw_walk_v01": "01034666a4ed3bfc09fb9cbb804870954d12d492cca59e21b4bc9f34c80badfa",
+    "herbalist_s_walk_v01": "ca9085b26fd82773ff0d3908ef40a3d6f9a7521fa6c554a71f6d7d010dbb3b5e",
+    "herbalist_sw_walk_v02": "4ba9338c64501dd7fab10826253e858d89a7e0fcd031a7c2ae4ac2af6188fcde",
+    "herbalist_utility_rest_v01": "cf0d6c6ff25570abb533c7409fa1621f2b5598e97b70913a2f5e5ddd27e0e172",
+    "herbalist_utility_talk_v01": "e7dab80f80b8095396d049496dc9d39df3c8cffceb17fd502af8361a4eef6bc7",
+    "herbalist_w_walk_v01": "a4e453b28f500558828a32ec334690bd001eb69a1992e0148e301c7cceee4137"
+  },
+  "source_metadata": {
+    "herbalist_n_walk_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_n_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "n",
+      "metadata_sha256": "7f2f730f3b59981f1bd8e51c8135d3f5b6593c3d0e6f37a13507a317d9e4ee8c",
+      "native_inputs": []
+    },
+    "herbalist_neutral_cardinal_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_neutral_cardinal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        3,
+        1
+      ],
+      "directions": [
+        "s",
+        "w",
+        "n"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "2b945df1743eeae125948e53af6ce043dbae60f8e6acff387f744275a1e42564",
+      "native_inputs": []
+    },
+    "herbalist_neutral_diagonal_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_neutral_diagonal_v01.png",
+      "kind": "runtime_neutral_sheet",
+      "grid": [
+        2,
+        1
+      ],
+      "directions": [
+        "sw",
+        "nw"
+      ],
+      "action": "idle",
+      "direction": null,
+      "metadata_sha256": "e85ba9b174ffc7871c2ed17bdae3de0ece0b29b3f4cdd23b3b346a8fa4c4dc0b",
+      "native_inputs": []
+    },
+    "herbalist_nw_walk_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_nw_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "nw",
+      "metadata_sha256": "a3cbc2d317fa23409a475bdcaf7d037d03b0935ed4de3a83a616734a9d1dbcf4",
+      "native_inputs": []
+    },
+    "herbalist_s_walk_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_s_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "s",
+      "metadata_sha256": "6a06ecb84c759f6f6677435bcb22b575bc9f687bcd99bcf3de451c87eb849532",
+      "native_inputs": []
+    },
+    "herbalist_sw_walk_v02": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_sw_walk_v02.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "sw",
+      "metadata_sha256": "f031f36a241b1f2596d1ffb3eae802c927fcbd6ba2dbb1b31fb06fe34860cd9f",
+      "native_inputs": []
+    },
+    "herbalist_utility_rest_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_utility_rest_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "rest",
+      "direction": "utility",
+      "metadata_sha256": "a404b3b36dab60bb7f78c8475fb5053dea2ed1d443aaae41b45299687cf53d81",
+      "native_inputs": []
+    },
+    "herbalist_utility_talk_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_utility_talk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "talk",
+      "direction": "utility",
+      "metadata_sha256": "1a70912c728f59e7fbc3cbc254120d1752480d1379fe47bd042c7ce65d4c3627",
+      "native_inputs": []
+    },
+    "herbalist_w_walk_v01": {
+      "path": "art_src/camp_npcs_v37/herbalist/sources/herbalist_w_walk_v01.png",
+      "kind": "runtime_clip",
+      "grid": [
+        2,
+        2
+      ],
+      "directions": null,
+      "action": "walk",
+      "direction": "w",
+      "metadata_sha256": "66194b3c8563dd90ae10e11bc3605495454495ed8bb1f5f10857140e1c2e672e",
+      "native_inputs": []
+    }
+  },
+  "cell": 448,
+  "foot": [
+    224,
+    392
+  ],
+  "core_height": 240,
+  "world_height": 32,
+  "world_floor_y": 12,
+  "status": "admitted_runtime",
+  "runtime_integrated": true,
+  "manual_review_sha256": "e74b315395207f115bb9f776b3089e31c4b50f7219119af47addc2efce354172",
+  "calibration_sha256": "6b449021acf351b30d07232b2331ca07d3e60a41cddbb551459fb32839424aef",
+  "game_version": "0.55"
+}

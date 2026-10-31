@@ -1,0 +1,47 @@
+{
+  "name": "surveyor_nw_walk_v03",
+  "id": "surveyor",
+  "kind": "runtime_clip",
+  "direction": "nw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Edit this exact 2x2 four-frame walk sheet. Fix ONLY the LEGS in BOTTOM TWO figures (frames3 and4). Top two frames stay identical. Every head, hairstyle, torso, hands, held props and costume palette stay identical with original scale, camera and position. Currently ALL four poses repeat the same leading leg; correct that.\nBOTTOM LEFT contact pose: the FOREGROUND thigh/leg that leads LEFT in top-left MUST now slope BACKWARD to screen-RIGHT and LOWER (trailing behind travel upper-left), heel lifted; the FAR/BACKGROUND leg must extend LEFT/forward with heel planted. Clearly attach the foreground knee to its original hip, cross the two shins, then place foreground BOOT to RIGHT of far boot. Do not just widen same pose. BOTTOM RIGHT passing pose: far leg stands under pelvis and foreground knee swings forward with bent boot lifted clear. Exactly two legs, unchanged leg lengths. Preserve all upper body pixels and compact proportions, not four new faces. All four figures complete and separated, no cropping of crown/ponytail or boot, keep transparent margins. True transparent RGBA; no letters, diagram, arrows, floor, shadows, particles or additional hands.",
+  "asset": "surveyor_nw_walk_v03",
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_v03.png",
+  "sha256": "a716121c3829b60aaf135b689aeb33ff72853c66708aca6a6b2be20dce0a4a1a",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-656ba247-fb19-4546-8c04-5e06ccf499e2.png",
+  "dimensions": [
+    1333,
+    1180
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_gait",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/sources/surveyor_nw_walk_v01.png",
+      "sha256": "688022e16d71a75c06c53ab5cd210b4e044f6fc2f06f5f00779096cbb3eeccd1"
+    }
+  ],
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    }
+  ],
+  "review_reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+}

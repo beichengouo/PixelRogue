@@ -1,0 +1,16 @@
+{
+  "provider": "built-in image_gen",
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-3b0070e0-ae26-4b69-bcbd-7120c728c55c.png",
+  "sha256": "07581263a01deab5a75be148da711a583db4214bd863f4f8e870b2099a9d8c0e",
+  "prompt": "Precisely edit this transparent 2x2 Xixifu normal staff-animation sheet. ONLY repair the bottom-left third frame's slightly undersized head/face using top-left first frame's cranial, face and ear proportions. Keep third frame pose/facing, body/robe/legs/boots/hands/staff unchanged. Other three figures unchanged. Dark irises, near-black long hair continuously over lowered hood, charcoal plain robe/lavender lining/black short boots, right anatomical staff hand, same smooth nonpixel handdrawn style. Preserve four complete figures and all hair/staff tips in transparent margins. No background, glow, shadow or text. Preserve transparent alpha.",
+  "refs": [
+    "E:\\CodexWorkspace\\PixelRogue\\work\\v36-style-and-combo\\generated\\xixifu_normal_sw_attack5.png"
+  ],
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "reason": "Actual outstanding repair used for user-authorized new-account availability check",
+  "key": "xixifu_normal_sw_attack5",
+  "replaced_source_sha256": "fa34b214c1fe27fc0f384f81bec30acb1334b81145a4860a2cf4654f03a52034",
+  "selection_note": "Local third-face repair selected; direct neutral head ratios within2.9%, full-body motion and complete hair preserved, pending same-clip technical gate."
+}

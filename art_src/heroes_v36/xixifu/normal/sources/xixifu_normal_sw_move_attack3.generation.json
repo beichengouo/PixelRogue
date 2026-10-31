@@ -1,0 +1,13 @@
+{
+  "key": "xixifu_normal_sw_move_attack3",
+  "provider": "built-in image_gen",
+  "prompt": "Precise arms-only sprite edit of IMAGE1's2x2 FOUR-FRAME walking cycle. IMAGE1 is the immutable target anatomy/gait. Preserve its FOUR HEADS/FACES/TORSOS/HAIR/WAIST/ROBE HEM and EVERY LEG/BOOT in their EXACT current lengths, positions, overlaps and TL/TR/BL/BR walking order. Do not redraw or mirror legs, do not duplicate top-row legs in bottom-row, do not make feet planted stationary. BOTH original passing feet underhipcenter and opposite contact legs must survive. Edit ONLY arms/hands/sleeves and smallpurplecrystal wooden staff of eachfigure, using corresponding4armposes from IMAGE2 as reference. IMAGE2 is ONLY arm-pose reference: do NOT copy its head, body, legs, proportions, camera or foot positions. Same anatomical RIGHT primary grip all4; normal human girl ordinary charcoalrobe/lavenderlining/silverbutterflyclasp/clothwaisttie/darkleggings/shortblackboots/nearblacklonghair over loweredhood/darkirises. Same smooth nonpixel2-3tone handdrawn style. No wholebody scaling/squat/lean/head turn/sway. Physical arms articulate one connected prepare/release/followthrough/bridge segment, NOT four repeat pulses; no returntoneutral between stages1-4. Allhair/staff/hand/boot tips complete inside transparentmargins, preserve2x2 layout and actual transparency. NO shotbolts/trails/glow/fog/FX/runes/shadows/background/text. Four FULL figures only.\nStage3 SOUTHWEST front-left3/4: firststaff ready to sweep laterally at shoulder/chest;secondrightforearm sweeps stafftip in clear lateral arc aheadDOWN-LEFT;thirdfollowsupward;fourthstaff raisedaboveheadpreparingnextlift. Torso/head remain upright FIRSTIMAGE posture; only arm/staff changes. Freearm lightlycontracts. No effects, all target walkinglegs unchanged.\nFIRSTIMAGE already has correct4gait phases, do NOT change anyboot/leg. TOPLEFT leadingboot circularclasp;BOTTOMLEFT leadingboot PLAIN no roundclasp,rearboot roundclasp. Same asfirstimage exactly. Reference2 fog/ambient RGB is NOT desired: empty space alpha0, allcrystals solid nonglowing. Arms-only edit, not a new fullbody redraw.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_move_attack2.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_attack3.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-9f41ee04-9a31-4654-8d36-80fb14600386.png",
+  "transparent_background": true,
+  "review": "candidate_unvalidated",
+  "runtime_integrated": false
+}

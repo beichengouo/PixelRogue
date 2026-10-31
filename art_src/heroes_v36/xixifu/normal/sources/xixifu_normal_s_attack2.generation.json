@@ -1,0 +1,16 @@
+{
+  "key": "xixifu_normal_s_attack2",
+  "provider": "built-in image_gen",
+  "prompt": "Precise ARMS-ONLY correction of IMAGE1 transparent2x2 FOUR SOUTH FRONT standing sprites. Image1 provides correct full-length stable body, head/skull/neck/torso/waist/robe/legs/boots, preserve these EXACTLY. Image2 is stage2 ARM movement reference ONLY, its shorter torso must NOT be copied. Change only hands/sleeves/arms/staff. Four consecutive stage2 poses:1 inward wristreturn with righthand(viewerLEFT) drawing staff to ribs from preceding upward extension, freelefthand smallcontractat chest;2 upward/forward diagonal staffflick directed toward viewer releases secondpulse,3follow upward with rightelbowraised;4forearmbegins opening lateralarc ready for stage3. Same anatomical RIGHT primary grip throughout, no idle reset, no leaning/squatting/neckbend/headshift or shortened legs. Face remains straightSOUTH, same calm darkeyes, nearblackhair over outsidehood. Simple charcoal/lavender robe, silverbutterflyclasp/clothwaisttie/darkleggings/shortblackboots, same clean smoothnonpixel2-3tone style. Four FULL figures same scale/groundline/skullheight, generous transparentmargins allhair/weapons/boots intact, no crop. Solidpurplecrystal and alloutsidepixels alpha0, no glows/spells/particles/fog/shadow/backdrop/text. Preserve image1 physical anatomy across4, only requested armsequence changes.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack3.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack2.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-30d103f7-034d-46c6-a6b0-a5ea239a5f22.png",
+  "transparent_background": true,
+  "review": "selected_after_primary_visual_review_pending_full_calibration",
+  "runtime_integrated": false,
+  "replaced_source_sha256": "3a9c764cf54b4ab90f094e28ab89aec56e0170c7817b6de1782d3bc65070248b",
+  "sha256": "06695688c3dc1e1a03acd2955d04564cdf4555a19a25271f0403486997259693",
+  "selection_note": "Cross-action old stage2 short torso corrected using same body as stage3. Four inward-return/up-flick/follow/bridge arm poses; no global scaling or warped body."
+}

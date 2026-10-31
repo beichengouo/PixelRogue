@@ -1,0 +1,72 @@
+{
+  "asset": "ilyua_normal_n_move_attack2_v81",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_move_attack2_v81.png",
+  "source_generated_path": "E:\\CodexData\\home\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-5f4952f1-5643-4cb3-b22f-d9149de47ae9.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_n_move_attack2_v81.png",
+  "built_in_imagegen": true,
+  "prompt": "Edit ONLY the upper arms, hands, bow and arrow of this four-frame walking game sprite. Keep the four original heads, hood, body, legs, boots, costume, size and 2x2 placement exactly. STRICT REAR VIEW ARCHERY AIMING NORTH, straight up into depth away from camera. The LEFT arm reaches FORWARD AWAY from viewer, mostly hidden ahead of shoulder. The bow must be foreshortened in the plane across her FRONT, beyond the hood, with upper limb visible ABOVE the hood and lower limb OCCLUDED by her body. The arrow points toward TOP CENTER AWAY from camera; NEVER sideways to the left. Anatomical RIGHT hand draws near the FRONT cheek and is mostly occluded by hood, right elbow visible at right side. Do NOT draw the hands or bow across the back of her cloak. Four consecutive phases: 1 raise bow and nock forward 2 full draw forward/up, elbow back 3 open fingers release arrow away/up (no remaining arrow) 4 lower bow a little to forward ready. Exactly TWO arms and hands, one intact wooden leaf-pendant bow, continuous string, no duplicate hanging arms. Preserve the four alternating walking poses from reference, including narrow passing feet. Full figures each cell, transparent margins at least 8%, refined nonpixel anime handpainted, transparent background, no text, grid, FX, ground, shadow. This is a BACK view of a character shooting AWAY from viewer, never shooting screen-left.\nThis is SECOND quick shot stage. Keep rear-view forward-facing bow above hood as in supplied image, correct upscreen arrow and naturally occluded hands. Four upper-body phases: continue previous ready at shoulder height; quick draw; release with small upward wrist angle and no arrow; right fingers return toward string for next shot. Preserve four different leg poses. Give full bow tip 8% clear margin above and all sides of every cell.\n",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_move_attack1_v81.png",
+      "sha256": "8e844a280ada7326335f6f564546bb89ca473382d640500c0692ccf25f01d8c9"
+    }
+  ],
+  "sha256": "65caac0f3b8dab8af4e86eb6acdd0bf4753633b2ffce3abc8255234e72d7170e",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "n",
+  "action": "move_attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    2,
+    1234,
+    1254
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      2,
+      1234,
+      1254
+    ],
+    "8": [
+      237,
+      10,
+      1099,
+      1238
+    ],
+    "32": [
+      237,
+      11,
+      1098,
+      1238
+    ],
+    "128": [
+      237,
+      12,
+      1098,
+      1237
+    ]
+  },
+  "primary_visual_review": "not approved for runtime; inspect authored pose, hands, proportions and clipping before packing",
+  "generation_path": "built_in_image_gen"
+}

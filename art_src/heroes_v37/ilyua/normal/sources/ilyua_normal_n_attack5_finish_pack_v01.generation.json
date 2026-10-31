@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack5_finish_pack_v01",
+  "kind": "precalibrated_source_group",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack5_finish_pack_v01.png",
+  "sha256": "a65af1caceb9351468724d103c9895ce18469352bd623d0cdf126d88d16ef805",
+  "direction": "n",
+  "action": "attack5",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    896,
+    896
+  ],
+  "status": "pending_complete_set_review",
+  "runtime_integrated": false,
+  "user_approved": false,
+  "built_in_imagegen": true,
+  "usage": "fixed_scale_packed_candidate_not_runtime",
+  "sources": {
+    "ilyua_normal_n_finish_ready_single_v01": "20fe15cd31615bcd649f908ae8fa1eb8eae6c5f1025d6707a2920743dd999845",
+    "ilyua_normal_n_finish_draw_single_v02": "fc41a7d4fa743b3a2bd3d9b96e9443383c5e45e2a972d2953072dcb748a69f94",
+    "ilyua_normal_n_finish_release_single_v01": "5d8308279a1503b0e29eb853441e777aae264b72b6b354425dacde3fea6c340b",
+    "ilyua_normal_n_finish_recovery_single_v01": "d2bc82cbd5d7d496c70196d1645503262dff9b258b8e133e67b77e4fad0999e2"
+  },
+  "reference_idle_sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20",
+  "processing": "rig_pack.normalize_clip; one fixed clip scale, per-frame translation only",
+  "calibration": [
+    {
+      "scale": 0.2505462860496839,
+      "offset": [
+        -96.26078521228229,
+        -47.71775742827867
+      ],
+      "head_inliers": 8,
+      "head_registration_scale": 1.0188882299353812,
+      "head_angle": -0.24584277232467075,
+      "foot_deviation": 5,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2505462860496839,
+      "offset": [
+        -88.21868796426745,
+        -47.234719198258176
+      ],
+      "head_inliers": 17,
+      "head_registration_scale": 0.9994095670102422,
+      "head_angle": 0.8507332042871433,
+      "foot_deviation": 5,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2505462860496839,
+      "offset": [
+        -88.5428146612449,
+        -47.99604772348871
+      ],
+      "head_inliers": 9,
+      "head_registration_scale": 1.0133794925647261,
+      "head_angle": -0.2954590216918739,
+      "foot_deviation": 4,
+      "torso_residual": null
+    },
+    {
+      "scale": 0.2505462860496839,
+      "offset": [
+        -88.68718281730278,
+        -48.23948044073384
+      ],
+      "head_inliers": 8,
+      "head_registration_scale": 1.0176669939807477,
+      "head_angle": -0.7359195779898678,
+      "foot_deviation": 4,
+      "torso_residual": null
+    }
+  ],
+  "visual_review": "Deep draw rightward to ear, single invisible forward shot, hand releases and bow recovers. Must review full body and all five-shot transitions before runtime."
+}

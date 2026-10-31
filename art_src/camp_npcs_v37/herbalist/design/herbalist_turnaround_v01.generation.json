@@ -1,0 +1,43 @@
+{
+  "name": "herbalist_turnaround_v01",
+  "id": "herbalist",
+  "kind": "design_turnaround",
+  "frame_count": 3,
+  "grid": [
+    3,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/assets/camp_life_v01/herbalist_portrait.png",
+    "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve character turnaround. Create a production CHARACTER DESIGN reference sheet for the same young adult woman in IMAGE1. Image1 defines identity, clothing and job accessories; IMAGE2 is ONLY a rendering/proportion reference for the game's already established smooth hand-painted miniature sprites, never copy image2's elf identity, ears, hood or bow. Use compact approximately2.7-head body proportions, gentle adult identity, clean colored outlines and broad soft cel-painted shading, NONPIXEL. Three COMPLETE full-body views in three equal horizontal columns: strict FRONT, strict LEFT PROFILE, strict BACK. Same skull size, shoulder/waist/limb lengths, outfit construction and character scale in all3. Boots share one floor baseline; head crowns align; view is consistent slightly elevated 2D game orthographic, no perspective scene. Neutral relaxed standing, arms slightly clear of costume, exactly two arms/two hands/two legs. All garments/accessories physically continue correctly across back and side, bags keep the same anatomical hip across views, no duplicate prop. Long deep teal-blue hair in a low flowing ponytail, soft bangs, amber-honey eyes, small ivory flower-and-green-leaf cluster with muted brick-red ribbon by anatomical LEFT ear, human round ears. Ochre/mustard-gold draped shawl/cape with pale botanical border and fine fringes, muted plum-brown fitted overdress over ivory ruffled layered skirt and ivory puff-sleeve blouse, thin brown waist cord with small tassels, brown floral lace-up boots. ONE small wicker herb basket held low in LEFT hand containing green leaves and white blossoms, right hand relaxed. Keep the original shawl draping/long ponytail silhouette and warm gold/plum/ivory palette; no wizard hat or staff. Ample separate transparent margin around each full figure including hair, cape tails, props and boots; do not crop/overlap any view. Genuine RGBA transparent background. No labels, letters, numbers, caption, design boards, grid, floor, shadows, effects, scenery or additional objects. This sheet is DESIGN REFERENCE ONLY; separate animation source drawings will be made afterward.",
+  "asset": "herbalist_turnaround_v01",
+  "path": "art_src/camp_npcs_v37/herbalist/design/herbalist_turnaround_v01.png",
+  "sha256": "5c5ba6441b3266a06db7e360e08608296571a892186351f92a8724700fc88462",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-06569660-8f4f-4fc4-be3b-f5d524a7c1d2.png",
+  "dimensions": [
+    1881,
+    836
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "wardrobe_reference_only_needs_compact_proportions",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/camp_life_v01/herbalist_portrait.png",
+      "sha256": "441acc459c0e158fdd94aad90724f9b7f3611ea2d3ac080101f456e2361e9a5e"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "review_note": "Identity, costume and back construction usable as wardrobe reference; too tall/slender for established compact hero-style model. Separate compact v02 drawing required. Never runtime crop."
+}

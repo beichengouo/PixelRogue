@@ -1,0 +1,43 @@
+{
+  "name": "surveyor_neutral_cardinal_v01",
+  "id": "surveyor",
+  "kind": "runtime_neutral_sheet",
+  "action": "idle",
+  "directions": [
+    "s",
+    "w",
+    "n"
+  ],
+  "frame_count": 3,
+  "grid": [
+    3,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/design/surveyor_turnaround_v02.png"
+  ],
+  "prompt": "Use case: identity-preserve runtime game sprites. Draw FRESH 3 neutral standing full-body sprites of the EXACT compact2.7-head NPC in supplied design reference, preserving her head/skull size, face/hair, torso and leg lengths, outfit and occupational accessories. Do not make her tall or change proportion. 3 equal horizontal cells: FRONT facing down-screen, pure LEFT PROFILE facing screen-left, full BACK facing up-screen, in that exact order. Consistent slightly elevated2D game orthographic camera, common floor line and equal native character scale in every cell. Relaxed standing on both boots, head upright, no nod/lean/crouch. Chestnut-brown chin-length bob hair, green eyes, small white daisy-and-leaf ornament on her anatomical LEFT temple, human round ears. Olive-green short hooded travel cape with hood DOWN behind bare head, pale gold botanical trim, ivory puff-sleeve blouse and layered short ivory skirt, brown fitted lace-up waist corset and leather belt, opaque dark-brown tights, brown mid-calf lace-up boots with small leaves. ONE brown field satchel on anatomical RIGHT hip and a closed brown embossed leaf field notebook held low by LEFT hand, right hand relaxed. Preserve her botanical researcher silhouette and muted olive/ivory/brown palette from portrait. Do not turn cape into a raised hood or give her an archer bow. Keep the reference's compact chibi miniature silhouette, broad nonpixel hand-painted shading and clear outlines. Exactly two arms/hands/legs and one proper set of props; no ghost hands. Keep satchel/basket/instrument at same anatomical side; back view naturally occludes front hands/props, never draws them through the back. Complete hair, coat tails, bag/flute and boots inside EACH cell with generous10% transparent margin; no overlap or cropping. Genuine transparent RGBA, no background/gradient/text/labels/grid/shadow/floor/effects. These are NEW runtime neutral source poses based on the design, not a crop or copy of the reference sheet.",
+  "asset": "surveyor_neutral_cardinal_v01",
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_neutral_cardinal_v01.png",
+  "sha256": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-cace7891-5d94-4870-b5e3-39fbae8f8bf1.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/design/surveyor_turnaround_v02.png",
+      "sha256": "55ab7ee9438f4e3b1e4660d2ec104c5b9acc55355dfaa0bea70fe0fb574fe9cf"
+    }
+  ]
+}

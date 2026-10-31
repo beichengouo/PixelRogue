@@ -1,0 +1,47 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "move_attack3",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Edit FIRST image, the existing four-phase walking/attack source, as the physical character MASTER. Keep its FOUR distinct leg/boot phases, foot positions, head/torso dimensions, face facing and hip/robe proportions exactly unchanged; change ONLY arms/sleeves/hands/staff to new connected attack stage specified below. Second image is stationary arm/weapon reference only, NOT a leg/body to paste. Same2x2 ordering TL TR BL BR, exactlyfour complete figures, retain original body scale and intact hair/boots; spacious transparent margins no cell clipping or overlap. Preserve near/foreground boot silver buckle identity and farboot plain cuff where visible, especially opposite legs on bottomrow. NEVER make frame3 repeat frame1 legs or frame4 repeatframe2 legs. Midcalf charcoal plainrobe/lavenderlining/silverclasp/clothwaisttie/darkleggings/shortblackboots. Anatomical RIGHT hand always holds same smallsolidpurplecrystalstaff, otherhand free. Long nearblackhair continuously outside loweredhood, blackeyes, upright original fullheight torso. Smooth NONPIXEL clean handdrawn broad2-3tone shading. Do not redraw wholebody into a shorter child. No magicalglow/lighting/fog/particles/bullets/runes/groundshadow/text/backdrop/extra creatures orprops. Allspace beyond physicalfigure remains transparentalpha. Fourframe leg sequence already authored MUST stay intact while arms change. These are moving attacks, never planted stationary legs.\nFacing STRICT LEFT/WEST one-eyeprofile, SAMEfirstimagebody and camera.\nStage3 continuous lateral staff ARC/SWEEP. Frame1 takes prior wristreturn sideways to leading edge; frame2 sweeps staff tip across forward target direction at chestheight (no actual slash/magic); frame3 follows sweep across slightly upward; frame4 raises staff toward overhead brace transition, no neutral reset. Upright samehead/torso while elbows articulate.\nKeep EXACT existing leg/boot identity: TLforeground nearbuckled boot ahead-left; TRnear buckled supportleft / far plainraised bootright; BLnear buckledboot rear-right / plain farboot ahead-left; BRnear buckled boot bent underpelvisright / plainfarsupportleft. Preserve4distinct contacts/passing phases, not repeat 2poses. First arm pose MUST start with staff already sideways/up from previous stage, not neutral upright.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-38929c03-232c-499a-9972-954dff4af6c2.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_move_attack2.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_attack3.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Four gait identities retained by nearbuckle/farplain, lateralstaffarc rises into nextstage, no neutral reset. All bodies intact; pending independent head/body registration and packed review.",
+  "sha256": "e2dced3e36eb0362f370899c2208cf014186f31af254d324d2516a9731d439cf",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_move_attack2.png": "f55e4b05faa481748ea6401ec12b1598ea8db24485ea8bfd625b0b246784bdd5",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_attack3.png": "b418baa2292f409b8e1df99d6b56ab01cf35e04f8092dcf09a62bedc64d163c4"
+  },
+  "size": [
+    1254,
+    1254
+  ],
+  "alpha24_bounds": [
+    44,
+    82,
+    1253,
+    1189
+  ],
+  "outer_clearance_px": 1,
+  "complete_component_frames": 4,
+  "motion_technical_review": {
+    "technical_direct_neutral": "pass",
+    "head_registered_foot_deviation": [
+      1,
+      1,
+      -10,
+      -9
+    ],
+    "fixed_scale": 0.45905681183650304
+  },
+  "technical_pass_is_visual_approval": false
+}

@@ -1,0 +1,123 @@
+{
+  "scope": [
+    "surveyor",
+    "carpenter",
+    "herbalist",
+    "minstrel"
+  ],
+  "clip_count": 48,
+  "source_frames": 132,
+  "animation_count": 72,
+  "runtime_integrated": true,
+  "files": {
+    "surveyor": {
+      "idle_n.png": "6e7733c0460588e59423ba9e9a813d416e20b5af95eefb30ee4d809f8b80f127",
+      "idle_nw.png": "8b6b319d8fb3fc6447517cf1ab67542c11e8532c94accbea44b3686359d4cec9",
+      "idle_s.png": "e19fbfa95c230f31943aca41d2431ed248b942d535778aa54759b8a77abc0de2",
+      "idle_sw.png": "2a811a85ab5ccb2fdd4e693259810b49a4d5fc5ace1711cc24fecee48c3d1fc6",
+      "idle_w.png": "c6b825c5f664bc3e209c25d6f3713470b9e70a4d3e824eb9d813b09e03068ac4",
+      "production.json": "eb58333dd1708b72b557024b562574b151c86053b0916fea7619e1077e606649",
+      "rest.png": "78aed66b3af7029ed6a62a407610add60195211f33a8f9676cd082151d89d25c",
+      "surveyor.tres": "7da4f382a0bbe40482f05fe6f99f611580beae90ca831d3e513e95b9dea62406",
+      "talk.png": "9dc02507314e6a86fa9edac5027af0d67b915dcc06bbb56593960de471173ba3",
+      "walk_n.png": "0c85b72043246e5f0919189d6811b977ecaea1b8f80e0f44d7105be199e103e3",
+      "walk_nw.png": "5ed39278592135fed0f60b5c6f2a239bcc26592a84edfbe740a0331e90c99513",
+      "walk_s.png": "ea56ec2d50c54b921813dd64535440bf928c582549ed3147e8c9a3d05e2805c9",
+      "walk_sw.png": "6d3c22c90c439ff9edef1088dfdcfa10bbea3922bc4fa207ebb65af1f58e503f",
+      "walk_w.png": "7a67f3b4e5d7b430123307e2cff511c525758d726703d52588e035f4e01dc6d9"
+    },
+    "carpenter": {
+      "carpenter.tres": "8dc5ded14ed8e748f7be7f0c80601a7b7d2425e1c46dde5f6102c25f9f809ccd",
+      "idle_n.png": "8470df76172ead4fe45512e67e96b20c9da6e9837dd82ecd0447011793fc1053",
+      "idle_nw.png": "0e3eebeefc41b0914221059711bfc8c80d266b71c172d1b5956930bb98ee42fc",
+      "idle_s.png": "7eebf307e99717b9298d2a8ee5a36c6ceb60b45cf10d9c2605a3704b60d5b708",
+      "idle_sw.png": "07befffbdff1e808ab56ef22b9047957111c0f61a617c721e47651ae806894ca",
+      "idle_w.png": "1d994fdc8c2b4e20d3212ac626eea4a1faf591ed54ea356aac42b3528a31cc5f",
+      "production.json": "1ed71933b2a031ed5f4e1df2178cc778fd8921e67543ba85d9cf02e2de349b55",
+      "rest.png": "0636b2522da878793ef447fef1fea30f00fd7258c89d40e36707f10649228ae5",
+      "talk.png": "8adbe738bf3c014d55d13eea28048aafcc5e5490ae65ef5e64b3052ae6ef82d8",
+      "walk_n.png": "c5b2f6d5140f956caa8bbceaf80ed7c658e3d27d02fa68fc7d327d4f28627a9b",
+      "walk_nw.png": "1fc7c1482ab4b5ca5c1299c8d3b01f867514b543d1165068806305a92bdfe4e6",
+      "walk_s.png": "9342f6ba8b47b1b1602b8862ba37e29e1b8515da56ef283e7a3b7a742b5fc03d",
+      "walk_sw.png": "37017b0f64f479913428c1f2771d12a1cb7919b5b9a365f01f71b33d4cfb4386",
+      "walk_w.png": "348f78419e75a2e52861ec759524d302799f0b1f64400a8d002c58cf4c260b3d"
+    },
+    "herbalist": {
+      "herbalist.tres": "0a17aa8821d830ad53be7ab52ff0a0086ea4faf5cce5572826f18120574c793a",
+      "idle_n.png": "613bb067a3180684b429bf11ccd294df66283ae8e98c08f300b0c4fc7b997f2a",
+      "idle_nw.png": "dd4b53bd648d47d42cd891972d3c17cd24b57abea287c0b97ae7a0c70da1ae2c",
+      "idle_s.png": "e67f6b3c3a6e5df931281d391da0c762c3f524acd24bb95ff4c4eefc2e733fdf",
+      "idle_sw.png": "5717bec2e91ab1e254956e2c03f0fc5b12fff4728002828ecbb116df7619b9f4",
+      "idle_w.png": "68280e6175ef339ea6ae6084d1adc347057a5e320f2d5998a9adf877b9c9c41d",
+      "production.json": "b38fec5f3413fba9f2986d2b91ab44a6410657afd744c0d3303196433451a516",
+      "rest.png": "8f6b71ea02b24506a565755b2965e5840a7f55f08e3828843a401d14898f9086",
+      "talk.png": "1e3d2cb14e29561982ed54124026aa3a40d9431b87d3c357b030f46b2f0161e9",
+      "walk_n.png": "30f146e85e60eeed5a9fca2f2ba3ff45a3fc8a5f7806594779d3046cf2616cf6",
+      "walk_nw.png": "a73d3dc165d0e85d8214540d2b13804fffd627769857abfa8f192119c3739336",
+      "walk_s.png": "b017931d36536a13652bcbc61286bb63aec2db32b0bf8832c1aeda94039665eb",
+      "walk_sw.png": "91e11a65da1123b8691077dd8e04a8ffd8f30ff41b59fe158f5cc5cc6007396b",
+      "walk_w.png": "3c9551505df44f0df659f27ecb05252ab9a38394c4cfb219f4c020afc83a3afe"
+    },
+    "minstrel": {
+      "idle_n.png": "095f24e355974930d2a5ce9a2b319b6fd9ce6a6c2c348a035f2c75651ff0efb6",
+      "idle_nw.png": "cdc4560cb2a03bc699da9bb3c00236f68daf152a637354d698b9a85541b0aec5",
+      "idle_s.png": "b428ee219e20d742accb85e718bd7916272850955434ed3847df8b4bee70a136",
+      "idle_sw.png": "0a5287ab7e3fa3fe1f3b008118e0fbe77e49f0a3b1b625aa9226c85829863be7",
+      "idle_w.png": "462262a212d8c1df4d123feab0a740e3fa534b17209c916708a8f583114c5e12",
+      "minstrel.tres": "f63553c491cf96697ce9caa9617cb585f20950722af0b38cf3be8e5f116920ba",
+      "production.json": "5f0fc84184471eec26ea903ef6efaf544284b0bd71061657a9e95ff94384940c",
+      "rest.png": "78af95d82768c969a0642e231c17ec9b7deea1f2374fca01201f5386b96a8e07",
+      "talk.png": "b88d3927b176ecc1306fc996cd3113ed0d2f91774bdb5accc54868063feff7f6",
+      "walk_n.png": "b80453058e6547bb3e9228a0e15934236e66e4e241aaba5a8888fc80a9f87a9b",
+      "walk_nw.png": "6706a9cdbafb399ac8446214e763917ab16eddaa0b49df2d0a6719de5e9fa9b7",
+      "walk_s.png": "9e8d01b9c3080855a7b286bdd12b3507b2bb550f5399feaaebaf2ea7b4250d5c",
+      "walk_sw.png": "4c2fbc07d8a49d5381e84f5518e4497cfb8264321f4d20ebc59c753da8a1ef9e",
+      "walk_w.png": "1ed77185d4afaa4d04aba03433e69fac5794db72bc7b30b1e900c86526b66231"
+    }
+  },
+  "checks": {
+    "import": {
+      "exit": 0,
+      "errors": [],
+      "clean_pass": true
+    },
+    "camp-npc-headless": {
+      "label": "camp-npc-headless",
+      "scene": "camp_npc_art_v37",
+      "args": [],
+      "renderer": "headless",
+      "seconds": 15.9,
+      "exit": 0,
+      "result": [
+        "5222",
+        "0"
+      ],
+      "runtime_errors": [],
+      "exit_warnings": [],
+      "unexpected_warnings": [],
+      "expected_save_fault_warnings": [],
+      "expected_backup_io_errors": [],
+      "functional_pass": true,
+      "clean_pass": true
+    },
+    "camp-npc-gl": {
+      "label": "camp-npc-gl",
+      "scene": "camp_npc_art_v37",
+      "args": [],
+      "renderer": "GL",
+      "seconds": 16.4,
+      "exit": 0,
+      "result": [
+        "5222",
+        "0"
+      ],
+      "runtime_errors": [],
+      "exit_warnings": [],
+      "unexpected_warnings": [],
+      "expected_save_fault_warnings": [],
+      "expected_backup_io_errors": [],
+      "functional_pass": true,
+      "clean_pass": true
+    }
+  }
+}

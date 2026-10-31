@@ -1,0 +1,52 @@
+{
+  "name": "minstrel_w_walk_v01",
+  "id": "minstrel",
+  "kind": "runtime_clip",
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/minstrel/reference_inputs/minstrel_w_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve. Asset: hand-painted NONPIXEL miniature NPC four-frame animation. Input image is the EXACT canonical single neutral model, not a suggestion. Keep the same compact 2.7-head proportions and SAME skull size, face angle, crown, shoulders, torso, pelvis and costume. Long silver-white hair with faint lavender shadows, a thick side braid draped over anatomical RIGHT shoulder, soft bangs and a small burgundy ribbon at back, violet-gray eyes, human round ears. Ivory puff-sleeve blouse, navy-blue asymmetrical layered skirt with ivory underskirt and restrained gold star/constellation embroidery, brown fitted waist corset/belt with small tassels and ONE brown satchel on anatomical LEFT hip, brown ankle boots. ONE burgundy scarf wrapped around neck with two fringed tails draping back. ONE silver transverse flute held low horizontally at waist with both hands in neutral standing, never a sword/staff. Preserve musician identity, braid placement and ivory/navy/burgundy/silver palette from portrait. Camera locked to strict LEFT PROFILE, looking screen-left; never turn head/body. Draw one slow in-place WALK CYCLE, four DISTINCT chronological poses in 2x2 reading order. Frame1 foreground anatomical LEFT leg reaches LEFT heel contact, background RIGHT leg trails RIGHT. Frame2 LEFT straight supports under pelvis, RIGHT knee swings forward. Frame3 foreground LEFT thigh/shin slope to screen-RIGHT with raised heel, background RIGHT leg extends LEFT heel contact. Frame4 RIGHT supports under pelvis, foreground LEFT knee bends and swings forward. Bottom row must put foreground leg at BACK/RIGHT, opposite top row. Keep upper body upright, pelvis height and leg/boot lengths constant. Hands/props retain original low carrying position, no extra hand. Small cloth/ponytail sway only. Lower legs must visibly exchange front/back ownership; DO NOT repeat same leading leg in frame3. Composition: four separate COMPLETE full-body figures in equal2x2 cells. Each figure occupies ONLY 70% of cell height with 15% EMPTY TRANSPARENT border ABOVE hair, BELOW soles, and around all props. Generous margin especially ponytail/ahoge. Each has exactly2 arms/2 hands/2 legs. No cut-off body edges or touching cells. Refined broad soft-painted shading exactly matching reference. True transparent RGBA background; no shadow/floor, letters/numbers/gridlines, particles, props not in model, camera change, growth/shrink, alternate costume, labels or backdrop. Preserve anatomical accessory sides.",
+  "asset": "minstrel_w_walk_v01",
+  "path": "art_src/camp_npcs_v37/minstrel/sources/minstrel_w_walk_v01.png",
+  "sha256": "627f7746ce278992a0032cf8ce23a8b776cd8c4159a7601b2ccd078bf9e2b9e8",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-6b25f52e-e37e-4503-a117-996d99527e41.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "selected_simplified_gait_reviewed",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/minstrel/reference_inputs/minstrel_w_idle_ref_v01.png",
+      "sha256": "1f0923ace6fa838ed305c226c7c104cdc7c2ea4c0446ffef494dc2250b009858"
+    }
+  ],
+  "review_history": [
+    {
+      "previous_status": "generated_pending_visual_review",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    },
+    {
+      "previous_status": "needs_redraw_gait",
+      "status": "selected_simplified_gait_reviewed",
+      "reason": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged."
+    }
+  ],
+  "review_reason": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged."
+}

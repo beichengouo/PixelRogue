@@ -1,0 +1,43 @@
+{
+  "name": "surveyor_turnaround_v01",
+  "id": "surveyor",
+  "kind": "design_turnaround",
+  "frame_count": 3,
+  "grid": [
+    3,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/assets/camp_life_v01/surveyor_portrait.png",
+    "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve character turnaround. Create a production CHARACTER DESIGN reference sheet for the same young adult woman in IMAGE1. Image1 defines identity, clothing and job accessories; IMAGE2 is ONLY a rendering/proportion reference for the game's already established smooth hand-painted miniature sprites, never copy image2's elf identity, ears, hood or bow. Use compact approximately2.7-head body proportions, gentle adult identity, clean colored outlines and broad soft cel-painted shading, NONPIXEL. Three COMPLETE full-body views in three equal horizontal columns: strict FRONT, strict LEFT PROFILE, strict BACK. Same skull size, shoulder/waist/limb lengths, outfit construction and character scale in all3. Boots share one floor baseline; head crowns align; view is consistent slightly elevated 2D game orthographic, no perspective scene. Neutral relaxed standing, arms slightly clear of costume, exactly two arms/two hands/two legs. All garments/accessories physically continue correctly across back and side, bags keep the same anatomical hip across views, no duplicate prop. Chestnut-brown chin-length bob hair, green eyes, small white daisy-and-leaf ornament on her anatomical LEFT temple, human round ears. Olive-green short hooded travel cape with hood DOWN behind bare head, pale gold botanical trim, ivory puff-sleeve blouse and layered short ivory skirt, brown fitted lace-up waist corset and leather belt, opaque dark-brown tights, brown mid-calf lace-up boots with small leaves. ONE brown field satchel on anatomical RIGHT hip and a closed brown embossed leaf field notebook held low by LEFT hand, right hand relaxed. Preserve her botanical researcher silhouette and muted olive/ivory/brown palette from portrait. Do not turn cape into a raised hood or give her an archer bow. Ample separate transparent margin around each full figure including hair, cape tails, props and boots; do not crop/overlap any view. Genuine RGBA transparent background. No labels, letters, numbers, caption, design boards, grid, floor, shadows, effects, scenery or additional objects. This sheet is DESIGN REFERENCE ONLY; separate animation source drawings will be made afterward.",
+  "asset": "surveyor_turnaround_v01",
+  "path": "art_src/camp_npcs_v37/surveyor/design/surveyor_turnaround_v01.png",
+  "sha256": "a5568e8a96e0155846f364c9af0e70272925b4369ac68b09b5ae4a2bc81cb29f",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-199bbf0a-2634-4b3b-b593-08fede77ebea.png",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "wardrobe_reference_only_needs_compact_proportions",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/assets/camp_life_v01/surveyor_portrait.png",
+      "sha256": "ea92d82e4f2eee7644aea39399acbccc07af7c94af8e3f0ca844ab13655d3020"
+    },
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_s_idle_v01.png",
+      "sha256": "f47c1df5f962e7b437679b436f686d186772088ed3bdb655e0e6ac25ce5e2eae"
+    }
+  ],
+  "review_note": "Identity, costume and back construction usable as wardrobe reference; too tall/slender for established compact hero-style model. Separate compact v02 drawing required. Never runtime crop."
+}

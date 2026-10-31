@@ -1,0 +1,80 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "skill_cast",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Create exactly FOUR consecutive authored SKILL-CAST sprite frames of Xixifu NORMAL. Input1 strict LEFT/WEST profile neutral is the exact identity/anatomy master. Input2 SW skill sequence only informs hand gestures, not facing. Every figure faces STRICT LEFT in profile at same mildtopdown camera as input1. Keep SAME head/skull/face size relative to SAME torso length, robe hem, leggings and black short boots; don't squash the torso while raising arms. 2columns by2rows, exactly4 COMPLETE fullbody figures ordered TL TR BL BR on square fully transparentcanvas. Preserve independent same-scale cells with clear gaps and safealpha around all hair/staff/boots. Upright head/torso and planted feet at same groundline all4, no crouch or lean. Right anatomical hand always holds SAME plain wood staff with small solidpurplecrystal; no hand swap. Frame1 draw staff close upright while free left hand lifts near chest; frame2 freehand closes a deliberate compact contract gesture, staff tilts slightly forward LEFT; frame3 freehand opens palm toward LEFT in small controlled release while staff guides toward left-forward below chest, no body lunge; frame4 arms relax back near exact neutral input1 ready, original full torso length. Different from ordinary staff-combo attack. Keep charcoal ordinary midcalf robe, lavender sleeves/hem lining, silver butterfly clasp, plain clothwaisttie, darkleggings and rounded black short ankleboots. Black iris, long nearblack hair calmly draping continuously OVER lowered hood, no hairhood crossing. Same clean NONPIXEL handdrawn broad2-3tone cel/painted shading and smooth outlines. Draw ONLY physical figure and staff; absolutely NO lighting glow, fog, effects, runes, symbols, bullets, groundshadow, backdrop, text or extra creatures/props. Do not crop or let frames overlap. Same body/face geometry allfour.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-fef96628-bfc0-482a-a893-da0c7a077fbb.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_skill_cast.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_rig_calibration",
+  "visual_review": "Four complete left-facing figures, one visible eye/profile; deliberate fingertip gesture then open palm and ready recovery, no baked effects. Some sleeve/torso rotation accompanies freehand release, skull facing left retained. Calibration and neutral bridge review pending.",
+  "sha256": "78bbdff2e93b3f3ba630d0c82b876c2ef24133bf472d68b3378eb660d1cdd98f",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_sw_skill_cast.png": "f4d17afd7b8d90ac739072a2dbd500b6f93351d2af1ec9b715045fc0e9e24b5f"
+  },
+  "size": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "alpha24_bounds": [
+    54,
+    15,
+    1204,
+    1248
+  ],
+  "complete_component_frames": 4,
+  "outer_clearance_px": 6,
+  "head_match_to_neutral": [
+    {
+      "scale": 1.5980443614556186,
+      "angle": 4.200699998110822,
+      "inliers": 15
+    },
+    {
+      "scale": 1.561467921075504,
+      "angle": 4.448534999368894,
+      "inliers": 17
+    },
+    {
+      "scale": 1.5787072045764194,
+      "angle": 4.4649530648645435,
+      "inliers": 12
+    },
+    {
+      "scale": 1.5820987776167708,
+      "angle": 3.509253260749499,
+      "inliers": 15
+    }
+  ],
+  "matches_are_not_visual_approval": true,
+  "direct_neutral_review": {
+    "technical_direct_neutral_registration": "pass",
+    "fixed_scale": 0.378982852519119,
+    "head_registered_foot_deviation_px": [
+      -6,
+      -6,
+      -13,
+      -12
+    ],
+    "torso_residuals": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "caution": "These registration observations are not artistic approval; inspect ready transition and body/legs."
+  }
+}

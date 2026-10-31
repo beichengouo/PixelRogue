@@ -1,0 +1,39 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "move_attack4",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Repair ONLY framing/cropped hair of this4frame movingattack sheet. Retain EXACT4 authored poses/heads/body/arms/staff/feet and opposite leg/buckle identities. Rightmost hair currently cut by canvas boundary; reconstruct full natural closed hairtips and provide CLEAR EMPTY TRANSPARENT SPACE around EVERY figure. WIDEN overall canvas into LANDSCAPE3:2, 1536x1024 or2048x1365, 2columns x2rows with WIDE cells. Each entire figure including complete longhair and staff must fit central70% cellwidth and80% cellheight with at least10% EMPTY alpha on all sides. Reposition each WHOLE figure rigidly into expanded owncell, no body shrinking/stretching/reposing, same scale across4. No overlap or clipping, no hairfade. Preserve exact original torso length, grounded walklegs and shortblackboots; top row nearbuckledboot ahead/support, bottom row nearbuckledboot rear/raised, farboots plain. Charcoalrobe/lavenderlining, nonpixel cleanhanddrawn identity, truealpha. No glow/light/shadow/background/text/effects. Four complete fullfigures ONLY.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-965c51ba-5144-46e7-b2f3-1750c28cf010.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_move_attack4_clipped_candidate.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Widened framing reconstructs complete rightmost hair.4gaits/arms retained, preview RGB may show haze underalpha0; actualalpha checked independently. No opaque baked effects admitted. Pending actual normalized skull/body/seams.",
+  "sha256": "90eb9993aa51f6873a53f4cdb10a34a177a14231ad6a65ded93565f5ecb28533",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_move_attack4_clipped_candidate.png": "990d85871d87009cce007963194b2703ecdc80c2602b87ebcf603be275d2c524"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    159,
+    21,
+    1460,
+    979
+  ],
+  "outer_clearance_px": 21,
+  "complete_component_frames": 4,
+  "motion_technical_review": {
+    "technical_direct_neutral": "fail",
+    "reason": "('head-size drift', 'move_attack', [2.3762771798779747, 2.271091299057682, 2.0619504183300386, 2.0518808286777794])"
+  },
+  "technical_pass_is_visual_approval": false
+}

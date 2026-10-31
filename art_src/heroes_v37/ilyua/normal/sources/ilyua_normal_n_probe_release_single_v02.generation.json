@@ -1,0 +1,13 @@
+{
+  "status": "pending_anatomy_and_registration",
+  "sha256": "ac981293022778755c32c354acdccb7066dd591ef49bf0dce1b36e5407a4298f",
+  "runtime_integrated": false,
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-2e747d9f-0639-4a1c-b77f-1a2e4cee2fd7.png",
+  "kind": "single_frame_source",
+  "review_reason": "Needs full sequence registration and visual check.",
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "asset": "ilyua_normal_n_probe_release_single_v02",
+  "prompt": "Low shot release from idle, move right arm only, preserve belt quiver and left-hand bow.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png"
+}

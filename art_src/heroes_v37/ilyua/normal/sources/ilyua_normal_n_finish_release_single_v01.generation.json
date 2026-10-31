@@ -1,0 +1,13 @@
+{
+  "prompt": "Finisher release with right hand open near ear, bow upright, string resting, no projectile.",
+  "review_reason": "Needs full sequence and registration review.",
+  "runtime_integrated": false,
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_finish_draw_single_v02.png",
+  "asset": "ilyua_normal_n_finish_release_single_v01",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-de702527-63a8-44a0-a9b5-a1746c61e923.png",
+  "sha256": "5d8308279a1503b0e29eb853441e777aae264b72b6b354425dacde3fea6c340b",
+  "status": "pending_anatomy_and_registration",
+  "usage": "unpackaged_candidate",
+  "frame_count": 1,
+  "kind": "single_frame_source"
+}

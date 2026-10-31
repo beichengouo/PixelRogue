@@ -1,0 +1,84 @@
+{
+  "asset": "ilyua_normal_nw_attack1_v02",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_attack1_v02.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-3bf91f99-12ca-47d6-a7f0-1d5ce651dcd3.png",
+  "built_in_imagegen": true,
+  "prompt": "Repair image1 four sequential archery animation poses, matching exact image2 character identity, hood, hair, outfit, anatomy, body size and back-left camera angle in every frame. Head size identical in every frame; no scaling or twisting. Bow and hands correctly connected, feet planted. No detached arrow after release. All four complete figures and full bow with spacious transparent margins on every edge, equal 2x2 grid. Transparent background. No text, numbers, marks, frame lines, effects or shadow. Refined nonpixel game sprite.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_attack1_v01.png",
+      "sha256": "faba2db5f6d51efee3edf066965b6683567f38ae219f66cd084d4c99505b7969"
+    },
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_idle_v01.png",
+      "sha256": "2e4b8a11273804c1b16ea3cd744d32a78a831407e7a01fbb536bbb1c107ebe60"
+    }
+  ],
+  "sha256": "329ba262a783f74e6db91af3935b706e8b82ddf445e12c2b7ea5f334b00d0f65",
+  "dimensions": [
+    1374,
+    1145
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    8,
+    1305,
+    1131
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    0,
+    1,
+    0
+  ],
+  "alpha_bounds_raw": [
+    0,
+    8,
+    1305,
+    1131
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      8,
+      1305,
+      1131
+    ],
+    "8": [
+      208,
+      11,
+      1203,
+      1124
+    ],
+    "32": [
+      208,
+      12,
+      1202,
+      1124
+    ],
+    "128": [
+      209,
+      12,
+      1201,
+      1123
+    ]
+  }
+}

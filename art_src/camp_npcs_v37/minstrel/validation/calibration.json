@@ -1,0 +1,837 @@
+{
+  "id": "minstrel",
+  "runtime_integrated": false,
+  "manual_review_complete": false,
+  "idle": [
+    {
+      "direction": "s",
+      "asset": "minstrel_neutral_cardinal_v01",
+      "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+      "source_frame": 0,
+      "pass": true,
+      "factor": 0.26200873362445415,
+      "offset": [
+        83.43231441048036,
+        3.7030567685589517
+      ],
+      "bounds": [
+        153,
+        152,
+        289,
+        393
+      ],
+      "foot_deviation": 1
+    },
+    {
+      "direction": "sw",
+      "asset": "minstrel_neutral_diagonal_v01",
+      "source_sha256": "1afe065a0a1f245cc2125ba4525d9a8db2c29d8ec0026798941eb316d5ca9dee",
+      "source_frame": 0,
+      "pass": true,
+      "factor": 0.2481902792140641,
+      "offset": [
+        29.41882109617373,
+        19.218200620475727
+      ],
+      "bounds": [
+        151,
+        152,
+        315,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "w",
+      "asset": "minstrel_neutral_cardinal_v01",
+      "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+      "source_frame": 1,
+      "pass": true,
+      "factor": 0.267260579064588,
+      "offset": [
+        94.51224944320711,
+        -4.080178173719389
+      ],
+      "bounds": [
+        178,
+        152,
+        303,
+        392
+      ],
+      "foot_deviation": 0
+    },
+    {
+      "direction": "nw",
+      "asset": "minstrel_neutral_diagonal_v01",
+      "source_sha256": "1afe065a0a1f245cc2125ba4525d9a8db2c29d8ec0026798941eb316d5ca9dee",
+      "source_frame": 1,
+      "pass": true,
+      "factor": 0.2502606882168926,
+      "offset": [
+        36.67987486965586,
+        17.610010427528607
+      ],
+      "bounds": [
+        152,
+        152,
+        299,
+        393
+      ],
+      "foot_deviation": 1
+    },
+    {
+      "direction": "n",
+      "asset": "minstrel_neutral_cardinal_v01",
+      "source_sha256": "9f437be8c95ceefddf8f06bb413416af46df33099ce0a4f9c708974294efb9d3",
+      "source_frame": 2,
+      "pass": true,
+      "factor": 0.2643171806167401,
+      "offset": [
+        92.23788546255506,
+        0.8105726872246919
+      ],
+      "bounds": [
+        169,
+        152,
+        292,
+        393
+      ],
+      "foot_deviation": 1
+    }
+  ],
+  "results": [
+    {
+      "direction": "n",
+      "action": "walk",
+      "asset": "minstrel_n_walk_v01",
+      "source_sha256": "541bdd95bb2c63c65f0f34e9272c8c471c718448e8d431b00cb4ffbba1cc21c2",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.48509772612100316,
+          "offset": [
+            -110.38114115845266,
+            -22.062591418295682
+          ],
+          "head_inliers": 43,
+          "head_registration_scale": 1.8352863971577953,
+          "head_angle": 2.7965286405576424,
+          "foot_deviation": 26,
+          "torso_residual": [
+            -1.7467777729034424,
+            0.9346122741699219
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.48509772612100316,
+          "offset": [
+            -53.63257803895925,
+            -22.830311510531367
+          ],
+          "head_inliers": 38,
+          "head_registration_scale": 1.838187120146972,
+          "head_angle": 3.1488125287934903,
+          "foot_deviation": 24,
+          "torso_residual": [
+            -1.8776135444641113,
+            0.5947781801223755
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.48509772612100316,
+          "offset": [
+            -114.70346270993943,
+            -14.316794508879383
+          ],
+          "head_inliers": 37,
+          "head_registration_scale": 1.8002371880590429,
+          "head_angle": 0.8818608274490551,
+          "foot_deviation": 22,
+          "torso_residual": [
+            0.6610188484191895,
+            0.6546303033828735
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.48509772612100316,
+          "offset": [
+            -49.18748709388768,
+            -19.03876996145372
+          ],
+          "head_inliers": 44,
+          "head_registration_scale": 1.7925656944141404,
+          "head_angle": 2.3801644305654683,
+          "foot_deviation": 17,
+          "torso_residual": [
+            -1.6694378852844238,
+            0.2530888617038727
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          153,
+          150,
+          322,
+          418
+        ],
+        [
+          153,
+          152,
+          326,
+          416
+        ],
+        [
+          150,
+          149,
+          327,
+          414
+        ],
+        [
+          157,
+          148,
+          332,
+          409
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "nw",
+      "action": "walk",
+      "asset": "minstrel_nw_walk_v01",
+      "source_sha256": "3a41b00dc49a087eb00ef03efca81930e0c72dda6475ef20c42a90be2703aaf2",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4376870915947557,
+          "offset": [
+            -83.70560510215724,
+            7.910499421597949
+          ],
+          "head_inliers": 18,
+          "head_registration_scale": 1.7489246701640446,
+          "head_angle": 1.5985192729138964,
+          "foot_deviation": 0,
+          "torso_residual": [
+            -0.9223321676254272,
+            2.2451059818267822
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4376870915947557,
+          "offset": [
+            -61.76196314520338,
+            8.040937724028867
+          ],
+          "head_inliers": 26,
+          "head_registration_scale": 1.8100017483900643,
+          "head_angle": 2.1102337835354503,
+          "foot_deviation": -2,
+          "torso_residual": [
+            -1.0274527072906494,
+            2.180089235305786
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4376870915947557,
+          "offset": [
+            -74.81318634319608,
+            12.037005507038511
+          ],
+          "head_inliers": 15,
+          "head_registration_scale": 1.7685741615363544,
+          "head_angle": 2.4941975421702773,
+          "foot_deviation": -9,
+          "torso_residual": [
+            -1.4688150882720947,
+            2.797041893005371
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4376870915947557,
+          "offset": [
+            -68.4508154653285,
+            9.342762236053112
+          ],
+          "head_inliers": 23,
+          "head_registration_scale": 1.7359351184655905,
+          "head_angle": 2.619681570626459,
+          "foot_deviation": -5,
+          "torso_residual": [
+            1.6712507009506226,
+            2.4647254943847656
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          150,
+          155,
+          316,
+          392
+        ],
+        [
+          151,
+          155,
+          316,
+          390
+        ],
+        [
+          151,
+          156,
+          325,
+          383
+        ],
+        [
+          146,
+          155,
+          315,
+          387
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "s",
+      "action": "walk",
+      "asset": "minstrel_s_walk_v01",
+      "source_sha256": "95a105ce0ff652f7343f694e6c5225224ebea0a064965b632bb3231c10c39470",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.3894122064078183,
+          "offset": [
+            -64.88783284149835,
+            25.486698600402566
+          ],
+          "head_inliers": 44,
+          "head_registration_scale": 1.48625658778984,
+          "head_angle": 0.521981075208187,
+          "foot_deviation": -17,
+          "torso_residual": [
+            0.24692851305007935,
+            2.046407461166382
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.3894122064078183,
+          "offset": [
+            -2.9006187738809928,
+            24.069966012213428
+          ],
+          "head_inliers": 44,
+          "head_registration_scale": 1.4688880377368245,
+          "head_angle": -1.4328454903682293,
+          "foot_deviation": -21,
+          "torso_residual": [
+            0.029760634526610374,
+            2.0372202396392822
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.3894122064078183,
+          "offset": [
+            -65.74847651985533,
+            32.30308352807724
+          ],
+          "head_inliers": 32,
+          "head_registration_scale": 1.4680489217724881,
+          "head_angle": -2.595674601599921,
+          "foot_deviation": -21,
+          "torso_residual": [
+            0.1325075924396515,
+            2.580723524093628
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.3894122064078183,
+          "offset": [
+            -4.470480306700324,
+            31.860152198758186
+          ],
+          "head_inliers": 37,
+          "head_registration_scale": 1.4809596223739414,
+          "head_angle": -0.11128118193186615,
+          "foot_deviation": -20,
+          "torso_residual": [
+            0.2936404049396515,
+            2.5518105030059814
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          147,
+          153,
+          296,
+          375
+        ],
+        [
+          148,
+          153,
+          293,
+          371
+        ],
+        [
+          149,
+          153,
+          300,
+          371
+        ],
+        [
+          147,
+          153,
+          295,
+          372
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "sw",
+      "action": "walk",
+      "asset": "minstrel_sw_walk_v02",
+      "source_sha256": "fe5237c7e465b5e641057d0d61a55d04ab000d1c73ffa39e222a141ae168d55e",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4202036655345943,
+          "offset": [
+            -70.86557874709152,
+            10.979901192476762
+          ],
+          "head_inliers": 66,
+          "head_registration_scale": 1.6930706023831363,
+          "head_angle": 0.3480045288446276,
+          "foot_deviation": -5,
+          "torso_residual": [
+            -1.2796403169631958,
+            1.1567872762680054
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4202036655345943,
+          "offset": [
+            -20.901091487849023,
+            11.058286238850856
+          ],
+          "head_inliers": 58,
+          "head_registration_scale": 1.6960091602635963,
+          "head_angle": 0.04245506913884773,
+          "foot_deviation": -3,
+          "torso_residual": [
+            -1.4420228004455566,
+            0.703935444355011
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4202036655345943,
+          "offset": [
+            -74.06733029828077,
+            20.084579199521745
+          ],
+          "head_inliers": 52,
+          "head_registration_scale": 1.6804795118816704,
+          "head_angle": 0.44020994968437027,
+          "foot_deviation": -10,
+          "torso_residual": [
+            -0.700943648815155,
+            1.6292940378189087
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4202036655345943,
+          "offset": [
+            -23.10790813647234,
+            20.339783156670144
+          ],
+          "head_inliers": 46,
+          "head_registration_scale": 1.6693591820669555,
+          "head_angle": 0.7487943513187284,
+          "foot_deviation": -11,
+          "torso_residual": [
+            -2.1269242763519287,
+            1.6393071413040161
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          151,
+          152,
+          327,
+          387
+        ],
+        [
+          153,
+          152,
+          332,
+          389
+        ],
+        [
+          149,
+          152,
+          335,
+          382
+        ],
+        [
+          157,
+          152,
+          336,
+          381
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "utility",
+      "action": "rest",
+      "asset": "minstrel_utility_rest_v01",
+      "source_sha256": "6f6f262f83369108bb3f52af2c174e480e2a35f4893a33032f5ec7ddd61a2cc4",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4034214353396661,
+          "offset": [
+            -63.36644220204241,
+            15.721495887732708
+          ],
+          "head_inliers": 53,
+          "head_registration_scale": 1.6254521998894047,
+          "head_angle": -0.48834363660974867,
+          "foot_deviation": -3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4034214353396661,
+          "offset": [
+            -10.419111944157187,
+            16.17387054033095
+          ],
+          "head_inliers": 66,
+          "head_registration_scale": 1.6213159970562767,
+          "head_angle": 0.01802179228955299,
+          "foot_deviation": -3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4034214353396661,
+          "offset": [
+            -63.78576319318769,
+            18.106282720398166
+          ],
+          "head_inliers": 60,
+          "head_registration_scale": 1.6190207972811166,
+          "head_angle": -0.20204845011328296,
+          "foot_deviation": -3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.4034214353396661,
+          "offset": [
+            -9.451338001712777,
+            19.079101057555615
+          ],
+          "head_inliers": 50,
+          "head_registration_scale": 1.60304986844998,
+          "head_angle": -0.06279317040185697,
+          "foot_deviation": -2,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          136,
+          151,
+          314,
+          389
+        ],
+        [
+          138,
+          151,
+          314,
+          389
+        ],
+        [
+          135,
+          152,
+          313,
+          389
+        ],
+        [
+          150,
+          152,
+          317,
+          390
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "utility",
+      "action": "talk",
+      "asset": "minstrel_utility_talk_v01",
+      "source_sha256": "f6da9f7a33d63c10c858cd82371fc0aceb35e5f0a5e5579cf8533ece23a04fbe",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.40169153217805287,
+          "offset": [
+            -38.70821382982162,
+            17.465144696871796
+          ],
+          "head_inliers": 67,
+          "head_registration_scale": 1.6184821317340714,
+          "head_angle": -0.5102465078611089,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40169153217805287,
+          "offset": [
+            -20.568850685916495,
+            16.80005715970789
+          ],
+          "head_inliers": 66,
+          "head_registration_scale": 1.616775779410038,
+          "head_angle": -1.0179783016878057,
+          "foot_deviation": -4,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40169153217805287,
+          "offset": [
+            -40.000639259630304,
+            21.192164676512437
+          ],
+          "head_inliers": 56,
+          "head_registration_scale": 1.5962789364596843,
+          "head_angle": -1.4617289840422358,
+          "foot_deviation": -3,
+          "torso_residual": null
+        },
+        {
+          "scale": 0.40169153217805287,
+          "offset": [
+            -21.22482650109876,
+            20.588859613333792
+          ],
+          "head_inliers": 42,
+          "head_registration_scale": 1.5859433831436258,
+          "head_angle": -0.8838108413055757,
+          "foot_deviation": -4,
+          "torso_residual": null
+        }
+      ],
+      "bounds": [
+        [
+          150,
+          151,
+          315,
+          388
+        ],
+        [
+          152,
+          151,
+          316,
+          388
+        ],
+        [
+          149,
+          151,
+          314,
+          389
+        ],
+        [
+          151,
+          150,
+          316,
+          388
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    },
+    {
+      "direction": "w",
+      "action": "walk",
+      "asset": "minstrel_w_walk_v01",
+      "source_sha256": "627f7746ce278992a0032cf8ce23a8b776cd8c4159a7601b2ccd078bf9e2b9e8",
+      "pass": true,
+      "frames": [
+        {
+          "scale": 0.4287050448768351,
+          "offset": [
+            -45.456099274429306,
+            -2.4488185551225072
+          ],
+          "head_inliers": 59,
+          "head_registration_scale": 1.6040713762474912,
+          "head_angle": -0.8499206142551265,
+          "foot_deviation": 2,
+          "torso_residual": [
+            -0.6740075945854187,
+            1.3813574314117432
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4287050448768351,
+          "offset": [
+            -17.811855120754487,
+            -2.8746509169682755
+          ],
+          "head_inliers": 61,
+          "head_registration_scale": 1.599206665567926,
+          "head_angle": -0.7466233383061023,
+          "foot_deviation": 2,
+          "torso_residual": [
+            1.3838043212890625,
+            1.0000250339508057
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4287050448768351,
+          "offset": [
+            -45.24979772758911,
+            6.984400012179833
+          ],
+          "head_inliers": 55,
+          "head_registration_scale": 1.60226860219556,
+          "head_angle": -1.0979512796904876,
+          "foot_deviation": -3,
+          "torso_residual": [
+            -0.2968510687351227,
+            1.0911455154418945
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        },
+        {
+          "scale": 0.4287050448768351,
+          "offset": [
+            -18.47636892747775,
+            6.740147919856614
+          ],
+          "head_inliers": 64,
+          "head_registration_scale": 1.5892189319723098,
+          "head_angle": -0.8357211440725894,
+          "foot_deviation": -1,
+          "torso_residual": [
+            1.654139757156372,
+            1.107898235321045
+          ],
+          "rigid_clip_translation": [
+            0,
+            0
+          ]
+        }
+      ],
+      "bounds": [
+        [
+          171,
+          151,
+          327,
+          394
+        ],
+        [
+          176,
+          151,
+          331,
+          394
+        ],
+        [
+          173,
+          151,
+          327,
+          389
+        ],
+        [
+          176,
+          151,
+          331,
+          391
+        ]
+      ],
+      "method": "fresh neutral head registration, one fixed clip scale, rigid translations; original head/torso gates"
+    }
+  ],
+  "missing_groups": [],
+  "passed_clips": 7,
+  "failed_clips": 0,
+  "idle_passes": 5,
+  "technical_complete": true
+}

@@ -1,0 +1,40 @@
+{
+  "name": "surveyor_w_walk_single_v10_f2",
+  "id": "surveyor",
+  "kind": "runtime_single",
+  "direction": "w",
+  "action": "walk",
+  "frame_count": 1,
+  "grid": [
+    1,
+    1
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_w_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Edit the supplied SINGLE canonical NPC image. Keep EXACT original canvas framing, head pixels/size/location, face and view, hair, upper body, pelvis, hands and props UNCHANGED. Change ONLY legs below skirt into this ONE walk-cycle phase: LEFT side leg stands vertically supporting pelvis. RIGHT side knee lifts and moves forward to LEFT, its boot raised clear, crossing just behind support leg. Travel is screen-left in strict profile. Keep original boot designs, leg lengths and compact body proportions. Full body SINGLE figure at original scale and same position, original transparent margin around crown and boots. No new arm or hands; all accessories unchanged. True transparent RGBA. No letters, panel, grid, floor, shadow or FX. Do NOT make a sheet or multiple characters.",
+  "phase": 1,
+  "asset": "surveyor_w_walk_single_v10_f2",
+  "path": "art_src/camp_npcs_v37/surveyor/sources/surveyor_w_walk_single_v10_f2.png",
+  "sha256": "5c0416683b01eb31473fbea0084726d760196e7076af68b1bc68ee6c6028cd59",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-30a5c14d-80d3-4deb-bea7-e19a29e25467.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "generated_pending_visual_review",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/surveyor/reference_inputs/surveyor_w_idle_ref_v01.png",
+      "sha256": "1d299d71936ca2bea752b8d9b95cc5112320cfa9bd1472059e612ecd419c3627"
+    }
+  ]
+}

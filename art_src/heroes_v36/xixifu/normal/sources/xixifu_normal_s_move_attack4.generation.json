@@ -1,0 +1,13 @@
+{
+  "key": "xixifu_normal_s_move_attack4",
+  "provider": "built-in image_gen",
+  "prompt": "Precise arms-only sprite edit of IMAGE1's2x2 FOUR-FRAME walking cycle. IMAGE1 is the immutable target anatomy/gait. Preserve its FOUR HEADS/FACES/TORSOS/HAIR/WAIST/ROBE HEM and EVERY LEG/BOOT in their EXACT current lengths, positions, overlaps and TL/TR/BL/BR walking order. Do not redraw or mirror legs, do not duplicate top-row legs in bottom-row, do not make feet planted stationary. BOTH original passing feet underhipcenter and opposite contact legs must survive. Edit ONLY arms/hands/sleeves and smallpurplecrystal wooden staff of eachfigure, using corresponding4armposes from IMAGE2 as reference. IMAGE2 is ONLY arm-pose reference: do NOT copy its head, body, legs, proportions, camera or foot positions. Same anatomical RIGHT primary grip all4; normal human girl ordinary charcoalrobe/lavenderlining/silverbutterflyclasp/clothwaisttie/darkleggings/shortblackboots/nearblacklonghair over loweredhood/darkirises. Same smooth nonpixel2-3tone handdrawn style. No wholebody scaling/squat/lean/head turn/sway. Physical arms articulate one connected prepare/release/followthrough/bridge segment, NOT four repeat pulses; no returntoneutral between stages1-4. Allhair/staff/hand/boot tips complete inside transparentmargins, preserve2x2 layout and actual transparency. NO shotbolts/trails/glow/fog/FX/runes/shadows/background/text. Four FULL figures only.\nStage4 arms SOUTH FRONT: start staff overhead from stage3; second pivots rightwrist to raiseddiagonal staff, free lefthand closes near chest; third freehand reaches support on shaft; fourth both hands brace staff high at chest ready nextstrongpush. Do not change target's gait/bodyheight. No duplicated straight push.",
+  "refs": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_walk.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_s_attack4.png"
+  ],
+  "source": "C:\\Users\\Administrator\\.codex\\generated_images\\01a16438-e503-7ba3-8d17-a41d467ed330\\exec-8cda72bf-08bb-4e28-bde0-f59738c531e1.png",
+  "transparent_background": true,
+  "review": "candidate_unvalidated",
+  "runtime_integrated": false
+}

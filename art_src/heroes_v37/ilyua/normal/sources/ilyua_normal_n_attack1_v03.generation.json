@@ -1,0 +1,85 @@
+{
+  "asset": "ilyua_normal_n_attack1_v03",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack1_v03.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-8e8792e4-4559-48ec-a9eb-76bd71465bf4.png",
+  "built_in_imagegen": true,
+  "prompt": "Direct back 4-frame archery: bow points away, correctly nocked arrow, stable head, isolated transparent quadrants, no labels.\n",
+  "references": [
+    {
+      "path": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    },
+    {
+      "path": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_attack1_v02.png",
+      "sha256": "77309990eae69f986a13d3a96919afe24e75c6805a7d885c0f12dcbf3c765f5e"
+    }
+  ],
+  "sha256": "8de7e7a399a0b4eacf601d34670444e503e9748ed1f1921a91a4f896ae8a1a31",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "attack1",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    15,
+    1234,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "review_reason": "Arrow points screen left instead of away; bowstring does not connect to drawing hand.",
+  "alpha_bounds_raw": [
+    0,
+    15,
+    1234,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      15,
+      1234,
+      1254
+    ],
+    "8": [
+      213,
+      25,
+      1193,
+      1236
+    ],
+    "32": [
+      213,
+      26,
+      1193,
+      1235
+    ],
+    "128": [
+      214,
+      26,
+      1193,
+      1235
+    ]
+  }
+}

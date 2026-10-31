@@ -1,0 +1,48 @@
+{
+  "name": "carpenter_sw_walk_v01",
+  "id": "carpenter",
+  "kind": "runtime_clip",
+  "direction": "sw",
+  "action": "walk",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "refs": [
+    "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_sw_idle_ref_v01.png"
+  ],
+  "prompt": "Use case: identity-preserve hand-painted miniature game animation. Preserve the supplied compact2.7-head NPC's EXACT skull/face/hair crown size, FRONT-LEFT diagonal viewpoint, neck/chest/waist proportions, costume and props. Same upright head and body scale in all FOUR frames. Warm copper-auburn hair in a high long ponytail, soft side bangs, amber-brown eyes, small gold leaf ponytail tie, human round ears. Ivory rolled/puffed-sleeve blouse, indigo-blue work apron dress with broad front bib, tan-gold stitching, small pale botanical trim at hem, brown leather waistbelt and TWO different work pouches (one on each hip), small carving chisel/woodworking tools safely STOWED in belt loops. Bare knees and brown sturdy ankle-to-mid-calf lace-up boots. Hands relaxed and empty in this turnaround, no hammer raised and no weapon. Preserve her practical carpenter costume and recognizable high ponytail exactly from portrait, no armor or adventurer hood. Make FOUR consecutive slow walk poses traveling LOWER-LEFT, in2x2 reading order. Keep the entire original head, shoulders, chest, waist and carried props rigid and unchanged; animate only legs, lower cloth and a restrained free arm. 1 FOREGROUND NEAR leg reaches lower-left heel-contact, FAR leg trails upper-right toe;2 near leg supports under pelvis, FAR knee/boot swings forward;3 OPPOSITE contact: FAR leg now reaches lower-left, foreground NEAR leg trails upper-right with raised heel, near shin overlaps in front at crossing;4 FAR leg supports under pelvis, NEAR knee/boot swings forward. Clearly exchange which leg leads in frame3: not four same-leg lunges or two repeated poses. Keep equal pelvis height, original leg/boot lengths, no head bob/nod/turn or body compression. If both hands carry a prop, keep both hands exactly in the original carrying pose; never add an arm swing third hand. No raising shawl/skirt unnecessarily. Four COMPLETE separate figures inside equal2x2 cells,10% empty margin for full hair/cape/boots and props, no cropping or overlap. True transparent RGBA, nonpixel broad soft shading, no labels/grid/FX/shadow/floor/background gradient.",
+  "asset": "carpenter_sw_walk_v01",
+  "path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_sw_walk_v01.png",
+  "sha256": "ec39635b5477ed74027a59a8e1d8a1848f6521b7bd8430b8b58529f15de64241",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-a2cf9176-df3c-4a1b-9600-c01d1dc3000d.png",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "contains_design_labels": false,
+  "built_in_imagegen": true,
+  "runtime_integrated": false,
+  "user_approved": false,
+  "status": "needs_redraw_gait",
+  "references": [
+    {
+      "path": "E:/GodotProjects/PixelRogue/art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_sw_idle_ref_v01.png",
+      "sha256": "0846c11fa4f55c64e48d447d53fca253ea56d5a8e179ec2cbd0644f468055377"
+    }
+  ],
+  "manual_review": "Whole-body review: foreground leg leads in both contact phases; carpenter additionally touches source top. Do not admit.",
+  "review_history": [
+    {
+      "previous_status": "needs_redraw_same_leading_leg",
+      "status": "needs_redraw_gait",
+      "reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+    }
+  ],
+  "review_reason": "Earlier sheet review: contact poses repeat the same leading leg; technical head registration alone is insufficient."
+}

@@ -1,0 +1,13 @@
+{
+  "asset": "ilyua_normal_n_move_probe_opposite_single_v01",
+  "kind": "single_frame_source",
+  "status": "pending_anatomy_and_registration",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "sha256": "3cdaab3a462d262e2768ec573400f892dd1f9cb3d0f745c0ac40d7ade21f0f3a",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd\\exec-4cc7972a-3bc4-43ed-8079-cf84e21fbfa8.png",
+  "reference": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_move_probe_draw_single_v01.png",
+  "prompt": "Opposite step, left boot raised, preserve low draw upper body, transparent.",
+  "review_reason": "Needs intermediate leg and release phases and sequence validation."
+}

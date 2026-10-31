@@ -1,0 +1,24 @@
+{
+  "kind": "derived_reference_only",
+  "path": "art_src/camp_npcs_v37/carpenter/reference_inputs/carpenter_nw_idle_ref_v01.png",
+  "sha256": "9d448caf93242ca971243db8d15315a83c1e8c92c56721b84f4e7126c04bd197",
+  "source_path": "art_src/camp_npcs_v37/carpenter/sources/carpenter_neutral_diagonal_v01.png",
+  "source_sha256": "46aeb67e61ef5149677c5d55f6255eeb987af3b6580bb3ce5006baf7d9476a1a",
+  "source_frame": 1,
+  "source_grid": [
+    2,
+    1
+  ],
+  "native_component_bounds": [
+    605,
+    449,
+    1150,
+    1321
+  ],
+  "integer_paste_offset": [
+    294,
+    131
+  ],
+  "native_scale": 1.0,
+  "policy": "Native crop/padding only after original canvas edge check; no source edits, scaling, new pose, or turnaround crop. Not a runtime frame."
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_nw_attack3_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_attack3_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-558a1ea4-449f-4276-ba3c-e5d34956acf2.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, NORTHWEST rear-left facing up-left away, NO eyes/frontface camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage3 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 inherits slightly raisedbow and rightfingers at string; 2 bow slants about25degrees diagonally across aim, leftwrist raised near shoulder and rightfingers anchored cheek; 3 releases while keeping diagonalbow, rightfingers open behind cheek/string straight; 4 rolls bow gently back upright, rightfingers close near string to begin fullaim. Back-three-quarter view only; bow aims UP-LEFT away from viewer. No eyes, face, front collar. Bow in left hand, drawing hand right, no hand swap.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_idle_v01.png",
+      "sha256": "2e4b8a11273804c1b16ea3cd744d32a78a831407e7a01fbb536bbb1c107ebe60"
+    }
+  ],
+  "sha256": "563bf7cec54b0a1cb674955c256145f02489fc3b6c98e236718d58e2313cd6b6",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "nw",
+  "action": "attack3",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    16,
+    1234,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "reason": "head drift 7.96% exceeds6%",
+  "alpha_bounds_raw": [
+    0,
+    16,
+    1234,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      16,
+      1234,
+      1254
+    ],
+    "8": [
+      163,
+      19,
+      1195,
+      1231
+    ],
+    "32": [
+      163,
+      20,
+      1195,
+      1231
+    ],
+    "128": [
+      164,
+      20,
+      1195,
+      1230
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "asset": "ilyua_normal_n_attack2_v01",
+  "kind": "source",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_n_attack2_v01.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a17b87-89ec-78d1-9111-4c4bf8eae992\\exec-a79494cf-8c4b-40af-af0f-a737b763c7c2.png",
+  "built_in_imagegen": true,
+  "prompt": "Use case: identity-preserve game sprite animation. Image1 same approved V37 character, costume, compact body/skull proportions, prop, NORTH direct BACK facing awayup, NO eyes/nose/bangs/frontcollar camera. Create clean unlabelled runtime source of FOUR DISTINCT consecutive frames of stage2 in a continuous FIVE-stage basic attack.2x2 equal transparentcells reading order, not5poses/designboard. SAME skull dimensions/shortlimb lengths/stable torso in all4, feet planted, shoulders staylevel, no body sway or dramatic twisting. Do not copy resting hand when drawing newgesture. Exactly TWO arms/TWO hands connected to torso and ONE whole prop, delete old resting hands/shaft. No ghosts/duplicatewaisthands. Entire character/costume/prop/hair/toes inside owncell with10%emptyclearance. True transparent RGBA. Same refined soft nonpixel miniature celpaint, colored cleanoutline, readable broadfolds. NO numbers/text/labels/grid/borders/marks/diagrams/shadows/floor/background/projectiles/glow/auras/trails/creatures. Game creates projectile separately, draw only body/weapon gesture. Do not grow a release pose. IL YUA sagegreenhaired blueeyed elf same ivory hoodUP/goldvineborder/sageinnerrobe/brown belt, quiverRIGHT hip and shortbrownboots. Same small curved woodenbow ALWAYS anatomical LEFT hand; RIGHT hand draws string, no handswap. Clear actual drawn string vs released straight string. Right hand releases near cheek/neck and recoils a little back, NOT a left-handed sword swing. Arrow may appear nocked ONLY during preparatory draw, never flying separately. SAME WEST hand roles rotated naturally to target camera. EXACT FOUR PHASES in readingorder: 1 inherits rising bow shoulderlevel and right fingers reaching string; 2 shoulderheight briskdraw, leftarm forward at shoulder, rightfingers at cheek; 3 release, rightelbow folds back and string straight, same shouldergrip; 4 wrist angles bow upward slightly to link nextdiagonal, rightfingers return near chin.\nSTRICT DIRECT BACK of hood and back robe facing away from camera, no face/eyes/front bangs/collar; aim is AWAY AND UP SCREEN, bow horizontal across upper torso projected from back view; nocked arrow points away, do not draw a sideways arrow across screen. Four distinct draw/release phases, two hands, left bowgrip and right string. Maintain entire bow and hood within generous margins.\n",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_n_idle_v01.png",
+      "sha256": "5430620365dadc2c81b71a51f2f12858e4f97e3ee5abcfcd9c8881480bcb3c20"
+    }
+  ],
+  "sha256": "5c42c365b494fda1300572edc422f58a96f7b0ccc580b117df486aa0be0e031a",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "needs_redraw",
+  "user_approved": false,
+  "runtime_integrated": false,
+  "direction": "n",
+  "action": "attack2",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    20,
+    1240,
+    1254
+  ],
+  "outer_edge_alpha_max": [
+    0,
+    1,
+    1,
+    0
+  ],
+  "reason": "Back view bow vertical and nocked arrows project screen left; aiming does not point away/up screen as required. Requires correctly foreshortened N aim reference.",
+  "alpha_bounds_raw": [
+    0,
+    20,
+    1240,
+    1254
+  ],
+  "alpha_bounds_above_threshold": {
+    "0": [
+      0,
+      20,
+      1240,
+      1254
+    ],
+    "8": [
+      192,
+      24,
+      1109,
+      1216
+    ],
+    "32": [
+      192,
+      24,
+      1109,
+      1216
+    ],
+    "128": [
+      193,
+      25,
+      1108,
+      1216
+    ]
+  }
+}

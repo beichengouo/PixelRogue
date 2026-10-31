@@ -1,0 +1,13 @@
+{
+  "runtime_integrated": false,
+  "kind": "single_frame_source",
+  "review_reason": "Grip high on bow; bottom string occluded, examine anatomy and compare aim continuity before packaging.",
+  "prompt": "Rear view bow draw aiming away, arrow hidden by hood, visible string to drawing hand, same elf archer, transparent background.",
+  "status": "pending_anatomy_and_registration",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_idle_v01.png",
+  "usage": "unpackaged_candidate",
+  "frame_count": 1,
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-4679886b-9959-4e64-acba-135e17e32abf.png",
+  "sha256": "7d1348a124e8938b80d9d3de532ab5abc61180172d791f7c43d6680441b3482a",
+  "asset": "ilyua_normal_n_attack_draw_single_v01"
+}

@@ -1,0 +1,13 @@
+{
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_adjust_recovery_single_v01.png",
+  "runtime_integrated": false,
+  "frame_count": 1,
+  "usage": "unpackaged_candidate",
+  "asset": "ilyua_normal_n_seek_draw_single_v01",
+  "review_reason": "Needs sequence and bowstring geometry validation.",
+  "prompt": "Fourth stage full draw with upright left bow and right hand to cheek, same body.",
+  "kind": "single_frame_source",
+  "sha256": "b50793a96a5c22e63cca1beee5421405fbc44f62dba77bcacddde2903fd33573",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-52f0d11d-4842-4571-81fa-c2f6d2e4bfbe.png",
+  "status": "pending_anatomy_and_registration"
+}

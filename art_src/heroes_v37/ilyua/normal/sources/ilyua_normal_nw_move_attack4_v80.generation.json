@@ -1,0 +1,73 @@
+{
+  "asset": "ilyua_normal_nw_move_attack4_v80",
+  "kind": "source",
+  "source_owner": "root",
+  "path": "art_src/heroes_v37/ilyua/normal/sources/ilyua_normal_nw_move_attack4_v80.png",
+  "source_generated_path": "C:\\Users\\Administrator\\.codex\\generated_images\\01a182af-76ed-7d73-992e-5170f5021bea\\exec-396c1bdf-3ece-4433-9803-cd813e070307.png",
+  "work_copy": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\root-art\\generated\\ilyua_normal_nw_move_attack4_v80.png",
+  "built_in_imagegen": true,
+  "prompt": "Precise UPPER-BODY-ONLY edit of the supplied FOUR-FRAME WALK sprite sheet. Preserve original heads, face/viewpoint, same native skull size, torso, waist, costume and critically its FOUR DIFFERENT LEG POSES EXACTLY. Do not redraw/change anything below waist. Top-left contact, TOP RIGHT NARROW PASSING FEET UNDER PELVIS, bottom-left opposite contact, BOTTOM RIGHT NARROW PASSING FEET UNDER PELVIS. The right-column boots must not turn into wide strides. Keep same limb lengths, one lifted heel/sole alternating naturally, not sliding/hopping or standing still. REAR LEFT THREE QUARTER. Face and weapon aim UPPER LEFT, hood seen mostly from behind, no front-facing eyes. Arrow tip points UPPER LEFT ahead of bow grip, nock closer to body/lower-right. Change ONLY two arms, sleeves, hands and the ONE held plain wooden recurved bow with small golden leaf pendants. Same ivory hood up with gold vine trim, sage hair, green tunic, brown short boots, ONE quiver in same position as original. FOUR upper-body phases in reading order: Top-left upright bow settles target line and right fingers reach string; top-right stable full draw, left arm extended forward shoulder high, right fingers at cheek, knees soft; bottom-left release, right fingers recoil behind jaw and bow arm steady; bottom-right right fingers travel toward a heavier draw without lowering the upright bow. Exactly TWO arms and TWO hands, remove old hanging arms/hand/sleeves when reposing. Anatomical LEFT hand holds bow center grip throughout, anatomical RIGHT hand draws/releases the ONE string connecting upper/lower bow tips. No hand swap. String V during draw, straight between tips when fingers open. Exactly ONE bow with continuous wooden limbs; no floating old curved wood, duplicate shaft, disconnected bow stubs or second weapon. Nocked arrow exists only while drawing: feathers at fingers, arrowhead beyond bow grip in facing direction. RELEASE and followthrough have NO shaft, nock, feathers or arrowhead; no loose flying projectile, no golden diamond left fixed on grip. Only bend arms/wrists and alternate legs, no lateral head waggle or body twisting. Output exact 2x2 equal cells, four COMPLETE figures with generous 10% transparent margins around hood, hair, bow, arrow tips, boots. No clipping, text, numbers, labels, grid, effects, shadows, floor, background or extra figures. True alpha transparency, refined nonpixel anime cel-painted game art. The supplied four leg poses are the source of truth; this is walking archery, not stationary archery.",
+  "references": [
+    {
+      "path": "E:\\GodotProjects\\PixelRogue\\art_src\\heroes_v37\\ilyua\\normal\\sources\\ilyua_normal_nw_walk_v91.png",
+      "sha256": "54dc0815489472439ac5028d0d27150ab7e96f98e91665940d521dd970f8b15d"
+    }
+  ],
+  "sha256": "96442d03af6b5380ad9c7fdd41a365eaa054644453dcc2293c6d141cfc41b7a4",
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "alpha_extrema": [
+    0,
+    255
+  ],
+  "status": "runtime_integrated_reviewed",
+  "user_approved": false,
+  "runtime_integrated": true,
+  "direction": "nw",
+  "action": "move_attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "usage": "crop_input_pending_validation",
+  "contains_design_labels": false,
+  "alpha_bounds": [
+    0,
+    23,
+    1232,
+    1238
+  ],
+  "alpha_bounds_by_threshold": {
+    "0": [
+      0,
+      23,
+      1232,
+      1238
+    ],
+    "8": [
+      123,
+      42,
+      1186,
+      1202
+    ],
+    "32": [
+      123,
+      42,
+      1185,
+      1202
+    ],
+    "128": [
+      124,
+      42,
+      1185,
+      1201
+    ]
+  },
+  "primary_visual_review": "Initial source-sheet inspection: two arms, one held bow, quiver retained; release lacks nocked arrow; four leg phases retained. Pending calibrated whole-body and cross-clip playback review; not runtime approval.",
+  "generation_path": "built_in_image_gen",
+  "review_stage": "source_visual_initial_only"
+}

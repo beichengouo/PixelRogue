@@ -1,0 +1,13 @@
+{
+  "usage": "unpackaged_candidate",
+  "prompt": "Fourth shot release recovery, right hand descends slightly, upright bow.",
+  "frame_count": 1,
+  "kind": "single_frame_source",
+  "review_reason": "Needs sequence and registration review.",
+  "reference": "E:/CodexWorkspace/PixelRogue/work/v37-narrative-and-heroes/art/generated/ilyua_normal_n_seek_release_single_v01.png",
+  "runtime_integrated": false,
+  "sha256": "044df7dbd413ba13d45d887ab224fc852a6c3c014792514afb37ca18418c6989",
+  "asset": "ilyua_normal_n_seek_recovery_single_v01",
+  "status": "pending_anatomy_and_registration",
+  "source_generated_path": "C:/Users/Administrator/.codex/generated_images/01a17d7a-a2ca-7f72-b5ce-b08f3914cfbd/exec-7502fc1e-39e8-4254-80b7-a88f25c079a9.png"
+}

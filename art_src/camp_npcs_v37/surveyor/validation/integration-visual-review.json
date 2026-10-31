@@ -1,0 +1,30 @@
+{
+  "resident_id": "surveyor",
+  "manual_review_complete": true,
+  "criteria": "User clarified on 2026-10-29 that the walking example illustrates progressive left/right foot travel, but camp NPC art need not match its detail. Reviewed for readable four-phase movement at 32 world pixels, consistent character design, complete props, transparent margins and stable foot anchor; technical gates unchanged.",
+  "review_scope": "12 selected clips: 5 idle directions, 5 four-frame walks, four-frame occupational rest and talk",
+  "user_approved_individual_frames": false,
+  "calibration_sha256": "fe8e778c0727821358346403b29f5f3760a19e12bef6aba944be45658c33ede6",
+  "source_sha256": {
+    "surveyor_n_walk_v01": "cd0c7e06bba0097d6212bbb5f100554f263f64d8767b7a43ece8685fe67923fe",
+    "surveyor_neutral_cardinal_v01": "f7a36a0821978704fcf99e659af204d94b2cb7c696cf510d5057cf19465c0102",
+    "surveyor_neutral_diagonal_v01": "d3b9a7c6b2eaac793c42fc488eb42dd809caf6221bd2c01174971c7004400408",
+    "surveyor_nw_walk_v10": "2977486349241484418a822ab4a69d3995fc91c8d26bd894ca90ff32b588f316",
+    "surveyor_s_walk_v01": "d9354f734e223fcac9602b7d77964abcafc4862dfb2c8b25cf42af132cf27830",
+    "surveyor_sw_walk_v10": "4f3f905ed8dbf169882216b713d662d9645f45f1389fd144ae954df6bc55b5c6",
+    "surveyor_utility_rest_v01": "1ca920cf35a9959bff207cf3f4f5ddb363d06ff775da91bd4453e3c409adad1f",
+    "surveyor_utility_talk_v01": "7ee417a496dc883ab981754816d83087c9a7f95db0678cdb4eca48aa183901af",
+    "surveyor_w_walk_v10": "25a37e8860db94c2e546c9e20bbcbf1c68c7c44ebb72e38d7227b1514a77b62b"
+  },
+  "source_metadata_sha256": {
+    "surveyor_n_walk_v01": "80b31cb0427b441432290a34833729fb37b59ca7bf94a9fa59b5fe8c7f00758e",
+    "surveyor_neutral_cardinal_v01": "291924069855d301748f66dbf09c57baea05194ef685fcf159eafdc6827743a1",
+    "surveyor_neutral_diagonal_v01": "0bc2e91abdf06b1e34b8d413042ef10627713fc2448fff5e3e0f745e6898fb22",
+    "surveyor_nw_walk_v10": "84e3787ad23809429ec8785741d81dce2c86a1d31760db1a44088d355fc1cc88",
+    "surveyor_s_walk_v01": "fbbf500e5524af42f3a6f82f4b31281ec7cb5f1f7755d85c027e8ac6cb0aa357",
+    "surveyor_sw_walk_v10": "1f6c2d8a380f8454e1018943f9101b69c74f2c55e8ecffbe44fe39df84f3d3cf",
+    "surveyor_utility_rest_v01": "1c1cb21b7af9f01617603e1e629b1f03d40d5ec16d518588a2b326a5fd56b63f",
+    "surveyor_utility_talk_v01": "b6473eda30130fc0b5399f7214bfe791da9f83edc408a4f64e67357b652ef526",
+    "surveyor_w_walk_v10": "15be7b402c785b0a7ed0957d7657726cd41f463b022614306bfa1e5770c9ec27"
+  }
+}

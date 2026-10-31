@@ -1,0 +1,41 @@
+{
+  "provider": "built-in image_gen",
+  "direction": "w",
+  "action": "move_attack5",
+  "grid": [
+    2,
+    2
+  ],
+  "frame_count": 4,
+  "prompt": "Precise local finishing recovery edit ONLY to BOTTOM-RIGHT fourthfigure arms/hands/staff in image1. Its arms are still raised too high. Match image2 ordinary READY staffcarry: right staffhand LOW beside torso around WAIST height, elbow relaxeddown, thinstaff nearly UPRIGHT nearfront torso with purplecrystal around FACE height (below crown, NOT abovehead), free leftarm relaxeddown. Keep all fourthfigure's head/torso/robe/hair/legs/boots/footgait EXACT unchanged, especially plain LEFT grounded supportboot and buckled RIGHT raisedpassingboot. Keep first3figures entirelyunchanged. Do not give bottomright leftboot a buckle, do not reset walkinglegs to plantedstance. This is final fifthstage recovers onlyarms into ordinaryready whilefeetkeepwalking. Samebodyfullheight, no shrink. Preserve wide2x2 framing and completehair/staff/tips. True transparentalpha outsidephysicalfigures, no glow/haze/shadow/background/text. Nonpixel cleanhanddrawn style.",
+  "native_source": "C:/Users/Administrator/.codex/generated_images/01a17662-af08-75d1-9658-8b637428a5be/exec-156746cb-eca4-41cf-9713-1c486a76bdcd.png",
+  "references": [
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_move_attack5_before_ready_repair.png",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png"
+  ],
+  "runtime_integrated": false,
+  "status": "generated_pending_motion_calibration",
+  "visual_review": "Local fourthframe readyarm repair succeeds: staffcrystal faceheight belowcrown and handlow, legs remain walkingpassingB withfarleftsupportplain/nearraisedrightbuckle. All4 complete, no perframe warping.",
+  "sha256": "15f5aa212855fd0facdfbb0e04b978b0286d3a6968204b461ad17fa2a95f1eeb",
+  "reference_sha256": {
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_move_attack5_before_ready_repair.png": "37979660124ce4ef7db4b0a8a8619dc51915a234552db7d261bfb3061b68ac21",
+    "E:/CodexWorkspace/PixelRogue/work/v36-style-and-combo/generated/xixifu_normal_w_idle.png": "312a4deceb704452f48296c572a07fbdba49dd33ae80e219b8a290238c88fd32"
+  },
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha24_bounds": [
+    158,
+    13,
+    1472,
+    984
+  ],
+  "outer_clearance_px": 13,
+  "complete_component_frames": 4,
+  "motion_technical_review": {
+    "technical_direct_neutral": "fail",
+    "reason": "('head-size drift', 'move_attack', [2.0527363190881602, 2.127628047617973, 2.0320787916048824, 2.2042581188301438])"
+  },
+  "technical_pass_is_visual_approval": false
+}

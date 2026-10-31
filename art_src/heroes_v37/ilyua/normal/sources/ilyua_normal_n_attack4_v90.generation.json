@@ -1,0 +1,43 @@
+{
+  "asset": "ilyua_normal_n_attack4_v90",
+  "kind": "source",
+  "direction": "n",
+  "action": "attack4",
+  "frame_count": 4,
+  "grid": [
+    2,
+    2
+  ],
+  "dimensions": [
+    2508,
+    2508
+  ],
+  "native_cell_dimensions": [
+    1254,
+    1254
+  ],
+  "status": "pending_full_sequence_review",
+  "runtime_integrated": false,
+  "built_in_imagegen": true,
+  "processing": "Four equal native canvases placed at integer grid coordinates, no scaling or modification.",
+  "sources": [
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_seek_ready_single_v01.png",
+      "sha256": "399e727af81ccb57980ff871af67b03f02c034ac780543546091b3043d54de83"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_seek_draw_single_v01.png",
+      "sha256": "b50793a96a5c22e63cca1beee5421405fbc44f62dba77bcacddde2903fd33573"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_seek_release_single_v01.png",
+      "sha256": "5a187b8373551cba2db1576762a7e54987cdfaf17d929dae9b5f4b5a8be5b758"
+    },
+    {
+      "path": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_seek_recovery_single_v01.png",
+      "sha256": "044df7dbd413ba13d45d887ab224fc852a6c3c014792514afb37ca18418c6989"
+    }
+  ],
+  "sha256": "4117a11f9f49e5283f0dafc5fd6abe910739d9279aaa3e99d4d7dc6e8598f547",
+  "evidence": "E:\\CodexWorkspace\\PixelRogue\\work\\v37-narrative-and-heroes\\art\\generated\\ilyua_normal_n_attack4_seek_pack_v01.generation.json"
+}
